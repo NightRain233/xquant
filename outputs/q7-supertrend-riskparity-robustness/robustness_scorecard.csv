@@ -1,0 +1,3 @@
+﻿候选,全样本累计收益跑赢,全样本Sharpe跑赢,全样本Calmar跑赢,全样本回撤不深于RP,滚动窗口收益胜率,滚动窗口Sharpe胜率,滚动窗口回撤不恶化率,10bps_next_close仍有Alpha,10bps_next_open仍有Alpha,10bps_next_open_Sharpe,10bps_next_open_最大回撤
+SuperTrend全资产+RiskParity,True,True,False,False,0.8571428571428571,0.5714285714285714,0.42857142857142855,True,True,1.373102965969991,-0.154221928927323
+SuperTrend权益过滤黄金常驻+RiskParity,True,True,False,False,1.0,1.0,0.8571428571428571,True,True,1.3124463654971599,-0.21686956922688327

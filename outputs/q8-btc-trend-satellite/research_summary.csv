@@ -1,0 +1,9 @@
+﻿,0
+sample_start,2016-06-21
+sample_end,2026-06-23
+historical_best,BTC15%无过滤卫星
+sharpe_best,BTC15%SuperTrend卫星
+calmar_best,BTC10%SuperTrend卫星
+lowest_drawdown,BTC10%SuperTrend卫星
+best_btc_candidate_by_calmar,BTC10%SuperTrend卫星
+best_btc_candidate_by_pass_count,BTC10%SuperTrend卫星
