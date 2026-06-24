@@ -1,0 +1,9 @@
+﻿strategy,baseline_positive_months,underperform_positive_months,underperform_positive_month_rate,avg_monthly_upside_miss_when_baseline_positive,worst_monthly_upside_miss_when_baseline_positive
+Q8_Baseline,50,0,0.0,0.0,0.0
+Pure_LVT_Satellite,50,0,0.0,0.0,0.0
+Pure_ST_Satellite,50,33,0.66,-0.0022832522611751617,-0.031620076860204516
+LVT_ST_EntryFilter,50,8,0.16,-0.00020544524631331828,-0.004295352447816425
+LVT_ST_ExitFilter,50,20,0.4,0.00012312646347564682,-0.01597795264165147
+LVT_ST_Vote_HalfWeight,50,28,0.56,-0.00048073886934748346,-0.003830983524930387
+LVT_ST_Vote_FullExit,50,29,0.58,-0.0010205216660035266,-0.0077158152983147765
+LVT_ST_EntryExit,50,26,0.52,-0.0005580438814648714,-0.02023341080152552

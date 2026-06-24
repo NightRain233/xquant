@@ -1,0 +1,7 @@
+﻿strategy,definition,沪深300ETF,纳指100ETF,黄金ETF,有色金属ETF,芯片ETF,通信ETF,红利ETF,能源ETF,证券ETF,恒生科技ETF,医疗ETF,现金
+Q8_Original_LVT,"Original LVT: price > MA60, 63D momentum > 0, then choose lowest-vol Top3.",0.35382711552298446,0.25475358189608077,0.2780998914401081,0.0,0.05548688376219274,0.05783252737863401,0.0,0.0,0.0,0.0,0.0,0.0
+ST_Replaces_MA_Mom,"Direct replacement: SuperTrend long, then choose lowest-vol Top3. No MA60 or momentum gate.",0.35382711552298446,0.2100521567235497,0.2780998914401081,0.0,0.0,0.0,0.1,0.058020836313357776,0.0,0.0,0.0,0.0
+ST_Replaces_MA_KeepMom,"Replace MA60 only: SuperTrend long plus 63D momentum > 0, then choose lowest-vol Top3.",0.35382711552298446,0.25475358189608077,0.2780998914401081,0.0,0.05548688376219274,0.05783252737863401,0.0,0.0,0.0,0.0,0.0,0.0
+MA_Mom_AND_ST,Strict internal confirmation: original LVT gate and SuperTrend long must both pass.,0.35382711552298446,0.25475358189608077,0.2780998914401081,0.0,0.05548688376219274,0.05783252737863401,0.0,0.0,0.0,0.0,0.0,0.0
+MA_Mom_OR_ST,Loose internal confirmation: original LVT gate or SuperTrend long passes.,0.35382711552298446,0.2100521567235497,0.2780998914401081,0.0,0.0,0.0,0.1,0.058020836313357776,0.0,0.0,0.0,0.0
+Q11_EntryFilter_Reference,"Q11 external reference: LVT new entries require SuperTrend long, existing LVT names may stay until LVT drops them.",0.35382711552298446,0.25475358189608077,0.2780998914401081,0.0,0.05548688376219274,0.05783252737863401,0.0,0.0,0.0,0.0,0.0,0.0
