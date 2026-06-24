@@ -1,0 +1,10 @@
+﻿item,value
+q5_primary_question,Does expanded LVT and core/satellite survive bear-market stress?
+bear_window_core_return,-0.11554346013931915
+bear_window_core_max_dd,-0.12226236623891196
+bear_window_core80_lvt20_return,-0.10276504375369422
+bear_window_core80_lvt20_max_dd,-0.11575844432289628
+bear_window_defcore_return,-0.06147382071383667
+bear_window_defcore_max_dd,-0.08166832489629006
+bear_window_lvt_avg_cash,0.0
+bear_window_lvt_zero_selection_pct,0.0

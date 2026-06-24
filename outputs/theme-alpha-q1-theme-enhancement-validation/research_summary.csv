@@ -1,0 +1,4 @@
+﻿window,historical_best,sharpe_best,calmar_best,lowest_drawdown,lowvol_uncapped_return,lowvol_cap50_return,theme_rp_return,baseline_return
+2025_only,主题等权,低波趋势RP,低波趋势RP_cap60,60_40沪深300黄金,0.6103598978357152,0.5472154625005416,0.6245397372589065,0.3649108242358259
+2026_ytd,低波趋势RP_cap50,低波趋势RP_cap50,纯纳指ETF,原三资产RiskParity,0.24743169387251363,0.25727469378899626,0.13729509507423576,0.06579127337901558
+2025_to_date,低波趋势RP,低波趋势RP,低波趋势RP,原三资产RiskParity,1.0088139751015737,0.9452748468409684,0.8475810749377439,0.45471004541110327

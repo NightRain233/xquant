@@ -1,0 +1,12 @@
+﻿label,symbol,source,status,first_date,last_date,rows
+沪深300ETF,510300.SS,yfinance,available,2024-01-02,2026-06-22,594
+纳指100ETF,513100.SS,yfinance,available,2024-01-02,2026-06-22,595
+黄金ETF,518880.SS,yfinance,available,2024-01-02,2026-06-22,594
+有色金属ETF,512400.SS,yfinance,available,2024-01-02,2026-06-22,594
+芯片ETF,159995.SZ,yfinance,available,2024-01-02,2026-06-22,594
+通信ETF,515880.SS,yfinance,available,2024-01-02,2026-06-22,594
+中证全指,000985.SS,yfinance_optional,unavailable: insufficient rows (1),,,0
+中证全指,000985.CSI,yfinance_optional,unavailable: ValueError: No yfinance data for 000985.CSI,,,0
+中证偏股基金指数,930950.CSI,yfinance_optional,unavailable: ValueError: No yfinance data for 930950.CSI,,,0
+中证偏股基金指数,930950.SS,yfinance_optional,unavailable: ValueError: No yfinance data for 930950.SS,,,0
+偏股基金指数/Wind,885001.WI,yfinance_optional,unavailable: ValueError: No yfinance data for 885001.WI,,,0
