@@ -12,6 +12,7 @@ export function AnnualReturnsPanel({ rows }: AnnualReturnsPanelProps) {
   const recentRows = rows.slice(-10);
   const values = recentRows.flatMap((row) => Object.values(row.values));
   const maxAbs = Math.max(...values.map((value) => Math.abs(value)), 0.01);
+  const heatmapMinWidth = 92 + strategyNames.length * 168;
 
   function heatColor(value: number): string {
     const intensity = Math.min(Math.abs(value) / maxAbs, 1);
@@ -54,10 +55,16 @@ export function AnnualReturnsPanel({ rows }: AnnualReturnsPanelProps) {
           <h3 className="text-sm font-semibold text-ink">年度收益热力图</h3>
           <p className="mt-2 text-sm leading-6 text-ink/62">绿色代表正收益，红色代表负收益，颜色越深代表幅度越大。</p>
           <div className="mt-5 w-full overflow-x-auto">
-            <div className="grid min-w-[720px] gap-px bg-ink/10" style={{ gridTemplateColumns: `92px repeat(${strategyNames.length}, minmax(132px, 1fr))` }}>
+            <div
+              className="grid gap-px bg-ink/10"
+              style={{
+                gridTemplateColumns: `92px repeat(${strategyNames.length}, minmax(168px, 1fr))`,
+                minWidth: `${heatmapMinWidth}px`
+              }}
+            >
               <div className="bg-paper p-3 font-mono text-xs uppercase tracking-[0.12em] text-ink/45">Year</div>
               {strategyNames.map((name) => (
-                <div key={name} className="bg-paper p-3 text-xs font-semibold text-ink/70">
+                <div key={name} className="truncate bg-paper p-3 text-xs font-semibold text-ink/70" title={name}>
                   {name}
                 </div>
               ))}

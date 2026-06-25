@@ -19,6 +19,9 @@ export type CandidateMetric = {
   monthlyWinRate?: number;
   longestUnderwaterDays?: number;
   daysBelowTenDrawdown?: number;
+  daysBelowTwentyDrawdown?: number;
+  currentCash?: number;
+  annualCostDrag?: number;
 };
 
 export type TimeSeriesPoint = {
@@ -52,10 +55,18 @@ export type MonthlyStat = {
 };
 
 export type LatestSignal = {
-  latestDate: string;
-  btcClose: number;
-  btcSupertrendLine: number;
-  btcSupertrendOn: boolean;
+  latestDate?: string;
+  btcClose?: number;
+  btcSupertrendLine?: number;
+  btcSupertrendOn?: boolean;
+  title?: string;
+  stateLabel?: string;
+  stateTone?: "positive" | "warning" | "neutral";
+  rows?: Array<{
+    label: string;
+    value: string | number | boolean;
+    detail?: string;
+  }>;
 };
 
 export type TargetWeightRow = {
@@ -73,6 +84,65 @@ export type RiskNote = {
   body: string;
 };
 
+export type HighlightCard = {
+  label: string;
+  value: string;
+  detail: string;
+};
+
+export type StrategyBrief = {
+  plainLanguage: string;
+  objective: string;
+  mechanism: string[];
+  methodology?: Array<{
+    label: string;
+    value: string;
+  }>;
+  investorUse: string;
+  watchOut: string;
+  glossary: Array<{
+    term: string;
+    definition: string;
+  }>;
+};
+
+export type BenchmarkScorecardRow = {
+  role: string;
+  name: string;
+  annualReturn?: number;
+  maxDrawdown?: number;
+  sharpe?: number;
+  calmar?: number;
+  note: string;
+  verdict: string;
+};
+
+export type BenchmarkScorecard = {
+  title: string;
+  summary: string;
+  conclusion: string;
+  period?: {
+    startDate: string;
+    endDate: string;
+  };
+  rows: BenchmarkScorecardRow[];
+};
+
+export type StrategyCatalogItem = {
+  id: string;
+  name: string;
+  asOfDate: string;
+  headline: string;
+  summary: string;
+  paperTracking: StrategyStatus["paperTracking"];
+  liveTrading: StrategyStatus["liveTrading"];
+};
+
+export type StrategyCatalog = {
+  defaultStrategyId: string;
+  strategies: StrategyCatalogItem[];
+};
+
 export type StrategyPackage = {
   id: string;
   name: string;
@@ -84,6 +154,9 @@ export type StrategyPackage = {
     preferredPaperCaps: string[];
     growthCandidateCap: string;
   };
+  highlightCards?: HighlightCard[];
+  strategyBrief?: StrategyBrief;
+  benchmarkScorecard?: BenchmarkScorecard;
   candidateMetrics: CandidateMetric[];
   navSeries: TimeSeriesPoint[];
   underwaterSeries: TimeSeriesPoint[];

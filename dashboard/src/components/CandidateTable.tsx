@@ -6,6 +6,9 @@ type CandidateTableProps = {
 };
 
 export function CandidateTable({ metrics }: CandidateTableProps) {
+  const showCash = metrics.some((metric) => metric.averageCash !== undefined || metric.currentCash !== undefined);
+  const showCost = metrics.some((metric) => metric.annualCostDrag !== undefined || metric.annualTurnover !== undefined);
+
   return (
     <section className="min-w-0 overflow-hidden border border-ink/15 bg-paper">
       <div className="border-b border-ink/10 p-5">
@@ -24,6 +27,8 @@ export function CandidateTable({ metrics }: CandidateTableProps) {
               <th className="px-4 py-3 font-medium">Calmar</th>
               <th className="px-4 py-3 font-medium">最长水下</th>
               <th className="px-4 py-3 font-medium">-10% 天数</th>
+              {showCash ? <th className="px-4 py-3 font-medium">平均现金</th> : null}
+              {showCost ? <th className="px-4 py-3 font-medium">成本/换手</th> : null}
             </tr>
           </thead>
           <tbody className="divide-y divide-ink/10">
@@ -37,6 +42,16 @@ export function CandidateTable({ metrics }: CandidateTableProps) {
                 <td className="px-4 py-4 font-mono">{formatRatio(metric.calmar)}</td>
                 <td className="px-4 py-4 font-mono">{formatInteger(metric.longestUnderwaterDays ?? 0)}</td>
                 <td className="px-4 py-4 font-mono">{formatInteger(metric.daysBelowTenDrawdown ?? 0)}</td>
+                {showCash ? (
+                  <td className="px-4 py-4 font-mono">{formatPercent(metric.averageCash ?? metric.currentCash ?? 0)}</td>
+                ) : null}
+                {showCost ? (
+                  <td className="px-4 py-4 font-mono">
+                    {metric.annualCostDrag !== undefined
+                      ? formatPercent(metric.annualCostDrag)
+                      : formatRatio(metric.annualTurnover ?? 0)}
+                  </td>
+                ) : null}
               </tr>
             ))}
           </tbody>

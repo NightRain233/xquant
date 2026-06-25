@@ -1,15 +1,16 @@
 import { formatInteger, formatPercent, formatRatio } from "../data/formatters";
-import type { CandidateMetric } from "../data/types";
+import type { CandidateMetric, HighlightCard } from "../data/types";
 
 type MetricCardGridProps = {
   metrics: CandidateMetric[];
+  cards?: HighlightCard[];
 };
 
-export function MetricCardGrid({ metrics }: MetricCardGridProps) {
+export function MetricCardGrid({ metrics, cards: providedCards }: MetricCardGridProps) {
   const historicalWinner = metrics[metrics.length - 1];
   const balancedCandidate = metrics.find((metric) => metric.name.includes("7.5")) ?? historicalWinner;
 
-  const cards = [
+  const cards = providedCards ?? [
     {
       label: "历史收益最高",
       value: historicalWinner.name,

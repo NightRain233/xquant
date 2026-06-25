@@ -1,9 +1,11 @@
 import { AnnualReturnsPanel } from "../components/AnnualReturnsPanel";
+import { BenchmarkScorecardPanel } from "../components/BenchmarkScorecardPanel";
 import { CandidateTable } from "../components/CandidateTable";
 import { MetricCardGrid } from "../components/MetricCardGrid";
 import { MonthlyStatsPanel } from "../components/MonthlyStatsPanel";
 import { NavChart } from "../components/NavChart";
 import { StressSummaryPanel } from "../components/StressSummaryPanel";
+import { StrategyBriefPanel } from "../components/StrategyBriefPanel";
 import { UnderwaterChart } from "../components/UnderwaterChart";
 import type { StrategyPackage } from "../data/types";
 
@@ -14,7 +16,9 @@ type ResearchReportPageProps = {
 export function ResearchReportPage({ strategy }: ResearchReportPageProps) {
   return (
     <div className="min-w-0 space-y-5">
-      <MetricCardGrid metrics={strategy.candidateMetrics} />
+      {strategy.strategyBrief ? <StrategyBriefPanel brief={strategy.strategyBrief} /> : null}
+      {strategy.benchmarkScorecard ? <BenchmarkScorecardPanel scorecard={strategy.benchmarkScorecard} /> : null}
+      <MetricCardGrid metrics={strategy.candidateMetrics} cards={strategy.highlightCards} />
       <CandidateTable metrics={strategy.candidateMetrics} />
       <div className="grid min-w-0 gap-5 xl:grid-cols-2">
         <NavChart series={strategy.navSeries} />

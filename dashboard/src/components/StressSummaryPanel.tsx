@@ -1,4 +1,4 @@
-import { formatPercent } from "../data/formatters";
+import { formatInteger, formatPercent, formatRatio } from "../data/formatters";
 import type { StressSummary } from "../data/types";
 
 type StressSummaryPanelProps = {
@@ -6,29 +6,77 @@ type StressSummaryPanelProps = {
 };
 
 export function StressSummaryPanel({ summaries }: StressSummaryPanelProps) {
-  const implementation = summaries.find((summary) => summary.id === "implementation");
-  const rows = implementation?.rows ?? [];
+  return (
+    <section className="space-y-5">
+      {summaries.map((summary) => (
+        <StressSummaryBlock key={summary.id} summary={summary} />
+      ))}
+    </section>
+  );
+}
+
+function StressSummaryBlock({ summary }: { summary: StressSummary }) {
+  const rows = summary.rows;
+  const columns = Object.keys(rows[0] ?? {});
 
   return (
-    <section className="border border-ink/15 bg-paper">
+    <section className="min-w-0 overflow-hidden border border-ink/15 bg-paper">
       <div className="border-b border-ink/10 p-5">
         <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/45">Stress evidence</p>
-        <h2 className="mt-2 text-xl font-semibold tracking-tight">执行压力测试</h2>
+        <h2 className="mt-2 text-xl font-semibold tracking-tight">{summary.title}</h2>
       </div>
-      <div className="grid gap-px bg-ink/10 md:grid-cols-3">
-        {rows.map((row) => (
-          <div key={String(row.cap)} className="bg-paper p-5">
-            <p className="font-mono text-xs uppercase tracking-[0.12em] text-ink/45">
-              BTC cap {formatPercent(Number(row.cap), 1)}
-            </p>
-            <p className="mt-3 text-3xl font-semibold tracking-tight">{formatPercent(Number(row["通过率"]), 0)}</p>
-            <p className="mt-2 text-sm leading-6 text-ink/62">
-              54 个成本、滑点和执行延迟组合全部通过；最低年化{" "}
-              <span className="font-mono text-ink">{formatPercent(Number(row["最低年化收益"]))}</span>
-            </p>
-          </div>
-        ))}
+      <div className="w-full overflow-x-auto">
+        <table className="min-w-[760px] border-collapse text-left text-sm">
+          <thead className="bg-ink/[0.04] text-xs uppercase tracking-[0.12em] text-ink/48">
+            <tr>
+              {columns.map((column) => (
+                <th key={column} className="px-5 py-3 font-medium">
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-ink/10">
+            {rows.map((row, index) => (
+              <tr key={`${summary.id}-${index}`} className="transition hover:bg-ink/[0.03]">
+                {columns.map((column) => (
+                  <td key={column} className="px-5 py-4 font-mono">
+                    {formatCellValue(column, row[column])}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   );
+}
+
+function formatCellValue(key: string, value: string | number | boolean): string {
+  if (typeof value === "boolean") {
+    return value ? "True" : "False";
+  }
+
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (key.toLowerCase().includes("days") || key.includes("天数") || key.includes("aum") || key.includes("trades")) {
+    return formatInteger(value);
+  }
+
+  if (
+    key.includes("收益") ||
+    key.includes("回撤") ||
+    key.includes("现金") ||
+    key.includes("成本") ||
+    key.toLowerCase().includes("participation") ||
+    key.toLowerCase().includes("drag") ||
+    key === "cap"
+  ) {
+    return formatPercent(value);
+  }
+
+  return formatRatio(value);
 }

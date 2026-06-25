@@ -15,6 +15,106 @@
     ],
     "growthCandidateCap": "10%"
   },
+  "strategyBrief": {
+    "plainLanguage": "这是一个以三资产 RiskParity 为核心、用 BTC SuperTrend 趋势信号做小比例卫星增强的组合策略。",
+    "objective": "观察 BTC 趋势收益是否能在可控回撤和可执行成本下改善核心组合。",
+    "mechanism": [
+      "核心仓位仍由沪深300、纳指100、黄金的 RiskParity 结构承担。",
+      "BTC 只作为 5% / 7.5% / 10% 上限的卫星仓位，不是组合主引擎。",
+      "当 BTC close 高于 SuperTrend line 时卫星开启，否则卫星仓位进入现金。"
+    ],
+    "investorUse": "适合用来观察小比例 BTC 趋势增强是否值得进入纸面跟踪，而不是作为单独押注 BTC 的展示页。",
+    "watchOut": "如果未来 BTC 趋势收益消失，卫星层可能只增加复杂度和执行摩擦。",
+    "glossary": [
+      {
+        "term": "RiskParity",
+        "definition": "按风险贡献而非资金比例来配置沪深300、纳指100和黄金的核心组合。"
+      },
+      {
+        "term": "BTC 卫星",
+        "definition": "核心组合之外的小比例增强仓位，用来测试 BTC 趋势收益是否值得承担。"
+      },
+      {
+        "term": "SuperTrend",
+        "definition": "以价格和波动率构造的趋势线，价格站上线视为趋势打开，跌破则降低或关闭 BTC 暴露。"
+      },
+      {
+        "term": "纸面跟踪",
+        "definition": "先按实盘规则记录信号、成本和成交可行性，但不直接投入真实资金。"
+      }
+    ]
+  },
+  "benchmarkScorecard": {
+    "title": "评价坐标系",
+    "summary": "先用三资产 RiskParity 判断卫星层是否真的增厚组合，再把主动偏股基金、沪深300全收益和纳指100全收益放到同一回测窗口里，帮助投资者理解机会成本、A股Beta和海外成长Beta。",
+    "conclusion": "结论：BTC7.5%ST卫星年化 19.49%，明显跑赢主动偏股和沪深300全收益，且最大回撤约 -12.75%，相对两条权益参考线回撤明显更浅；但它没有跑赢纳指100全收益 22.01% 的年化。评价上更像是用多资产和 BTC 趋势过滤换取更平滑路径，而不是追求最高进攻收益；BTC10%ST卫星只作进攻观察，默认仍应先纸面跟踪 5% / 7.5%。",
+    "period": {
+      "startDate": "2016-06-21",
+      "endDate": "2026-06-23"
+    },
+    "rows": [
+      {
+        "role": "内部基准",
+        "name": "原三资产RiskParity",
+        "annualReturn": 0.1570815707449973,
+        "maxDrawdown": -0.13531457708322492,
+        "sharpe": 1.3560755526228747,
+        "calmar": 1.160862149008415,
+        "note": "不含 BTC 卫星的原始三资产组合，用来判断新增复杂度是否值得。",
+        "verdict": "必须跑赢或改善路径"
+      },
+      {
+        "role": "默认观察候选",
+        "name": "BTC7.5%ST卫星",
+        "annualReturn": 0.19485364720798293,
+        "maxDrawdown": -0.12745788537984526,
+        "sharpe": 1.668716194387128,
+        "calmar": 1.5287688684563323,
+        "note": "纸面跟踪优先候选之一，收益、回撤和 BTC 依赖之间较均衡。",
+        "verdict": "进入纸面跟踪"
+      },
+      {
+        "role": "进攻观察",
+        "name": "BTC10%ST卫星",
+        "annualReturn": 0.2073290092120652,
+        "maxDrawdown": -0.12814327118672453,
+        "sharpe": 1.7299242630139071,
+        "calmar": 1.617946906552392,
+        "note": "历史表现更强，但对 BTC 趋势持续性的依赖更高。",
+        "verdict": "只作观察"
+      },
+      {
+        "role": "主动权益基金参考线",
+        "name": "中证主动偏股型基金指数",
+        "annualReturn": 0.08302323796200195,
+        "maxDrawdown": -0.5000873536825816,
+        "sharpe": 0.5098487009810239,
+        "calmar": 0.16601747144899598,
+        "note": "2016-06-21 至 2026-06-23 同周期计算，累计收益 115.64%。数据源：中证指数 932055，用作主动权益基金机会成本 proxy。",
+        "verdict": "同周期参考"
+      },
+      {
+        "role": "宽基指数参考线",
+        "name": "沪深300全收益指数",
+        "annualReturn": 0.07455035239516739,
+        "maxDrawdown": -0.41561007195195276,
+        "sharpe": 0.48529370994295773,
+        "calmar": 0.17937571157752377,
+        "note": "2016-06-21 至 2026-06-23 同周期计算，累计收益 99.98%。数据源：中证指数 H00300，全收益口径，用作 A 股大盘含分红再投资参考。",
+        "verdict": "A股Beta参考"
+      },
+      {
+        "role": "海外成长参考线",
+        "name": "纳斯达克100全收益指数",
+        "annualReturn": 0.2201469644536589,
+        "maxDrawdown": -0.3503672496082483,
+        "sharpe": 0.9913994849259498,
+        "calmar": 0.6283320278930438,
+        "note": "2016-06-21 至 2026-06-23 同周期计算，累计收益 627.89%。数据源：FRED NASDAQXNDX / Nasdaq，全收益美元口径，不含境内 QDII 汇率、溢价和申赎约束。",
+        "verdict": "海外成长参考"
+      }
+    ]
+  },
   "candidateMetrics": [
     {
       "id": "原三资产RiskParity",
@@ -44905,6 +45005,9 @@
     }
   ],
   "sourceFiles": [
+    "outputs/benchmarks/csi932055_active_partial_equity_fund.csv",
+    "outputs/benchmarks/csi_h00300_csi300_total_return.csv",
+    "outputs/benchmarks/fred_nasdaqxndx_nasdaq100_total_return.csv",
     "outputs/q10-live-readiness-stress/research_summary.csv",
     "outputs/q10-live-readiness-stress/base_candidate_metrics.csv",
     "outputs/q10-live-readiness-stress/base_candidate_nav.csv",
