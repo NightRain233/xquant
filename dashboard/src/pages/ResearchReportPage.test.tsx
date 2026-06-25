@@ -1,0 +1,23 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import strategy from "../../public/data/strategies/btc-supertrend-satellite/strategy.json";
+import type { StrategyPackage } from "../data/types";
+import { ResearchReportPage } from "./ResearchReportPage";
+
+vi.mock("echarts-for-react", () => ({
+  default: () => <div data-testid="chart" />
+}));
+
+describe("ResearchReportPage", () => {
+  it("renders candidate metrics and implementation stress evidence", () => {
+    render(<ResearchReportPage strategy={strategy as StrategyPackage} />);
+
+    expect(screen.getByText("候选对比")).toBeInTheDocument();
+    expect(screen.getAllByText("BTC7.5%ST卫星").length).toBeGreaterThan(0);
+    expect(screen.getByText("19.49%")).toBeInTheDocument();
+    expect(screen.getByText("-12.75%")).toBeInTheDocument();
+    expect(screen.getByText("1.67")).toBeInTheDocument();
+    expect(screen.getByText("1.53")).toBeInTheDocument();
+    expect(screen.getAllByText("100%").length).toBeGreaterThan(0);
+  });
+});

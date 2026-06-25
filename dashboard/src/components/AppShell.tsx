@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { StrategyPackage } from "../data/types";
+import { ResearchReportPage } from "../pages/ResearchReportPage";
 import { DecisionStrip } from "./DecisionStrip";
 import { type DashboardMode, ModeTabs } from "./ModeTabs";
 
@@ -28,13 +29,13 @@ export function AppShell({ strategy }: AppShellProps) {
 
         <main className="space-y-5">
           <DecisionStrip strategy={strategy} />
-          <div className="border border-ink/15 bg-paper p-6">
-            {mode === "report" ? (
-              <p className="text-sm text-ink/70">研究汇报内容将在下一步接入。</p>
-            ) : (
+          {mode === "report" ? (
+            <ResearchReportPage strategy={strategy} />
+          ) : (
+            <div className="border border-ink/15 bg-paper p-6">
               <p className="text-sm text-ink/70">纸面跟踪内容将在下一步接入。</p>
-            )}
-          </div>
+            </div>
+          )}
         </main>
       </div>
     </div>
