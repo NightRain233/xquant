@@ -8,6 +8,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "fetch:benchmarks": "tsx scripts/fetch-benchmarks.ts",
     "refresh:data": "tsx scripts/build-data.ts",
     "build:data": "npm run refresh:data"
   },
