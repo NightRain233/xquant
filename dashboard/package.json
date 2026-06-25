@@ -8,7 +8,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "build:data": "tsx scripts/build-data.ts"
+    "refresh:data": "tsx scripts/build-data.ts",
+    "build:data": "npm run refresh:data"
   },
   "dependencies": {
     "echarts": "^6.0.0",
