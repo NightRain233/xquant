@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #141412;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+  margin: 0;
+  background:
+    linear-gradient(90deg, rgba(20, 20, 18, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(20, 20, 18, 0.025) 1px, transparent 1px),
+    #f7f5ef;
+  background-size: 40px 40px;
+}
+
+button {
+  font: inherit;
+}

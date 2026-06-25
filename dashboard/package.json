@@ -1,0 +1,39 @@
+{
+  "name": "xquant-strategy-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "build:data": "tsx scripts/build-data.ts"
+  },
+  "dependencies": {
+    "echarts": "^6.0.0",
+    "echarts-for-react": "^3.0.2",
+    "lucide-react": "^0.468.0",
+    "papaparse": "^5.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.1",
+    "@types/papaparse": "^5.3.15",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "autoprefixer": "^10.4.20",
+    "jsdom": "^25.0.1",
+    "playwright": "^1.49.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^7.3.0",
+    "vitest": "^4.1.9"
+  }
+}
