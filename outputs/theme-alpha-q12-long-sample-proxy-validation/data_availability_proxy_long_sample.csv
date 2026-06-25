@@ -1,0 +1,12 @@
+﻿layer,role,symbol,name,first_date,last_date,price_rows,volume_rows,proxy_note
+proxy_long_sample,CSI300,ASHR,ASHR A股代理,2014-01-02,2026-06-24,3137,3137,ASHR 是美元计价 A 股 ETF，不等同人民币沪深300ETF或指数。
+proxy_long_sample,NASDAQ,QQQ,QQQ 纳指代理,2014-01-02,2026-06-24,3137,3137,QQQ 是美元计价美国 ETF，和境内 QDII 纳指 ETF 有汇率、限购和溢价差异。
+proxy_long_sample,GOLD,GLD,GLD 黄金代理,2014-01-02,2026-06-24,3137,3137,GLD 是美元计价黄金 ETF，和境内黄金 ETF 的货币与交易时段不同。
+proxy_long_sample,NONFERROUS,DBB,DBB 基本金属代理,2014-01-02,2026-06-24,3137,3137,DBB 跟踪基本金属期货，不等同有色金属股票 ETF。
+proxy_long_sample,CHIP,SOXX,SOXX 半导体代理,2014-01-02,2026-06-24,3137,3137,SOXX 是美国半导体股票 ETF，不等同中国芯片 ETF。
+proxy_long_sample,COMM,VOX,VOX 通信服务代理,2014-01-02,2026-06-24,3137,3137,VOX 是美国通信服务 ETF，不等同中国通信 ETF。
+proxy_long_sample,DIVIDEND,DVY,DVY 股息代理,2014-01-02,2026-06-24,3137,3137,DVY 是美国高股息 ETF，不等同中国红利 ETF。
+proxy_long_sample,ENERGY,XLE,XLE 能源代理,2014-01-02,2026-06-24,3137,3137,XLE 是美国能源股票 ETF，不等同中国能源 ETF。
+proxy_long_sample,BROKER,KCE,KCE 券商/资本市场代理,2014-01-02,2026-06-24,3137,3137,KCE 是美国资本市场/券商 ETF，不等同中国证券 ETF。
+proxy_long_sample,HK_TECH,KWEB,KWEB 中国互联网代理,2014-01-02,2026-06-24,3137,3137,KWEB 是中国互联网 ETF，不等同恒生科技 ETF。
+proxy_long_sample,HEALTHCARE,XLV,XLV 医疗代理,2014-01-02,2026-06-24,3137,3137,XLV 是美国医疗 ETF，不等同中国医疗 ETF。
