@@ -32,6 +32,25 @@ export type StressSummary = {
   rows: Array<Record<string, string | number | boolean>>;
 };
 
+export type AnnualReturnRow = {
+  year: string;
+  values: Record<string, number>;
+};
+
+export type MonthlyStat = {
+  id: string;
+  name: string;
+  totalMonths: number;
+  winningMonths: number;
+  losingMonths: number;
+  monthlyWinRate: number;
+  averageWinningMonth: number;
+  averageLosingMonth: number;
+  profitFactor: number;
+  bestMonth: number;
+  worstMonth: number;
+};
+
 export type LatestSignal = {
   latestDate: string;
   btcClose: number;
@@ -68,6 +87,8 @@ export type StrategyPackage = {
   candidateMetrics: CandidateMetric[];
   navSeries: TimeSeriesPoint[];
   underwaterSeries: TimeSeriesPoint[];
+  annualReturns: AnnualReturnRow[];
+  monthlyStats: MonthlyStat[];
   stressSummaries: StressSummary[];
   latestSignal: LatestSignal;
   targetWeights: TargetWeightRow[];

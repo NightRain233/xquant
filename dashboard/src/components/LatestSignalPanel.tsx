@@ -40,6 +40,13 @@ export function LatestSignalPanel({ signal }: LatestSignalPanelProps) {
           <dd className="mt-2 font-mono text-lg">{formatNumber(signal.btcSupertrendLine)}</dd>
         </div>
       </dl>
+      <div className="mt-4 border border-ink/10 bg-ink/[0.03] p-4">
+        <p className="text-sm font-semibold text-ink">不会自动实时更新</p>
+        <p className="mt-2 text-sm leading-6 text-ink/62">
+          当前面板读取的是已生成的研究输出文件。更新信号和权重需要先刷新研究产物，再运行{" "}
+          <span className="font-mono text-ink">npm run build:data</span> 重新生成前端数据。
+        </p>
+      </div>
     </section>
   );
 }

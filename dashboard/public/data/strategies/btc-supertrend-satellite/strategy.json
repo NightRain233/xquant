@@ -7,8 +7,8 @@
     "liveTrading": "not-yet"
   },
   "recommendation": {
-    "headline": "Paper tracking recommended; live capital waits.",
-    "summary": "BTC 5% and 7.5% SuperTrend satellite caps are the preferred first paper-tracking candidates. BTC 10% remains the historical winner and growth observation candidate, but it depends more visibly on future BTC trend contribution.",
+    "headline": "建议进入纸面跟踪，暂不直接实盘。",
+    "summary": "BTC 5% 和 7.5% SuperTrend 卫星更适合作为第一批纸面跟踪对象；BTC 10% 仍是历史表现最强的进攻观察候选，但对未来 BTC 趋势收益的依赖更明显。",
     "preferredPaperCaps": [
       "5%",
       "7.5%"
@@ -43757,6 +43757,161 @@
       }
     }
   ],
+  "annualReturns": [
+    {
+      "year": "2016",
+      "values": {
+        "原三资产RiskParity": 0.01308803773245315,
+        "BTC5%ST卫星": 0.03441177170787624,
+        "BTC7.5%ST卫星": 0.045211637435111474,
+        "BTC10%ST卫星": 0.05610425537796382
+      }
+    },
+    {
+      "year": "2017",
+      "values": {
+        "原三资产RiskParity": 0.1635319508016464,
+        "BTC5%ST卫星": 0.29146571953300704,
+        "BTC7.5%ST卫星": 0.35962531814657894,
+        "BTC10%ST卫星": 0.43069114425936994
+      }
+    },
+    {
+      "year": "2018",
+      "values": {
+        "原三资产RiskParity": -0.024465111534449524,
+        "BTC5%ST卫星": -0.05515021453562641,
+        "BTC7.5%ST卫星": -0.07024771894697868,
+        "BTC10%ST卫星": -0.0851822240507607
+      }
+    },
+    {
+      "year": "2019",
+      "values": {
+        "原三资产RiskParity": 0.31331446613979286,
+        "BTC5%ST卫星": 0.35215842016676135,
+        "BTC7.5%ST卫星": 0.37159714108920694,
+        "BTC10%ST卫星": 0.3910377856912173
+      }
+    },
+    {
+      "year": "2020",
+      "values": {
+        "原三资产RiskParity": 0.28127288812059326,
+        "BTC5%ST卫星": 0.3422073147214748,
+        "BTC7.5%ST卫星": 0.37340053704347675,
+        "BTC10%ST卫星": 0.40507908962129036
+      }
+    },
+    {
+      "year": "2021",
+      "values": {
+        "原三资产RiskParity": 0.03051876256239683,
+        "BTC5%ST卫星": 0.052959907722704536,
+        "BTC7.5%ST卫星": 0.06405274418318374,
+        "BTC10%ST卫星": 0.0750535115066262
+      }
+    },
+    {
+      "year": "2022",
+      "values": {
+        "原三资产RiskParity": -0.07941241017439671,
+        "BTC5%ST卫星": -0.0760150451035595,
+        "BTC7.5%ST卫星": -0.07437257097587469,
+        "BTC10%ST卫星": -0.07276789493182922
+      }
+    },
+    {
+      "year": "2023",
+      "values": {
+        "原三资产RiskParity": 0.18219130989634524,
+        "BTC5%ST卫星": 0.1965183120995322,
+        "BTC7.5%ST卫星": 0.20360682602504832,
+        "BTC10%ST卫星": 0.21064365710571864
+      }
+    },
+    {
+      "year": "2024",
+      "values": {
+        "原三资产RiskParity": 0.28575540617361517,
+        "BTC5%ST卫星": 0.30104980017149385,
+        "BTC7.5%ST卫星": 0.30844437496404087,
+        "BTC10%ST卫星": 0.31566644484670126
+      }
+    },
+    {
+      "year": "2025",
+      "values": {
+        "原三资产RiskParity": 0.3777846600229908,
+        "BTC5%ST卫星": 0.3627515373743806,
+        "BTC7.5%ST卫星": 0.35520350584008353,
+        "BTC10%ST卫星": 0.34763555287789605
+      }
+    },
+    {
+      "year": "2026",
+      "values": {
+        "原三资产RiskParity": 0.03171089675101424,
+        "BTC5%ST卫星": 0.017630797016096933,
+        "BTC7.5%ST卫星": 0.010595054739103382,
+        "BTC10%ST卫星": 0.0035629862805564017
+      }
+    }
+  ],
+  "monthlyStats": [
+    {
+      "id": "原三资产RiskParity",
+      "name": "原三资产RiskParity",
+      "totalMonths": 121,
+      "winningMonths": 77,
+      "losingMonths": 43,
+      "monthlyWinRate": 0.6363636363636364,
+      "averageWinningMonth": 0.025231558035848936,
+      "averageLosingMonth": -0.017552567732652274,
+      "profitFactor": 2.5741015778963483,
+      "bestMonth": 0.09653297951012707,
+      "worstMonth": -0.07768777335608457
+    },
+    {
+      "id": "BTC5%ST卫星",
+      "name": "BTC5%ST卫星",
+      "totalMonths": 121,
+      "winningMonths": 80,
+      "losingMonths": 40,
+      "monthlyWinRate": 0.6611570247933884,
+      "averageWinningMonth": 0.026102307541036214,
+      "averageLosingMonth": -0.01805138026331569,
+      "profitFactor": 2.8920012941150817,
+      "bestMonth": 0.09153240400706153,
+      "worstMonth": -0.07383977906540284
+    },
+    {
+      "id": "BTC7.5%ST卫星",
+      "name": "BTC7.5%ST卫星",
+      "totalMonths": 121,
+      "winningMonths": 80,
+      "losingMonths": 40,
+      "monthlyWinRate": 0.6611570247933884,
+      "averageWinningMonth": 0.027264406047094625,
+      "averageLosingMonth": -0.018137610100646424,
+      "profitFactor": 3.0063945465585813,
+      "bestMonth": 0.10041402913821096,
+      "worstMonth": -0.07191422515388413
+    },
+    {
+      "id": "BTC10%ST卫星",
+      "name": "BTC10%ST卫星",
+      "totalMonths": 121,
+      "winningMonths": 78,
+      "losingMonths": 42,
+      "monthlyWinRate": 0.6446280991735537,
+      "averageWinningMonth": 0.02938071333874815,
+      "averageLosingMonth": -0.01776668480726241,
+      "profitFactor": 3.0711515686096953,
+      "bestMonth": 0.11083842126191112,
+      "worstMonth": -0.07119427658777755
+    }
+  ],
   "stressSummaries": [
     {
       "id": "implementation",
@@ -44737,16 +44892,16 @@
   ],
   "riskNotes": [
     {
-      "title": "BTC trend contribution can disappear",
-      "body": "The satellite does not require BTC to repeat the last decade, but it still needs some future positive trend return."
+      "title": "BTC 趋势收益可能消失",
+      "body": "卫星仓位不要求 BTC 重演过去十年的完整涨幅，但仍然需要未来存在一部分正向趋势收益。"
     },
     {
-      "title": "Core assets still drive the portfolio",
-      "body": "The BTC sleeve is an enhancement layer. If the three-asset RiskParity core weakens sharply, the satellite cannot rescue the whole portfolio."
+      "title": "核心资产仍是组合主体",
+      "body": "BTC 卫星是增强层，不是独立发动机。如果三资产 RiskParity 核心明显走弱，卫星仓位无法单独拯救组合。"
     },
     {
-      "title": "Execution assumptions are incomplete",
-      "body": "Actual BTC access, tax, spread, premium or discount, trading-hour mismatch, and account constraints still need paper-trading evidence."
+      "title": "执行假设仍需纸面验证",
+      "body": "实际 BTC 工具、税费、点差、溢价折价、交易时段差异和账户限制，都需要通过纸面跟踪继续记录。"
     }
   ],
   "sourceFiles": [

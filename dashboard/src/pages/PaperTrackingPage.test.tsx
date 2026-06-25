@@ -15,5 +15,7 @@ describe("PaperTrackingPage", () => {
     expect(screen.getByText("BTC5.0%ST卫星")).toBeInTheDocument();
     expect(screen.getByText("43.65%")).toBeInTheDocument();
     expect(screen.getByText("每 10 个 ETF 交易日检查一次")).toBeInTheDocument();
+    expect(screen.getByText("不会自动实时更新")).toBeInTheDocument();
+    expect(screen.getByText("BTC 趋势收益可能消失")).toBeInTheDocument();
   });
 });

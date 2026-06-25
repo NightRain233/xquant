@@ -28,6 +28,10 @@ describe("BTC strategy data builder", () => {
     expect(strategy.targetWeights).toHaveLength(3);
     expect(strategy.navSeries.length).toBeGreaterThan(1000);
     expect(strategy.underwaterSeries.length).toBeGreaterThan(1000);
+    expect(strategy.annualReturns.length).toBeGreaterThan(8);
+    expect(strategy.monthlyStats).toHaveLength(4);
+    expect(strategy.recommendation.headline).toContain("建议进入纸面跟踪");
+    expect(strategy.riskNotes[0].title).toBe("BTC 趋势收益可能消失");
     expect(strategy.stressSummaries.map((summary) => summary.id)).toContain("implementation");
   });
 

@@ -2,8 +2,10 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import Papa from "papaparse";
 import type {
+  AnnualReturnRow,
   CandidateMetric,
   LatestSignal,
+  MonthlyStat,
   PaperTradingRule,
   StrategyPackage,
   StressSummary,
@@ -95,6 +97,65 @@ function normalizeSeries(rows: CsvRow[]): TimeSeriesPoint[] {
   });
 }
 
+function calculateAnnualReturns(series: TimeSeriesPoint[]): AnnualReturnRow[] {
+  const byYear = new Map<string, TimeSeriesPoint[]>();
+
+  for (const point of series) {
+    const year = point.date.slice(0, 4);
+    byYear.set(year, [...(byYear.get(year) ?? []), point]);
+  }
+
+  return [...byYear.entries()].map(([year, points]) => {
+    const first = points[0];
+    const last = points[points.length - 1];
+
+    return {
+      year,
+      values: Object.fromEntries(
+        Object.keys(last.values).map((name) => [name, last.values[name] / first.values[name] - 1])
+      )
+    };
+  });
+}
+
+function calculateMonthlyStats(series: TimeSeriesPoint[], metrics: CandidateMetric[]): MonthlyStat[] {
+  const byMonth = new Map<string, TimeSeriesPoint[]>();
+
+  for (const point of series) {
+    const month = point.date.slice(0, 7);
+    byMonth.set(month, [...(byMonth.get(month) ?? []), point]);
+  }
+
+  const monthlyReturns = [...byMonth.values()].map((points) => {
+    const first = points[0];
+    const last = points[points.length - 1];
+
+    return Object.fromEntries(Object.keys(last.values).map((name) => [name, last.values[name] / first.values[name] - 1]));
+  });
+
+  return metrics.map((metric) => {
+    const returns = monthlyReturns.map((row) => row[metric.name]).filter((value) => Number.isFinite(value));
+    const wins = returns.filter((value) => value > 0);
+    const losses = returns.filter((value) => value < 0);
+    const winSum = wins.reduce((sum, value) => sum + value, 0);
+    const lossSum = losses.reduce((sum, value) => sum + value, 0);
+
+    return {
+      id: metric.id,
+      name: metric.name,
+      totalMonths: returns.length,
+      winningMonths: wins.length,
+      losingMonths: losses.length,
+      monthlyWinRate: returns.length > 0 ? wins.length / returns.length : 0,
+      averageWinningMonth: wins.length > 0 ? winSum / wins.length : 0,
+      averageLosingMonth: losses.length > 0 ? lossSum / losses.length : 0,
+      profitFactor: lossSum < 0 ? winSum / Math.abs(lossSum) : 0,
+      bestMonth: Math.max(...returns),
+      worstMonth: Math.min(...returns)
+    };
+  });
+}
+
 function normalizeLatestSignal(rows: CsvRow[]): LatestSignal {
   const values = keyedValue(rows);
 
@@ -179,6 +240,8 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
 
   const researchSummary = keyedValue(researchSummaryRows);
   const latestSignal = normalizeLatestSignal(latestSignalRows);
+  const candidateMetrics = metricRows.map(normalizeMetric);
+  const navSeries = normalizeSeries(navRows);
 
   return {
     id: STRATEGY_ID,
@@ -192,34 +255,36 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
           : "ready"
     },
     recommendation: {
-      headline: "Paper tracking recommended; live capital waits.",
+      headline: "建议进入纸面跟踪，暂不直接实盘。",
       summary:
-        "BTC 5% and 7.5% SuperTrend satellite caps are the preferred first paper-tracking candidates. BTC 10% remains the historical winner and growth observation candidate, but it depends more visibly on future BTC trend contribution.",
+        "BTC 5% 和 7.5% SuperTrend 卫星更适合作为第一批纸面跟踪对象；BTC 10% 仍是历史表现最强的进攻观察候选，但对未来 BTC 趋势收益的依赖更明显。",
       preferredPaperCaps: researchSummary.preferred_paper_caps
         .split(",")
         .map((item) => item.trim())
         .filter(Boolean),
       growthCandidateCap: researchSummary.growth_candidate_cap
     },
-    candidateMetrics: metricRows.map(normalizeMetric),
-    navSeries: normalizeSeries(navRows),
+    candidateMetrics,
+    navSeries,
     underwaterSeries: normalizeSeries(underwaterRows),
+    annualReturns: calculateAnnualReturns(navSeries),
+    monthlyStats: calculateMonthlyStats(navSeries, candidateMetrics),
     stressSummaries: buildStressSummaries(implementationRows, btcHaircutRows, coreHaircutRows),
     latestSignal,
     targetWeights: normalizeTargetWeights(targetWeightRows),
     paperTradingRules: normalizeRules(ruleRows),
     riskNotes: [
       {
-        title: "BTC trend contribution can disappear",
-        body: "The satellite does not require BTC to repeat the last decade, but it still needs some future positive trend return."
+        title: "BTC 趋势收益可能消失",
+        body: "卫星仓位不要求 BTC 重演过去十年的完整涨幅，但仍然需要未来存在一部分正向趋势收益。"
       },
       {
-        title: "Core assets still drive the portfolio",
-        body: "The BTC sleeve is an enhancement layer. If the three-asset RiskParity core weakens sharply, the satellite cannot rescue the whole portfolio."
+        title: "核心资产仍是组合主体",
+        body: "BTC 卫星是增强层，不是独立发动机。如果三资产 RiskParity 核心明显走弱，卫星仓位无法单独拯救组合。"
       },
       {
-        title: "Execution assumptions are incomplete",
-        body: "Actual BTC access, tax, spread, premium or discount, trading-hour mismatch, and account constraints still need paper-trading evidence."
+        title: "执行假设仍需纸面验证",
+        body: "实际 BTC 工具、税费、点差、溢价折价、交易时段差异和账户限制，都需要通过纸面跟踪继续记录。"
       }
     ],
     sourceFiles

@@ -19,5 +19,8 @@ describe("ResearchReportPage", () => {
     expect(screen.getByText("1.67")).toBeInTheDocument();
     expect(screen.getByText("1.53")).toBeInTheDocument();
     expect(screen.getAllByText("100%").length).toBeGreaterThan(0);
+    expect(screen.getByText("年度收益")).toBeInTheDocument();
+    expect(screen.getByText("月度统计")).toBeInTheDocument();
+    expect(screen.getAllByText("BTC7.5%ST卫星").length).toBeGreaterThan(1);
   });
 });

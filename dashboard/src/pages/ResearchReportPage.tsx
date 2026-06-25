@@ -1,5 +1,7 @@
+import { AnnualReturnsPanel } from "../components/AnnualReturnsPanel";
 import { CandidateTable } from "../components/CandidateTable";
 import { MetricCardGrid } from "../components/MetricCardGrid";
+import { MonthlyStatsPanel } from "../components/MonthlyStatsPanel";
 import { NavChart } from "../components/NavChart";
 import { StressSummaryPanel } from "../components/StressSummaryPanel";
 import { UnderwaterChart } from "../components/UnderwaterChart";
@@ -18,6 +20,8 @@ export function ResearchReportPage({ strategy }: ResearchReportPageProps) {
         <NavChart series={strategy.navSeries} />
         <UnderwaterChart series={strategy.underwaterSeries} />
       </div>
+      <AnnualReturnsPanel rows={strategy.annualReturns} />
+      <MonthlyStatsPanel rows={strategy.monthlyStats} />
       <StressSummaryPanel summaries={strategy.stressSummaries} />
     </div>
   );

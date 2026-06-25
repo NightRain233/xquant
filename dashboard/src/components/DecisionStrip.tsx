@@ -9,7 +9,7 @@ export function DecisionStrip({ strategy }: DecisionStripProps) {
   return (
     <section className="grid gap-px overflow-hidden border border-ink/15 bg-ink/15 md:grid-cols-[1.4fr_1fr_1fr]">
       <div className="bg-paper p-5">
-        <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink/50">Current conclusion</p>
+        <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink/50">当前结论</p>
         <h2 className="mt-2 text-2xl font-semibold tracking-tight text-ink">{strategy.recommendation.headline}</h2>
         <p className="mt-3 max-w-3xl text-sm leading-6 text-ink/68">{strategy.recommendation.summary}</p>
       </div>
