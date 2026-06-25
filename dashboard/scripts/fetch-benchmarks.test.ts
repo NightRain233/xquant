@@ -3,7 +3,9 @@ import {
   buildCsindexPerfUrl,
   buildFredCsvUrl,
   normalizeCsindexRows,
-  normalizeFredRows
+  normalizeFredRows,
+  resolveBenchmarkWindow,
+  serializeBenchmarkRows
 } from "./fetch-benchmarks";
 
 describe("benchmark fetch helpers", () => {
@@ -12,6 +14,17 @@ describe("benchmark fetch helpers", () => {
     expect(buildCsindexPerfUrl("H00300", "2016-06-21", "2026-06-24")).toContain("startDate=20160621");
     expect(buildFredCsvUrl("NASDAQXNDX", "2016-06-21", "2026-06-24")).toContain("id=NASDAQXNDX");
     expect(buildFredCsvUrl("NASDAQXNDX", "2016-06-21", "2026-06-24")).toContain("cosd=2016-06-21");
+  });
+
+  it("resolves benchmark refresh dates from explicit input instead of a stale hard-coded end date", () => {
+    expect(resolveBenchmarkWindow({ endDate: "2026-07-15" })).toEqual({
+      startDate: "2016-06-21",
+      endDate: "2026-07-15"
+    });
+    expect(resolveBenchmarkWindow({ env: {}, today: new Date("2026-07-16T03:00:00.000Z") })).toEqual({
+      startDate: "2016-06-21",
+      endDate: "2026-07-16"
+    });
   });
 
   it("normalizes CSIndex rows and preserves total-return benchmark identity", () => {
@@ -51,5 +64,19 @@ describe("benchmark fetch helpers", () => {
       { date: "2026-06-18", indexCode: "NASDAQXNDX", indexName: "纳斯达克100全收益指数", close: "37102.06" },
       { date: "2026-06-22", indexCode: "NASDAQXNDX", indexName: "纳斯达克100全收益指数", close: "37031.72" }
     ]);
+  });
+
+  it("serializes generated benchmark CSVs with LF line endings", () => {
+    const csv = serializeBenchmarkRows([
+      { date: "2026-06-18", indexCode: "NASDAQXNDX", indexName: "纳斯达克100全收益指数", close: "37102.06" },
+      { date: "2026-06-22", indexCode: "NASDAQXNDX", indexName: "纳斯达克100全收益指数", close: "37031.72" }
+    ]);
+
+    expect(csv).toBe(
+      "date,indexCode,indexName,close\n" +
+        "2026-06-18,NASDAQXNDX,纳斯达克100全收益指数,37102.06\n" +
+        "2026-06-22,NASDAQXNDX,纳斯达克100全收益指数,37031.72\n"
+    );
+    expect(csv).not.toContain("\r");
   });
 });

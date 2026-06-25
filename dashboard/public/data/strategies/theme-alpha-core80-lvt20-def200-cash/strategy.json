@@ -69,7 +69,7 @@
   "benchmarkScorecard": {
     "title": "评价坐标系",
     "summary": "Theme Alpha 先和原始三资产核心比较，确认主题卫星和现金防御是否改善路径；再用全仓 LVT 作为风险上限提醒，并把主动偏股基金、沪深300全收益和纳指100全收益放进同一回测窗口里，形成投资者更直观的外部坐标。",
-    "conclusion": "结论：Core80_LVT20_Def200_Cash 年化 14.48%，明显跑赢主动偏股和沪深300全收益，但年化低于纳指100全收益 17.55%。它的优势在路径：最大回撤约 -11.29%、Calmar 约 1.28，显著好于纳指100全收益约 -35.04% 回撤和 0.50 Calmar。因此默认候选不是最高收益选择，而是更均衡的可跟踪组合；若投资者只接受纳指成长 Beta，Theme Alpha 的吸引力主要来自回撤控制而非收益领先。",
+    "conclusion": "本报告结论基于 2026-06-24 研究快照形成，不随后续 benchmark 刷新自动改变。Core80_LVT20_Def200_Cash 适合进入纸面跟踪，暂不直接实盘；它不是收益最大化候选，而是当前研究中路径、回撤、防御机制和可执行性更均衡的候选。外部 benchmark 仅提供同窗口机会成本坐标，不作为单一胜负判定。若判断发生变化，应生成新的研究快照，而不是让本报告结论自动漂移。",
     "period": {
       "startDate": "2021-01-04",
       "endDate": "2026-06-23"
@@ -24468,8 +24468,6 @@
     "outputs/benchmarks/csi932055_active_partial_equity_fund.csv",
     "outputs/benchmarks/csi_h00300_csi300_total_return.csv",
     "outputs/benchmarks/fred_nasdaqxndx_nasdaq100_total_return.csv",
-    "docs/notes/theme-alpha-q8-signal-live-readiness-review.md",
-    "docs/notes/theme-alpha-q12-long-sample-proxy-validation-review.md",
     "outputs/theme-alpha-q8-signal-live-readiness/research_summary.csv",
     "outputs/theme-alpha-q8-signal-live-readiness/signal_schedule_comparison.csv",
     "outputs/theme-alpha-q8-signal-live-readiness/friction_stress_comparison.csv",
@@ -24480,7 +24478,6 @@
     "outputs/theme-alpha-q12-long-sample-proxy-validation/summary_real_etf.csv",
     "outputs/theme-alpha-q12-long-sample-proxy-validation/scorecard_selected_metrics.csv",
     "outputs/theme-alpha-q12-long-sample-proxy-validation/annual_returns.csv",
-    "outputs/theme-alpha-q12-long-sample-proxy-validation/monthly_returns.csv",
-    "outputs/theme-alpha-q12-long-sample-proxy-validation/latest_weights_real_etf.csv"
+    "outputs/theme-alpha-q12-long-sample-proxy-validation/monthly_returns.csv"
   ]
 }

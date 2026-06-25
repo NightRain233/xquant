@@ -59,9 +59,10 @@ describe("BTC strategy data builder", () => {
     const btcNasdaqReference = strategy.benchmarkScorecard?.rows.find((row) => row.name === "纳斯达克100全收益指数");
     expect(btcNasdaqReference?.note).toContain("2016-06-21 至 2026-06-23");
     expect(btcNasdaqReference?.note).toContain("全收益美元口径");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("跑赢主动偏股和沪深300全收益");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("没有跑赢纳指100全收益");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("回撤明显更浅");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("基于 2026-06-23 研究快照");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("不随后续 benchmark 刷新自动改变");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("若判断发生变化，应生成新的研究快照");
+    expect(strategy.benchmarkScorecard?.conclusion).not.toContain("19.49%");
     expect(strategy.riskNotes[0].title).toBe("BTC 趋势收益可能消失");
     expect(strategy.stressSummaries.map((summary) => summary.id)).toContain("implementation");
   });
@@ -125,10 +126,10 @@ describe("Theme Alpha strategy data builder", () => {
     const nasdaqReference = strategy.benchmarkScorecard?.rows.find((row) => row.name === "纳斯达克100全收益指数");
     expect(nasdaqReference?.note).toContain("2021-01-04 至 2026-06-23");
     expect(nasdaqReference?.note).toContain("全收益美元口径");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("Core80_LVT20_Def200_Cash");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("明显跑赢主动偏股和沪深300全收益");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("年化低于纳指100全收益");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("Calmar");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("基于 2026-06-24 研究快照");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("不随后续 benchmark 刷新自动改变");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("若判断发生变化，应生成新的研究快照");
+    expect(strategy.benchmarkScorecard?.conclusion).not.toContain("17.55%");
     expect(strategy.candidateMetrics.map((candidate) => candidate.name)).toEqual([
       "Original_RiskParity_3Asset",
       "Expanded_LVT_100",
@@ -151,6 +152,8 @@ describe("Theme Alpha strategy data builder", () => {
     );
     expect(strategy.sourceFiles).toContain("outputs/theme-alpha-q8-signal-live-readiness/research_summary.csv");
     expect(strategy.sourceFiles).toContain("outputs/theme-alpha-q12-long-sample-proxy-validation/summary_real_etf.csv");
+    expect(strategy.sourceFiles).not.toContain("docs/notes/theme-alpha-q8-signal-live-readiness-review.md");
+    expect(strategy.sourceFiles).not.toContain("outputs/theme-alpha-q12-long-sample-proxy-validation/latest_weights_real_etf.csv");
   });
 
   it("writes both strategy packages and the catalog", async () => {

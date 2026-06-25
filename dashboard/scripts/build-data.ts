@@ -47,8 +47,6 @@ const themeAlphaSourceFiles = [
   ACTIVE_EQUITY_BENCHMARK_FILE,
   CSI300_BENCHMARK_FILE,
   NASDAQ100_BENCHMARK_FILE,
-  "docs/notes/theme-alpha-q8-signal-live-readiness-review.md",
-  "docs/notes/theme-alpha-q12-long-sample-proxy-validation-review.md",
   `${THEME_ALPHA_Q8_DIR}/research_summary.csv`,
   `${THEME_ALPHA_Q8_DIR}/signal_schedule_comparison.csv`,
   `${THEME_ALPHA_Q8_DIR}/friction_stress_comparison.csv`,
@@ -59,8 +57,7 @@ const themeAlphaSourceFiles = [
   `${THEME_ALPHA_Q12_DIR}/summary_real_etf.csv`,
   `${THEME_ALPHA_Q12_DIR}/scorecard_selected_metrics.csv`,
   `${THEME_ALPHA_Q12_DIR}/annual_returns.csv`,
-  `${THEME_ALPHA_Q12_DIR}/monthly_returns.csv`,
-  `${THEME_ALPHA_Q12_DIR}/latest_weights_real_etf.csv`
+  `${THEME_ALPHA_Q12_DIR}/monthly_returns.csv`
 ];
 
 async function parseCsv(repoRoot: string, relativePath: string): Promise<CsvRow[]> {
@@ -516,6 +513,14 @@ export function buildStrategyCatalog(strategies: StrategyPackage[]): StrategyCat
   };
 }
 
+function btcSnapshotConclusion(asOfDate: string): string {
+  return `本报告结论基于 ${asOfDate} 研究快照形成，不随后续 benchmark 刷新自动改变。BTC7.5%ST卫星适合进入纸面跟踪，暂不直接实盘；BTC10%ST卫星保留为进攻观察候选。外部 benchmark 仅提供同窗口机会成本坐标，不作为单一胜负判定。若判断发生变化，应生成新的研究快照，而不是让本报告结论自动漂移。`;
+}
+
+function themeAlphaSnapshotConclusion(asOfDate: string): string {
+  return `本报告结论基于 ${asOfDate} 研究快照形成，不随后续 benchmark 刷新自动改变。Core80_LVT20_Def200_Cash 适合进入纸面跟踪，暂不直接实盘；它不是收益最大化候选，而是当前研究中路径、回撤、防御机制和可执行性更均衡的候选。外部 benchmark 仅提供同窗口机会成本坐标，不作为单一胜负判定。若判断发生变化，应生成新的研究快照，而不是让本报告结论自动漂移。`;
+}
+
 export async function buildBtcStrategyPackage(repoRoot: string): Promise<StrategyPackage> {
   const [
     activeEquityBenchmarkRows,
@@ -542,11 +547,12 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
   const btcGrowthCandidate = findMetric(candidateMetrics, "BTC10%ST卫星");
   const benchmarkStartDate = navSeries[0].date;
   const benchmarkEndDate = navSeries[navSeries.length - 1].date;
+  const asOfDate = latestSignal.latestDate ?? "";
 
   return {
     id: BTC_STRATEGY_ID,
     name: "BTC SuperTrend Satellite",
-    asOfDate: latestSignal.latestDate ?? "",
+    asOfDate,
     status: {
       paperTracking: researchSummary.paper_tracking_recommendation === "yes" ? "recommended" : "watch",
       liveTrading:
@@ -597,8 +603,7 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
       title: "评价坐标系",
       summary:
         "先用三资产 RiskParity 判断卫星层是否真的增厚组合，再把主动偏股基金、沪深300全收益和纳指100全收益放到同一回测窗口里，帮助投资者理解机会成本、A股Beta和海外成长Beta。",
-      conclusion:
-        "结论：BTC7.5%ST卫星年化 19.49%，明显跑赢主动偏股和沪深300全收益，且最大回撤约 -12.75%，相对两条权益参考线回撤明显更浅；但它没有跑赢纳指100全收益 22.01% 的年化。评价上更像是用多资产和 BTC 趋势过滤换取更平滑路径，而不是追求最高进攻收益；BTC10%ST卫星只作进攻观察，默认仍应先纸面跟踪 5% / 7.5%。",
+      conclusion: btcSnapshotConclusion(asOfDate),
       period: {
         startDate: benchmarkStartDate,
         endDate: benchmarkEndDate
@@ -674,22 +679,7 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
     _scorecardRows,
     annualReturnRows,
     monthlyReturnRows
-  ] = await Promise.all([
-    parseCsv(repoRoot, ACTIVE_EQUITY_BENCHMARK_FILE),
-    parseCsv(repoRoot, CSI300_BENCHMARK_FILE),
-    parseCsv(repoRoot, NASDAQ100_BENCHMARK_FILE),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q8_DIR}/research_summary.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q8_DIR}/signal_schedule_comparison.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q8_DIR}/friction_stress_comparison.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q8_DIR}/liquidity_participation_summary.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q8_DIR}/latest_target_weights.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q8_DIR}/nav_q8_selected_2021_to_date.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q8_DIR}/underwater_q8_selected_2021_to_date.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q12_DIR}/summary_real_etf.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q12_DIR}/scorecard_selected_metrics.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q12_DIR}/annual_returns.csv`),
-    parseCsv(repoRoot, `${THEME_ALPHA_Q12_DIR}/monthly_returns.csv`)
-  ]);
+  ] = await Promise.all(themeAlphaSourceFiles.map((file) => parseCsv(repoRoot, file)));
 
   const fullSampleRows = realEtfRows.filter((row) => row.window === "full_sample");
   const candidateMetrics = fullSampleRows.map(normalizeThemeAlphaMetric);
@@ -778,8 +768,7 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
       title: "评价坐标系",
       summary:
         "Theme Alpha 先和原始三资产核心比较，确认主题卫星和现金防御是否改善路径；再用全仓 LVT 作为风险上限提醒，并把主动偏股基金、沪深300全收益和纳指100全收益放进同一回测窗口里，形成投资者更直观的外部坐标。",
-      conclusion:
-        "结论：Core80_LVT20_Def200_Cash 年化 14.48%，明显跑赢主动偏股和沪深300全收益，但年化低于纳指100全收益 17.55%。它的优势在路径：最大回撤约 -11.29%、Calmar 约 1.28，显著好于纳指100全收益约 -35.04% 回撤和 0.50 Calmar。因此默认候选不是最高收益选择，而是更均衡的可跟踪组合；若投资者只接受纳指成长 Beta，Theme Alpha 的吸引力主要来自回撤控制而非收益领先。",
+      conclusion: themeAlphaSnapshotConclusion(asOfDate),
       period: {
         startDate: benchmarkStartDate,
         endDate: benchmarkEndDate

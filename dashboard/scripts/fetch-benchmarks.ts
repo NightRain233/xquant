@@ -32,8 +32,8 @@ type BenchmarkJob = {
 };
 
 const START_DATE = "2016-06-21";
-const END_DATE = "2026-06-24";
 const OUTPUT_DIR = "outputs/benchmarks";
+const BENCHMARK_COLUMNS = ["date", "indexCode", "indexName", "close"];
 
 const jobs: BenchmarkJob[] = [
   {
@@ -117,6 +117,24 @@ export function normalizeFredRows(csvText: string, seriesId: string, indexName: 
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 
+export function resolveBenchmarkWindow(options: {
+  startDate?: string;
+  endDate?: string;
+  today?: Date;
+  env?: Record<string, string | undefined>;
+} = {}): { startDate: string; endDate: string } {
+  const env = options.env ?? process.env;
+
+  return {
+    startDate: options.startDate ?? env.BENCHMARK_START_DATE ?? START_DATE,
+    endDate: options.endDate ?? env.BENCHMARK_END_DATE ?? (options.today ?? new Date()).toISOString().slice(0, 10)
+  };
+}
+
+export function serializeBenchmarkRows(rows: BenchmarkRow[]): string {
+  return `${Papa.unparse(rows, { columns: BENCHMARK_COLUMNS, newline: "\n" })}\n`;
+}
+
 async function fetchText(url: string): Promise<string> {
   const response = await fetch(url, {
     headers: {
@@ -152,11 +170,15 @@ async function writeBenchmarkCsv(repoRoot: string, job: BenchmarkJob, rows: Benc
 
   const outputPath = join(repoRoot, OUTPUT_DIR, job.outputFile);
   await mkdir(dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, Papa.unparse(rows, { columns: ["date", "indexCode", "indexName", "close"] }) + "\n", "utf8");
+  await writeFile(outputPath, serializeBenchmarkRows(rows), "utf8");
   return outputPath;
 }
 
-export async function refreshBenchmarks(repoRoot: string, startDate = START_DATE, endDate = END_DATE): Promise<string[]> {
+export async function refreshBenchmarks(
+  repoRoot: string,
+  startDate = resolveBenchmarkWindow().startDate,
+  endDate = resolveBenchmarkWindow().endDate
+): Promise<string[]> {
   const outputPaths: string[] = [];
 
   for (const job of jobs) {
@@ -172,7 +194,8 @@ export async function refreshBenchmarks(repoRoot: string, startDate = START_DATE
 
 async function main() {
   const repoRoot = join(process.cwd(), "..");
-  const outputPaths = await refreshBenchmarks(repoRoot);
+  const { startDate, endDate } = resolveBenchmarkWindow();
+  const outputPaths = await refreshBenchmarks(repoRoot, startDate, endDate);
   for (const outputPath of outputPaths) {
     console.log(outputPath);
   }
