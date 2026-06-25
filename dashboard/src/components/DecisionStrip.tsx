@@ -1,8 +1,8 @@
 import { Activity, ShieldAlert } from "lucide-react";
-import type { StrategyPackage } from "../data/types";
+import type { StrategySummaryPackage } from "../data/types";
 
 type DecisionStripProps = {
-  strategy: StrategyPackage;
+  strategy: StrategySummaryPackage;
 };
 
 export function DecisionStrip({ strategy }: DecisionStripProps) {

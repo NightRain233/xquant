@@ -1,0 +1,80 @@
+[
+  {
+    "id": "Original-RiskParity-3Asset",
+    "name": "Original_RiskParity_3Asset",
+    "totalMonths": 78,
+    "winningMonths": 46,
+    "losingMonths": 31,
+    "monthlyWinRate": 0.5897435897435898,
+    "averageWinningMonth": 0.03297710597275811,
+    "averageLosingMonth": -0.02000077444348903,
+    "profitFactor": 2.4465937702254643,
+    "bestMonth": 0.10132497983494804,
+    "worstMonth": -0.0751313616982946
+  },
+  {
+    "id": "Expanded-LVT-100",
+    "name": "Expanded_LVT_100",
+    "totalMonths": 78,
+    "winningMonths": 50,
+    "losingMonths": 25,
+    "monthlyWinRate": 0.6410256410256411,
+    "averageWinningMonth": 0.03254888441284759,
+    "averageLosingMonth": -0.027673557542975295,
+    "profitFactor": 2.352345509774175,
+    "bestMonth": 0.13329543944322642,
+    "worstMonth": -0.12060773529637414
+  },
+  {
+    "id": "Core80-LVT20-Def200-Cash",
+    "name": "Core80_LVT20_Def200_Cash",
+    "totalMonths": 78,
+    "winningMonths": 50,
+    "losingMonths": 27,
+    "monthlyWinRate": 0.6410256410256411,
+    "averageWinningMonth": 0.025252700170995186,
+    "averageLosingMonth": -0.01447724703564426,
+    "profitFactor": 3.230190067267573,
+    "bestMonth": 0.08132424243059089,
+    "worstMonth": -0.06886626285726316
+  },
+  {
+    "id": "Core60-LVT40-Def200-Cash",
+    "name": "Core60_LVT40_Def200_Cash",
+    "totalMonths": 78,
+    "winningMonths": 50,
+    "losingMonths": 27,
+    "monthlyWinRate": 0.6410256410256411,
+    "averageWinningMonth": 0.027199998293064048,
+    "averageLosingMonth": -0.015719797657700367,
+    "profitFactor": 3.2042630768026377,
+    "bestMonth": 0.08960854314554423,
+    "worstMonth": -0.06619098854277616
+  },
+  {
+    "id": "Core80-LVT20-STEntry-Def200-Cash",
+    "name": "Core80_LVT20_STEntry_Def200_Cash",
+    "totalMonths": 78,
+    "winningMonths": 50,
+    "losingMonths": 27,
+    "monthlyWinRate": 0.6410256410256411,
+    "averageWinningMonth": 0.02504725477429528,
+    "averageLosingMonth": -0.014322836162584842,
+    "profitFactor": 3.2384511427108977,
+    "bestMonth": 0.08132424243059089,
+    "worstMonth": -0.06225321672910933
+  },
+  {
+    "id": "Core80-LVT20-STHalf-Def200-Cash",
+    "name": "Core80_LVT20_STHalf_Def200_Cash",
+    "totalMonths": 78,
+    "winningMonths": 51,
+    "losingMonths": 26,
+    "monthlyWinRate": 0.6538461538461539,
+    "averageWinningMonth": 0.024082147347725184,
+    "averageLosingMonth": -0.01398976704605703,
+    "profitFactor": 3.376615071822321,
+    "bestMonth": 0.08132424243059089,
+    "worstMonth": -0.0629882699887867
+  }
+]

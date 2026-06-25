@@ -1,4 +1,4 @@
-import ReactECharts from "echarts-for-react";
+import { echarts, ReactEChartsCore } from "./EChartsCore";
 import type { TimeSeriesPoint } from "../data/types";
 
 type UnderwaterChartProps = {
@@ -15,7 +15,8 @@ export function UnderwaterChart({ series }: UnderwaterChartProps) {
         <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/45">Drawdown</p>
         <h2 className="mt-2 text-xl font-semibold tracking-tight">水下曲线</h2>
       </div>
-      <ReactECharts
+      <ReactEChartsCore
+        echarts={echarts}
         notMerge
         style={{ height: 320, width: "100%" }}
         option={{

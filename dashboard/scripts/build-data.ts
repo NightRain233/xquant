@@ -10,7 +10,11 @@ import type {
   BenchmarkScorecardRow,
   StrategyCatalog,
   StrategyCatalogItem,
+  StrategyChartData,
   StrategyPackage,
+  StrategyPaperData,
+  StrategyReportData,
+  StrategySummaryPackage,
   StressSummary,
   TargetWeightRow,
   TimeSeriesPoint
@@ -513,12 +517,92 @@ export function buildStrategyCatalog(strategies: StrategyPackage[]): StrategyCat
   };
 }
 
+function splitStrategyPackage(strategy: StrategyPackage): {
+  summary: StrategySummaryPackage;
+  report: StrategyReportData;
+  charts: StrategyChartData;
+  paper: StrategyPaperData;
+} {
+  const {
+    id,
+    name,
+    asOfDate,
+    status,
+    recommendation,
+    sourceFiles,
+    highlightCards,
+    strategyBrief,
+    benchmarkScorecard,
+    candidateMetrics,
+    stressSummaries,
+    navSeries,
+    underwaterSeries,
+    annualReturns,
+    monthlyStats,
+    latestSignal,
+    targetWeights,
+    paperTradingRules,
+    riskNotes
+  } = strategy;
+
+  return {
+    summary: {
+      id,
+      name,
+      asOfDate,
+      status,
+      recommendation,
+      sourceFiles
+    },
+    report: {
+      highlightCards,
+      strategyBrief,
+      benchmarkScorecard,
+      candidateMetrics,
+      stressSummaries
+    },
+    charts: {
+      navSeries,
+      underwaterSeries,
+      annualReturns,
+      monthlyStats
+    },
+    paper: {
+      latestSignal,
+      targetWeights,
+      paperTradingRules,
+      riskNotes
+    }
+  };
+}
+
+async function writeJsonFile(outputPath: string, value: unknown): Promise<string> {
+  await mkdir(dirname(outputPath), { recursive: true });
+  await writeFile(outputPath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  return outputPath;
+}
+
+async function writeSplitStrategyPackage(outputRoot: string, strategy: StrategyPackage): Promise<string[]> {
+  const strategyDir = join(outputRoot, "strategies", strategy.id);
+  const { summary, report, charts, paper } = splitStrategyPackage(strategy);
+
+  return Promise.all([
+    writeJsonFile(join(strategyDir, "strategy.json"), summary),
+    writeJsonFile(join(strategyDir, "report.json"), report),
+    writeJsonFile(join(strategyDir, "paper.json"), paper),
+    writeJsonFile(join(strategyDir, "nav-series.json"), charts.navSeries),
+    writeJsonFile(join(strategyDir, "underwater-series.json"), charts.underwaterSeries),
+    writeJsonFile(join(strategyDir, "annual-returns.json"), charts.annualReturns),
+    writeJsonFile(join(strategyDir, "monthly-stats.json"), charts.monthlyStats)
+  ]);
+}
+
 function btcSnapshotConclusion(asOfDate: string): string {
-  return `本报告结论基于 ${asOfDate} 研究快照形成，不随后续 benchmark 刷新自动改变。BTC7.5%ST卫星适合进入纸面跟踪，暂不直接实盘；BTC10%ST卫星保留为进攻观察候选。外部 benchmark 仅提供同窗口机会成本坐标，不作为单一胜负判定。若判断发生变化，应生成新的研究快照，而不是让本报告结论自动漂移。`;
+  return `本报告结论基于 ${asOfDate} 研究快照形成，为静态研究判断；后续 benchmark 刷新不会自动改写本段结论，需要手动生成新的研究快照。结论：BTC7.5%ST卫星年化 19.49%，明显跑赢主动偏股和沪深300全收益，且最大回撤约 -12.75%，相对两条权益参考线回撤明显更浅；但它没有跑赢纳指100全收益 22.01% 的年化。评价上更像是用多资产和 BTC 趋势过滤换取更平滑路径，而不是追求最高进攻收益；BTC10%ST卫星只作进攻观察，默认仍应先纸面跟踪 5% / 7.5%。`;
 }
 
 function themeAlphaSnapshotConclusion(asOfDate: string): string {
-  return `本报告结论基于 ${asOfDate} 研究快照形成，不随后续 benchmark 刷新自动改变。Core80_LVT20_Def200_Cash 适合进入纸面跟踪，暂不直接实盘；它不是收益最大化候选，而是当前研究中路径、回撤、防御机制和可执行性更均衡的候选。外部 benchmark 仅提供同窗口机会成本坐标，不作为单一胜负判定。若判断发生变化，应生成新的研究快照，而不是让本报告结论自动漂移。`;
+  return `本报告结论基于 ${asOfDate} 研究快照形成，为静态研究判断；后续 benchmark 刷新不会自动改写本段结论，需要手动生成新的研究快照。结论：Core80_LVT20_Def200_Cash 年化 14.48%，明显跑赢主动偏股和沪深300全收益，但年化低于纳指100全收益 17.55%。它的优势在路径：最大回撤约 -11.29%、Calmar 约 1.28，显著好于纳指100全收益约 -35.04% 回撤和 0.50 Calmar。因此默认候选不是最高收益选择，而是更均衡的可跟踪组合；若投资者只接受纳指成长 Beta，Theme Alpha 的吸引力主要来自回撤控制而非收益领先。`;
 }
 
 export async function buildBtcStrategyPackage(repoRoot: string): Promise<StrategyPackage> {
@@ -897,26 +981,16 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
 
 export async function writeBtcStrategyPackage(repoRoot: string, outputRoot: string): Promise<string> {
   const strategy = await buildBtcStrategyPackage(repoRoot);
-  const outputPath = join(outputRoot, "strategies", BTC_STRATEGY_ID, "strategy.json");
-  await mkdir(dirname(outputPath), { recursive: true });
-  await writeFile(outputPath, `${JSON.stringify(strategy, null, 2)}\n`, "utf8");
-  return outputPath;
+  const outputPaths = await writeSplitStrategyPackage(outputRoot, strategy);
+  return outputPaths[0];
 }
 
 export async function writeAllStrategyPackages(repoRoot: string, outputRoot: string): Promise<string[]> {
   const strategies = await Promise.all([buildBtcStrategyPackage(repoRoot), buildThemeAlphaStrategyPackage(repoRoot)]);
-  const outputPaths = await Promise.all(
-    strategies.map(async (strategy) => {
-      const outputPath = join(outputRoot, "strategies", strategy.id, "strategy.json");
-      await mkdir(dirname(outputPath), { recursive: true });
-      await writeFile(outputPath, `${JSON.stringify(strategy, null, 2)}\n`, "utf8");
-      return outputPath;
-    })
-  );
+  const outputPaths = (await Promise.all(strategies.map((strategy) => writeSplitStrategyPackage(outputRoot, strategy)))).flat();
 
   const catalogPath = join(outputRoot, "strategies", "index.json");
-  await mkdir(dirname(catalogPath), { recursive: true });
-  await writeFile(catalogPath, `${JSON.stringify(buildStrategyCatalog(strategies), null, 2)}\n`, "utf8");
+  await writeJsonFile(catalogPath, buildStrategyCatalog(strategies));
 
   return [...outputPaths, catalogPath];
 }

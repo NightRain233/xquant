@@ -1,0 +1,79 @@
+[
+  {
+    "year": "2020",
+    "values": {
+      "Original_RiskParity_3Asset": 0.2194544060417296,
+      "Expanded_LVT_100": 0.25335767892888406,
+      "Core80_LVT20_Def200_Cash": 0.10373700152761889,
+      "Core60_LVT40_Def200_Cash": 0.15199502690722033,
+      "Core80_LVT20_STEntry_Def200_Cash": 0.09948973806885353,
+      "Core80_LVT20_STHalf_Def200_Cash": 0.10339800081427408
+    }
+  },
+  {
+    "year": "2021",
+    "values": {
+      "Original_RiskParity_3Asset": 0.030396147355036485,
+      "Expanded_LVT_100": 0.000014803953962250205,
+      "Core80_LVT20_Def200_Cash": 0.01827914284257859,
+      "Core60_LVT40_Def200_Cash": 0.015440507491163435,
+      "Core80_LVT20_STEntry_Def200_Cash": 0.015155999849752577,
+      "Core80_LVT20_STHalf_Def200_Cash": 0.025788563798634367
+    }
+  },
+  {
+    "year": "2022",
+    "values": {
+      "Original_RiskParity_3Asset": -0.09715007012149346,
+      "Expanded_LVT_100": -0.18684703610860065,
+      "Core80_LVT20_Def200_Cash": -0.012044367136657463,
+      "Core60_LVT40_Def200_Cash": -0.04844314972322439,
+      "Core80_LVT20_STEntry_Def200_Cash": -0.009900140126592016,
+      "Core80_LVT20_STHalf_Def200_Cash": -0.009595336006963495
+    }
+  },
+  {
+    "year": "2023",
+    "values": {
+      "Original_RiskParity_3Asset": 0.1576423957518822,
+      "Expanded_LVT_100": 0.2576123142697493,
+      "Core80_LVT20_Def200_Cash": 0.18354943025960258,
+      "Core60_LVT40_Def200_Cash": 0.20675081702037867,
+      "Core80_LVT20_STEntry_Def200_Cash": 0.17689527335777888,
+      "Core80_LVT20_STHalf_Def200_Cash": 0.1753296631982626
+    }
+  },
+  {
+    "year": "2024",
+    "values": {
+      "Original_RiskParity_3Asset": 0.2533891536970234,
+      "Expanded_LVT_100": 0.29299449538577504,
+      "Core80_LVT20_Def200_Cash": 0.24374235939914546,
+      "Core60_LVT40_Def200_Cash": 0.2655362535502228,
+      "Core80_LVT20_STEntry_Def200_Cash": 0.24412652778192134,
+      "Core80_LVT20_STHalf_Def200_Cash": 0.2350764505113596
+    }
+  },
+  {
+    "year": "2025",
+    "values": {
+      "Original_RiskParity_3Asset": 0.3646526563863379,
+      "Expanded_LVT_100": 0.23980354707777152,
+      "Core80_LVT20_Def200_Cash": 0.32965761181712927,
+      "Core60_LVT40_Def200_Cash": 0.3127531781002739,
+      "Core80_LVT20_STEntry_Def200_Cash": 0.32654367912228244,
+      "Core80_LVT20_STHalf_Def200_Cash": 0.32418225761099984
+    }
+  },
+  {
+    "year": "2026",
+    "values": {
+      "Original_RiskParity_3Asset": 0.03764212304922032,
+      "Expanded_LVT_100": 0.16044419095517504,
+      "Core80_LVT20_Def200_Cash": 0.06670279748591468,
+      "Core60_LVT40_Def200_Cash": 0.10114090608099002,
+      "Core80_LVT20_STEntry_Def200_Cash": 0.07427867463805216,
+      "Core80_LVT20_STHalf_Def200_Cash": 0.06988940911417574
+    }
+  }
+]

@@ -1,0 +1,354 @@
+{
+  "highlightCards": [
+    {
+      "label": "默认纸面候选",
+      "value": "Def200 Cash / 半月",
+      "detail": "真实 ETF 全样本年化 14.48% / 最大回撤 -11.29%"
+    },
+    {
+      "label": "防御规则",
+      "value": "现金防御未触发",
+      "detail": "当前现金 0.00% / 平均现金 21.47%"
+    },
+    {
+      "label": "进攻观察",
+      "value": "Core60 / LVT40",
+      "detail": "更高主题暴露仅作观察，不替代 Core80 / LVT20 默认候选"
+    }
+  ],
+  "strategyBrief": {
+    "plainLanguage": "这是一个以三资产核心仓位为底座、用 20% 低波趋势主题 ETF 做卫星增强，并在核心风险恶化时转入现金防御的半月调仓策略。",
+    "objective": "观察主题 ETF 增强和 Def200 Cash 防御规则能否在近实盘成本下改善组合路径。",
+    "mechanism": [
+      "80% 核心仓位由沪深300、纳指100和黄金承担主要资产配置。",
+      "20% 卫星仓位在扩展主题 ETF 池内做低波趋势选择。",
+      "核心风险恶化时，Def200 Cash 将防御袖转入现金。",
+      "固定每月 10 日和 25 日附近生成信号，收盘信号下一交易日执行。"
+    ],
+    "methodology": [
+      {
+        "label": "趋势门槛",
+        "value": "候选 ETF 价格需要站上 MA60，避免在中期下行趋势里强行买入。"
+      },
+      {
+        "label": "动量门槛",
+        "value": "候选 ETF 的 63 日动量需要为正，过滤只低波但没有上涨惯性的资产。"
+      },
+      {
+        "label": "低波筛选",
+        "value": "通过趋势和动量门槛后，选择 60 日波动率最低的 3 个资产进入卫星池。"
+      },
+      {
+        "label": "权重约束",
+        "value": "入选卫星资产使用 RiskParity 分配，并设置单资产 cap50，避免主题仓位过度集中。"
+      }
+    ],
+    "investorUse": "适合观察多资产配置加主题卫星是否能比单纯买指数或全仓主题轮动更稳。",
+    "watchOut": "全仓 LVT 在长样本 proxy 中并不稳定，主题卫星不能升级为主引擎。",
+    "glossary": [
+      {
+        "term": "Core80",
+        "definition": "80% 核心仓位，主要承担长期资产配置和组合稳定性。"
+      },
+      {
+        "term": "LVT20",
+        "definition": "20% 低波趋势主题卫星，在扩展主题 ETF 池中选择更平滑的趋势暴露。"
+      },
+      {
+        "term": "Def200 Cash",
+        "definition": "防御规则；当核心风险状态变差时，将防御袖转入现金。"
+      },
+      {
+        "term": "BIMONTHLY",
+        "definition": "固定半月调仓节奏，每月 10 日和 25 日附近生成信号。"
+      },
+      {
+        "term": "proxy",
+        "definition": "用于延长样本的代理资产数据，能提供压力测试线索，但不能等同于真实 ETF 历史。"
+      }
+    ]
+  },
+  "benchmarkScorecard": {
+    "title": "评价坐标系",
+    "summary": "Theme Alpha 先和原始三资产核心比较，确认主题卫星和现金防御是否改善路径；再用全仓 LVT 作为风险上限提醒，并把主动偏股基金、沪深300全收益和纳指100全收益放进同一回测窗口里，形成投资者更直观的外部坐标。",
+    "conclusion": "本报告结论基于 2026-06-24 研究快照形成，为静态研究判断；后续 benchmark 刷新不会自动改写本段结论，需要手动生成新的研究快照。结论：Core80_LVT20_Def200_Cash 年化 14.48%，明显跑赢主动偏股和沪深300全收益，但年化低于纳指100全收益 17.55%。它的优势在路径：最大回撤约 -11.29%、Calmar 约 1.28，显著好于纳指100全收益约 -35.04% 回撤和 0.50 Calmar。因此默认候选不是最高收益选择，而是更均衡的可跟踪组合；若投资者只接受纳指成长 Beta，Theme Alpha 的吸引力主要来自回撤控制而非收益领先。",
+    "period": {
+      "startDate": "2021-01-04",
+      "endDate": "2026-06-23"
+    },
+    "rows": [
+      {
+        "role": "内部基准",
+        "name": "Original_RiskParity_3Asset",
+        "annualReturn": 0.14578379017388343,
+        "maxDrawdown": -0.1537725238910117,
+        "sharpe": 1.1508702090392215,
+        "calmar": 0.9480483670620482,
+        "note": "原始三资产 RiskParity，用来判断 Theme Alpha 增加主题卫星和现金防御后是否真的更好。",
+        "verdict": "核心参照"
+      },
+      {
+        "role": "风险上限",
+        "name": "Expanded_LVT_100",
+        "annualReturn": 0.1499743258986619,
+        "maxDrawdown": -0.3176630267849798,
+        "sharpe": 1.0665326197588143,
+        "calmar": 0.4721176632248635,
+        "note": "全仓扩展主题 LVT 用来提醒主题轮动的波动和样本不稳定性，不是默认实盘候选。",
+        "verdict": "只作风险镜子"
+      },
+      {
+        "role": "当前策略",
+        "name": "Core80_LVT20_Def200_Cash",
+        "annualReturn": 0.14478909675203444,
+        "maxDrawdown": -0.11293506624419736,
+        "sharpe": 1.3832032021682632,
+        "calmar": 1.2820561546310134,
+        "note": "Core80 / LVT20 / Def200 Cash 是当前建议进入纸面跟踪的默认候选。",
+        "verdict": "进入纸面跟踪"
+      },
+      {
+        "role": "进攻观察",
+        "name": "Core60_LVT40_Def200_Cash",
+        "annualReturn": 0.15555926485497062,
+        "maxDrawdown": -0.13973902778861913,
+        "sharpe": 1.3957869786169694,
+        "calmar": 1.113212731737926,
+        "note": "Core60 / LVT40 提高主题暴露，适合观察上行弹性和压力期代价。",
+        "verdict": "只作观察"
+      },
+      {
+        "role": "主动权益基金参考线",
+        "name": "中证主动偏股型基金指数",
+        "annualReturn": 0.015754974845671565,
+        "maxDrawdown": -0.5000873536825816,
+        "sharpe": 0.17792595315199156,
+        "calmar": 0.03150444563265572,
+        "note": "2021-01-04 至 2026-06-23 同周期计算，累计收益 8.55%。数据源：中证指数 932055，用作主动权益基金机会成本 proxy。",
+        "verdict": "同周期参考"
+      },
+      {
+        "role": "宽基指数参考线",
+        "name": "沪深300全收益指数",
+        "annualReturn": 0.012050094384145282,
+        "maxDrawdown": -0.41561007195195276,
+        "sharpe": 0.15647654129947136,
+        "calmar": 0.02899374966432082,
+        "note": "2021-01-04 至 2026-06-23 同周期计算，累计收益 6.49%。数据源：中证指数 H00300，全收益口径，用作 A 股大盘含分红再投资参考。",
+        "verdict": "A股Beta参考"
+      },
+      {
+        "role": "海外成长参考线",
+        "name": "纳斯达克100全收益指数",
+        "annualReturn": 0.17552029473065112,
+        "maxDrawdown": -0.3503672496082483,
+        "sharpe": 0.8243307628672881,
+        "calmar": 0.5009609058121255,
+        "note": "2021-01-04 至 2026-06-23 同周期计算，累计收益 141.19%。数据源：FRED NASDAQXNDX / Nasdaq，全收益美元口径，不含境内 QDII 汇率、溢价和申赎约束。",
+        "verdict": "海外成长参考"
+      }
+    ]
+  },
+  "candidateMetrics": [
+    {
+      "id": "Original-RiskParity-3Asset",
+      "name": "Original_RiskParity_3Asset",
+      "annualReturn": 0.14578379017388343,
+      "annualVolatility": 0.12667265954828025,
+      "maxDrawdown": -0.1537725238910117,
+      "sharpe": 1.1508702090392215,
+      "calmar": 0.9480483670620482,
+      "sortino": 1.490148958790488,
+      "annualTurnover": 3.7429390995340515,
+      "averageCash": 0.02036269296440658,
+      "currentCash": 0,
+      "monthlyWinRate": 0.5897435897435898,
+      "daysBelowTenDrawdown": 164,
+      "daysBelowTwentyDrawdown": 0,
+      "annualCostDrag": 0.010930846175083908,
+      "longestUnderwaterDays": 1015
+    },
+    {
+      "id": "Expanded-LVT-100",
+      "name": "Expanded_LVT_100",
+      "annualReturn": 0.1499743258986619,
+      "annualVolatility": 0.14061860192572176,
+      "maxDrawdown": -0.3176630267849798,
+      "sharpe": 1.0665326197588143,
+      "calmar": 0.4721176632248635,
+      "sortino": 1.3261952898442244,
+      "annualTurnover": 10.852330857958396,
+      "averageCash": 0.11931745004601457,
+      "currentCash": 0,
+      "monthlyWinRate": 0.6410256410256411,
+      "daysBelowTenDrawdown": 470,
+      "daysBelowTwentyDrawdown": 158,
+      "annualCostDrag": 0.03316394673120071,
+      "longestUnderwaterDays": 936
+    },
+    {
+      "id": "Core80-LVT20-Def200-Cash",
+      "name": "Core80_LVT20_Def200_Cash",
+      "annualReturn": 0.14478909675203444,
+      "annualVolatility": 0.10467666393850729,
+      "maxDrawdown": -0.11293506624419736,
+      "sharpe": 1.3832032021682632,
+      "calmar": 1.2820561546310134,
+      "sortino": 1.682612541784749,
+      "annualTurnover": 5.549824045941741,
+      "averageCash": 0.21467735087677223,
+      "currentCash": 0,
+      "monthlyWinRate": 0.6410256410256411,
+      "daysBelowTenDrawdown": 1,
+      "daysBelowTwentyDrawdown": 0,
+      "annualCostDrag": 0.016490934819730123,
+      "longestUnderwaterDays": 760
+    },
+    {
+      "id": "Core60-LVT40-Def200-Cash",
+      "name": "Core60_LVT40_Def200_Cash",
+      "annualReturn": 0.15555926485497062,
+      "annualVolatility": 0.11144914463173185,
+      "maxDrawdown": -0.13973902778861913,
+      "sharpe": 1.3957869786169694,
+      "calmar": 1.113212731737926,
+      "sortino": 1.7267708416162801,
+      "annualTurnover": 7.599626863167991,
+      "averageCash": 0.1769212214077174,
+      "currentCash": 0,
+      "monthlyWinRate": 0.6410256410256411,
+      "daysBelowTenDrawdown": 94,
+      "daysBelowTwentyDrawdown": 0,
+      "annualCostDrag": 0.022885348137285204,
+      "longestUnderwaterDays": 615
+    },
+    {
+      "id": "Core80-LVT20-STEntry-Def200-Cash",
+      "name": "Core80_LVT20_STEntry_Def200_Cash",
+      "annualReturn": 0.1438034522878313,
+      "annualVolatility": 0.10416945156862899,
+      "maxDrawdown": -0.10305701615525387,
+      "sharpe": 1.380476234849817,
+      "calmar": 1.3953776040943544,
+      "sortino": 1.6949240353251178,
+      "annualTurnover": 5.49031541160413,
+      "averageCash": 0.21467735087677223,
+      "currentCash": 0,
+      "monthlyWinRate": 0.6410256410256411,
+      "daysBelowTenDrawdown": 1,
+      "daysBelowTwentyDrawdown": 0,
+      "annualCostDrag": 0.016316420609921018,
+      "longestUnderwaterDays": 760
+    },
+    {
+      "id": "Core80-LVT20-STHalf-Def200-Cash",
+      "name": "Core80_LVT20_STHalf_Def200_Cash",
+      "annualReturn": 0.14376070489082093,
+      "annualVolatility": 0.10251812174383886,
+      "maxDrawdown": -0.10735382837844731,
+      "sharpe": 1.4022955400025232,
+      "calmar": 1.3391297456484819,
+      "sortino": 1.7040567202547616,
+      "annualTurnover": 5.334128934262126,
+      "averageCash": 0.23738602014297017,
+      "currentCash": 0,
+      "monthlyWinRate": 0.6538461538461539,
+      "daysBelowTenDrawdown": 1,
+      "daysBelowTwentyDrawdown": 0,
+      "annualCostDrag": 0.015784404141343102,
+      "longestUnderwaterDays": 757
+    }
+  ],
+  "stressSummaries": [
+    {
+      "id": "schedule",
+      "title": "Signal schedule comparison",
+      "rows": [
+        {
+          "schedule": "10D",
+          "累计收益": 0.9430389198898923,
+          "年化收益": 0.13487716367729252,
+          "最大回撤": -0.11405929597533737,
+          "Sharpe": 1.2828187187599698,
+          "Calmar": 1.182517939672857,
+          "超过-10%天数": 1,
+          "平均现金": 0.1607434397516178
+        },
+        {
+          "schedule": "BIMONTHLY",
+          "累计收益": 1.1004116882329211,
+          "年化收益": 0.15183778033018203,
+          "最大回撤": -0.11293506624419747,
+          "Sharpe": 1.4008491624678754,
+          "Calmar": 1.344469750448155,
+          "超过-10%天数": 1,
+          "平均现金": 0.16218450736111975
+        },
+        {
+          "schedule": "M",
+          "累计收益": 1.0099320503860207,
+          "年化收益": 0.14221756231202654,
+          "最大回撤": -0.11645761825735479,
+          "Sharpe": 1.3042075261016286,
+          "Calmar": 1.2211958688502964,
+          "超过-10%天数": 5,
+          "平均现金": 0.1507427964004248
+        }
+      ]
+    },
+    {
+      "id": "friction",
+      "title": "Execution friction comparison",
+      "rows": [
+        {
+          "friction": "base20",
+          "年化收益": 0.1583611760936432,
+          "最大回撤": -0.11249016954640068,
+          "年化成本拖累": 0.011515604627407866,
+          "总成本拖累": 0.060456924293891295
+        },
+        {
+          "friction": "base20_plus_asset",
+          "年化收益": 0.15183778033018203,
+          "最大回撤": -0.11293506624419747,
+          "年化成本拖累": 0.017161164951486892,
+          "总成本拖累": 0.09009611599530619
+        },
+        {
+          "friction": "base20_plus_asset_stress",
+          "年化收益": 0.14534928157447835,
+          "最大回撤": -0.11337982109946221,
+          "年化成本拖累": 0.022806725275565924,
+          "总成本拖累": 0.1197353076967211
+        }
+      ]
+    },
+    {
+      "id": "liquidity",
+      "title": "Liquidity participation check",
+      "rows": [
+        {
+          "aum": 1000000,
+          "bottleneck": "能源ETF 159930.SZ",
+          "maxParticipationAdv20": 0.012855353214904691,
+          "tradesGt5pctAdv20": 0,
+          "tradesGt10pctAdv20": 0
+        },
+        {
+          "aum": 10000000,
+          "bottleneck": "能源ETF 159930.SZ",
+          "maxParticipationAdv20": 0.1285535321490469,
+          "tradesGt5pctAdv20": 4,
+          "tradesGt10pctAdv20": 1
+        },
+        {
+          "aum": 50000000,
+          "bottleneck": "能源ETF 159930.SZ",
+          "maxParticipationAdv20": 0.6427676607452346,
+          "tradesGt5pctAdv20": 38,
+          "tradesGt10pctAdv20": 20
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import type { StrategyCatalogItem, StrategyPackage } from "../data/types";
+import type { StrategyCatalogItem, StrategySummaryPackage } from "../data/types";
 import { PaperTrackingPage } from "../pages/PaperTrackingPage";
 import { ResearchReportPage } from "../pages/ResearchReportPage";
 import { DecisionStrip } from "./DecisionStrip";
 import { type DashboardMode, ModeTabs } from "./ModeTabs";
 
 type AppShellProps = {
-  strategy: StrategyPackage;
+  strategy: StrategySummaryPackage;
   strategies: StrategyCatalogItem[];
   onSelectStrategy: (strategyId: string) => void;
   onBackToHub: () => void;
@@ -60,9 +60,9 @@ export function AppShell({ strategy, strategies, onSelectStrategy, onBackToHub }
         <main className="min-w-0 space-y-5">
           <DecisionStrip strategy={strategy} />
           {mode === "report" ? (
-            <ResearchReportPage strategy={strategy} />
+            <ResearchReportPage strategyId={strategy.id} />
           ) : (
-            <PaperTrackingPage strategy={strategy} />
+            <PaperTrackingPage strategyId={strategy.id} />
           )}
         </main>
       </div>

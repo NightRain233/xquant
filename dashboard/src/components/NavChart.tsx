@@ -1,4 +1,4 @@
-import ReactECharts from "echarts-for-react";
+import { echarts, ReactEChartsCore } from "./EChartsCore";
 import type { TimeSeriesPoint } from "../data/types";
 
 type NavChartProps = {
@@ -15,7 +15,8 @@ export function NavChart({ series }: NavChartProps) {
         <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/45">Net asset value</p>
         <h2 className="mt-2 text-xl font-semibold tracking-tight">净值路径</h2>
       </div>
-      <ReactECharts
+      <ReactEChartsCore
+        echarts={echarts}
         notMerge
         style={{ height: 320, width: "100%" }}
         option={{

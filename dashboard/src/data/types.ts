@@ -143,7 +143,7 @@ export type StrategyCatalog = {
   strategies: StrategyCatalogItem[];
 };
 
-export type StrategyPackage = {
+export type StrategySummaryPackage = {
   id: string;
   name: string;
   asOfDate: string;
@@ -154,18 +154,31 @@ export type StrategyPackage = {
     preferredPaperCaps: string[];
     growthCandidateCap: string;
   };
+  sourceFiles: string[];
+};
+
+export type StrategyReportData = {
   highlightCards?: HighlightCard[];
   strategyBrief?: StrategyBrief;
   benchmarkScorecard?: BenchmarkScorecard;
   candidateMetrics: CandidateMetric[];
+  stressSummaries: StressSummary[];
+};
+
+export type StrategyChartData = {
   navSeries: TimeSeriesPoint[];
   underwaterSeries: TimeSeriesPoint[];
   annualReturns: AnnualReturnRow[];
   monthlyStats: MonthlyStat[];
-  stressSummaries: StressSummary[];
+};
+
+export type StrategyPaperData = {
   latestSignal: LatestSignal;
   targetWeights: TargetWeightRow[];
   paperTradingRules: PaperTradingRule[];
   riskNotes: RiskNote[];
-  sourceFiles: string[];
 };
+
+export type StrategyResearchData = StrategyReportData & StrategyChartData;
+
+export type StrategyPackage = StrategySummaryPackage & StrategyResearchData & StrategyPaperData;

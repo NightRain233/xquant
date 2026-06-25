@@ -60,9 +60,9 @@ describe("BTC strategy data builder", () => {
     expect(btcNasdaqReference?.note).toContain("2016-06-21 至 2026-06-23");
     expect(btcNasdaqReference?.note).toContain("全收益美元口径");
     expect(strategy.benchmarkScorecard?.conclusion).toContain("基于 2026-06-23 研究快照");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("不随后续 benchmark 刷新自动改变");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("若判断发生变化，应生成新的研究快照");
-    expect(strategy.benchmarkScorecard?.conclusion).not.toContain("19.49%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("BTC7.5%ST卫星年化 19.49%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("没有跑赢纳指100全收益 22.01%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("默认仍应先纸面跟踪 5% / 7.5%");
     expect(strategy.riskNotes[0].title).toBe("BTC 趋势收益可能消失");
     expect(strategy.stressSummaries.map((summary) => summary.id)).toContain("implementation");
   });
@@ -73,9 +73,40 @@ describe("BTC strategy data builder", () => {
     await mkdir(outputRoot, { recursive: true });
 
     const outputPath = await writeBtcStrategyPackage(repoRoot, outputRoot);
+    const strategyJson = JSON.parse(await readFile(outputPath, "utf8")) as Record<string, unknown>;
+    const reportPath = resolve(outputRoot, "strategies", "btc-supertrend-satellite", "report.json");
+    const paperPath = resolve(outputRoot, "strategies", "btc-supertrend-satellite", "paper.json");
+    const navPath = resolve(outputRoot, "strategies", "btc-supertrend-satellite", "nav-series.json");
+    const underwaterPath = resolve(outputRoot, "strategies", "btc-supertrend-satellite", "underwater-series.json");
+    const annualPath = resolve(outputRoot, "strategies", "btc-supertrend-satellite", "annual-returns.json");
+    const monthlyPath = resolve(outputRoot, "strategies", "btc-supertrend-satellite", "monthly-stats.json");
 
     expect(outputPath.endsWith("strategies/btc-supertrend-satellite/strategy.json")).toBe(true);
     expect(existsSync(outputPath)).toBe(true);
+    expect(strategyJson.navSeries).toBeUndefined();
+    expect(strategyJson.underwaterSeries).toBeUndefined();
+    expect(strategyJson.annualReturns).toBeUndefined();
+    expect(strategyJson.monthlyStats).toBeUndefined();
+    expect(strategyJson.latestSignal).toBeUndefined();
+    expect(strategyJson.targetWeights).toBeUndefined();
+    expect(strategyJson.recommendation).toMatchObject({
+      headline: "建议进入纸面跟踪，暂不直接实盘。"
+    });
+    expect(existsSync(reportPath)).toBe(true);
+    expect(existsSync(paperPath)).toBe(true);
+    expect(existsSync(navPath)).toBe(true);
+    expect(existsSync(underwaterPath)).toBe(true);
+    expect(existsSync(annualPath)).toBe(true);
+    expect(existsSync(monthlyPath)).toBe(true);
+
+    const reportJson = JSON.parse(await readFile(reportPath, "utf8")) as Record<string, unknown>;
+    const paperJson = JSON.parse(await readFile(paperPath, "utf8")) as Record<string, unknown>;
+    const navJson = JSON.parse(await readFile(navPath, "utf8")) as unknown[];
+    expect(reportJson.benchmarkScorecard).toBeDefined();
+    expect(reportJson.candidateMetrics).toBeDefined();
+    expect(paperJson.latestSignal).toBeDefined();
+    expect(paperJson.riskNotes).toBeDefined();
+    expect(navJson.length).toBeGreaterThan(1000);
 
     await rm(outputRoot, { force: true, recursive: true });
   });
@@ -127,9 +158,9 @@ describe("Theme Alpha strategy data builder", () => {
     expect(nasdaqReference?.note).toContain("2021-01-04 至 2026-06-23");
     expect(nasdaqReference?.note).toContain("全收益美元口径");
     expect(strategy.benchmarkScorecard?.conclusion).toContain("基于 2026-06-24 研究快照");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("不随后续 benchmark 刷新自动改变");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("若判断发生变化，应生成新的研究快照");
-    expect(strategy.benchmarkScorecard?.conclusion).not.toContain("17.55%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("Core80_LVT20_Def200_Cash 年化 14.48%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("年化低于纳指100全收益 17.55%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("纳指100全收益约 -35.04% 回撤");
     expect(strategy.candidateMetrics.map((candidate) => candidate.name)).toEqual([
       "Original_RiskParity_3Asset",
       "Expanded_LVT_100",
@@ -163,21 +194,40 @@ describe("Theme Alpha strategy data builder", () => {
 
     const outputPaths = await writeAllStrategyPackages(repoRoot, outputRoot);
     const catalogPath = resolve(outputRoot, "strategies", "index.json");
+    const btcStrategyPath = resolve(outputRoot, "strategies", "btc-supertrend-satellite", "strategy.json");
+    const themeAlphaStrategyPath = resolve(
+      outputRoot,
+      "strategies",
+      "theme-alpha-core80-lvt20-def200-cash",
+      "strategy.json"
+    );
+    const themeAlphaNavPath = resolve(
+      outputRoot,
+      "strategies",
+      "theme-alpha-core80-lvt20-def200-cash",
+      "nav-series.json"
+    );
     const catalog = JSON.parse(await readFile(catalogPath, "utf8")) as {
       defaultStrategyId: string;
       strategies: Array<{ id: string; name: string }>;
     };
+    const btcStrategyJson = JSON.parse(await readFile(btcStrategyPath, "utf8")) as Record<string, unknown>;
+    const themeAlphaStrategyJson = JSON.parse(await readFile(themeAlphaStrategyPath, "utf8")) as Record<string, unknown>;
 
-    expect(outputPaths).toContain(resolve(outputRoot, "strategies", "btc-supertrend-satellite", "strategy.json"));
-    expect(outputPaths).toContain(
-      resolve(outputRoot, "strategies", "theme-alpha-core80-lvt20-def200-cash", "strategy.json")
-    );
+    expect(outputPaths).toContain(btcStrategyPath);
+    expect(outputPaths).toContain(themeAlphaStrategyPath);
+    expect(outputPaths).toContain(themeAlphaNavPath);
     expect(existsSync(catalogPath)).toBe(true);
     expect(catalog.defaultStrategyId).toBe("btc-supertrend-satellite");
     expect(catalog.strategies.map((strategy) => strategy.id)).toEqual([
       "btc-supertrend-satellite",
       "theme-alpha-core80-lvt20-def200-cash"
     ]);
+    expect(btcStrategyJson.navSeries).toBeUndefined();
+    expect(themeAlphaStrategyJson.navSeries).toBeUndefined();
+    expect(themeAlphaStrategyJson.sourceFiles).toContain(
+      "outputs/theme-alpha-q8-signal-live-readiness/research_summary.csv"
+    );
 
     await rm(outputRoot, { force: true, recursive: true });
   });
