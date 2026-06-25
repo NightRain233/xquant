@@ -10,8 +10,8 @@ type PaperTrackingPageProps = {
 
 export function PaperTrackingPage({ strategy }: PaperTrackingPageProps) {
   return (
-    <div className="grid gap-5 xl:grid-cols-[1.2fr_0.8fr]">
-      <div className="space-y-5">
+    <div className="grid min-w-0 gap-5 xl:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)]">
+      <div className="min-w-0 space-y-5">
         <LatestSignalPanel signal={strategy.latestSignal} />
         <TargetWeightsPanel rows={strategy.targetWeights} />
         <PaperRulesPanel rules={strategy.paperTradingRules} />

@@ -28,7 +28,7 @@ export function AppShell({ strategy }: AppShellProps) {
           </div>
         </aside>
 
-        <main className="space-y-5">
+        <main className="min-w-0 space-y-5">
           <DecisionStrip strategy={strategy} />
           {mode === "report" ? (
             <ResearchReportPage strategy={strategy} />
