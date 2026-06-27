@@ -8,6 +8,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import yfinance as yf
 
+from xquant.indicators import select_low_vol_trend, supertrend_direction
+from xquant.metrics import (
+    drawdown_series as calculate_drawdown_series,
+    nav_from_returns as calculate_nav_from_returns,
+)
+from xquant.portfolio import (
+    inverse_volatility_weights,
+    normalize_weights,
+)
+
 warnings.filterwarnings("ignore")
 plt.rcParams["font.sans-serif"] = ["Arial Unicode MS", "SimHei", "STHeiti"]
 plt.rcParams["axes.unicode_minus"] = False
@@ -256,42 +266,6 @@ def availability_table(ctx, market):
     return pd.DataFrame(rows)
 
 
-def normalize_weights(weights, universe):
-    clean = {sym: float(max(0.0, weights.get(sym, 0.0))) for sym in universe}
-    total = sum(clean.values())
-    if total > 1.0 + 1e-12:
-        clean = {sym: val / total for sym, val in clean.items()}
-        total = 1.0
-    clean["CASH"] = max(0.0, 1.0 - total)
-    return clean
-
-
-def apply_cap(weights, universe, cap=None):
-    if cap is None:
-        return normalize_weights(weights, universe)
-    s = pd.Series({sym: max(0.0, weights.get(sym, 0.0)) for sym in universe}, dtype=float)
-    total = s.sum()
-    if total <= 0:
-        return normalize_weights({}, universe)
-    s = s / total
-    cap = float(cap)
-    for _ in range(30):
-        over = s > cap + 1e-12
-        if not over.any():
-            break
-        excess = (s[over] - cap).sum()
-        s[over] = cap
-        under = s < cap - 1e-12
-        capacity = (cap - s[under]).clip(lower=0.0)
-        if excess <= 1e-12 or capacity.sum() <= 1e-12:
-            break
-        base = s[under].clip(lower=0.0)
-        add = excess * (base / base.sum() if base.sum() > 1e-12 else capacity / capacity.sum())
-        add = np.minimum(add, capacity)
-        s.loc[add.index] += add
-    return normalize_weights(s.to_dict(), universe)
-
-
 def signal_dates(index):
     idx = pd.DatetimeIndex(index)
     dates = []
@@ -327,84 +301,31 @@ def risk_parity_weight(market, date, eligible, universe, cap=None):
     if not eligible:
         return normalize_weights({}, universe)
     hist = returns.iloc[loc - RP_VOL_WINDOW + 1:loc + 1][eligible]
-    vols = hist.std(ddof=1).replace(0, np.nan).dropna()
-    vols = vols[vols > 0]
-    if vols.empty:
-        return normalize_weights({}, universe)
-    inv = 1.0 / vols
-    raw = (inv / inv.sum()).to_dict()
-    return apply_cap(raw, universe, cap)
+    return inverse_volatility_weights(hist, universe, cap)
 
 
 def low_vol_trend_select(market, universe, date):
-    close = market["close"]
-    returns = market["returns"]
-    loc = close.index.get_loc(date)
-    warmup = max(MA_WINDOW, MOM_WINDOW, VOL_WINDOW)
-    if loc < warmup:
-        return []
-    valid = []
-    for sym in universe:
-        if not enough_history(close, sym, loc, max(MA_WINDOW, MOM_WINDOW + 1)):
-            continue
-        if not enough_return_history(returns, sym, loc, VOL_WINDOW):
-            continue
-        valid.append(sym)
-    if not valid:
-        return []
-    price = close.iloc[loc][valid]
-    ma = close.iloc[loc - MA_WINDOW + 1:loc + 1][valid].mean()
-    mom = price / close.iloc[loc - MOM_WINDOW][valid] - 1.0
-    vols = returns.iloc[loc - VOL_WINDOW + 1:loc + 1][valid].std(ddof=1)
-    eligible = price.index[(price > ma) & (mom > 0)].tolist()
-    if not eligible:
-        return []
-    return vols[eligible].sort_values().head(TOP_N).index.tolist()
-
-
-def true_range(high_s, low_s, close_s):
-    prev_close = close_s.shift(1)
-    parts = pd.concat([
-        high_s - low_s,
-        (high_s - prev_close).abs(),
-        (low_s - prev_close).abs(),
-    ], axis=1)
-    return parts.max(axis=1)
-
-
-def supertrend_direction(high_s, low_s, close_s, atr_window=DEFAULT_ATR, multiplier=DEFAULT_MULTIPLIER):
-    tr = true_range(high_s, low_s, close_s)
-    atr = tr.rolling(atr_window).mean()
-    hl2 = (high_s + low_s) / 2.0
-    basic_upper = hl2 + multiplier * atr
-    basic_lower = hl2 - multiplier * atr
-    final_upper = pd.Series(index=close_s.index, dtype=float)
-    final_lower = pd.Series(index=close_s.index, dtype=float)
-    st = pd.Series(index=close_s.index, dtype=float)
-    direction = pd.Series(False, index=close_s.index, dtype=bool)
-    for i, date in enumerate(close_s.index):
-        if pd.isna(atr.iloc[i]):
-            continue
-        if i == 0 or pd.isna(final_upper.iloc[i - 1]):
-            final_upper.iloc[i] = basic_upper.iloc[i]
-            final_lower.iloc[i] = basic_lower.iloc[i]
-            st.iloc[i] = final_upper.iloc[i]
-            direction.iloc[i] = False
-            continue
-        prev_close = close_s.iloc[i - 1]
-        final_upper.iloc[i] = basic_upper.iloc[i] if (basic_upper.iloc[i] < final_upper.iloc[i - 1] or prev_close > final_upper.iloc[i - 1]) else final_upper.iloc[i - 1]
-        final_lower.iloc[i] = basic_lower.iloc[i] if (basic_lower.iloc[i] > final_lower.iloc[i - 1] or prev_close < final_lower.iloc[i - 1]) else final_lower.iloc[i - 1]
-        if st.iloc[i - 1] == final_upper.iloc[i - 1]:
-            st.iloc[i] = final_lower.iloc[i] if close_s.iloc[i] > final_upper.iloc[i] else final_upper.iloc[i]
-        else:
-            st.iloc[i] = final_upper.iloc[i] if close_s.iloc[i] < final_lower.iloc[i] else final_lower.iloc[i]
-        direction.iloc[i] = close_s.iloc[i] > st.iloc[i]
-    return direction.fillna(False)
+    return select_low_vol_trend(
+        market["close"],
+        market["returns"],
+        date,
+        universe,
+        ma_window=MA_WINDOW,
+        momentum_window=MOM_WINDOW,
+        volatility_window=VOL_WINDOW,
+        top_n=TOP_N,
+    )
 
 
 def build_supertrend_matrix(market, universe):
     return pd.DataFrame({
-        sym: supertrend_direction(market["high"][sym], market["low"][sym], market["close"][sym])
+        sym: supertrend_direction(
+            market["high"][sym],
+            market["low"][sym],
+            market["close"][sym],
+            atr_window=DEFAULT_ATR,
+            multiplier=DEFAULT_MULTIPLIER,
+        )
         for sym in universe
     })
 
@@ -510,16 +431,11 @@ def backtest(market, ctx, weights):
 
 
 def nav_from_returns(r):
-    return (1.0 + r.fillna(0.0)).cumprod() * INITIAL_NAV
+    return calculate_nav_from_returns(r, initial_capital=INITIAL_NAV)
 
 
 def drawdown_series(nav):
-    nav = nav.dropna()
-    if nav.empty:
-        return nav
-    initial_peak = pd.Series([INITIAL_NAV], index=[nav.index[0] - pd.Timedelta(nanoseconds=1)])
-    peak = pd.concat([initial_peak, nav]).cummax().iloc[1:]
-    return nav / peak - 1.0
+    return calculate_drawdown_series(nav, initial_capital=INITIAL_NAV)
 
 
 def drawdown_events(nav):

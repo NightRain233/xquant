@@ -1,8 +1,9 @@
 """
 XQuant 课程环境检查脚本
 
-使用方法：在激活虚拟环境后运行
-    python check_env.py
+使用方法：在项目根目录运行
+    uv sync
+    uv run python check_env.py
 
 本脚本检查量化交易课程所需的编程环境是否配置正确。
 """
@@ -28,7 +29,7 @@ AKSHARE_TEST_KWARGS = {"symbol": "510300", "period": "daily", "adjust": "qfq"}
 AKSHARE_FALLBACK_FUNC = "stock_zh_index_daily"
 AKSHARE_FALLBACK_KWARGS = {"symbol": "sh000300"}
 
-OPEN_XQUANT_INSTALL = 'uv pip install "open-xquant @ git+https://github.com/xingwudao/open-xquant.git"'
+SYNC_COMMAND = "uv sync"
 
 
 def check_python_version():
@@ -51,15 +52,13 @@ def check_package(import_name, display_name):
         __import__(import_name)
         return True, display_name
     except ImportError:
-        if display_name == "open-xquant":
-            return False, f"{display_name} — 未安装，请运行: {OPEN_XQUANT_INSTALL}"
-        return False, f"{display_name} — 未安装，请运行: uv pip install {display_name}"
+        return False, f"{display_name} — 未安装，请在项目根目录运行: {SYNC_COMMAND}"
 
 
 def check_jupyter_command():
     if shutil.which("jupyter"):
         return True, "jupyter 命令可用"
-    return False, "jupyter 命令不可用，请运行: uv pip install jupyter"
+    return False, f"jupyter 命令不可用，请在项目根目录运行: {SYNC_COMMAND}"
 
 
 def check_data_source():
