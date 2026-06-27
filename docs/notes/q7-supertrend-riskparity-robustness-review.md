@@ -16,7 +16,7 @@ The baseline remains the original three-asset RiskParity strategy:
 
 The practice notebook is:
 
-- `q7-supertrend-riskparity-robustness-practice.ipynb`
+- `research/notebooks/q7-supertrend-riskparity-robustness-practice.ipynb`
 
 Generated result files are under:
 

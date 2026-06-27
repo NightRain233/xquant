@@ -172,7 +172,7 @@ Q11 的 `EntryFilter` 在真实 ETF 和共同样本里仍是合理纸面候选�
 
 ## 文件
 
-- Notebook: `theme-alpha-q12-long-sample-proxy-validation-practice.ipynb`
+- Notebook: `research/notebooks/theme-alpha-q12-long-sample-proxy-validation-practice.ipynb`
 - Outputs: `outputs/theme-alpha-q12-long-sample-proxy-validation/`
 - Main summary: `summary_all_layers.csv`
 - Diagnostics: `long_sample_diagnostics.csv`, `asset_pool_common_sample_diagnostics.csv`

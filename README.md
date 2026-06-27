@@ -147,7 +147,7 @@ uv run jupyter lab
 3. 想知道规则如何落地：阅读 [Theme Alpha Q8 准实盘规则](docs/notes/theme-alpha-q8-signal-live-readiness-review.md)。
 4. 想检查 SuperTrend 是否真的有效：阅读 [Q11 交叉验证](docs/notes/q11-supertrend-lvt-cross-validation-review.md) 和 [Q12 替代实验](docs/notes/q12-supertrend-replace-lvt-trend-confirmation-review.md)。
 
-**复现计算**：打开对应的 `*-practice.ipynb`，再对照 `outputs/<实验名>/` 中的 CSV 和图表。
+**复现计算**：从 [Notebook 研究索引](research/README.md) 打开对应的 `research/notebooks/*-practice.ipynb`，再对照 `outputs/<实验名>/` 中的 CSV 和图表。
 
 所有阶段性复盘都在 [`docs/notes/`](docs/notes/)，研究计划在 [`docs/plans/`](docs/plans/)。
 
@@ -160,7 +160,7 @@ uv run jupyter lab
 ├── .python-version    # uv 默认使用的 Python 版本
 ├── src/xquant/        # 经过测试的公共研究函数
 ├── tests/             # Python 单元与集成测试
-├── *-practice.ipynb   # 各阶段研究与回测
+├── research/          # Notebook 研究索引与实践文件
 ├── scripts/           # 可重复运行的完整研究任务
 ├── outputs/           # 经过筛选的研究结果快照
 ├── docs/              # 复盘、计划与结构说明

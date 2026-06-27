@@ -15,7 +15,7 @@ The two central questions are:
 
 The practice notebook is:
 
-- `q9-btc-supertrend-satellite-robustness-practice.ipynb`
+- `research/notebooks/q9-btc-supertrend-satellite-robustness-practice.ipynb`
 
 Generated result files are under:
 

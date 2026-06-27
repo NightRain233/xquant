@@ -13,7 +13,7 @@ The starting point was the xquant-learning Q3 RiskParity strategy:
 
 The practice notebook is:
 
-- `q3-riskparity-btc-practice.ipynb`
+- `research/notebooks/q3-riskparity-btc-practice.ipynb`
 
 Generated result files are under:
 

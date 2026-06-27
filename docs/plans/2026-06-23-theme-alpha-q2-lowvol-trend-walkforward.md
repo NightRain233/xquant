@@ -13,7 +13,7 @@
 ### Task 1: Create Q2 Notebook
 
 **Files:**
-- Create: `theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
+- Create: `research/notebooks/theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
 - Runtime output: `outputs/theme-alpha-q2-lowvol-trend-walkforward/`
 
 **Steps:**
@@ -25,7 +25,7 @@
 ### Task 2: Precompute Parameter Grid
 
 **Files:**
-- Modify: `theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
 
 **Steps:**
 1. Fix momentum window at 63, volatility window at 60, Top-N at 3.
@@ -36,7 +36,7 @@
 ### Task 3: Walk-Forward Portfolios
 
 **Files:**
-- Modify: `theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
 
 **Steps:**
 1. Build walk-forward schedules:
@@ -50,7 +50,7 @@
 ### Task 4: Diagnostics
 
 **Files:**
-- Modify: `theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
 
 **Steps:**
 1. Export selection history and selection counts.
@@ -72,7 +72,7 @@
 ### Task 6: Verify
 
 **Commands:**
-- Run: `.venv/bin/jupyter nbconvert --to notebook --execute theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb --inplace --ExecutePreprocessor.timeout=900`
+- Run: `.venv/bin/jupyter nbconvert --to notebook --execute research/notebooks/theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb --inplace --ExecutePreprocessor.timeout=900`
 - Check outputs:
   - `outputs/theme-alpha-q2-lowvol-trend-walkforward/walkforward_summary_2025_to_date.csv`
   - `outputs/theme-alpha-q2-lowvol-trend-walkforward/selection_counts.csv`

@@ -20,7 +20,7 @@ Q10 不再继续追求更高历史收益，而是回答一个更接近实盘的�
   - 原三资产 RiskParity + BTC 5% SuperTrend 卫星
   - 原三资产 RiskParity + BTC 7.5% SuperTrend 卫星
   - 原三资产 RiskParity + BTC 10% SuperTrend 卫星
-- Practice notebook：`q10-live-readiness-stress-practice.ipynb`
+- Practice notebook：`research/notebooks/q10-live-readiness-stress-practice.ipynb`
 - 输出目录：`outputs/q10-live-readiness-stress/`
 
 主要输出：

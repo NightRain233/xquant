@@ -14,7 +14,7 @@ The baseline remains the original three-asset RiskParity strategy confirmed in t
 
 The practice notebook is:
 
-- `q6-momentum-trend-riskparity-practice.ipynb`
+- `research/notebooks/q6-momentum-trend-riskparity-practice.ipynb`
 
 Generated result files are under:
 

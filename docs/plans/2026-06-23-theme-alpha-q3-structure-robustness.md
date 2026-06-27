@@ -13,7 +13,7 @@
 ### Task 1: Create Q3 Notebook
 
 **Files:**
-- Create: `theme-alpha-q3-structure-robustness-practice.ipynb`
+- Create: `research/notebooks/theme-alpha-q3-structure-robustness-practice.ipynb`
 - Runtime output: `outputs/theme-alpha-q3-structure-robustness/`
 
 **Steps:**
@@ -25,7 +25,7 @@
 ### Task 2: Gold Structure Tests
 
 **Files:**
-- Modify: `theme-alpha-q3-structure-robustness-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q3-structure-robustness-practice.ipynb`
 
 **Variants:**
 - Base LowVolTrend cap50 with gold filtered like every other asset.
@@ -38,7 +38,7 @@
 ### Task 3: Universe Dependency Tests
 
 **Files:**
-- Modify: `theme-alpha-q3-structure-robustness-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q3-structure-robustness-practice.ipynb`
 
 **Universes:**
 - Original theme pool.
@@ -50,7 +50,7 @@
 ### Task 4: Evaluation
 
 **Files:**
-- Modify: `theme-alpha-q3-structure-robustness-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q3-structure-robustness-practice.ipynb`
 
 **Outputs:**
 - Summary tables for 2025-to-date, 2026 YTD, and 2025 only.
@@ -73,7 +73,7 @@
 ### Task 6: Verify
 
 **Commands:**
-- Run: `.venv/bin/jupyter nbconvert --to notebook --execute theme-alpha-q3-structure-robustness-practice.ipynb --inplace --ExecutePreprocessor.timeout=900`
+- Run: `.venv/bin/jupyter nbconvert --to notebook --execute research/notebooks/theme-alpha-q3-structure-robustness-practice.ipynb --inplace --ExecutePreprocessor.timeout=900`
 - Check outputs:
   - `outputs/theme-alpha-q3-structure-robustness/summary_2025_to_date.csv`
   - `outputs/theme-alpha-q3-structure-robustness/gold_structure_summary.csv`

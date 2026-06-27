@@ -2,9 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository combines quantitative research with a TypeScript dashboard.
-
-- Root `*-practice.ipynb` files contain strategy experiments; use names such as `q13-<topic>-practice.ipynb`.
+- `research/notebooks/*-practice.ipynb` contains strategy experiments; use names such as `q13-<topic>-practice.ipynb`.
 - `src/xquant/` holds tested portfolio, indicator, and metric code; `tests/` mirrors it.
 - `scripts/` holds reproducible research jobs.
 - `outputs/<experiment>/` stores CSVs and charts.
@@ -12,7 +10,7 @@ This repository combines quantitative research with a TypeScript dashboard.
 - `dashboard/src/` contains React pages, components, data adapters, styles, and colocated tests.
 - `dashboard/scripts/` converts research outputs into static dashboard data under `dashboard/public/data/`.
 
-Preserve reference notebooks. Keep each practice notebook, output directory, and review note aligned by slug. Extract reusable calculations into `src/xquant/`; notebooks should orchestrate experiments and present results.
+Preserve reference notebooks. Keep each practice notebook, output directory, and review note aligned by slug. Do not remove the tagged repository-root bootstrap cell. Extract reusable calculations into `src/xquant/`; notebooks should orchestrate experiments and present results.
 
 ## Build, Test, and Development Commands
 

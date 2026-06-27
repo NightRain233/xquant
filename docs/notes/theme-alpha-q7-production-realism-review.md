@@ -8,7 +8,7 @@ Q7 tests whether the shortlisted Theme Alpha candidates survive practical implem
 
 The practice notebook is:
 
-- `theme-alpha-q7-production-realism-practice.ipynb`
+- `research/notebooks/theme-alpha-q7-production-realism-practice.ipynb`
 
 Generated outputs are under:
 

@@ -8,7 +8,7 @@ Q4 tests whether the expanded LowVolTrend sleeve is useful as a satellite around
 
 The practice notebook is:
 
-- `theme-alpha-q4-core-satellite-practice.ipynb`
+- `research/notebooks/theme-alpha-q4-core-satellite-practice.ipynb`
 
 Generated outputs are under:
 

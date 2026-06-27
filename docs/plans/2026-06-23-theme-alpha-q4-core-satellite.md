@@ -13,7 +13,7 @@
 ### Task 1: Create Q4 Notebook
 
 **Files:**
-- Create: `theme-alpha-q4-core-satellite-practice.ipynb`
+- Create: `research/notebooks/theme-alpha-q4-core-satellite-practice.ipynb`
 - Runtime output: `outputs/theme-alpha-q4-core-satellite/`
 
 **Steps:**
@@ -25,7 +25,7 @@
 ### Task 2: Build Core/Satellite Portfolios
 
 **Files:**
-- Modify: `theme-alpha-q4-core-satellite-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q4-core-satellite-practice.ipynb`
 
 **Variants:**
 - 100% core.
@@ -39,7 +39,7 @@
 ### Task 3: Evaluate
 
 **Files:**
-- Modify: `theme-alpha-q4-core-satellite-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q4-core-satellite-practice.ipynb`
 
 **Outputs:**
 - Summary tables for 2025-to-date, 2026 YTD, and 2025-only.
@@ -63,7 +63,7 @@
 ### Task 5: Verify
 
 **Commands:**
-- Run: `.venv/bin/jupyter nbconvert --to notebook --execute theme-alpha-q4-core-satellite-practice.ipynb --inplace --ExecutePreprocessor.timeout=900`
+- Run: `.venv/bin/jupyter nbconvert --to notebook --execute research/notebooks/theme-alpha-q4-core-satellite-practice.ipynb --inplace --ExecutePreprocessor.timeout=900`
 - Check outputs:
   - `outputs/theme-alpha-q4-core-satellite/summary_2025_to_date.csv`
   - `outputs/theme-alpha-q4-core-satellite/monthly_diagnostics_2025_to_date.csv`

@@ -17,15 +17,17 @@ from xquant.portfolio import (
     inverse_volatility_weights,
     normalize_weights,
 )
+from xquant.project import find_repo_root
 
 warnings.filterwarnings("ignore")
 plt.rcParams["font.sans-serif"] = ["Arial Unicode MS", "SimHei", "STHeiti"]
 plt.rcParams["axes.unicode_minus"] = False
 
 
-OUTPUT_DIR = Path("outputs/theme-alpha-q12-long-sample-proxy-validation")
-NOTE_PATH = Path("docs/notes/theme-alpha-q12-long-sample-proxy-validation-review.md")
-NOTEBOOK_PATH = Path("theme-alpha-q12-long-sample-proxy-validation-practice.ipynb")
+REPO_ROOT = find_repo_root(Path(__file__))
+OUTPUT_DIR = REPO_ROOT / "outputs/theme-alpha-q12-long-sample-proxy-validation"
+NOTE_PATH = REPO_ROOT / "docs/notes/theme-alpha-q12-long-sample-proxy-validation-review.md"
+NOTEBOOK_PATH = REPO_ROOT / "research/notebooks/theme-alpha-q12-long-sample-proxy-validation-practice.ipynb"
 
 TRADING_DAYS = 252
 INITIAL_NAV = 100.0
@@ -772,11 +774,26 @@ def write_notebook():
 2. 长样本 proxy：用 ASHR、QQQ、GLD 等长期 proxy 拉长至 2015 前后，只做结构验证。
 3. 共同样本：真实 ETF 使用共同可用时间窗口，检查资产池和上市时间依赖。
 '''
+    bootstrap = '''# Keep relative research paths stable after this notebook moved.
+import os
+from xquant.project import find_repo_root
+
+REPO_ROOT = find_repo_root()
+os.chdir(REPO_ROOT)
+'''
     code = '''%run scripts/theme_alpha_q12_long_sample_proxy_validation.py
 '''
     nb = {
         "cells": [
             {"cell_type": "markdown", "id": "q12-overview", "metadata": {}, "source": source.splitlines(True)},
+            {
+                "cell_type": "code",
+                "id": "repo-root-bootstrap",
+                "execution_count": None,
+                "metadata": {"tags": ["bootstrap"]},
+                "outputs": [],
+                "source": bootstrap.splitlines(True),
+            },
             {"cell_type": "code", "id": "q12-run-script", "execution_count": None, "metadata": {}, "outputs": [], "source": code.splitlines(True)},
         ],
         "metadata": {
@@ -786,6 +803,7 @@ def write_notebook():
         "nbformat": 4,
         "nbformat_minor": 5,
     }
+    NOTEBOOK_PATH.parent.mkdir(parents=True, exist_ok=True)
     NOTEBOOK_PATH.write_text(json.dumps(nb, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
@@ -987,7 +1005,7 @@ def write_review_note(all_summary, diagnostics, pool, availability):
         "",
         "## 文件",
         "",
-        "- Notebook: `theme-alpha-q12-long-sample-proxy-validation-practice.ipynb`",
+        "- Notebook: `research/notebooks/theme-alpha-q12-long-sample-proxy-validation-practice.ipynb`",
         "- Outputs: `outputs/theme-alpha-q12-long-sample-proxy-validation/`",
         "- Main summary: `summary_all_layers.csv`",
         "- Diagnostics: `long_sample_diagnostics.csv`, `asset_pool_common_sample_diagnostics.csv`",

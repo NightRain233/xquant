@@ -8,7 +8,7 @@ Q6 completes the missing bear-market benchmarks from Q5 and tests simple core-de
 
 The practice notebook is:
 
-- `theme-alpha-q6-bear-defense-benchmark-completion-practice.ipynb`
+- `research/notebooks/theme-alpha-q6-bear-defense-benchmark-completion-practice.ipynb`
 
 Generated outputs are under:
 

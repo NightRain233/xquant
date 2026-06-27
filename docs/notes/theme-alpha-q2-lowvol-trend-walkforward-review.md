@@ -13,7 +13,7 @@ Q2 asks a stricter question:
 
 The practice notebook is:
 
-- `theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
+- `research/notebooks/theme-alpha-q2-lowvol-trend-walkforward-practice.ipynb`
 
 Generated result files are under:
 

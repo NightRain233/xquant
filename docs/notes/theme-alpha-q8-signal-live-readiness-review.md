@@ -209,7 +209,7 @@ But it should not replace the cash-defense candidate until gold-defense robustne
 
 ## Files
 
-- Notebook: `theme-alpha-q8-signal-live-readiness-practice.ipynb`
+- Notebook: `research/notebooks/theme-alpha-q8-signal-live-readiness-practice.ipynb`
 - Plan: `docs/plans/2026-06-23-theme-alpha-q8-signal-live-readiness.md`
 - Outputs: `outputs/theme-alpha-q8-signal-live-readiness/`
 - Main summary: `outputs/theme-alpha-q8-signal-live-readiness/research_summary.csv`

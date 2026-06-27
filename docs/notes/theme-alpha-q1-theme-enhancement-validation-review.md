@@ -8,7 +8,7 @@ This validation pass tests whether the theme-alpha-q1 low-volatility trend RiskP
 
 The validation notebook is:
 
-- `theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
+- `research/notebooks/theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
 
 Generated result files are under:
 
@@ -16,7 +16,7 @@ Generated result files are under:
 
 The earlier screening notebook remains:
 
-- `theme-alpha-q1-strong-theme-screening-practice.ipynb`
+- `research/notebooks/theme-alpha-q1-strong-theme-screening-practice.ipynb`
 
 ## Method
 

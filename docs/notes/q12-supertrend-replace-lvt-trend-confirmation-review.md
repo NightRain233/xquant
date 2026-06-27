@@ -234,7 +234,7 @@ Q8 near-live 口径保持不变：
 
 ## 文件
 
-- Notebook: `q12-supertrend-replace-lvt-trend-confirmation-practice.ipynb`
+- Notebook: `research/notebooks/q12-supertrend-replace-lvt-trend-confirmation-practice.ipynb`
 - Outputs: `outputs/q12-supertrend-replace-lvt-trend-confirmation/`
 - Main summary: `summary_all_windows.csv`
 - Parameter sensitivity: `supertrend_internal_parameter_sensitivity.csv`

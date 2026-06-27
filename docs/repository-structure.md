@@ -10,7 +10,7 @@
 ├── .python-version           # uv 默认使用 Python 3.12
 ├── src/xquant/               # 可复用、经过测试的研究函数
 ├── tests/                    # Python 单元与脚本集成测试
-├── *-practice.ipynb          # 已有实验过程与可视化
+├── research/notebooks/       # 实验过程与可视化
 ├── scripts/                  # 可重复运行的完整研究任务
 ├── outputs/<experiment>/     # 实验结果快照
 ├── docs/notes/               # 研究结论与解释
@@ -23,19 +23,17 @@
 - `portfolio.py`：权重清洗、仓位上限和逆波动分配。
 - `indicators.py`：SuperTrend 与低波趋势筛选。
 - `metrics.py`：NAV 和回撤序列。
+- `project.py`：从脚本或 Notebook 位置定位仓库根目录。
 
 Notebook 应负责提出问题、组织实验和展示结果；能够跨实验复用的计算必须进入 `src/xquant/`，并先在 `tests/` 中定义行为。
 
-## 为什么暂时不移动 Notebook
+## Notebook 路径约定
 
-现有 18 个 Notebook 大量使用相对路径，例如 `outputs/<experiment>/`。直接移动到子目录会改变内核工作目录，可能把结果写到错误位置，也会破坏文档引用。因此本阶段先提取公共代码，不制造一次难以复核的大搬迁。
+18 个实践 Notebook 已统一移动到 `research/notebooks/`。它们仍使用 `outputs/<experiment>/` 等仓库根目录相对路径，因此每个 Notebook 的第一个代码单元都会调用 `find_repo_root()`，再将工作目录切换到仓库根目录。
 
-后续迁移应逐个实验进行：
+这是一层兼容措施：它把“文件放在哪里”和“结果写到哪里”分开，确保历史 Notebook 移动后不改变输出位置。不要删除或跳过带有 `bootstrap` 标签的启动单元。
 
-1. 先把重复函数替换为 `xquant` 导入，并验证关键指标不变。
-2. 统一通过项目根目录解析输入和输出路径。
-3. 再用 `git mv` 移到 `research/btc/` 或 `research/theme-alpha/`。
-4. 同步更新复盘链接、Dashboard 数据源和复现命令。
+后续重构仍应逐个实验进行：先把重复函数替换为 `xquant` 导入，验证关键指标不变，再考虑是否按 BTC 和 Theme Alpha 拆分更深的子目录。
 
 ## 数据流
 
@@ -50,7 +48,7 @@ Notebook 应负责提出问题、组织实验和展示结果；能够跨实验�
 
 每个新实验使用同一个 slug，并至少对应：
 
-- `<slug>-practice.ipynb`
+- `research/notebooks/<slug>-practice.ipynb`
 - `outputs/<slug>/`
 - `docs/notes/<slug>-review.md`
 

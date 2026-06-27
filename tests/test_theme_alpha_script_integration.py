@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 
 import numpy as np
@@ -11,6 +12,30 @@ SPEC = importlib.util.spec_from_file_location("theme_alpha_q12_long_sample_proxy
 assert SPEC is not None and SPEC.loader is not None
 study = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(study)
+
+
+def test_script_paths_are_anchored_to_repository_root():
+    repo_root = Path(__file__).parents[1]
+
+    assert study.OUTPUT_DIR == repo_root / "outputs/theme-alpha-q12-long-sample-proxy-validation"
+    assert study.NOTE_PATH == repo_root / "docs/notes/theme-alpha-q12-long-sample-proxy-validation-review.md"
+    assert study.NOTEBOOK_PATH == (
+        repo_root / "research/notebooks/theme-alpha-q12-long-sample-proxy-validation-practice.ipynb"
+    )
+
+
+def test_generated_notebook_keeps_repo_root_bootstrap(tmp_path, monkeypatch):
+    notebook_path = tmp_path / "research/notebooks/q12.ipynb"
+    monkeypatch.setattr(study, "NOTEBOOK_PATH", notebook_path)
+
+    study.write_notebook()
+
+    notebook = json.loads(notebook_path.read_text())
+    assert notebook["cells"][0]["cell_type"] == "markdown"
+    first_code_cell = next(cell for cell in notebook["cells"] if cell["cell_type"] == "code")
+    source = "".join(first_code_cell["source"])
+    assert "find_repo_root" in source
+    assert "os.chdir(REPO_ROOT)" in source
 
 
 def test_script_uses_expected_low_vol_trend_and_risk_parity_behavior():

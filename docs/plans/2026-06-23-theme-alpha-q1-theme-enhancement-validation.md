@@ -13,7 +13,7 @@
 ### Task 1: Create Validation Notebook
 
 **Files:**
-- Create: `theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
+- Create: `research/notebooks/theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
 - Create output folder at runtime: `outputs/theme-alpha-q1-theme-enhancement-validation/`
 
 **Steps:**
@@ -26,7 +26,7 @@
 ### Task 2: Add Strategy Variants
 
 **Files:**
-- Modify: `theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
 
 **Steps:**
 1. Include benchmark strategies: original three-asset RiskParity, theme equal weight, theme RiskParity, pure Nasdaq, pure gold, 60/40 CSI300/Gold.
@@ -41,7 +41,7 @@
 ### Task 3: Add Transaction Cost Tests
 
 **Files:**
-- Modify: `theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
 
 **Steps:**
 1. Compute daily turnover from shifted portfolio weights.
@@ -51,7 +51,7 @@
 ### Task 4: Add Rolling And Out-of-Sample Checks
 
 **Files:**
-- Modify: `theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
+- Modify: `research/notebooks/theme-alpha-q1-theme-enhancement-validation-practice.ipynb`
 
 **Steps:**
 1. Compute rolling 63-day, 126-day, and 252-day returns, Sharpe, and max drawdown where enough data exists.
@@ -73,7 +73,7 @@
 ### Task 6: Verify
 
 **Commands:**
-- Run: `.venv/bin/jupyter nbconvert --to notebook --execute theme-alpha-q1-theme-enhancement-validation-practice.ipynb --inplace --ExecutePreprocessor.timeout=600`
+- Run: `.venv/bin/jupyter nbconvert --to notebook --execute research/notebooks/theme-alpha-q1-theme-enhancement-validation-practice.ipynb --inplace --ExecutePreprocessor.timeout=600`
 - Check key outputs:
   - `outputs/theme-alpha-q1-theme-enhancement-validation/summary_2025_to_date.csv`
   - `outputs/theme-alpha-q1-theme-enhancement-validation/cost_sensitivity_2025_to_date.csv`

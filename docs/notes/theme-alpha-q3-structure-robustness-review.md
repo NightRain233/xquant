@@ -14,7 +14,7 @@ The main question is no longer whether LowVolTrend is strong in the original poo
 
 The practice notebook is:
 
-- `theme-alpha-q3-structure-robustness-practice.ipynb`
+- `research/notebooks/theme-alpha-q3-structure-robustness-practice.ipynb`
 
 Generated outputs are under:
 

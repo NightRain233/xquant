@@ -4,7 +4,7 @@
 
 本仓库由量化策略研究和 TypeScript 仪表盘两部分组成。
 
-- 根目录下的 `*-practice.ipynb` 是策略实验 notebook；新实验使用 `q13-<主题>-practice.ipynb` 这类命名。
+- `research/notebooks/*-practice.ipynb` 是策略实验；新实验使用 `q13-<主题>-practice.ipynb` 这类命名。
 - `src/xquant/` 存放经过测试、可跨实验复用的组合、指标和绩效计算；`tests/` 存放对应测试。
 - `scripts/` 存放可重复运行的完整 Python 研究任务。
 - `outputs/<实验名>/` 存放生成的 CSV、图表和诊断结果。
@@ -12,7 +12,7 @@
 - `dashboard/src/` 存放 React 页面、组件、数据适配、样式及相邻测试。
 - `dashboard/scripts/` 将研究输出转换为 `dashboard/public/data/` 下的静态数据。
 
-不要直接修改课程或参考 notebook。探索性工作应放入 practice notebook，并让 notebook、输出目录和复盘文档使用一致的实验名称。可复用计算应提取到 `src/xquant/`；notebook 只负责编排实验和展示结果。
+不要直接修改课程或参考 notebook。探索性工作应放入 practice notebook，并让 notebook、输出目录和复盘文档使用一致的实验名称。不要删除带 `bootstrap` 标签的仓库根目录启动单元。可复用计算应提取到 `src/xquant/`；notebook 只负责编排实验和展示结果。
 
 ## 构建、测试与本地开发
 

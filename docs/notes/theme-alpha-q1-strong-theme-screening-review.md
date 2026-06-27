@@ -22,7 +22,7 @@ The Q6 theme pool is:
 
 The practice notebook is:
 
-- `theme-alpha-q1-strong-theme-screening-practice.ipynb`
+- `research/notebooks/theme-alpha-q1-strong-theme-screening-practice.ipynb`
 
 Generated result files are under:
 

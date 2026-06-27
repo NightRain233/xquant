@@ -8,7 +8,7 @@ Q5 tests whether the Theme Alpha core/satellite structure survives worse histori
 
 The practice notebook is:
 
-- `theme-alpha-q5-bear-market-stress-practice.ipynb`
+- `research/notebooks/theme-alpha-q5-bear-market-stress-practice.ipynb`
 
 Generated outputs are under:
 

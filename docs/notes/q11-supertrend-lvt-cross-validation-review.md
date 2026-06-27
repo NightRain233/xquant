@@ -205,7 +205,7 @@ LVT 当前选中：
 
 ## 文件
 
-- Notebook: `q11-supertrend-lvt-cross-validation-practice.ipynb`
+- Notebook: `research/notebooks/q11-supertrend-lvt-cross-validation-practice.ipynb`
 - Outputs: `outputs/q11-supertrend-lvt-cross-validation/`
 - Main summary: `summary_all_windows.csv`
 - Parameter sensitivity: `supertrend_parameter_sensitivity.csv`

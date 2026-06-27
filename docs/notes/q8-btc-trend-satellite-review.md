@@ -18,7 +18,7 @@ BTC is represented by:
 
 The practice notebook is:
 
-- `q8-btc-trend-satellite-practice.ipynb`
+- `research/notebooks/q8-btc-trend-satellite-practice.ipynb`
 
 Generated result files are under:
 
