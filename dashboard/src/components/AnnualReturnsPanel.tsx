@@ -4,11 +4,13 @@ import type { AnnualReturnRow } from "../data/types";
 
 type AnnualReturnsPanelProps = {
   rows: AnnualReturnRow[];
+  candidateNames?: string[];
 };
 
-export function AnnualReturnsPanel({ rows }: AnnualReturnsPanelProps) {
+export function AnnualReturnsPanel({ rows, candidateNames }: AnnualReturnsPanelProps) {
   const [view, setView] = useState<"heatmap" | "table">("heatmap");
-  const strategyNames = Object.keys(rows[0]?.values ?? {});
+  const availableNames = Object.keys(rows[0]?.values ?? {});
+  const strategyNames = candidateNames?.filter((name) => availableNames.includes(name)) ?? availableNames;
   const recentRows = rows.slice(-10);
   const values = recentRows.flatMap((row) => Object.values(row.values));
   const maxAbs = Math.max(...values.map((value) => Math.abs(value)), 0.01);

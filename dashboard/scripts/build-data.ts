@@ -3,6 +3,7 @@ import { dirname, join } from "node:path";
 import Papa from "papaparse";
 import type {
   AnnualReturnRow,
+  CandidateComparisonGroups,
   CandidateMetric,
   LatestSignal,
   MonthlyStat,
@@ -17,7 +18,9 @@ import type {
   StrategySummaryPackage,
   StressSummary,
   TargetWeightRow,
-  TimeSeriesPoint
+  TargetWeightSleeve,
+  TimeSeriesPoint,
+  RecentMonthlyRecord
 } from "../src/data/types";
 
 type CsvRow = Record<string, string>;
@@ -44,6 +47,7 @@ const btcSourceFiles = [
   `${BTC_OUTPUT_DIR}/core_return_haircut_stress.csv`,
   `${BTC_OUTPUT_DIR}/latest_signal_summary.csv`,
   `${BTC_OUTPUT_DIR}/latest_target_weights.csv`,
+  `${BTC_OUTPUT_DIR}/recent_monthly_tracking.csv`,
   `${BTC_OUTPUT_DIR}/paper_trading_rule_draft.csv`
 ];
 
@@ -56,6 +60,9 @@ const themeAlphaSourceFiles = [
   `${THEME_ALPHA_Q8_DIR}/friction_stress_comparison.csv`,
   `${THEME_ALPHA_Q8_DIR}/liquidity_participation_summary.csv`,
   `${THEME_ALPHA_Q8_DIR}/latest_target_weights.csv`,
+  `${THEME_ALPHA_Q8_DIR}/latest_sleeve_weights.csv`,
+  `${THEME_ALPHA_Q8_DIR}/paper_tracking_snapshot.csv`,
+  `${THEME_ALPHA_Q8_DIR}/recent_monthly_tracking.csv`,
   `${THEME_ALPHA_Q8_DIR}/nav_q8_selected_2021_to_date.csv`,
   `${THEME_ALPHA_Q8_DIR}/underwater_q8_selected_2021_to_date.csv`,
   `${THEME_ALPHA_Q12_DIR}/summary_real_etf.csv`,
@@ -262,6 +269,28 @@ function normalizeSeries(rows: CsvRow[]): TimeSeriesPoint[] {
   });
 }
 
+function normalizeRecentMonthlyRecords(rows: CsvRow[]): RecentMonthlyRecord[] {
+  return rows.map((row) => {
+    const {
+      strategy,
+      month,
+      month_end_date: monthEndDate,
+      is_partial: isPartial,
+      return: monthlyReturn,
+      ...holdings
+    } = row;
+
+    return {
+      strategy,
+      month,
+      monthEndDate,
+      isPartial: boolish(isPartial),
+      monthlyReturn: numeric(monthlyReturn),
+      holdings: Object.fromEntries(Object.entries(holdings).map(([asset, weight]) => [asset, numeric(weight)]))
+    };
+  });
+}
+
 function calculateAnnualReturns(series: TimeSeriesPoint[]): AnnualReturnRow[] {
   const byYear = new Map<string, TimeSeriesPoint[]>();
 
@@ -377,6 +406,21 @@ function normalizeThemeTargetWeights(rows: CsvRow[]): TargetWeightRow[] {
 
       return {
         candidate: `${candidate} / ${schedule}`,
+        weights: Object.fromEntries(Object.entries(weights).map(([asset, value]) => [asset, numeric(value)]))
+      };
+    });
+}
+
+function normalizeThemeTargetWeightSleeves(rows: CsvRow[]): TargetWeightSleeve[] {
+  return rows
+    .filter((row) => row.schedule === "BIMONTHLY" && row.sleeve === "LVT20")
+    .map((row) => {
+      const { candidate, schedule, sleeve, allocation, ...weights } = row;
+
+      return {
+        candidate: `${candidate} / ${schedule}`,
+        sleeve,
+        allocation: numeric(allocation),
         weights: Object.fromEntries(Object.entries(weights).map(([asset, value]) => [asset, numeric(value)]))
       };
     });
@@ -534,13 +578,16 @@ function splitStrategyPackage(strategy: StrategyPackage): {
     strategyBrief,
     benchmarkScorecard,
     candidateMetrics,
+    candidateComparisonGroups,
     stressSummaries,
     navSeries,
     underwaterSeries,
     annualReturns,
     monthlyStats,
+    recentMonthlyRecords,
     latestSignal,
     targetWeights,
+    targetWeightSleeves,
     paperTradingRules,
     riskNotes
   } = strategy;
@@ -559,17 +606,20 @@ function splitStrategyPackage(strategy: StrategyPackage): {
       strategyBrief,
       benchmarkScorecard,
       candidateMetrics,
+      candidateComparisonGroups,
       stressSummaries
     },
     charts: {
       navSeries,
       underwaterSeries,
       annualReturns,
-      monthlyStats
+      monthlyStats,
+      recentMonthlyRecords
     },
     paper: {
       latestSignal,
       targetWeights,
+      targetWeightSleeves,
       paperTradingRules,
       riskNotes
     }
@@ -593,7 +643,8 @@ async function writeSplitStrategyPackage(outputRoot: string, strategy: StrategyP
     writeJsonFile(join(strategyDir, "nav-series.json"), charts.navSeries),
     writeJsonFile(join(strategyDir, "underwater-series.json"), charts.underwaterSeries),
     writeJsonFile(join(strategyDir, "annual-returns.json"), charts.annualReturns),
-    writeJsonFile(join(strategyDir, "monthly-stats.json"), charts.monthlyStats)
+    writeJsonFile(join(strategyDir, "monthly-stats.json"), charts.monthlyStats),
+    writeJsonFile(join(strategyDir, "recent-monthly-records.json"), charts.recentMonthlyRecords)
   ]);
 }
 
@@ -619,12 +670,17 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
     coreHaircutRows,
     latestSignalRows,
     targetWeightRows,
+    recentMonthlyRows,
     ruleRows
   ] = await Promise.all(btcSourceFiles.map((file) => parseCsv(repoRoot, file)));
 
   const researchSummary = keyedValue(researchSummaryRows);
   const latestSignal = normalizeBtcLatestSignal(latestSignalRows);
   const candidateMetrics = metricRows.map(normalizeBtcMetric);
+  const candidateComparisonGroups: CandidateComparisonGroups = {
+    primary: candidateMetrics.map((candidate) => candidate.id),
+    research: []
+  };
   const navSeries = normalizeSeries(navRows);
   const btcBaseline = findMetric(candidateMetrics, "原三资产RiskParity");
   const btcPaperCandidate = findMetric(candidateMetrics, "BTC7.5%ST卫星");
@@ -656,7 +712,7 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
     },
     strategyBrief: {
       plainLanguage: "这是一个以三资产 RiskParity 为核心、用 BTC SuperTrend 趋势信号做小比例卫星增强的组合策略。",
-      objective: "观察 BTC 趋势收益是否能在可控回撤和可执行成本下改善核心组合。",
+      objective: "测试一个小比例、带趋势开关的 BTC 卫星仓位，能否在不显著增加回撤和摩擦成本的前提下，给传统资产组合增厚收益。",
       mechanism: [
         "核心仓位仍由沪深300、纳指100、黄金的 RiskParity 结构承担。",
         "BTC 只作为 5% / 7.5% / 10% 上限的卫星仓位，不是组合主引擎。",
@@ -721,10 +777,12 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
       ]
     },
     candidateMetrics,
+    candidateComparisonGroups,
     navSeries,
     underwaterSeries: normalizeSeries(underwaterRows),
     annualReturns: calculateAnnualReturns(navSeries),
     monthlyStats: calculateMonthlyStats(navSeries, candidateMetrics),
+    recentMonthlyRecords: normalizeRecentMonthlyRecords(recentMonthlyRows),
     stressSummaries: buildBtcStressSummaries(implementationRows, btcHaircutRows, coreHaircutRows),
     latestSignal,
     targetWeights: normalizeBtcTargetWeights(targetWeightRows),
@@ -757,6 +815,9 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
     frictionRows,
     liquidityRows,
     targetWeightRows,
+    targetWeightSleeveRows,
+    paperSnapshotRows,
+    recentMonthlyRows,
     navRows,
     underwaterRows,
     realEtfRows,
@@ -771,11 +832,25 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
   const themeLvt100 = findMetric(candidateMetrics, "Expanded_LVT_100");
   const themeDefault = findMetric(candidateMetrics, "Core80_LVT20_Def200_Cash");
   const themeGrowth = findMetric(candidateMetrics, "Core60_LVT40_Def200_Cash");
+  const candidateComparisonGroups: CandidateComparisonGroups = {
+    primary: [themeBaseline.id, themeDefault.id, themeLvt100.id],
+    research: [
+      themeGrowth.id,
+      findMetric(candidateMetrics, "Core80_LVT20_STEntry_Def200_Cash").id,
+      findMetric(candidateMetrics, "Core80_LVT20_STHalf_Def200_Cash").id
+    ]
+  };
   const preferredRow = fullSampleRows.find((row) => row.strategy === "Core80_LVT20_Def200_Cash") ?? fullSampleRows[0];
   const targetWeights = normalizeThemeTargetWeights(targetWeightRows);
+  const targetWeightSleeves = normalizeThemeTargetWeightSleeves(targetWeightSleeveRows);
   const preferredWeights = targetWeights.find((row) => row.candidate === "Def200_Cash / BIMONTHLY");
   const currentCash = preferredWeights?.weights["现金"] ?? 0;
-  const asOfDate = preferredRow?.end ?? "2026-06-24";
+  const cashDefenseActive = currentCash > 1e-10;
+  const paperSnapshot = paperSnapshotRows[0] ?? {};
+  const asOfDate = paperSnapshot.market_data_date || preferredRow?.end || "";
+  const signalDate = paperSnapshot.signal_date || asOfDate;
+  const executionDate = paperSnapshot.execution_date || "";
+  const researchAsOfDate = preferredRow?.end ?? "";
   const navSeries = normalizeSeries(navRows);
   const benchmarkStartDate = navSeries[0].date;
   const benchmarkEndDate = navSeries[navSeries.length - 1].date;
@@ -797,8 +872,8 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
     },
     strategyBrief: {
       plainLanguage:
-        "这是一个以三资产核心仓位为底座、用 20% 低波趋势主题 ETF 做卫星增强，并在核心风险恶化时转入现金防御的半月调仓策略。",
-      objective: "观察主题 ETF 增强和 Def200 Cash 防御规则能否在近实盘成本下改善组合路径。",
+        "这是一个“核心 + 卫星”策略。80% 核心仓位负责长期多资产配置，20% 卫星仓位挑选平稳向上的主题 ETF 增强收益，并在大盘恶化时转入现金防御。",
+      objective: "观察趋势主题增强和现金防御机制，能否在近实盘成本下提供比纯核心更好的风险调整后收益。",
       mechanism: [
         "80% 核心仓位由沪深300、纳指100和黄金承担主要资产配置。",
         "20% 卫星仓位在扩展主题 ETF 池内做低波趋势选择。",
@@ -836,7 +911,7 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
         },
         {
           term: "Def200 Cash",
-          definition: "防御规则；当核心风险状态变差时，将防御袖转入现金。"
+          definition: "200 日均线防御规则：当沪深 300 或纳指 100 跌破各自的 200 日均线时，对应的核心仓位转为现金避险。"
         },
         {
           term: "BIMONTHLY",
@@ -852,7 +927,7 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
       title: "评价坐标系",
       summary:
         "Theme Alpha 先和原始三资产核心比较，确认主题卫星和现金防御是否改善路径；再用全仓 LVT 作为风险上限提醒，并把主动偏股基金、沪深300全收益和纳指100全收益放进同一回测窗口里，形成投资者更直观的外部坐标。",
-      conclusion: themeAlphaSnapshotConclusion(asOfDate),
+      conclusion: themeAlphaSnapshotConclusion(researchAsOfDate),
       period: {
         startDate: benchmarkStartDate,
         endDate: benchmarkEndDate
@@ -901,7 +976,7 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
       },
       {
         label: "防御规则",
-        value: currentCash > 0 ? "现金防御开启" : "现金防御未触发",
+        value: cashDefenseActive ? "现金防御开启" : "现金防御未触发",
         detail: `当前现金 ${(currentCash * 100).toFixed(2)}% / 平均现金 ${(
           numeric(preferredRow?.["平均现金"]) * 100
         ).toFixed(2)}%`
@@ -913,17 +988,22 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
       }
     ],
     candidateMetrics,
+    candidateComparisonGroups,
     navSeries,
     underwaterSeries: normalizeSeries(underwaterRows),
     annualReturns: annualReturnsFromRows(annualReturnRows),
     monthlyStats: monthlyStatsFromRows(monthlyReturnRows, candidateMetrics),
+    recentMonthlyRecords: normalizeRecentMonthlyRecords(recentMonthlyRows),
     stressSummaries: buildThemeAlphaStressSummaries(scheduleRows, frictionRows, liquidityRows),
     latestSignal: {
       title: "Theme Alpha 信号状态",
-      latestDate: asOfDate,
-      stateLabel: currentCash > 0 ? "Def200 Cash 已触发" : "Def200 Cash 未触发",
-      stateTone: currentCash > 0 ? "warning" : "positive",
+      latestDate: signalDate,
+      stateLabel: cashDefenseActive ? "Def200 Cash 已触发" : "Def200 Cash 未触发",
+      stateTone: cashDefenseActive ? "warning" : "positive",
       rows: [
+        { label: "行情截至", value: asOfDate },
+        { label: "信号日期", value: signalDate },
+        { label: "执行日期", value: executionDate },
         { label: "调仓频率", value: "固定半月：10 日 / 25 日附近" },
         { label: "执行口径", value: "收盘信号，下一交易日执行" },
         { label: "候选", value: "Def200_Cash / BIMONTHLY" },
@@ -931,6 +1011,7 @@ export async function buildThemeAlphaStrategyPackage(repoRoot: string): Promise<
       ]
     },
     targetWeights,
+    targetWeightSleeves,
     paperTradingRules: [
       {
         item: "候选策略",

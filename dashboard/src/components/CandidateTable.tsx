@@ -3,17 +3,41 @@ import type { CandidateMetric } from "../data/types";
 
 type CandidateTableProps = {
   metrics: CandidateMetric[];
+  comparisonScope?: "primary" | "research";
+  onComparisonScopeChange?: (scope: "primary" | "research") => void;
 };
 
-export function CandidateTable({ metrics }: CandidateTableProps) {
+export function CandidateTable({ metrics, comparisonScope, onComparisonScopeChange }: CandidateTableProps) {
   const showCash = metrics.some((metric) => metric.averageCash !== undefined || metric.currentCash !== undefined);
   const showCost = metrics.some((metric) => metric.annualCostDrag !== undefined || metric.annualTurnover !== undefined);
 
   return (
     <section className="min-w-0 overflow-hidden border border-ink/15 bg-paper">
-      <div className="border-b border-ink/10 p-5">
-        <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/45">Candidate metrics</p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-tight">候选对比</h2>
+      <div className="flex flex-col gap-4 border-b border-ink/10 p-5 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/45">Candidate metrics</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight">候选对比</h2>
+        </div>
+        {comparisonScope && onComparisonScopeChange ? (
+          <div className="inline-grid w-fit grid-cols-2 gap-1 border border-ink/15 bg-paper p-1">
+            {[
+              ["primary", "核心对比"],
+              ["research", "研究候选"]
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                aria-pressed={comparisonScope === id}
+                className={`min-h-9 px-3 text-sm font-medium transition active:translate-y-px ${
+                  comparisonScope === id ? "bg-ink text-paper" : "text-ink/65 hover:bg-ink/5"
+                }`}
+                onClick={() => onComparisonScopeChange(id as "primary" | "research")}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        ) : null}
       </div>
       <div className="w-full overflow-x-auto">
         <table className="min-w-[900px] border-collapse text-left text-sm">

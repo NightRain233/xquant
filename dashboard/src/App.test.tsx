@@ -99,6 +99,10 @@ const reportData = {
       calmar: 1.53
     }
   ],
+  candidateComparisonGroups: {
+    primary: ["btc-75"],
+    research: []
+  },
   stressSummaries: [{ id: "implementation", title: "Execution friction stress", rows: [{ scenario: "base" }] }]
 };
 
@@ -127,6 +131,17 @@ const monthlyStats = [
     profitFactor: 3,
     bestMonth: 0.03,
     worstMonth: -0.01
+  }
+];
+
+const recentMonthlyRecords = [
+  {
+    strategy: "BTC7.5%ST卫星",
+    month: "2026-06",
+    monthEndDate: "2026-06-26",
+    isPartial: true,
+    monthlyReturn: 0.01,
+    holdings: { BTC: 0, 现金: 1 }
   }
 ];
 
@@ -205,6 +220,13 @@ describe("App", () => {
           };
         }
 
+        if (url.endsWith("/recent-monthly-records.json")) {
+          return {
+            ok: true,
+            json: async () => recentMonthlyRecords
+          };
+        }
+
         if (url.endsWith("/paper.json")) {
           return {
             ok: true,
@@ -261,7 +283,8 @@ describe("App", () => {
         "/data/strategies/btc-supertrend-satellite/nav-series.json",
         "/data/strategies/btc-supertrend-satellite/underwater-series.json",
         "/data/strategies/btc-supertrend-satellite/annual-returns.json",
-        "/data/strategies/btc-supertrend-satellite/monthly-stats.json"
+        "/data/strategies/btc-supertrend-satellite/monthly-stats.json",
+        "/data/strategies/btc-supertrend-satellite/recent-monthly-records.json"
       ])
     );
   });

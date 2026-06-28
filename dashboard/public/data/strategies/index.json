@@ -4,7 +4,7 @@
     {
       "id": "btc-supertrend-satellite",
       "name": "BTC SuperTrend Satellite",
-      "asOfDate": "2026-06-23",
+      "asOfDate": "2026-06-26",
       "headline": "建议进入纸面跟踪，暂不直接实盘。",
       "summary": "BTC 5% 和 7.5% SuperTrend 卫星更适合作为第一批纸面跟踪对象；BTC 10% 仍是历史表现最强的进攻观察候选，但对未来 BTC 趋势收益的依赖更明显。",
       "paperTracking": "recommended",
@@ -13,7 +13,7 @@
     {
       "id": "theme-alpha-core80-lvt20-def200-cash",
       "name": "Theme Alpha / Core80 LVT20 Def200 Cash",
-      "asOfDate": "2026-06-24",
+      "asOfDate": "2026-06-26",
       "headline": "建议进入纸面跟踪，暂不直接实盘。",
       "summary": "默认候选保持 Core80 / Expanded LVT20 / Def200 Cash，并采用固定半月信号、收盘信号下一交易日执行和资产级摩擦假设。Q12 支持它作为稳健实盘候选，但 proxy 长样本提醒 LVT 只能做卫星，不能升级为主引擎。",
       "paperTracking": "recommended",

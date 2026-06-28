@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import type { StrategyCatalog, StrategyPaperData, StrategyResearchData, StrategyReportData, StrategySummaryPackage } from "./types";
+import type {
+  StrategyCatalog,
+  StrategyPaperData,
+  StrategyResearchData,
+  StrategyReportData,
+  StrategySummaryPackage
+} from "./types";
 
 type LoadState<T> =
   | { status: "idle"; data: null; error: null }
@@ -136,13 +142,15 @@ export function useStrategyReportData(strategyId: string): LoadState<StrategyRes
       try {
         setState({ status: "loading", data: null, error: null });
         const baseUrl = `/data/strategies/${strategyId}`;
-        const [report, navSeries, underwaterSeries, annualReturns, monthlyStats] = await Promise.all([
+        const [report, navSeries, underwaterSeries, annualReturns, monthlyStats, recentMonthlyRecords] =
+          await Promise.all([
           fetchJson<StrategyReportData>(`${baseUrl}/report.json`),
           fetchJson<StrategyResearchData["navSeries"]>(`${baseUrl}/nav-series.json`),
           fetchJson<StrategyResearchData["underwaterSeries"]>(`${baseUrl}/underwater-series.json`),
           fetchJson<StrategyResearchData["annualReturns"]>(`${baseUrl}/annual-returns.json`),
-          fetchJson<StrategyResearchData["monthlyStats"]>(`${baseUrl}/monthly-stats.json`)
-        ]);
+          fetchJson<StrategyResearchData["monthlyStats"]>(`${baseUrl}/monthly-stats.json`),
+          fetchJson<StrategyResearchData["recentMonthlyRecords"]>(`${baseUrl}/recent-monthly-records.json`)
+          ]);
 
         if (!cancelled) {
           setState({
@@ -152,7 +160,8 @@ export function useStrategyReportData(strategyId: string): LoadState<StrategyRes
               navSeries,
               underwaterSeries,
               annualReturns,
-              monthlyStats
+              monthlyStats,
+              recentMonthlyRecords
             },
             error: null
           });

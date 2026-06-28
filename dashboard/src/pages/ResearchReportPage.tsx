@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { AnnualReturnsPanel } from "../components/AnnualReturnsPanel";
 import { BenchmarkScorecardPanel } from "../components/BenchmarkScorecardPanel";
 import { CandidateTable } from "../components/CandidateTable";
@@ -17,6 +17,8 @@ type ResearchReportPageProps = {
   strategyId: string;
 };
 
+type ComparisonScope = "primary" | "research";
+
 function DataLoadingPanel({ label }: { label: string }) {
   return (
     <section className="border border-ink/15 bg-paper p-5">
@@ -29,7 +31,12 @@ function DataLoadingPanel({ label }: { label: string }) {
 }
 
 export function ResearchReportPage({ strategyId }: ResearchReportPageProps) {
+  const [comparisonScope, setComparisonScope] = useState<ComparisonScope>("primary");
   const reportData = useStrategyReportData(strategyId);
+
+  useEffect(() => {
+    setComparisonScope("primary");
+  }, [strategyId]);
 
   if (reportData.status === "loading" || reportData.status === "idle") {
     return (
@@ -53,13 +60,29 @@ export function ResearchReportPage({ strategyId }: ResearchReportPageProps) {
   }
 
   const strategy = reportData.data;
+  const hasResearchCandidates = strategy.candidateComparisonGroups.research.length > 0;
+  const currentCandidateId =
+    strategy.candidateComparisonGroups.primary.find((id) => strategyId.endsWith(id.toLowerCase())) ??
+    strategy.candidateComparisonGroups.primary[0];
+  const selectedCandidateIds =
+    comparisonScope === "research" && hasResearchCandidates
+      ? [currentCandidateId, ...strategy.candidateComparisonGroups.research]
+      : strategy.candidateComparisonGroups.primary;
+  const selectedIdSet = new Set(selectedCandidateIds);
+  const candidateMetrics = strategy.candidateMetrics.filter((candidate) => selectedIdSet.has(candidate.id));
+  const candidateNames = candidateMetrics.map((candidate) => candidate.name);
+  const monthlyStats = strategy.monthlyStats.filter((row) => selectedIdSet.has(row.id));
 
   return (
     <div className="min-w-0 space-y-5">
       {strategy.strategyBrief ? <StrategyBriefPanel brief={strategy.strategyBrief} /> : null}
       {strategy.benchmarkScorecard ? <BenchmarkScorecardPanel scorecard={strategy.benchmarkScorecard} /> : null}
-      <MetricCardGrid metrics={strategy.candidateMetrics} cards={strategy.highlightCards} />
-      <CandidateTable metrics={strategy.candidateMetrics} />
+      <MetricCardGrid metrics={candidateMetrics} cards={strategy.highlightCards} />
+      <CandidateTable
+        metrics={candidateMetrics}
+        comparisonScope={hasResearchCandidates ? comparisonScope : undefined}
+        onComparisonScopeChange={hasResearchCandidates ? setComparisonScope : undefined}
+      />
       <div className="grid min-w-0 gap-5 xl:grid-cols-2">
         <Suspense
           fallback={
@@ -73,8 +96,8 @@ export function ResearchReportPage({ strategyId }: ResearchReportPageProps) {
           <UnderwaterChart series={strategy.underwaterSeries} />
         </Suspense>
       </div>
-      <AnnualReturnsPanel rows={strategy.annualReturns} />
-      <MonthlyStatsPanel rows={strategy.monthlyStats} />
+      <AnnualReturnsPanel rows={strategy.annualReturns} candidateNames={candidateNames} />
+      <MonthlyStatsPanel rows={monthlyStats} recentMonthlyRecords={strategy.recentMonthlyRecords} />
       <StressSummaryPanel summaries={strategy.stressSummaries} />
     </div>
   );

@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { formatInteger, formatPercent, formatRatio } from "../data/formatters";
-import type { MonthlyStat } from "../data/types";
+import type { MonthlyStat, RecentMonthlyRecord } from "../data/types";
 
 type MonthlyStatsPanelProps = {
   rows: MonthlyStat[];
+  recentMonthlyRecords: RecentMonthlyRecord[];
 };
 
-export function MonthlyStatsPanel({ rows }: MonthlyStatsPanelProps) {
-  const [view, setView] = useState<"overview" | "table">("overview");
+type MonthlyView = "overview" | "table" | "recent";
+
+export function MonthlyStatsPanel({ rows, recentMonthlyRecords }: MonthlyStatsPanelProps) {
+  const [view, setView] = useState<MonthlyView>("overview");
   const maxProfitFactor = Math.max(...rows.map((row) => row.profitFactor), 1);
 
   return (
@@ -17,10 +20,11 @@ export function MonthlyStatsPanel({ rows }: MonthlyStatsPanelProps) {
           <p className="font-mono text-xs uppercase tracking-[0.16em] text-ink/45">Monthly diagnostics</p>
           <h2 className="mt-2 text-xl font-semibold tracking-tight">月度统计</h2>
         </div>
-        <div className="inline-grid w-fit grid-cols-2 gap-1 border border-ink/15 bg-paper p-1">
+        <div className="inline-grid w-fit grid-cols-3 gap-1 border border-ink/15 bg-paper p-1">
           {[
             ["overview", "体验概览"],
-            ["table", "表格"]
+            ["table", "汇总表"],
+            ["recent", "近期 6 个月"]
           ].map(([id, label]) => (
             <button
               key={id}
@@ -28,7 +32,7 @@ export function MonthlyStatsPanel({ rows }: MonthlyStatsPanelProps) {
               className={`min-h-9 px-3 text-sm font-medium transition active:translate-y-px ${
                 view === id ? "bg-ink text-paper" : "text-ink/65 hover:bg-ink/5"
               }`}
-              onClick={() => setView(id as "overview" | "table")}
+              onClick={() => setView(id as MonthlyView)}
             >
               {label}
             </button>
@@ -67,7 +71,7 @@ export function MonthlyStatsPanel({ rows }: MonthlyStatsPanelProps) {
             ))}
           </div>
         </div>
-      ) : (
+      ) : view === "table" ? (
         <div className="w-full overflow-x-auto">
           <table className="min-w-[860px] border-collapse text-left text-sm">
             <thead className="bg-ink/[0.04] text-xs uppercase tracking-[0.12em] text-ink/48">
@@ -102,9 +106,82 @@ export function MonthlyStatsPanel({ rows }: MonthlyStatsPanelProps) {
             </tbody>
           </table>
         </div>
+      ) : (
+        <RecentMonthlyView records={recentMonthlyRecords} />
       )}
     </section>
   );
+}
+
+function RecentMonthlyView({ records }: { records: RecentMonthlyRecord[] }) {
+  if (records.length === 0) {
+    return (
+      <div className="p-5">
+        <h3 className="text-sm font-semibold text-ink">近期 6 个月</h3>
+        <p className="mt-2 text-sm leading-6 text-ink/62">近期月度数据暂不可用。</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-5">
+      <div className="flex flex-col gap-2 border-b border-ink/10 pb-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h3 className="text-sm font-semibold text-ink">近期 6 个月</h3>
+          <p className="mt-2 text-sm leading-6 text-ink/62">展示默认纸面候选的月度收益与月末已执行持仓。</p>
+        </div>
+        <p className="font-mono text-xs text-ink/55">{records[0].strategy}</p>
+      </div>
+      <div className="divide-y divide-ink/10">
+        {records.map((record) => {
+          const visibleHoldings = Object.entries(record.holdings).filter(
+            ([, weight]) => Number.isFinite(weight) && Math.abs(weight) > 1e-10
+          );
+          const returnTone = record.monthlyReturn >= 0 ? "text-accent" : "text-red-900";
+
+          return (
+            <article key={`${record.strategy}-${record.month}`} className="py-5">
+              <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                <div className="flex items-center gap-3">
+                  <p className="font-mono text-base font-semibold text-ink">{record.month}</p>
+                  {record.isPartial ? (
+                    <span className="border border-amber-800/20 bg-amber-700/10 px-2 py-1 text-xs font-medium text-amber-800">
+                      截至 {formatMonthDay(record.monthEndDate)}
+                    </span>
+                  ) : null}
+                </div>
+                <div className="md:text-right">
+                  <p className={`font-mono text-xl font-semibold ${returnTone}`}>
+                    {formatPercent(record.monthlyReturn)}
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-ink/48">月末 {record.monthEndDate}</p>
+                </div>
+              </div>
+              {visibleHoldings.length > 0 ? (
+                <div className="mt-4 grid grid-cols-1 gap-px border border-ink/10 bg-ink/10 md:grid-cols-2 xl:grid-cols-3">
+                  {visibleHoldings.map(([asset, weight]) => (
+                    <div key={asset} className="flex items-center justify-between gap-4 bg-paper px-3 py-2.5">
+                      <span className="truncate text-sm text-ink/70" title={asset}>
+                        {asset}
+                      </span>
+                      <span className="shrink-0 font-mono text-sm font-semibold">{formatPercent(weight)}</span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <p className="mt-4 text-sm text-ink/55">暂无有效持仓。</p>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function formatMonthDay(date: string): string {
+  const [, month, day] = date.split("-");
+  return `${Number(month)}/${Number(day)}`;
 }
 
 type MetricBarProps = {

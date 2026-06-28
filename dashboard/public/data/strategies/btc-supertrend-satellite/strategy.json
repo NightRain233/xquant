@@ -1,7 +1,7 @@
 {
   "id": "btc-supertrend-satellite",
   "name": "BTC SuperTrend Satellite",
-  "asOfDate": "2026-06-23",
+  "asOfDate": "2026-06-26",
   "status": {
     "paperTracking": "recommended",
     "liveTrading": "not-yet"
@@ -28,6 +28,7 @@
     "outputs/q10-live-readiness-stress/core_return_haircut_stress.csv",
     "outputs/q10-live-readiness-stress/latest_signal_summary.csv",
     "outputs/q10-live-readiness-stress/latest_target_weights.csv",
+    "outputs/q10-live-readiness-stress/recent_monthly_tracking.csv",
     "outputs/q10-live-readiness-stress/paper_trading_rule_draft.csv"
   ]
 }

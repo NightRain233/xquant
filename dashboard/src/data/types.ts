@@ -54,6 +54,20 @@ export type MonthlyStat = {
   worstMonth: number;
 };
 
+export type RecentMonthlyRecord = {
+  strategy: string;
+  month: string;
+  monthEndDate: string;
+  isPartial: boolean;
+  monthlyReturn: number;
+  holdings: Record<string, number>;
+};
+
+export type CandidateComparisonGroups = {
+  primary: string[];
+  research: string[];
+};
+
 export type LatestSignal = {
   latestDate?: string;
   btcClose?: number;
@@ -71,6 +85,13 @@ export type LatestSignal = {
 
 export type TargetWeightRow = {
   candidate: string;
+  weights: Record<string, number>;
+};
+
+export type TargetWeightSleeve = {
+  candidate: string;
+  sleeve: string;
+  allocation: number;
   weights: Record<string, number>;
 };
 
@@ -162,6 +183,7 @@ export type StrategyReportData = {
   strategyBrief?: StrategyBrief;
   benchmarkScorecard?: BenchmarkScorecard;
   candidateMetrics: CandidateMetric[];
+  candidateComparisonGroups: CandidateComparisonGroups;
   stressSummaries: StressSummary[];
 };
 
@@ -170,11 +192,13 @@ export type StrategyChartData = {
   underwaterSeries: TimeSeriesPoint[];
   annualReturns: AnnualReturnRow[];
   monthlyStats: MonthlyStat[];
+  recentMonthlyRecords: RecentMonthlyRecord[];
 };
 
 export type StrategyPaperData = {
   latestSignal: LatestSignal;
   targetWeights: TargetWeightRow[];
+  targetWeightSleeves?: TargetWeightSleeve[];
   paperTradingRules: PaperTradingRule[];
   riskNotes: RiskNote[];
 };

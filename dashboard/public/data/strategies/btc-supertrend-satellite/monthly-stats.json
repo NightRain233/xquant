@@ -6,11 +6,11 @@
     "winningMonths": 77,
     "losingMonths": 43,
     "monthlyWinRate": 0.6363636363636364,
-    "averageWinningMonth": 0.025231558035848936,
-    "averageLosingMonth": -0.017552567732652274,
-    "profitFactor": 2.5741015778963483,
-    "bestMonth": 0.09653297951012707,
-    "worstMonth": -0.07768777335608457
+    "averageWinningMonth": 0.02523155397267584,
+    "averageLosingMonth": -0.01777686733081391,
+    "profitFactor": 2.541622445621834,
+    "bestMonth": 0.09653299835378815,
+    "worstMonth": -0.07768777335608434
   },
   {
     "id": "BTC5%ST卫星",
@@ -19,11 +19,11 @@
     "winningMonths": 80,
     "losingMonths": 40,
     "monthlyWinRate": 0.6611570247933884,
-    "averageWinningMonth": 0.026102307541036214,
-    "averageLosingMonth": -0.01805138026331569,
-    "profitFactor": 2.8920012941150817,
-    "bestMonth": 0.09153240400706153,
-    "worstMonth": -0.07383977906540284
+    "averageWinningMonth": 0.026102304155131383,
+    "averageLosingMonth": -0.01828089087536109,
+    "profitFactor": 2.8556927923367192,
+    "bestMonth": 0.09153242182511012,
+    "worstMonth": -0.07383977906540296
   },
   {
     "id": "BTC7.5%ST卫星",
@@ -32,11 +32,11 @@
     "winningMonths": 80,
     "losingMonths": 40,
     "monthlyWinRate": 0.6611570247933884,
-    "averageWinningMonth": 0.027264406047094625,
-    "averageLosingMonth": -0.018137610100646424,
-    "profitFactor": 3.0063945465585813,
-    "bestMonth": 0.10041402913821096,
-    "worstMonth": -0.07191422515388413
+    "averageWinningMonth": 0.027264400666692546,
+    "averageLosingMonth": -0.0183612923915327,
+    "profitFactor": 2.969769239039569,
+    "bestMonth": 0.10041400125182198,
+    "worstMonth": -0.07191422515388424
   },
   {
     "id": "BTC10%ST卫星",
@@ -45,10 +45,10 @@
     "winningMonths": 78,
     "losingMonths": 42,
     "monthlyWinRate": 0.6446280991735537,
-    "averageWinningMonth": 0.02938071333874815,
-    "averageLosingMonth": -0.01776668480726241,
-    "profitFactor": 3.0711515686096953,
-    "bestMonth": 0.11083842126191112,
-    "worstMonth": -0.07119427658777755
+    "averageWinningMonth": 0.029380708215340518,
+    "averageLosingMonth": -0.017974157868466623,
+    "profitFactor": 3.0357011882956706,
+    "bestMonth": 0.11083839385307726,
+    "worstMonth": -0.07119423121029989
   }
 ]

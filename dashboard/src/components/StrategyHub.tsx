@@ -40,7 +40,7 @@ export function StrategyHub({ catalog, onSelectStrategy }: StrategyHubProps) {
             <h1 className="mt-4 text-2xl font-semibold tracking-tight">策略展示台账</h1>
           </div>
           <p className="mt-5 max-w-3xl text-sm leading-6 text-ink/65 md:mt-0">
-            当前 dashboard 使用静态研究输出生成策略包。这里用于切换研究展示和纸面跟踪视图，不做自动行情刷新和后端调度。
+            XQuant 策略台账不仅比较收益，更关注策略的实盘可行性。你可以点击下方卡片，查看各候选策略的回撤特征、压力测试与当前交易信号。
           </p>
         </header>
 
