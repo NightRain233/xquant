@@ -1,7 +1,7 @@
 {
   "id": "btc-supertrend-satellite",
   "name": "BTC SuperTrend Satellite",
-  "asOfDate": "2026-06-26",
+  "asOfDate": "2026-08-10",
   "status": {
     "paperTracking": "recommended",
     "liveTrading": "not-yet"

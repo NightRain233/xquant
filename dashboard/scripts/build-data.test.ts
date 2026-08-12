@@ -29,23 +29,23 @@ describe("BTC strategy data builder", () => {
       "BTC10%ST卫星"
     ]);
     expect(strategy.latestSignal.btcSupertrendOn).toBe(false);
-    expect(strategy.latestSignal.latestDate).toBe("2026-06-26");
+    expect(strategy.latestSignal.latestDate).toBe("2026-08-10");
     expect(strategy.targetWeights).toHaveLength(3);
     expect(strategy.navSeries.length).toBeGreaterThan(1000);
     expect(strategy.underwaterSeries.length).toBeGreaterThan(1000);
     expect(strategy.annualReturns.length).toBeGreaterThan(8);
     expect(strategy.monthlyStats).toHaveLength(4);
     expect(strategy.recentMonthlyRecords.map((row) => row.month)).toEqual([
-      "2026-01",
-      "2026-02",
       "2026-03",
       "2026-04",
       "2026-05",
-      "2026-06"
+      "2026-06",
+      "2026-07",
+      "2026-08"
     ]);
     expect(strategy.recentMonthlyRecords.at(-1)).toMatchObject({
       isPartial: true,
-      monthEndDate: "2026-06-26"
+      monthEndDate: "2026-08-10"
     });
     for (const row of strategy.recentMonthlyRecords) {
       expect(Object.values(row.holdings).reduce((sum, weight) => sum + weight, 0)).toBeCloseTo(1);
@@ -60,7 +60,7 @@ describe("BTC strategy data builder", () => {
     expect(strategy.benchmarkScorecard?.title).toBe("评价坐标系");
     expect(strategy.benchmarkScorecard?.period).toEqual({
       startDate: "2016-06-21",
-      endDate: "2026-06-26"
+      endDate: "2026-08-10"
     });
     expect(strategy.benchmarkScorecard?.rows.map((row) => row.role)).toContain("内部基准");
     expect(strategy.benchmarkScorecard?.rows.map((row) => row.role)).toContain("主动权益基金参考线");
@@ -78,9 +78,10 @@ describe("BTC strategy data builder", () => {
     const btcNasdaqReference = strategy.benchmarkScorecard?.rows.find((row) => row.name === "纳斯达克100全收益指数");
     expect(btcNasdaqReference?.note).toContain("2016-06-21 至");
     expect(btcNasdaqReference?.note).toContain("全收益美元口径");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("基于 2026-06-26 研究快照");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("BTC7.5%ST卫星年化 19.49%");
-    expect(strategy.benchmarkScorecard?.conclusion).toContain("没有跑赢纳指100全收益 22.01%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("基于 2026-08-10 研究快照");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("BTC7.5%ST卫星年化 19.47%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("最大回撤约 -12.75%");
+    expect(strategy.benchmarkScorecard?.conclusion).toContain("没有跑赢纳指100全收益 21.89%");
     expect(strategy.benchmarkScorecard?.conclusion).toContain("默认仍应先纸面跟踪 5% / 7.5%");
     expect(strategy.riskNotes[0].title).toBe("BTC 趋势收益可能消失");
     expect(strategy.stressSummaries.map((summary) => summary.id)).toContain("implementation");
@@ -144,7 +145,7 @@ describe("Theme Alpha strategy data builder", () => {
 
     expect(strategy.id).toBe("theme-alpha-core80-lvt20-def200-cash");
     expect(strategy.name).toBe("Theme Alpha / Core80 LVT20 Def200 Cash");
-    expect(strategy.asOfDate).toBe("2026-06-26");
+    expect(strategy.asOfDate).toBe("2026-08-10");
     expect(strategy.status.paperTracking).toBe("recommended");
     expect(strategy.status.liveTrading).toBe("not-yet");
     expect(strategy.recommendation.preferredPaperCaps).toEqual(["Def200_Cash / BIMONTHLY"]);
@@ -169,7 +170,7 @@ describe("Theme Alpha strategy data builder", () => {
     );
     expect(strategy.benchmarkScorecard?.period).toEqual({
       startDate: "2021-01-04",
-      endDate: "2026-06-26"
+      endDate: "2026-08-10"
     });
     const activeEquityReference = strategy.benchmarkScorecard?.rows.find(
       (row) => row.name === "中证主动偏股型基金指数"
@@ -201,16 +202,16 @@ describe("Theme Alpha strategy data builder", () => {
     expect(strategy.annualReturns.length).toBeGreaterThanOrEqual(6);
     expect(strategy.monthlyStats).toHaveLength(6);
     expect(strategy.recentMonthlyRecords.map((row) => row.month)).toEqual([
-      "2026-01",
-      "2026-02",
       "2026-03",
       "2026-04",
       "2026-05",
-      "2026-06"
+      "2026-06",
+      "2026-07",
+      "2026-08"
     ]);
     expect(strategy.recentMonthlyRecords.at(-1)).toMatchObject({
       isPartial: true,
-      monthEndDate: "2026-06-26"
+      monthEndDate: "2026-08-10"
     });
     for (const row of strategy.recentMonthlyRecords) {
       expect(Object.values(row.holdings).reduce((sum, weight) => sum + weight, 0)).toBeCloseTo(1);
@@ -243,9 +244,9 @@ describe("Theme Alpha strategy data builder", () => {
     expect(signalRows.map((row) => row.label)).toContain("调仓频率");
     expect(signalRows).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ label: "行情截至", value: "2026-06-26" }),
-        expect.objectContaining({ label: "信号日期", value: "2026-06-25" }),
-        expect.objectContaining({ label: "执行日期", value: "2026-06-26" })
+        expect.objectContaining({ label: "行情截至", value: "2026-08-10" }),
+        expect.objectContaining({ label: "信号日期", value: "2026-08-10" }),
+        expect.objectContaining({ label: "执行日期", value: "" })
       ])
     );
     expect(strategy.stressSummaries.map((summary) => summary.id)).toEqual(

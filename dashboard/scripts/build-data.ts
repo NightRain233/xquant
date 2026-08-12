@@ -648,8 +648,16 @@ async function writeSplitStrategyPackage(outputRoot: string, strategy: StrategyP
   ]);
 }
 
-function btcSnapshotConclusion(asOfDate: string): string {
-  return `本报告结论基于 ${asOfDate} 研究快照形成，为静态研究判断；后续 benchmark 刷新不会自动改写本段结论，需要手动生成新的研究快照。结论：BTC7.5%ST卫星年化 19.49%，明显跑赢主动偏股和沪深300全收益，且最大回撤约 -12.75%，相对两条权益参考线回撤明显更浅；但它没有跑赢纳指100全收益 22.01% 的年化。评价上更像是用多资产和 BTC 趋势过滤换取更平滑路径，而不是追求最高进攻收益；BTC10%ST卫星只作进攻观察，默认仍应先纸面跟踪 5% / 7.5%。`;
+function formatPercent(value: number): string {
+  return `${(value * 100).toFixed(2)}%`;
+}
+
+function btcSnapshotConclusion(
+  asOfDate: string,
+  paperCandidate: CandidateMetric,
+  nasdaqAnnualReturn: number
+): string {
+  return `本报告结论基于 ${asOfDate} 研究快照形成，为静态研究判断；后续 benchmark 刷新不会自动改写本段结论，需要手动生成新的研究快照。结论：BTC7.5%ST卫星年化 ${formatPercent(paperCandidate.annualReturn)}，明显跑赢主动偏股和沪深300全收益，且最大回撤约 ${formatPercent(paperCandidate.maxDrawdown)}，相对两条权益参考线回撤明显更浅；但它没有跑赢纳指100全收益 ${formatPercent(nasdaqAnnualReturn)} 的年化。评价上更像是用多资产和 BTC 趋势过滤换取更平滑路径，而不是追求最高进攻收益；BTC10%ST卫星只作进攻观察，默认仍应先纸面跟踪 5% / 7.5%。`;
 }
 
 function themeAlphaSnapshotConclusion(asOfDate: string): string {
@@ -688,6 +696,17 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
   const benchmarkStartDate = navSeries[0].date;
   const benchmarkEndDate = navSeries[navSeries.length - 1].date;
   const asOfDate = latestSignal.latestDate ?? "";
+  const externalBenchmarkRows = benchmarkRowsFromExternalSeries(
+    activeEquityBenchmarkRows,
+    csi300BenchmarkRows,
+    nasdaq100BenchmarkRows,
+    benchmarkStartDate,
+    benchmarkEndDate
+  );
+  const nasdaqBenchmark = externalBenchmarkRows.find((row) => row.name === "纳斯达克100全收益指数");
+  if (nasdaqBenchmark?.annualReturn === undefined) {
+    throw new Error("Missing Nasdaq 100 total-return benchmark");
+  }
 
   return {
     id: BTC_STRATEGY_ID,
@@ -743,7 +762,7 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
       title: "评价坐标系",
       summary:
         "先用三资产 RiskParity 判断卫星层是否真的增厚组合，再把主动偏股基金、沪深300全收益和纳指100全收益放到同一回测窗口里，帮助投资者理解机会成本、A股Beta和海外成长Beta。",
-      conclusion: btcSnapshotConclusion(asOfDate),
+      conclusion: btcSnapshotConclusion(asOfDate, btcPaperCandidate, nasdaqBenchmark.annualReturn),
       period: {
         startDate: benchmarkStartDate,
         endDate: benchmarkEndDate
@@ -767,13 +786,7 @@ export async function buildBtcStrategyPackage(repoRoot: string): Promise<Strateg
           "历史表现更强，但对 BTC 趋势持续性的依赖更高。",
           "只作观察"
         ),
-        ...benchmarkRowsFromExternalSeries(
-          activeEquityBenchmarkRows,
-          csi300BenchmarkRows,
-          nasdaq100BenchmarkRows,
-          benchmarkStartDate,
-          benchmarkEndDate
-        )
+        ...externalBenchmarkRows
       ]
     },
     candidateMetrics,
