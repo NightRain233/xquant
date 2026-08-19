@@ -1,0 +1,7 @@
+strategy,candidateSignals,executedEntries,rejectedEntries,closedTrades,openPositionsAtEnd,rejected_capital_limit,rejected_concurrency_limit,rejected_above_max_acceptable_price,rejected_already_held
+all_bull_flip,368,180,188,171,9,8.0,180.0,0.0,0.0
+breakout_right_side_5,36,32,4,30,2,0.0,1.0,3.0,0.0
+pullback,340,104,236,99,5,0.0,55.0,25.0,156.0
+breakout_plus_pullback,376,110,266,104,6,0.0,84.0,25.0,157.0
+simple_supertrend,529,204,325,194,10,8.0,317.0,0.0,0.0
+buy_hold_spy,1,1,0,0,1,0.0,0.0,0.0,0.0

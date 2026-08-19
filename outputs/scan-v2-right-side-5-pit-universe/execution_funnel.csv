@@ -1,0 +1,7 @@
+signal,universe,candidateSignals,executedEntries,rejectedEntries,closedTrades,openPositionsAtEnd
+policy_eligible_bull_flip,current_47_backfill,368,180,188,171,9
+policy_eligible_bull_flip,frozen_2023_03_01,386,180,206,170,10
+policy_eligible_bull_flip,rolling_monthly_pit,394,183,211,175,8
+scan_v2_right_side_5,current_47_backfill,36,32,4,30,2
+scan_v2_right_side_5,frozen_2023_03_01,34,32,2,31,1
+scan_v2_right_side_5,rolling_monthly_pit,37,34,3,31,3

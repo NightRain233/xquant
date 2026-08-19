@@ -1,0 +1,681 @@
+{
+  "params": {
+    "start": "2013-01-01",
+    "end": "2026-07-10",
+    "dataDir": "/Users/zz/Desktop/Code/zsd/xquant/outputs/scan-v2-all-bull-flip-long-sample/market_data",
+    "symbolCount": 81
+  },
+  "summary": {
+    "updated": 52,
+    "missing": 0,
+    "error": 29,
+    "earliestStartDate": "2013-01-02"
+  },
+  "results": [
+    {
+      "symbol": "000001.SS",
+      "status": "updated",
+      "rows": 3281,
+      "weeklyRows": 693,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "000300.SS",
+      "status": "updated",
+      "rows": 3281,
+      "weeklyRows": 693,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "000890.SZ",
+      "status": "updated",
+      "rows": 3106,
+      "weeklyRows": 660,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "002015.SZ",
+      "status": "updated",
+      "rows": 2759,
+      "weeklyRows": 591,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "002119.SZ",
+      "status": "updated",
+      "rows": 3178,
+      "weeklyRows": 674,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "002309.SZ",
+      "status": "updated",
+      "rows": 3050,
+      "weeklyRows": 650,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "002796.SZ",
+      "status": "updated",
+      "rows": 2408,
+      "weeklyRows": 509,
+      "startDate": "2016-05-10",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "159201.SZ",
+      "status": "error",
+      "error": "tickflow request 159201.SZ recently succeeded"
+    },
+    {
+      "symbol": "159320.SZ",
+      "status": "updated",
+      "rows": 372,
+      "weeklyRows": 80,
+      "startDate": "2024-12-24",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "159326.SZ",
+      "status": "error",
+      "error": "tickflow request 159326.SZ recently succeeded"
+    },
+    {
+      "symbol": "159552.SZ",
+      "status": "error",
+      "error": "tickflow request 159552.SZ recently succeeded"
+    },
+    {
+      "symbol": "159553.SZ",
+      "status": "error",
+      "error": "tickflow request 159553.SZ recently succeeded"
+    },
+    {
+      "symbol": "159583.SZ",
+      "status": "updated",
+      "rows": 486,
+      "weeklyRows": 104,
+      "startDate": "2024-07-08",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "159869.SZ",
+      "status": "error",
+      "error": "tickflow request 159869.SZ recently succeeded"
+    },
+    {
+      "symbol": "159915.SZ",
+      "status": "error",
+      "error": "tickflow request 159915.SZ recently succeeded"
+    },
+    {
+      "symbol": "159919.SZ",
+      "status": "updated",
+      "rows": 3280,
+      "weeklyRows": 693,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "159922.SZ",
+      "status": "updated",
+      "rows": 3236,
+      "weeklyRows": 684,
+      "startDate": "2013-03-15",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "159930.SZ",
+      "status": "updated",
+      "rows": 3109,
+      "weeklyRows": 657,
+      "startDate": "2013-09-16",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "159967.SZ",
+      "status": "error",
+      "error": "tickflow request 159967.SZ recently succeeded"
+    },
+    {
+      "symbol": "159995.SZ",
+      "status": "updated",
+      "rows": 1558,
+      "weeklyRows": 329,
+      "startDate": "2020-02-10",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "2800.HK",
+      "status": "updated",
+      "rows": 3326,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "510050.SS",
+      "status": "error",
+      "error": "tickflow request 510050.SS recently succeeded"
+    },
+    {
+      "symbol": "510300.SS",
+      "status": "error",
+      "error": "tickflow request 510300.SS recently succeeded"
+    },
+    {
+      "symbol": "510500.SS",
+      "status": "error",
+      "error": "tickflow request 510500.SS recently succeeded"
+    },
+    {
+      "symbol": "510880.SS",
+      "status": "error",
+      "error": "tickflow request 510880.SS recently succeeded"
+    },
+    {
+      "symbol": "511010.SS",
+      "status": "updated",
+      "rows": 3230,
+      "weeklyRows": 682,
+      "startDate": "2013-03-25",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "512000.SS",
+      "status": "error",
+      "error": "tickflow request 512000.SS recently succeeded"
+    },
+    {
+      "symbol": "512010.SS",
+      "status": "error",
+      "error": "tickflow request 512010.SS recently succeeded"
+    },
+    {
+      "symbol": "512040.SS",
+      "status": "error",
+      "error": "tickflow request 512040.SS recently succeeded"
+    },
+    {
+      "symbol": "512100.SS",
+      "status": "error",
+      "error": "tickflow request 512100.SS recently succeeded"
+    },
+    {
+      "symbol": "512170.SS",
+      "status": "error",
+      "error": "tickflow request 512170.SS recently succeeded"
+    },
+    {
+      "symbol": "512400.SS",
+      "status": "updated",
+      "rows": 2147,
+      "weeklyRows": 453,
+      "startDate": "2017-09-01",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "512660.SS",
+      "status": "error",
+      "error": "tickflow request 512660.SS recently succeeded"
+    },
+    {
+      "symbol": "512720.SS",
+      "status": "error",
+      "error": "tickflow request 512720.SS recently succeeded"
+    },
+    {
+      "symbol": "512760.SS",
+      "status": "error",
+      "error": "tickflow request 512760.SS recently succeeded"
+    },
+    {
+      "symbol": "512880.SS",
+      "status": "error",
+      "error": "tickflow request 512880.SS recently succeeded"
+    },
+    {
+      "symbol": "512890.SS",
+      "status": "error",
+      "error": "tickflow request 512890.SS recently succeeded"
+    },
+    {
+      "symbol": "513010.SS",
+      "status": "error",
+      "error": "tickflow request 513010.SS recently succeeded"
+    },
+    {
+      "symbol": "513100.SS",
+      "status": "updated",
+      "rows": 3197,
+      "weeklyRows": 675,
+      "startDate": "2013-05-15",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "513120.SS",
+      "status": "error",
+      "error": "tickflow request 513120.SS recently succeeded"
+    },
+    {
+      "symbol": "513180.SS",
+      "status": "updated",
+      "rows": 1244,
+      "weeklyRows": 262,
+      "startDate": "2021-05-25",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "513910.SS",
+      "status": "error",
+      "error": "tickflow request 513910.SS recently succeeded"
+    },
+    {
+      "symbol": "515070.SS",
+      "status": "error",
+      "error": "tickflow request 515070.SS recently succeeded"
+    },
+    {
+      "symbol": "515790.SS",
+      "status": "error",
+      "error": "tickflow request 515790.SS recently succeeded"
+    },
+    {
+      "symbol": "515880.SS",
+      "status": "error",
+      "error": "tickflow request 515880.SS recently succeeded"
+    },
+    {
+      "symbol": "518880.SS",
+      "status": "updated",
+      "rows": 3148,
+      "weeklyRows": 664,
+      "startDate": "2013-07-29",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "588000.SS",
+      "status": "error",
+      "error": "tickflow request 588000.SS recently succeeded"
+    },
+    {
+      "symbol": "588080.SS",
+      "status": "error",
+      "error": "tickflow request 588080.SS recently succeeded"
+    },
+    {
+      "symbol": "588200.SS",
+      "status": "updated",
+      "rows": 899,
+      "weeklyRows": 190,
+      "startDate": "2022-10-26",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "588890.SS",
+      "status": "updated",
+      "rows": 537,
+      "weeklyRows": 115,
+      "startDate": "2024-04-23",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "600345.SS",
+      "status": "updated",
+      "rows": 3261,
+      "weeklyRows": 690,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "600487.SS",
+      "status": "updated",
+      "rows": 3169,
+      "weeklyRows": 673,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "601288.SS",
+      "status": "updated",
+      "rows": 3281,
+      "weeklyRows": 693,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "601991.SS",
+      "status": "updated",
+      "rows": 3266,
+      "weeklyRows": 692,
+      "startDate": "2013-01-04",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "605289.SS",
+      "status": "updated",
+      "rows": 1262,
+      "weeklyRows": 266,
+      "startDate": "2021-04-26",
+      "endDate": "2026-07-10",
+      "usedTickFlow": true,
+      "usedYfinance": false
+    },
+    {
+      "symbol": "AAPL",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "BTC-USD",
+      "status": "updated",
+      "rows": 4315,
+      "weeklyRows": 617,
+      "startDate": "2014-09-17",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "DIA",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "ETH-USD",
+      "status": "updated",
+      "rows": 3166,
+      "weeklyRows": 453,
+      "startDate": "2017-11-09",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "GC=F",
+      "status": "updated",
+      "rows": 3399,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "GLD",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "GOOGL",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "IWM",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "MU",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "NVDA",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "QQQ",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "SMH",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "SOXX",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "SPY",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "TLT",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "TSLA",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLB",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLE",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLF",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLI",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLK",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLP",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLRE",
+      "status": "updated",
+      "rows": 2703,
+      "weeklyRows": 562,
+      "startDate": "2015-10-08",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLU",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLV",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    },
+    {
+      "symbol": "XLY",
+      "status": "updated",
+      "rows": 3400,
+      "weeklyRows": 706,
+      "startDate": "2013-01-02",
+      "endDate": "2026-07-10",
+      "usedTickFlow": false,
+      "usedYfinance": true
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-08-14T00:49:36.203250+00:00",
+  "decisionEventInput": "outputs/scan-v2-all-bull-flip-long-sample/policy_bull_flip_events.parquet",
+  "candidateCatalogInput": "research/universes/scan-v2-long-sample-candidates.json",
+  "priceDataInput": "outputs/scan-v2-all-bull-flip-long-sample/market_data",
+  "membershipInput": "outputs/scan-v2-all-bull-flip-long-sample/universe_membership_history.csv",
+  "sampleStart": "2015-01-01",
+  "sampleEnd": "2026-07-10",
+  "baseline": "policy_eligible_bull_flip rolling monthly PIT",
+  "defenseHypothesis": "market reference close above its 200-session moving average gates new entries only",
+  "referenceSymbols": {
+    "a_share": "510300.SS",
+    "hong_kong": "2800.HK",
+    "us": "SPY",
+    "crypto": "BTC-USD",
+    "gold": "GC=F"
+  },
+  "coreSymbols": [
+    "510300.SS",
+    "513100.SS",
+    "518880.SS"
+  ],
+  "coreConfiguration": {
+    "initial_capital": 1000000.0,
+    "volatility_window": 20,
+    "rebalance_sessions": 10,
+    "one_way_cost_bps": 10.0
+  },
+  "satelliteBudgets": [
+    0.1,
+    0.2,
+    0.3
+  ],
+  "sleeveRebalance": "every 10 core sessions; 10 bps one-way resizing cost",
+  "separationRule": "defensive entry gate and core/satellite structures are evaluated separately; the pre-specified core90/def200-bull10 cross is reported as a supplemental test",
+  "parameterPolicy": "7/3 bull flip and PIT universe frozen; MA and core grids are sensitivity checks, not full-sample selection"
+}

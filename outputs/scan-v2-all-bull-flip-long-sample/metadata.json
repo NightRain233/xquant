@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-08-12T16:16:32.197346+00:00",
+  "sampleStart": "2015-01-01",
+  "sampleEnd": "2026-07-10",
+  "warmupStart": "2013-01-02",
+  "decisionSource": "/Users/zz/Desktop/Code/zsd/xquant/outputs/scan-v2-all-bull-flip-long-sample/policy_bull_flip_events.parquet",
+  "candidateCatalog": "/Users/zz/Desktop/Code/zsd/xquant/research/universes/scan-v2-long-sample-candidates.json",
+  "priceDataDir": "/Users/zz/Desktop/Code/zsd/xquant/outputs/scan-v2-all-bull-flip-long-sample/market_data",
+  "candidateCount": 81,
+  "universeConfiguration": {
+    "min_history_sessions": 252,
+    "liquidity_lookback_sessions": 63,
+    "max_suspension_rate": 0.05,
+    "min_data_completeness": 0.95,
+    "liquidity_floors": {
+      "a_share": 20000000.0,
+      "hong_kong": 10000000.0,
+      "us": 20000000.0,
+      "crypto": 50000000.0,
+      "gold": 20000000.0
+    },
+    "market_caps": {
+      "a_share": 30,
+      "hong_kong": 5,
+      "us": 10,
+      "crypto": 2,
+      "gold": 2
+    },
+    "turnover_multipliers": {
+      "GC=F": 100.0
+    },
+    "excluded_symbols": [
+      "000001.SS",
+      "000300.SS"
+    ]
+  },
+  "portfolioConfiguration": {
+    "initial_capital": 1000000.0,
+    "commission_bps": 5.0,
+    "slippage_bps": 5.0,
+    "max_position_weight": 0.1,
+    "max_concurrent_positions": 10,
+    "max_gross_exposure": 1.0
+  },
+  "primaryStrategy": "policy_bull_flip_rolling_pit",
+  "execution": "completed bull-flip close; next symbol session open",
+  "exit": "first completed ST_Dir < 0 close after entry; next finite positive symbol Open",
+  "cost": "5 bps commission plus 5 bps adverse slippage per side; 20 bps round trip",
+  "rollingUniverse": "month-end point-in-time eligibility and within-market liquidity rank; next non-crypto business session effective",
+  "frozenUniverse": "2014-12-31 point-in-time snapshot, effective first 2015 non-crypto business session",
+  "dataCaveat": "long-sample proxy over 81 locally observable instruments, not a complete historical exchange security master; delisted/liquidated/never-cached instruments remain absent",
+  "parameterPolicy": "production SuperTrend 7/3 and policy are locked; no full-sample refit",
+  "tradableSessionDefinition": "finite positive OHLC, Volume > 0, and official tradable status when available"
+}

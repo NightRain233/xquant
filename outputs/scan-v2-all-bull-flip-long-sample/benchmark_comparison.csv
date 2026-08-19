@@ -1,0 +1,2 @@
+strategy,benchmark,annualizedArithmeticAlpha,beta,annualizedExcessReturn,informationRatio,returnCorrelation,observationsPerYear
+policy_bull_flip_rolling_pit,spy_buy_hold,0.1688976376511832,0.28947853847388516,0.07782691422006185,0.3782885745284289,0.2997469925167042,365.3367989543726

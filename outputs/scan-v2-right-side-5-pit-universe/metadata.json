@@ -1,0 +1,65 @@
+{
+  "generatedAt": "2026-08-12T16:14:56.667029+00:00",
+  "currentDecisionSource": "/Users/zz/Desktop/Code/zsd/xquant/outputs/unified-scan-policy-v2-breakout-r5/decision_stream.parquet",
+  "broadDecisionSource": "/Users/zz/Desktop/Code/zsd/xquant/outputs/scan-v2-right-side-5-pit-universe/broad_decision_stream.parquet",
+  "priceDataDir": "/Users/zz/Desktop/Code/zsd/trading/backend/data",
+  "sampleStart": "2023-03-01",
+  "sampleEnd": "2026-07-10",
+  "signals": {
+    "policy_eligible_bull_flip": "all_bull_flip",
+    "scan_v2_right_side_5": "breakout_right_side_5"
+  },
+  "universeVersions": [
+    "current_47_backfill",
+    "frozen_2023_03_01",
+    "rolling_monthly_pit"
+  ],
+  "universeConfiguration": {
+    "min_history_sessions": 252,
+    "liquidity_lookback_sessions": 63,
+    "max_suspension_rate": 0.05,
+    "min_data_completeness": 0.95,
+    "liquidity_floors": {
+      "a_share": 20000000.0,
+      "hong_kong": 10000000.0,
+      "us": 20000000.0,
+      "crypto": 50000000.0,
+      "gold": 20000000.0
+    },
+    "market_caps": {
+      "a_share": 30,
+      "hong_kong": 5,
+      "us": 10,
+      "crypto": 2,
+      "gold": 2
+    },
+    "turnover_multipliers": {
+      "GC=F": 100.0
+    },
+    "excluded_symbols": [
+      "000001.SS",
+      "000300.SS"
+    ]
+  },
+  "portfolioConfiguration": {
+    "initial_capital": 1000000.0,
+    "commission_bps": 5.0,
+    "slippage_bps": 5.0,
+    "max_position_weight": 0.1,
+    "max_concurrent_positions": 10,
+    "max_gross_exposure": 1.0
+  },
+  "rankingRule": "qualified candidates ranked only by trailing median Close*Volume within market, then symbol",
+  "rollingRule": "snapshot at each calendar month end using data through snapshot; effective next non-crypto business session",
+  "initialFrozenRule": "snapshot at 2023-03-01 close; effective next non-crypto business session and never updated",
+  "removalRule": "membership removal blocks new entries only; existing positions retain real next-session SuperTrend bear exit",
+  "costRule": "5 bps commission plus 5 bps adverse slippage each side = 20 bps round trip",
+  "selectionProhibitions": "no future return, future eligibility, full-sample performance, or signal result used in selection",
+  "sensitivityPolicy": "predefined stricter stresses reported; no scenario used to refit or choose the base rules",
+  "limitations": [
+    "candidate catalog is the locally cached instrument history, not a complete historical exchange security master",
+    "listing history means locally observable valid sessions; true listing and delisting master dates are unavailable",
+    "traded value uses native-currency Close*Volume and is only compared within each market",
+    "current-47 version intentionally preserves backfilled and potentially non-tradable index symbols as the optimistic upper bound"
+  ]
+}

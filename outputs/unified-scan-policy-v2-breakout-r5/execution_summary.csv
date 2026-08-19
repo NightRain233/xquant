@@ -1,0 +1,10 @@
+setup,permission,executionOutcome,eventCount
+breakout,buy,above_max,3
+breakout,buy,executed,33
+compression_breakout,conditional,above_max,4
+compression_breakout,conditional,ambiguous_intraday_order,2
+compression_breakout,conditional,invalidated_at_open,7
+compression_breakout,conditional,not_triggered,62
+compression_breakout,conditional,triggered,17
+pullback,buy,above_max,20
+pullback,buy,executed,153

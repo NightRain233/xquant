@@ -1,0 +1,26 @@
+{
+  "individualStocks": [
+    "000890.SZ",
+    "002015.SZ",
+    "002119.SZ",
+    "002309.SZ",
+    "002796.SZ",
+    "600345.SS",
+    "600487.SS",
+    "601288.SS",
+    "601991.SS",
+    "605289.SS",
+    "AAPL",
+    "GOOGL",
+    "MU",
+    "NVDA",
+    "TSLA"
+  ],
+  "crypto": [
+    "BTC-USD",
+    "ETH-USD"
+  ],
+  "attributionBasis": "closed-trade realized net PnL after modeled costs",
+  "exclusionBasis": "full portfolio rerun; freed cash and position slots may be reused",
+  "warning": "exclusions are ex-post stress diagnostics, not candidate strategies"
+}

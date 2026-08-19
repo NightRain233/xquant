@@ -1,0 +1,6 @@
+strategy,candidateSignals,executedEntries,rejectedEntries,closedTrades,openPositionsAtEnd
+policy_bull_flip_frozen_2015,724,546,178,537,9
+policy_bull_flip_rolling_pit,1085,583,502,575,8
+raw_supertrend_rolling_pit,1527,642,885,632,10
+spy_buy_hold,1,1,0,0,1
+csi300_buy_hold,1,1,0,0,1

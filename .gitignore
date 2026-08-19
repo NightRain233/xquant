@@ -9,3 +9,7 @@ __pycache__/
 .worktrees/
 outputs/**/cache/
 outputs/**/tmp/
+# Local research inputs/caches; reviewed result snapshots remain versioned.
+outputs/**/market_data/
+outputs/**/*.parquet
+data/.provider-state/

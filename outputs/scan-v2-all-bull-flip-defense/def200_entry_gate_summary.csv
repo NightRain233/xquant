@@ -1,0 +1,11 @@
+market,gateReason,candidateSignals
+a_share,market_above_ma,335
+a_share,market_at_or_below_ma,124
+crypto,market_above_ma,39
+crypto,market_at_or_below_ma,32
+gold,market_above_ma,72
+gold,market_at_or_below_ma,27
+hong_kong,market_above_ma,24
+hong_kong,market_at_or_below_ma,17
+us,market_above_ma,348
+us,market_at_or_below_ma,67
