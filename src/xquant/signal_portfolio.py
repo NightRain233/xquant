@@ -240,15 +240,22 @@ def run_signal_portfolio(
             })
             del positions[symbol]
 
-        for symbol, frame in prices.items():
-            if date in frame.index and pd.notna(frame.at[date, "Close"]):
-                latest_close[symbol] = float(frame.at[date, "Close"])
+        def opening_mark(symbol: str, position: _Position) -> float:
+            frame = prices[symbol]
+            if date in frame.index:
+                raw_open = pd.to_numeric(
+                    pd.Series([frame.at[date, "Open"]]), errors="coerce"
+                ).iloc[0]
+                if pd.notna(raw_open) and np.isfinite(raw_open) and raw_open > 0:
+                    return float(raw_open)
+            return latest_close.get(symbol, position.entry_price)
+
         pre_entry_equity = cash + sum(
-            position.quantity * latest_close.get(symbol, position.entry_price)
+            position.quantity * opening_mark(symbol, position)
             for symbol, position in positions.items()
         )
         gross_value = sum(
-            position.quantity * latest_close.get(symbol, position.entry_price)
+            position.quantity * opening_mark(symbol, position)
             for symbol, position in positions.items()
         )
 
@@ -310,6 +317,10 @@ def run_signal_portfolio(
                 "reason": "signal", "rawOpen": raw_open, "executionPrice": execution_price,
                 "notional": notional, "commission": commission,
             })
+
+        for symbol, frame in prices.items():
+            if date in frame.index and pd.notna(frame.at[date, "Close"]):
+                latest_close[symbol] = float(frame.at[date, "Close"])
 
         market_value = sum(
             position.quantity * latest_close.get(symbol, position.entry_price)

@@ -103,6 +103,54 @@ def test_maximum_price_and_concurrency_rejections_are_auditable():
     assert result["orders"].query("side == 'buy' and status == 'executed'")["symbol"].tolist() == ["OTHER"]
 
 
+def test_open_entry_sizing_does_not_use_existing_holdings_same_day_close():
+    dates = pd.date_range("2026-01-05", periods=4, freq="B")
+    entries = pd.DataFrame([
+        {
+            "signalDate": dates[0], "symbol": "A", "market": "us",
+            "setup": "breakout", "score": 1, "maxAcceptablePrice": float("nan"),
+        },
+        {
+            "signalDate": dates[1], "symbol": "B", "market": "us",
+            "setup": "breakout", "score": 1, "maxAcceptablePrice": float("nan"),
+        },
+    ])
+
+    def frame(closes):
+        return pd.DataFrame({
+            "Open": [100.0] * 4,
+            "High": [201.0] * 4,
+            "Low": [99.0] * 4,
+            "Close": closes,
+            "ST_Dir": [1.0] * 4,
+        }, index=dates)
+
+    config = PortfolioConfig(
+        initial_capital=1_000.0,
+        commission_bps=0,
+        slippage_bps=0,
+        max_position_weight=0.20,
+        max_concurrent_positions=10,
+    )
+    notionals = []
+    for current_close in (100.0, 200.0):
+        result = run_signal_portfolio(
+            entries,
+            {
+                "A": frame([100.0, 100.0, current_close, current_close]),
+                "B": frame([100.0] * 4),
+            },
+            start=dates[0],
+            end=dates[-1],
+            config=config,
+        )
+        notionals.append(float(
+            result["orders"].query("symbol == 'B' and status == 'executed'").iloc[0]["notional"]
+        ))
+
+    assert notionals == [200.0, 200.0]
+
+
 def test_decision_variants_are_frozen_filters():
     decisions = pd.DataFrame([
         {
