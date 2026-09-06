@@ -45,3 +45,10 @@ SuperTrend 交叉验证与长样本：
 - `docs/notes/<slug>-review.md`
 
 跨实验复用的计算放入 `src/xquant/`，不要继续复制到新的 Notebook。
+
+## Trading ledger 复现包
+
+`trading-ledger-2026-09-05/` 保存交易仓库执行修复对应的历史证据：原始 xquant 研究恢复、
+当前 Core90 2.1.0 合同基准、三资产变种的统一账本比较，以及封存行情和审计产物。
+回测编排在本仓库，成交和 NAV 通过同级 `trading/backend/portfolio_strategies` 的执行内核完成；
+具体边界、运行命令和限制见该目录的 [包说明](trading-ledger-2026-09-05/README.md)。

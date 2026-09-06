@@ -13,6 +13,7 @@
 ├── research/notebooks/       # 实验过程与可视化
 ├── scripts/                  # 可重复运行的完整研究任务
 ├── outputs/<experiment>/     # 实验结果快照
+├── research/trading-ledger-2026-09-05/ # 交易账本修复与复现证据包
 ├── docs/notes/               # 研究结论与解释
 ├── docs/plans/               # 研究或工程实施计划
 └── dashboard/                # React 报告及数据转换
@@ -43,6 +44,10 @@ Notebook 应负责提出问题、组织实验和展示结果；能够跨实验�
 ```
 
 `outputs/` 是研究证据，`dashboard/public/data/` 是可重新生成的展示数据。Dashboard 不应成为指标计算的第二套实现；新增指标应优先在 Python 研究层完成并导出。
+
+交易账本复现包是跨仓库边界的例外：历史行情、回测编排、CSV 和审计文件放在 xquant，
+唯一的 next-open 成交、持仓、现金和 NAV 实现放在 sibling trading 的后端。研究脚本必须显式
+传入 `--trading-root`（或设置 `TRADING_ROOT`），不能复制一套执行内核。
 
 ## 新实验约定
 

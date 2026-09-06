@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "backendRegression": {
+    "passed": 500,
+    "skipped": 6,
+    "command": "cd backend && PYTHONPATH=.:tests uv run --group dev pytest -q",
+    "skipScope": "legacy backtest integration requires longer local backend price cache",
+    "note": "One research-package archive test moved to xquant during repository split."
+  },
+  "sourceHashCount": 28,
+  "executionAudit": {
+    "status": "PASS_EXECUTION_AUDIT",
+    "maxCashDifference": 5.984475137665868e-10,
+    "invalidTimingFills": 0,
+    "quantityMismatchRows": 0
+  },
+  "artifactHashes": {
+    "README.md": "ffb35f02de2a4f11843e7bebf51f00fa7925c66a6f2006825a6f4d5e17da63a7",
+    "before_2_0/daily_nav.csv": "7bc2bccca0baec6392b381fa6a4c52ed06f04acfb7e5bd4cb2d0ed69a40f11fb",
+    "before_2_0/fills.csv": "cec088c25cad845dd04fafc8499890e9c1772c4f0c61d34aebe9e5e533c1ac6e",
+    "before_2_0/manifest.json": "e76fa1d45e17a01500a8634937862d129c9f39870ace0b594edc66c4fcbec277",
+    "before_2_0/metrics.json": "15229f368c22f23acf5479a8745c6518a72e426ceb14d57aad97a6c096c8950e",
+    "before_2_0/orders.csv": "f90046fbf61ddc75cbac09bf61e4ee77c3692d91b5591050499f403bc128ec21",
+    "before_2_0/quantity_reconciliation.csv": "7f6e6770ab85ff24b88e4ef87e278f84ef3e760497676b6543fd404084efdf5a",
+    "compare.py": "1872344a1b5e4f662bbb4939409d0ac14aa9451e086b1e113574d9246eaf09b1",
+    "comparison/before_vs_after_daily_nav.csv": "47222bde4703b7d829e2c4a1cc06702795392c8e81b6d126e2e10bb657292ea8",
+    "comparison/legacy_vs_current_entry_orders.csv": "6ce6bfe308a9cea498a3bb74e263f03438b69c1409e0e58b11ac6f6bffe229eb",
+    "comparison/metrics_comparison.csv": "acb3525023b41013270f7646fb0c080f5a25c95fee57b1c82d1ffa3dc42e02f7",
+    "comparison/summary.json": "ccdd7b6721cfc79f421137840023dd3d9633388faa5c2919291a496c00a9fba1",
+    "recompute.py": "5dec830e6c50359ffd90a25d1962f2bfa1143e517d58553209778ddba46f5990",
+    "validated_2_1/attempts.csv": "cbbd8a5322f4519c32b233e7c11adb293c810e206b85f4bd35f6723688be847a",
+    "validated_2_1/cash_reconciliation.csv": "5a5d7590e4556733c012ff1737f27e12db45baaeff921da12818795cf2762aff",
+    "validated_2_1/checkpoints.csv": "f915e7c0453f49ad2021cb3acfd6e05fa025fa4532a770936970652d1cafc53c",
+    "validated_2_1/daily_nav.csv": "6a645c52ce99268c3bc1c26b2b3f18086e2d66b1d350207f2a1c2334d143543d",
+    "validated_2_1/decision_items.csv": "1cb9352a6e92e36138ce797b4df3b473d24b50221eb06b8907c9546fd56bd2c2",
+    "validated_2_1/decisions.csv": "4427679fc0ee1ab547351039c9f6cdc33b6147fd647d50b09c49e749006e99e1",
+    "validated_2_1/fills.csv": "216f2c0f7ed0c25405dae89603ab00f46772014aab54b63e2ae548f076623ee4",
+    "validated_2_1/legacy_vs_current_nav.csv": "6e1465a8507a866c2833138ef73a58e38358fe8322349ea5a93f5d6953586510",
+    "validated_2_1/manifest.json": "253259d3336e0baa683a4c03058b6a93ac3c43ccd7409b4f5c09f15ff1786add",
+    "validated_2_1/memberships.csv": "c80491d6cfd588e35b95358b85256def61b2f53b765e9bb5b4e195271e1214e9",
+    "validated_2_1/metrics.json": "85a4508f955655e27da4753743d619aa5359e81492f362d9b4fd275cd2f400f6",
+    "validated_2_1/orders.csv": "9a10ba27ab2c4fe9b85066cb8115608ef021c8509d1c6588a82888d219027d01",
+    "validated_2_1/positions.csv": "61814fe6bb6dafc081d19a6554af1bde1af52a562116f94e153bf8a4c3e01cba",
+    "validated_2_1/quantity_reconciliation.csv": "48fe5251de7ea06b5177dd3fa5f9084e4a78caaa2d0b9e709b2e9094fcf25307",
+    "validated_2_1/sleeve_transfers.csv": "2dc6bfc5875e21518caed42552e6c6df3c155820c59368a82d42ee16cdcd8b07",
+    "validated_2_1/source_bundle.zip": "381c78fd5710fae8da07d2eb06469700e1ec98ecb303f5fcb64ca6cb5716ab1e",
+    "validated_2_1/universe.csv": "76284fce4f5c11ae3ecf7e5f8720aeee80f6858501636d89d091eac20f6aa414"
+  },
+  "scope": "Local research and code verification only; no deployment, activation, production ledger edits, or issue closure.",
+  "xquantResearchTests": {
+    "passed": 55,
+    "skipped": 0,
+    "command": "cd /Users/zz/Desktop/Code/zsd/xquant && uv run pytest -q"
+  },
+  "variantAudit": {
+    "variantCount": 5,
+    "allPassed": true,
+    "maxCashDifference": 1.469743438065052e-09,
+    "invalidTimingFills": 0,
+    "quantityMismatchRows": 0
+  }
+}

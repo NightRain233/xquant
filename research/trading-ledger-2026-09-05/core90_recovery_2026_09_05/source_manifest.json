@@ -1,0 +1,1557 @@
+{
+  "sourceGitHead": "5dbdd4dc500d9d5eb55558d48ef827337989a304",
+  "recoveredAt": "2026-09-05",
+  "scope": "limited_observable_universe",
+  "files": [
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/annual_metrics.csv",
+      "bytes": 8659,
+      "sha256": "41b496d72d2f15d8435299dc06b1fb010bb8cba5d2f692f1906e18e5a82b3a8e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/benchmark_comparison.csv",
+      "bytes": 909,
+      "sha256": "19514e70ed89a93bff49f2bb16753bea49b017dc294069cec40a084e759e2286"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/core90_satellite_filter_comparison.csv",
+      "bytes": 919,
+      "sha256": "f37020050410c19b28afbd03bb9993287879ab5a231b10fc7ac95281beb8dd9e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/core_satellite_weights.csv",
+      "bytes": 1186377,
+      "sha256": "75f94f0e5f4c98dcc38ba77262493bb294e6cf214ab3e65a61a5bd21b0889f11"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/core_volatility_window_sensitivity.csv",
+      "bytes": 2025,
+      "sha256": "366f392cd95655a4056110c56d17c2d1742dfc52e0a24160b0070cbc150416c0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/def200_entry_gate_audit.csv",
+      "bytes": 109328,
+      "sha256": "f3da62538b0cc6708d77aa33b7add45df44878b82f707857327e75ea94e64f05"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/def200_entry_gate_summary.csv",
+      "bytes": 324,
+      "sha256": "9d8333aa0074b0e147627aefa6bac47fe0dab4eca599f8fb23fd307fbef308ca"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/defense_parameter_cost_sensitivity.csv",
+      "bytes": 2510,
+      "sha256": "46e6fbca87938931edc95bed4f02409ff205f433998285f447a728d8a737209a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/drawdown_events.csv",
+      "bytes": 93101,
+      "sha256": "910fc5630fd60c6665c9e15dcbec7f23e13e24f50e9b04136a99a0d4da4d98b4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/drawdown_summary.csv",
+      "bytes": 779,
+      "sha256": "cef47d4e8f53783554834f3267b6b4faecf242d187faa12262d5a926421c4096"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/metadata.json",
+      "bytes": 1464,
+      "sha256": "bc8bf5f3ec2e7aa6bcc98176e02e9ccc502b0ed3d047b0d4f9f8a899feb2c3dd"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/monthly_distribution.csv",
+      "bytes": 1257,
+      "sha256": "cafbbb24b816a8badc593c969a6011f7a6f43422d6265c820398619a662b1def"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/monthly_metrics.csv",
+      "bytes": 104074,
+      "sha256": "d27a9cbf2b10fd896de3c6a1bfd358efd846e658cd558c690caccbdd670fc417"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/nav_daily.csv",
+      "bytes": 4749658,
+      "sha256": "340375fb7cbfc7a59127dee22c40808a48d74726c98f229643a8a86385f16966"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/portfolio_metrics.csv",
+      "bytes": 2548,
+      "sha256": "f4d8321e62f83981e41b336b2a37093aaee5432fad0a986f4df9cfa00be0eceb"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/recent_3y_metrics.csv",
+      "bytes": 2612,
+      "sha256": "c090f53138aad84a00fe0df8d25cad87b5bfe6a32df1528a8d5c829819c3d36a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/risk_parity_core_weights.csv",
+      "bytes": 213009,
+      "sha256": "7fec82eff9c5e0012873f95543b7f1a502e82c2a2b52abdc4594e41f4bb4507b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/rolling_window_metrics.csv",
+      "bytes": 658022,
+      "sha256": "5454ebf38ca5df9b01dee5eaf7b50aee697c651f7fbc130ab48bd85613e039b6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/rolling_window_summary.csv",
+      "bytes": 2479,
+      "sha256": "3d555aeaff85dcc699ff89eb54f93edd9ec7a9554a1ac1a584acee72eafcbc3a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/annual_metrics.csv",
+      "bytes": 8676,
+      "sha256": "d6558b01137ddabe97731e6c0e4e29a59a0f46ab7ee23b0e4cbd9f24afb399cf"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/audit_summary.md",
+      "bytes": 1343,
+      "sha256": "ae9d252d14b0244c141e0dc3c3611ee2eaf46a6e16a9405f859c40067448c85f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/benchmark_comparison.csv",
+      "bytes": 905,
+      "sha256": "cbd56875daf79be58c94522e9468d16e94a918994b6812579b415b918bd0dcb2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/core90_satellite_filter_comparison.csv",
+      "bytes": 919,
+      "sha256": "49565aac53267b3a498d4bdf5721cd48c13b153c67c7b8a7f19a57456a8d9b85"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/core_satellite_weights.csv",
+      "bytes": 1186577,
+      "sha256": "3c345943daf8491988fbfab8f16ae6fcab7d0dafb36692199888beee060dbc79"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/core_volatility_window_sensitivity.csv",
+      "bytes": 2027,
+      "sha256": "28716cabb4058a7d15d5f9632d7c5b1231b76f3479534f5915a167af130650e6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/def200_entry_gate_audit.csv",
+      "bytes": 109328,
+      "sha256": "f3da62538b0cc6708d77aa33b7add45df44878b82f707857327e75ea94e64f05"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/def200_entry_gate_summary.csv",
+      "bytes": 324,
+      "sha256": "9d8333aa0074b0e147627aefa6bac47fe0dab4eca599f8fb23fd307fbef308ca"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/defense_parameter_cost_sensitivity.csv",
+      "bytes": 2519,
+      "sha256": "eaba74cce210be37f09b040946d13baade82d18c8f76b167723b88ae0d486397"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/drawdown_events.csv",
+      "bytes": 92785,
+      "sha256": "137f6ffbe11e2ba86542a0427bc947b6a8481b6b6d2439822a1d9bc96e02ef73"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/drawdown_summary.csv",
+      "bytes": 772,
+      "sha256": "84e06e18a39177cad0c20b5a70ede283f8e61b644709be5ec2049acd622c9564"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/metadata.json",
+      "bytes": 1464,
+      "sha256": "5f7c669a78aa56a2130566bdd5dc9cffbbe52a5104f864e7f9fec0fc007779da"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/monthly_distribution.csv",
+      "bytes": 1258,
+      "sha256": "e5eb15c9715c88330a656f34d799ee5a78a805e6c80946215b51eafaac1f4b63"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/monthly_metrics.csv",
+      "bytes": 104099,
+      "sha256": "5af47704e0cb16015467d0867024abedc632464a8ed4d43b035e98091fff2942"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/nav_daily.csv",
+      "bytes": 4750146,
+      "sha256": "9b0e53832533b3ff4655c6af840eaf802bb1ad0d226f2f4c7e950681fc6520f7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/portfolio_metrics.csv",
+      "bytes": 2550,
+      "sha256": "076ed26e8cbf6fc73b45135572e0c60891fb54eb9e9808d2f6ea8a66ce27a679"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/recent_3y_metrics.csv",
+      "bytes": 2623,
+      "sha256": "ece35c359dc19cd407c12e66dbf3ed8764ffeeb4b5c1e2c61e379b6b4cdc9064"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/risk_parity_core_weights.csv",
+      "bytes": 213009,
+      "sha256": "7fec82eff9c5e0012873f95543b7f1a502e82c2a2b52abdc4594e41f4bb4507b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/rolling_window_metrics.csv",
+      "bytes": 658078,
+      "sha256": "7abb6a88e386ad3c4beb6ee550f53b6ecb5b217e9f3129fe47aacf449cefaed2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense-open-sizing-fix-2026-08-20/rolling_window_summary.csv",
+      "bytes": 2464,
+      "sha256": "1f6ad254a66af368a07569c9cd583e524b737d9dae0835363bb592da7c020b24"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/annual_metrics.csv",
+      "bytes": 6488,
+      "sha256": "330427c1526b464e0b0b5b121be2565ae1d3dbad0a9582477dc90c98bf5216f1"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/audit_fix_long_sample_metrics.csv",
+      "bytes": 1066,
+      "sha256": "bec0b3ca52f6727fd567881223772c9232b6a20245f45b51b1d16f2798680adc"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/audit_fix_membership_changes.csv",
+      "bytes": 272,
+      "sha256": "aba11bf73de305768984d98f6537ecabb2d2a60fdc9705004ab434de86a8e14c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/audit_fix_summary.json",
+      "bytes": 167,
+      "sha256": "8a64f839035c63a98a7f765bba4b56593b54f135ed85edffd37d43ccdc025c33"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/benchmark_comparison.csv",
+      "bytes": 285,
+      "sha256": "28323e62229a2966c386b724902522b727e7fd541d9c66478dcf627875f89d1f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/concentration_metadata.json",
+      "bytes": 556,
+      "sha256": "d00959f7621ba1b58c6465f686f185a9433ec50b33f702c727baac8283a27311"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/cost_sensitivity.csv",
+      "bytes": 1380,
+      "sha256": "4643b434b1b341b4db8fe6711fd5d3b4807249c47e62bbe748cd4598b38c07ea"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/data_backfill_audit.json",
+      "bytes": 16122,
+      "sha256": "5c3861e264d1dec64876328d2357e67a4e51deaa43508bf7760eb042e80cfb97"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/data_backfill_retry_audit.json",
+      "bytes": 7110,
+      "sha256": "bec0b4531bc545f80480cd15334fb37c883ec92607bb0478c47326862deda38e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/drawdown_summary.csv",
+      "bytes": 568,
+      "sha256": "07ce4c56cddeb3a8aa8d501daa59ecdaf17997b14a437c79f1f67d8c28be89b1"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/exclusion_sensitivity.csv",
+      "bytes": 2466,
+      "sha256": "44243dc2f3c5456de73ddfe0e6f5f1e374aabfb48d1d23a5ebf57c3e530c7ef0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/execution_funnel.csv",
+      "bytes": 281,
+      "sha256": "92b82422334a82f4edeb56a650fb52942858038d9e5598346107a9603d1717e4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/exit_timing_audit.csv",
+      "bytes": 41470,
+      "sha256": "d4e6b83af74a1f3647d0ecb631cab1117ba31c8b4086e4ad64e5d7c833c801da"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000001.SS.parquet",
+      "bytes": 763845,
+      "sha256": "e841c20855e3c33c09391c1445a0a4873b4c8bbfc7f658cc90751f0aa1092b0b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000001.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "31e379ddb0645ec4d5f15c1787a2f269eb15d55f225a76c496c43a244ad48aef"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000001.SS_weekly.parquet",
+      "bytes": 171705,
+      "sha256": "f4c3b8157a973980f5f38df71703a38b853eec42decd633721b7809877f84744"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000300.SS.parquet",
+      "bytes": 764597,
+      "sha256": "81afb9959716c83e5fd2ce869da74b0045eaa800122ad6c5b692904efea85c65"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000300.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "cc2770b35ebd5dc54358c6ad352f021adceec98d9dce8a5fde0dafd058807bc6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000300.SS_weekly.parquet",
+      "bytes": 171836,
+      "sha256": "44c35e7e3cb8e88e8754df769bb733078b426a4c54e4887c6b6be85f36e6ab51"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000890.SZ.parquet",
+      "bytes": 646632,
+      "sha256": "841e60a8df7346efc77c4bd87238afb9fdf593a15977ed42a38fb8712d61d4d7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000890.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "1a353c703171e1cca52316001ec4f8b7c99aeb3f6e195964e9b6629661d10130"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/000890.SZ_weekly.parquet",
+      "bytes": 150735,
+      "sha256": "6d6297736c624bc764e8bf49322c1f18ad06688de7586415d3fb8d15366e49f6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002015.SZ.parquet",
+      "bytes": 603016,
+      "sha256": "b4d5242ab5bd6d1e067acef6f578eadd203b6797c043e1c4d29a784fd416c93d"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002015.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "a41f13d320181653f9dc0ab8192a46281e1bc50e9763a1ec3ca12b59e0f1f4c0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002015.SZ_weekly.parquet",
+      "bytes": 142857,
+      "sha256": "f1762fd8c9880676e5f4b7fba594ae927737c22ff4c36924d19f94586653192e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002119.SZ.parquet",
+      "bytes": 706737,
+      "sha256": "5a4fd30f86af168be323e39da2253a15db676754a8f8b124dc4ac741fb8969c2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002119.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "aadaa96917893d92f1b64dda8b6be88246c4d379b9e007339664a22de69d387d"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002119.SZ_weekly.parquet",
+      "bytes": 168355,
+      "sha256": "1f552ca5b8e8360fa7fe87d4522a5a4b021420d6e99f858233c4320be8f2afce"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002309.SZ.parquet",
+      "bytes": 648048,
+      "sha256": "c67b874450482acee6962722aa76ff148929e9a10c03b8a52027c607ea797642"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002309.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "22df8d6698878adf0b085554ba84190d3b47f663816a995a0bdce5ace63ea92c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002309.SZ_weekly.parquet",
+      "bytes": 152115,
+      "sha256": "093aca3389c93156bd0a58da9a716b58fe1772bec54b55e2a2a1801fb332575f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002796.SZ.parquet",
+      "bytes": 531914,
+      "sha256": "49da6a5e70cc9de5389deba3c71c35b61adeb0a3fb4a70f1333ba966b0a361f4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002796.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "216c1ee53e2607d9e4193f2f3445254e9e2a27764345b4880c5963e875c11db5"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/002796.SZ_weekly.parquet",
+      "bytes": 124673,
+      "sha256": "4a347f91437259928bcd18092ce732b99c77784d1909d4a0c7c82e8ea8e069ca"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159201.SZ.parquet",
+      "bytes": 82705,
+      "sha256": "1f865b27781dafe71794ca1fb2f9dc803e1de547b9095bb815070fc93f11fb7d"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159201.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "aa1a6f9504741ca46517c00907e45931db2a6c750a769dd2e8d22222287742a7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159201.SZ_weekly.parquet",
+      "bytes": 27348,
+      "sha256": "f92c185eed0c180e4a1d7b75417b8d2e25f4e1891126d4570b07d140095cd665"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159320.SZ.parquet",
+      "bytes": 93726,
+      "sha256": "04e14c36493353be355ee070e333847fbd11e980cd45ddfed832e27be3738ce5"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159320.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "7f78f0a5f8c1cfd916e96d7fbd216f52180f44d6ab30053a41ecdbccf4144a6f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159320.SZ_weekly.parquet",
+      "bytes": 29739,
+      "sha256": "7040567956f828e18a160084b61ec21ef00668ac5010d02a39fa1d5de032d0ed"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159326.SZ.parquet",
+      "bytes": 105642,
+      "sha256": "821a7e10471896c477e041b6e6a2cdddd63c73255b6be2928de8add19b835a71"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159326.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "d4605824cede0d75990b04a732b38fa59c7c15155e83bcc8611a917fa85c2a81"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159326.SZ_weekly.parquet",
+      "bytes": 32721,
+      "sha256": "cc39578536c75d59d19c348382c92330dea6c9f41c7e27f5c454a8244a767a91"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159552.SZ.parquet",
+      "bytes": 116800,
+      "sha256": "ebe4945ffc40ec547ed4a19d9d316a5a10daf22052f9cd1234adcd4a53051fd2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159552.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "19e4fc7ffad5e4b74f2b43fbd63e3ff26c7044236fb34b50e9061460ede645d7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159552.SZ_weekly.parquet",
+      "bytes": 35253,
+      "sha256": "bed1f6f84bc0b962a489c4a86e96bbf12b56197a6e94db968b668b404b52fb1e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159553.SZ.parquet",
+      "bytes": 127304,
+      "sha256": "6b2737e225a054187df3c4044fe0af052d8e96df6e8588a91744866d3bcccde0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159553.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "f81c22cdf44d54d1468126e07b3accb6998905939443b28fbca3882badd8a675"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159553.SZ_weekly.parquet",
+      "bytes": 37294,
+      "sha256": "c4e0a4625f457ba89b66cd7dbc4616d1e60762f6257150b2a98d5bd2aeb26453"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159583.SZ.parquet",
+      "bytes": 115291,
+      "sha256": "7a240c89160601b0c962b7c1e4b264dd0024ec492ebaaf2493ce3f1ea3bc1328"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159583.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "250b2558a43503a8131a94406f9143def4525ddc861617db5f605c3634291c2f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159583.SZ_weekly.parquet",
+      "bytes": 34762,
+      "sha256": "1d605412a5a4e24d56db2ae31052e366ce1baa9497fa690aad3e0af29c6f646d"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159869.SZ.parquet",
+      "bytes": 285095,
+      "sha256": "6658367a4eafbac1b55b2d0e761e0ade5e093a59d490bb6555c753e93cfa3c23"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159869.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "d2e1959403370ce690c04949fdbf59ed2adb0bd3574ccf3bb84512273dab62df"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159869.SZ_weekly.parquet",
+      "bytes": 71912,
+      "sha256": "ceddaac1cc4cb44aef3c9d3210534a06a49fb7cf0c119b9bf829e2cdf5abd01a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159915.SZ.parquet",
+      "bytes": 711895,
+      "sha256": "14d231b26e6a7abe3d5043508a8cd6e9a9f3edfa5f884bafdd30b1d7e9bb8755"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159915.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "516515282ac56d54c39678ac842707e60b28d1d5881be55a4b6569b3662c5633"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159915.SZ_weekly.parquet",
+      "bytes": 165421,
+      "sha256": "60d99cff9240dde1cee3e6db9ec0f0c020ecbe40e59db887d079862ab5c048b6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159919.SZ.parquet",
+      "bytes": 758879,
+      "sha256": "1ef0914e24587c6baf7aaeb5a35988e36957e991b301e53befa8b4cb1b9695e0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159919.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "0a8616cac98ef6bc9c87d358bc6cd3bc742acb34798bd7a8dd0057407dda7633"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159919.SZ_weekly.parquet",
+      "bytes": 174409,
+      "sha256": "c0a74113cf0c0af24264db0eb45d19da97cdb509aef786f899475160e1db51b4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159922.SZ.parquet",
+      "bytes": 755070,
+      "sha256": "131da3c2061031be127e2235281e0a946880c70322095a39ddde37e339d293a6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159922.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "b5bd208d0f6f6b7de03de390f49d6269434f622b9a8d890311844ed5717099c6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159922.SZ_weekly.parquet",
+      "bytes": 172255,
+      "sha256": "9c9b1f1a59f99d2bc0bea0516d1d4a1b4df46e600641ca103e69f7e836afca61"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159930.SZ.parquet",
+      "bytes": 650089,
+      "sha256": "7066afb0e223392f5a6228f80635128ae116c9c41e0d7e059d487bc5253bf810"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159930.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "9d60808444dda3a3c1693cf7a893c4d2cf20c623fba9d20ff2ce1e4cd1876ad5"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159930.SZ_weekly.parquet",
+      "bytes": 153506,
+      "sha256": "d4038f305522bc02dd48a213890d2259bfe64e85081bc30d44196dbf6d05c1de"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159967.SZ.parquet",
+      "bytes": 376329,
+      "sha256": "90d29ea325bfca73847299c81924c9ad745adbe95c57229a8dfc286edd5f2676"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159967.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "3f25e0360795a9aba58dc9c9c842e211654935b4180deeb152bbef9a77742d5b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159967.SZ_weekly.parquet",
+      "bytes": 93013,
+      "sha256": "99c20c8321a81684d4b6fbe42cb960c2a777cdee306c406d229bc751044d03be"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159995.SZ.parquet",
+      "bytes": 339038,
+      "sha256": "65f1ceab4b3e9ea0f5a02d133e7c94afea0946ddf6c262c230d105f18b77e482"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159995.SZ.parquet.source.json",
+      "bytes": 209,
+      "sha256": "1cf0bdc9005e36377a4c64ba16b2a196adbb6327cb3affcedbd3324aee0dbc6b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/159995.SZ_weekly.parquet",
+      "bytes": 84004,
+      "sha256": "31a457c1964ce7799da20426282f11f694c3b83a89d985314731f38d9a13232f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/2800.HK.parquet",
+      "bytes": 697700,
+      "sha256": "7f97ee6e198514121e0dff3203f2a30b93a36f8cea5af161d121a4b367c83d33"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/2800.HK_weekly.parquet",
+      "bytes": 162062,
+      "sha256": "a6779578f9a145896141e04b4397e4e69ff5f52b113d368d277857ac883a1349"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510050.SS.parquet",
+      "bytes": 716851,
+      "sha256": "881f3fa0e148c3c1f1da170a4856b83b493420b25babc54a253d9d04a06eee43"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510050.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "8fe412eea3791369153aae62562dffbd65d56c46d8526c1795f347b82e98dce3"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510050.SS_weekly.parquet",
+      "bytes": 167475,
+      "sha256": "49cbaa7432fa59f47262c84bd67c2f5f9cbfed1591ba4fd4cdf63c388d491ccd"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510300.SS.parquet",
+      "bytes": 721816,
+      "sha256": "5bdefe9f7313782a29797f7fce969e8e251e7984a9e0b8d3d492f9e670bc0d57"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510300.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "095aaddaf4f421114ce408df04bd9aae6b7401c4793057979feedef31f4b1b6b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510300.SS_weekly.parquet",
+      "bytes": 166896,
+      "sha256": "99ae67b5eb5ed77ea1ccb01f2d014f3fb4ccb3ee843c59c87f467daaf2dc6f5e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510500.SS.parquet",
+      "bytes": 755162,
+      "sha256": "85cb633d22a2fe988f597ba605be5129d2bbc5dd834bf9b4ba6b89b0eef4a6fb"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510500.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "7b7e2d2d8191f3512d50946dabc8e35e1676dc46797f829f3e9b6cb781eefb01"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510500.SS_weekly.parquet",
+      "bytes": 172335,
+      "sha256": "cebe2ae63482f987c94578c5b939e7726d9cb28cfc67e3ef977432e920af0bc4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510880.SS.parquet",
+      "bytes": 716815,
+      "sha256": "57e4c52a8b0f8bc73abec40bec9163af959c076ab1c48377cf4017df851e619f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510880.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "01f5af068bccf75fe648086b8cf163cc034406d23f2ff8d12c4206db2ad35bdc"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/510880.SS_weekly.parquet",
+      "bytes": 166670,
+      "sha256": "e0b96fcc80ef335da4c9ee3af71594bd2707594d38291d2a45ffa6c8ede588a7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/511010.SS.parquet",
+      "bytes": 734063,
+      "sha256": "360a48ad6d0caa40f9bbde94da71b4f6987f02a816d2aa7c9acf325111e5ba10"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/511010.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "4720757049772d7346ddc8299ff0ba53002ddf018cff11ca52aa94c50dd353cb"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/511010.SS_weekly.parquet",
+      "bytes": 167148,
+      "sha256": "5728e2658c813bec10fe6222b4e46fbc0a1d27da314d461e4d7dc56a78fecec8"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512000.SS.parquet",
+      "bytes": 502794,
+      "sha256": "8c1bfe815087ea383f2aaf2adfae56ec5d6155ac6edeb709cd321a99576fe36b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512000.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "cd7bd703d6ee253bae06180bafd8a990eadec60dac5cf8a9a578ba93ee5e60d2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512000.SS_weekly.parquet",
+      "bytes": 119010,
+      "sha256": "8e1485b7e541f9d8356c4ee5bbcb213c4bdd4b3da0a59db70304c7a66500faac"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512010.SS.parquet",
+      "bytes": 652918,
+      "sha256": "eb164b785dedb820a3075bf21a92580fafaba34710cf22c2fef641c6e8a062d9"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512010.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "fa2dc599e1f1609be086730c3778cb3be6be5aadcade1401f78d376d977722a7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512010.SS_weekly.parquet",
+      "bytes": 153569,
+      "sha256": "e0276c1c7b49b8f860de5a6f2e666fce075bb381977acf55be0b7e97f9171e29"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512040.SS.parquet",
+      "bytes": 396205,
+      "sha256": "61899b89cf7138179a962dbc64a96dcc83ac6ce0875c8b39b5c630894e27edc9"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512040.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "d2e6e4b590200d6dd6fac84effb7fc1bf9bbd80699e635972d00774504e6795d"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512040.SS_weekly.parquet",
+      "bytes": 97290,
+      "sha256": "116e7edcccddab6b0776f6163eeeb95c3eeff7878e2d125da3dce28cebedb16b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512100.SS.parquet",
+      "bytes": 529171,
+      "sha256": "4b4fdf259ae96a262cbcf370bcea17e17edc52fad7dbd7850eaad7e4df9d4cee"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512100.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "d1359ff71d1118ca3c439b247bfe45f5fe78d50bea06afd97f4ce8bde9c848a7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512100.SS_weekly.parquet",
+      "bytes": 125057,
+      "sha256": "f2747e23387a842df5ab6527bd229419cd3c7c614ed1bc9c0c245e3884fb9d6c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512170.SS.parquet",
+      "bytes": 372066,
+      "sha256": "2f22d511c10b6f98702676825d206826375584a0f85f6a762402e1115c0e8469"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512170.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "3548d65957147bf308f1a57f6feb91d627805054f23f5a2cc6ebdbebedfcdd13"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512170.SS_weekly.parquet",
+      "bytes": 91904,
+      "sha256": "d88dbc0c21197ed428c1ecc2074604774413579faaeb77442979ecf605138dd2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512400.SS.parquet",
+      "bytes": 463730,
+      "sha256": "d139c378b26bbe887cdb7ed305253a89ccf465293e818efe4c762d2afab1b9b8"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512400.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "df6c85144f92b176e76be4c5cb2a099e87bf1b07b962066170b240a5b6eb6dab"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512400.SS_weekly.parquet",
+      "bytes": 110412,
+      "sha256": "0590871b56498645b4bc3e78385a19ac9853e4fa0c89ada14d656573b30cce66"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512660.SS.parquet",
+      "bytes": 512154,
+      "sha256": "b0f5f4eefbc81c9f9d7c819562176146ff5451b36a242bd460813590d7f73c32"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512660.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "3d0f8fdb591ec0ef5f51d7fb5fab1c0633d1e464a494608d38380078889adb93"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512660.SS_weekly.parquet",
+      "bytes": 120884,
+      "sha256": "bdc6c5cafad78f1dce57f9249b45986340c5894d98a0a1107a53155ca2c42bef"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512720.SS.parquet",
+      "bytes": 361126,
+      "sha256": "efec606f69c1c8843e86021082a5b1a2df051d5b6caf6a6dc3e9a327e61d4266"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512720.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "89428c2b5999ae4f56d037e6f3a781e94a8060762cbd5ba3b646e6570ca99d64"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512720.SS_weekly.parquet",
+      "bytes": 89086,
+      "sha256": "65e728e2375c59da85b283035dfa71622bafc4f3837a1e1ac1a84e71a2ce4a5a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512760.SS.parquet",
+      "bytes": 373395,
+      "sha256": "662cbca5bec4f550dddef08bc9e0d46c49b4e6b3912adfd8f85b2e8202884653"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512760.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "42edb4009735f8dd88166121b88fea069bf7b106dd3f181da08bc3e96ebd572c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512760.SS_weekly.parquet",
+      "bytes": 91448,
+      "sha256": "d675217d6d9623277c13a30baf62963a314838b413e0505e028e94d11c9479c8"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512880.SS.parquet",
+      "bytes": 508635,
+      "sha256": "6d5fca426323c97a1cccdc5df830239668d8471e45ec180fbe54cd93fca79798"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512880.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "8fc2d2ec2451a7fa1a9e3c4b04393d0320d110fcb06d35d8fe4ea8887511f977"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512880.SS_weekly.parquet",
+      "bytes": 119798,
+      "sha256": "391a02e24ebc34889a942e9a385f88530dca79924c89e2e9c910066163557a3a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512890.SS.parquet",
+      "bytes": 386234,
+      "sha256": "8d53f3e0e1037c59ff48c5dc83fd8fa6592378f91ee9bada72c183f7db013bd8"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512890.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "f5f74862c65b5006dee4d8faef7e42e1773ebec1628eebad3c823095fa23e763"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/512890.SS_weekly.parquet",
+      "bytes": 95123,
+      "sha256": "f9764491271ecd435a6ba6b2d222cb69b6ea86216e0648f5f146358d870754a5"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513010.SS.parquet",
+      "bytes": 268887,
+      "sha256": "1930d7c441ca86a1ebf22d8ec9ad5026238f3a0af4f75f258f3f1b3140386588"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513010.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "b65e84bbf7588bc2b090db67f9b3b8269efe617fef054c28fb7d0a162b9d6a3d"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513010.SS_weekly.parquet",
+      "bytes": 68405,
+      "sha256": "97cd89140d32ab34aedb7204449078d395397bc8c77acca456b6b4efb58f057a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513100.SS.parquet",
+      "bytes": 716080,
+      "sha256": "544b2a693bdc823659f08ab61ad202e4b7427af171796bb8d32b289418c68222"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513100.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "2793054f3222c8ac460be0bc5da4b721f3bc8626290959e529e5a4850778fdad"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513100.SS_weekly.parquet",
+      "bytes": 165670,
+      "sha256": "7b72a6b58bc77db5a994bae4b8b02bcef1ffeacbd677205f3b2d8fe15d334e36"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513120.SS.parquet",
+      "bytes": 216037,
+      "sha256": "eaeb536ccd3cde24c60b4d91dfa6a4d35aa19b2d688d7c344c0ccb6a935bfd54"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513120.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "d65687e403e1eb2c2e911514a7dd0ab397062468da744fea27aa5e7fd07ef8a6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513120.SS_weekly.parquet",
+      "bytes": 56886,
+      "sha256": "0066d13e2f8cef78241845a286c40bd53b5686ba8dd7c9239a246806200a4adb"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513180.SS.parquet",
+      "bytes": 269737,
+      "sha256": "c063d7a905a3ca8c942aa57f10cee029b89fceacc73aa8985ac04b1116f82c8f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513180.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "3b271fa43cc02bf38a45a079e5252a0f9b57c34151f599efedf9ca57b834eb11"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513180.SS_weekly.parquet",
+      "bytes": 68616,
+      "sha256": "1b9bd282e5e77fdff9c990615a7404e990b90132d8fbd03398785658c0fb8c9c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513910.SS.parquet",
+      "bytes": 132897,
+      "sha256": "1ef74cebd4fe1f233a226d0696da08a864b515b8718f88e36cadfdf2cc123277"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513910.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "49ca07749d97e5309f276764a29df2fbad06bc2b7c06d7094c0dc12353196c64"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/513910.SS_weekly.parquet",
+      "bytes": 38580,
+      "sha256": "8a85d1eed64d7fa7626e93a2c39f0de173f87b5d52595749e7f999ea2ed278f4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515070.SS.parquet",
+      "bytes": 342551,
+      "sha256": "899941df5047fb39ebb24cf18971b8d5c64bc426657dd9939601d1717ec9609c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515070.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "48a811b471f03cf0a7e183207c7fe9e2a632343c9ac086ece9585d0256de5755"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515070.SS_weekly.parquet",
+      "bytes": 84679,
+      "sha256": "7976a1f139678b5329f124d405e187c27d2be3ea6d926b3ca3e457d90001b907"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515790.SS.parquet",
+      "bytes": 296755,
+      "sha256": "0fa1add03fe5582fefff3f56c5e14030e30a89f62a29e8f64cbb543ca9fae987"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515790.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "f6f85b930c862c7c72d8025413bf1c96226fbafd0f7fe0d8ca85eaaf8c29e64b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515790.SS_weekly.parquet",
+      "bytes": 74710,
+      "sha256": "84a40c705da8a69be57f5731c40260fed86c3ef3ea2d1cf7465ce6ea9a2b6481"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515880.SS.parquet",
+      "bytes": 365752,
+      "sha256": "014a8edd9e19058a1ff35aa197d56c88a99d633ba3848480470b19e243055b14"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515880.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "7b611f1f31df0c83ba61dfd92e23043581fdeb4ead4b588e7a725c492d50dbf3"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/515880.SS_weekly.parquet",
+      "bytes": 90543,
+      "sha256": "46b84d336dfb5b6017330b79ab5e1ef334347c9e401e728d54393b328f845b68"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/518880.SS.parquet",
+      "bytes": 686092,
+      "sha256": "f4ef12866524fa205b1e365215d7c61ead6eaa409415bc682941a5d5f2169c32"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/518880.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "052f79ea109e8a25102d29cf96e1f81ac12fc8f1481841a91850d55c8021d16f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/518880.SS_weekly.parquet",
+      "bytes": 158600,
+      "sha256": "3d71b56bd712c0cceaf4c2fcdf85171b4edc6b4bbbdf47415f207dd435663a4f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588000.SS.parquet",
+      "bytes": 300324,
+      "sha256": "294e416b2c85eb93d9ce320641cd797bfe551aa52f2e142f0465094bf173d25e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588000.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "d1b398e900139d8202a32c5934aceeb72e26e2c9732727c3bc27910bbbc907c1"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588000.SS_weekly.parquet",
+      "bytes": 75282,
+      "sha256": "99bfc8c5bb43071a5b1f0260075585cfeab8be04ed2276c59bd595a7a4680677"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588080.SS.parquet",
+      "bytes": 299680,
+      "sha256": "ef66b2f026674c7e61e5144864e580abc4b05fdd27f5b8c8ea91b496ab82ef6d"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588080.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "6d9e8efe15b1e1b551d1e6cc9446eae9a0c944b5c8bc8eaa4d7b0a0c7703b8bf"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588080.SS_weekly.parquet",
+      "bytes": 75063,
+      "sha256": "f179a9c7bbdb9023305d5505e15cf4cfa9a03134147c219d4336104adbd61654"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588200.SS.parquet",
+      "bytes": 208216,
+      "sha256": "289ce74d0f61957dc993d4dc7a2bed6364cbb1e8cefd186b12a59b189ddabdb9"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588200.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "ec1156d7634b3b4342d114e23ea40ae6a7784c0a6f777c5c5dd8f805d5d436ae"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588200.SS_weekly.parquet",
+      "bytes": 54780,
+      "sha256": "5bf1a35e4b6637652b1aaaa74b7ec910917f5bb96ff3d2d92e3d002ed5b98f27"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588890.SS.parquet",
+      "bytes": 127876,
+      "sha256": "0743e0726860cab56a33f759cd33c087a5c1134d56e0353fc45ae91d35fe8eea"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588890.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "0a4c606e0daa7938c97f3a5551e836cf6d9886aacd74c6d0a633ff67713dcd6e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/588890.SS_weekly.parquet",
+      "bytes": 37314,
+      "sha256": "546d1a23c6009c6c7a78e5e80ed3d06502b1c5952d92f6936db61a049a8b4908"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/600345.SS.parquet",
+      "bytes": 703590,
+      "sha256": "4e7663e0f6debac076627d924c04b88b36528284cf9ce5bd9bb35d0bebfde0e1"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/600345.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "9f57dc174ff840432a4fb1c724b154283e73a82658eac93dfb97929f9cd6a5ca"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/600345.SS_weekly.parquet",
+      "bytes": 163979,
+      "sha256": "d658805dd9b8157e699600a2e96b1697c0045c2f8e42294c26e953e60654f8b4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/600487.SS.parquet",
+      "bytes": 708859,
+      "sha256": "c2edba1395c6db0b28279c6e62304aba186058673bfd6c8eec3352d095ab65a0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/600487.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "b7f1008562b907cd293f22ffba7a2f7008dea685b3dafda8e09392575eb97ea5"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/600487.SS_weekly.parquet",
+      "bytes": 167204,
+      "sha256": "eacca6906d12d3c2b7bd814fe0a72bb1bb8870665ab902e23f0117e4d13439b7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/601288.SS.parquet",
+      "bytes": 684834,
+      "sha256": "19109124b8e25319a4cf49413a5b4a06dcccd236581aa40fd5179f99ea689274"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/601288.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "5ba0995cd1fd430520f83341567152be85d6b4a1412d1e812764797815a415a1"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/601288.SS_weekly.parquet",
+      "bytes": 165883,
+      "sha256": "c2575ffbacab81ce46b2f9b594c2acb13c236414678c12a73b48adc67a32af7b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/601991.SS.parquet",
+      "bytes": 675036,
+      "sha256": "516fca96443d4200c372c6717252a3c074b30e44013659c3359d88245fe03a1e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/601991.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "df80e134c51f016aa757ce0e9c5954b485d2981978413440bd5f8cd27f225f7e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/601991.SS_weekly.parquet",
+      "bytes": 159680,
+      "sha256": "6e56f797b5cf68c8ab1cb887d93c7e614d85a91420bb6fdd1364776965b9167b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/605289.SS.parquet",
+      "bytes": 289227,
+      "sha256": "ee5e63c3b24b3cfab4a94e58ec16120a423282cf0c5f49cf7b1bac28db8cada0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/605289.SS.parquet.source.json",
+      "bytes": 209,
+      "sha256": "acf4b9e7b50641b87a71eaffd536dede6bd5e445c247a06c89b2cab629dbcd1a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/605289.SS_weekly.parquet",
+      "bytes": 70852,
+      "sha256": "fdb27e476f0837e2ac46fe866053523f7b1c1ed94ff3687fcfef89ccccb55b40"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/AAPL.parquet",
+      "bytes": 775925,
+      "sha256": "f3eba35e8efba918e06e445546018ef8bbc20f7c5e55ec1a5070eeba9871a977"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/AAPL_weekly.parquet",
+      "bytes": 170311,
+      "sha256": "e0601646221fbe024e49107353c3d2a60c22d0397dccc7d28c7f364babe5e546"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/BTC-USD.parquet",
+      "bytes": 1005069,
+      "sha256": "eee5951fcf57461633971033de90b7507425a7d95f5329299cc66c0a56b31afa"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/BTC-USD_weekly.parquet",
+      "bytes": 151703,
+      "sha256": "2452d0d0e7dbaf16e3a55a156bc4fe2c08f493bba67e422593f1ef8898deb218"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/DIA.parquet",
+      "bytes": 768657,
+      "sha256": "f70c8a51d47b6090b66494059ca4cadd3f489fb8247ef2bdd26c98a1efafae53"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/DIA_weekly.parquet",
+      "bytes": 169322,
+      "sha256": "12bebbb05efb9f7ce40ac3830fa804ed4de277b0b367b1cb8fb93c0853cca063"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/ETH-USD.parquet",
+      "bytes": 732890,
+      "sha256": "4b93de43f96a1336dc98eb0026314319c6b55a76e19a5a006bd0a4645b3205c6"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/ETH-USD_weekly.parquet",
+      "bytes": 113277,
+      "sha256": "d5777f03a7ee81164733b3f5547cdf3d9d0d121bd573a530673fd7180e1a48da"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/GC=F.parquet",
+      "bytes": 746469,
+      "sha256": "1a64a60c2ef38002398a1dff1a36b47cf1f5677f0e7124db932554f8e3758ad4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/GC=F_weekly.parquet",
+      "bytes": 166830,
+      "sha256": "f43382f761b34bbc8af5f3d7125fdea10e47a1b5ab04434e8d1137fd02799326"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/GLD.parquet",
+      "bytes": 762627,
+      "sha256": "17a9f557e06f77ffbba01a18e7fac34b21236fa69f9900fc09dbc6fcd7d40dfc"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/GLD_weekly.parquet",
+      "bytes": 169073,
+      "sha256": "f690c1db492f3822fd7a908f5a00ea0a49d54d25d403b8765e2542fa3834c2f2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/GOOGL.parquet",
+      "bytes": 775924,
+      "sha256": "e48188338fe48114f280894ede2b647e7652793808ced4d2640aeeb69057b403"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/GOOGL_weekly.parquet",
+      "bytes": 170409,
+      "sha256": "f8d5345307d937e2c19766db840588da2aed6e9bcf7d7969a9d1e3f1d6da3075"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/IWM.parquet",
+      "bytes": 766664,
+      "sha256": "bfe6ab414607e85ee95ddd7838b7f52593c89d7c5657b94dea04bc0a5bd88f81"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/IWM_weekly.parquet",
+      "bytes": 169282,
+      "sha256": "4ab5675e5541e2f2d39b02799a4dd4ba89e5eda2b17a7e3e1be75f0c90a3faf3"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/MU.parquet",
+      "bytes": 767245,
+      "sha256": "5718c17fbbc898ab28e9a4d06fc0cf0b96cb737f2246b2a440437399753bd706"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/MU_weekly.parquet",
+      "bytes": 170030,
+      "sha256": "20d2706c09c62a396f7e3f29c5fba3db219528ad8d722863d0b65bda0a990f0f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/NVDA.parquet",
+      "bytes": 774539,
+      "sha256": "d1f6b15d0967e4be87c2cd5a6c19bbca0fc31327470b5c78316f0078f2c44f47"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/NVDA_weekly.parquet",
+      "bytes": 170907,
+      "sha256": "cb0b29a7089fdf72d8d3ec3e7b22ca8406c959b47df26d9260f2a074b2afe319"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/QQQ.parquet",
+      "bytes": 774719,
+      "sha256": "e26b036c98264c10a7a22f11a0dd0184a44af741f90ce95ba1689017b4f3fb14"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/QQQ_weekly.parquet",
+      "bytes": 170061,
+      "sha256": "1e5b04c5a1096038e6f44aa1005f4186276435839b9f813c3fa141cb8f3c8b8e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/SMH.parquet",
+      "bytes": 770946,
+      "sha256": "a74e5b29586c1711f7666b7ed85f3412c7b638eeae4ea25e31bfb76994cd08d9"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/SMH_weekly.parquet",
+      "bytes": 169951,
+      "sha256": "6f6185261501202714543e326a6e09ee82826e66040dc95567b8ba4e43515a43"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/SOXX.parquet",
+      "bytes": 771563,
+      "sha256": "c6163c296cc4e17dd0460042bf85f27e15dab10f9ce0c01d058ebf9bdfd9566f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/SOXX_weekly.parquet",
+      "bytes": 170096,
+      "sha256": "41b7f084d4f16acbd7f56d4de96ed680c3bebb8bbd5963e4650d996ecf7bd3a8"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/SPY.parquet",
+      "bytes": 774108,
+      "sha256": "0fd871c722af277eca786d8b26832ecdbdc4cc4153b54dfae9e51db6d2ae1a57"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/SPY_weekly.parquet",
+      "bytes": 169850,
+      "sha256": "e5e3e803466a4f81c2d35b697dc98bdecefa0e82ecd5c53b4f1d670194f24830"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/TLT.parquet",
+      "bytes": 757113,
+      "sha256": "dfc142cc86560445ddbeea555dceeefa41ce80b879ce298356e3f3748783e6ef"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/TLT_weekly.parquet",
+      "bytes": 168481,
+      "sha256": "58ba58d1d6a64b1a2ffba2bcfdcb61f01d411d4a1c7cd4ccd277015810ed2b0f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/TSLA.parquet",
+      "bytes": 777487,
+      "sha256": "14fc3bd644d624f520905d55618999aa08f612aa7603bd4637db3a3174b0861e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/TSLA_weekly.parquet",
+      "bytes": 170682,
+      "sha256": "baf06808a57492341f8122ac15b70cf3dc3fc2bebd5eb13bb07f2d90050c0b7b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLB.parquet",
+      "bytes": 753808,
+      "sha256": "7042307fb3e2a863fd33eed49865e0f1316fdd3bdc517f6e90a5ae61e53ce14c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLB_weekly.parquet",
+      "bytes": 168450,
+      "sha256": "3639c3e33cbb7d0ac510cfc190eb484fe3b624afe262ebe23fddea129c268b7e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLE.parquet",
+      "bytes": 756684,
+      "sha256": "f8963203c384c3d99e9376ef41f9fc9c9c3a255020a2ebc887f2fd32c5223251"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLE_weekly.parquet",
+      "bytes": 168637,
+      "sha256": "e132891646a1acc19f2e2d1599dbfb0a9897721fe5d3b602e35316e48f62661c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLF.parquet",
+      "bytes": 748553,
+      "sha256": "e4fe24124b71ad22fdd5dda670b9e3bf3cbe815c560601297329360ce7e68095"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLF_weekly.parquet",
+      "bytes": 168196,
+      "sha256": "7e66376f78d598e10c3605a121ddb5037e7d55ad75f089d747f2b1e9e2fd9ca2"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLI.parquet",
+      "bytes": 760719,
+      "sha256": "b553df984c57c9bd8b95e6360fb52f6f7cdd2fd82f725104473894e664cc23f9"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLI_weekly.parquet",
+      "bytes": 169099,
+      "sha256": "d97b917951f3980972a6e4bb331718767c192040e75295ea2d3e74509544639e"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLK.parquet",
+      "bytes": 767395,
+      "sha256": "42b973ac9510d357d3111b7038bb664ddf3f64f52c01036e58e61add737a5eee"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLK_weekly.parquet",
+      "bytes": 169666,
+      "sha256": "b39cf474ba88f38a8dc4e5304b0b6f2b589c29b817050769ab37424b33c7a14f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLP.parquet",
+      "bytes": 748778,
+      "sha256": "52d8db61a3eccbf5f3e7ea778214e57005d52913134139b983047b33d8bbfb18"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLP_weekly.parquet",
+      "bytes": 168133,
+      "sha256": "3ac9248612f43bec3ae7b44c2d379e2df2dabe5314a621790b8618611b343e0c"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLRE.parquet",
+      "bytes": 590196,
+      "sha256": "93621b1a13ad2293e5ac0658e923ef70ea369000c7700a2e6c1564e63bc9a663"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLRE_weekly.parquet",
+      "bytes": 135378,
+      "sha256": "5cd209cdec8a7cf2a5a652b475049cbb86e32a8f4af0db600d88f38e8bb12e60"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLU.parquet",
+      "bytes": 751617,
+      "sha256": "a14f888395f75365f309a5ae039d079c24b20638cf350cb6ee2796f21a109590"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLU_weekly.parquet",
+      "bytes": 168469,
+      "sha256": "5bc4e9079bacf203b10e9ce25dbffaef8e5100f1ba523224d9e4bd705332c8bc"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLV.parquet",
+      "bytes": 760206,
+      "sha256": "ddf8d7fa2209deb72d7b5ddaf802e6ae97c722d9824b273c203f48888d2a16cf"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLV_weekly.parquet",
+      "bytes": 168784,
+      "sha256": "a051cb3d3887813e253ce611519591eea19c4023eb1cdae2450be101eec0ac70"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLY.parquet",
+      "bytes": 766848,
+      "sha256": "d10d7230ed4af26be38a2c8e535032d8647ed11553cce59e66beb11409e9c90f"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/market_data/XLY_weekly.parquet",
+      "bytes": 169514,
+      "sha256": "f6515cf74bca04020f7f06308b7ef34023d4961576e05af9d80391733e955576"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/metadata.json",
+      "bytes": 2275,
+      "sha256": "4164f14fdeba4d1a84765f3446a659c40fe95b0426cab71bc751a86869ea3953"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/monthly_distribution.csv",
+      "bytes": 954,
+      "sha256": "ce56c5ded870b734c7a141c5b53998167fe0070798f2cb43757e4e47967d152a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/monthly_metrics.csv",
+      "bytes": 77714,
+      "sha256": "8798b21f37e6edac625d15ea14b562a9807c5bda05467c6b31aac1ba34c4cee3"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/nav_daily.csv",
+      "bytes": 3273640,
+      "sha256": "dfc58f1861138fc24dca8583989e3a17a0532082e43b4904990cf1397b6aaa23"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/orders.csv",
+      "bytes": 653616,
+      "sha256": "ff06acf7f78742c8297c87a4ee9f6dce0aa3bbb0ab540def7b4d0a562a09a06b"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/policy_bull_flip_events.metadata.json",
+      "bytes": 5182,
+      "sha256": "95dffa52268f334b816b0d2ff57f2cdce845b5160984e937cc4334f67d734172"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/policy_bull_flip_events.parquet",
+      "bytes": 344379,
+      "sha256": "4e215df45ae96fdaa061ff2fe271bbba02f9879eb6d6bbce316ef6c0d7a70c49"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/portfolio_metrics.csv",
+      "bytes": 1969,
+      "sha256": "6e7e119437b785e8947bfa0a100e393e56279200541e97df8304b28ee9120ea7"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/portfolio_metrics_by_market.csv",
+      "bytes": 3452,
+      "sha256": "efa1c22b4422f704bbe6b75301c9fa4dbbf785e6add5356ee93171b3a4cefcda"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/rolling_window_metrics.csv",
+      "bytes": 437408,
+      "sha256": "57fdc0fb59a826c10b914bf2ab4b04eea1b197bdf5f4e81d11bab5c67cdda9d4"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/rolling_window_summary.csv",
+      "bytes": 1942,
+      "sha256": "16cf4312a97a3ce3fc9ce81341039ed3b48f6f8af9ded349e5a246e433eddd85"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/supertrend_parameter_sensitivity.csv",
+      "bytes": 3618,
+      "sha256": "511b14959c51efa27a36c08d3b2c6bd688805ff6f6da4f2f674c2492afe240cc"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/symbol_pnl_attribution.csv",
+      "bytes": 7838,
+      "sha256": "3de1602f8dc2102209ecf488f0a0019256a0b7ecd4cf2a924ff82bfa55ccd9bb"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/top_drawdowns.csv",
+      "bytes": 4716,
+      "sha256": "66ccd75f15ecf3abcaf327fcd20e11f77a2a425dc9e6d09370003bf092d37cca"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/trades.csv",
+      "bytes": 479773,
+      "sha256": "1e02199051b2f5f60c671bc46ae1d590116921c7c69e11f1ba1f7dc8d3436c5a"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/underwater_daily.csv",
+      "bytes": 1127079,
+      "sha256": "c1e5cf918b3190a255e2caf94d093e59be9e9399c87a651c213b8e52b4ebe4f0"
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/universe_membership_history.csv",
+      "bytes": 1698483,
+      "sha256": "90b9b67305190b12cde6c045f7d0a0c939b32dd33c7399cb07fef3744f9ffc1e"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 779,
+      "sha256": "eca0e874868467580dcb927c44995cfcbcdecf9d7f6c1f983ac4dc9b908c6f6c"
+    },
+    {
+      "path": "research/universes/scan-v2-long-sample-candidates.json",
+      "bytes": 1468,
+      "sha256": "c399ac18506ae32bda476edbd6c680de26c995ed65d354f4efb9db60a4a6e433"
+    },
+    {
+      "path": "scripts/replay_scan_v2_bull_flip_events.py",
+      "bytes": 6739,
+      "sha256": "e9356d5aec4d1ff91b5ba4810e0303ac93e609efe0180fd1a0453d890b1ddd1e"
+    },
+    {
+      "path": "scripts/research_all_bull_flip_defense.py",
+      "bytes": 19794,
+      "sha256": "3e66311d8f81891dd34a7490a67e90dc9eafc22493e6a4def156a6c05f7c4e20"
+    },
+    {
+      "path": "scripts/research_all_bull_flip_long_sample.py",
+      "bytes": 20280,
+      "sha256": "36c5e3aeed950d469429e2b1a028533cb4ad21f1c2554fea4980ddde10cf6a07"
+    },
+    {
+      "path": "src/xquant/__init__.py",
+      "bytes": 69,
+      "sha256": "cb451eaacdd751d56ac63d38ae27e2fbe9b1a93bbb9fd829b255f21f18bb4fe8"
+    },
+    {
+      "path": "src/xquant/defensive_overlay.py",
+      "bytes": 13120,
+      "sha256": "233913791fe6f25c3e2f2236a2503c9f5ee9bf58d5cc6efe5009ce6b0339dc58"
+    },
+    {
+      "path": "src/xquant/event_study.py",
+      "bytes": 8529,
+      "sha256": "e3a482bdee9e2cd2ed806941d99cde69beeb6bc65b5f5634c2a1cddbb97cee42"
+    },
+    {
+      "path": "src/xquant/indicators.py",
+      "bytes": 4300,
+      "sha256": "f56ee10c4d1af3c3db81984dd1281aa4790516c223b5eda268f9d33bed296216"
+    },
+    {
+      "path": "src/xquant/metrics.py",
+      "bytes": 648,
+      "sha256": "444119eea253313b3d32d2ee97179eb0302562c962f594d8086ee04b6c93a3f0"
+    },
+    {
+      "path": "src/xquant/point_in_time_universe.py",
+      "bytes": 10051,
+      "sha256": "0453cd013746412d66b2db982808cef39f5e0e8cf8ce952ea831e56cc2615b42"
+    },
+    {
+      "path": "src/xquant/portfolio.py",
+      "bytes": 2429,
+      "sha256": "30a59f132c26f46867b705969ffe1544832285584bba23050dc5ab8589f917e1"
+    },
+    {
+      "path": "src/xquant/project.py",
+      "bytes": 700,
+      "sha256": "cf5b000ffc369be4f18febd51a2bb88e2325d0cfac2c06b5d36151ea60fa8976"
+    },
+    {
+      "path": "src/xquant/research_exports.py",
+      "bytes": 3220,
+      "sha256": "6d6f41401bc7c583dba0152820e02927ea8df26e61aafdd49c2a59c4c9fe631d"
+    },
+    {
+      "path": "src/xquant/signal_portfolio.py",
+      "bytes": 19282,
+      "sha256": "1eba460e5cfaf6c3f861c4a38cee12f0aab509ad6051f7eda26141992ad7c7ac"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 400465,
+      "sha256": "dbdc30306d8335f509bc10a2d9b4e18159d9630d3bfaa39e70b82b4875a84e4b"
+    }
+  ],
+  "archiveSha256": "912602504cc7c5af317b485b3f3835665378117017f8699d58605bae2795a13d",
+  "originalFixtureComparison": [
+    {
+      "path": "src/xquant/defensive_overlay.py",
+      "frozenSha256": "233913791fe6f25c3e2f2236a2503c9f5ee9bf58d5cc6efe5009ce6b0339dc58",
+      "recoveredSha256": "233913791fe6f25c3e2f2236a2503c9f5ee9bf58d5cc6efe5009ce6b0339dc58",
+      "matches": true
+    },
+    {
+      "path": "src/xquant/signal_portfolio.py",
+      "frozenSha256": "83dc4ae5e494fbe085da7572cc47061a72b3d4e4cb95b3f3665983740f352471",
+      "recoveredSha256": "1eba460e5cfaf6c3f861c4a38cee12f0aab509ad6051f7eda26141992ad7c7ac",
+      "matches": false
+    },
+    {
+      "path": "src/xquant/point_in_time_universe.py",
+      "frozenSha256": "0453cd013746412d66b2db982808cef39f5e0e8cf8ce952ea831e56cc2615b42",
+      "recoveredSha256": "0453cd013746412d66b2db982808cef39f5e0e8cf8ce952ea831e56cc2615b42",
+      "matches": true
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/universe_membership_history.csv",
+      "frozenSha256": "90b9b67305190b12cde6c045f7d0a0c939b32dd33c7399cb07fef3744f9ffc1e",
+      "recoveredSha256": "90b9b67305190b12cde6c045f7d0a0c939b32dd33c7399cb07fef3744f9ffc1e",
+      "matches": true
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-long-sample/policy_bull_flip_events.parquet",
+      "frozenSha256": "4e215df45ae96fdaa061ff2fe271bbba02f9879eb6d6bbce316ef6c0d7a70c49",
+      "recoveredSha256": "4e215df45ae96fdaa061ff2fe271bbba02f9879eb6d6bbce316ef6c0d7a70c49",
+      "matches": true
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/risk_parity_core_weights.csv",
+      "frozenSha256": "7fec82eff9c5e0012873f95543b7f1a502e82c2a2b52abdc4594e41f4bb4507b",
+      "recoveredSha256": "7fec82eff9c5e0012873f95543b7f1a502e82c2a2b52abdc4594e41f4bb4507b",
+      "matches": true
+    },
+    {
+      "path": "outputs/scan-v2-all-bull-flip-defense/def200_entry_gate_audit.csv",
+      "frozenSha256": "f3da62538b0cc6708d77aa33b7add45df44878b82f707857327e75ea94e64f05",
+      "recoveredSha256": "f3da62538b0cc6708d77aa33b7add45df44878b82f707857327e75ea94e64f05",
+      "matches": true
+    }
+  ]
+}

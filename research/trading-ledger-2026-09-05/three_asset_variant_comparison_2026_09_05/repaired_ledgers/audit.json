@@ -1,0 +1,37 @@
+[
+  {
+    "variant": "pure_risk_parity",
+    "quantityMismatchRows": 0,
+    "maxCashDifference": 1.469743438065052e-09,
+    "invalidTimingFills": 0,
+    "passed": true
+  },
+  {
+    "variant": "core90_cash",
+    "quantityMismatchRows": 0,
+    "maxCashDifference": 2.764863893389702e-10,
+    "invalidTimingFills": 0,
+    "passed": true
+  },
+  {
+    "variant": "core_supertrend_filter",
+    "quantityMismatchRows": 0,
+    "maxCashDifference": 8.003553375601768e-10,
+    "invalidTimingFills": 0,
+    "passed": true
+  },
+  {
+    "variant": "pure_risk_parity_delay1",
+    "quantityMismatchRows": 0,
+    "maxCashDifference": 1.2078089639544487e-09,
+    "invalidTimingFills": 0,
+    "passed": true
+  },
+  {
+    "variant": "core90_ma200_bull10_repaired",
+    "quantityMismatchRows": 0,
+    "maxCashDifference": 5.984475137665868e-10,
+    "invalidTimingFills": 0,
+    "passed": true
+  }
+]

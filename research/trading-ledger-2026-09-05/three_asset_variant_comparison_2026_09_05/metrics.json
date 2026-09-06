@@ -1,0 +1,47 @@
+[
+  {
+    "variant": "pure_risk_parity",
+    "startNav": 100000.0,
+    "endNav": 549434.5747684343,
+    "cagr": 0.1593750067880053,
+    "sharpe": 1.3357972362206443,
+    "maxDrawdown": -0.1370875462348352,
+    "rows": 4209
+  },
+  {
+    "variant": "core90_cash",
+    "startNav": 100000.0,
+    "endNav": 466642.8045595268,
+    "cagr": 0.1430550888961326,
+    "sharpe": 1.3360352200768706,
+    "maxDrawdown": -0.12384943882859212,
+    "rows": 4209
+  },
+  {
+    "variant": "core_supertrend_filter",
+    "startNav": 100000.0,
+    "endNav": 612155.5525886391,
+    "cagr": 0.17030424647120057,
+    "sharpe": 1.1137510688865901,
+    "maxDrawdown": -0.28200066603240725,
+    "rows": 4209
+  },
+  {
+    "variant": "pure_risk_parity_delay1",
+    "startNav": 100000.0,
+    "endNav": 524592.2940966657,
+    "cagr": 0.15472824480845748,
+    "sharpe": 1.2995949827009645,
+    "maxDrawdown": -0.13763873562699835,
+    "rows": 4209
+  },
+  {
+    "variant": "core90_ma200_bull10_repaired",
+    "startNav": 100000.0,
+    "endNav": 499435.13453884283,
+    "cagr": 0.149813106443625,
+    "sharpe": 1.3016611740711088,
+    "maxDrawdown": -0.12664136763276213,
+    "rows": 4209
+  }
+]

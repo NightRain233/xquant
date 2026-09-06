@@ -1,0 +1,31 @@
+{
+  "entryOrderComparison": {
+    "left_only": 382,
+    "right_only": 237,
+    "both": 89
+  },
+  "entryMatchKey": "symbol + actual execution date; no inferred signal-date matching",
+  "scope": "Legacy entries are standalone MA200 satellite trades; current entries are portfolio-budgeted satellite trades. Resize orders excluded.",
+  "currentEntryCount": 326,
+  "legacyEntryCount": 471,
+  "metrics": [
+    {
+      "version": "legacy",
+      "cagr": 0.16276691961476297,
+      "sharpe": 1.4343847678770534,
+      "maxDrawdown": -0.13490608500522416
+    },
+    {
+      "version": "before_2_0",
+      "cagr": 0.15250526841042533,
+      "sharpe": 1.3283868794175604,
+      "maxDrawdown": -0.12658507871169777
+    },
+    {
+      "version": "repaired_2_1",
+      "cagr": 0.149813106443625,
+      "sharpe": 1.3016611740711088,
+      "maxDrawdown": -0.12664136763276213
+    }
+  ]
+}

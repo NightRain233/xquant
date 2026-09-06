@@ -1,0 +1,7 @@
+{
+  "variant": "pure_risk_parity_delay1",
+  "quantityMismatchRows": 0,
+  "maxCashDifference": 1.2078089639544487e-09,
+  "invalidTimingFills": 0,
+  "passed": true
+}

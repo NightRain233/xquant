@@ -1,0 +1,7 @@
+{
+  "variant": "core90_cash",
+  "quantityMismatchRows": 0,
+  "maxCashDifference": 2.764863893389702e-10,
+  "invalidTimingFills": 0,
+  "passed": true
+}

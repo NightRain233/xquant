@@ -1,0 +1,66 @@
+{
+  "status": "PASS_EXECUTION_AUDIT",
+  "maxCashDifference": 5.984475137665868e-10,
+  "invalidTimingFills": 0,
+  "quantityMismatchRows": 0,
+  "metrics": {
+    "startNav": 100000.0,
+    "endNav": 499435.13453884283,
+    "cagr": 0.149813106443625,
+    "sharpe": 1.3016611740711088,
+    "maxDrawdown": -0.12664136763276213,
+    "calendarRows": 4209
+  },
+  "historicalValidationScope": "current contract on limited observable universe",
+  "validated": true,
+  "notValidated": [
+    "full historical security master",
+    "FX-enabled foreign instruments",
+    "complete historical opening restrictions",
+    "out-of-sample profitability"
+  ],
+  "decisionItems": [
+    {
+      "event_type": "BULL_FLIP_ENTRY",
+      "eligible": 0,
+      "reason": "fx_data_required",
+      "count": 656
+    },
+    {
+      "event_type": "BULL_FLIP_ENTRY",
+      "eligible": 0,
+      "reason": "ma200_data_blocked",
+      "count": 48
+    },
+    {
+      "event_type": "BULL_FLIP_ENTRY",
+      "eligible": 0,
+      "reason": "market_at_or_below_ma",
+      "count": 355
+    },
+    {
+      "event_type": "BULL_FLIP_ENTRY",
+      "eligible": 0,
+      "reason": "pit_universe_blocked",
+      "count": 1262
+    },
+    {
+      "event_type": "BULL_FLIP_ENTRY",
+      "eligible": 1,
+      "reason": "frozen bull flip and market above MA200",
+      "count": 540
+    },
+    {
+      "event_type": "CORE_REBALANCE",
+      "eligible": 1,
+      "reason": "20-session inverse-volatility target",
+      "count": 801
+    },
+    {
+      "event_type": "ST_BEAR_EXIT",
+      "eligible": 1,
+      "reason": "first complete ST 7/3 bearish close while held",
+      "count": 319
+    }
+  ]
+}

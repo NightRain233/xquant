@@ -1,0 +1,52 @@
+[
+  {
+    "file": "q3.csv",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/outputs/q3-riskparity-btc/ten_year_candidate_q5_metrics.csv",
+    "sha256": "9b226907bac8e7d7bffb973ceff82a48a2ac2264b2159b5d353226d809678e12"
+  },
+  {
+    "file": "q6.csv",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/outputs/q6-momentum-trend-riskparity/q3_metrics.csv",
+    "sha256": "e1ad4537ad29b174d125668e8f5d7dfb11902c0c0b3ed16e630b72c806af2179"
+  },
+  {
+    "file": "q7.csv",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/outputs/q7-supertrend-riskparity-robustness/cost_execution_sensitivity.csv",
+    "sha256": "12915e4e03b5c8872f6f7c8bceec60f7448ad9e4e32625ee60ec4ac9fe2e9332"
+  },
+  {
+    "file": "q8.csv",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/outputs/q8-btc-trend-satellite/cost_execution_sensitivity.csv",
+    "sha256": "a0785be8c96d1acc6b508cffb2cd9f3c4776688c03252b1b354db410db738961"
+  },
+  {
+    "file": "q7_review.md",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/q7-supertrend-riskparity-robustness-review.md",
+    "sha256": "890e24496a9402c4fba6a6d91b4d1903dd2cc8edb7a680aadd4a82dfcac74287"
+  },
+  {
+    "file": "q9_review.md",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/q9-btc-supertrend-satellite-robustness-review.md",
+    "sha256": "558481217da673b6dfaa96cd1b582565eff35db44bb7a2fdb75483ba2c4bfe89"
+  },
+  {
+    "file": "q10_review.md",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/q10-live-readiness-stress-review.md",
+    "sha256": "85bf0e868ae72818d006d2aa2b9aa1f53df25b5c3e7d1d720796f377aafcdeca"
+  },
+  {
+    "file": "q3_review.md",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/q3-riskparity-btc-review.md",
+    "sha256": "e97a736928d2bfedb2cc84067429332680a6ec28365770a39ad5d715b5a1c0ed"
+  },
+  {
+    "file": "q6_review.md",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/q6-momentum-trend-riskparity-review.md",
+    "sha256": "0b926c4048eb179255ce06f97c167f9531b76800cd7a0f5d5b6f397e339a3863"
+  },
+  {
+    "file": "q8_review.md",
+    "source": "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/q8-btc-trend-satellite-review.md",
+    "sha256": "4335098fc88edaa39e2cad6a50f4ccf8f9305fa25f3c34548945d2e121db8df1"
+  }
+]
