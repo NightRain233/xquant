@@ -8,6 +8,8 @@ research outputs.
 """
 from __future__ import annotations
 
+import os
+
 from datetime import date, datetime, time
 import json
 import math
@@ -26,7 +28,7 @@ from portfolio_strategies.theme_alpha import calculate_theme_alpha
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TRADING_ROOT = Path("/Users/zz/Desktop/Code/zsd/trading")
+TRADING_ROOT = Path(os.environ.get("TRADING_ROOT", ROOT.parent / "trading")).expanduser().resolve()
 DATA_ROOT = TRADING_ROOT / "backend" / "data"
 Q8_ROOT = ROOT / "outputs" / "theme-alpha-q8-signal-live-readiness"
 OUTPUT_ROOT = ROOT / "outputs" / "def200-cash-manual-review-2026-09-06-v2"

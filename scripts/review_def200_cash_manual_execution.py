@@ -7,6 +7,8 @@ capital calculation uses integer ETF lots and explicit commission scenarios.
 """
 from __future__ import annotations
 
+import os
+
 import hashlib
 import json
 import math
@@ -18,7 +20,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TRADING_ROOT = Path("/Users/zz/Desktop/Code/zsd/trading")
+TRADING_ROOT = Path(os.environ.get("TRADING_ROOT", ROOT.parent / "trading")).expanduser().resolve()
 DATA_ROOT = TRADING_ROOT / "backend" / "data"
 OUTPUT_ROOT = ROOT / "outputs" / "def200-cash-manual-review-2026-09-06"
 Q8_ROOT = ROOT / "outputs" / "theme-alpha-q8-signal-live-readiness"

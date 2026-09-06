@@ -12,6 +12,8 @@ parameters or research artifacts are changed.
 """
 from __future__ import annotations
 
+import os
+
 import argparse
 from datetime import date, datetime, time, timedelta
 import json
@@ -24,7 +26,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TRADING_ROOT = Path("/Users/zz/Desktop/Code/zsd/trading")
+TRADING_ROOT = Path(os.environ.get("TRADING_ROOT", ROOT.parent / "trading")).expanduser().resolve()
 TRADING_BACKEND = TRADING_ROOT / "backend"
 if str(TRADING_BACKEND) not in sys.path:
     sys.path.insert(0, str(TRADING_BACKEND))

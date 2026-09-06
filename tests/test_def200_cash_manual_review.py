@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 
@@ -5,8 +6,8 @@ import pandas as pd
 import pytest
 
 
-TRADING_BACKEND = Path("/Users/zz/Desktop/Code/zsd/trading/backend")
-XQUANT_ROOT = Path("/Users/zz/Desktop/Code/zsd/xquant")
+XQUANT_ROOT = Path(__file__).resolve().parents[1]
+TRADING_BACKEND = Path(os.environ.get("TRADING_ROOT", XQUANT_ROOT.parent / "trading")).expanduser().resolve() / "backend"
 for path in (TRADING_BACKEND, XQUANT_ROOT):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
