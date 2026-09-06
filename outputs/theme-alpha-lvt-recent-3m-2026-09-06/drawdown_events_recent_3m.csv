@@ -1,0 +1,6 @@
+﻿strategy,start,trough,recovery,max_drawdown,duration_calendar_days,duration_sessions,recovered
+Original_RiskParity_3Asset,2026-06-04,2026-07-30,,-0.09593059006031435,92,65,False
+Expanded_LVT_100,2026-06-04,2026-06-08,2026-06-16,-0.05690008036568772,12,8,True
+Expanded_LVT_100,2026-06-23,2026-06-23,2026-06-25,-0.028288013211645868,2,2,True
+Expanded_LVT_100,2026-06-26,2026-07-28,,-0.14182789069344026,70,50,False
+Core80_LVT20_Def200_Cash,2026-06-04,2026-07-30,,-0.08711315358444127,92,65,False

@@ -1,0 +1,82 @@
+{
+  "run_date": "2026-09-06",
+  "strategy_identity": "Independent LVT recent performance refresh",
+  "snapshot_root": "/Users/zz/Desktop/Code/zsd/xquant/outputs/def200-cash-minimum-capital-2026-09-06-v2/market_snapshot",
+  "snapshot_metadata": "/Users/zz/Desktop/Code/zsd/xquant/outputs/def200-cash-minimum-capital-2026-09-06-v2/market_snapshot_metadata.json",
+  "snapshot_source": "isolated TickFlow snapshot, period=1d, adjust=forward_additive",
+  "market_data_start": "2021-07-01",
+  "market_data_end": "2026-09-04",
+  "session_count": 1257,
+  "recent_start": "2026-06-04",
+  "recent_observations": 66,
+  "execution": "next complete XSHG close",
+  "signal_days": [
+    10,
+    25
+  ],
+  "ma_window": 60,
+  "momentum_window": 63,
+  "volatility_window": 60,
+  "top_n": 3,
+  "risk_parity_window": 20,
+  "main_cap": 0.5,
+  "defense_window": 200,
+  "rebalance_threshold": 0.02,
+  "max_asset_trade": 0.15,
+  "costs": {
+    "base_bps": 20.0,
+    "slippage_bps": 0.0,
+    "asset_extra_bps": {
+      "510300.SS": 5,
+      "518880.SS": 5,
+      "510880.SS": 5,
+      "513100.SS": 20,
+      "513180.SS": 20,
+      "512400.SS": 10,
+      "159995.SZ": 10,
+      "515880.SS": 10,
+      "159930.SZ": 10,
+      "512880.SS": 10,
+      "512170.SS": 10
+    }
+  },
+  "latest_valid_signal": {
+    "signal_date": "2026-08-25",
+    "execution_date": "2026-08-26",
+    "market_data_date": "2026-09-04",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    },
+    "combined_target": {
+      "510300.SS": 0.0,
+      "513100.SS": 0.19925816216479844,
+      "518880.SS": 0.34010909569080494,
+      "512400.SS": 0.0,
+      "159995.SZ": 0.0,
+      "515880.SS": 0.0,
+      "510880.SS": 0.07798858262010495,
+      "159930.SZ": 0.06263012533940228,
+      "512880.SS": 0.0,
+      "513180.SS": 0.0,
+      "512170.SS": 0.0,
+      "CASH": 0.3200140341848895
+    }
+  },
+  "main_strategies": [
+    "Original_RiskParity_3Asset",
+    "Expanded_LVT_100",
+    "Core80_LVT20_Def200_Cash"
+  ],
+  "evidence_class": "VERIFIED_LATEST_MARKET_SNAPSHOT_PLUS_FRACTIONAL_CURRENT_ENGINE_REPLAY",
+  "not_proven": [
+    "independent LVT live paper account and forward ledger",
+    "integer-lot broker fillability at 8,000 CNY",
+    "ETF premium/iNAV, order book, suspension and broker-specific charges"
+  ]
+}

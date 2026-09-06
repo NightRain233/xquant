@@ -27,6 +27,7 @@ EXPECTED_NOTEBOOKS = {
     "theme-alpha-q7-production-realism-practice.ipynb",
     "theme-alpha-q8-signal-live-readiness-practice.ipynb",
     "theme-alpha-q12-long-sample-proxy-validation-practice.ipynb",
+    "theme-alpha-lvt-recent-3m-2026-09-06-practice.ipynb",
 }
 
 
