@@ -1,0 +1,24 @@
+{
+  "strategyIdentity": {
+    "A_pure_three_asset_risk_parity": "Paper comparison only; not the target live candidate.",
+    "B_pure_three_asset_plus_def200_cash": "No independent frozen research-and-implementation contract found in the reviewed artifacts; do not infer it from C.",
+    "C_core80_lvt20_def200_cash": "Existing Q6-Q12 research candidate and trading theme_alpha implementation; target of this review."
+  },
+  "execution": {
+    "signalDate": "2026-08-10",
+    "executionDate": "2026-08-11",
+    "isAfterSignal": true,
+    "contract": "next_close"
+  },
+  "dataChecks": {
+    "allTargetAssetsHavePositiveOHLC": true,
+    "allTargetAssetsHavePositiveVolume": true,
+    "noSuspensionInMeasuredRows": true,
+    "premiumDiscountVerified": false
+  },
+  "researchResults": {
+    "frozenQ8OutputsPreserved": true,
+    "oldQ8SimulatorIsLatestUnifiedLedgerAudit": false,
+    "reason": "Q8 uses persistent weight rows and adjusted Close research prices; trading values actual quantities at execution close."
+  }
+}

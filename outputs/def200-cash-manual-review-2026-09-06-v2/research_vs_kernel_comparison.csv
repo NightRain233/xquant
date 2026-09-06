@@ -1,0 +1,5 @@
+﻿dimension,current_kernel,research_reference,difference,comparison_class,evidence_class,limitation
+signal,89/100 full target matches; 11 mismatches,Q8 formula reconstructed on the same local raw OHLCV,11 rows; selected LVT set 100/100 equal,RECONSTRUCTED_SAME_LOCAL_INPUT,VERIFIED_COMPARISON,Not original frozen adjusted-price historical signal rows; current replay adopts selected-only LVT cap with remainder in CASH
+fills,97 executed events; 447 trades,Q8 output has no fill ledger,Not directly measurable,UNVERIFIED,VERIFIED_CURRENT_ONLY,"Q8 stores portfolio weights/NAV, not quantity-level fills"
+fees,9528.03390277 total model fees; 0.00000000 slippage,0.01737656 annual cost drag,Not directly comparable,STATIC_FROZEN_REFERENCE,VERIFIED_CURRENT_PLUS_STATIC_RESEARCH,"Different sample dates, NAV initialization, price convention and cost aggregation"
+NAV,198.57046867 normalized at overlap start,197.39809110 frozen Q8 normalized at overlap start,1.17237757 NAV points,STATIC_FROZEN_REFERENCE,VERIFIED_COMPARISON_WITH_LIMITATION,Not a same-contract profitability ranking

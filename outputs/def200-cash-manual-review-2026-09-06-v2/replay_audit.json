@@ -1,0 +1,258 @@
+{
+  "strategyIdentity": "C: Core80 + Expanded LVT20 + Def200 Cash",
+  "strategyBIndependentContractFound": false,
+  "currentReviewContract": {
+    "lvtCapRule": "Apply the 50% cap only to selected LVT assets; leave cap remainder in CASH.",
+    "q8Difference": "Frozen Q8 full-universe cap behavior is retained as a static research reference and is not used to buy unselected assets.",
+    "contractScope": "Audit/replay contract clarification; no parameter retune or frozen-research overwrite."
+  },
+  "replayContract": {
+    "engine": "trading.backend.portfolio_strategies.paper_engine.PortfolioPaperEngine",
+    "execution": "next_close",
+    "firstBuildRule": "cash_only_activation_on_session_before_first_valid_signal_then_first_signal_executes_at_next_XSHG_close",
+    "initialNavKernel": 100000.0,
+    "fractionalUnitsInKernel": true,
+    "manualLotLayerIsSeparate": true,
+    "lotSize": 100,
+    "threshold": 0.02,
+    "maxAssetTrade": 0.15
+  },
+  "data": {
+    "commonMarketDataEnd": "2026-08-03",
+    "commonSessionsStart": "2021-07-27",
+    "commonSessionsEnd": "2026-08-03",
+    "source": "trading/backend/data TickFlow parquet OHLCV",
+    "515880LatestDate": "2026-08-03",
+    "currentSignalRows": 100,
+    "effectiveSignalStart": "2022-06-10",
+    "effectiveSignalEnd": "2026-07-27",
+    "coverageNote": "No valid formal signal was available before 2022-06-10 after indicator warmup; this replay does not cover the 2022-01 through 2022-05 decline.",
+    "warmupSkippedFormalDates": [
+      {
+        "signal_date": "2021-07-27",
+        "error_type": "InsufficientDataError",
+        "error": "Need 20 return rows, received 1",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-08-10",
+        "error_type": "InsufficientDataError",
+        "error": "Need 20 return rows, received 11",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-08-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-09-10",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-09-27",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-10-11",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-10-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-11-10",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-11-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-12-10",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2021-12-27",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-01-10",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-01-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-02-10",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-02-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-03-10",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-03-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-04-11",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-04-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-05-10",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      },
+      {
+        "signal_date": "2022-05-25",
+        "error_type": "InsufficientDataError",
+        "error": "Core defense has not completed warmup",
+        "evidence_class": "VERIFIED_REPLAY_INPUT_LIMIT"
+      }
+    ]
+  },
+  "signalEvidence": {
+    "sameLocalInputReconstructionRows": 100,
+    "signalWeightMatches": 89,
+    "signalWeightMismatches": 11,
+    "referenceClass": "RECONSTRUCTED_SAME_LOCAL_INPUT",
+    "limitation": "Original Q8 historical signal rows were not frozen as a CSV; this is formula reconstruction on local raw input, not a claim that adjusted-price Q8 rows were identical."
+  },
+  "kernelReplay": {
+    "initial_nav": 100000.0,
+    "final_nav": 198378.40311055884,
+    "cumulative_return_from_replay_start": 0.9837840311055883,
+    "max_drawdown": -0.10725423788912325,
+    "signal_count": 100,
+    "rebalance_event_count": 100,
+    "executed_event_count": 97,
+    "skipped_event_count": 3,
+    "trade_count": 447,
+    "total_model_fees": 9528.033902774012,
+    "total_model_slippage": 0.0,
+    "evidence_class": "VERIFIED_REPLAY",
+    "activationDate": "2022-06-09",
+    "firstExecutionDate": "2022-06-13",
+    "lastExecutionDate": "2026-07-28"
+  },
+  "executionAudit": {
+    "nextCloseTimingViolations": [],
+    "nextCloseTimingViolationCount": 0,
+    "kernelNavPositionMaxAbsError": 2.9103830456733704e-11,
+    "kernelCashPositionMaxAbsError": 0.0,
+    "kernelTradeDuplicateKeyCount": 0,
+    "kernelRebalanceDuplicateSignalCount": 0,
+    "manualQuantityLotViolationCount": 0,
+    "manualMinimumCash": 2.736150000001711,
+    "manualCashShortfall": false,
+    "manualTradeLimitEventViolationCount": 0,
+    "kernelQuantityFromTradesMaxAbsError": 2.3283064365386963e-10,
+    "kernelCashFromTradesMaxAbsError": 2.3283064365386963e-10,
+    "kernelQuantityFromTradesViolationCount": 0,
+    "kernelCashFromTradesViolationCount": 0,
+    "kernelFlowAuditStartDate": "2022-06-09",
+    "manualQuantityFromTradesMaxAbsError": 0.0,
+    "manualCashFromTradesMaxAbsError": 3.410605131648481e-12,
+    "manualQuantityFromTradesViolationCount": 0,
+    "manualCashFromTradesViolationCount": 0,
+    "manualTradeDuplicateKeyCount": 0,
+    "manualLotTradeLimitViolationCount": 0,
+    "manualLotMaxObservedTradeRatio": 0.1498813663020608,
+    "evidence_class": "VERIFIED_REPLAY_AUDIT"
+  },
+  "manualLotReplay": {
+    "capitalScenarios": [
+      3000.0,
+      5000.0
+    ],
+    "commissionScenarios": [
+      0.0,
+      0.0002,
+      0.0005,
+      0.001
+    ],
+    "sellRule": "Existing holdings are also kept in 100-share lots; no odd-lot sell was needed in this replay.",
+    "cashFunding": "No additional capital; buy lots are reduced only if fees would make cash negative.",
+    "selectedOnlyLvtCapContract": "Keep cap release from unselected LVT names in CASH; do not buy unselected names to mirror Q8.",
+    "finalIntegerOrderLimit": "After target-weight cap and lot rounding, each asset order notional must remain <= maxAssetTrade * pre-trade NAV.",
+    "averageCashWeightStart": "2022-06-09",
+    "summaryClass": "VERIFIED_LOT_REPLAY"
+  },
+  "comparisons": {
+    "q8Nav": {
+      "available": true,
+      "comparison_start": "2022-06-13",
+      "comparison_end": "2026-08-03",
+      "rows": 1006,
+      "kernel_final_norm_100": 198.57046866863044,
+      "q8_final_norm_100": 197.3980910997213,
+      "final_difference": 1.172377568909127,
+      "evidence_class": "STATIC_FROZEN_REFERENCE",
+      "limitation": "Different initial history, Q8 adjusted research prices, and local raw TickFlow prices; not a same-contract profitability ranking."
+    },
+    "oldQ8IsLatestUnifiedLedgerAudit": false,
+    "reason": "Q8 research used adjusted Close, persistent target weights, and no integer-lot holdings; current replay uses actual fractional ledger positions and next-close fills."
+  },
+  "fieldClassification": {
+    "verifiedFact": [
+      "Current kernel signal/next-close event/trade/fee/NAV rows in the new replay output",
+      "Integer-lot manual state, cash, fees, threshold, max trade and lot error for listed scenarios",
+      "Independent quantity and cash reconstruction from emitted fills",
+      "Same-local-input formula comparison rows"
+    ],
+    "staticExample": [
+      "Frozen Q8 nav_q8_selected_2021_to_date.csv overlap comparison",
+      "Previous v1 target-only lot CSV"
+    ],
+    "unverified": [
+      "Broker commission and non-commission charges",
+      "ETF premium/discount, iNAV, suspension and actual fill quality",
+      "Original historical adjusted-price Q8 signal rows not stored as a signal ledger"
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "createdAt": "2026-09-06",
+  "purpose": "Non-destructive Def200 Cash implementation and small-capital review",
+  "strategyIdentity": "Core80 + Expanded LVT20 + Def200 Cash",
+  "notAnOrder": true,
+  "sourceRepositories": {
+    "xquant": {
+      "path": "/Users/zz/Desktop/Code/zsd/xquant",
+      "commit": "f35a3a8d2e5ee8bb8a1e290295b69ca0aa1f49b4"
+    },
+    "trading": {
+      "path": "/Users/zz/Desktop/Code/zsd/trading",
+      "commit": "cd79af9508be0815d2997c88297514799066ace3"
+    }
+  },
+  "frozenSnapshot": {
+    "marketDataDate": "2026-08-10",
+    "signalDate": "2026-08-10",
+    "executionDateUsedForFeasibility": "2026-08-11",
+    "targetWeightsSum": 0.9999999999999997,
+    "researchPriceConvention": "Q8 yfinance auto_adjust=True Close; adjusted research proxy",
+    "executionPriceConvention": "trading TickFlow parquet OHLCV; next-session Close measurement"
+  },
+  "lotRule": {
+    "lotSize": 100,
+    "rule": "Buy quantity floored to 100-share lots; no ETF substitution or extra funding"
+  },
+  "commissionScenarios": [
+    0.0,
+    0.0002,
+    0.0005,
+    0.001
+  ],
+  "sourceFileSha256": {
+    "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/theme-alpha-q8-signal-live-readiness-review.md": "e5ed7acf3b9deac4a4348af0505e27450735e46134894af4c1e3991b6b623e34",
+    "/Users/zz/Desktop/Code/zsd/xquant/docs/notes/theme-alpha-q12-long-sample-proxy-validation-review.md": "e7f2f9d56a5f2b897675693d170df7977c01bc7273e26d2d3822d133f365ee29",
+    "/Users/zz/Desktop/Code/zsd/xquant/outputs/theme-alpha-q8-signal-live-readiness/latest_target_weights.csv": "6d59f151bcb12dc24b1fdac5851bc18108c36153e07e0fa65ac57510abd9ef91",
+    "/Users/zz/Desktop/Code/zsd/xquant/outputs/theme-alpha-q8-signal-live-readiness/latest_sleeve_weights.csv": "fb1e22d1b47cfe273bc94411548f89e16b05090873ee536942089b4c44af6405",
+    "/Users/zz/Desktop/Code/zsd/xquant/outputs/theme-alpha-q8-signal-live-readiness/paper_tracking_snapshot.csv": "c2e953352e34b45da6f4aa569f8837e36b42e4cf1e8730cdb50ae772708d4b80",
+    "/Users/zz/Desktop/Code/zsd/trading/backend/portfolio_strategies/theme_alpha.py": "51229caf7bc76a2a2a1aa61732b830963b8e62b21a8fc45a4265fb4af6a2b560",
+    "/Users/zz/Desktop/Code/zsd/trading/backend/portfolio_strategies/paper_engine.py": "d04f1c915829e5c9fac4c02fdd86acb8693fed45144d2978d547c2609c71469c",
+    "/Users/zz/Desktop/Code/zsd/trading/backend/portfolio_strategies/registry.py": "e578407afa2315ab121d810f580f25f0f3bac655f0be4ccf9f419a593a6c769f",
+    "/Users/zz/Desktop/Code/zsd/trading/backend/portfolio_strategies/indicators.py": "9c49307b4e1e4b9c8d141a7cd805c6700b0739182e593c0ce0218deae4001e28",
+    "/Users/zz/Desktop/Code/zsd/trading/backend/portfolio_strategies/schedules.py": "d5093023de3ae8d13c2dafd56b28c909a60e7cd760d499f0cba2331b55e6254f"
+  },
+  "limitations": [
+    "Q8 adjusted Close values are not retained per order; exact adjusted-vs-tradable price spread cannot be reconstructed.",
+    "OHLCV does not contain ETF premium/discount or iNAV; broker/official fund page check remains required.",
+    "The local trading cache has a later source date but this measurement is deliberately fixed to signal 2026-08-10 and next session 2026-08-11.",
+    "Commission scenarios exclude any broker-specific non-commission fees until confirmed."
+  ]
+}
