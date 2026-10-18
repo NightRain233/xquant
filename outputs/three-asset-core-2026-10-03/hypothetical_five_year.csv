@@ -1,0 +1,4 @@
+scenario,csi300_annual_assumed,nasdaq_annual_assumed,gold_annual_assumed,portfolio_annual_before_cost,five_year_nominal,five_year_real_if_inflation2pct
+weak_all_assets,-0.02,-0.05,-0.03,-0.03215855165613877,-0.15077829554505695,-0.23083373789888284
+stocks_stagnant_gold_down,0.0,0.0,-0.05,-0.010963885624294168,-0.053630467486457056,-0.14284395691814988
+zero_nominal,0.0,0.0,0.0,0.0,0.0,-0.09426919017008428

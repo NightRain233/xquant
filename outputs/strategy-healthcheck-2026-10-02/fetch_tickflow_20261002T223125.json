@@ -1,0 +1,32 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:31:18.576906+08:00",
+  "source": "tickflow",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "forward_additive",
+  "symbols": {
+    "000001.SS": {
+      "status": "FETCHED",
+      "rows": 3338,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "7745dfcf98441c77e2c3fb5286a25240854cb98c45a3583907c878b832e98347"
+    },
+    "000300.SS": {
+      "status": "FETCHED",
+      "rows": 3338,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "be23cdc148853663ea0b2547247b1a0681d6d57c355db63b46a0bfda3b01b8a4"
+    },
+    "000890.SZ": {
+      "status": "FETCHED",
+      "rows": 3163,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "06cd3840975cb3a443e9243b10d7036dd3501ac2b0174c3a91a2cdad7d98667f"
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "strategy": "C_Def200_LVT20",
+    "max_cash_error": 4.618527782440651e-11,
+    "max_nav_error": 0.0,
+    "timing": "next_complete_XSHG_close"
+  },
+  {
+    "strategy": "C_Base_LVT20",
+    "max_cash_error": 5.864819740963867e-11,
+    "max_nav_error": 0.0,
+    "timing": "next_complete_XSHG_close"
+  },
+  {
+    "strategy": "RP_C_schedule",
+    "max_cash_error": 4.4224179873708636e-11,
+    "max_nav_error": 0.0,
+    "timing": "next_complete_XSHG_close"
+  },
+  {
+    "strategy": "RP90_Cash10_C_schedule",
+    "max_cash_error": 3.2741809263825417e-11,
+    "max_nav_error": 0.0,
+    "timing": "next_complete_XSHG_close"
+  },
+  {
+    "strategy": "LVT100",
+    "max_cash_error": 4.126832209294662e-11,
+    "max_nav_error": 0.0,
+    "timing": "next_complete_XSHG_close"
+  },
+  {
+    "strategy": "RP_Def200_ablation",
+    "max_cash_error": 4.452260782272788e-11,
+    "max_nav_error": 0.0,
+    "timing": "next_complete_XSHG_close"
+  }
+]

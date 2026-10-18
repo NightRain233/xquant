@@ -1,0 +1,880 @@
+{
+  "variants": 96,
+  "static_grid_points": 85,
+  "saved_fill_audits": [
+    {
+      "strategy": "static_risk_budget_vol60_btc0",
+      "groups": 288,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol60_btc0_drift5",
+      "groups": 26,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol60_btc5",
+      "groups": 430,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol60_btc5_drift5",
+      "groups": 65,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol60_btc10",
+      "groups": 430,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol60_btc10_drift5",
+      "groups": 80,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol120_btc0",
+      "groups": 288,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.7755575615628914e-17,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol120_btc0_drift5",
+      "groups": 30,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.7755575615628914e-17,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol120_btc5",
+      "groups": 428,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 5.551115123125783e-17,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol120_btc5_drift5",
+      "groups": 55,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 5.551115123125783e-17,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol120_btc10",
+      "groups": 428,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 8.326672684688674e-17,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_risk_budget_vol120_btc10_drift5",
+      "groups": 76,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 8.326672684688674e-17,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol60_btc0",
+      "groups": 285,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol60_btc0_drift5",
+      "groups": 181,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol60_btc5",
+      "groups": 384,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol60_btc5_drift5",
+      "groups": 253,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol60_btc10",
+      "groups": 384,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 3.469446951953614e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 1.951563910473908e-18
+    },
+    {
+      "strategy": "trend_ma10_vol60_btc10_drift5",
+      "groups": 269,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 4.440892098500626e-16,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 1.951563910473908e-18
+    },
+    {
+      "strategy": "trend_ma10_vol120_btc0",
+      "groups": 285,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol120_btc0_drift5",
+      "groups": 175,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol120_btc5",
+      "groups": 384,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol120_btc5_drift5",
+      "groups": 247,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_ma10_vol120_btc10",
+      "groups": 384,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 5.551115123125783e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 2.6020852139652106e-18
+    },
+    {
+      "strategy": "trend_ma10_vol120_btc10_drift5",
+      "groups": 263,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 2.6020852139652106e-18
+    },
+    {
+      "strategy": "trend_mom12_vol60_btc0",
+      "groups": 288,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol60_btc0_drift5",
+      "groups": 128,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol60_btc5",
+      "groups": 389,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol60_btc5_drift5",
+      "groups": 184,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.3877787807814457e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol60_btc10",
+      "groups": 389,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.6653345369377348e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol60_btc10_drift5",
+      "groups": 219,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.6653345369377348e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol120_btc0",
+      "groups": 288,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol120_btc0_drift5",
+      "groups": 130,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol120_btc5",
+      "groups": 389,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol120_btc5_drift5",
+      "groups": 187,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.6653345369377348e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol120_btc10",
+      "groups": 389,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_mom12_vol120_btc10_drift5",
+      "groups": 216,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.6653345369377348e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_drift5",
+      "groups": 167,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.983724378680108e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.706168622523819e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_drift5",
+      "groups": 221,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 3.3306690738754696e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 1.951563910473908e-18
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_drift5",
+      "groups": 249,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.636779683484747e-16,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 2.0599841277224584e-18
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_drift5",
+      "groups": 157,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_drift5",
+      "groups": 214,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_drift5",
+      "groups": 247,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top1",
+      "groups": 282,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top1_drift5",
+      "groups": 189,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top1_us_tilt",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top1_us_tilt_drift5",
+      "groups": 197,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top2",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top2_drift5",
+      "groups": 187,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top2_us_tilt",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc0_rs_top2_us_tilt_drift5",
+      "groups": 195,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top1",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top1_drift5",
+      "groups": 253,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top1_us_tilt",
+      "groups": 372,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top1_us_tilt_drift5",
+      "groups": 265,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top2",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top2_drift5",
+      "groups": 246,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top2_us_tilt",
+      "groups": 372,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc5_rs_top2_us_tilt_drift5",
+      "groups": 258,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.8041124150158794e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top1",
+      "groups": 375,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top1_drift5",
+      "groups": 282,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top1_us_tilt",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 1.7763568394002505e-15,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top1_us_tilt_drift5",
+      "groups": 299,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 4.440892098500626e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top2",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.498001805406602e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 1.3010426069826053e-18
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top2_drift5",
+      "groups": 266,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 4.440892098500626e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 1.3010426069826053e-18
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top2_us_tilt",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.498001805406602e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol60_btc10_rs_top2_us_tilt_drift5",
+      "groups": 282,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top1",
+      "groups": 282,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top1_drift5",
+      "groups": 163,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top1_us_tilt",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top1_us_tilt_drift5",
+      "groups": 167,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.1102230246251565e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top2",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top2_drift5",
+      "groups": 163,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 1.3877787807814457e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top2_us_tilt",
+      "groups": 283,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc0_rs_top2_us_tilt_drift5",
+      "groups": 171,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top1",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top1_drift5",
+      "groups": 224,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top1_us_tilt",
+      "groups": 372,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top1_us_tilt_drift5",
+      "groups": 234,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.1510571102112408e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top2",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 4.440892098500626e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 2.1141942363467336e-18
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top2_drift5",
+      "groups": 215,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 1.734723475976807e-18
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top2_us_tilt",
+      "groups": 372,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc5_rs_top2_us_tilt_drift5",
+      "groups": 233,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top1",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top1_drift5",
+      "groups": 254,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 4.440892098500626e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top1_us_tilt",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top1_us_tilt_drift5",
+      "groups": 269,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 4.440892098500626e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top2",
+      "groups": 375,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top2_drift5",
+      "groups": 258,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 4.440892098500626e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top2_us_tilt",
+      "groups": 373,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "trend_combined_vol120_btc10_rs_top2_us_tilt_drift5",
+      "groups": 268,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 8.881784197001252e-16,
+      "max_quantity_error": 0.0
+    },
+    {
+      "strategy": "static_stock_bond_gold_cny",
+      "groups": 288,
+      "future_price_clocks": 0,
+      "execution_before_signal": 0,
+      "max_cash_error": 2.220446049250313e-16,
+      "max_nav_error": 4.440892098500626e-16,
+      "max_quantity_error": 0.0
+    }
+  ],
+  "scope": "Saved candidate and baseline fills; grid fills checked at runtime but not individually retained. FX timing remains a model assumption."
+}

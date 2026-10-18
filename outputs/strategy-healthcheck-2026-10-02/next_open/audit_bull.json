@@ -1,0 +1,9 @@
+[
+  {
+    "strategy": "Core90_Bull10",
+    "quantity_mismatches": 0,
+    "max_cash_error": 2.546585164964199e-10,
+    "invalid_timing_fills": 0,
+    "passed": true
+  }
+]

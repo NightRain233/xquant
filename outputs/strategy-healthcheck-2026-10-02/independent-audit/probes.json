@@ -1,0 +1,25 @@
+{
+  "scope": "Fixed synthetic targets, not strategy tuning or corrected performance estimates",
+  "btc_execution": [
+    {
+      "btc_utc_close_later_than_etf_close": 100.0,
+      "etf_quantity_at_same_label_close": 797.3072885025294,
+      "gross_nav": 99700.89730000001
+    },
+    {
+      "btc_utc_close_later_than_etf_close": 200.0,
+      "etf_quantity_at_same_label_close": 857.1053351402189,
+      "gross_nav": 107178.4645975
+    }
+  ],
+  "multi_asset_execution": [
+    {
+      "later_us_open": 100.0,
+      "earlier_a_share_open_quantity": 1.0
+    },
+    {
+      "later_us_open": 200.0,
+      "earlier_a_share_open_quantity": 1.5
+    }
+  ]
+}

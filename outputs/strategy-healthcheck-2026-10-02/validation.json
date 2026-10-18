@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "market_files": 83,
+  "multi_asset_variants": 96,
+  "static_weight_points": 85,
+  "related_pytest_passed": 48,
+  "notebook_code_cells_executed": 7,
+  "native_audits_all_passed": true,
+  "production_trading_worktree_clean": true,
+  "artifact_sha256": {
+    "xquant/outputs/strategy-healthcheck-2026-10-02/multi_asset_full.json.gz": "7ea42f58deef941419446888b14b6f1e5161167b205f95628634f36936973cf4",
+    "xquant/outputs/strategy-healthcheck-2026-10-02/multi_asset_full.md": "86e31ff63f21b026ed24a93ad0942bd2f49bb704006be2d3968120a81d6d6029",
+    "xquant/outputs/strategy-healthcheck-2026-10-02/review_decisions.csv": "f5534b01577da408b97ae35a966ef1b3af5eb6508cfcb7e0496351397af50f51",
+    "xquant/docs/notes/strategy-healthcheck-2026-10-02-review.md": "f4d62b997b5b3dbb80a0ea94a79b7d43ccbb049dbc8c399b2506246ca0247cc7",
+    "xquant/research/notebooks/strategy-healthcheck-2026-10-02-practice.ipynb": "e9d37f78fe01f77af654f10385eca6bf60248372acde53c7e40478bbb3d745ff"
+  }
+}

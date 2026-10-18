@@ -1,0 +1,2 @@
+# Keep the complete compressed result; uncompressed local copy is reproducible.
+multi_asset_full.json

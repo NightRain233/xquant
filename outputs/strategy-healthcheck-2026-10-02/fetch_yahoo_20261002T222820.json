@@ -1,0 +1,83 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:26:14.766934+08:00",
+  "source": "yahoo",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "yfinance_auto_adjust",
+  "symbols": {
+    "CNY=X": {
+      "status": "FETCHED",
+      "rows": 3578,
+      "first": "2013-01-01",
+      "last": "2026-10-01",
+      "sha256": "a41d78adf047da7ead089c909b3a5f78b0bf02626b75618d7eccb0a63aa5d68d"
+    },
+    "XLE": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "8e67294771c968afa05b6ffcb196ebe73d851eb4aa82b3eaac75443fd1117133"
+    },
+    "XLF": {
+      "status": "MISSING"
+    },
+    "XLI": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "407fad18b5b7e1a173583ab4f35a1a16ca65567ce6635b8889195ddcd614d2f4"
+    },
+    "XLK": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "f6153b995346f87fc752cc29a42afaef98108934a769e98be3b5067bcd53b126"
+    },
+    "XLP": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "5d1d117317f37b237b75c1c3a1b8ae38b1c9c18be5b5bfa184aafebd2b0b4d73"
+    },
+    "XLRE": {
+      "status": "FETCHED",
+      "rows": 2761,
+      "first": "2015-10-08",
+      "last": "2026-10-01",
+      "sha256": "7182e4e8d8202bcf9bf1da3411060e5bf4f212957b95e9c84be0c6bd32ae5d76"
+    },
+    "XLU": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "04f1fdf991527674cdc6e6043d010175b79af9142c8d20b9e2fab397aefa16dc"
+    },
+    "XLV": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "b1662766742cb25a3c890c5a2fab1c3c69845de6874e1e8cc23df1294b0db8b2"
+    },
+    "XLY": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "4caed8522843d7b2b185f4d662c13b9bfac87142fbea53162d369ce26a98f710"
+    }
+  },
+  "errors": [
+    {
+      "symbol": "XLF",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 1094 out of 1217 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    }
+  ]
+}

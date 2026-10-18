@@ -1,0 +1,23 @@
+[
+  {
+    "strategy": "RP_native",
+    "quantity_mismatches": 0,
+    "max_cash_error": 1.57160684466362e-09,
+    "invalid_timing_fills": 0,
+    "passed": true
+  },
+  {
+    "strategy": "RP90_Cash10_native",
+    "quantity_mismatches": 0,
+    "max_cash_error": 2.764863893389702e-10,
+    "invalid_timing_fills": 0,
+    "passed": true
+  },
+  {
+    "strategy": "RP_ST_filter_native",
+    "quantity_mismatches": 0,
+    "max_cash_error": 8.87666828930378e-10,
+    "invalid_timing_fills": 0,
+    "passed": true
+  }
+]

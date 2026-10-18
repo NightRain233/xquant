@@ -1,0 +1,9 @@
+{
+  "start": "2022-05-09",
+  "end": "2026-09-04",
+  "old_end_nav": 206367.142882358,
+  "fresh_end_nav": 205463.39349473183,
+  "max_daily_return_difference": 0.0025640121718610853,
+  "new_since_9_4_return": 0.0015338112779150759,
+  "note": "Use fresh-to-fresh returns; never splice old NAV into a repriced input history."
+}

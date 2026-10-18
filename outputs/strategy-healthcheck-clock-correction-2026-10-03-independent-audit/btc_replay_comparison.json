@@ -1,0 +1,31 @@
+{
+  "rerun_output": "/private/tmp/xquant-clock-reaudit.KWFrBG/btc",
+  "byte_identical_files": 25,
+  "sha256": {
+    "events_BTC_0.json": "d7909886683169ce9771ec4c352363c5b63988eb32ba9d3a983025a3e9174f95",
+    "summary.csv": "ace2adb126f9f01d5b484aaa690c6b9bc2e8eee0bda01db6ab78f9c7940f9f0a",
+    "fills_RP92.5_Cash7.5.json": "087c0cad593a342e22047c5f65d2669769e7f487e57620b1aa899fab60f459ac",
+    "audit.json": "f89190caf0ba6dac4e17c728d3cf3eb4d77856660ef875ade9bf5dd3a00b902a",
+    "fills_BTC_5.json": "d8c74347bc77f47b2e493571d4bb72c885bcf6cae14eb9a34be3d2362f538fa5",
+    "nav_BTC_7.5_extra20bps.csv": "95e1edc178edadc52c2dda16e33bdc871f16e68ae2dd7b8074ef3ef45e5a5653",
+    "nav_BTC_7.5_fx_accounting.csv": "6608232b2568ee3fd12dc7da78c9b5a2d5a56366a7784f564871280efdc17456",
+    "config.json": "adbdc14b5d64fb7733a4e9d4cc69e0b3a7394649a17fd40da2e14aebbdd7752f",
+    "events_BTC_10.json": "05c5503e016eb3be9fde827b0f227a04233d5e02f5e2c36159c4b4577859f159",
+    "nav_BTC_7.5_extra10bps.csv": "4989d834e230bd934489b57bede2062b27f8ebb3ffdd5acac109f1c1743d03bf",
+    "fills_BTC_0.json": "fb73ee633f45a269569ccba6a9173a599eb49fa66c9eede2c12c920faed87986",
+    "cost_sensitivity.csv": "c831ffbf1faa66ea401ebea9c77815edf38ff4c98ac550ff551ef677d058eddd",
+    "nav_BTC_10.csv": "1b1e25eb1a014422c245e924b333068a8ffc0b0a2cd346d8f27b3ff6dd36ea99",
+    "fills_BTC_7.5_fx_accounting.json": "c876da2040563b9895b50aca35a2a920ce27d09f40f6dda93138ccf121cc9ef8",
+    "events_BTC_5.json": "e8f68535663d0606c64f62f4c3358015a4f77ae82b59230ef7a482a023fadf1d",
+    "events_RP92.5_Cash7.5.json": "9c47b4068bcbc70d3aec0aaa1cf09c0b5d273ded8a2c117a36f06f56680ff8c8",
+    "fills_BTC_10.json": "8fa88aeadb2e68407e77621262f1da0979160b3899c3becb353f79692f7523b5",
+    "events_BTC_7.5.json": "7941c83f22a5babd780b9f334d5d97d689169c87311312444ae5f912c5557ad7",
+    "fills_BTC_7.5.json": "ea229c424d414c5f1552a30efcb8ee201547be2a7c58e9949500149b6236f1ac",
+    "nav_BTC_5.csv": "c81c102e10b7de7a329b27ba8a3e6476c0e65c7b8ed201488f2aca417efa4ca7",
+    "nav_RP92.5_Cash7.5.csv": "402dd4236757e391fc6b78e5d1b4bd8a10ad6a6c0b8befe1a424311a3bb72296",
+    "signals.json": "4f5316e240c244421a535594690a7e3b982d55c5e9bbf161a7de60a20efd3381",
+    "nav_BTC_7.5.csv": "ea41cc0998ac69f212f03bcfc033225d743e7c75ecc9bad2f647129a438e0c2e",
+    "fx_diagnostic.json": "1c345a93ff828346b72dd46660e1a9e657e3d1da8d22ffd4e1a97c56ef22b34f",
+    "nav_BTC_0.csv": "f1a7e2649dfd65373268db9f9033c9c59c02daf447148f8c1355c2fd47252088"
+  }
+}

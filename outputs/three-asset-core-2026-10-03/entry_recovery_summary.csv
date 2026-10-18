@@ -1,0 +1,14 @@
+strategy,longest_completed_days,longest_unrecovered_observation_days,censored_entries,completed_median_days
+IV20,546,120,5,2.0
+Equal,609,120,9,2.0
+Fixed40_30_30,901,120,10,2.0
+Fixed30_40_30,574,120,10,2.0
+Fixed25_25_50,1003,244,11,2.0
+Fixed_pre2015,998,244,7,2.0
+Fixed_fullsample_mean_DIAGNOSTIC,1014,244,9,2.0
+IV10_sensitivity,944,120,8,2.0
+IV40_sensitivity,560,120,8,2.0
+IV60_sensitivity,571,120,7,2.0
+IV20_phase5,998,120,5,2.0
+Equal_buy_hold,711,121,4,2.0
+IV20_initial_buy_hold,1002,121,4,2.0

@@ -1,0 +1,227 @@
+"""Render the frozen three-asset study note, portable notebook and delivery index."""
+from __future__ import annotations
+
+import base64
+import hashlib
+import json
+from pathlib import Path
+import zipfile
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[1]
+SLUG = "three-asset-core-2026-10-03"
+OUT = ROOT / "outputs" / SLUG
+UV = "uv run --no-project --with pandas==3.0.3 --with numpy==2.4.6 --with pyarrow==23.0.1 --with matplotlib==3.11.0 --with pytest==9.0.2"
+
+
+def table(frame):
+    data = frame.fillna("未回本").astype(str)
+    return "| " + " | ".join(data.columns) + " |\n| " + " | ".join(["---"]*len(data.columns)) + " |\n" + "\n".join("| " + " | ".join(row) + " |" for row in data.to_numpy())
+
+
+def main():
+    summary = pd.read_csv(OUT / "summary.csv").set_index("strategy")
+    names = ["IV20", "Equal", "Fixed40_30_30", "Fixed30_40_30", "Fixed25_25_50", "Fixed_pre2015"]
+    compare = summary.loc[names, ["cagr", "max_drawdown", "volatility", "sharpe_zero_rf", "longest_observed_underwater_days"]].copy()
+    for col in ["cagr", "max_drawdown", "volatility"]:
+        compare[col] = compare[col].map(lambda x: f"{x:.2%}")
+    compare.sharpe_zero_rf = compare.sharpe_zero_rf.map(lambda x: f"{x:.2f}")
+    compare.columns = ["历史年化", "最大回撤", "年化波动", "Sharpe（零rf）", "最长水下天数"]
+    compare = compare.reset_index().rename(columns={"strategy": "策略"})
+    rolling = pd.read_csv(OUT / "rolling_worst.csv")
+    rolling = rolling[rolling.strategy.isin(["IV20", "Equal", "Fixed_pre2015"])][["strategy", "years", "start", "end", "total_return", "cagr"]]
+    for col in ["total_return", "cagr"]:
+        rolling[col] = rolling[col].map(lambda x: f"{x:.2%}")
+    annual = pd.read_csv(OUT / "annual.csv")
+    annual = annual[annual.strategy.isin(["IV20", "Equal", "Fixed25_25_50"])].pivot(index="year", columns="strategy", values="return")
+    annual = annual.map(lambda x: f"{x:.2%}").reset_index()
+    sensitivity = summary.loc[["IV10_sensitivity", "IV20", "IV40_sensitivity", "IV60_sensitivity", "IV20_phase5", "IV20_gross10bps"], ["cagr", "max_drawdown", "longest_observed_underwater_days"]].copy()
+    for col in ["cagr", "max_drawdown"]:
+        sensitivity[col] = sensitivity[col].map(lambda x: f"{x:.2%}")
+    sensitivity = sensitivity.reset_index()
+    events = pd.read_csv(OUT / "drawdown_events.csv")
+    events = events[events.strategy == "IV20"].sort_values("depth").head(5)
+    events.depth = events.depth.map(lambda x: f"{x:.2%}")
+    inflation = pd.read_csv(OUT / "drawdowns_assumed_inflation2pct.csv")
+    longest_real = int(inflation.underwater_calendar_days.max())
+    nav = pd.read_csv(OUT / "nav_all.csv", index_col=0, parse_dates=True).IV20
+    current_dd = nav.iloc[-1]/nav.max()-1
+    validation = json.loads((OUT / "validation.json").read_text())
+    text = f"""# 纯三组合深挖：收益来源、长期低谷与不利情景（2026-10-03）
+
+研究对象只有沪深300ETF（510300）、纳指ETF（513100）、黄金ETF（518880）。基线固定20日逆波动、无杠杆、无趋势退出；未优化参数，未重跑BTC或多资产。**这段样本支持保留20日逆波动作为研究基线，但不支持承诺15.7%年化、14%亏损上限或三年保本。**
+
+## 先前复核与实际实现
+
+已先读 [时钟修正说明](strategy-healthcheck-clock-correction-2026-10-03-review.md) 和 [独立复核](strategy-healthcheck-clock-correction-2026-10-03-independent-review.md)。纯组合的旧native结果未被BTC/美股跨市场反例推翻。本研究独立复算该纯组合，而非把修正版BTC_0冒充纯组合。BTC与多资产仍有两项交付问题：详细multi Markdown残留旧执行/FX表述；multi重跑依赖新bundle之外的旧gzip结果。这里没有修复它们，也不称整体交付完成。
+
+实际入口是 `scripts/review_next_open_strategies.py`，调用相邻trading仓库 `portfolio_strategies/core_bull_research.py::run_current_contract`，信号及成本在 `next_open_strategies.py`，执行账本在 `next_open_engine.py`。`review_frozen_strategies.py` 提供部分通用工具，但其replay不是RP_native的执行入口。配置副本为旧输出 `next_open/config_RP_native.json`，实际行情为旧输出 `market_data/` 三份同代码Parquet，结果为 `next_open/nav_RP_native.csv`、`fills_RP_native.csv`。新计算入口是 `scripts/review_three_asset_core.py`，可复用核是 `src/xquant/three_asset_research.py`。
+
+读入同一批冻结行情；3/3 SHA与原覆盖表匹配。资产代码都在中国市场交易，不直接成交美国QQQ或美元黄金。采用原TickFlow forward_additive价格；当前冻结数据并非历史时点不可修订的数据仓库，也未另行验证复权序列等同现金分红再投资。**所有收益归因是该复权价格研究账户的归因，不能据此拆出纳指本币、人民币汇率、ETF溢价或黄金现货各自的贡献。** 三份数据、旧NAV/成交/配置随复现包提供，不能只交源码而遗漏ignored行情。
+
+## 执行与公平比较
+
+2014-12-31以10万元现金起步，2015-01-05首次信号，2015-01-06共同开盘买入，至2026-09-30；2015-01-01为原账本保留的现金估值行。信号用三资产共同收盘序列最近20个简单收益、样本标准差ddof=1，倒数归一化；每10个共同交易日发信号，下一共同日开盘成交，分数份额、满仓、无杠杆。配置中的2026-07-01锚点不是这次历史激活循环的首次信号，实际以首次2015信号递推。日估值用行情日期并集，缺失收盘只在估值时沿用最近可知价格，不补造交易。513100的2022-01-13缺bar在原研究中说明为拆分停牌；信号和成交采用共同日期。
+
+**费用纠正说明：** 配置叫one_way_cost_bps=10，但native实际公式为 `开盘NAV × 0.5×Σ|目标权重−开盘权重| × 10/10000`，求和包含现金。调仓后按扣费净资产分配份额，不能解释成实际每笔买卖名义金额各收10bps。所有主比较共用该公式、日期、起点及价格。另有gross10bps按实际买卖金额收费并求解扣费后仓位，单独报告；未偷偷改变旧基线。
+
+固定比例均按沪深300/纳指/黄金排序；40/30/30、30/40/30、25/25/50是预先列出的简单结构对照，没有搜索最优权重。Fixed_pre2015仅用2014年日收益的全年波动确定18.32%/38.66%/43.03%，从2015起冻结，每10日恢复该比例。它无2015以后权重信息泄漏，但同样不是事前注册的资产池样本外研究。所有固定配置与逆波动共用调仓时点。
+
+{table(compare)}
+
+基线累计+456.35%，10万元变55.63万元；等权变42.19万元。IV20对等权历史年化高2.69个百分点，回撤浅7.08个百分点，但这不是未来超额收益承诺。黄金偏重固定25/25/50仍未复现逆波动的全部改善。全样本平均目标权重冻结的事后诊断年化13.04%、回撤−17.37%，**该行使用未来信息，仅帮助区分平均暴露与动态路径，不是可交易的公平候选，也不能把2.69个百分点全部命名为择时alpha。**
+
+从2014年冻结权重看，逆波动优势缩小到年化约1.15个百分点。2021年至今，该固定对照年化14.51%，IV20为14.43%，动态调权并非每个子区间都更好。2015–2020与2021–2026两个子区间IV20均优于等权；剔除2015后仍优于等权。至2023年底IV20历史年化只有12.28%，2024–2025强行情抬高了全期结果。切分是事后稳定性检查，不是独立样本外证明，详见subperiods.csv。
+
+另列买入持有作为调仓机制诊断：等权只在初始买入后不调仓，年化13.86%、回撤−23.92%；初始逆波动权重买入持有为14.89%、−18.34%。因此不能把“频繁再平衡必然提高收益”当作本研究结论。
+
+## 钱从哪里来
+
+逐日按旧份额承受隔夜涨跌、新份额承受成交后涨跌，把真实研究账户的金额盈亏相加，再扣费。全期以最初10万元为分母：沪深300贡献+58.18个百分点（约5.82万元），纳指+211.30个百分点（约21.13万元），黄金+192.35个百分点（约19.23万元），费用−5.47个百分点（约0.55万元），合计+456.35%。贡献含复利形成的后期资金规模，**不是各资产独立年化，也不是边际因果效果**。归因残差约机器精度；年度贡献以当年初账户金额为分母，不跨年简单相加。
+
+纳指与黄金合计约87.4%的毛利润，收益引擎主要是两者的样本行情；逆波动是风险分配方法。单资产冻结收盘序列年化分别约4.07%/19.92%/11.46%，各自最大回撤约−52.97%/−28.57%/−30.52%，黄金也会大跌。2022年沪深300、纳指贡献−7.44、−4.94个百分点，黄金贡献+4.33个百分点，扣费后组合−8.19%；2025年黄金贡献+23.65个百分点，组合全年+39.55%。未来若黄金和纳指都不再强，历史复合增长难以照搬。
+
+实际投资期平均收盘权重27.51%/28.53%/43.96%，9月30日变成44.85%/33.22%/21.93%；目前两类股票合计78.07%。历史单资产最大收盘权重分别69.62%/58.87%/74.36%，策略没有权重上限。用每日资产盈亏对组合收益的协方差分解，历史方差贡献约36.60%/35.03%/28.39%（费用约−0.014%），说明它并非考虑相关性的严格等风险贡献组合。低波动不等于低估值或不亏损；安静上涨后突然下跌、相关性同步上升、10日调仓间隔都会使保护失效。
+
+## 三年、五年与回本
+
+按实际日历年滚动，每个终点对齐三/五年前当日或之前最近估值；分别2123/1637个高度重叠窗口，不是2123/1637次独立实验。表内total_return为整个窗口累计，cagr为该窗口年化。
+
+{table(rolling)}
+
+IV20最差三年2021-01-08至2024-01-08，累计仅+6.40%、年化2.09%；最差五年2017-10-31至2022-10-31，累计+60.99%、年化9.99%。历史三/五年无负收益，不意味着未来保本；样本仅约11.75年，完整互不重叠五年段只有约两段，没有覆盖更早的长期纳指熊市。若假设年通胀2%，最差三年购买力增长接近零。
+
+{table(events[["peak", "trough", "recovery", "depth", "underwater_calendar_days", "censored"]])}
+
+回本定义为从峰值到第一次NAV重返该峰值，按日历天计，不是谷底起算。最深回撤−13.71%在2020年，83天回本；最长完整水下区间2021-11-19至2023-05-19为546天，谷底到回本203天。截至9月30日自2026-06-02高点已120天未回本，当期最大跌幅−9.80%，当前距历史高点{current_dd:.2%}；未回本必须右删失，不能填0天。全日历约86.24%的估值日低于既往最高点，这包含大量小回撤。
+
+严格“碰到前高”对很小的费用差很敏感：实际双边10bps下最长回本989天；信号相位平移5日变998天；10日窗口虽历史年化更高，最长回本却944天。按假定2%年通胀把NAV折成购买力，最长观测水下期为{longest_real}天（这不是实际CPI测量）。所以应把“可能等两三年甚至更久”纳入理解，不能只宣传546天。本研究还保存逐个收盘入场点的首次回本及删失清单；这是购买组合净值份额的诊断，不是每个日期另开账户重新初始化信号与调仓。
+
+## 年度、月度与稳定性
+
+{table(annual)}
+
+2026只到9月；基线Q3−0.20%、9月−1.78%、年内+6.77%，与原纯核心口径一致。IV20月胜率66.67%，平均盈利月+2.91%、亏损月−1.99%，盈亏比1.46、月利润因子2.92，最好月+12.61%、最差月−7.03%；等权最差月−10.64%。基线Sortino（零目标）1.89、Calmar1.15；完整月表、年度表、平均回撤事件深度及全部回撤清单已输出。回撤事件平均深度约−1.55%，被大量浅跌事件稀释，不用于表示尾部风险。
+
+对等权做全样本日收益线性回归，基线beta0.772、零rf算术alpha年化5.07%；这是同期暴露描述，非显著性或可预测alpha证据，也不同于CAGR差2.69个百分点。
+
+{table(sensitivity)}
+
+10/20/40/60日只是检验局部形状，不选择历史收益更高的10日替换20日。附近窗口总体结论相似，但回本时间与调仓相位敏感。IV20半周转率年均约1.90，等权约0.38；在native成本参数0/10/20/30bps下IV20年化约15.95%/15.73%/15.51%/15.29%，额外成本未抹掉该样本对等权优势。实际双边10bps下IV20年化15.52%、等权13.00%，但回本天数变化明显。模型尚未包括最低佣金、整手、无法成交、交易冲击或真实申赎约束。
+
+## 未来什么情况会难受
+
+以下是人为指定的不利算术情景，没有赋概率、没有用历史年化预测恢复。按9月30日真实收盘权重做一次性同步冲击：
+
+- 沪深300−35%、纳指−45%、黄金不涨不跌，组合约−30.65%。无趋势退出时，不会因为下跌就自动变成现金。
+- 沪深300−30%、纳指−40%、黄金−20%，组合约−31.13%；之后要涨45.20%才能回本。假定未来每年恰好+3%/+5%/+8%且无波动无费用，对应约12.6/7.6/4.8年；这些数只是条件算术，不是恢复时间预测。
+- 黄金单独−30%，按当前权重约拖累−6.58%；按历史平均43.96%黄金权重则约−13.19%。低波动导致重仓后遇上结构突变，是逆波动的固有脆弱点。
+- 假设纳指ETF溢价从20%回到0、基金NAV不变，ETF价格跌16.67%，按当前仓位组合约−5.54%。20%是人为假设，**不是本日溢价读数**。国泰的[官方风险公告](https://st.gtfund.com/report/2025/04/34b9b9ea1bfbff560811cc81b5f0faf7cdbe45ec/国泰基金管理有限公司关于纳斯达克100交易型开放式指数证券投资基金二级市场交易价格溢价风险提示公告.pdf)确认此类溢价风险实际存在。
+- 如果美元兑人民币报价下降10%、纳指美元资产价格不变，忽略溢价与跟踪误差，纳指这条暴露约拖累组合3.32%；这不是完整汇率模型，未推算黄金人民币价格。黄金自身也有价格与流动性风险，见[华安原始基金公告](https://www.huaan.com.cn/upload2010/2013/06/21/082816905_0_b7ca7b32-4cab-30a2-879c-37d153eefc3a.pdf)。
+
+再做长期低迷算术：把当前权重每年恢复一次，假设三类资产每年分别−2%/−5%/−3%，无费用条件下五年累计约−15.08%，若通胀2%则购买力约−23.08%；三类名义收益都为0时，五年购买力仍约−9.43%。这**不是20日逆波动的路径回测**，而是明确假设下的持仓预算例子；未来日波动与相关性未知，无法唯一确定逆波动将怎样改权重。瞬时冲击也不模拟冲击后的再平衡。二者说明历史最差五年不是未来下限。
+
+## 证据、复现与结论边界
+
+独立数组核对照原账本：{validation['calendar_rows']}行NAV、{validation['signal_count']}次调仓，NAV最大差{validation['nav_max_abs_error']:.2g}元，数量差{validation['quantity_delta_max_abs_error']:.2g}，费用差{validation['group_cost_max_abs_error']:.2g}元；逐日归因最大误差{validation['max_daily_attribution_residual']:.2g}元。测试覆盖隔夜归属、真实费用守恒、未回本删失、滚动日历边界；测试通过不证明复权源数据或券商现实成交正确。Luna只做资料/数字简单核查，不替代主线复算。
+
+单组合实测约0.1秒，复用三份行情和共同/并集日历，20组合核预计约2秒；全流程含统计、打包和画图约{validation['total_seconds']:.1f}秒（首次字体缓存较慢）。使用单进程，因为此时启动双进程和复制数据不划算。没有重新下载行情，没有运行BTC或多资产。
+
+项目默认uv同步因open-xquant的GitHub依赖下载失败，使用固定版本最小环境；不是换回未记录的系统Python。完整命令、版本、SHA和自包含行情包见 [输出README](../../outputs/{SLUG}/README.md)、[manifest](../../outputs/{SLUG}/manifest.json)、[practice notebook](../../research/notebooks/{SLUG}-practice.ipynb)。CSV保留未四舍五入值，图见[净值/回撤/权重](../../outputs/{SLUG}/comparison.png)。
+
+主比较的历史收益与风险调整表现均以IV20领先；敏感性10日更高的历史收益不构成更改参数依据。从结构上20日逆波动是有证据支持继续研究的基线，2014年冻结固定权重是更简单、低换手的重要对照；两者都没有保证稳定收益。主要样本优势是纳指与黄金的长期上涨与分散作用，主要失败情景是两类股票与黄金同时跌、低波动资产突然失稳、人民币与ETF溢价不利变化。下一步应冻结本报告的20日规则作前瞻观察，并补原始价格/分红与复权核对、实际费用/整手及溢价记录；不为抬高回测继续筛参数。
+"""
+    note = ROOT / "docs/notes" / f"{SLUG}-review.md"
+    note.write_text(text)
+    readme = f"""# 纯三组合研究复现
+
+入口：[完整研究报告](../../docs/notes/{SLUG}-review.md)。只涉及510300/513100/518880；BTC/multi交付遗留未修复。
+
+在仓库根目录运行（Python3.12或兼容版本；实际版本见manifest）：
+
+```sh
+{UV} python scripts/review_three_asset_core.py --benchmark-only
+{UV} python scripts/review_three_asset_core.py
+PYTHONPATH=src {UV} python -m pytest tests/test_three_asset_research.py -q
+{UV} python scripts/render_three_asset_review.py
+```
+
+默认输入为旧 `outputs/strategy-healthcheck-2026-10-02/market_data/` 三份Parquet与 `next_open/` 中NAV/成交/配置。现有文件不能用重新下载替代。reproduction_bundle.zip内已包含这六份输入、新核、计算脚本、渲染脚本、测试和项目依赖文件；**该zip不依赖BTC或旧multi gzip。** 它可重算本研究，所附原实现源码仅作溯源，不声称自包含重跑原trading生产账本。
+
+在空目录解压复现包后运行：
+
+```sh
+{UV} python scripts/review_three_asset_core.py --snapshot inputs/market_data --reference inputs/reference
+PYTHONPATH=src {UV} python -m pytest tests/test_three_asset_research.py -q
+{UV} python scripts/render_three_asset_review.py
+```
+
+计算脚本会逐行核对旧NAV与成交，任何超出1e-5的差异都会失败。包外原coverage表存在时额外验证SHA；移交时请先按manifest校验zip和输入，解包后的输入路径改变不影响其字节哈希。渲染脚本需先运行计算脚本。统计无随机抽样，时间记录和zip时间戳会变化；比较CSV数值而非要求整个zip字节一致。
+
+主要文件：summary/annual/monthly、attribution、weights_summary、risk_contribution、benchmark_alpha、rolling_worst及逐窗口rolling文件、drawdown_events、entry_recovery文件、historical_stress、subperiods、hypothetical_shocks、hypothetical_five_year、comparison.png。daily的资产列是金额P&L，非收益率；trades的group_cost重复记在同一组每个资产行，不可直接跨资产求和。日cost列及原commission聚合才是总费用。
+
+全部主表采用native半周转率费用；gross10bps是单独的实际双边收费对照。固定全样本平均权重标DIAGNOSTIC，不能列为事前公平方案。最新权重是收盘实际持仓，区别于上次信号目标。未来情景不含概率，不是预测。
+
+manifest记录输入/源码/产物SHA与环境。报告与notebook由render脚本生成并补入manifest。原研究说明的两项multi交付缺口仍然存在。
+"""
+    (OUT / "README.md").write_text(readme)
+    cells = []
+
+    def md(value):
+        cells.append({"cell_type": "markdown", "metadata": {}, "source": value.splitlines(keepends=True)})
+
+    def code(value, tags=None, outputs=None):
+        cells.append({"cell_type": "code", "metadata": {"tags": tags or []}, "execution_count": None,
+                      "source": value.splitlines(keepends=True), "outputs": outputs or []})
+
+    md(f"# 纯三组合深挖\n基线IV20，冻结行情至2026-09-30。完整报告见 `docs/notes/{SLUG}-review.md`。历史年化不是预测。")
+    code("from pathlib import Path\nimport sys\nROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / 'src/xquant').exists())\nsys.path.insert(0, str(ROOT / 'src'))\nimport pandas as pd\nOUT = ROOT / 'outputs/three-asset-core-2026-10-03'\n", ["repository-root-bootstrap"])
+    md("数据和基线：三份冻结ETF价格；20日逆波动，每10个共同交易日信号，次日开盘，native费用见报告。先从README执行复算命令；本notebook负责呈现，不联网下载或改参数。")
+    for title, files in [("Q3/Q5与公平比较", ["summary.csv", "benchmark_alpha.csv"]),
+                         ("收益和风险归因", ["attribution.csv", "risk_contribution.csv", "weights_summary.csv"]),
+                         ("年度与月度", ["annual.csv", "monthly.csv"]),
+                         ("滚动三/五年和回本", ["rolling_worst.csv", "drawdown_events.csv", "entry_recovery_summary.csv"]),
+                         ("敏感性与未来情景", ["subperiods.csv", "hypothetical_shocks.csv", "hypothetical_five_year.csv"])]:
+        md("## " + title)
+        for file in files:
+            code(f"display(pd.read_csv(OUT / {file!r}))")
+    code("from IPython.display import Image, display\ndisplay(Image(filename=str(OUT / 'comparison.png')))\n",
+         outputs=[{"output_type": "display_data", "metadata": {}, "data": {"image/png": base64.b64encode((OUT/"comparison.png").read_bytes()).decode()}}])
+    md("## 通俗结论\n主比较的历史收益与风险调整表现均以IV20领先；" + text.split("主比较的历史收益与风险调整表现均以IV20领先；")[1])
+    notebook = ROOT / "research/notebooks" / f"{SLUG}-practice.ipynb"
+    notebook.parent.mkdir(parents=True, exist_ok=True)
+    for i, cell in enumerate(cells):
+        cell["id"] = f"three-core-{i:03d}"
+    notebook.write_text(json.dumps({"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3", "language": "python", "name": "python3"}}, "nbformat": 4, "nbformat_minor": 5}, ensure_ascii=False, indent=1))
+    manifest = json.loads((OUT / "manifest.json").read_text())
+    manifest["source"]["scripts/verify_three_asset_delivery.py"] = ""
+    for name in manifest["source"]:
+        manifest["source"][name] = hashlib.sha256((ROOT/name).read_bytes()).hexdigest()
+    # Replace/add presentation and provenance without duplicate zip members.
+    archive = OUT / "reproduction_bundle.zip"
+    additions = {str(path.relative_to(ROOT)): path.read_bytes() for path in [note, notebook, OUT/"README.md", *[ROOT/name for name in manifest["source"]]]}
+    original_files = [ROOT/"scripts/review_next_open_strategies.py"]
+    backend = ROOT.parent / "trading/backend/portfolio_strategies"
+    for name in ["core_bull_research.py", "next_open_strategies.py", "next_open_engine.py", "indicators.py", "registry.py"]:
+        if (backend/name).exists():
+            additions[f"provenance/backend/{name}"] = (backend/name).read_bytes()
+    for path in original_files:
+        if path.exists():
+            additions[f"provenance/{path.name}"] = path.read_bytes()
+    with zipfile.ZipFile(archive) as source:
+        members = {name: source.read(name) for name in source.namelist() if name not in additions}
+    with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as dest:
+        for name, data in {**members, **additions}.items():
+            dest.writestr(name, data)
+    manifest["bundle_members"] = {name: hashlib.sha256(data).hexdigest() for name, data in {**members, **additions}.items()}
+    manifest["outputs"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in OUT.iterdir() if p.is_file() and p.name != "manifest.json"}
+    for path in [OUT/"README.md", note, notebook, Path(__file__)]:
+        manifest["outputs"][str(path.relative_to(ROOT))] = hashlib.sha256(path.read_bytes()).hexdigest()
+    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2))
+    print(note)
+
+
+if __name__ == "__main__":
+    (ROOT / "docs/notes").mkdir(parents=True, exist_ok=True)
+    main()

@@ -1,0 +1,72 @@
+{
+  "strategy_id": "btc_supertrend_satellite",
+  "version": "1.0.0",
+  "display_name": "BTC SuperTrend Satellite 7.5%",
+  "description": "Three-asset RiskParity core with a BTC SuperTrend satellite.",
+  "mode": "paper",
+  "execution": "next_close",
+  "initial_nav": 100000.0,
+  "base_currency": "CNY",
+  "assets": [
+    {
+      "symbol": "510300.SS",
+      "alias": "沪深300ETF",
+      "sleeve": "core",
+      "market": "XSHG",
+      "synthetic_proxy": false,
+      "quote_currency": "CNY",
+      "fx_pair": null,
+      "investable_instrument": "510300.SS",
+      "note": ""
+    },
+    {
+      "symbol": "513100.SS",
+      "alias": "纳指100ETF",
+      "sleeve": "core_lvt",
+      "market": "XSHG",
+      "synthetic_proxy": false,
+      "quote_currency": "CNY",
+      "fx_pair": null,
+      "investable_instrument": "513100.SS",
+      "note": ""
+    },
+    {
+      "symbol": "518880.SS",
+      "alias": "黄金ETF",
+      "sleeve": "core_lvt",
+      "market": "XSHG",
+      "synthetic_proxy": false,
+      "quote_currency": "CNY",
+      "fx_pair": null,
+      "investable_instrument": "518880.SS",
+      "note": ""
+    },
+    {
+      "symbol": "BTC-USD",
+      "alias": "BTC",
+      "sleeve": "satellite",
+      "market": "CRYPTO_UTC",
+      "synthetic_proxy": true,
+      "quote_currency": "USD",
+      "fx_pair": "USDCNY=X",
+      "investable_instrument": null,
+      "note": "Synthetic return proxy; no CNY/USD conversion is modeled."
+    }
+  ],
+  "params": {
+    "btc_cap": 0.075,
+    "risk_parity_window": 20,
+    "rebalance_sessions": 10,
+    "schedule_reference_date": "2026-06-15",
+    "schedule_source_anchor": "2016-06-21",
+    "supertrend_atr_window": 10,
+    "supertrend_atr_mode": "sma",
+    "supertrend_multiplier": 3.0,
+    "rebalance_threshold": 0.01
+  },
+  "costs": {
+    "base_bps": 20,
+    "slippage_bps": 10,
+    "asset_extra_bps": {}
+  }
+}

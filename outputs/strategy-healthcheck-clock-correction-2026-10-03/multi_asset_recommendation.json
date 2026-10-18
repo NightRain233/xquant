@@ -1,0 +1,6 @@
+{
+  "status": "no_target_default",
+  "candidateId": "trend_mom12_vol60_btc5",
+  "researchLeadId": "static_stock_bond_gold_cny",
+  "reason": "趋势风险预算候选通过硬门槛，但相邻参数稳定性未通过，年化收益未落在 8%～12% 目标带，最大回撤未达到 15% 目标。静态股债金基准未通过预设的核心与广义邻域权重稳定性门槛。"
+}

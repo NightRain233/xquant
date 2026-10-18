@@ -1,0 +1,41 @@
+{
+  "status": "SUPPLEMENTAL_SENSITIVITY_NOT_FROZEN_CONTRACT",
+  "assumption": "Frozen USD BTC signals; CNY valuation uses previous available FX close; no investable carrier or FX fees modeled",
+  "full": {
+    "start": "2016-06-07",
+    "end": "2026-09-30",
+    "observations": 2505,
+    "return": 4.2549780590303605,
+    "max_drawdown": -0.14538388347747344,
+    "current_drawdown_window": -0.04350643008869659,
+    "current_drawdown_since_activation": -0.04350643008869659,
+    "annualized_volatility": 0.11524905125087048,
+    "longest_underwater_sessions": 427,
+    "mean_cash_weight": 0.035696474971536094,
+    "max_asset_weight": 0.6778020861940989,
+    "cagr": 0.17453747093612582,
+    "sharpe_zero_rf": 1.5064316057101153,
+    "calmar": 1.200528330660321
+  },
+  "recent_3m": {
+    "start": "2026-06-30",
+    "end": "2026-09-30",
+    "observations": 65,
+    "return": 0.0006443042079267158,
+    "max_drawdown": -0.05112583091422851,
+    "current_drawdown_window": -0.026160602785834097,
+    "current_drawdown_since_activation": -0.04350643008869659,
+    "annualized_volatility": 0.15141632785378498,
+    "longest_underwater_sessions": 25,
+    "mean_cash_weight": 0.04650960497940021,
+    "max_asset_weight": 0.4416358215768658,
+    "cagr": null,
+    "sharpe_zero_rf": null,
+    "calmar": null
+  },
+  "audit": {
+    "max_cash_error": 1.5279510989785194e-10,
+    "max_nav_error": 0.0,
+    "timing": "next_complete_XSHG_close"
+  }
+}

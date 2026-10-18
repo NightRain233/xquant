@@ -1,0 +1,14 @@
+{
+  "nav_max_abs_error": 4.540197551250458e-09,
+  "quantity_delta_max_abs_error": 1.076841726899147e-09,
+  "group_cost_max_abs_error": 1.7763568394002505e-12,
+  "kernel_seconds": 0.10535155300749466,
+  "estimated_20_variants_seconds": 2.107031060149893,
+  "calendar_rows": 2857,
+  "common_rows": 3204,
+  "signal_count": 286,
+  "max_daily_attribution_residual": 2.844089408426953e-10,
+  "total_seconds": 9.754013243014924,
+  "processes": 1,
+  "reason_single_process": "Array kernel is fast; process startup and duplicated data outweigh parallel benefit"
+}

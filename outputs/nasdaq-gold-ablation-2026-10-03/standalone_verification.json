@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "csvs_reproduced": 57,
+  "independent_nav_metrics": {
+    "Three_IV20": {
+      "total_return": 4.56346522956943,
+      "max_drawdown": -0.1370875462348351
+    },
+    "Two_IV20": {
+      "total_return": 6.302979302985922,
+      "max_drawdown": -0.16308216841200673
+    },
+    "Two_equal": {
+      "total_return": 5.135692940566725,
+      "max_drawdown": -0.1815781201938258
+    }
+  },
+  "command": [
+    "/Users/a1/.cache/uv/builds-v0/.tmpXm3GyA/bin/python",
+    "scripts/review_nasdaq_gold.py",
+    "--snapshot",
+    "inputs/market_data",
+    "--reference",
+    "inputs/reference"
+  ],
+  "stdout": "Baseline error 5.82e-11; single replay 0.098s\n         strategy   cagr max_drawdown volatility sharpe_zero_rf  longest_completed_recovery_days\n       Three_IV20 15.73%      -13.71%     11.67%           1.31                              546\n         Two_IV20 18.44%      -16.31%     12.22%           1.45                              925\n        Two_equal 16.70%      -18.16%     13.42%           1.22                              987\nTwo_fixed_pre2015 16.46%      -18.53%     13.19%           1.22                              980\nSaved /private/var/folders/vh/nyrmyft90lx0mh4x0q4s00k00000gn/T/nasdaq-gold-repro-e9ftc_0s/outputs/nasdaq-gold-ablation-2026-10-03\n",
+  "stderr": "Matplotlib is building the font cache; this may take a moment.\n"
+}

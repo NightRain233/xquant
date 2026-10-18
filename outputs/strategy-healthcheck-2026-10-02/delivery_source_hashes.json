@@ -1,0 +1,9 @@
+{
+  "xquant/scripts/fetch_strategy_healthcheck_data.py": "be3cfb4cd0ff1b38cf345d9397b28aed70edcab0bfa20aba4124bfc81a715bc4",
+  "xquant/scripts/review_frozen_strategies.py": "dc2110770ea5cbebc03cde2cf00edab0b17bbefc4d7093503c776acd830315d7",
+  "xquant/scripts/review_next_open_strategies.py": "03b9e564f76a90dae38a1e3cf365626d5b05fa4794a436b0914b81a4d33b45d5",
+  "xquant/scripts/strategy_healthcheck_diagnostics.py": "df11858a2ade51bc312461b738e83c904a53c1d55155b41e638137232b531017",
+  "xquant/scripts/render_strategy_healthcheck_review.py": "6c627eb23dcca2028f79e83ebfe2987202d9bc5a66c665eeb6ce76a4741e40e3",
+  "trading/scripts/research_multi_asset_balanced_portfolio.py": "7d67627c88c0261b87078f6c37f6554b1d757db07b31ea8f29b30f355fb337c0",
+  "trading/backend/universes/multi_asset_balanced.json": "b0ce509a35f5764412b1949e37859503f61a454ca2897d80a2b0bd9f2aed11ff"
+}

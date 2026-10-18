@@ -1,0 +1,2261 @@
+[
+  {
+    "signal_date": "2016-06-08",
+    "btc_close": 581.64501953125,
+    "supertrend_line": 516.1700592041016,
+    "supertrend_on": true,
+    "formal_btc_close": 581.64501953125,
+    "formal_supertrend_line": 516.1700592041016,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2016-06-24",
+    "btc_close": 665.2990112304688,
+    "supertrend_line": 785.5683166503907,
+    "supertrend_on": false,
+    "formal_btc_close": 665.2990112304688,
+    "formal_supertrend_line": 785.5683166503907,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2016-07-08",
+    "btc_close": 666.5230102539062,
+    "supertrend_line": 742.9039794921875,
+    "supertrend_on": false,
+    "formal_btc_close": 666.5230102539062,
+    "formal_supertrend_line": 742.9039794921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2016-07-22",
+    "btc_close": 650.6190185546875,
+    "supertrend_line": 699.3761108398437,
+    "supertrend_on": false,
+    "formal_btc_close": 650.6190185546875,
+    "formal_supertrend_line": 699.3761108398437,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2016-08-05",
+    "btc_close": 575.0430297851562,
+    "supertrend_line": 625.5285888671875,
+    "supertrend_on": false,
+    "formal_btc_close": 575.0430297851562,
+    "formal_supertrend_line": 625.5285888671875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2016-08-19",
+    "btc_close": 575.6300048828125,
+    "supertrend_line": 609.1559753417969,
+    "supertrend_on": false,
+    "formal_btc_close": 575.6300048828125,
+    "formal_supertrend_line": 609.1559753417969,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2016-09-02",
+    "btc_close": 575.5369873046875,
+    "supertrend_line": 590.4547973632813,
+    "supertrend_on": false,
+    "formal_btc_close": 575.5369873046875,
+    "formal_supertrend_line": 590.4547973632813,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2016-09-20",
+    "btc_close": 608.31201171875,
+    "supertrend_line": 596.3167114257812,
+    "supertrend_on": true,
+    "formal_btc_close": 608.31201171875,
+    "formal_supertrend_line": 596.3167114257812,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2016-10-11",
+    "btc_close": 641.072021484375,
+    "supertrend_line": 606.6233154296875,
+    "supertrend_on": true,
+    "formal_btc_close": 641.072021484375,
+    "formal_supertrend_line": 606.6233154296875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2016-10-25",
+    "btc_close": 657.5880126953125,
+    "supertrend_line": 636.5159973144531,
+    "supertrend_on": true,
+    "formal_btc_close": 657.5880126953125,
+    "formal_supertrend_line": 636.5159973144531,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2016-11-08",
+    "btc_close": 709.8480224609375,
+    "supertrend_line": 685.1540649414062,
+    "supertrend_on": true,
+    "formal_btc_close": 709.8480224609375,
+    "formal_supertrend_line": 685.1540649414062,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2016-11-22",
+    "btc_close": 751.3469848632812,
+    "supertrend_line": 695.91376953125,
+    "supertrend_on": true,
+    "formal_btc_close": 751.3469848632812,
+    "formal_supertrend_line": 695.91376953125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2016-12-06",
+    "btc_close": 764.2239990234375,
+    "supertrend_line": 729.3248901367188,
+    "supertrend_on": true,
+    "formal_btc_close": 764.2239990234375,
+    "formal_supertrend_line": 729.3248901367188,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2016-12-20",
+    "btc_close": 800.8759765625,
+    "supertrend_line": 771.7671508789062,
+    "supertrend_on": true,
+    "formal_btc_close": 800.8759765625,
+    "formal_supertrend_line": 771.7671508789062,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-01-04",
+    "btc_close": 1154.72998046875,
+    "supertrend_line": 951.1096252441406,
+    "supertrend_on": true,
+    "formal_btc_close": 1154.72998046875,
+    "formal_supertrend_line": 951.1096252441406,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-01-18",
+    "btc_close": 886.6179809570312,
+    "supertrend_line": 1085.119189453125,
+    "supertrend_on": false,
+    "formal_btc_close": 886.6179809570312,
+    "formal_supertrend_line": 1085.119189453125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2017-02-08",
+    "btc_close": 1063.0699462890625,
+    "supertrend_line": 960.6885803222656,
+    "supertrend_on": true,
+    "formal_btc_close": 1063.0699462890625,
+    "formal_supertrend_line": 960.6885803222656,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-02-22",
+    "btc_close": 1117.43994140625,
+    "supertrend_line": 991.8789245605469,
+    "supertrend_on": true,
+    "formal_btc_close": 1117.43994140625,
+    "formal_supertrend_line": 991.8789245605469,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-03-08",
+    "btc_close": 1150.0,
+    "supertrend_line": 1326.1011108398438,
+    "supertrend_on": false,
+    "formal_btc_close": 1150.0,
+    "formal_supertrend_line": 1326.1011108398438,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2017-03-22",
+    "btc_close": 1049.1400146484375,
+    "supertrend_line": 1295.3181030273438,
+    "supertrend_on": false,
+    "formal_btc_close": 1049.1400146484375,
+    "formal_supertrend_line": 1295.3181030273438,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2017-04-07",
+    "btc_close": 1176.9000244140625,
+    "supertrend_line": 1204.5426330566406,
+    "supertrend_on": false,
+    "formal_btc_close": 1176.9000244140625,
+    "formal_supertrend_line": 1204.5426330566406,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2017-04-21",
+    "btc_close": 1222.050048828125,
+    "supertrend_line": 1153.879052734375,
+    "supertrend_on": true,
+    "formal_btc_close": 1222.050048828125,
+    "formal_supertrend_line": 1153.879052734375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-05-08",
+    "btc_close": 1723.3499755859375,
+    "supertrend_line": 1437.2559936523437,
+    "supertrend_on": true,
+    "formal_btc_close": 1723.3499755859375,
+    "formal_supertrend_line": 1437.2559936523437,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-05-22",
+    "btc_close": 2173.39990234375,
+    "supertrend_line": 1740.143994140625,
+    "supertrend_on": true,
+    "formal_btc_close": 2173.39990234375,
+    "formal_supertrend_line": 1740.143994140625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-06-07",
+    "btc_close": 2732.159912109375,
+    "supertrend_line": 2065.0150146484375,
+    "supertrend_on": true,
+    "formal_btc_close": 2732.159912109375,
+    "formal_supertrend_line": 2065.0150146484375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-06-21",
+    "btc_close": 2689.10009765625,
+    "supertrend_line": 2142.6001708984377,
+    "supertrend_on": true,
+    "formal_btc_close": 2689.10009765625,
+    "formal_supertrend_line": 2142.6001708984377,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-07-05",
+    "btc_close": 2601.989990234375,
+    "supertrend_line": 2203.5710693359374,
+    "supertrend_on": true,
+    "formal_btc_close": 2601.989990234375,
+    "formal_supertrend_line": 2203.5710693359374,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-07-19",
+    "btc_close": 2273.429931640625,
+    "supertrend_line": 2578.06689453125,
+    "supertrend_on": false,
+    "formal_btc_close": 2273.429931640625,
+    "formal_supertrend_line": 2578.06689453125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2017-08-02",
+    "btc_close": 2710.669921875,
+    "supertrend_line": 2108.39814453125,
+    "supertrend_on": true,
+    "formal_btc_close": 2710.669921875,
+    "formal_supertrend_line": 2108.39814453125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-08-16",
+    "btc_close": 4376.6298828125,
+    "supertrend_line": 3393.509912109375,
+    "supertrend_on": true,
+    "formal_btc_close": 4376.6298828125,
+    "formal_supertrend_line": 3393.509912109375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-08-30",
+    "btc_close": 4565.2998046875,
+    "supertrend_line": 3828.4489501953126,
+    "supertrend_on": true,
+    "formal_btc_close": 4565.2998046875,
+    "formal_supertrend_line": 3828.4489501953126,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-09-13",
+    "btc_close": 3882.590087890625,
+    "supertrend_line": 4936.579907226563,
+    "supertrend_on": false,
+    "formal_btc_close": 3882.590087890625,
+    "formal_supertrend_line": 4936.579907226563,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2017-09-27",
+    "btc_close": 4200.669921875,
+    "supertrend_line": 4696.3109375,
+    "supertrend_on": false,
+    "formal_btc_close": 4200.669921875,
+    "formal_supertrend_line": 4696.3109375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2017-10-18",
+    "btc_close": 5590.68994140625,
+    "supertrend_line": 4752.612158203125,
+    "supertrend_on": true,
+    "formal_btc_close": 5590.68994140625,
+    "formal_supertrend_line": 4752.612158203125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-11-01",
+    "btc_close": 6767.31005859375,
+    "supertrend_line": 5527.73994140625,
+    "supertrend_on": true,
+    "formal_btc_close": 6767.31005859375,
+    "formal_supertrend_line": 5527.73994140625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-11-15",
+    "btc_close": 7315.5400390625,
+    "supertrend_line": 6213.974853515625,
+    "supertrend_on": true,
+    "formal_btc_close": 7315.5400390625,
+    "formal_supertrend_line": 6213.974853515625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-11-29",
+    "btc_close": 9888.6103515625,
+    "supertrend_line": 8395.79228515625,
+    "supertrend_on": true,
+    "formal_btc_close": 9888.6103515625,
+    "formal_supertrend_line": 8395.79228515625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-12-13",
+    "btc_close": 16408.19921875,
+    "supertrend_line": 11580.961669921875,
+    "supertrend_on": true,
+    "formal_btc_close": 16408.19921875,
+    "formal_supertrend_line": 11580.961669921875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2017-12-27",
+    "btc_close": 15838.5,
+    "supertrend_line": 12915.8001953125,
+    "supertrend_on": true,
+    "formal_btc_close": 15838.5,
+    "formal_supertrend_line": 12915.8001953125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2018-01-11",
+    "btc_close": 13405.7998046875,
+    "supertrend_line": 12915.8001953125,
+    "supertrend_on": true,
+    "formal_btc_close": 13405.7998046875,
+    "formal_supertrend_line": 12915.8001953125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2018-01-25",
+    "btc_close": 11259.400390625,
+    "supertrend_line": 15539.882421875,
+    "supertrend_on": false,
+    "formal_btc_close": 11259.400390625,
+    "formal_supertrend_line": 15539.882421875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-02-08",
+    "btc_close": 8265.58984375,
+    "supertrend_line": 10574.307763671875,
+    "supertrend_on": false,
+    "formal_btc_close": 8265.58984375,
+    "formal_supertrend_line": 10574.307763671875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-03-01",
+    "btc_close": 10951.0,
+    "supertrend_line": 8176.731005859375,
+    "supertrend_on": true,
+    "formal_btc_close": 10951.0,
+    "formal_supertrend_line": 8176.731005859375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2018-03-15",
+    "btc_close": 8300.8603515625,
+    "supertrend_line": 10584.79423828125,
+    "supertrend_on": false,
+    "formal_btc_close": 8300.8603515625,
+    "formal_supertrend_line": 10584.79423828125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-03-29",
+    "btc_close": 7165.7001953125,
+    "supertrend_line": 9260.050244140624,
+    "supertrend_on": false,
+    "formal_btc_close": 7165.7001953125,
+    "formal_supertrend_line": 9260.050244140624,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-04-16",
+    "btc_close": 8058.669921875,
+    "supertrend_line": 8252.960009765626,
+    "supertrend_on": false,
+    "formal_btc_close": 8058.669921875,
+    "formal_supertrend_line": 8252.960009765626,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-05-02",
+    "btc_close": 9235.919921875,
+    "supertrend_line": 7941.273681640625,
+    "supertrend_on": true,
+    "formal_btc_close": 9235.919921875,
+    "formal_supertrend_line": 7941.273681640625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2018-05-16",
+    "btc_close": 8368.830078125,
+    "supertrend_line": 8263.180615234374,
+    "supertrend_on": true,
+    "formal_btc_close": 8368.830078125,
+    "formal_supertrend_line": 8263.180615234374,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2018-05-30",
+    "btc_close": 7406.52001953125,
+    "supertrend_line": 8379.13505859375,
+    "supertrend_on": false,
+    "formal_btc_close": 7406.52001953125,
+    "formal_supertrend_line": 8379.13505859375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-06-13",
+    "btc_close": 6349.89990234375,
+    "supertrend_line": 7361.654248046875,
+    "supertrend_on": false,
+    "formal_btc_close": 6349.89990234375,
+    "formal_supertrend_line": 7361.654248046875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-06-28",
+    "btc_close": 5903.43994140625,
+    "supertrend_line": 6890.65625,
+    "supertrend_on": false,
+    "formal_btc_close": 5903.43994140625,
+    "formal_supertrend_line": 6890.65625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-07-12",
+    "btc_close": 6228.81005859375,
+    "supertrend_line": 6890.65625,
+    "supertrend_on": false,
+    "formal_btc_close": 6228.81005859375,
+    "formal_supertrend_line": 6890.65625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-07-26",
+    "btc_close": 7951.580078125,
+    "supertrend_line": 7116.19306640625,
+    "supertrend_on": true,
+    "formal_btc_close": 7951.580078125,
+    "formal_supertrend_line": 7116.19306640625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2018-08-09",
+    "btc_close": 6568.22998046875,
+    "supertrend_line": 7569.76484375,
+    "supertrend_on": false,
+    "formal_btc_close": 6568.22998046875,
+    "formal_supertrend_line": 7569.76484375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-08-23",
+    "btc_close": 6534.8798828125,
+    "supertrend_line": 7237.889697265625,
+    "supertrend_on": false,
+    "formal_btc_close": 6534.8798828125,
+    "formal_supertrend_line": 7237.889697265625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-09-06",
+    "btc_close": 6529.169921875,
+    "supertrend_line": 7347.28505859375,
+    "supertrend_on": false,
+    "formal_btc_close": 6529.169921875,
+    "formal_supertrend_line": 7347.28505859375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-09-20",
+    "btc_close": 6519.669921875,
+    "supertrend_line": 6905.345166015625,
+    "supertrend_on": false,
+    "formal_btc_close": 6519.669921875,
+    "formal_supertrend_line": 6905.345166015625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-10-12",
+    "btc_close": 6274.580078125,
+    "supertrend_line": 6872.027294921875,
+    "supertrend_on": false,
+    "formal_btc_close": 6274.580078125,
+    "formal_supertrend_line": 6872.027294921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-10-26",
+    "btc_close": 6474.75,
+    "supertrend_line": 6872.027294921875,
+    "supertrend_on": false,
+    "formal_btc_close": 6474.75,
+    "formal_supertrend_line": 6872.027294921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-11-09",
+    "btc_close": 6385.6201171875,
+    "supertrend_line": 6556.4001953125,
+    "supertrend_on": false,
+    "formal_btc_close": 6385.6201171875,
+    "formal_supertrend_line": 6556.4001953125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-11-23",
+    "btc_close": 4347.10986328125,
+    "supertrend_line": 5430.70380859375,
+    "supertrend_on": false,
+    "formal_btc_close": 4347.10986328125,
+    "formal_supertrend_line": 5430.70380859375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-12-07",
+    "btc_close": 3419.937255859375,
+    "supertrend_line": 4442.335229492188,
+    "supertrend_on": false,
+    "formal_btc_close": 3419.937255859375,
+    "formal_supertrend_line": 4442.335229492188,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2018-12-21",
+    "btc_close": 3896.543701171875,
+    "supertrend_line": 3297.145361328125,
+    "supertrend_on": true,
+    "formal_btc_close": 3896.543701171875,
+    "formal_supertrend_line": 3297.145361328125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-01-08",
+    "btc_close": 4030.847900390625,
+    "supertrend_line": 3438.7205078125,
+    "supertrend_on": true,
+    "formal_btc_close": 4030.847900390625,
+    "formal_supertrend_line": 3438.7205078125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-01-22",
+    "btc_close": 3604.5771484375,
+    "supertrend_line": 3530.11796875,
+    "supertrend_on": true,
+    "formal_btc_close": 3604.5771484375,
+    "formal_supertrend_line": 3530.11796875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-02-12",
+    "btc_close": 3653.528564453125,
+    "supertrend_line": 3655.3134765625,
+    "supertrend_on": false,
+    "formal_btc_close": 3653.528564453125,
+    "formal_supertrend_line": 3655.3134765625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-02-26",
+    "btc_close": 3854.35791015625,
+    "supertrend_line": 3676.64072265625,
+    "supertrend_on": true,
+    "formal_btc_close": 3854.35791015625,
+    "formal_supertrend_line": 3676.64072265625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-03-12",
+    "btc_close": 3909.15625,
+    "supertrend_line": 3684.90146484375,
+    "supertrend_on": true,
+    "formal_btc_close": 3909.15625,
+    "formal_supertrend_line": 3684.90146484375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-03-26",
+    "btc_close": 3985.080810546875,
+    "supertrend_line": 3873.4558837890627,
+    "supertrend_on": true,
+    "formal_btc_close": 3985.080810546875,
+    "formal_supertrend_line": 3873.4558837890627,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-04-10",
+    "btc_close": 5324.5517578125,
+    "supertrend_line": 4567.8553466796875,
+    "supertrend_on": true,
+    "formal_btc_close": 5324.5517578125,
+    "formal_supertrend_line": 4567.8553466796875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-04-24",
+    "btc_close": 5464.86669921875,
+    "supertrend_line": 5026.41806640625,
+    "supertrend_on": true,
+    "formal_btc_close": 5464.86669921875,
+    "formal_supertrend_line": 5026.41806640625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-05-13",
+    "btc_close": 7814.9150390625,
+    "supertrend_line": 6321.542724609375,
+    "supertrend_on": true,
+    "formal_btc_close": 7814.9150390625,
+    "formal_supertrend_line": 6321.542724609375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-05-27",
+    "btc_close": 8805.7783203125,
+    "supertrend_line": 7145.118994140625,
+    "supertrend_on": true,
+    "formal_btc_close": 8805.7783203125,
+    "formal_supertrend_line": 7145.118994140625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-06-11",
+    "btc_close": 7927.71435546875,
+    "supertrend_line": 7198.05625,
+    "supertrend_on": true,
+    "formal_btc_close": 7927.71435546875,
+    "formal_supertrend_line": 7198.05625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-06-25",
+    "btc_close": 11790.9169921875,
+    "supertrend_line": 9878.724462890625,
+    "supertrend_on": true,
+    "formal_btc_close": 11790.9169921875,
+    "formal_supertrend_line": 9878.724462890625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-07-09",
+    "btc_close": 12573.8125,
+    "supertrend_line": 14164.70146484375,
+    "supertrend_on": false,
+    "formal_btc_close": 12573.8125,
+    "formal_supertrend_line": 14164.70146484375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-07-23",
+    "btc_close": 9900.767578125,
+    "supertrend_line": 12739.66513671875,
+    "supertrend_on": false,
+    "formal_btc_close": 9900.767578125,
+    "formal_supertrend_line": 12739.66513671875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-08-06",
+    "btc_close": 11478.1689453125,
+    "supertrend_line": 10223.9328125,
+    "supertrend_on": true,
+    "formal_btc_close": 11478.1689453125,
+    "formal_supertrend_line": 10223.9328125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-08-20",
+    "btc_close": 10763.232421875,
+    "supertrend_line": 12065.07294921875,
+    "supertrend_on": false,
+    "formal_btc_close": 10763.232421875,
+    "formal_supertrend_line": 12065.07294921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-09-03",
+    "btc_close": 10623.5400390625,
+    "supertrend_line": 10843.753125,
+    "supertrend_on": false,
+    "formal_btc_close": 10623.5400390625,
+    "formal_supertrend_line": 10843.753125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-09-18",
+    "btc_close": 10198.248046875,
+    "supertrend_line": 10843.753125,
+    "supertrend_on": false,
+    "formal_btc_close": 10198.248046875,
+    "formal_supertrend_line": 10843.753125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-10-09",
+    "btc_close": 8595.740234375,
+    "supertrend_line": 9388.512255859376,
+    "supertrend_on": false,
+    "formal_btc_close": 8595.740234375,
+    "formal_supertrend_line": 9388.512255859376,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-10-23",
+    "btc_close": 7514.671875,
+    "supertrend_line": 8580.432177734376,
+    "supertrend_on": false,
+    "formal_btc_close": 7514.671875,
+    "formal_supertrend_line": 8580.432177734376,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-11-06",
+    "btc_close": 9360.8798828125,
+    "supertrend_line": 8198.311181640625,
+    "supertrend_on": true,
+    "formal_btc_close": 9360.8798828125,
+    "formal_supertrend_line": 8198.311181640625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2019-11-20",
+    "btc_close": 8027.26806640625,
+    "supertrend_line": 8898.764111328124,
+    "supertrend_on": false,
+    "formal_btc_close": 8027.26806640625,
+    "formal_supertrend_line": 8898.764111328124,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-12-04",
+    "btc_close": 7252.03466796875,
+    "supertrend_line": 8023.018994140625,
+    "supertrend_on": false,
+    "formal_btc_close": 7252.03466796875,
+    "formal_supertrend_line": 8023.018994140625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2019-12-18",
+    "btc_close": 7276.802734375,
+    "supertrend_line": 7527.102197265625,
+    "supertrend_on": false,
+    "formal_btc_close": 7276.802734375,
+    "formal_supertrend_line": 7527.102197265625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-01-02",
+    "btc_close": 6985.47021484375,
+    "supertrend_line": 7527.102197265625,
+    "supertrend_on": false,
+    "formal_btc_close": 6985.47021484375,
+    "formal_supertrend_line": 7527.102197265625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-01-16",
+    "btc_close": 8723.7861328125,
+    "supertrend_line": 7624.1103515625,
+    "supertrend_on": true,
+    "formal_btc_close": 8723.7861328125,
+    "formal_supertrend_line": 7624.1103515625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-02-07",
+    "btc_close": 9795.943359375,
+    "supertrend_line": 8684.0599609375,
+    "supertrend_on": true,
+    "formal_btc_close": 9795.943359375,
+    "formal_supertrend_line": 8684.0599609375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-02-21",
+    "btc_close": 9686.44140625,
+    "supertrend_line": 9143.9232421875,
+    "supertrend_on": true,
+    "formal_btc_close": 9686.44140625,
+    "formal_supertrend_line": 9143.9232421875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-03-06",
+    "btc_close": 9122.5458984375,
+    "supertrend_line": 9723.1376953125,
+    "supertrend_on": false,
+    "formal_btc_close": 9122.5458984375,
+    "formal_supertrend_line": 9723.1376953125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-03-20",
+    "btc_close": 6198.7783203125,
+    "supertrend_line": 7402.899853515625,
+    "supertrend_on": false,
+    "formal_btc_close": 6198.7783203125,
+    "formal_supertrend_line": 7402.899853515625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-04-03",
+    "btc_close": 6733.38720703125,
+    "supertrend_line": 7402.899853515625,
+    "supertrend_on": false,
+    "formal_btc_close": 6733.38720703125,
+    "formal_supertrend_line": 7402.899853515625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-04-20",
+    "btc_close": 6881.95849609375,
+    "supertrend_line": 7402.899853515625,
+    "supertrend_on": false,
+    "formal_btc_close": 6881.95849609375,
+    "formal_supertrend_line": 7402.899853515625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-05-07",
+    "btc_close": 9951.5185546875,
+    "supertrend_line": 8107.00390625,
+    "supertrend_on": true,
+    "formal_btc_close": 9951.5185546875,
+    "formal_supertrend_line": 8107.00390625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-05-21",
+    "btc_close": 9081.76171875,
+    "supertrend_line": 8384.63046875,
+    "supertrend_on": true,
+    "formal_btc_close": 9081.76171875,
+    "formal_supertrend_line": 8384.63046875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-06-04",
+    "btc_close": 9800.63671875,
+    "supertrend_line": 8630.33125,
+    "supertrend_on": true,
+    "formal_btc_close": 9800.63671875,
+    "formal_supertrend_line": 8630.33125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-06-18",
+    "btc_close": 9411.8408203125,
+    "supertrend_line": 8821.7458984375,
+    "supertrend_on": true,
+    "formal_btc_close": 9411.8408203125,
+    "formal_supertrend_line": 8821.7458984375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-07-06",
+    "btc_close": 9375.474609375,
+    "supertrend_line": 8821.7458984375,
+    "supertrend_on": true,
+    "formal_btc_close": 9375.474609375,
+    "formal_supertrend_line": 8821.7458984375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-07-20",
+    "btc_close": 9164.2314453125,
+    "supertrend_line": 8821.7458984375,
+    "supertrend_on": true,
+    "formal_btc_close": 9164.2314453125,
+    "formal_supertrend_line": 8821.7458984375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-08-03",
+    "btc_close": 11246.3486328125,
+    "supertrend_line": 9935.9728515625,
+    "supertrend_on": true,
+    "formal_btc_close": 11246.3486328125,
+    "formal_supertrend_line": 9935.9728515625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-08-17",
+    "btc_close": 12254.40234375,
+    "supertrend_line": 10574.673046875,
+    "supertrend_on": true,
+    "formal_btc_close": 12254.40234375,
+    "formal_supertrend_line": 10574.673046875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-08-31",
+    "btc_close": 11680.8203125,
+    "supertrend_line": 10746.25791015625,
+    "supertrend_on": true,
+    "formal_btc_close": 11680.8203125,
+    "formal_supertrend_line": 10746.25791015625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-09-14",
+    "btc_close": 10680.837890625,
+    "supertrend_line": 11680.13271484375,
+    "supertrend_on": false,
+    "formal_btc_close": 10680.837890625,
+    "formal_supertrend_line": 11680.13271484375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-09-28",
+    "btc_close": 10709.65234375,
+    "supertrend_line": 11379.8392578125,
+    "supertrend_on": false,
+    "formal_btc_close": 10709.65234375,
+    "formal_supertrend_line": 11379.8392578125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2020-10-20",
+    "btc_close": 11916.3349609375,
+    "supertrend_line": 10884.994140625,
+    "supertrend_on": true,
+    "formal_btc_close": 11916.3349609375,
+    "formal_supertrend_line": 10884.994140625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-11-03",
+    "btc_close": 13950.30078125,
+    "supertrend_line": 11999.02001953125,
+    "supertrend_on": true,
+    "formal_btc_close": 13950.30078125,
+    "formal_supertrend_line": 11999.02001953125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-11-17",
+    "btc_close": 17645.40625,
+    "supertrend_line": 14718.068359375,
+    "supertrend_on": true,
+    "formal_btc_close": 17645.40625,
+    "formal_supertrend_line": 14718.068359375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-12-01",
+    "btc_close": 18802.998046875,
+    "supertrend_line": 16309.86435546875,
+    "supertrend_on": true,
+    "formal_btc_close": 18802.998046875,
+    "formal_supertrend_line": 16309.86435546875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-12-15",
+    "btc_close": 19417.076171875,
+    "supertrend_line": 16971.8138671875,
+    "supertrend_on": true,
+    "formal_btc_close": 19417.076171875,
+    "formal_supertrend_line": 16971.8138671875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2020-12-29",
+    "btc_close": 27362.4375,
+    "supertrend_line": 22209.643359375,
+    "supertrend_on": true,
+    "formal_btc_close": 27362.4375,
+    "formal_supertrend_line": 22209.643359375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-01-13",
+    "btc_close": 37316.359375,
+    "supertrend_line": 30849.5341796875,
+    "supertrend_on": true,
+    "formal_btc_close": 37316.359375,
+    "formal_supertrend_line": 30849.5341796875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-01-27",
+    "btc_close": 30432.546875,
+    "supertrend_line": 40795.894921875,
+    "supertrend_on": false,
+    "formal_btc_close": 30432.546875,
+    "formal_supertrend_line": 40795.894921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-02-10",
+    "btc_close": 44918.18359375,
+    "supertrend_line": 36120.350390625,
+    "supertrend_on": true,
+    "formal_btc_close": 44918.18359375,
+    "formal_supertrend_line": 36120.350390625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-03-03",
+    "btc_close": 50538.2421875,
+    "supertrend_line": 42275.2392578125,
+    "supertrend_on": true,
+    "formal_btc_close": 50538.2421875,
+    "formal_supertrend_line": 42275.2392578125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-03-17",
+    "btc_close": 58870.89453125,
+    "supertrend_line": 47268.40546875,
+    "supertrend_on": true,
+    "formal_btc_close": 58870.89453125,
+    "formal_supertrend_line": 47268.40546875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-03-31",
+    "btc_close": 58918.83203125,
+    "supertrend_line": 48669.98125,
+    "supertrend_on": true,
+    "formal_btc_close": 58918.83203125,
+    "formal_supertrend_line": 48669.98125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-04-15",
+    "btc_close": 63314.01171875,
+    "supertrend_line": 56183.038671875,
+    "supertrend_on": true,
+    "formal_btc_close": 63314.01171875,
+    "formal_supertrend_line": 56183.038671875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-04-29",
+    "btc_close": 53555.109375,
+    "supertrend_line": 61403.800390625,
+    "supertrend_on": false,
+    "formal_btc_close": 53555.109375,
+    "formal_supertrend_line": 61403.800390625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-05-18",
+    "btc_close": 42909.40234375,
+    "supertrend_line": 57762.81328125,
+    "supertrend_on": false,
+    "formal_btc_close": 42909.40234375,
+    "formal_supertrend_line": 57762.81328125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-06-01",
+    "btc_close": 36684.92578125,
+    "supertrend_line": 52075.648828125,
+    "supertrend_on": false,
+    "formal_btc_close": 36684.92578125,
+    "formal_supertrend_line": 52075.648828125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-06-16",
+    "btc_close": 38347.0625,
+    "supertrend_line": 41494.91171875,
+    "supertrend_on": false,
+    "formal_btc_close": 38347.0625,
+    "formal_supertrend_line": 41494.91171875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-06-30",
+    "btc_close": 35040.8359375,
+    "supertrend_line": 40756.8123046875,
+    "supertrend_on": false,
+    "formal_btc_close": 35040.8359375,
+    "formal_supertrend_line": 40756.8123046875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-07-14",
+    "btc_close": 32822.34765625,
+    "supertrend_line": 37112.63515625,
+    "supertrend_on": false,
+    "formal_btc_close": 32822.34765625,
+    "formal_supertrend_line": 37112.63515625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-07-28",
+    "btc_close": 39995.90625,
+    "supertrend_line": 32793.1849609375,
+    "supertrend_on": true,
+    "formal_btc_close": 39995.90625,
+    "formal_supertrend_line": 32793.1849609375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-08-11",
+    "btc_close": 45593.63671875,
+    "supertrend_line": 37919.787890625,
+    "supertrend_on": true,
+    "formal_btc_close": 45593.63671875,
+    "formal_supertrend_line": 37919.787890625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-08-25",
+    "btc_close": 48960.7890625,
+    "supertrend_line": 42933.0296875,
+    "supertrend_on": true,
+    "formal_btc_close": 48960.7890625,
+    "formal_supertrend_line": 42933.0296875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-09-08",
+    "btc_close": 46091.390625,
+    "supertrend_line": 44992.1359375,
+    "supertrend_on": true,
+    "formal_btc_close": 46091.390625,
+    "formal_supertrend_line": 44992.1359375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-09-24",
+    "btc_close": 42839.75,
+    "supertrend_line": 51043.751171875,
+    "supertrend_on": false,
+    "formal_btc_close": 42839.75,
+    "formal_supertrend_line": 51043.751171875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-10-15",
+    "btc_close": 61593.94921875,
+    "supertrend_line": 48363.07109375,
+    "supertrend_on": true,
+    "formal_btc_close": 61593.94921875,
+    "formal_supertrend_line": 48363.07109375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-10-29",
+    "btc_close": 62227.96484375,
+    "supertrend_line": 52905.50703125,
+    "supertrend_on": true,
+    "formal_btc_close": 62227.96484375,
+    "formal_supertrend_line": 52905.50703125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-11-12",
+    "btc_close": 64155.94140625,
+    "supertrend_line": 58129.36796875,
+    "supertrend_on": true,
+    "formal_btc_close": 64155.94140625,
+    "formal_supertrend_line": 58129.36796875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2021-11-26",
+    "btc_close": 53569.765625,
+    "supertrend_line": 65578.74609375,
+    "supertrend_on": false,
+    "formal_btc_close": 53569.765625,
+    "formal_supertrend_line": 65578.74609375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-12-10",
+    "btc_close": 47243.3046875,
+    "supertrend_line": 58779.313671875,
+    "supertrend_on": false,
+    "formal_btc_close": 47243.3046875,
+    "formal_supertrend_line": 58779.313671875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2021-12-24",
+    "btc_close": 50822.1953125,
+    "supertrend_line": 54253.980859375,
+    "supertrend_on": false,
+    "formal_btc_close": 50822.1953125,
+    "formal_supertrend_line": 54253.980859375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-01-10",
+    "btc_close": 41821.26171875,
+    "supertrend_line": 47744.266796875,
+    "supertrend_on": false,
+    "formal_btc_close": 41821.26171875,
+    "formal_supertrend_line": 47744.266796875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-01-24",
+    "btc_close": 36654.328125,
+    "supertrend_line": 42271.366015625,
+    "supertrend_on": false,
+    "formal_btc_close": 36654.328125,
+    "formal_supertrend_line": 42271.366015625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-02-14",
+    "btc_close": 42586.91796875,
+    "supertrend_line": 35662.25703125,
+    "supertrend_on": true,
+    "formal_btc_close": 42586.91796875,
+    "formal_supertrend_line": 35662.25703125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2022-02-28",
+    "btc_close": 43193.234375,
+    "supertrend_line": 43414.685546875,
+    "supertrend_on": false,
+    "formal_btc_close": 43193.234375,
+    "formal_supertrend_line": 43414.685546875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-03-14",
+    "btc_close": 39666.75390625,
+    "supertrend_line": 35914.098046875,
+    "supertrend_on": true,
+    "formal_btc_close": 39666.75390625,
+    "formal_supertrend_line": 35914.098046875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2022-03-28",
+    "btc_close": 47128.00390625,
+    "supertrend_line": 42226.09609375,
+    "supertrend_on": true,
+    "formal_btc_close": 47128.00390625,
+    "formal_supertrend_line": 42226.09609375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2022-04-13",
+    "btc_close": 41166.73046875,
+    "supertrend_line": 45950.9078125,
+    "supertrend_on": false,
+    "formal_btc_close": 41166.73046875,
+    "formal_supertrend_line": 45950.9078125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-04-27",
+    "btc_close": 39241.12109375,
+    "supertrend_line": 44004.994921875,
+    "supertrend_on": false,
+    "formal_btc_close": 39241.12109375,
+    "formal_supertrend_line": 44004.994921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-05-16",
+    "btc_close": 29862.91796875,
+    "supertrend_line": 36652.8728515625,
+    "supertrend_on": false,
+    "formal_btc_close": 29862.91796875,
+    "formal_supertrend_line": 36652.8728515625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-05-30",
+    "btc_close": 31726.390625,
+    "supertrend_line": 33228.0189453125,
+    "supertrend_on": false,
+    "formal_btc_close": 31726.390625,
+    "formal_supertrend_line": 33228.0189453125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-06-14",
+    "btc_close": 22206.79296875,
+    "supertrend_line": 28142.4486328125,
+    "supertrend_on": false,
+    "formal_btc_close": 22206.79296875,
+    "formal_supertrend_line": 28142.4486328125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-06-28",
+    "btc_close": 20280.634765625,
+    "supertrend_line": 24619.6361328125,
+    "supertrend_on": false,
+    "formal_btc_close": 20280.634765625,
+    "formal_supertrend_line": 24619.6361328125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-07-12",
+    "btc_close": 19323.9140625,
+    "supertrend_line": 22389.38984375,
+    "supertrend_on": false,
+    "formal_btc_close": 19323.9140625,
+    "formal_supertrend_line": 22389.38984375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-07-26",
+    "btc_close": 21239.75390625,
+    "supertrend_line": 19655.017578125,
+    "supertrend_on": true,
+    "formal_btc_close": 21239.75390625,
+    "formal_supertrend_line": 19655.017578125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2022-08-09",
+    "btc_close": 23164.318359375,
+    "supertrend_line": 20779.477734375,
+    "supertrend_on": true,
+    "formal_btc_close": 23164.318359375,
+    "formal_supertrend_line": 20779.477734375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2022-08-23",
+    "btc_close": 21528.087890625,
+    "supertrend_line": 24319.5509765625,
+    "supertrend_on": false,
+    "formal_btc_close": 21528.087890625,
+    "formal_supertrend_line": 24319.5509765625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-09-06",
+    "btc_close": 18837.66796875,
+    "supertrend_line": 21809.0177734375,
+    "supertrend_on": false,
+    "formal_btc_close": 18837.66796875,
+    "formal_supertrend_line": 21809.0177734375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-09-21",
+    "btc_close": 18547.400390625,
+    "supertrend_line": 21425.5068359375,
+    "supertrend_on": false,
+    "formal_btc_close": 18547.400390625,
+    "formal_supertrend_line": 21425.5068359375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-10-12",
+    "btc_close": 19157.4453125,
+    "supertrend_line": 21346.68203125,
+    "supertrend_on": false,
+    "formal_btc_close": 19157.4453125,
+    "formal_supertrend_line": 21346.68203125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-10-26",
+    "btc_close": 20770.44140625,
+    "supertrend_line": 18620.58828125,
+    "supertrend_on": true,
+    "formal_btc_close": 20770.44140625,
+    "formal_supertrend_line": 18620.58828125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2022-11-09",
+    "btc_close": 15880.7802734375,
+    "supertrend_line": 20326.1900390625,
+    "supertrend_on": false,
+    "formal_btc_close": 15880.7802734375,
+    "formal_supertrend_line": 20326.1900390625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-11-23",
+    "btc_close": 16610.70703125,
+    "supertrend_line": 18928.78779296875,
+    "supertrend_on": false,
+    "formal_btc_close": 16610.70703125,
+    "formal_supertrend_line": 18928.78779296875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-12-07",
+    "btc_close": 16848.126953125,
+    "supertrend_line": 17709.85400390625,
+    "supertrend_on": false,
+    "formal_btc_close": 16848.126953125,
+    "formal_supertrend_line": 17709.85400390625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2022-12-21",
+    "btc_close": 16817.53515625,
+    "supertrend_line": 18023.1767578125,
+    "supertrend_on": false,
+    "formal_btc_close": 16817.53515625,
+    "formal_supertrend_line": 18023.1767578125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-01-05",
+    "btc_close": 16836.736328125,
+    "supertrend_line": 17314.95234375,
+    "supertrend_on": false,
+    "formal_btc_close": 16836.736328125,
+    "formal_supertrend_line": 17314.95234375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-01-19",
+    "btc_close": 21086.79296875,
+    "supertrend_line": 19336.4373046875,
+    "supertrend_on": true,
+    "formal_btc_close": 21086.79296875,
+    "formal_supertrend_line": 19336.4373046875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-02-09",
+    "btc_close": 21819.0390625,
+    "supertrend_line": 20945.9951171875,
+    "supertrend_on": true,
+    "formal_btc_close": 21819.0390625,
+    "formal_supertrend_line": 20945.9951171875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-02-23",
+    "btc_close": 23947.4921875,
+    "supertrend_line": 21720.2150390625,
+    "supertrend_on": true,
+    "formal_btc_close": 23947.4921875,
+    "formal_supertrend_line": 21720.2150390625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-03-09",
+    "btc_close": 20363.021484375,
+    "supertrend_line": 23328.137890625,
+    "supertrend_on": false,
+    "formal_btc_close": 20363.021484375,
+    "formal_supertrend_line": 23328.137890625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-03-23",
+    "btc_close": 28333.97265625,
+    "supertrend_line": 22915.1166015625,
+    "supertrend_on": true,
+    "formal_btc_close": 28333.97265625,
+    "formal_supertrend_line": 22915.1166015625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-04-07",
+    "btc_close": 27925.859375,
+    "supertrend_line": 24913.6619140625,
+    "supertrend_on": true,
+    "formal_btc_close": 27925.859375,
+    "formal_supertrend_line": 24913.6619140625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-04-21",
+    "btc_close": 27276.91015625,
+    "supertrend_line": 31238.66015625,
+    "supertrend_on": false,
+    "formal_btc_close": 27276.91015625,
+    "formal_supertrend_line": 31238.66015625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-05-10",
+    "btc_close": 27621.755859375,
+    "supertrend_line": 30719.4673828125,
+    "supertrend_on": false,
+    "formal_btc_close": 27621.755859375,
+    "formal_supertrend_line": 30719.4673828125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-05-24",
+    "btc_close": 26334.818359375,
+    "supertrend_line": 29034.753125,
+    "supertrend_on": false,
+    "formal_btc_close": 26334.818359375,
+    "formal_supertrend_line": 29034.753125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-06-07",
+    "btc_close": 26345.998046875,
+    "supertrend_line": 28568.4630859375,
+    "supertrend_on": false,
+    "formal_btc_close": 26345.998046875,
+    "formal_supertrend_line": 28568.4630859375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-06-21",
+    "btc_close": 30027.296875,
+    "supertrend_line": 26337.42890625,
+    "supertrend_on": true,
+    "formal_btc_close": 30027.296875,
+    "formal_supertrend_line": 26337.42890625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-07-07",
+    "btc_close": 30342.265625,
+    "supertrend_line": 27680.9982421875,
+    "supertrend_on": true,
+    "formal_btc_close": 30342.265625,
+    "formal_supertrend_line": 27680.9982421875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-07-21",
+    "btc_close": 29908.744140625,
+    "supertrend_line": 28087.6658203125,
+    "supertrend_on": true,
+    "formal_btc_close": 29908.744140625,
+    "formal_supertrend_line": 28087.6658203125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-08-04",
+    "btc_close": 29074.091796875,
+    "supertrend_line": 28087.6658203125,
+    "supertrend_on": true,
+    "formal_btc_close": 29074.091796875,
+    "formal_supertrend_line": 28087.6658203125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-08-18",
+    "btc_close": 26049.556640625,
+    "supertrend_line": 28872.8146484375,
+    "supertrend_on": false,
+    "formal_btc_close": 26049.556640625,
+    "formal_supertrend_line": 28872.8146484375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-09-01",
+    "btc_close": 25800.724609375,
+    "supertrend_line": 28284.105078125,
+    "supertrend_on": false,
+    "formal_btc_close": 25800.724609375,
+    "formal_supertrend_line": 28284.105078125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-09-15",
+    "btc_close": 26608.693359375,
+    "supertrend_line": 28077.14765625,
+    "supertrend_on": false,
+    "formal_btc_close": 26608.693359375,
+    "formal_supertrend_line": 28077.14765625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-10-09",
+    "btc_close": 27583.677734375,
+    "supertrend_line": 28034.66328125,
+    "supertrend_on": false,
+    "formal_btc_close": 27583.677734375,
+    "formal_supertrend_line": 28034.66328125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2023-10-23",
+    "btc_close": 33086.234375,
+    "supertrend_line": 28391.0783203125,
+    "supertrend_on": true,
+    "formal_btc_close": 33086.234375,
+    "formal_supertrend_line": 28391.0783203125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-11-06",
+    "btc_close": 35037.37109375,
+    "supertrend_line": 31607.330078125,
+    "supertrend_on": true,
+    "formal_btc_close": 35037.37109375,
+    "formal_supertrend_line": 31607.330078125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-11-20",
+    "btc_close": 37476.95703125,
+    "supertrend_line": 33488.2546875,
+    "supertrend_on": true,
+    "formal_btc_close": 37476.95703125,
+    "formal_supertrend_line": 33488.2546875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-12-04",
+    "btc_close": 41980.09765625,
+    "supertrend_line": 36766.2359375,
+    "supertrend_on": true,
+    "formal_btc_close": 41980.09765625,
+    "formal_supertrend_line": 36766.2359375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2023-12-18",
+    "btc_close": 42623.5390625,
+    "supertrend_line": 39531.412109375,
+    "supertrend_on": true,
+    "formal_btc_close": 42623.5390625,
+    "formal_supertrend_line": 39531.412109375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-01-02",
+    "btc_close": 44957.96875,
+    "supertrend_line": 39912.079296875,
+    "supertrend_on": true,
+    "formal_btc_close": 44957.96875,
+    "formal_supertrend_line": 39912.079296875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-01-16",
+    "btc_close": 43154.9453125,
+    "supertrend_line": 39912.079296875,
+    "supertrend_on": true,
+    "formal_btc_close": 43154.9453125,
+    "formal_supertrend_line": 39912.079296875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-01-30",
+    "btc_close": 42952.609375,
+    "supertrend_line": 45378.60078125,
+    "supertrend_on": false,
+    "formal_btc_close": 42952.609375,
+    "formal_supertrend_line": 45378.60078125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2024-02-21",
+    "btc_close": 51839.1796875,
+    "supertrend_line": 46611.4453125,
+    "supertrend_on": true,
+    "formal_btc_close": 51839.1796875,
+    "formal_supertrend_line": 46611.4453125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-03-06",
+    "btc_close": 66106.8046875,
+    "supertrend_line": 55893.62109375,
+    "supertrend_on": true,
+    "formal_btc_close": 66106.8046875,
+    "formal_supertrend_line": 55893.62109375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-03-20",
+    "btc_close": 67913.671875,
+    "supertrend_line": 59133.091015625,
+    "supertrend_on": true,
+    "formal_btc_close": 67913.671875,
+    "formal_supertrend_line": 59133.091015625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-04-03",
+    "btc_close": 65980.8125,
+    "supertrend_line": 59133.091015625,
+    "supertrend_on": true,
+    "formal_btc_close": 65980.8125,
+    "formal_supertrend_line": 59133.091015625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-04-19",
+    "btc_close": 63843.5703125,
+    "supertrend_line": 60190.40078125,
+    "supertrend_on": true,
+    "formal_btc_close": 63843.5703125,
+    "formal_supertrend_line": 60190.40078125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-05-08",
+    "btc_close": 61187.94140625,
+    "supertrend_line": 60190.40078125,
+    "supertrend_on": true,
+    "formal_btc_close": 61187.94140625,
+    "formal_supertrend_line": 60190.40078125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-05-22",
+    "btc_close": 69122.3359375,
+    "supertrend_line": 61436.425,
+    "supertrend_on": true,
+    "formal_btc_close": 69122.3359375,
+    "formal_supertrend_line": 61436.425,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-06-05",
+    "btc_close": 71082.8203125,
+    "supertrend_line": 63862.68515625,
+    "supertrend_on": true,
+    "formal_btc_close": 71082.8203125,
+    "formal_supertrend_line": 63862.68515625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-06-20",
+    "btc_close": 64828.65625,
+    "supertrend_line": 64325.365625,
+    "supertrend_on": true,
+    "formal_btc_close": 64828.65625,
+    "formal_supertrend_line": 64325.365625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-07-04",
+    "btc_close": 56977.703125,
+    "supertrend_line": 66397.059375,
+    "supertrend_on": false,
+    "formal_btc_close": 56977.703125,
+    "formal_supertrend_line": 66397.059375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2024-07-18",
+    "btc_close": 63974.06640625,
+    "supertrend_line": 56065.4171875,
+    "supertrend_on": true,
+    "formal_btc_close": 63974.06640625,
+    "formal_supertrend_line": 56065.4171875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-08-01",
+    "btc_close": 65357.5,
+    "supertrend_line": 60551.0109375,
+    "supertrend_on": true,
+    "formal_btc_close": 65357.5,
+    "formal_supertrend_line": 60551.0109375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-08-15",
+    "btc_close": 57560.09765625,
+    "supertrend_line": 64716.545703125,
+    "supertrend_on": false,
+    "formal_btc_close": 57560.09765625,
+    "formal_supertrend_line": 64716.545703125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2024-08-29",
+    "btc_close": 59388.1796875,
+    "supertrend_line": 64716.545703125,
+    "supertrend_on": false,
+    "formal_btc_close": 59388.1796875,
+    "formal_supertrend_line": 64716.545703125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2024-09-12",
+    "btc_close": 58127.01171875,
+    "supertrend_line": 63207.521875,
+    "supertrend_on": false,
+    "formal_btc_close": 58127.01171875,
+    "formal_supertrend_line": 63207.521875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2024-09-30",
+    "btc_close": 63329.5,
+    "supertrend_line": 59265.70859375,
+    "supertrend_on": true,
+    "formal_btc_close": 63329.5,
+    "formal_supertrend_line": 59265.70859375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-10-21",
+    "btc_close": 67367.8515625,
+    "supertrend_line": 61007.660546875,
+    "supertrend_on": true,
+    "formal_btc_close": 67367.8515625,
+    "formal_supertrend_line": 61007.660546875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-11-04",
+    "btc_close": 67811.5078125,
+    "supertrend_line": 65077.7984375,
+    "supertrend_on": true,
+    "formal_btc_close": 67811.5078125,
+    "formal_supertrend_line": 65077.7984375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-11-18",
+    "btc_close": 90542.640625,
+    "supertrend_line": 75494.56640625,
+    "supertrend_on": true,
+    "formal_btc_close": 90542.640625,
+    "formal_supertrend_line": 75494.56640625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-12-02",
+    "btc_close": 95865.3046875,
+    "supertrend_line": 85412.8078125,
+    "supertrend_on": true,
+    "formal_btc_close": 95865.3046875,
+    "formal_supertrend_line": 85412.8078125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-12-16",
+    "btc_close": 106029.71875,
+    "supertrend_line": 89401.41015625,
+    "supertrend_on": true,
+    "formal_btc_close": 106029.71875,
+    "formal_supertrend_line": 89401.41015625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2024-12-30",
+    "btc_close": 92643.2109375,
+    "supertrend_line": 90536.99765625,
+    "supertrend_on": true,
+    "formal_btc_close": 92643.2109375,
+    "formal_supertrend_line": 90536.99765625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-01-14",
+    "btc_close": 96534.046875,
+    "supertrend_line": 90536.99765625,
+    "supertrend_on": true,
+    "formal_btc_close": 96534.046875,
+    "formal_supertrend_line": 90536.99765625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-02-05",
+    "btc_close": 96615.4453125,
+    "supertrend_line": 90536.99765625,
+    "supertrend_on": true,
+    "formal_btc_close": 96615.4453125,
+    "formal_supertrend_line": 90536.99765625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-02-19",
+    "btc_close": 96635.609375,
+    "supertrend_line": 90536.99765625,
+    "supertrend_on": true,
+    "formal_btc_close": 96635.609375,
+    "formal_supertrend_line": 90536.99765625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-03-05",
+    "btc_close": 90623.5625,
+    "supertrend_line": 94787.7921875,
+    "supertrend_on": false,
+    "formal_btc_close": 90623.5625,
+    "formal_supertrend_line": 94787.7921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-03-19",
+    "btc_close": 86854.2265625,
+    "supertrend_line": 94787.7921875,
+    "supertrend_on": false,
+    "formal_btc_close": 86854.2265625,
+    "formal_supertrend_line": 94787.7921875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-04-02",
+    "btc_close": 82485.7109375,
+    "supertrend_line": 91893.178125,
+    "supertrend_on": false,
+    "formal_btc_close": 82485.7109375,
+    "formal_supertrend_line": 91893.178125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-04-17",
+    "btc_close": 84895.75,
+    "supertrend_line": 89405.1328125,
+    "supertrend_on": false,
+    "formal_btc_close": 84895.75,
+    "formal_supertrend_line": 89405.1328125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-05-06",
+    "btc_close": 96802.4765625,
+    "supertrend_line": 86314.8796875,
+    "supertrend_on": true,
+    "formal_btc_close": 96802.4765625,
+    "formal_supertrend_line": 86314.8796875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-05-20",
+    "btc_close": 106791.0859375,
+    "supertrend_line": 95835.03125,
+    "supertrend_on": true,
+    "formal_btc_close": 106791.0859375,
+    "formal_supertrend_line": 95835.03125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-06-04",
+    "btc_close": 104731.984375,
+    "supertrend_line": 101176.77734375,
+    "supertrend_on": true,
+    "formal_btc_close": 104731.984375,
+    "formal_supertrend_line": 101176.77734375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-06-18",
+    "btc_close": 104883.328125,
+    "supertrend_line": 101176.77734375,
+    "supertrend_on": true,
+    "formal_btc_close": 104883.328125,
+    "formal_supertrend_line": 101176.77734375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-07-02",
+    "btc_close": 108859.3203125,
+    "supertrend_line": 101176.77734375,
+    "supertrend_on": true,
+    "formal_btc_close": 108859.3203125,
+    "formal_supertrend_line": 101176.77734375,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-07-16",
+    "btc_close": 118738.5078125,
+    "supertrend_line": 110866.88671875,
+    "supertrend_on": true,
+    "formal_btc_close": 118738.5078125,
+    "formal_supertrend_line": 110866.88671875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-07-30",
+    "btc_close": 117831.1875,
+    "supertrend_line": 110866.88671875,
+    "supertrend_on": true,
+    "formal_btc_close": 117831.1875,
+    "formal_supertrend_line": 110866.88671875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-08-13",
+    "btc_close": 123344.0625,
+    "supertrend_line": 111842.96328125,
+    "supertrend_on": true,
+    "formal_btc_close": 123344.0625,
+    "formal_supertrend_line": 111842.96328125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2025-08-27",
+    "btc_close": 111222.0625,
+    "supertrend_line": 123561.98984375,
+    "supertrend_on": false,
+    "formal_btc_close": 111222.0625,
+    "formal_supertrend_line": 123561.98984375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-09-10",
+    "btc_close": 113955.359375,
+    "supertrend_line": 120107.10078125,
+    "supertrend_on": false,
+    "formal_btc_close": 113955.359375,
+    "formal_supertrend_line": 120107.10078125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-09-24",
+    "btc_close": 113328.6328125,
+    "supertrend_line": 119610.36484375,
+    "supertrend_on": false,
+    "formal_btc_close": 113328.6328125,
+    "formal_supertrend_line": 119610.36484375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-10-16",
+    "btc_close": 108186.0390625,
+    "supertrend_line": 126877.43828125,
+    "supertrend_on": false,
+    "formal_btc_close": 108186.0390625,
+    "formal_supertrend_line": 126877.43828125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-10-30",
+    "btc_close": 108305.546875,
+    "supertrend_line": 122202.996875,
+    "supertrend_on": false,
+    "formal_btc_close": 108305.546875,
+    "formal_supertrend_line": 122202.996875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-11-13",
+    "btc_close": 99697.4921875,
+    "supertrend_line": 115672.89609375,
+    "supertrend_on": false,
+    "formal_btc_close": 99697.4921875,
+    "formal_supertrend_line": 115672.89609375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-11-27",
+    "btc_close": 91285.375,
+    "supertrend_line": 99539.26171875,
+    "supertrend_on": false,
+    "formal_btc_close": 91285.375,
+    "formal_supertrend_line": 99539.26171875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-12-11",
+    "btc_close": 92511.3359375,
+    "supertrend_line": 99539.26171875,
+    "supertrend_on": false,
+    "formal_btc_close": 92511.3359375,
+    "formal_supertrend_line": 99539.26171875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2025-12-25",
+    "btc_close": 87234.7421875,
+    "supertrend_line": 97658.2421875,
+    "supertrend_on": false,
+    "formal_btc_close": 87234.7421875,
+    "formal_supertrend_line": 97658.2421875,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-01-12",
+    "btc_close": 91192.9921875,
+    "supertrend_line": 96540.0265625,
+    "supertrend_on": false,
+    "formal_btc_close": 91192.9921875,
+    "formal_supertrend_line": 96540.0265625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-01-26",
+    "btc_close": 88267.140625,
+    "supertrend_line": 86310.5125,
+    "supertrend_on": true,
+    "formal_btc_close": 88267.140625,
+    "formal_supertrend_line": 86310.5125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2026-02-09",
+    "btc_close": 70120.78125,
+    "supertrend_line": 82990.690625,
+    "supertrend_on": false,
+    "formal_btc_close": 70120.78125,
+    "formal_supertrend_line": 82990.690625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-03-03",
+    "btc_close": 68293.6484375,
+    "supertrend_line": 79241.711328125,
+    "supertrend_on": false,
+    "formal_btc_close": 68293.6484375,
+    "formal_supertrend_line": 79241.711328125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-03-17",
+    "btc_close": 73922.4765625,
+    "supertrend_line": 79241.711328125,
+    "supertrend_on": false,
+    "formal_btc_close": 73922.4765625,
+    "formal_supertrend_line": 79241.711328125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-03-31",
+    "btc_close": 68233.3125,
+    "supertrend_line": 75629.90078125,
+    "supertrend_on": false,
+    "formal_btc_close": 68233.3125,
+    "formal_supertrend_line": 75629.90078125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-04-15",
+    "btc_close": 74805.078125,
+    "supertrend_line": 66815.478125,
+    "supertrend_on": true,
+    "formal_btc_close": 74805.078125,
+    "formal_supertrend_line": 66815.478125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2026-04-29",
+    "btc_close": 75776.1328125,
+    "supertrend_line": 70616.6078125,
+    "supertrend_on": true,
+    "formal_btc_close": 75776.1328125,
+    "formal_supertrend_line": 70616.6078125,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2026-05-18",
+    "btc_close": 76954.171875,
+    "supertrend_line": 74199.16875,
+    "supertrend_on": true,
+    "formal_btc_close": 76954.171875,
+    "formal_supertrend_line": 74199.16875,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2026-06-01",
+    "btc_close": 71319.7734375,
+    "supertrend_line": 78360.35234375,
+    "supertrend_on": false,
+    "formal_btc_close": 71319.7734375,
+    "formal_supertrend_line": 78360.35234375,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-06-15",
+    "btc_close": 66289.5,
+    "supertrend_line": 70642.562890625,
+    "supertrend_on": false,
+    "formal_btc_close": 66289.5,
+    "formal_supertrend_line": 70642.562890625,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-06-30",
+    "btc_close": 58558.859375,
+    "supertrend_line": 66855.608203125,
+    "supertrend_on": false,
+    "formal_btc_close": 58558.859375,
+    "formal_supertrend_line": 66855.608203125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-07-14",
+    "btc_close": 64956.11328125,
+    "supertrend_line": 66855.608203125,
+    "supertrend_on": false,
+    "formal_btc_close": 64956.11328125,
+    "formal_supertrend_line": 66855.608203125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-07-28",
+    "btc_close": 63871.36328125,
+    "supertrend_line": 66855.608203125,
+    "supertrend_on": false,
+    "formal_btc_close": 63871.36328125,
+    "formal_supertrend_line": 66855.608203125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-08-11",
+    "btc_close": 63551.875,
+    "supertrend_line": 66855.608203125,
+    "supertrend_on": false,
+    "formal_btc_close": 63551.875,
+    "formal_supertrend_line": 66855.608203125,
+    "formal_supertrend_on": false
+  },
+  {
+    "signal_date": "2026-08-25",
+    "btc_close": 78564.9765625,
+    "supertrend_line": 70650.284765625,
+    "supertrend_on": true,
+    "formal_btc_close": 78564.9765625,
+    "formal_supertrend_line": 70650.284765625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2026-09-08",
+    "btc_close": 78438.578125,
+    "supertrend_line": 71287.0265625,
+    "supertrend_on": true,
+    "formal_btc_close": 78438.578125,
+    "formal_supertrend_line": 71287.0265625,
+    "formal_supertrend_on": true
+  },
+  {
+    "signal_date": "2026-09-22",
+    "btc_close": 86172.28125,
+    "supertrend_line": 76902.3953125,
+    "supertrend_on": true,
+    "formal_btc_close": 86172.28125,
+    "formal_supertrend_line": 76902.3953125,
+    "formal_supertrend_on": true
+  }
+]

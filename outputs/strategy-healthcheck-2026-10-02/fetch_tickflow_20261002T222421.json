@@ -1,0 +1,294 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:21:18.548548+08:00",
+  "source": "tickflow",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "forward_additive",
+  "symbols": {
+    "000001.SS": {
+      "status": "MISSING"
+    },
+    "000300.SS": {
+      "status": "MISSING"
+    },
+    "000890.SZ": {
+      "status": "MISSING"
+    },
+    "002015.SZ": {
+      "status": "MISSING"
+    },
+    "002119.SZ": {
+      "status": "MISSING"
+    },
+    "002309.SZ": {
+      "status": "MISSING"
+    },
+    "002796.SZ": {
+      "status": "MISSING"
+    },
+    "159201.SZ": {
+      "status": "MISSING"
+    },
+    "159320.SZ": {
+      "status": "MISSING"
+    },
+    "159326.SZ": {
+      "status": "MISSING"
+    },
+    "159552.SZ": {
+      "status": "MISSING"
+    },
+    "159553.SZ": {
+      "status": "MISSING"
+    },
+    "159583.SZ": {
+      "status": "FETCHED",
+      "rows": 543,
+      "first": "2024-07-08",
+      "last": "2026-09-30",
+      "sha256": "772e6ae539ad4d528ba90bc1ef55f2fd9a387cb80abfc20fba4d1b349e989496"
+    },
+    "159869.SZ": {
+      "status": "FETCHED",
+      "rows": 1354,
+      "first": "2021-03-05",
+      "last": "2026-09-30",
+      "sha256": "69cf0831a2c3e501a48bb2440ee3c3e65212c34699e8b6694810f046c8988599"
+    },
+    "159915.SZ": {
+      "status": "FETCHED",
+      "rows": 3337,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "ab9fd63cd8a3dc32aaa1ff3bb6c522f1e522530390a4277695d912cc1f6694c8"
+    },
+    "159919.SZ": {
+      "status": "FETCHED",
+      "rows": 3337,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "74cb62b1cfc9ac32097f8517ba372d0243165a5056c44fda630d7d878422e602"
+    },
+    "159922.SZ": {
+      "status": "FETCHED",
+      "rows": 3293,
+      "first": "2013-03-15",
+      "last": "2026-09-30",
+      "sha256": "23735f5ad850cedf101f2f61022421b8e1b61e628985d4dde2d4d8c6c189e192"
+    },
+    "159967.SZ": {
+      "status": "FETCHED",
+      "rows": 1752,
+      "first": "2019-07-15",
+      "last": "2026-09-30",
+      "sha256": "1a4df790380bf90aea629023c079873c5e1bc3ef95d935b077441fcb80ea3c54"
+    },
+    "510050.SS": {
+      "status": "FETCHED",
+      "rows": 3338,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "d9bfd9fd835b6ac4173442660f720e78e58be6c37d2760d1bc2f2e6c9a18a2ad"
+    },
+    "510500.SS": {
+      "status": "FETCHED",
+      "rows": 3291,
+      "first": "2013-03-15",
+      "last": "2026-09-30",
+      "sha256": "225e42db1354f4bf115e8b977d5073c94862806b738a9b00138e0a1aea06963e"
+    },
+    "512000.SS": {
+      "status": "FETCHED",
+      "rows": 2438,
+      "first": "2016-09-14",
+      "last": "2026-09-30",
+      "sha256": "52aef78504f7b9c5edc5765505c7b560a79fabb86c30df5ea53971fa9ba9eab7"
+    },
+    "512010.SS": {
+      "status": "FETCHED",
+      "rows": 3145,
+      "first": "2013-10-28",
+      "last": "2026-09-30",
+      "sha256": "16a96d3a6c4378b946b6b226b381362350913ace23bc600ecc1a10bc746a8137"
+    },
+    "512040.SS": {
+      "status": "FETCHED",
+      "rows": 1902,
+      "first": "2018-11-29",
+      "last": "2026-09-30",
+      "sha256": "c46d13d3881883e5cc1dbbd6ec1d0594a3b7e1b13b7b2d52661514c51ef5b088"
+    },
+    "512100.SS": {
+      "status": "FETCHED",
+      "rows": 2407,
+      "first": "2016-11-04",
+      "last": "2026-09-30",
+      "sha256": "cc83b5e724e399a8b7b773e60a7bfcad659d8da5a0f7db1d9670cfb849361b87"
+    },
+    "512660.SS": {
+      "status": "FETCHED",
+      "rows": 2465,
+      "first": "2016-08-08",
+      "last": "2026-09-30",
+      "sha256": "5dd0578f0ade8250fcf443ec209a7acc68011f773972ea2dc1674d147446a6f4"
+    },
+    "512720.SS": {
+      "status": "FETCHED",
+      "rows": 1728,
+      "first": "2019-08-16",
+      "last": "2026-09-30",
+      "sha256": "a1c1cc485246fd715dff72d4e7b97fde7ed035bfb61c04d86f16ec1558f19fe3"
+    },
+    "512760.SS": {
+      "status": "FETCHED",
+      "rows": 1774,
+      "first": "2019-06-12",
+      "last": "2026-09-30",
+      "sha256": "702bb9c3dce9e4adee40e33a74edc094d56c9f5289c077efe99704226934794b"
+    },
+    "512890.SS": {
+      "status": "FETCHED",
+      "rows": 1867,
+      "first": "2019-01-18",
+      "last": "2026-09-30",
+      "sha256": "b3682ac00480c16709b7911d17cf96f138ca1506a4271aa7a94f0fd1601e8eb9"
+    },
+    "513010.SS": {
+      "status": "FETCHED",
+      "rows": 1301,
+      "first": "2021-05-25",
+      "last": "2026-09-30",
+      "sha256": "8f25670cd7040ea5c333787708cabb3459969fb5633ed10e8fd734e6f4caf96b"
+    },
+    "513120.SS": {
+      "status": "FETCHED",
+      "rows": 1026,
+      "first": "2022-07-12",
+      "last": "2026-09-30",
+      "sha256": "162113b286aa41330045eca570054ad5bc46f163e734aeed7566393bfa9b5551"
+    },
+    "513910.SS": {
+      "status": "FETCHED",
+      "rows": 628,
+      "first": "2024-03-04",
+      "last": "2026-09-30",
+      "sha256": "ed781a20dd1169d9d02f0b8e1dffbb0893486acf4f1a2b30af51c01411969e64"
+    },
+    "515070.SS": {
+      "status": "FETCHED",
+      "rows": 1642,
+      "first": "2019-12-24",
+      "last": "2026-09-30",
+      "sha256": "6119db75c86ee98da0313d12cac4a9491edce91080ce713066232ff422abbba9"
+    },
+    "515790.SS": {
+      "status": "FETCHED",
+      "rows": 1403,
+      "first": "2020-12-18",
+      "last": "2026-09-30",
+      "sha256": "858eb51187861399cc71e2e7ff6448eb4da1c4ec2dc5f2a25a90108f7ea0ad17"
+    },
+    "588000.SS": {
+      "status": "FETCHED",
+      "rows": 1427,
+      "first": "2020-11-16",
+      "last": "2026-09-30",
+      "sha256": "63079b13d41296d72e3cbb85f102fec85b29394bfff0d4e42bd6045544a2e4eb"
+    },
+    "588080.SS": {
+      "status": "FETCHED",
+      "rows": 1427,
+      "first": "2020-11-16",
+      "last": "2026-09-30",
+      "sha256": "6901c8c31ed540dd9db1c931b0aefa26a4df18769a3c1f88bf58222010ffa5f0"
+    },
+    "588200.SS": {
+      "status": "FETCHED",
+      "rows": 956,
+      "first": "2022-10-26",
+      "last": "2026-09-30",
+      "sha256": "0545311827fed6f5b1d06c7fce7d6ce8c9feccfbaa7cde0e6ece3d7537530388"
+    },
+    "588890.SS": {
+      "status": "FETCHED",
+      "rows": 594,
+      "first": "2024-04-23",
+      "last": "2026-09-30",
+      "sha256": "d48a615b65e6138bc833edf6d0051d6c22a20860992ea9917927201518c6769f"
+    },
+    "600345.SS": {
+      "status": "FETCHED",
+      "rows": 3318,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "1fb8dbaf8c976b1e656f12724166f27288a12ad4a70402b51d478fd775b84189"
+    },
+    "600487.SS": {
+      "status": "FETCHED",
+      "rows": 3226,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "6948917d8732e897589b99f79baef35d73e9f9b4f6eb393dba594cb4c3e721ab"
+    },
+    "601288.SS": {
+      "status": "FETCHED",
+      "rows": 3338,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "ade86083145b3905c2814aa7a3194fe9df4288edd761538da9fc1b9925aea0fb"
+    },
+    "601991.SS": {
+      "status": "FETCHED",
+      "rows": 3323,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "8b6254d27026542c9a7a873122e7505fc1dc32f94a431993efec32f5d61be2cc"
+    },
+    "605289.SS": {
+      "status": "FETCHED",
+      "rows": 1319,
+      "first": "2021-04-26",
+      "last": "2026-09-30",
+      "sha256": "fc73fa85ce81ae5ec1f6a20d8e3acbec073f29159da45205afba38cbaf3e9354"
+    }
+  },
+  "errors": [
+    {
+      "symbols": [
+        "000001.SS",
+        "000300.SS",
+        "000890.SZ"
+      ],
+      "error": "ReadTimeout",
+      "message": "HTTPSConnectionPool(host='free-api.tickflow.org', port=443): Read timed out. (read timeout=45)"
+    },
+    {
+      "symbols": [
+        "002015.SZ",
+        "002119.SZ",
+        "002309.SZ"
+      ],
+      "error": "ReadTimeout",
+      "message": "HTTPSConnectionPool(host='free-api.tickflow.org', port=443): Read timed out. (read timeout=45)"
+    },
+    {
+      "symbols": [
+        "002796.SZ",
+        "159201.SZ",
+        "159320.SZ"
+      ],
+      "error": "ReadTimeout",
+      "message": "HTTPSConnectionPool(host='free-api.tickflow.org', port=443): Read timed out. (read timeout=45)"
+    },
+    {
+      "symbols": [
+        "159326.SZ",
+        "159552.SZ",
+        "159553.SZ"
+      ],
+      "error": "SSLError",
+      "message": "HTTPSConnectionPool(host='free-api.tickflow.org', port=443): Max retries exceeded with url: /v1/klines/batch?symbols=159326.SZ%2C159552.SZ%2C159553.SZ&period=1d&adjust=forward_additive&count=10000&sta"
+    }
+  ]
+}

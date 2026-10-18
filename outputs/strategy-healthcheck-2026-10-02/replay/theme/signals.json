@@ -1,0 +1,1240 @@
+[
+  {
+    "signal_date": "2022-05-10",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-05-25",
+    "selected_lvt": [
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-06-10",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-06-27",
+    "selected_lvt": [
+      "512170.SS",
+      "512880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-07-11",
+    "selected_lvt": [
+      "515880.SS",
+      "512170.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-07-25",
+    "selected_lvt": [
+      "515880.SS",
+      "512170.SS",
+      "512400.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-08-10",
+    "selected_lvt": [
+      "515880.SS",
+      "513100.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-08-25",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "512880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-09-13",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-09-26",
+    "selected_lvt": [
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-10-10",
+    "selected_lvt": [
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-10-25",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-11-10",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-11-25",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-12-12",
+    "selected_lvt": [
+      "518880.SS",
+      "512170.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2022-12-26",
+    "selected_lvt": [
+      "518880.SS",
+      "512880.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2023-01-10",
+    "selected_lvt": [
+      "518880.SS",
+      "512880.SS",
+      "512170.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2023-01-30",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2023-02-10",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-02-27",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-03-10",
+    "selected_lvt": [
+      "518880.SS",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-03-27",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-04-10",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-04-25",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-05-10",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-05-25",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-06-12",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-06-26",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-07-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-07-25",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-08-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "512880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-08-25",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "512880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-09-11",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-09-25",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-10-10",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-10-25",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-11-10",
+    "selected_lvt": [
+      "518880.SS",
+      "512170.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-11-27",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-12-11",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2023-12-25",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-01-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-01-25",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-02-19",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-02-26",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-03-11",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-03-25",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-04-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-04-25",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-05-10",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-05-27",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-06-11",
+    "selected_lvt": [
+      "513100.SS",
+      "510880.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-06-25",
+    "selected_lvt": [
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-07-10",
+    "selected_lvt": [
+      "513100.SS",
+      "518880.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-07-25",
+    "selected_lvt": [
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-08-12",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-08-26",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-09-10",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-09-25",
+    "selected_lvt": [
+      "518880.SS",
+      "512880.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-10-10",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-10-25",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-11-11",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-11-25",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-12-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2024-12-25",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "510880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-01-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-01-27",
+    "selected_lvt": [
+      "518880.SS",
+      "510880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-02-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-02-25",
+    "selected_lvt": [
+      "518880.SS",
+      "512170.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-03-10",
+    "selected_lvt": [
+      "518880.SS",
+      "512400.SS",
+      "512170.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2025-03-25",
+    "selected_lvt": [
+      "518880.SS",
+      "512400.SS",
+      "512170.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-04-10",
+    "selected_lvt": [
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2025-04-25",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2025-05-12",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "512400.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-05-26",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "512400.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-06-10",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-06-25",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-07-10",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ",
+      "512170.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-07-25",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-08-11",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-08-25",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-09-10",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "513180.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-09-25",
+    "selected_lvt": [
+      "518880.SS",
+      "513100.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-10-10",
+    "selected_lvt": [
+      "513100.SS",
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-10-27",
+    "selected_lvt": [
+      "513100.SS",
+      "159930.SZ",
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-11-10",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-11-25",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-12-10",
+    "selected_lvt": [
+      "159930.SZ",
+      "513100.SS",
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2025-12-25",
+    "selected_lvt": [
+      "513100.SS",
+      "518880.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-01-12",
+    "selected_lvt": [
+      "159930.SZ",
+      "512170.SS",
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-01-26",
+    "selected_lvt": [
+      "518880.SS",
+      "159930.SZ",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-02-10",
+    "selected_lvt": [
+      "159930.SZ",
+      "159995.SZ",
+      "518880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-02-25",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-03-10",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-03-25",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": false
+    }
+  },
+  {
+    "signal_date": "2026-04-10",
+    "selected_lvt": [
+      "510880.SS",
+      "159930.SZ",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-04-27",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-05-11",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-05-25",
+    "selected_lvt": [
+      "513100.SS",
+      "515880.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-06-10",
+    "selected_lvt": [
+      "513100.SS",
+      "515880.SS",
+      "159995.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-06-25",
+    "selected_lvt": [
+      "512880.SS",
+      "513100.SS",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-07-10",
+    "selected_lvt": [
+      "513100.SS",
+      "512880.SS",
+      "515880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-07-27",
+    "selected_lvt": [
+      "512880.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-08-10",
+    "selected_lvt": [
+      "510880.SS",
+      "512170.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": true,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-08-25",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-09-10",
+    "selected_lvt": [
+      "510880.SS",
+      "518880.SS",
+      "513100.SS"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  },
+  {
+    "signal_date": "2026-09-28",
+    "selected_lvt": [
+      "510880.SS",
+      "513100.SS",
+      "159930.SZ"
+    ],
+    "core_risk_on": {
+      "510300.SS": false,
+      "513100.SS": true
+    }
+  }
+]

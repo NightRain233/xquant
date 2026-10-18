@@ -1,0 +1,57 @@
+{
+  "strategy_id": "risk_parity_core_next_open",
+  "version": "1.0.0",
+  "display_name": "RiskParity Core",
+  "description": "Frozen three-asset inverse-volatility RiskParity benchmark.",
+  "mode": "paper",
+  "execution": "next_open",
+  "initial_nav": 100000.0,
+  "base_currency": "CNY",
+  "assets": [
+    {
+      "symbol": "510300.SS",
+      "alias": "沪深300ETF",
+      "sleeve": "core",
+      "market": "a_share",
+      "synthetic_proxy": false,
+      "quote_currency": "CNY",
+      "fx_pair": null,
+      "investable_instrument": "510300.SS",
+      "note": ""
+    },
+    {
+      "symbol": "513100.SS",
+      "alias": "纳指100ETF",
+      "sleeve": "core",
+      "market": "a_share",
+      "synthetic_proxy": false,
+      "quote_currency": "CNY",
+      "fx_pair": null,
+      "investable_instrument": "513100.SS",
+      "note": ""
+    },
+    {
+      "symbol": "518880.SS",
+      "alias": "黄金ETF",
+      "sleeve": "core",
+      "market": "a_share",
+      "synthetic_proxy": false,
+      "quote_currency": "CNY",
+      "fx_pair": null,
+      "investable_instrument": "518880.SS",
+      "note": ""
+    }
+  ],
+  "params": {
+    "risk_parity_window": 20,
+    "rebalance_sessions": 10,
+    "schedule_anchor_signal_date": "2026-07-01",
+    "one_way_cost_bps": 10.0,
+    "activation_mode": "cash_then_next_open"
+  },
+  "costs": {
+    "base_bps": 10.0,
+    "slippage_bps": 0.0,
+    "asset_extra_bps": {}
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:18:50.310698+08:00",
+  "source": "tickflow",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "forward_additive",
+  "symbols": {
+    "510300.SS": {
+      "status": "FETCHED",
+      "rows": 3338,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "70fce639788adeacd615f930a9f1ff24c6915669aa2534fd019773e1f092fbbe"
+    },
+    "513100.SS": {
+      "status": "FETCHED",
+      "rows": 3254,
+      "first": "2013-05-15",
+      "last": "2026-09-30",
+      "sha256": "5d500fbac430265a6d49b75f9c355041330352341ddc327fa5f842ca69f77da4"
+    },
+    "518880.SS": {
+      "status": "FETCHED",
+      "rows": 3205,
+      "first": "2013-07-29",
+      "last": "2026-09-30",
+      "sha256": "9e4e1dd624e5e029bf221e625a4dc1f02b04766a17eaed0c896a003e46833c99"
+    },
+    "512400.SS": {
+      "status": "FETCHED",
+      "rows": 2204,
+      "first": "2017-09-01",
+      "last": "2026-09-30",
+      "sha256": "5d2af4176a5d27cca395cce3edfef6b227f2513d070009cc65d0be9e300ad153"
+    },
+    "159995.SZ": {
+      "status": "FETCHED",
+      "rows": 1615,
+      "first": "2020-02-10",
+      "last": "2026-09-30",
+      "sha256": "812cb4c08cfe9f4d09952f6de5e7edb765ac163ba1ae21e60e7fb1841ca28b3a"
+    },
+    "515880.SS": {
+      "status": "FETCHED",
+      "rows": 1713,
+      "first": "2019-09-06",
+      "last": "2026-09-30",
+      "sha256": "5fb5a58f94223f7ba28bc0b979fbb9906d31312abf2efd0c3cf977d5c748e6cc"
+    },
+    "510880.SS": {
+      "status": "FETCHED",
+      "rows": 3338,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "bbac9899f55b2935039c2947f437daed5e1a0eceb650d3b41ac5282cf86961f6"
+    },
+    "159930.SZ": {
+      "status": "FETCHED",
+      "rows": 3166,
+      "first": "2013-09-16",
+      "last": "2026-09-30",
+      "sha256": "a5870116c52b8047412af39b1d1448c77bd1905e8d7010b43722e115790dd467"
+    },
+    "512880.SS": {
+      "status": "FETCHED",
+      "rows": 2465,
+      "first": "2016-08-08",
+      "last": "2026-09-30",
+      "sha256": "83f43c74671a9751b196b745734d686f49b843eeb3417db60982c30a5f9fb877"
+    },
+    "513180.SS": {
+      "status": "FETCHED",
+      "rows": 1301,
+      "first": "2021-05-25",
+      "last": "2026-09-30",
+      "sha256": "1172cb35e92767414f9a8448eb2946e21c5e6c0ba2fbfbe483c41bd25d14a05f"
+    },
+    "512170.SS": {
+      "status": "FETCHED",
+      "rows": 1771,
+      "first": "2019-06-17",
+      "last": "2026-09-30",
+      "sha256": "a89fbd1593d62a47e8754b149d9eded39a87d260947395e1d788868717614478"
+    },
+    "511010.SS": {
+      "status": "FETCHED",
+      "rows": 3287,
+      "first": "2013-03-25",
+      "last": "2026-09-30",
+      "sha256": "bee4c187eda16145f27c288729aa2187ca8f35b435c6fe8557c5cb3c5f987747"
+    }
+  },
+  "errors": []
+}

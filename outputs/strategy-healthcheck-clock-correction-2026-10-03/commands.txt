@@ -1,0 +1,18 @@
+Working directory: xquant/
+
+../trading/backend/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_cross_market_execution_clock.py
+# 7 passed; clock-tests.log
+
+../trading/backend/.venv/bin/python scripts/review_cross_market_clock.py --snapshot outputs/strategy-healthcheck-2026-10-02/market_data --output outputs/strategy-healthcheck-clock-correction-2026-10-03 --family btc
+# btc-run.log
+
+../trading/backend/.venv/bin/python scripts/review_cross_market_clock.py --snapshot outputs/strategy-healthcheck-2026-10-02/market_data --output outputs/strategy-healthcheck-clock-correction-2026-10-03 --family multi
+# multi-run.log
+
+PYTHONPATH=../trading/backend ../trading/backend/.venv/bin/python -m pytest -q -p no:cacheprovider tests/test_strategy_healthcheck_review.py tests/test_cross_market_execution_clock.py ../trading/backend/tests/test_btc_satellite_strategy.py ../trading/backend/tests/test_theme_alpha_strategy.py ../trading/backend/tests/test_portfolio_paper_engine.py ../trading/backend/tests/test_portfolio_strategy_market_data.py ../trading/backend/tests/test_xquant_next_open_parity.py ../trading/backend/tests/test_core_bull_research.py ../trading/backend/tests/test_next_open_engine.py
+# 67 passed; related-tests.log
+
+../trading/backend/.venv/bin/python scripts/finalize_clock_correction.py
+
+../trading/backend/.venv/bin/python scripts/verify_clock_correction.py
+# causal-audit.log; corrected-probes.json; full clock audits

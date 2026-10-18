@@ -1,0 +1,47 @@
+[
+  {
+    "strategy": "BTC_0",
+    "groups": 494,
+    "max_nav_error": 4.656612873077393e-10,
+    "max_cash_error": 4.18367562815547e-10,
+    "max_price_error": 0.0,
+    "max_fee_error": 2.842170943040401e-14,
+    "min_cash": -4.18367562815547e-10
+  },
+  {
+    "strategy": "BTC_10",
+    "groups": 492,
+    "max_nav_error": 4.656612873077393e-10,
+    "max_cash_error": 3.310560714453459e-10,
+    "max_price_error": 0.0,
+    "max_fee_error": 2.842170943040401e-14,
+    "min_cash": -3.310560714453459e-10
+  },
+  {
+    "strategy": "BTC_5",
+    "groups": 494,
+    "max_nav_error": 2.9103830456733704e-10,
+    "max_cash_error": 1.4722105485663218e-10,
+    "max_price_error": 0.0,
+    "max_fee_error": 2.842170943040401e-14,
+    "min_cash": -1.4722105485663218e-10
+  },
+  {
+    "strategy": "BTC_7.5",
+    "groups": 494,
+    "max_nav_error": 3.4924596548080444e-10,
+    "max_cash_error": 2.2259487909399518e-10,
+    "max_price_error": 0.0,
+    "max_fee_error": 2.842170943040401e-14,
+    "min_cash": -2.2259487909399518e-10
+  },
+  {
+    "strategy": "RP92.5_Cash7.5",
+    "groups": 492,
+    "max_nav_error": 1.1641532182693481e-10,
+    "max_cash_error": 2.1827872842550278e-11,
+    "max_price_error": 0.0,
+    "max_fee_error": 1.4210854715202004e-14,
+    "min_cash": 7499.999999999978
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "file": "fills_RP92.5_Cash7.5.json",
+    "future_price_clocks": 0,
+    "execution_before_signal": 0,
+    "max_cash_error": 7.275957614183426e-12,
+    "max_nav_error": 5.820766091346741e-11,
+    "max_quantity_error": 0.0,
+    "unfilled_target_amount_sum": 21511.700833787007
+  },
+  {
+    "file": "fills_BTC_5.json",
+    "future_price_clocks": 0,
+    "execution_before_signal": 0,
+    "max_cash_error": 9.094947017729282e-12,
+    "max_nav_error": 1.1641532182693481e-10,
+    "max_quantity_error": 0.0,
+    "unfilled_target_amount_sum": 364566.6076804961
+  },
+  {
+    "file": "fills_BTC_0.json",
+    "future_price_clocks": 0,
+    "execution_before_signal": 0,
+    "max_cash_error": 1.000444171950221e-11,
+    "max_nav_error": 1.1641532182693481e-10,
+    "max_quantity_error": 0.0,
+    "unfilled_target_amount_sum": 24686.99863297178
+  },
+  {
+    "file": "fills_BTC_7.5_fx_accounting.json",
+    "future_price_clocks": 0,
+    "execution_before_signal": 0,
+    "max_cash_error": 1.4551915228366852e-11,
+    "max_nav_error": 1.1641532182693481e-10,
+    "max_quantity_error": 0.0,
+    "unfilled_target_amount_sum": 530821.9731551623
+  },
+  {
+    "file": "fills_BTC_10.json",
+    "future_price_clocks": 0,
+    "execution_before_signal": 0,
+    "max_cash_error": 1.4551915228366852e-11,
+    "max_nav_error": 2.3283064365386963e-10,
+    "max_quantity_error": 0.0,
+    "unfilled_target_amount_sum": 666618.3609298081
+  },
+  {
+    "file": "fills_BTC_7.5.json",
+    "future_price_clocks": 0,
+    "execution_before_signal": 0,
+    "max_cash_error": 1.4551915228366852e-11,
+    "max_nav_error": 1.1641532182693481e-10,
+    "max_quantity_error": 0.0,
+    "unfilled_target_amount_sum": 532277.720336701
+  }
+]

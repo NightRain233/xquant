@@ -1,0 +1,176 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:13:22.005268+08:00",
+  "source": "yahoo",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "yfinance_auto_adjust",
+  "symbols": {
+    "2800.HK": {
+      "status": "FETCHED",
+      "rows": 3384,
+      "first": "2013-01-02",
+      "last": "2026-09-30",
+      "sha256": "7af0916a6bea0fcd745f929c9bd7f957e28bf4b31d1f374ac1efe00591b0d9da"
+    },
+    "AAPL": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "6e48ed557f88f70867e3596253f1a2b0227b7797d4b861f03e8a4bb9aadc28e5"
+    },
+    "BTC-USD": {
+      "status": "FETCHED",
+      "rows": 4398,
+      "first": "2014-09-17",
+      "last": "2026-10-01",
+      "sha256": "a2a2dfb64bb1f8eb8404d7b1235b76800f6b684785cf03066ff576e6f4304087"
+    },
+    "CNY=X": {
+      "status": "MISSING"
+    },
+    "DIA": {
+      "status": "MISSING"
+    },
+    "ETH-USD": {
+      "status": "FETCHED",
+      "rows": 3249,
+      "first": "2017-11-09",
+      "last": "2026-10-01",
+      "sha256": "54683cc16bed955c4a27509fa3f7da65e7ca236e0893345dba875e86950fe72c"
+    },
+    "GC=F": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "3cc9d2e642ff196d22f44094cafa39d6f1aa4024a9ec04584e20fd3a396bcb14"
+    },
+    "GLD": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "41af91409328ac283936ee41c2642f601c8d77f12c938eddabbee80d136af1ec"
+    },
+    "GOOGL": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "3ab75ddbfa8524c883f2f12a71abd68a805b97c96524f3dcc30da86bc633a829"
+    },
+    "HKDCNY=X": {
+      "status": "FETCHED",
+      "rows": 3581,
+      "first": "2013-01-01",
+      "last": "2026-10-01",
+      "sha256": "b136149bb73bd63b875151b0f876170e11bcad5a122b3d71fc9a49eca25c7b8e"
+    },
+    "IWM": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "a07ee3939986454f60b74fa5a1e1009b5218b6eb3c720435223f2c52968f5733"
+    },
+    "MU": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "c4ec621afd66d4ebd5da20c052dfe24fc87cb53e2b78d196bcf2259b2c639df3"
+    },
+    "NVDA": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "7a870afdb323695219d41cc5d31216543e06e597f961a30e981490a6549e6a9c"
+    },
+    "QQQ": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "4a13981c255a5b68c11dbf33332b021aaa3c031bee9957647e6682c706400b10"
+    },
+    "SMH": {
+      "status": "MISSING"
+    },
+    "SOXX": {
+      "status": "MISSING"
+    },
+    "SPY": {
+      "status": "MISSING"
+    },
+    "TLT": {
+      "status": "MISSING"
+    },
+    "TSLA": {
+      "status": "MISSING"
+    },
+    "XLB": {
+      "status": "MISSING"
+    },
+    "XLE": {
+      "status": "MISSING"
+    },
+    "XLF": {
+      "status": "MISSING"
+    },
+    "XLI": {
+      "status": "MISSING"
+    },
+    "XLK": {
+      "status": "MISSING"
+    },
+    "XLP": {
+      "status": "MISSING"
+    },
+    "XLRE": {
+      "status": "MISSING"
+    },
+    "XLU": {
+      "status": "MISSING"
+    },
+    "XLV": {
+      "status": "MISSING"
+    },
+    "XLY": {
+      "status": "MISSING"
+    }
+  },
+  "errors": [
+    {
+      "symbol": "CNY=X",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Operation timed out after 15001 milliseconds with 67661 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "symbol": "DIA",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "symbol": "SMH",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "symbol": "SOXX",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Operation timed out after 15002 milliseconds with 31180 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "symbol": "SPY",
+      "error": "YFTzMissingError",
+      "message": "$SPY: possibly delisted; no timezone found"
+    },
+    {
+      "error": "CONSECUTIVE_FAILURE_CIRCUIT_BREAK",
+      "remaining_symbols_not_attempted": true
+    }
+  ]
+}

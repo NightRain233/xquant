@@ -1,0 +1,170 @@
+[
+  {
+    "path": "trading/backend/portfolio_strategies/__init__.py",
+    "old_sha256": "7884e0856b4b7c8f5318705fd9ae4ddafb13761a16b03c02530c380121e6b713",
+    "new_sha256": "7884e0856b4b7c8f5318705fd9ae4ddafb13761a16b03c02530c380121e6b713",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/api_models.py",
+    "old_sha256": "b6ccca1f51f3e4685dbfa6851949963667848f743c3dd60b0c5ce1f23f15953d",
+    "new_sha256": "b6ccca1f51f3e4685dbfa6851949963667848f743c3dd60b0c5ce1f23f15953d",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/btc_satellite.py",
+    "old_sha256": "a1d4a94b5e313355324d0e9daa78d2e18ee9cebb667839d53539827a9d0f1fee",
+    "new_sha256": "a1d4a94b5e313355324d0e9daa78d2e18ee9cebb667839d53539827a9d0f1fee",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/core_bull_research.py",
+    "old_sha256": "29c0f9a76723d36116c219a13057d2d4d8c51eacd8738755ed2b8a58864ad511",
+    "new_sha256": "29c0f9a76723d36116c219a13057d2d4d8c51eacd8738755ed2b8a58864ad511",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/event_ledger.py",
+    "old_sha256": "ec12c500d83cbcfeafbefaa797c7c5b281ee1c908ebf24ae235c345718a384f1",
+    "new_sha256": "ec12c500d83cbcfeafbefaa797c7c5b281ee1c908ebf24ae235c345718a384f1",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/execution_rules.py",
+    "old_sha256": "be255965599ed08e51639d619df85c17612fe631220abbfc70c746759ac8a4df",
+    "new_sha256": "be255965599ed08e51639d619df85c17612fe631220abbfc70c746759ac8a4df",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/frozen_xquant.py",
+    "old_sha256": "9046101bef7c159c5775c01610fb1e9ed0ad962d37c5d9f9bcc3cc05530e8d7c",
+    "new_sha256": "9046101bef7c159c5775c01610fb1e9ed0ad962d37c5d9f9bcc3cc05530e8d7c",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/indicators.py",
+    "old_sha256": "9c49307b4e1e4b9c8d141a7cd805c6700b0739182e593c0ce0218deae4001e28",
+    "new_sha256": "9c49307b4e1e4b9c8d141a7cd805c6700b0739182e593c0ce0218deae4001e28",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/ledger.py",
+    "old_sha256": "b832651752ebe30f7eacb76ef70ed79e38185471a3be7ef4b66aa89700786fbf",
+    "new_sha256": "b832651752ebe30f7eacb76ef70ed79e38185471a3be7ef4b66aa89700786fbf",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/market_data.py",
+    "old_sha256": "ff5fff271f69e2a7e5df47852cbb1c5bd73fbfb94a1678d65fbd597746e18425",
+    "new_sha256": "ff5fff271f69e2a7e5df47852cbb1c5bd73fbfb94a1678d65fbd597746e18425",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/market_freshness.py",
+    "old_sha256": "1203263cab7897c9d4c45451d6afc424c515616f5a1c7e9a04da86c01870ae13",
+    "new_sha256": "1203263cab7897c9d4c45451d6afc424c515616f5a1c7e9a04da86c01870ae13",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/models.py",
+    "old_sha256": "9e37a5dccf8b3d72f9215ecb0c47dce41350988acb425e440017fe8b56615019",
+    "new_sha256": "9e37a5dccf8b3d72f9215ecb0c47dce41350988acb425e440017fe8b56615019",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/next_open_data.py",
+    "old_sha256": "c978bf36e888bef151bf79b87dc74ce4ca35a9fc1570bedfd4b148ba73f8d1a5",
+    "new_sha256": "c978bf36e888bef151bf79b87dc74ce4ca35a9fc1570bedfd4b148ba73f8d1a5",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/next_open_engine.py",
+    "old_sha256": "a12adbbcfa087f7871b1112785c1e14c753fa9776ecc8f4e014a2e54b3531def",
+    "new_sha256": "a12adbbcfa087f7871b1112785c1e14c753fa9776ecc8f4e014a2e54b3531def",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/next_open_strategies.py",
+    "old_sha256": "bf54d2bbe7a70f9cc30c10b23b2f8f04c35a41b0be4c6d0dd498fbfbff6de866",
+    "new_sha256": "bf54d2bbe7a70f9cc30c10b23b2f8f04c35a41b0be4c6d0dd498fbfbff6de866",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/operation_lock.py",
+    "old_sha256": "80dabc52b17ed6555baed299539798dbf89651ef6eeceaecb2a37e2aa976a254",
+    "new_sha256": "80dabc52b17ed6555baed299539798dbf89651ef6eeceaecb2a37e2aa976a254",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/paper_engine.py",
+    "old_sha256": "d04f1c915829e5c9fac4c02fdd86acb8693fed45144d2978d547c2609c71469c",
+    "new_sha256": "d04f1c915829e5c9fac4c02fdd86acb8693fed45144d2978d547c2609c71469c",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/period_bars.py",
+    "old_sha256": "8d1af3708c408f0051d0f9704a5ebda6a1d7f15d72cd29ef066692138769151d",
+    "new_sha256": "8d1af3708c408f0051d0f9704a5ebda6a1d7f15d72cd29ef066692138769151d",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/registry.py",
+    "old_sha256": "e578407afa2315ab121d810f580f25f0f3bac655f0be4ccf9f419a593a6c769f",
+    "new_sha256": "e578407afa2315ab121d810f580f25f0f3bac655f0be4ccf9f419a593a6c769f",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/research_replay.py",
+    "old_sha256": "c218f28226ef06c526c7a9165a64ecef0ed6d6a4dd5112dc68de9fd92a27919f",
+    "new_sha256": "c218f28226ef06c526c7a9165a64ecef0ed6d6a4dd5112dc68de9fd92a27919f",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/schedules.py",
+    "old_sha256": "d5093023de3ae8d13c2dafd56b28c909a60e7cd760d499f0cba2331b55e6254f",
+    "new_sha256": "d5093023de3ae8d13c2dafd56b28c909a60e7cd760d499f0cba2331b55e6254f",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/service.py",
+    "old_sha256": "b217d1e4d7d78c57f145b4a0e8aabb5adadd3791dd57d093d5d346421a804e1c",
+    "new_sha256": "b217d1e4d7d78c57f145b4a0e8aabb5adadd3791dd57d093d5d346421a804e1c",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/signal_contracts.py",
+    "old_sha256": "15aa87f208ab6146bd14c11d6ec3f405769e2829e2668b8b01d9e117eac57a18",
+    "new_sha256": "15aa87f208ab6146bd14c11d6ec3f405769e2829e2668b8b01d9e117eac57a18",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/theme_alpha.py",
+    "old_sha256": "51229caf7bc76a2a2a1aa61732b830963b8e62b21a8fc45a4265fb4af6a2b560",
+    "new_sha256": "51229caf7bc76a2a2a1aa61732b830963b8e62b21a8fc45a4265fb4af6a2b560",
+    "same": true
+  },
+  {
+    "path": "trading/backend/portfolio_strategies/fixtures/xquant_frozen_v1.json",
+    "old_sha256": "ea9249893be96e08e94de65574b3b54da72e33ce170f8b1c875b5d4ef28e3b1c",
+    "new_sha256": "ea9249893be96e08e94de65574b3b54da72e33ce170f8b1c875b5d4ef28e3b1c",
+    "same": true
+  },
+  {
+    "path": "trading/backend/uv.lock",
+    "old_sha256": "16511033f03b2e2d018357c7ecd607fc667dfea4d678c5fb779959e14ea22674",
+    "new_sha256": "16511033f03b2e2d018357c7ecd607fc667dfea4d678c5fb779959e14ea22674",
+    "same": true
+  },
+  {
+    "path": "xquant/research/trading-ledger-2026-09-05/core90_current_contract_2026_09_05/recompute.py",
+    "old_sha256": "5dec830e6c50359ffd90a25d1962f2bfa1143e517d58553209778ddba46f5990",
+    "new_sha256": "5dec830e6c50359ffd90a25d1962f2bfa1143e517d58553209778ddba46f5990",
+    "same": true
+  },
+  {
+    "path": "xquant/research/trading-ledger-2026-09-05/core90_recovery_2026_09_05/reproduce.py",
+    "old_sha256": "d1b8a8be173e24d21983aeb52381d40d6e48329482c46d8e5d719a884c88c9e7",
+    "new_sha256": "d1b8a8be173e24d21983aeb52381d40d6e48329482c46d8e5d719a884c88c9e7",
+    "same": true
+  }
+]

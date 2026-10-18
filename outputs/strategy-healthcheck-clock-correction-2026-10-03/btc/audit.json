@@ -1,0 +1,27 @@
+[
+  {
+    "strategy": "BTC_0",
+    "max_cash_error": 1.000444171950221e-11,
+    "trade_groups": 494
+  },
+  {
+    "strategy": "BTC_5",
+    "max_cash_error": 9.094947017729282e-12,
+    "trade_groups": 494
+  },
+  {
+    "strategy": "BTC_7.5",
+    "max_cash_error": 1.4551915228366852e-11,
+    "trade_groups": 494
+  },
+  {
+    "strategy": "BTC_10",
+    "max_cash_error": 1.4551915228366852e-11,
+    "trade_groups": 492
+  },
+  {
+    "strategy": "RP92.5_Cash7.5",
+    "max_cash_error": 7.275957614183426e-12,
+    "trade_groups": 492
+  }
+]

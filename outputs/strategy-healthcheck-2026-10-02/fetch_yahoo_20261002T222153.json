@@ -1,0 +1,115 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:19:06.798932+08:00",
+  "source": "yahoo",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "yfinance_auto_adjust",
+  "symbols": {
+    "CNY=X": {
+      "status": "MISSING"
+    },
+    "SPY": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "b949d1f61d1bb39918989310ea9682523061e5bca613c935543ccba92d14957a"
+    },
+    "DIA": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "27d6d814631626b9723ebd939de953b8244999d029df4f03492f139b94c47fd6"
+    },
+    "SMH": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "d94a35b43aa915110d63b9c99243aab3e99bfed670291c28bf51be8038177f24"
+    },
+    "SOXX": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "32ca19e22d5ae7ac08408b673862acf396fa6a113df103977d925518b0868ce8"
+    },
+    "TLT": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "d59ac34562bc674343780b5de314800ff261cf3e6fd7882c660a245c109dbd87"
+    },
+    "TSLA": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "b3058b0d86c0e3a57dce368cf9558d62b8a4fa1c8eec34ecefe13663e83aa910"
+    },
+    "XLB": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "a3528123c00f936686f427d5950d997afe21ca484804b13ea33ed334be207df1"
+    },
+    "XLE": {
+      "status": "MISSING"
+    },
+    "XLF": {
+      "status": "MISSING"
+    },
+    "XLI": {
+      "status": "MISSING"
+    },
+    "XLK": {
+      "status": "MISSING"
+    },
+    "XLP": {
+      "status": "MISSING"
+    },
+    "XLRE": {
+      "status": "MISSING"
+    },
+    "XLU": {
+      "status": "MISSING"
+    },
+    "XLV": {
+      "status": "MISSING"
+    },
+    "XLY": {
+      "status": "MISSING"
+    }
+  },
+  "errors": [
+    {
+      "symbol": "CNY=X",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Connection timed out after 30002 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "symbol": "XLE",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Operation timed out after 45003 milliseconds with 1250 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "symbol": "XLF",
+      "error": "Timeout",
+      "message": "Failed to perform, curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details."
+    },
+    {
+      "symbol": "XLI",
+      "error": "YFTzMissingError",
+      "message": "$XLI: possibly delisted; no timezone found"
+    },
+    {
+      "error": "CONSECUTIVE_FAILURE_CIRCUIT_BREAK",
+      "remaining_symbols_not_attempted": true
+    }
+  ]
+}

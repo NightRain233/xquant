@@ -1,0 +1,18 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:31:19.764672+08:00",
+  "source": "yahoo",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "yfinance_auto_adjust",
+  "symbols": {
+    "XLF": {
+      "status": "FETCHED",
+      "rows": 3458,
+      "first": "2013-01-02",
+      "last": "2026-10-01",
+      "sha256": "9f27ba2fca1599883777230c1648f21b2895e5ff0bccb4b5742491d998b15379"
+    }
+  },
+  "errors": []
+}

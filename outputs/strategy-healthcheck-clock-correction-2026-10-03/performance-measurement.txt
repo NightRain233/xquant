@@ -1,0 +1,28 @@
+Single static simulation under cProfile, while another replay was running. Includes profiler overhead; not a fixed production runtime. Machine: 2 physical / 4 logical cores.
+
+         10049106 function calls (9919226 primitive calls) in 20.278 seconds
+
+   Ordered by: cumulative time
+   List reduced from 1053 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000   20.278   20.278 research_multi_asset_balanced_portfolio.py:1436(simulate_static_allocation_benchmark)
+        1    0.002    0.002   19.485   19.485 <stdin>:6(<lambda>)
+        1    0.391    0.391   19.483   19.483 review_cross_market_clock.py:115(corrected_monthly)
+    69948    4.216    0.000    9.700    0.000 research_execution_clock.py:12(stamp)
+    32155    0.286    0.000    6.173    0.000 indexing.py:1192(__getitem__)
+        1    0.214    0.214    5.509    5.509 research_execution_clock.py:29(__init__)
+     1437    0.207    0.000    5.177    0.004 research_execution_clock.py:44(next_quote)
+     1153    0.015    0.000    5.113    0.004 {built-in method builtins.sorted}
+      144    0.001    0.000    5.110    0.035 research_multi_asset_balanced_portfolio.py:1448(target_weight_fn)
+      144    0.005    0.000    5.110    0.035 research_multi_asset_balanced_portfolio.py:1409(build_static_category_target_weights)
+     2013    0.068    0.000    5.098    0.003 research_multi_asset_balanced_portfolio.py:1418(<genexpr>)
+     1733    0.067    0.000    4.446    0.003 frame.py:7654(dropna)
+    20748    0.088    0.000    3.925    0.000 frame.py:4466(_get_value)
+    24535    0.058    0.000    2.781    0.000 frame.py:4292(_ixs)
+    10374    0.040    0.000    2.781    0.000 exchange_calendar.py:1012(session_close)
+    10374    0.040    0.000    2.646    0.000 exchange_calendar.py:1006(session_open)
+    21174    0.035    0.000    2.457    0.000 frame.py:4966(_get_item)
+    23878    0.070    0.000    2.241    0.000 {built-in method builtins.max}
+
+

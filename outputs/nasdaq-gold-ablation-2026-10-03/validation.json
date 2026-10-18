@@ -1,0 +1,10 @@
+{
+  "total_seconds": 4.040831491001882,
+  "median_single_replay_seconds": 0.08809385102358647,
+  "baseline_max_nav_error": 5.820766091346741e-11,
+  "calendar_rows": 2857,
+  "signal_count": 286,
+  "max_daily_attribution_residual": 3.4797231762695446e-10,
+  "processes": 1,
+  "frozen_data_hashes_passed": 3
+}

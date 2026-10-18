@@ -1,0 +1,11 @@
+{
+  "start": "2014-12-31",
+  "end": "2026-07-10",
+  "old_end_nav": 499435.1345388428,
+  "fresh_end_nav": 501313.0217105966,
+  "max_nav_relative_difference": 0.005611699376069312,
+  "new_since_prior_return": 0.00040180420351410007,
+  "matched_frozen_sources": 28,
+  "compared_sources": 28,
+  "note": "Frozen implementation hashes compared separately from revised OHLCV inputs; use fresh-to-fresh extension returns."
+}

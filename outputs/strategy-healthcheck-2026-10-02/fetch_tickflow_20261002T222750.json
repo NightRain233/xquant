@@ -1,0 +1,93 @@
+{
+  "requested_as_of": "2026-10-01",
+  "fetched_at": "2026-10-02T22:26:37.101646+08:00",
+  "source": "tickflow",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-02",
+  "adjustment": "forward_additive",
+  "symbols": {
+    "000001.SS": {
+      "status": "MISSING"
+    },
+    "000300.SS": {
+      "status": "MISSING"
+    },
+    "000890.SZ": {
+      "status": "MISSING"
+    },
+    "002015.SZ": {
+      "status": "FETCHED",
+      "rows": 2816,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "411a82e0155cf8b15df27ce8ec5bc54b49acdc54cc8c5633e9208f619daa445e"
+    },
+    "002119.SZ": {
+      "status": "FETCHED",
+      "rows": 3235,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "adaa98d080690c6ed688b9542aba319e5255c8e87cf69283462b03835913c6b2"
+    },
+    "002309.SZ": {
+      "status": "FETCHED",
+      "rows": 3107,
+      "first": "2013-01-04",
+      "last": "2026-09-30",
+      "sha256": "91d65d67ad139d4128ed003b239a92ad6d7fa627e2bedd47cd1bb4cb6b4bc3b6"
+    },
+    "002796.SZ": {
+      "status": "FETCHED",
+      "rows": 2465,
+      "first": "2016-05-10",
+      "last": "2026-09-30",
+      "sha256": "9b1937198efd7991a8264435b333623ef338d54c48ba64a619e0ed5af91f3fb8"
+    },
+    "159201.SZ": {
+      "status": "FETCHED",
+      "rows": 390,
+      "first": "2025-02-27",
+      "last": "2026-09-30",
+      "sha256": "2c7ec5421277a04eeb4f54203ad268c1ad7593f79b2da3149f62690abc572329"
+    },
+    "159320.SZ": {
+      "status": "FETCHED",
+      "rows": 429,
+      "first": "2024-12-24",
+      "last": "2026-09-30",
+      "sha256": "ade68a6cd6b0ac6d1d88871d4bc537355e257e0ca1844691d6449b710222ba66"
+    },
+    "159326.SZ": {
+      "status": "FETCHED",
+      "rows": 499,
+      "first": "2024-09-09",
+      "last": "2026-09-30",
+      "sha256": "cd3d8fe0cde3fe534e389b95eebd68e0ed0f3c3cdffabb66c7efeabaa6ad9e3d"
+    },
+    "159552.SZ": {
+      "status": "FETCHED",
+      "rows": 549,
+      "first": "2024-06-28",
+      "last": "2026-09-30",
+      "sha256": "65129da6bcb99fbdf84afe7f2c52bbf5c4defdee16f8c1b99de470476757c3fc"
+    },
+    "159553.SZ": {
+      "status": "FETCHED",
+      "rows": 598,
+      "first": "2024-04-15",
+      "last": "2026-09-30",
+      "sha256": "b4f09517f79072e6a62d10d61a122eec7a07a9b78eeb9de2e0a157e0aaea75c4"
+    }
+  },
+  "errors": [
+    {
+      "symbols": [
+        "000001.SS",
+        "000300.SS",
+        "000890.SZ"
+      ],
+      "error": "ReadTimeout",
+      "message": "HTTPSConnectionPool(host='free-api.tickflow.org', port=443): Read timed out. (read timeout=45)"
+    }
+  ]
+}

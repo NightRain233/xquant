@@ -1,0 +1,10 @@
+{
+  "notebook": "research/notebooks/q10-live-readiness-stress-practice.ipynb",
+  "sha256": "f91d6ca6ffec6ef05f73815e5beaa33309743d3e5ba996e7418b1348228886f2",
+  "case": "Signal at D close, price rises 100 to 150 before D+1 close, then flat; zero costs",
+  "legacy_label": "next_close",
+  "legacy_nav_at_execution_close": 150.0,
+  "true_next_close_nav_at_execution_close": 100.0,
+  "finding": "New weights receive the D-to-D+1 close return before the stated D+1 close fill. Also weights are reset daily without drift-based turnover.",
+  "scope": "Frozen Q10 notebook evidence, not a claim that the current trading execution kernel has this defect."
+}

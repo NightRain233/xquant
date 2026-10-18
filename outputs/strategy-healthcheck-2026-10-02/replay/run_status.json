@@ -1,0 +1,25 @@
+[
+  {
+    "family": "theme",
+    "end": "2026-09-30",
+    "strategies": [
+      "C_Def200_LVT20",
+      "C_Base_LVT20",
+      "RP_C_schedule",
+      "RP90_Cash10_C_schedule",
+      "LVT100",
+      "RP_Def200_ablation"
+    ]
+  },
+  {
+    "family": "btc",
+    "end": "2026-09-30",
+    "strategies": [
+      "BTC_0",
+      "BTC_5",
+      "BTC_7.5",
+      "BTC_10",
+      "RP92.5_Cash7.5"
+    ]
+  }
+]

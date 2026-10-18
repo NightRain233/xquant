@@ -1,0 +1,35 @@
+{
+  "assumption": "Known FX at BTC UTC bar open, held constant throughout that bar; frozen USD signals; accounting sensitivity without actual FX execution",
+  "full": {
+    "start": "2016-06-07",
+    "end": "2026-09-30",
+    "observations": 2505,
+    "return": 4.508115592879392,
+    "max_drawdown": -0.13932336224435893,
+    "current_drawdown_window": -0.04507748627410313,
+    "current_drawdown_since_activation": -0.04507748627410313,
+    "annualized_volatility": 0.11664066771461544,
+    "longest_underwater_sessions": 425,
+    "mean_cash_weight": 0.04364773363548709,
+    "max_asset_weight": 0.6777387123627266,
+    "cagr": 0.179907565438584,
+    "sharpe_zero_rf": 1.530456757136936,
+    "calmar": 1.2912950315040812
+  },
+  "recent_3m": {
+    "start": "2026-06-30",
+    "end": "2026-09-30",
+    "observations": 65,
+    "return": 0.0008994905556061195,
+    "max_drawdown": -0.05111446411822018,
+    "current_drawdown_window": -0.026587225256745173,
+    "current_drawdown_since_activation": -0.04507748627410313,
+    "annualized_volatility": 0.1514302474041193,
+    "longest_underwater_sessions": 25,
+    "mean_cash_weight": 0.04792307347862813,
+    "max_asset_weight": 0.4414722436635592,
+    "cagr": null,
+    "sharpe_zero_rf": null,
+    "calmar": null
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "btc_execution": [
+    {
+      "later_btc_close": 100.0,
+      "earlier_etf_quantity": 797.6071784646062
+    },
+    {
+      "later_btc_close": 200.0,
+      "earlier_etf_quantity": 797.6071784646062
+    }
+  ],
+  "multi_asset_execution": [
+    {
+      "later_us_open": 100.0,
+      "earlier_china_quantity": 1.0
+    },
+    {
+      "later_us_open": 200.0,
+      "earlier_china_quantity": 1.0
+    }
+  ],
+  "scope": "Fixed synthetic targets; concrete causal counterexamples, not performance proof."
+}
