@@ -1,0 +1,187 @@
+{
+  "provider": "TickFlow free API /v1/klines/batch",
+  "fetched_at": "2026-10-18T01:03:10.132953+08:00",
+  "start": "2013-01-01",
+  "end_exclusive": "2026-10-17",
+  "universe_file": "trading/backend/universes/a_share_etf_core.json",
+  "universe_sha256": "ac7c951f09102cfd1499973dabbf64604c6c3509b86e8c705e0a3b6e2865efdb",
+  "files": {
+    "tickflow_forward_510050_510300_510500.json": {
+      "adjust": "forward",
+      "symbols": [
+        "510050.SS",
+        "510300.SS",
+        "510500.SS"
+      ],
+      "sha256": "cb59cfc60e04f0b61a0c9fa13d7ec84b1223a4cb07641db0f0d89ffe8f7feced"
+    },
+    "tickflow_forward_512100_159552_159915.json": {
+      "adjust": "forward",
+      "symbols": [
+        "512100.SS",
+        "159552.SZ",
+        "159915.SZ"
+      ],
+      "sha256": "3c11b5f1b862fc182a4471eba59daef2b9ff55ef6da6828239fe24445b03d21b"
+    },
+    "tickflow_forward_588000_588080_510880.json": {
+      "adjust": "forward",
+      "symbols": [
+        "588000.SS",
+        "588080.SS",
+        "510880.SS"
+      ],
+      "sha256": "dcb1c0216986a03d23feb8817fc3659693cbce97413bbd05c6f11d4b63196bbf"
+    },
+    "tickflow_forward_512880_512000_512010.json": {
+      "adjust": "forward",
+      "symbols": [
+        "512880.SS",
+        "512000.SS",
+        "512010.SS"
+      ],
+      "sha256": "d2f6d5c9f3d276b1061bc7f0e7203075a2287c1cdeae0fbff19050e3a5cbd337"
+    },
+    "tickflow_forward_512170_512760_512660.json": {
+      "adjust": "forward",
+      "symbols": [
+        "512170.SS",
+        "512760.SS",
+        "512660.SS"
+      ],
+      "sha256": "82fbf68f51bb349e8f63f18f53141c7a4f2c7ece545003fd85e99799e06658ea"
+    },
+    "tickflow_forward_512720_515880_515790.json": {
+      "adjust": "forward",
+      "symbols": [
+        "512720.SS",
+        "515880.SS",
+        "515790.SS"
+      ],
+      "sha256": "a8b0c84994ccab85d4d80fbb0a4c6a42cd4f02c151dc1cb61365ff774c84f45e"
+    },
+    "tickflow_forward_512890_512040_513010.json": {
+      "adjust": "forward",
+      "symbols": [
+        "512890.SS",
+        "512040.SS",
+        "513010.SS"
+      ],
+      "sha256": "453ea6352ebf292a7b25618c3b6fbb08c7046bb3b320be3b289dfeb16d421bab"
+    },
+    "tickflow_forward_513120_513910_515070.json": {
+      "adjust": "forward",
+      "symbols": [
+        "513120.SS",
+        "513910.SS",
+        "515070.SS"
+      ],
+      "sha256": "9820fe7ae7272d20c53f35718d12e5f3b8fb89dc8adc5352ce8a78e91beea0b3"
+    },
+    "tickflow_forward_159201_159326_159869.json": {
+      "adjust": "forward",
+      "symbols": [
+        "159201.SZ",
+        "159326.SZ",
+        "159869.SZ"
+      ],
+      "sha256": "41e019c847eb345da58a9e05239f6478aba367a5ff2923723a1c709bd5e40faa"
+    },
+    "tickflow_forward_159967.json": {
+      "adjust": "forward",
+      "symbols": [
+        "159967.SZ"
+      ],
+      "sha256": "40fc6c0c0780dcca3b8932d11f55d2922b9f9c38bb8115b5a252ba6c29cc44aa"
+    },
+    "tickflow_none_510050_510300_510500.json": {
+      "adjust": "none",
+      "symbols": [
+        "510050.SS",
+        "510300.SS",
+        "510500.SS"
+      ],
+      "sha256": "8972535498a9b6451eef7089b91029555b71322a34f4c99378be96bf62df805b"
+    },
+    "tickflow_none_512100_159552_159915.json": {
+      "adjust": "none",
+      "symbols": [
+        "512100.SS",
+        "159552.SZ",
+        "159915.SZ"
+      ],
+      "sha256": "949182bb2a1cf326f916bf0d73e00681ad25c51703b17fda75d967d119ac2e6d"
+    },
+    "tickflow_none_588000_588080_510880.json": {
+      "adjust": "none",
+      "symbols": [
+        "588000.SS",
+        "588080.SS",
+        "510880.SS"
+      ],
+      "sha256": "4861aa4498ce0fb314cae73945a530665cf8fde4c8e3c1f25a3b8f38e53263ba"
+    },
+    "tickflow_none_512880_512000_512010.json": {
+      "adjust": "none",
+      "symbols": [
+        "512880.SS",
+        "512000.SS",
+        "512010.SS"
+      ],
+      "sha256": "2f9e1811b9a488fc953f9cc9ec84dc6c25f89d7dc2b508a5c114bf1f30d9a669"
+    },
+    "tickflow_none_512170_512760_512660.json": {
+      "adjust": "none",
+      "symbols": [
+        "512170.SS",
+        "512760.SS",
+        "512660.SS"
+      ],
+      "sha256": "ac0f0e2e270c2b7b76617af4bc923bf541fd3c25170e0a8cf7cc713b6c2949dc"
+    },
+    "tickflow_none_512720_515880_515790.json": {
+      "adjust": "none",
+      "symbols": [
+        "512720.SS",
+        "515880.SS",
+        "515790.SS"
+      ],
+      "sha256": "afd39100e22ebb4d00c48b8750f2143b5e434ce9120d76258b94cf8bf96913f2"
+    },
+    "tickflow_none_512890_512040_513010.json": {
+      "adjust": "none",
+      "symbols": [
+        "512890.SS",
+        "512040.SS",
+        "513010.SS"
+      ],
+      "sha256": "34222b69a92a08c0628758dc3d213c64cf986e8bc9ac88ddd2362f9f5eb0d19f"
+    },
+    "tickflow_none_513120_513910_515070.json": {
+      "adjust": "none",
+      "symbols": [
+        "513120.SS",
+        "513910.SS",
+        "515070.SS"
+      ],
+      "sha256": "6537412f996466a25cf772764d2fffed0157bb368cd544fc777415a897ce9dfe"
+    },
+    "tickflow_none_159201_159326_159869.json": {
+      "adjust": "none",
+      "symbols": [
+        "159201.SZ",
+        "159326.SZ",
+        "159869.SZ"
+      ],
+      "sha256": "41e019c847eb345da58a9e05239f6478aba367a5ff2923723a1c709bd5e40faa"
+    },
+    "tickflow_none_159967.json": {
+      "adjust": "none",
+      "symbols": [
+        "159967.SZ"
+      ],
+      "sha256": "fd179d396dea4a760c5d37014dff1bd50efb58bbe0fd7bf71ade91c7db029276"
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,74 @@
+{
+  "fetched_at": "2026-10-18T01:27:46.896538+08:00",
+  "files": {
+    "csindex_H20269.csv": {
+      "source": "CSIndex official site via akshare.stock_zh_index_hist_csindex",
+      "code": "H20269",
+      "role": "dividend_lowvol_tr",
+      "name": "红利低波全收益",
+      "rows": 3347,
+      "first": "2013-01-01",
+      "last": "2026-10-16",
+      "sha256": "0584efc073980f481fb733eb66705c22b2610a00c95447e92bd4048bfb4e6c22"
+    },
+    "csindex_H30269.csv": {
+      "source": "CSIndex official site via akshare.stock_zh_index_hist_csindex",
+      "code": "H30269",
+      "role": "dividend_lowvol_px",
+      "name": "红利低波",
+      "rows": 3347,
+      "first": "2013-01-01",
+      "last": "2026-10-16",
+      "sha256": "447c636968894b15943743db28f35ac1a48f339ccb33bf2bf109976486d21159"
+    },
+    "csindex_932000.csv": {
+      "source": "CSIndex official site via akshare.stock_zh_index_hist_csindex",
+      "code": "932000",
+      "role": "csi2000_px",
+      "name": "中证2000",
+      "rows": 3109,
+      "first": "2013-01-01",
+      "last": "2026-10-16",
+      "sha256": "da278b4b9c0b52a058f2cbfe4e25eaf3777e82eb146ed151e9c191ca9bbe2e6b"
+    },
+    "csindex_H00300.csv": {
+      "source": "CSIndex official site via akshare.stock_zh_index_hist_csindex",
+      "code": "H00300",
+      "role": "csi300_tr",
+      "name": "300收益",
+      "rows": 3347,
+      "first": "2013-01-01",
+      "last": "2026-10-16",
+      "sha256": "76bb45d4f55a8ce2e4c3443e0e9e87c0d40a74d879beb17cb0805ee1465365d9"
+    },
+    "csindex_000300.csv": {
+      "source": "CSIndex official site via akshare.stock_zh_index_hist_csindex",
+      "code": "000300",
+      "role": "csi300_px",
+      "name": "沪深300",
+      "rows": 3346,
+      "first": "2013-01-01",
+      "last": "2026-10-16",
+      "sha256": "481fba72e469e4fd382c73b7e1e277cf59bd1885951bcafce7123a38bc4948b3"
+    },
+    "tickflow_forward_512890.json": {
+      "source": "TickFlow free API /v1/klines/batch, adjust=forward",
+      "code": "512890.SH",
+      "role": "etf_dividend_lowvol",
+      "rows": 1874,
+      "first": "2019-01-18",
+      "last": "2026-10-16",
+      "sha256": "bc9c61f394ecb144761c6d8c705ffe8863595e53e12b69b6816b5bdd3bff7748"
+    },
+    "tickflow_forward_563300.json": {
+      "source": "TickFlow free API /v1/klines/batch, adjust=forward",
+      "code": "563300.SH",
+      "role": "etf_csi2000",
+      "rows": 744,
+      "first": "2023-09-14",
+      "last": "2026-10-16",
+      "sha256": "b37db866017149e0f472c839b3ce287601ab162e61ab309c61ab938c1520e278"
+    }
+  },
+  "errors": []
+}

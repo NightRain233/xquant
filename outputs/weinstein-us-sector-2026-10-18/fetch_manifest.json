@@ -1,0 +1,102 @@
+{
+  "provider": "Yahoo Finance via yfinance Ticker.history(auto_adjust=True, actions=True)",
+  "yfinance_version": "1.7.0",
+  "fetched_at": "2026-10-18T01:21:28.718797+08:00",
+  "proxy": "http://127.0.0.1:7890",
+  "start": "1998-12-01",
+  "end_exclusive": "2026-10-17",
+  "files": {
+    "yf_SPY.csv": {
+      "ticker": "SPY",
+      "rows": 7012,
+      "first": "1998-12-01",
+      "last": "2026-10-16",
+      "sha256": "bf20c204b6a7459c25e053d226d64efaa8329ff80cc46cb92340e4feb7cfaae2"
+    },
+    "yf_XLB.csv": {
+      "ticker": "XLB",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "95df7f5eb80e0450aa5d1439175723c4f8b9606a55e75501889b691648c81ba3"
+    },
+    "yf_XLE.csv": {
+      "ticker": "XLE",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "202d6eb647b27c02cbf68d73e3eee6a30bf4c9219fcdbd205dd0dde9f47af187"
+    },
+    "yf_XLF.csv": {
+      "ticker": "XLF",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "e035d06fff4d478ac036383bd0b3701b5b65d49c012cca93220e0e495c52fe61"
+    },
+    "yf_XLI.csv": {
+      "ticker": "XLI",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "143c4a7d92e6c567622cbf9b5b788a22ef24c71c105ac4681a135a5296ae5332"
+    },
+    "yf_XLK.csv": {
+      "ticker": "XLK",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "828faae73dbaecd87adf0526a31800018e9e3e49d5eb75212ea4a88285c70084"
+    },
+    "yf_XLP.csv": {
+      "ticker": "XLP",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "e0101eb7f8f1916051ab18ff6f5f90c8249a1c065ba0bab93eb71b56e29d4358"
+    },
+    "yf_XLU.csv": {
+      "ticker": "XLU",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "5c306afed9ca65ed2a0b8a0fe9095ca791a1d054dd80cecff187021bbda791d2"
+    },
+    "yf_XLV.csv": {
+      "ticker": "XLV",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "fecbe89f36afbf5543c4899568ce93eb36eaccf812108a8bf96cfa29910da2b4"
+    },
+    "yf_XLY.csv": {
+      "ticker": "XLY",
+      "rows": 6997,
+      "first": "1998-12-22",
+      "last": "2026-10-16",
+      "sha256": "2c7069a6ec3c3dc09f2fc02bf61eb183c0c656589817c3adc08558c2226d7d8c"
+    },
+    "yf_XLRE.csv": {
+      "ticker": "XLRE",
+      "rows": 2772,
+      "first": "2015-10-08",
+      "last": "2026-10-16",
+      "sha256": "88451bfde516f5de93c6002aee61f49844f53a9fd4d0a1e94bcb22e0e3d7f282"
+    },
+    "yf_XLC.csv": {
+      "ticker": "XLC",
+      "rows": 2094,
+      "first": "2018-06-19",
+      "last": "2026-10-16",
+      "sha256": "b949360c13765659e4582cc2ea365db14be6a9fcccb005369d885120e4d1480c"
+    },
+    "yf_IRX.csv": {
+      "ticker": "^IRX",
+      "rows": 7004,
+      "first": "1998-12-01",
+      "last": "2026-10-16",
+      "sha256": "eb8f81e61f2ae005ac6f1a157c701650dca718b68c3634da4e17950212bc643e"
+    }
+  },
+  "errors": []
+}

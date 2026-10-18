@@ -1,0 +1,123 @@
+{
+  "strategies": {
+    "BTC_0": {
+      "max_abs_weight_sum_minus_1": 2.220446049250313e-16,
+      "max_cash_error": 3.637978807091713e-12,
+      "trade_groups": 494,
+      "fills_not_after_signal_available": 0,
+      "fills_using_future_price": 0,
+      "nav_min": 99700.89730807579,
+      "negative_cash_rows": 0
+    },
+    "BTC_5": {
+      "max_abs_weight_sum_minus_1": 2.220446049250313e-16,
+      "max_cash_error": 1.4551915228366852e-11,
+      "trade_groups": 494,
+      "fills_not_after_signal_available": 0,
+      "fills_using_future_price": 0,
+      "nav_min": 99954.76767734633,
+      "negative_cash_rows": 0
+    },
+    "BTC_7.5": {
+      "max_abs_weight_sum_minus_1": 3.3306690738754696e-16,
+      "max_cash_error": 1.4551915228366852e-11,
+      "trade_groups": 494,
+      "fills_not_after_signal_available": 0,
+      "fills_using_future_price": 0,
+      "nav_min": 100000.0,
+      "negative_cash_rows": 0
+    },
+    "BTC_10": {
+      "max_abs_weight_sum_minus_1": 3.3306690738754696e-16,
+      "max_cash_error": 1.4551915228366852e-11,
+      "trade_groups": 492,
+      "fills_not_after_signal_available": 0,
+      "fills_using_future_price": 0,
+      "nav_min": 100000.0,
+      "negative_cash_rows": 0
+    }
+  },
+  "harness_reproduction": [
+    {
+      "strategy": "BTC_0",
+      "rows_rerun": 2506,
+      "rows_saved": 2506,
+      "max_rel_nav_diff": 2.93091713025083e-16
+    },
+    {
+      "strategy": "BTC_5",
+      "rows_rerun": 2506,
+      "rows_saved": 2506,
+      "max_rel_nav_diff": 2.471656650322802e-16
+    },
+    {
+      "strategy": "BTC_7.5",
+      "rows_rerun": 2506,
+      "rows_saved": 2506,
+      "max_rel_nav_diff": 2.3532922817745546e-16
+    },
+    {
+      "strategy": "BTC_10",
+      "rows_rerun": 2506,
+      "rows_saved": 2506,
+      "max_rel_nav_diff": 2.2112381971743748e-16
+    }
+  ],
+  "sessions": [
+    "2016-05-03",
+    "2026-09-30"
+  ],
+  "price_consistency_vs_raw_plus_dividends": [
+    {
+      "symbol": "510300.SS",
+      "versus": "rawdiv_reference",
+      "common_days": 3337,
+      "mean_abs_diff_bp": 0.0525786402186814,
+      "p99_abs_diff_bp": 2.220446049250313e-12,
+      "max_abs_diff_bp": 31.334481912936862,
+      "max_diff_date": "2016-01-20",
+      "days_over_5bp": 12,
+      "days_over_50bp": 0,
+      "total_return_new": 1.190367199897764,
+      "total_return_other": 1.186829566265065,
+      "ann_vol_new": 0.2229195697652428,
+      "ann_vol_other": 0.2229004539949319,
+      "days_missing_in_other": 0
+    },
+    {
+      "symbol": "513100.SS",
+      "versus": "rawdiv_reference",
+      "common_days": 3253,
+      "mean_abs_diff_bp": 0.0046232036852575,
+      "p99_abs_diff_bp": 2.220446049250313e-12,
+      "max_abs_diff_bp": 15.03928158705592,
+      "max_diff_date": "2022-01-14",
+      "days_over_5bp": 1,
+      "days_over_50bp": 0,
+      "total_return_new": 10.7772377773319,
+      "total_return_other": 10.795386158475452,
+      "ann_vol_new": 0.2140557004730892,
+      "ann_vol_other": 0.2140425592364208,
+      "days_missing_in_other": 0
+    },
+    {
+      "symbol": "518880.SS",
+      "versus": "rawdiv_reference",
+      "common_days": 3204,
+      "mean_abs_diff_bp": 0.0,
+      "p99_abs_diff_bp": 0.0,
+      "max_abs_diff_bp": 0.0,
+      "max_diff_date": "2013-07-30",
+      "days_over_5bp": 0,
+      "days_over_50bp": 0,
+      "total_return_new": 2.287509520182786,
+      "total_return_other": 2.287509520182786,
+      "ann_vol_new": 0.1521269920547265,
+      "ann_vol_other": 0.1521269920547265,
+      "days_missing_in_other": 0
+    }
+  ],
+  "core_price_equals_old_for_513100_518880": true,
+  "btc_data_unchanged": true,
+  "all_pass": true
+}

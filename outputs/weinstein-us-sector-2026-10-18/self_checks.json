@@ -1,0 +1,17 @@
+{
+  "cash_plus_holdings_equals_nav_max_abs_err": 0.0,
+  "min_cash": 0.0,
+  "max_positions_observed": 5,
+  "spy_never_traded": true,
+  "fills_after_signal_week": true,
+  "fill_price_equals_open_x_slippage": true,
+  "fill_open_matches_data": true,
+  "fills_are_next_trading_day": true,
+  "no_fill_before_start": true,
+  "lookahead_truncation_weeks_tested": 40,
+  "lookahead_truncation_mismatches": 0,
+  "closed_trades": 279,
+  "sell_fills": 279,
+  "tbill_run_cash_plus_holdings_equals_nav_max_abs_err": 0.0,
+  "passed": true
+}

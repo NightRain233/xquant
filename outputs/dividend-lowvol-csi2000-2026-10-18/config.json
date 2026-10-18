@@ -1,0 +1,36 @@
+{
+  "cost_one_way": 0.001,
+  "start_after": "2014-08-01",
+  "end": "2026-10-16",
+  "A": {
+    "weights": "50/50",
+    "rebalance": "quarter-end close"
+  },
+  "B": {
+    "vol_window": 20,
+    "rebalance_every_trading_days": 10
+  },
+  "C": {
+    "ma_weeks": 30,
+    "check": "weekly close",
+    "quarter_rebalance_only_when_unfiltered": true
+  },
+  "D": {
+    "momentum_calendar_days": 182,
+    "rebalance": "month-end close",
+    "hold": "100% stronger"
+  },
+  "execution": "signal at close t, trade at close t+1, 10bp per side on traded amount",
+  "assets": {
+    "a": "H20269 dividend low-vol total return",
+    "b": "932000 CSI 2000 PRICE index (no TR available)",
+    "benchmark": "H00300 CSI 300 total return"
+  },
+  "sensitivity_only_not_for_param_selection": [
+    "B window 20/60",
+    "A freq M/Q/Y",
+    "subsamples",
+    "a=price index",
+    "b + 1%/yr assumed dividend"
+  ]
+}

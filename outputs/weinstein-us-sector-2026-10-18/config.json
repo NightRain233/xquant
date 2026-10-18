@@ -1,0 +1,115 @@
+{
+  "slug": "weinstein-us-sector-2026-10-18",
+  "benchmark": "SPY",
+  "pool": [
+    "XLB",
+    "XLE",
+    "XLF",
+    "XLI",
+    "XLK",
+    "XLP",
+    "XLU",
+    "XLV",
+    "XLY",
+    "XLRE",
+    "XLC"
+  ],
+  "names": {
+    "SPY": "标普500",
+    "XLB": "原材料",
+    "XLE": "能源",
+    "XLF": "金融",
+    "XLI": "工业",
+    "XLK": "科技",
+    "XLP": "必需消费",
+    "XLU": "公用事业",
+    "XLV": "医疗",
+    "XLY": "可选消费",
+    "XLRE": "房地产",
+    "XLC": "通信服务"
+  },
+  "first_signal_week_all_nine_ready": "1999-08-13",
+  "first_execution_day": "1999-08-16",
+  "last_data_day": "2026-10-16",
+  "last_signal_week": "2026-10-16",
+  "params": {
+    "ma_weeks": 30,
+    "slope_lag_weeks": 4,
+    "rs_weeks": 26,
+    "max_positions": 5,
+    "slot_weight": 0.2
+  },
+  "costs": {
+    "fee_rate": 0.0005,
+    "slippage": 0.0005
+  },
+  "price_adjustment": "yfinance Ticker.history(auto_adjust=True): Open/Close adjusted for splits and dividends (dividends reinvested); exchange-local dates",
+  "yfinance_version": "1.7.0",
+  "cash_return_main": 0.0,
+  "cash_return_sensitivity": "^IRX close of the previous trading day, (1+y)^(calendar days/365), floored at 0",
+  "windows": [
+    [
+      "2000-2002科网熊市",
+      "2000-01-01",
+      "2002-12-31"
+    ],
+    [
+      "2007-10至2009-03金融危机",
+      "2007-10-09",
+      "2009-03-09"
+    ],
+    [
+      "2008全年",
+      "2008-01-01",
+      "2008-12-31"
+    ],
+    [
+      "2010-2021牛市",
+      "2010-01-01",
+      "2021-12-31"
+    ],
+    [
+      "2020疫情急跌(02-19至03-23)",
+      "2020-02-19",
+      "2020-03-23"
+    ],
+    [
+      "2020全年",
+      "2020-01-01",
+      "2020-12-31"
+    ],
+    [
+      "2022全年",
+      "2022-01-01",
+      "2022-12-31"
+    ]
+  ],
+  "sensitivity_grid": [
+    [
+      20,
+      5
+    ],
+    [
+      26,
+      5
+    ],
+    [
+      30,
+      5
+    ],
+    [
+      40,
+      5
+    ],
+    [
+      30,
+      3
+    ],
+    [
+      30,
+      8
+    ]
+  ],
+  "equal_weight_membership": "fund joins at the first annual rebalance after it has 34 weeks of history (same eligibility as strategy signals; identical to the A-share review)",
+  "a_share_reference": "outputs/weinstein-etf-stage-2026-10-18 (read only)"
+}

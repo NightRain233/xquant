@@ -1,0 +1,13 @@
+{
+  "slug": "btc-satellite-corrected-prices-2026-10-18",
+  "strategy": "btc_supertrend_satellite (strategy config from trading repo, unchanged)",
+  "changed_input": "only 510300.SS / 513100.SS / 518880.SS price series -> TickFlow forward (proportional, total-return)",
+  "frozen": ["BTC-USD frozen daily bars (copied unchanged)", "SuperTrend(10,3,SMA ATR)", "20-day inverse volatility core, rebalance every 10 XSHG sessions",
+             "1% rebalance threshold, no 15pp single-asset cap, BTC on/off switch forced", "costs 20bps fee + 10bps slippage per side (30bps)",
+             "clock rules of strategy-healthcheck-clock-correction-2026-10-03 (BTC UTC bar available Shanghai D+1 08:00; ETF fills at next XSHG close; BTC at next UTC daily close)"],
+  "strategies": ["BTC_0", "BTC_5", "BTC_7.5", "BTC_10"],
+  "windows": {"full_common": "2016-06-07..2026-09-30", "2026_ytd": "2025-12-31..2026-09-30", "recent_3m": "2026-06-30..2026-09-30"},
+  "initial_nav": 100000,
+  "runner": "uv run not used; ../trading/backend/.venv/bin/python scripts/rerun_btc_satellite_corrected_prices.py && scripts/finalize_btc_satellite_corrected_prices.py",
+  "not_rerun": ["RP92.5_Cash7.5 reference", "cost sensitivity extra10/20bps", "FX accounting diagnostic", "multi-asset family", "theme/Bull/C-LVT"]
+}

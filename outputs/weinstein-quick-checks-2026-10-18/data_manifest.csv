@@ -1,0 +1,7 @@
+input,path,sha256
+SPY,outputs/weinstein-us-sector-2026-10-18/cache/yf_SPY.csv,bf20c204b6a7459c25e053d226d64efaa8329ff80cc46cb92340e4feb7cfaae2
+QQQ,outputs/weinstein-quick-checks-2026-10-18/cache/yf_QQQ.csv,b7079d3b300029f6f5d8f4a1f6a147a98cd31159e24bfcd6d4e9fe15aad4632d
+H00300,outputs/dividend-lowvol-csi2000-2026-10-18/cache/csindex_H00300.csv,76bb45d4f55a8ce2e4c3443e0e9e87c0d40a74d879beb17cb0805ee1465365d9
+H20269,outputs/dividend-lowvol-csi2000-2026-10-18/cache/csindex_H20269.csv,0584efc073980f481fb733eb66705c22b2610a00c95447e92bd4048bfb4e6c22
+932000,outputs/dividend-lowvol-csi2000-2026-10-18/cache/csindex_932000.csv,da278b4b9c0b52a058f2cbfe4e25eaf3777e82eb146ed151e9c191ca9bbe2e6b
+BTC-USD,outputs/btc-satellite-corrected-prices-2026-10-18/market_data/BTC-USD.parquet,a2a2dfb64bb1f8eb8404d7b1235b76800f6b684785cf03066ff576e6f4304087

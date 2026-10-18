@@ -1,0 +1,63 @@
+{
+  "backtest_signal_start": "2014-08-01",
+  "end": "2026-10-16",
+  "first_trade_date_all_rules": {
+    "A": "2014-08-04",
+    "B": "2014-08-04",
+    "C": "2014-08-04",
+    "D": "2014-08-04",
+    "红利低波买入持有": "2014-08-04",
+    "中证2000买入持有": "2014-08-04"
+  },
+  "per_rule_checks": {
+    "A": {
+      "max_cash_plus_holdings_residual": 0.0,
+      "exec_after_signal": true,
+      "min_cash": 0.0,
+      "max_weight_sum": 1.0000000000000002
+    },
+    "B": {
+      "max_cash_plus_holdings_residual": 0.0,
+      "exec_after_signal": true,
+      "min_cash": 0.0,
+      "max_weight_sum": 1.0000000000000004
+    },
+    "C": {
+      "max_cash_plus_holdings_residual": 0.0,
+      "exec_after_signal": true,
+      "min_cash": 0.0,
+      "max_weight_sum": 1.0000000000000002
+    },
+    "D": {
+      "max_cash_plus_holdings_residual": 0.0,
+      "exec_after_signal": true,
+      "min_cash": 0.0,
+      "max_weight_sum": 1.0
+    },
+    "红利低波买入持有": {
+      "max_cash_plus_holdings_residual": 0.0,
+      "exec_after_signal": true,
+      "min_cash": 0.0,
+      "max_weight_sum": 1.0
+    },
+    "中证2000买入持有": {
+      "max_cash_plus_holdings_residual": 0.0,
+      "exec_after_signal": true,
+      "min_cash": 0.0,
+      "max_weight_sum": 1.0
+    }
+  },
+  "weights_never_exceed_1": true,
+  "orders_signal_before_exec": true,
+  "calendar_equal_across_indexes": true,
+  "no_missing_values_no_interpolation": true,
+  "max_abs_daily_return": {
+    "H20269": 0.08779275011854426,
+    "H30269": 0.08779203265663149,
+    "932000": 0.12831329369098843,
+    "H00300": 0.08747588397599015,
+    "000300": 0.08747917560467355
+  },
+  "csi2000_first_real_publication_note": "932000 published ~2023-08; earlier values are back-cast",
+  "uv_lock_untouched_check": "see git status at delivery"
+}

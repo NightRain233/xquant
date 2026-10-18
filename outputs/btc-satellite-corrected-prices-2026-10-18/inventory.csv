@@ -1,0 +1,14 @@
+相关程度,报告/输出,数据口径,涉及含分红ETF(510300/510880),状态
+高,strategy-healthcheck-2026-10-02 (docs/notes/...-review.md; outputs/strategy-healthcheck-2026-10-02/),TickFlow forward_additive 83份冻结行情，含510300/513100/518880/510880等,是：510300、510880,本任务已对其BTC卫星部分重跑；多资产/主题/Bull部分未重跑
+高,strategy-healthcheck-clock-correction-2026-10-03 及独立复核/审计 (outputs/...-clock-correction-2026-10-03*),同上冻结行情(仅换了成交时序)；BTC_0/5/7.5/10 结果表,是：510300,本报告已用修正价格重跑BTC_0/5/7.5/10；RP92.5_Cash7.5、成本/FX敏感性、多资产未重跑
+高,three-asset-core-2026-10-03,三组合 510300/513100/518880 forward_additive,是：510300,已有2026-10-04分红修正报告取代（旧文件顶部已加提示）
+高,etf-dividend-valuation-2026-10-04,原始价格+分红应收记账（正确口径）；内含旧加法对照,对照用,本任务的正确口径参照；旧加法结果在内作为legacy对照
+高,domestic-etf-small-account-2026-10-04 / dca-comparison-2026-10-04,三组合/两组合定投与小账户，forward_additive,是：510300,已由2026-10-04分红修正报告取代终值数字；原文保留
+高,nasdaq-gold-ablation-2026-10-03,复用三组合冻结行情，两资产vs三资产对比,是：基线含510300,未用修正价格重算；两资产(无510300)那一臂不受影响，三资产基线受影响
+中,theme-alpha-lvt-recent-3m-2026-09-06,TickFlow forward-additive 快照；LVT池含510880/510300/518880/513100,是：510880、510300,未重算；510880单日涨跌幅最多差28.7个百分点(Weinstein复核)
+中,"def200-cash-minimum-capital-2026-09-06 (v1, v2)",TickFlow adjust=forward_additive；最小资金/整手可行性,是：510880、510300,主要影响权重误差与资金下限的细节；未重算
+中,"def200-cash-manual-review-2026-09-06 (v1, v2)",输出里同时出现TickFlow forward-additive与yfinance auto_adjust,部分,未逐项核对哪些结论依赖哪套数据
+中,q3/q6/q7/q8/q9/q10 (BTC卫星早期系列),yfinance auto_adjust（Yahoo复权），不是TickFlow加法,否（不同口径）,不受本次加法问题影响，但Yahoo对A股ETF的复权未核实；且时序为旧同日标签模型，已被2026-10-03修正取代
+低,"theme-alpha-q1..q8, q11, q12, 以及 scan-v2 / unified-scan / all-bull-flip 系列",yfinance auto_adjust 或个股/PIT数据；未发现TickFlow forward_additive,否,已归档；未发现使用加法复权；未逐一审计全部notebook
+低,weinstein-etf-stage-2026-10-18,已改用比例前复权，并披露旧口径差异,否（已修正）,本任务的比例前复权数据来源之一
+低,paper-tracking-oos-2026-06-27,market_data引用；价格来源未在文本中标明,不确定,未核实

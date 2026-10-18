@@ -1,0 +1,74 @@
+{
+  "slug": "weinstein-etf-stage-2026-10-18",
+  "benchmark": "510300.SS",
+  "first_execution_day": "2015-01-05",
+  "last_data_day": "2026-10-16",
+  "params": {
+    "ma_weeks": 30,
+    "slope_lag_weeks": 4,
+    "rs_weeks": 26,
+    "max_positions": 5,
+    "slot_weight": 0.2
+  },
+  "costs": {
+    "fee_rate": 0.0005,
+    "slippage": 0.0005
+  },
+  "universe_file": "trading/backend/universes/a_share_etf_core.json",
+  "universe_sha256": "ac7c951f09102cfd1499973dabbf64604c6c3509b86e8c705e0a3b6e2865efdb",
+  "excluded_non_a_share": {
+    "513010.SS": "恒生科技（港股）",
+    "513120.SS": "港股创新药",
+    "513910.SS": "港股通央企红利"
+  },
+  "price_adjustment": "TickFlow adjust=forward (proportional forward adjustment, dividends reinvested)",
+  "cash_return": 0.0,
+  "bear_windows": [
+    [
+      "2015股灾（2015-06-08至2016-01-28）",
+      "2015-06-08",
+      "2016-01-28"
+    ],
+    [
+      "2018全年",
+      "2018-01-01",
+      "2018-12-31"
+    ],
+    [
+      "2022全年",
+      "2022-01-01",
+      "2022-12-31"
+    ],
+    [
+      "2021-02至2024-02长熊",
+      "2021-02-10",
+      "2024-02-05"
+    ]
+  ],
+  "sensitivity_grid": [
+    [
+      20,
+      5
+    ],
+    [
+      26,
+      5
+    ],
+    [
+      30,
+      5
+    ],
+    [
+      40,
+      5
+    ],
+    [
+      30,
+      3
+    ],
+    [
+      30,
+      8
+    ]
+  ]
+}
