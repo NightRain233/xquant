@@ -1,5 +1,12 @@
 # Repository Guidelines
 
+## Current Research Stance (2026-10)
+
+- The primary strategy is the three-asset inverse-volatility core (510300 / 513100 / 518880) plus a 7.5% BTC daily SuperTrend(10, 3) satellite; it runs as a paper account in the sibling `trading` repo. Other lines (Theme Alpha, Core90/Bull10, RS rotation) are archived comparisons.
+- Frozen findings: A-share timing rules did not beat buy-and-hold; the simplified Weinstein rule reduces drawdowns on US indices only; daily SuperTrend suits BTC; gold was not tested with trend rules. Do not propose new A-share timing studies unless the user asks.
+- Use proportional (total-return) adjusted prices. The old additive forward adjustment overstated 510300's history; see `docs/notes/btc-satellite-corrected-prices-2026-10-18-review.md`.
+- Write conclusions for a non-technical reader in plain Chinese; keep dated reports as written and add notes instead of rewriting them.
+
 ## Project Structure & Module Organization
 
 - `research/notebooks/*-practice.ipynb` contains strategy experiments; use names such as `q13-<topic>-practice.ipynb`.

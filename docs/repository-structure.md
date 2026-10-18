@@ -19,18 +19,21 @@
 └── dashboard/                # React 报告及数据转换
 ```
 
-`src/xquant/` 目前分为：
+`src/xquant/` 按用途分为：
 
-- `portfolio.py`：权重清洗、仓位上限和逆波动分配。
-- `indicators.py`：SuperTrend 与低波趋势筛选。
-- `metrics.py`：NAV 和回撤序列。
-- `project.py`：从脚本或 Notebook 位置定位仓库根目录。
+| 用途 | 模块 |
+|---|---|
+| 通用计算 | `portfolio.py`（权重清洗、仓位上限、逆波动分配）、`indicators.py`（SuperTrend、低波趋势筛选）、`metrics.py`（NAV、回撤）、`project.py`（定位仓库根目录） |
+| 三组合与执行时钟 | `three_asset_research.py`（next-open 研究内核）、`research_execution_clock.py`（显式 UTC 时钟与现金顺序）、`cashflow_research.py`（定投与外部现金流） |
+| ETF 会计与执行 | `etf_dividend_accounting.py`（分红信号与原始份额现金账）、`etf_execution_research.py`（境内 ETF 执行诊断）、`etf_valuation_monitor.py`（海外 ETF 估值监测） |
+| 择时与风格研究 | `weinstein_stage.py`（简化版温斯坦周线策略）、`style_combo.py`（两资产风格搭配）、`defensive_overlay.py`（防守门槛、核心—卫星） |
+| 扫描策略事件研究 | `event_study.py`、`signal_portfolio.py`、`point_in_time_universe.py`、`research_exports.py` |
 
 Notebook 应负责提出问题、组织实验和展示结果；能够跨实验复用的计算必须进入 `src/xquant/`，并先在 `tests/` 中定义行为。
 
 ## Notebook 路径约定
 
-18 个实践 Notebook 已统一移动到 `research/notebooks/`。它们仍使用 `outputs/<experiment>/` 等仓库根目录相对路径，因此每个 Notebook 的第一个代码单元都会调用 `find_repo_root()`，再将工作目录切换到仓库根目录。
+实践 Notebook 都放在 `research/notebooks/`。它们使用 `outputs/<experiment>/` 等仓库根目录相对路径，因此每个 Notebook 的第一个代码单元都会调用 `find_repo_root()`，再将工作目录切换到仓库根目录。
 
 这是一层兼容措施：它把“文件放在哪里”和“结果写到哪里”分开，确保历史 Notebook 移动后不改变输出位置。不要删除或跳过带有 `bootstrap` 标签的启动单元。
 

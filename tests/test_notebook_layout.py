@@ -28,6 +28,13 @@ EXPECTED_NOTEBOOKS = {
     "theme-alpha-q8-signal-live-readiness-practice.ipynb",
     "theme-alpha-q12-long-sample-proxy-validation-practice.ipynb",
     "theme-alpha-lvt-recent-3m-2026-09-06-practice.ipynb",
+    "dca-comparison-2026-10-04-practice.ipynb",
+    "domestic-etf-small-account-2026-10-04-practice.ipynb",
+    "etf-dividend-valuation-2026-10-04-practice.ipynb",
+    "nasdaq-gold-ablation-2026-10-03-practice.ipynb",
+    "three-asset-core-2026-10-03-practice.ipynb",
+    "strategy-healthcheck-2026-10-02-practice.ipynb",
+    "strategy-healthcheck-clock-correction-2026-10-03-practice.ipynb",
 }
 
 

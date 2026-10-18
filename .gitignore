@@ -13,3 +13,10 @@ outputs/**/tmp/
 outputs/**/market_data/
 outputs/**/*.parquet
 data/.provider-state/
+# Bulky reproduction inputs: re-downloadable or regenerable from the scripts
+# (see outputs/README.md). Summaries, ledgers and reviews stay versioned.
+outputs/**/reproduction_bundle.zip
+outputs/**/*.json.gz
+outputs/**/evidence/*.pdf
+outputs/**/evidence/raw_*.json
+outputs/**/inputs/*.json
