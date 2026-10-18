@@ -1,0 +1,13 @@
+{
+  "elapsed_seconds": 28.492256593017373,
+  "cohort_seconds": 27.045663437980693,
+  "accounts": 813,
+  "rolling_windows": 954,
+  "workers": 2,
+  "max_main_account_residual": 1.4927081792848185e-09,
+  "max_all_cohort_residual": 2.3601387511007488e-09,
+  "identical_main_cashflows": true,
+  "initial_target_visible": "2014-12-31",
+  "final_us_price_label": "2026-09-29 00:00:00",
+  "fx_clock_assumption": "D-label available at UTC D+1 00:00:01, vendor cutoff not verified"
+}

@@ -1,0 +1,7 @@
+strategy,funding,events_ge_5pct,events_ge_10pct,events_ge_15pct,events_ge_20pct,all_events,completed_major_recovery_median_days,longest_observed_underwater_days
+Three,lump,11,3,0,0,168,91.5,512
+Two,lump,14,4,2,0,173,110,925
+513500,lump,14,8,5,3,104,137.0,995
+Three,dca,11,3,0,0,169,91.5,512
+Two,dca,14,4,2,0,173,110,925
+513500,dca,14,8,5,3,104,137.0,995

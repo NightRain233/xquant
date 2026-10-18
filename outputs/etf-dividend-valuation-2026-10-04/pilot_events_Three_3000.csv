@@ -1,0 +1,4 @@
+date,event_id,symbol,phase,registered_or_split_quantity,per_share_or_ratio,amount,cash_after,receivable_after
+2026-01-16,15,510300,registered_after_close,4076.7812412569733,0.123,0.0,0.0,0.0
+2026-01-19,15,510300,ex_receivable_before_open,4076.7812412569733,0.123,501.4440926746077,0.0,501.4440926746077
+2026-01-27,15,510300,cash_paid_after_close,4076.7812412569733,0.123,501.4440926746077,501.4440926746077,0.0

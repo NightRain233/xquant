@@ -1,0 +1,9 @@
+{
+  "url": "https://api.fund.eastmoney.com/f10/lsjz?fundCode=159655&pageIndex=1&pageSize=5",
+  "request_started_at": "2026-10-04T15:18:51.237033+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "sha256": "5cefbc9d558f554772d96ac0f0716e476a7d6e3ea7431c19f2dd4d1b4c2591d8",
+  "raw_path": "nav_159655.raw",
+  "first_seen_at": "2026-10-04T15:18:51.362539+00:00"
+}

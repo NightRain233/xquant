@@ -1,0 +1,131 @@
+[
+  {
+    "id": "510300_fee",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2024-11-20/510300_20241120_FOBE.pdf",
+    "retrieved_at": "2026-10-04T21:53:26.729863+08:00",
+    "http_status": 200,
+    "filename": "510300_fee.pdf",
+    "sha256": "c0bb0d9b8a2f9a0089bc9e2fa05aa5076df33fc28f28c176bd5f24539dc54eef",
+    "pages": 4
+  },
+  {
+    "id": "510300_profile",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2024-03-29/510300_20240329_7DBJ.pdf",
+    "retrieved_at": "2026-10-04T21:53:26.730297+08:00",
+    "http_status": 200,
+    "filename": "510300_profile.pdf",
+    "sha256": "4293d513eeedf729612067c1069fbd50de79fe795d16f400c6f6c30c23a25dc9",
+    "pages": 4
+  },
+  {
+    "id": "510300_dividend",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-01-12/510300_20260112_VTCZ.pdf",
+    "retrieved_at": "2026-10-04T21:53:50.114283+08:00",
+    "error": "ReadTimeout"
+  },
+  {
+    "id": "510310_profile",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2025-11-18/510310_20251118_W6BU.pdf",
+    "retrieved_at": "2026-10-04T21:54:18.114023+08:00",
+    "error": "ConnectionError"
+  },
+  {
+    "id": "513100_profile",
+    "url": "https://st.gtfund.com/pis/www/CN_50010000_513100_FA010080_20250001_513100_20250321_090000_01.pdf",
+    "retrieved_at": "2026-10-04T21:54:23.175070+08:00",
+    "http_status": 200,
+    "filename": "513100_profile.pdf",
+    "sha256": "0f446c8bc7b63962eb8fcf0ff04c92d7e363beea70d53070193564a50881e3d1",
+    "pages": 7
+  },
+  {
+    "id": "513100_prospectus",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2025-12-22/513100_20251222_8WHV.pdf",
+    "retrieved_at": "2026-10-04T21:54:27.639951+08:00",
+    "error": "ReadTimeout"
+  },
+  {
+    "id": "513100_warning",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-04-09/513100_20260409_GVQZ.pdf",
+    "retrieved_at": "2026-10-04T21:54:47.721596+08:00",
+    "error": "ReadTimeout"
+  },
+  {
+    "id": "513100_warning_sep",
+    "url": "https://app.cnstock.com/zzb/zgzqb/html/2026-09/23/nw.D110000zgzqb_20260923_4-B025.htm",
+    "retrieved_at": "2026-10-04T21:55:02.258038+08:00",
+    "http_status": 200,
+    "filename": "513100_warning_sep.html",
+    "sha256": "10c2570abd359ca24123c52e8c4c7448504e20d410096d4c0851145a976b8d46",
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "id": "513100_pcf",
+    "url": "https://www.sse.com.cn/disclosure/fund/etflist/detail.shtml?etfClass=33&fundid=513100",
+    "retrieved_at": "2026-10-04T21:55:07.911598+08:00",
+    "http_status": 200,
+    "filename": "513100_pcf.html",
+    "sha256": "08ceeba31aac5865e1e55e570d05fee5272354f8df04f7d845a65d48b6cf6b58",
+    "content_type": "text/html"
+  },
+  {
+    "id": "513300_profile",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2025-05-30/513300_20250530_MCHU.pdf",
+    "retrieved_at": "2026-10-04T21:55:08.185813+08:00",
+    "error": "ConnectionError"
+  },
+  {
+    "id": "518880_profile",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-03-06/518880_20260306_F316.pdf",
+    "retrieved_at": "2026-10-04T21:55:12.875333+08:00",
+    "error": "ConnectionError"
+  },
+  {
+    "id": "518800_profile",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2025-10-15/518800_20251015_4RIV.pdf",
+    "retrieved_at": "2026-10-04T21:55:48.871398+08:00",
+    "error": "ConnectionError"
+  },
+  {
+    "id": "513500_profile",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-06-26/513500_20260626_PDT5.pdf",
+    "retrieved_at": "2026-10-04T21:56:23.755710+08:00",
+    "error": "ConnectionError"
+  },
+  {
+    "id": "513500_split",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2022-03-30/513500_20220330_2_VODYJTry.pdf",
+    "retrieved_at": "2026-10-04T21:56:33.660752+08:00",
+    "http_status": 200,
+    "filename": "513500_split.pdf",
+    "sha256": "1071a679a76795766d523fe93bf238e1c51a5091c0c2b96a935a5f63e396942b",
+    "pages": 2
+  },
+  {
+    "id": "513500_subscription",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-05-14/513500_20260514_8YVS.pdf",
+    "retrieved_at": "2026-10-04T21:57:47.749827+08:00",
+    "http_status": 200,
+    "filename": "513500_subscription.pdf",
+    "sha256": "87ed8c65fbeefb24a5989902d4d60ef448c9ab63417a795b363163451d1b3c66",
+    "pages": 1
+  },
+  {
+    "id": "159612_profile",
+    "url": "https://st.gtfund.com/pis/www/CN_50010000_159612_FA010080_20250001_159612_20250930_090000_01.pdf",
+    "retrieved_at": "2026-10-04T21:57:51.700219+08:00",
+    "http_status": 200,
+    "filename": "159612_profile.pdf",
+    "sha256": "682fd161222d47f98248b3fe724ba02fc65c171973d686838f9de0b0f4015631",
+    "pages": 9
+  },
+  {
+    "id": "etf_lots",
+    "url": "https://www.sse.com.cn/assortment/fund/etf/question/c/c_20240118_5734754.shtml",
+    "retrieved_at": "2026-10-04T21:57:55.969883+08:00",
+    "http_status": 200,
+    "filename": "etf_lots.html",
+    "sha256": "16d98fbd4b066f2be69cb66f7c32b6667158b6ec935b603045cb8e976901c6a7",
+    "content_type": "text/html"
+  }
+]

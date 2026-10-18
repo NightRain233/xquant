@@ -1,0 +1,2 @@
+date,symbol,quantity_delta,price,notional,commission,type
+2015-01-06,513500,44718.247316592126,1.118,49995.00049995,4.999500049995,rebalance

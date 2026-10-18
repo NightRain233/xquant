@@ -1,0 +1,7 @@
+strategy,symbol,reference_target,shares,reference_ask,notional,commission,cash_after_all,scenario
+Three,510300,0.4543579330710215,5100.0,4.433,22608.3,2.26083,17027.60309,"foreign_new_buy_blocked; other ETFs assumed eligible, not an actual order"
+Three,513100,0.3258598724190204,0.0,2.353,0.0,0.0,17027.60309,"foreign_new_buy_blocked; other ETFs assumed eligible, not an actual order"
+Three,518880,0.21978219450995803,1200.0,8.634,10360.800000000001,1.0360800000000001,17027.60309,"foreign_new_buy_blocked; other ETFs assumed eligible, not an actual order"
+Two,513100,0.5972044535588105,0.0,2.353,0.0,0.0,30139.81418,"foreign_new_buy_blocked; other ETFs assumed eligible, not an actual order"
+Two,518880,0.40279554644118964,2300.0,8.634,19858.2,1.9858200000000001,30139.81418,"foreign_new_buy_blocked; other ETFs assumed eligible, not an actual order"
+513500,513500,1.0,0.0,2.688,0.0,0.0,50000.0,"foreign_new_buy_blocked; other ETFs assumed eligible, not an actual order"

@@ -1,0 +1,44 @@
+[
+  {
+    "symbols": [
+      "510300.SH",
+      "513100.SH",
+      "518880.SH",
+      "513500.SH"
+    ],
+    "status": 200,
+    "elapsed": 7.6054124620277435,
+    "requested_adjust": "none",
+    "retrieved_at": "2026-10-04T21:35:06.343060+08:00",
+    "url": "https://free-api.tickflow.org/v1/klines/batch",
+    "keys": [
+      "data"
+    ],
+    "rows": {
+      "510300.SH": 3338,
+      "513100.SH": 3254,
+      "518880.SH": 3205,
+      "513500.SH": 3090
+    }
+  },
+  {
+    "symbols": [
+      "510310.SH",
+      "513300.SH",
+      "518800.SH"
+    ],
+    "status": 200,
+    "elapsed": 6.603890814993065,
+    "requested_adjust": "none",
+    "retrieved_at": "2026-10-04T21:35:05.342162+08:00",
+    "url": "https://free-api.tickflow.org/v1/klines/batch",
+    "keys": [
+      "data"
+    ],
+    "rows": {
+      "510310.SH": 3287,
+      "513300.SH": 1434,
+      "518800.SH": 3205
+    }
+  }
+]

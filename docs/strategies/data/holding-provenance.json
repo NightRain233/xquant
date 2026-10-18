@@ -1,0 +1,17 @@
+{
+  "source_slug": "etf-dividend-valuation-2026-10-04",
+  "source_cutoff": "2026-09-30",
+  "generated_from_delivered_csv_only": true,
+  "generator_sha256": "fe52df65fb73eec6066fb3f66bcbd65b64ea40514b96af9ae1747bfe89a71114",
+  "sources": {
+    "account_summary.csv": "90a4725b1d44e8a483370dac3c05f13cf6a07638379e93d844ffeec0204d3e24",
+    "drawdown_events.csv": "819695fb0eab9bdee36df79777dd279cf69f89cfa7bc66e52d612322c1e2599d",
+    "independent_audit.json": "ca9e84c3d31a2f64917e587a63fc3264a8d3864d1b539f07bee02eb07f6194a8",
+    "account_corrected_Three_lump.csv": "6ca0e9e35e746b1089f761ab366bab711984ca0a5777738a354aed9f1958e77b",
+    "account_corrected_Two_lump.csv": "1d336f2937cbad69f622a6b035dba9a20b0b70915661c53b3de64c464566dd93",
+    "account_corrected_513500_lump.csv": "636bbc46b52616bc0059f30ee541916602b1f8d55fb0731371f7248e8a928432",
+    "account_corrected_Three_dca.csv": "85d1f6053d630d59c1b71a42ef593b48b026b17799cdf0c9667b15701a729972",
+    "account_corrected_Two_dca.csv": "c46c569a27ff7f88042d3d053ca93ac99189dae0092940a66904042a0d0eeefc",
+    "account_corrected_513500_dca.csv": "c792c09fe2b7dcb3ca1a690293387a07775202db8e41bbd4ab906e23ea8d1126"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "hashes_checked": 47,
+  "independent_main_ledgers": {
+    "accounts": {
+      "Three": {
+        "nav_max_error": 2.9336661100387573e-08,
+        "unit_max_error": 7.283063041541027e-14,
+        "fee_max_error": 2.469136006766348e-13,
+        "pnl_max_error": 1.4551915228366852e-11,
+        "hypothetical_exit_max_error": 2.9336661100387573e-08,
+        "fill_rows": 1251,
+        "principal": 1410000.0,
+        "terminal_profit": 2643499.873342296
+      },
+      "Two": {
+        "nav_max_error": 7.450580596923828e-09,
+        "unit_max_error": 8.881784197001252e-15,
+        "fee_max_error": 4.547473508864641e-13,
+        "pnl_max_error": 2.9103830456733704e-11,
+        "hypothetical_exit_max_error": 8.381903171539307e-09,
+        "fill_rows": 834,
+        "principal": 1410000.0,
+        "terminal_profit": 3851846.061067351
+      },
+      "SP500": {
+        "nav_max_error": 4.656612873077393e-10,
+        "unit_max_error": 8.881784197001252e-16,
+        "fee_max_error": 3.5349501104064984e-13,
+        "pnl_max_error": 1.4551915228366852e-11,
+        "hypothetical_exit_max_error": 9.313225746154785e-10,
+        "fill_rows": 141,
+        "principal": 1410000.0,
+        "terminal_profit": 2254854.447011775
+      }
+    },
+    "funding_rows": 141,
+    "valuation_rows": 4287,
+    "causal_clock_checks": "passed; FX vendor bar cutoff remains unverified assumption"
+  },
+  "tests": {
+    "returncode": 0,
+    "stdout": ".......                                                                  [100%]\n7 passed in 0.64s\n",
+    "stderr": "",
+    "command": [
+      "/Users/a1/.cache/uv/builds-v0/.tmp70r794/bin/python",
+      "-m",
+      "pytest",
+      "tests/test_cashflow_research.py",
+      "-q"
+    ]
+  },
+  "standalone_reproduction": {
+    "status": "passed",
+    "csvs_compared": 25,
+    "command": [
+      "/Users/a1/.cache/uv/builds-v0/.tmp70r794/bin/python",
+      "scripts/review_dca_accounts.py",
+      "--snapshot",
+      "inputs/market_data",
+      "--reference",
+      "inputs/reference",
+      "--workers",
+      "2"
+    ],
+    "stdout": "{\n  \"prepare_seconds\": 0.5129507930250838,\n  \"main_preflight\": [\n    {\n      \"strategy\": \"Three\",\n      \"replay_seconds\": 0.08665914199082181,\n      \"summary_seconds\": 0.011253912991378456\n    },\n    {\n      \"strategy\": \"Two\",\n      \"replay_seconds\": 0.08291887596715242,\n      \"summary_seconds\": 0.01074801298091188\n    },\n    {\n      \"strategy\": \"SP500\",\n      \"replay_seconds\": 0.012310776975937188,\n      \"summary_seconds\": 0.009623847960028797\n    }\n  ],\n  \"estimated_serial_cohort_seconds\": 43.4832565835095,\n  \"workers\": 2,\n  \"monthly_contribution\": 10000.0,\n  \"months\": 141,\n  \"valuation_rows\": 4287,\n  \"data_hashes_passed\": 5\n}\nCohorts 30/813; 3.0s\nCohorts 60/813; 4.4s\nCohorts 90/813; 5.7s\nCohorts 120/813; 7.0s\nCohorts 150/813; 8.2s\nCohorts 180/813; 9.3s\nCohorts 210/813; 10.3s\nCohorts 240/813; 11.4s\nCohorts 270/813; 12.2s\nCohorts 300/813; 13.0s\nCohorts 330/813; 13.6s\nCohorts 360/813; 14.0s\nCohorts 390/813; 14.4s\nCohorts 420/813; 14.6s\nCohorts 450/813; 15.5s\nCohorts 480/813; 16.5s\nCohorts 510/813; 17.3s\nCohorts 540/813; 18.1s\nCohorts 570/813; 18.9s\nCohorts 600/813; 19.7s\nCohorts 630/813; 20.3s\nCohorts 660/813; 20.8s\nCohorts 690/813; 21.4s\nCohorts 720/813; 21.8s\nCohorts 750/813; 22.2s\nCohorts 780/813; 22.5s\nCohorts 810/813; 22.7s\nCohorts 813/813; 22.8s\nstrategy  principal  terminal_liquidation       profit     xirr  worst_loss_amount  worst_loss_ratio  unit_max_drawdown\n   Three  1410000.0          4.053500e+06 2.643500e+06 0.168491       -4321.509208         -0.039878          -0.137294\n     Two  1410000.0          5.261846e+06 3.851846e+06 0.208395       -3847.137277         -0.054959          -0.164142\n   SP500  1410000.0          3.664854e+06 2.254854e+06 0.152980       -8270.128266         -0.068420          -0.327890\nCompleted dca-comparison-2026-10-04 in 38.8s\n",
+    "stderr": "Matplotlib is building the font cache; this may take a moment.\n"
+  },
+  "scope": "Independent fill replay covers three main accounts; all 813 cohort ledgers validate conservation at run time."
+}

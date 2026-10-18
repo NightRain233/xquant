@@ -1,0 +1,181 @@
+{
+  "retrieved_at": "2026-10-04T21:41:05.651290+08:00",
+  "results": [
+    {
+      "code": "510300",
+      "status": 200,
+      "total": 3504,
+      "rows": 20,
+      "head": [
+        {
+          "FSRQ": "2026-09-30",
+          "DWJZ": "4.4312",
+          "LJJZ": "1.9702",
+          "SDATE": null,
+          "ACTUALSYI": "",
+          "NAVTYPE": "1",
+          "JZZZL": "0.30",
+          "SGZT": "\u573a\u5185\u4e70\u5165",
+          "SHZT": "\u573a\u5185\u5356\u51fa",
+          "FHFCZ": "",
+          "FHFCZ10": "",
+          "FHFCBZ": "",
+          "DTYPE": null,
+          "FHSP": ""
+        }
+      ]
+    },
+    {
+      "code": "513100",
+      "error": "ReadTimeout"
+    },
+    {
+      "code": "518880",
+      "status": 200,
+      "total": 3218,
+      "rows": 20,
+      "head": [
+        {
+          "FSRQ": "2026-09-30",
+          "DWJZ": "8.6278",
+          "LJJZ": "3.2580",
+          "SDATE": null,
+          "ACTUALSYI": "",
+          "NAVTYPE": "1",
+          "JZZZL": "1.09",
+          "SGZT": "\u573a\u5185\u4e70\u5165",
+          "SHZT": "\u573a\u5185\u5356\u51fa",
+          "FHFCZ": "",
+          "FHFCZ10": "",
+          "FHFCBZ": "",
+          "DTYPE": null,
+          "FHSP": ""
+        }
+      ]
+    },
+    {
+      "code": "513500",
+      "status": 200,
+      "total": 3021,
+      "rows": 20,
+      "head": [
+        {
+          "FSRQ": "2026-09-29",
+          "DWJZ": "2.4469",
+          "LJJZ": "4.8938",
+          "SDATE": null,
+          "ACTUALSYI": "",
+          "NAVTYPE": "1",
+          "JZZZL": "-0.15",
+          "SGZT": "\u573a\u5185\u4e70\u5165",
+          "SHZT": "\u573a\u5185\u5356\u51fa",
+          "FHFCZ": "",
+          "FHFCZ10": "",
+          "FHFCBZ": "",
+          "DTYPE": null,
+          "FHSP": ""
+        }
+      ]
+    },
+    {
+      "code": "510310",
+      "error": "ReadTimeout"
+    },
+    {
+      "code": "513300",
+      "status": 200,
+      "total": 1441,
+      "rows": 20,
+      "head": [
+        {
+          "FSRQ": "2026-09-29",
+          "DWJZ": "2.5314",
+          "LJJZ": "2.5314",
+          "SDATE": null,
+          "ACTUALSYI": "",
+          "NAVTYPE": "1",
+          "JZZZL": "0.06",
+          "SGZT": "\u573a\u5185\u4e70\u5165",
+          "SHZT": "\u573a\u5185\u5356\u51fa",
+          "FHFCZ": "",
+          "FHFCZ10": "",
+          "FHFCBZ": "",
+          "DTYPE": null,
+          "FHSP": ""
+        }
+      ]
+    },
+    {
+      "code": "518800",
+      "status": 200,
+      "total": 3218,
+      "rows": 20,
+      "head": [
+        {
+          "FSRQ": "2026-09-30",
+          "DWJZ": "9.0453",
+          "LJJZ": "3.2243",
+          "SDATE": null,
+          "ACTUALSYI": "",
+          "NAVTYPE": "1",
+          "JZZZL": "1.09",
+          "SGZT": "\u573a\u5185\u4e70\u5165",
+          "SHZT": "\u573a\u5185\u5356\u51fa",
+          "FHFCZ": "",
+          "FHFCZ10": "",
+          "FHFCBZ": "",
+          "DTYPE": null,
+          "FHSP": ""
+        }
+      ]
+    },
+    {
+      "code": "159655",
+      "status": 200,
+      "total": 964,
+      "rows": 20,
+      "head": [
+        {
+          "FSRQ": "2026-09-29",
+          "DWJZ": "1.8732",
+          "LJJZ": "1.8732",
+          "SDATE": null,
+          "ACTUALSYI": "",
+          "NAVTYPE": "1",
+          "JZZZL": "-0.31",
+          "SGZT": "\u573a\u5185\u4e70\u5165",
+          "SHZT": "\u573a\u5185\u5356\u51fa",
+          "FHFCZ": "",
+          "FHFCZ10": "",
+          "FHFCBZ": "",
+          "DTYPE": null,
+          "FHSP": ""
+        }
+      ]
+    },
+    {
+      "code": "159612",
+      "status": 200,
+      "total": 1073,
+      "rows": 20,
+      "head": [
+        {
+          "FSRQ": "2026-09-29",
+          "DWJZ": "1.9196",
+          "LJJZ": "1.9196",
+          "SDATE": null,
+          "ACTUALSYI": "",
+          "NAVTYPE": "1",
+          "JZZZL": "-0.15",
+          "SGZT": "\u573a\u5185\u4e70\u5165",
+          "SHZT": "\u573a\u5185\u5356\u51fa",
+          "FHFCZ": "",
+          "FHFCZ10": "",
+          "FHFCBZ": "",
+          "DTYPE": null,
+          "FHSP": ""
+        }
+      ]
+    }
+  ]
+}

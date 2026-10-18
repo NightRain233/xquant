@@ -1,0 +1,143 @@
+[
+  {
+    "name": "forward_core.json",
+    "url": "https://free-api.tickflow.org/v1/klines/batch",
+    "params": {
+      "symbols": "510300.SH,513100.SH,518880.SH,513500.SH",
+      "period": "1d",
+      "adjust": "forward",
+      "count": 10000,
+      "start_time": 1356969600000,
+      "end_time": 1790784000000
+    },
+    "retrieved_at": "2026-10-04T21:38:11.269266+08:00",
+    "status": 200,
+    "elapsed": 9.954606337996665
+  },
+  {
+    "name": "nav_510300.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "510300",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:12.500314+08:00",
+    "status": 200,
+    "elapsed": 11.185255754971877
+  },
+  {
+    "name": "nav_513100.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "513100",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:13.043496+08:00",
+    "status": 200,
+    "elapsed": 1.7694075289764442
+  },
+  {
+    "name": "nav_518880.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "518880",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:15.166243+08:00",
+    "status": 200,
+    "elapsed": 2.6636651789885946
+  },
+  {
+    "name": "nav_513500.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "513500",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:16.041715+08:00",
+    "status": 200,
+    "elapsed": 2.9955281300353818
+  },
+  {
+    "name": "nav_510310.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "510310",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:23.874858+08:00",
+    "status": 200,
+    "elapsed": 8.705519178998657
+  },
+  {
+    "name": "nav_513300.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "513300",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:19.334801+08:00",
+    "status": 200,
+    "elapsed": 3.2906726769870147
+  },
+  {
+    "name": "nav_518800.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "518800",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:23.873628+08:00",
+    "status": 200,
+    "elapsed": 4.536289156996645
+  },
+  {
+    "name": "nav_159655.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "159655",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:30.228692+08:00",
+    "status": 200,
+    "elapsed": 6.351532772008795
+  },
+  {
+    "name": "nav_159612.json",
+    "url": "https://api.fund.eastmoney.com/f10/lsjz",
+    "params": {
+      "fundCode": "159612",
+      "pageIndex": 1,
+      "pageSize": 10000,
+      "startDate": "2024-01-01",
+      "endDate": "2026-09-30"
+    },
+    "retrieved_at": "2026-10-04T21:38:31.289727+08:00",
+    "status": 200,
+    "elapsed": 7.410596571979113
+  }
+]

@@ -1,0 +1,2 @@
+date,event_id,symbol,phase,registered_or_split_quantity,per_share_or_ratio,amount,cash_after,receivable_after
+2022-03-29,11,513500,split_after_close,1050089.313725768,2.0,0.0,0.0,0.0

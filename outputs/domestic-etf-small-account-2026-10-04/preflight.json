@@ -1,0 +1,8 @@
+{
+  "prepare_seconds": 0.3888928479864262,
+  "one_full_account_seconds": 0.200533498020377,
+  "estimated_full_job_seconds": 41.09602964366786,
+  "network_required_for_calculation": false,
+  "workers": 1,
+  "note": "reuse frozen calendar/targets; no BTC/multi replay; small job stays serial"
+}

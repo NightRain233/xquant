@@ -1,0 +1,12 @@
+{
+  "returncode": 0,
+  "stdout": ".......                                                                  [100%]\n7 passed in 0.64s\n",
+  "stderr": "",
+  "command": [
+    "/Users/a1/.cache/uv/builds-v0/.tmp70r794/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_cashflow_research.py",
+    "-q"
+  ]
+}

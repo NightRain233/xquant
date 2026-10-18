@@ -1,0 +1,7 @@
+{
+  "tests": 34,
+  "failures": 0,
+  "errors": 0,
+  "all_passed": true,
+  "scope": "8 dividend accounting + 6 valuation diagnostics + 2 offline collector integration + 18 existing research tests; synthetic fixtures do not enter real monitor samples"
+}

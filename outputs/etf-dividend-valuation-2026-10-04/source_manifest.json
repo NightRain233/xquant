@@ -1,0 +1,99 @@
+{
+  "scope": "510300 (华泰柏瑞沪深300ETF) distributions from contract inception through 2026-09-30",
+  "fund_contract_effective_date": "2012-05-04",
+  "distribution_event_count": 14,
+  "events_in_csv": 14,
+  "total_cash_per_unit_cny": 0.88,
+  "records_as_of": "2026-09-30",
+  "method": "Official event notices usually quote cash per 10 ETF units; normalized to per unit by dividing by 10.",
+  "coverage_and_gaps": [
+    "14 distribution events: 2012, 2014-2019 (two in 2019), and 2021-2026. No 2020 event appears in the historical distribution listings consulted.",
+    "14 event PDFs retained as official SSE/CNINFO notices, one for each cash distribution event, including the recovered Jan 2015 SSE notice.",
+    "2015-01 event announcement was issued 2015-01-14. It confirms record date 2015-01-19, ex-date 2015-01-20, cash payment date 2015-01-23, and 0.35 CNY per 10 units. The notice also distinguishes manager funding (2015-01-21), CSDC transfer to brokers (2015-01-22), and investor payment date (2015-01-23)."
+  ],
+  "secondary_crosscheck_url": "https://fund.stockstar.com/funds/f10/fundfh_510300.html",
+  "secondary_crosscheck_note": "All 14 original official announcement PDFs are now present. The secondary historical distribution index was used only as an independent cross-index/date check, not as a substitute for any missing original notice.",
+  "evidence_files": [
+    {
+      "file": "cninfo_2014_annual_report.pdf",
+      "bytes": 1381171,
+      "sha256": "140adf2ca9caa360773e03ad4aa8e702c17344b3edf2b918f1caa73cd7d51ec1"
+    },
+    {
+      "file": "cninfo_2015_annual_report.pdf",
+      "bytes": 2143833,
+      "sha256": "1ccd331eb23ae924ddb950e19f8f55502a3053248e7a6888e3a1054fd7d14986"
+    },
+    {
+      "file": "cninfo_2016_announcement.pdf",
+      "bytes": 253004,
+      "sha256": "747eb0956d72e57c67d52323ea0a0b72b04c244c3ab4b994c53c389b8e7c5992"
+    },
+    {
+      "file": "cninfo_2017_announcement.pdf",
+      "bytes": 255369,
+      "sha256": "a43612267be7e68a6a110013ba7b14faeae48657932b7dca713db8a44ea46b6b"
+    },
+    {
+      "file": "sse_2012_announcement.pdf",
+      "bytes": 95936,
+      "sha256": "dbb0b83f1b47b148338ffa69cb8959372626207893b7daea4739ad79463676be"
+    },
+    {
+      "file": "sse_2014_announcement.pdf",
+      "bytes": 185288,
+      "sha256": "3c74e29e7ddac830b7181748b0eb00ddafcf8a72bd9d07ab2c88550ffb91cb44"
+    },
+    {
+      "file": "sse_2018_announcement.pdf",
+      "bytes": 238088,
+      "sha256": "6aecb0d984b8777857dc71df0f118a5d14b88bdc6d8a73257149d63d35946fca"
+    },
+    {
+      "file": "sse_2019_dec_announcement.pdf",
+      "bytes": 251269,
+      "sha256": "c010184f267a231457103e8a3798c2fa91445033be875bdf6711162f419b26db"
+    },
+    {
+      "file": "sse_2019_jan_announcement.pdf",
+      "bytes": 253105,
+      "sha256": "39a65a900bc8f30e0d572cecad642d06fd7ddfd7317b3265f99a3146f483d7ea"
+    },
+    {
+      "file": "sse_2021_announcement.pdf",
+      "bytes": 248205,
+      "sha256": "1992271ca55dc3c7f88cf528f8f0f757fc48143b2a805159d2b3efdfb9143fc2"
+    },
+    {
+      "file": "sse_2022_announcement.pdf",
+      "bytes": 117134,
+      "sha256": "1f5411e65cb9043bec5ae100df3925e6bb0aa122ea18186c7ba9a7e0747a9b50"
+    },
+    {
+      "file": "sse_2023_announcement.pdf",
+      "bytes": 68208,
+      "sha256": "68f2227ae25acec3b831d50d042b87f12696dc0df1514ef9dacb36e018d571d7"
+    },
+    {
+      "file": "sse_2024_announcement.pdf",
+      "bytes": 68219,
+      "sha256": "165ddaec9b36480ff4cbc738227043db7b7acc4f80ac31bedaa0e4f5c4001f4b"
+    },
+    {
+      "file": "sse_2025_announcement.pdf",
+      "bytes": 139491,
+      "sha256": "9a2f554b8ba5e340c79905171388f65225e9239027a36794522aa6bb4a82be67"
+    },
+    {
+      "file": "sse_2026_announcement.pdf",
+      "bytes": 139671,
+      "sha256": "c8ff747d02fa90db72320458c38249f73720b932d61b7e088f033583aab63992"
+    },
+    {
+      "file": "510300_dividend_2015-01-14.pdf",
+      "source_url": "https://www.sse.com.cn/disclosure/fund/announcement/c/2015-01-13/510300_20150114_1.pdf",
+      "bytes": 185375,
+      "sha256": "1edb820f5efe41a0f28f7bd05dfdaf454e0dde97894a4101f6b9570c1b2bf3db"
+    }
+  ]
+}

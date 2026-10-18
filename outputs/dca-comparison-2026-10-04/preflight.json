@@ -1,0 +1,26 @@
+{
+  "prepare_seconds": 0.5057532489881851,
+  "main_preflight": [
+    {
+      "strategy": "Three",
+      "replay_seconds": 0.09274463995825499,
+      "summary_seconds": 0.011154282023198903
+    },
+    {
+      "strategy": "Two",
+      "replay_seconds": 0.08570587501162663,
+      "summary_seconds": 0.010542547970544547
+    },
+    {
+      "strategy": "SP500",
+      "replay_seconds": 0.012373298988677561,
+      "summary_seconds": 0.009770701988600194
+    }
+  ],
+  "estimated_serial_cohort_seconds": 44.65384580619866,
+  "workers": 2,
+  "monthly_contribution": 10000.0,
+  "months": 141,
+  "valuation_rows": 4287,
+  "data_hashes_passed": 5
+}

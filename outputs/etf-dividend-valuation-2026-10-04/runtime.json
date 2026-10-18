@@ -1,0 +1,8 @@
+{
+  "total_seconds": 45.502678201999515,
+  "python": "3.12.7",
+  "pandas": "3.0.3",
+  "numpy": "2.4.6",
+  "workers": 2,
+  "cohorts": 564
+}

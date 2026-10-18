@@ -1,0 +1,26 @@
+[
+  {
+    "name": "513500_annual2025",
+    "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-03-31/513500_20260331_LQSH.pdf",
+    "retrieved_at": "2026-10-04T15:16:04.589822+00:00",
+    "status": "ok",
+    "file": "513500_annual2025.pdf",
+    "sha256": "ff8e7ae97c72f442317a206dbc59bf45f6d85fc9f1d6fefe7a1cf5a60d4bfb9a"
+  },
+  {
+    "name": "tickflow_openapi",
+    "url": "https://docs.tickflow.org/zh-Hans/api-reference/openapi.json",
+    "retrieved_at": "2026-10-04T15:16:13.190341+00:00",
+    "status": "ok",
+    "file": "tickflow_openapi.raw",
+    "sha256": "5a6a5c25531a092961585b3a5ca02662ca777075f8bf45bb82f8b8434ea578fd"
+  },
+  {
+    "name": "sse_holidays_2026",
+    "url": "https://www.sse.com.cn/disclosure/dealinstruc/closed/",
+    "retrieved_at": "2026-10-04T15:16:14.329988+00:00",
+    "status": "ok",
+    "file": "sse_holidays_2026.raw",
+    "sha256": "7ea10c16202c4748f0ad5bcdfe6ee07b85b5462589504604b17c9d63865e7d8c"
+  }
+]

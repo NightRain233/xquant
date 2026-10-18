@@ -1,0 +1,9 @@
+{
+  "preparation_seconds": 0.512011845014058,
+  "single_full_account_seconds": 0.254794601991307,
+  "estimated_cohort_seconds": 32.33343499269686,
+  "workers": 2,
+  "network_for_calculation": false,
+  "reuse_calendar": true,
+  "no_BTC_or_multi_replay": true
+}

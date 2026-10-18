@@ -1,0 +1,350 @@
+{
+  "method": "Independent standard-library simulation from frozen fills, raw.json OHLC, and corporate_actions.csv; no replay/backtest module imported.",
+  "independence_boundary": "This is an independent execution-ledger reconstruction, not an independent rerun of the strategy. It uses the exported frozen fills and corporate_actions.csv; DCA dates are independently derived from common_calendar.csv and compared with the account contribution rows, while the 10,000 CNY amount comes from config.json. Raw quote dates/prices are parsed independently from raw.json. No primary replay function or weight optimizer is imported.",
+  "coverage": {
+    "start": "2015-01-05",
+    "end": "2026-09-30",
+    "account_rows": 4287,
+    "calendar_date_interpretation": "raw daily timestamps converted from UTC to Asia/Shanghai; 16:00 UTC stamps map to next Shanghai date"
+  },
+  "checks": {
+    "lump": {
+      "max_abs_cash_error_cny": 7.60337570682168e-10,
+      "max_abs_receivable_error_cny": 0.0,
+      "max_abs_share_quantity_error": 9.094947017729282e-13,
+      "max_abs_raw_close_wealth_error_cny": 7.566995918750763e-10,
+      "max_abs_raw_close_liquidation_error_cny": 7.566995918750763e-10,
+      "days_compared": 4287,
+      "max_error_at": {
+        "cash": {
+          "date": "2026-09-28",
+          "signed_error_cny": -7.60337570682168e-10
+        },
+        "wealth": {
+          "date": "2026-08-24",
+          "signed_error_cny": -7.566995918750763e-10
+        },
+        "liquidation_wealth": {
+          "date": "2026-08-24",
+          "signed_error_cny": -7.566995918750763e-10
+        },
+        "shares": {
+          "date": "2016-09-22",
+          "symbol": "513100",
+          "signed_error": -9.094947017729282e-13
+        }
+      },
+      "min_sell_first_cash_cny": -7.60337570682168e-10,
+      "negative_sell_first_cash_days": [],
+      "min_day_end_trade_cash_cny": -7.60337570682168e-10,
+      "negative_day_end_trade_cash_days": [],
+      "fill_integrity": {
+        "fill_rows": 858,
+        "missing_raw_open_quotes": [],
+        "max_abs_fill_price_vs_raw_open": 0.0,
+        "max_abs_commission_vs_1bp_gross_notional": 0.0,
+        "fill_rows_with_open_price_compared": 858
+      },
+      "event_log_reconciliation": {
+        "event_phase_rows_independent": 37,
+        "event_phase_rows_primary": 37,
+        "missing_primary_keys": [],
+        "missing_independent_keys": [],
+        "max_abs_delta": {
+          "entitled_quantity": 0.0,
+          "per_share_or_ratio": 0.0,
+          "amount": 0.0,
+          "cash_after": 6.293703336268663e-10,
+          "receivable_after": 0.0
+        }
+      },
+      "event_day_plus_minus_one_max_abs_deltas": {
+        "cash_cny": 6.293703336268663e-10,
+        "receivable_cny": 0.0,
+        "share_quantity": 0.0,
+        "wealth_cny": 6.402842700481415e-10
+      }
+    },
+    "dca": {
+      "max_abs_cash_error_cny": 8.207280188798904e-09,
+      "max_abs_receivable_error_cny": 0.0,
+      "max_abs_share_quantity_error": 2.9103830456733704e-11,
+      "max_abs_raw_close_wealth_error_cny": 8.847564458847046e-09,
+      "max_abs_raw_close_liquidation_error_cny": 8.847564458847046e-09,
+      "days_compared": 4287,
+      "max_error_at": {
+        "cash": {
+          "date": "2026-03-20",
+          "signed_error_cny": -8.207280188798904e-09
+        },
+        "wealth": {
+          "date": "2026-01-19",
+          "signed_error_cny": -8.847564458847046e-09
+        },
+        "liquidation_wealth": {
+          "date": "2026-01-19",
+          "signed_error_cny": -8.847564458847046e-09
+        },
+        "shares": {
+          "date": "2024-11-07",
+          "symbol": "510300",
+          "signed_error": 2.9103830456733704e-11
+        }
+      },
+      "min_sell_first_cash_cny": -8.207280188798904e-09,
+      "negative_sell_first_cash_days": [],
+      "min_day_end_trade_cash_cny": -8.207280188798904e-09,
+      "negative_day_end_trade_cash_days": [],
+      "fill_integrity": {
+        "fill_rows": 1251,
+        "missing_raw_open_quotes": [],
+        "max_abs_fill_price_vs_raw_open": 0.0,
+        "max_abs_commission_vs_1bp_gross_notional": 0.0,
+        "fill_rows_with_open_price_compared": 1251
+      },
+      "event_log_reconciliation": {
+        "event_phase_rows_independent": 37,
+        "event_phase_rows_primary": 37,
+        "missing_primary_keys": [],
+        "missing_independent_keys": [],
+        "max_abs_delta": {
+          "entitled_quantity": 0.0,
+          "per_share_or_ratio": 0.0,
+          "amount": 0.0,
+          "cash_after": 7.683411240577698e-09,
+          "receivable_after": 0.0
+        }
+      },
+      "event_day_plus_minus_one_max_abs_deltas": {
+        "cash_cny": 7.683411240577698e-09,
+        "receivable_cny": 0.0,
+        "share_quantity": 0.0,
+        "wealth_cny": 8.847564458847046e-09
+      }
+    }
+  },
+  "contribution_schedule": {
+    "source": "common_calendar.csv; first common date in each month from 2015-01-05 through 2026-09-30",
+    "expected_month_count": 141,
+    "first_expected_date": "2015-01-05",
+    "last_expected_date": "2026-09-01",
+    "expected_dates": [
+      "2015-01-05",
+      "2015-02-02",
+      "2015-03-02",
+      "2015-04-01",
+      "2015-05-04",
+      "2015-06-01",
+      "2015-07-01",
+      "2015-08-03",
+      "2015-09-01",
+      "2015-10-08",
+      "2015-11-02",
+      "2015-12-01",
+      "2016-01-04",
+      "2016-02-01",
+      "2016-03-01",
+      "2016-04-01",
+      "2016-05-03",
+      "2016-06-01",
+      "2016-07-01",
+      "2016-08-01",
+      "2016-09-01",
+      "2016-10-10",
+      "2016-11-01",
+      "2016-12-01",
+      "2017-01-03",
+      "2017-02-03",
+      "2017-03-01",
+      "2017-04-05",
+      "2017-05-02",
+      "2017-06-01",
+      "2017-07-03",
+      "2017-08-01",
+      "2017-09-01",
+      "2017-10-09",
+      "2017-11-01",
+      "2017-12-01",
+      "2018-01-02",
+      "2018-02-01",
+      "2018-03-01",
+      "2018-04-02",
+      "2018-05-02",
+      "2018-06-01",
+      "2018-07-02",
+      "2018-08-01",
+      "2018-09-03",
+      "2018-10-08",
+      "2018-11-01",
+      "2018-12-03",
+      "2019-01-02",
+      "2019-02-01",
+      "2019-03-01",
+      "2019-04-01",
+      "2019-05-06",
+      "2019-06-03",
+      "2019-07-01",
+      "2019-08-01",
+      "2019-09-02",
+      "2019-10-08",
+      "2019-11-01",
+      "2019-12-02",
+      "2020-01-02",
+      "2020-02-03",
+      "2020-03-02",
+      "2020-04-01",
+      "2020-05-06",
+      "2020-06-01",
+      "2020-07-01",
+      "2020-08-03",
+      "2020-09-01",
+      "2020-10-09",
+      "2020-11-02",
+      "2020-12-01",
+      "2021-01-04",
+      "2021-02-01",
+      "2021-03-01",
+      "2021-04-01",
+      "2021-05-06",
+      "2021-06-01",
+      "2021-07-01",
+      "2021-08-02",
+      "2021-09-01",
+      "2021-10-08",
+      "2021-11-01",
+      "2021-12-01",
+      "2022-01-04",
+      "2022-02-07",
+      "2022-03-01",
+      "2022-04-01",
+      "2022-05-05",
+      "2022-06-01",
+      "2022-07-01",
+      "2022-08-01",
+      "2022-09-01",
+      "2022-10-10",
+      "2022-11-01",
+      "2022-12-01",
+      "2023-01-03",
+      "2023-02-01",
+      "2023-03-01",
+      "2023-04-03",
+      "2023-05-04",
+      "2023-06-01",
+      "2023-07-03",
+      "2023-08-01",
+      "2023-09-01",
+      "2023-10-09",
+      "2023-11-01",
+      "2023-12-01",
+      "2024-01-02",
+      "2024-02-01",
+      "2024-03-01",
+      "2024-04-01",
+      "2024-05-06",
+      "2024-06-03",
+      "2024-07-01",
+      "2024-08-01",
+      "2024-09-02",
+      "2024-10-08",
+      "2024-11-01",
+      "2024-12-02",
+      "2025-01-02",
+      "2025-02-05",
+      "2025-03-03",
+      "2025-04-01",
+      "2025-05-06",
+      "2025-06-03",
+      "2025-07-01",
+      "2025-08-01",
+      "2025-09-01",
+      "2025-10-09",
+      "2025-11-03",
+      "2025-12-01",
+      "2026-01-05",
+      "2026-02-02",
+      "2026-03-02",
+      "2026-04-01",
+      "2026-05-06",
+      "2026-06-01",
+      "2026-07-01",
+      "2026-08-03",
+      "2026-09-01"
+    ],
+    "account_reconciliation": {
+      "lump": {
+        "expected_monthly_dates_count": 141,
+        "actual_contribution_count": 1,
+        "expected_amount_cny_each": 50000.0,
+        "actual_total_contribution_cny": 50000.0,
+        "expected_contribution_count": 1,
+        "actual_dates_match_expected_schedule": true,
+        "actual_amounts_match_expected": true,
+        "missing_dates": [],
+        "unexpected_dates": [],
+        "all_passed": true
+      },
+      "dca": {
+        "expected_monthly_dates_count": 141,
+        "actual_contribution_count": 141,
+        "expected_amount_cny_each": 10000.0,
+        "actual_total_contribution_cny": 1410000.0,
+        "expected_contribution_count": 141,
+        "actual_dates_match_expected_schedule": true,
+        "actual_amounts_match_expected": true,
+        "missing_dates": [],
+        "unexpected_dates": [],
+        "all_passed": true
+      }
+    },
+    "all_passed": true
+  },
+  "signal_causality": {
+    "target_rows": 286,
+    "all_signal_dates_precede_execution_dates": true,
+    "signal_execution_order_violations": [],
+    "target_date_order_checked_from_targets_csv": true,
+    "independent_target_weight_recomputation": {
+      "target_rows": 286,
+      "complete_rows": 286,
+      "max_abs_weight_delta": 3.4083846855992306e-14,
+      "method": "standard-library statistics.stdev on trailing 20 common-calendar returns sampled from independently rebuilt native total-return levels, then normalized inverse volatility"
+    },
+    "all_known_action_announcements_precede_effective_quote_dates": true,
+    "late_action_announcements": [],
+    "independent_total_return_formula_check": {
+      "raw_quote_return_rows_compared": 9794,
+      "missing_frozen_signal_rows": [],
+      "max_abs_return_delta": 0.0,
+      "max_abs_cumulative_level_delta": 0.0,
+      "future_event_restates_past_rows": false,
+      "basis": "Each corporate action is applied only to its effective_quote_date return after checking its official announcement date is earlier; prior frozen signal rows are independently matched to raw close-to-close returns."
+    },
+    "signal_formula": "causal raw ETF total returns, distributions on ex-date; official split ratios",
+    "startup_reference_date": "2014-12-31",
+    "startup_window_return_observations": 20,
+    "independent_startup_weights_from_raw_ohlc": {
+      "510300": 0.15540018256440652,
+      "513100": 0.35686032880194213,
+      "518880": 0.48773948863365146
+    },
+    "first_dca_subscription_weights_from_fills": {
+      "510300": 0.15540018256440644,
+      "513100": 0.35686032880194235,
+      "518880": 0.4877394886336512
+    },
+    "max_abs_startup_weight_delta": 2.7755575615628914e-16,
+    "nasdaq_split_check": {
+      "official_ratio": 5.0,
+      "split_after_close_date": "2022-01-13",
+      "raw_quote_on_split_date": false,
+      "first_post_split_raw_quote_date": "2022-01-14",
+      "raw_resume_close": 1.015,
+      "pre_split_quantity_from_fills": 4826.714241014399,
+      "post_split_quantity_from_primary_event": 24133.571205072,
+      "post_split_quantity_equals_pre_split_times_ratio": true
+    },
+    "method_note": "Targets use signal dates one trading session before execution. The raw total-return series and all 286 target weights were independently recomputed from frozen raw OHLC and corporate actions; trailing volatility uses 20 common-calendar returns and sample standard deviation, followed by normalized inverse volatility."
+  },
+  "all_passed": true
+}

@@ -1,0 +1,20 @@
+{
+  "_note": "空模板，不是已核实估值。只能填实际采集时已知的报价、估值方法及误差依据。不能简单用最新NAV或IOPV冒充当前区间。",
+  "513100": {
+    "researcher_verified": false,
+    "lower": null,
+    "upper": null,
+    "as_of": null,
+    "first_seen_at": null,
+    "basis_description": null,
+    "method_source": null,
+    "error_bound_reason": null,
+    "underlying_price_at": null,
+    "fx_at": null,
+    "issuer_warning_checked_at": null,
+    "issuer_warning_active": null,
+    "iopv": null,
+    "iopv_at": null,
+    "iopv_method_source": null
+  }
+}

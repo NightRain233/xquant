@@ -1,0 +1,952 @@
+{
+  "checked_at": "2026-10-04",
+  "scope": "read-only independent arithmetic and source cross-check; no strategy rerun",
+  "audit_environment": {
+    "runner": "uv run --no-sync using project Python plus already-installed system site-packages via PYTHONPATH",
+    "python": "3.12.7",
+    "pandas": "2.1.4",
+    "numpy": "1.26.4",
+    "pinned_ephemeral_uv_run_attempt": "uv run --no-project --with pandas==3.0.3 --with numpy==2.4.6 failed before interpreter start with macOS system-configuration DynamicStore NULL-object panic; no network fetch or source mutation was attempted."
+  },
+  "snapshot": {
+    "count": 9,
+    "rows": [
+      {
+        "symbol": "510300",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 2.2560631697675033,
+        "spread_bps_abs_error": 4.440892098500626e-16,
+        "raw_json_close": 4.432,
+        "raw_json_volume_lots": 4958544,
+        "raw_json_equivalent_shares": 495854400.0,
+        "raw_json_turnover_cny": 2196229026.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 1.0,
+        "sina_turnover_cny": 2196229027.0,
+        "sina_volume_shares": 495854381.0,
+        "snapshot_last_nav_date": "2026-09-30",
+        "nav_source_date": "2026-09-30",
+        "nav_source_value": 4.4312,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.00018053800324979719,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "513100",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 4.250797024443502,
+        "spread_bps_abs_error": 0.0,
+        "raw_json_close": 2.352,
+        "raw_json_volume_lots": 2548283,
+        "raw_json_equivalent_shares": 254828300.0,
+        "raw_json_turnover_cny": 597044697.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.0,
+        "sina_turnover_cny": 597044697.0,
+        "sina_volume_shares": 254828283.0,
+        "snapshot_last_nav_date": "2026-09-29",
+        "nav_source_date": "2026-09-29",
+        "nav_source_value": 2.0379,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.1541292506992491,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "518880",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 1.1582787977080236,
+        "spread_bps_abs_error": 0.0,
+        "raw_json_close": 8.633,
+        "raw_json_volume_lots": 3137814,
+        "raw_json_equivalent_shares": 313781400.0,
+        "raw_json_turnover_cny": 2695333557.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.0,
+        "sina_turnover_cny": 2695333557.0,
+        "sina_volume_shares": 313781398.0,
+        "snapshot_last_nav_date": "2026-09-30",
+        "nav_source_date": "2026-09-30",
+        "nav_source_value": 8.6278,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.0006027028906556708,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "513500",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 3.7209302325593825,
+        "spread_bps_abs_error": 8.881784197001252e-16,
+        "raw_json_close": 2.688,
+        "raw_json_volume_lots": 994951,
+        "raw_json_equivalent_shares": 99495100.0,
+        "raw_json_turnover_cny": 268249988.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.0,
+        "sina_turnover_cny": 268249988.0,
+        "sina_volume_shares": 99495124.0,
+        "snapshot_last_nav_date": "2026-09-29",
+        "nav_source_date": "2026-09-29",
+        "nav_source_value": 2.4469,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.09853283746781649,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "510310",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 4.6446818392955596,
+        "spread_bps_abs_error": 8.881784197001252e-16,
+        "raw_json_close": 4.305,
+        "raw_json_volume_lots": 3140007,
+        "raw_json_equivalent_shares": 314000700.0,
+        "raw_json_turnover_cny": 1351886974.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.0,
+        "sina_turnover_cny": 1351886974.0,
+        "sina_volume_shares": 314000725.0,
+        "snapshot_last_nav_date": "2026-09-30",
+        "nav_source_date": "2026-09-30",
+        "nav_source_value": 4.3043,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.0001626280696047644,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "513300",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 3.547986517650842,
+        "spread_bps_abs_error": 0.0,
+        "raw_json_close": 2.818,
+        "raw_json_volume_lots": 1817193,
+        "raw_json_equivalent_shares": 181719300.0,
+        "raw_json_turnover_cny": 509169013.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.0,
+        "sina_turnover_cny": 509169013.0,
+        "sina_volume_shares": 181719270.0,
+        "snapshot_last_nav_date": "2026-09-29",
+        "nav_source_date": "2026-09-29",
+        "nav_source_value": 2.5314,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.11321798214426804,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "518800",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 1.1041793187227098,
+        "spread_bps_abs_error": 0.0,
+        "raw_json_close": 9.056,
+        "raw_json_volume_lots": 447113,
+        "raw_json_equivalent_shares": 44711300.0,
+        "raw_json_turnover_cny": 402702010.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.0,
+        "sina_turnover_cny": 402702010.0,
+        "sina_volume_shares": 44711306.0,
+        "snapshot_last_nav_date": "2026-09-30",
+        "nav_source_date": "2026-09-30",
+        "nav_source_value": 9.0453,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.0011829347838103743,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "159655",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 4.9689440993783345,
+        "spread_bps_abs_error": 8.881784197001252e-16,
+        "raw_json_close": 2.013,
+        "raw_json_volume_lots": 669069,
+        "raw_json_equivalent_shares": 66906900.0,
+        "raw_json_turnover_cny": 134037387.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.07600000500679016,
+        "sina_turnover_cny": 134037387.076,
+        "sina_volume_shares": 66906939.0,
+        "snapshot_last_nav_date": "2026-09-29",
+        "nav_source_date": "2026-09-29",
+        "nav_source_value": 1.8732,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.07463164638052522,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      },
+      {
+        "symbol": "159612",
+        "sina_date_time_match": true,
+        "snapshot_price_equals_sina_last": true,
+        "snapshot_bid_ask_shares_match_sina": true,
+        "recomputed_full_spread_bps": 4.81811611659788,
+        "spread_bps_abs_error": 0.0,
+        "raw_json_close": 2.076,
+        "raw_json_volume_lots": 146137,
+        "raw_json_equivalent_shares": 14613700.0,
+        "raw_json_turnover_cny": 30283380.0,
+        "raw_close_matches_sina": true,
+        "raw_volume_matches_sina_with_100_share_unit_conversion": true,
+        "raw_turnover_abs_diff_cny": 0.0,
+        "sina_turnover_cny": 30283380.0,
+        "sina_volume_shares": 14613700.0,
+        "snapshot_last_nav_date": "2026-09-29",
+        "nav_source_date": "2026-09-29",
+        "nav_source_value": 1.9196,
+        "snapshot_nav_matches_source": true,
+        "close_vs_latest_published_nav_premium": 0.08147530735569908,
+        "nav_timestamp_field": "UNKNOWN",
+        "decision_time_truth_flag": false
+      }
+    ],
+    "all_sina_time_price_size_fields_match": true,
+    "all_spreads_recompute_within_1e-8_bps": true,
+    "all_nav_values_match_nav_response": true,
+    "all_raw_close_and_converted_volume_match_quote": true,
+    "interpretation": "Turnover is Sina amount in CNY; frozen raw OHLCV confirms close/share volume and turnover (subject to source rounding). Latest published NAV can lag quote date for overseas funds; NAV publication time is UNKNOWN and decision_time_truth is false, so close/latest-NAV ratio is a stale-reference indicator, not verified executable premium."
+  },
+  "pilot_sensitivity": {
+    "monthly_3000_rows": [
+      {
+        "strategy": "Three",
+        "monthly": 3000,
+        "cadence": "10sessions",
+        "full_spread_bps": 0,
+        "principal": 74000.0,
+        "wealth": 77318.78449,
+        "profit": 3318.784490000005,
+        "commission": 24.615509999999997,
+        "spread_cost": 0.0,
+        "orders": 75,
+        "unit_max_drawdown": -0.1169334640145821,
+        "max_cash": 1358.958309999998,
+        "mean_cash_fraction": 0.0133928448558636,
+        "mean_max_weight_error": 0.0131446022294823,
+        "max_weight_error": 0.0453095624794093
+      },
+      {
+        "strategy": "Three",
+        "monthly": 3000,
+        "cadence": "10sessions",
+        "full_spread_bps": 5,
+        "principal": 74000.0,
+        "wealth": 77229.949785375,
+        "profit": 3229.949785375007,
+        "commission": 24.615664625000008,
+        "spread_cost": 61.53455000001145,
+        "orders": 75,
+        "unit_max_drawdown": -0.1170822447920038,
+        "max_cash": 1307.9256813474965,
+        "mean_cash_fraction": 0.0134329642928783,
+        "mean_max_weight_error": 0.0133615627666073,
+        "max_weight_error": 0.0452600158860739
+      },
+      {
+        "strategy": "Three",
+        "monthly": 3000,
+        "cadence": "10sessions",
+        "full_spread_bps": 20,
+        "principal": 74000.0,
+        "wealth": 77038.39803859,
+        "profit": 3038.3980385900068,
+        "commission": 24.570461410000007,
+        "spread_cost": 245.63149999998436,
+        "orders": 75,
+        "unit_max_drawdown": -0.1175118381869858,
+        "max_cash": 1480.8961604100043,
+        "mean_cash_fraction": 0.0146211523134072,
+        "mean_max_weight_error": 0.0141691303727383,
+        "max_weight_error": 0.0451119998287371
+      },
+      {
+        "strategy": "Three",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 0,
+        "principal": 74000.0,
+        "wealth": 76426.81193,
+        "profit": 2426.811929999996,
+        "commission": 17.78807,
+        "spread_cost": 0.0,
+        "orders": 27,
+        "unit_max_drawdown": -0.1258851707964775,
+        "max_cash": 1604.7093,
+        "mean_cash_fraction": 0.0121300465830439,
+        "mean_max_weight_error": 0.0741683955038936,
+        "max_weight_error": 0.1919964103855479
+      },
+      {
+        "strategy": "Three",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 5,
+        "principal": 74000.0,
+        "wealth": 76390.4633859475,
+        "profit": 2390.4633859475,
+        "commission": 17.7546390525,
+        "spread_cost": 44.38197500000617,
+        "orders": 27,
+        "unit_max_drawdown": -0.1258335511092966,
+        "max_cash": 1592.481327324996,
+        "mean_cash_fraction": 0.01217640591758,
+        "mean_max_weight_error": 0.0741823573869873,
+        "max_weight_error": 0.1921422822106698
+      },
+      {
+        "strategy": "Three",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 20,
+        "principal": 74000.0,
+        "wealth": 76233.84458494,
+        "profit": 2233.8445849400014,
+        "commission": 17.73901506,
+        "spread_cost": 177.31639999998632,
+        "orders": 27,
+        "unit_max_drawdown": -0.1262929210660559,
+        "max_cash": 1555.7974093000007,
+        "mean_cash_fraction": 0.0116050131312895,
+        "mean_max_weight_error": 0.0741593428496398,
+        "max_weight_error": 0.1927329923025759
+      },
+      {
+        "strategy": "Two",
+        "monthly": 3000,
+        "cadence": "10sessions",
+        "full_spread_bps": 0,
+        "principal": 74000.0,
+        "wealth": 80575.06306999999,
+        "profit": 6575.063069999989,
+        "commission": 25.53693,
+        "spread_cost": 0.0,
+        "orders": 53,
+        "unit_max_drawdown": -0.1532380155777837,
+        "max_cash": 1061.8986600000062,
+        "mean_cash_fraction": 0.009860634546823,
+        "mean_max_weight_error": 0.0146063364282247,
+        "max_weight_error": 0.045635464028167
+      },
+      {
+        "strategy": "Two",
+        "monthly": 3000,
+        "cadence": "10sessions",
+        "full_spread_bps": 5,
+        "principal": 74000.0,
+        "wealth": 80511.21890018247,
+        "profit": 6511.218900182474,
+        "commission": 25.53877481750001,
+        "spread_cost": 63.84232500000873,
+        "orders": 53,
+        "unit_max_drawdown": -0.153430680686554,
+        "max_cash": 1033.6439368299943,
+        "mean_cash_fraction": 0.0093091782115249,
+        "mean_max_weight_error": 0.0143513485948878,
+        "max_weight_error": 0.0453591190813083
+      },
+      {
+        "strategy": "Two",
+        "monthly": 3000,
+        "cadence": "10sessions",
+        "full_spread_bps": 20,
+        "principal": 74000.0,
+        "wealth": 80378.98191654,
+        "profit": 6378.981916539997,
+        "commission": 25.57188346,
+        "spread_cost": 255.6461999999846,
+        "orders": 52,
+        "unit_max_drawdown": -0.1537252520347533,
+        "max_cash": 1134.4887858600075,
+        "mean_cash_fraction": 0.009956547802256,
+        "mean_max_weight_error": 0.0145231577046655,
+        "max_weight_error": 0.0447309617268851
+      },
+      {
+        "strategy": "Two",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 0,
+        "principal": 74000.0,
+        "wealth": 80492.35793,
+        "profit": 6492.357929999998,
+        "commission": 17.14207,
+        "spread_cost": 0.0,
+        "orders": 18,
+        "unit_max_drawdown": -0.1729938548341558,
+        "max_cash": 1031.0240800000029,
+        "mean_cash_fraction": 0.0090483958879814,
+        "mean_max_weight_error": 0.0858035253998382,
+        "max_weight_error": 0.2631885004525636
+      },
+      {
+        "strategy": "Two",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 5,
+        "principal": 74000.0,
+        "wealth": 80449.5009272125,
+        "profit": 6449.500927212503,
+        "commission": 17.143897787500002,
+        "spread_cost": 42.85517500000684,
+        "orders": 18,
+        "unit_max_drawdown": -0.1731977234951701,
+        "max_cash": 1012.5829809599963,
+        "mean_cash_fraction": 0.0086058614903414,
+        "mean_max_weight_error": 0.0856084251302881,
+        "max_weight_error": 0.2630994534291161
+      },
+      {
+        "strategy": "Two",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 20,
+        "principal": 74000.0,
+        "wealth": 80256.92421269,
+        "profit": 6256.924212690006,
+        "commission": 17.36808731,
+        "spread_cost": 173.60769999998547,
+        "orders": 18,
+        "unit_max_drawdown": -0.1738098153774848,
+        "max_cash": 957.259683840006,
+        "mean_cash_fraction": 0.0087547130877529,
+        "mean_max_weight_error": 0.0864259405870884,
+        "max_weight_error": 0.2628320782324378
+      },
+      {
+        "strategy": "513500",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 0,
+        "principal": 74000.0,
+        "wealth": 81294.71245,
+        "profit": 7294.712450000006,
+        "commission": 7.38755,
+        "spread_cost": 0.0,
+        "orders": 9,
+        "unit_max_drawdown": -0.1291639848955063,
+        "max_cash": 197.7203900000004,
+        "mean_cash_fraction": 0.0017088900537708,
+        "mean_max_weight_error": 0.0017088900537708,
+        "max_weight_error": 0.0031780833674718
+      },
+      {
+        "strategy": "513500",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 5,
+        "principal": 74000.0,
+        "wealth": 81292.0472585075,
+        "profit": 7292.047258507504,
+        "commission": 7.387816492500001,
+        "spread_cost": 18.46492500000396,
+        "orders": 9,
+        "unit_max_drawdown": -0.1288206223229854,
+        "max_cash": 249.9929317374981,
+        "mean_cash_fraction": 0.0021279402409147,
+        "mean_max_weight_error": 0.0021279402409147,
+        "max_weight_error": 0.0050542327855498
+      },
+      {
+        "strategy": "513500",
+        "monthly": 3000,
+        "cadence": "monthly",
+        "full_spread_bps": 20,
+        "principal": 74000.0,
+        "wealth": 81218.12196903002,
+        "profit": 7218.12196903002,
+        "commission": 7.368330969999999,
+        "spread_cost": 73.60969999998925,
+        "orders": 9,
+        "unit_max_drawdown": -0.1289328957858641,
+        "max_cash": 323.330709770014,
+        "mean_cash_fraction": 0.0030272588901433,
+        "mean_max_weight_error": 0.0030272588901433,
+        "max_weight_error": 0.0046697414967371
+      }
+    ],
+    "row_count": 15,
+    "expected_row_count": 15,
+    "all_profit_equals_wealth_minus_principal_within_1e-7": true,
+    "all_reported_costs_nonnegative": true,
+    "saved_fill_crosschecks_at_3000_5bps": [
+      {
+        "strategy": "Three",
+        "cadence": "10sessions",
+        "fill_rows": 75,
+        "sensitivity_orders": 75,
+        "fill_count_matches": true,
+        "fill_commission_sum": 24.615664625000004,
+        "sensitivity_commission": 24.615664625000008,
+        "fill_spread_sum": 61.534550000011464,
+        "sensitivity_spread": 61.53455000001145,
+        "max_fill_price_error_vs_raw_open_halfspread": 1.7763568394002505e-15,
+        "max_notional_identity_error": 1.8189894035458565e-12,
+        "max_commission_vs_1bp_error": 1.1102230246251565e-16,
+        "max_spread_cost_vs_raw_open_error": 1.7763568394002505e-12,
+        "all_trade_qty_100_lots": true,
+        "lot_violations": []
+      },
+      {
+        "strategy": "Three",
+        "cadence": "monthly",
+        "fill_rows": 27,
+        "sensitivity_orders": 27,
+        "fill_count_matches": true,
+        "fill_commission_sum": 17.754639052500004,
+        "sensitivity_commission": 17.7546390525,
+        "fill_spread_sum": 44.38197500000618,
+        "sensitivity_spread": 44.38197500000617,
+        "max_fill_price_error_vs_raw_open_halfspread": 1.7763568394002505e-15,
+        "max_notional_identity_error": 1.8189894035458565e-12,
+        "max_commission_vs_1bp_error": 1.1102230246251565e-16,
+        "max_spread_cost_vs_raw_open_error": 1.5987211554602254e-12,
+        "all_trade_qty_100_lots": true,
+        "lot_violations": []
+      },
+      {
+        "strategy": "Two",
+        "cadence": "10sessions",
+        "fill_rows": 53,
+        "sensitivity_orders": 53,
+        "fill_count_matches": true,
+        "fill_commission_sum": 25.538774817500002,
+        "sensitivity_commission": 25.53877481750001,
+        "fill_spread_sum": 63.84232500000873,
+        "sensitivity_spread": 63.84232500000873,
+        "max_fill_price_error_vs_raw_open_halfspread": 1.7763568394002505e-15,
+        "max_notional_identity_error": 3.637978807091713e-12,
+        "max_commission_vs_1bp_error": 2.220446049250313e-16,
+        "max_spread_cost_vs_raw_open_error": 2.708944180085382e-12,
+        "all_trade_qty_100_lots": true,
+        "lot_violations": []
+      },
+      {
+        "strategy": "Two",
+        "cadence": "monthly",
+        "fill_rows": 18,
+        "sensitivity_orders": 18,
+        "fill_count_matches": true,
+        "fill_commission_sum": 17.1438977875,
+        "sensitivity_commission": 17.143897787500002,
+        "fill_spread_sum": 42.85517500000684,
+        "sensitivity_spread": 42.85517500000684,
+        "max_fill_price_error_vs_raw_open_halfspread": 1.7763568394002505e-15,
+        "max_notional_identity_error": 3.637978807091713e-12,
+        "max_commission_vs_1bp_error": 1.1102230246251565e-16,
+        "max_spread_cost_vs_raw_open_error": 2.708944180085382e-12,
+        "all_trade_qty_100_lots": true,
+        "lot_violations": []
+      },
+      {
+        "strategy": "513500",
+        "cadence": "monthly",
+        "fill_rows": 9,
+        "sensitivity_orders": 9,
+        "fill_count_matches": true,
+        "fill_commission_sum": 7.3878164925000025,
+        "sensitivity_commission": 7.387816492500001,
+        "fill_spread_sum": 18.464925000003962,
+        "sensitivity_spread": 18.46492500000396,
+        "max_fill_price_error_vs_raw_open_halfspread": 0.0,
+        "max_notional_identity_error": 0.0,
+        "max_commission_vs_1bp_error": 5.551115123125783e-17,
+        "max_spread_cost_vs_raw_open_error": 0.0,
+        "all_trade_qty_100_lots": true,
+        "lot_violations": []
+      }
+    ],
+    "saved_5bps_fills_all_100_share_lots": true,
+    "note": "Only 5-bps monthly=3000 fill CSVs are materialized per strategy/cadence; 0/20-bps cases are checked by row arithmetic and published scenario dimensions, not reconstructed from absent fills."
+  },
+  "pilot_ledger": {
+    "reconstruction": "Apply each saved trade fill to cash/holdings; use raw JSON close marks (forward-fill no-trade weekdays), 50,000 initial + 3,000 first trade date each subsequent month, accrue 0.123/share on prior-held 510300 shares on Jan 19 and cash it on Jan 27; issue unit shares at same-day pre-contribution OPEN-mark NAV.",
+    "n_account_days": 269,
+    "n_fills": 75,
+    "max_abs_differences_vs_reported": {
+      "wealth": 1.4551915228366852e-11,
+      "cash": 7.503331289626658e-12,
+      "receivable": 0.0,
+      "unit_nav": 4.440892098500626e-16,
+      "q": 0.0,
+      "profit": 1.5006662579253316e-11
+    },
+    "max_error_date_field_values": {
+      "wealth": {
+        "date": "2026-01-14",
+        "reconstructed": 51133.08132732499,
+        "reported": 51133.081327325,
+        "abs_error": 1.4551915228366852e-11
+      },
+      "cash": {
+        "date": "2026-08-28",
+        "reconstructed": 1125.0506627449886,
+        "reported": 1125.050662744996,
+        "abs_error": 7.503331289626658e-12
+      },
+      "unit_nav": {
+        "date": "2026-04-14",
+        "reconstructed": 1.0287880705564136,
+        "reported": 1.028788070556414,
+        "abs_error": 4.440892098500626e-16
+      },
+      "profit": {
+        "date": "2026-09-02",
+        "reconstructed": 3235.128867622494,
+        "reported": 3235.128867622509,
+        "abs_error": 1.5006662579253316e-11
+      }
+    },
+    "jan19_close_holdings": {
+      "510300": 4000.0,
+      "513100": 8900.0,
+      "518880": 1400.0
+    },
+    "prior_to_jan19_holding_510300": 4000.0,
+    "computed_dividend_entitlement_from_prior_holding": 492.0,
+    "reported_jan19_receivable": 492.0,
+    "jan27_receivable": 0.0,
+    "jan27_cash": 1281.1223102099962,
+    "jan19_dividend_receivable_matches_pre_exdate_holding": true,
+    "cash_never_negative": true,
+    "minimum_reported_cash": 178.28070814249668,
+    "all_reported_holdings_nonnegative_100_share_lots": true,
+    "terminal_reconstructed": {
+      "wealth": 77229.94978537499,
+      "cash": 620.8497853749877,
+      "receivable": 0.0,
+      "holdings": {
+        "510300": 7800.0,
+        "513100": 10900.0,
+        "518880": 1900.0
+      },
+      "principal": 74000.0,
+      "units": 72946.3314625579,
+      "unit_nav": 1.058722875255431
+    },
+    "terminal_published": {
+      "wealth": 77229.949785375,
+      "principal": 74000.0,
+      "cash": 620.8497853749941,
+      "receivable": 0.0,
+      "unit_nav": 1.058722875255431,
+      "profit": 3229.949785375007
+    },
+    "all_daily_fields_match_within_1e-6": true
+  },
+  "legacy_accounting": {
+    "comparison": "old_additive_cost10 rows in accounting_diagnostics.csv vs prior DCA main_summary.csv for Three/Two.",
+    "rows": [
+      {
+        "strategy": "Three",
+        "fields": {
+          "start": {
+            "diagnostics": "2015-01-05",
+            "main_summary": "2015-01-05",
+            "match": true
+          },
+          "end": {
+            "diagnostics": "2026-09-30",
+            "main_summary": "2026-09-30",
+            "match": true
+          },
+          "contributions": {
+            "diagnostics": 141.0,
+            "main_summary": 141.0,
+            "abs_diff": 0.0
+          },
+          "principal": {
+            "diagnostics": 1410000.0,
+            "main_summary": 1410000.0,
+            "abs_diff": 0.0
+          },
+          "terminal_wealth": {
+            "diagnostics": 4057557.430773069,
+            "main_summary": 4057557.430773069,
+            "abs_diff": 0.0
+          },
+          "terminal_liquidation": {
+            "diagnostics": 4053499.873342296,
+            "main_summary": 4053499.873342296,
+            "abs_diff": 0.0
+          },
+          "profit": {
+            "diagnostics": 2643499.873342296,
+            "main_summary": 2643499.873342296,
+            "abs_diff": 0.0
+          },
+          "profit_on_principal": {
+            "diagnostics": 1.874822605207302,
+            "main_summary": 1.874822605207302,
+            "abs_diff": 0.0
+          },
+          "xirr": {
+            "diagnostics": 0.1684913814546711,
+            "main_summary": 0.1684913814546711,
+            "abs_diff": 0.0
+          },
+          "xirr_real_assumed_inflation2pct": {
+            "diagnostics": 0.1455797857398737,
+            "main_summary": 0.1455797857398737,
+            "abs_diff": 0.0
+          },
+          "twr_cagr": {
+            "diagnostics": 0.1545462318694712,
+            "main_summary": 0.1545462318694712,
+            "abs_diff": 0.0
+          },
+          "unit_max_drawdown": {
+            "diagnostics": -0.1372943810274252,
+            "main_summary": -0.1372943810274252,
+            "abs_diff": 0.0
+          },
+          "worst_loss_amount": {
+            "diagnostics": -4321.509207698327,
+            "main_summary": -4321.509207698327,
+            "abs_diff": 0.0
+          },
+          "worst_loss_amount_date": {
+            "diagnostics": "2016-01-28",
+            "main_summary": "2016-01-28",
+            "match": true
+          },
+          "principal_at_worst_amount": {
+            "diagnostics": 130000.0,
+            "main_summary": 130000.0,
+            "abs_diff": 0.0
+          },
+          "worst_loss_ratio": {
+            "diagnostics": -0.0398783934912325,
+            "main_summary": -0.0398783934912325,
+            "abs_diff": 0.0
+          },
+          "worst_loss_ratio_date": {
+            "diagnostics": "2015-08-25",
+            "main_summary": "2015-08-25",
+            "match": true
+          },
+          "principal_at_worst_ratio": {
+            "diagnostics": 80000.0,
+            "main_summary": 80000.0,
+            "abs_diff": 0.0
+          },
+          "negative_valuation_share": {
+            "diagnostics": 0.0233263354327035,
+            "main_summary": 0.0233263354327035,
+            "abs_diff": 0.0
+          },
+          "material_loss_gt1pct_share": {
+            "diagnostics": 0.0114299043620247,
+            "main_summary": 0.0114299043620247,
+            "abs_diff": 0.0
+          },
+          "material_loss_gt5pct_share": {
+            "diagnostics": 0.0,
+            "main_summary": 0.0,
+            "abs_diff": 0.0
+          },
+          "longest_completed_principal_loss_days": {
+            "diagnostics": 46.0,
+            "main_summary": 46.0,
+            "abs_diff": 0.0
+          },
+          "first_three_month_end_nonnegative": {
+            "diagnostics": "2015-03-31",
+            "main_summary": "2015-03-31",
+            "match": true
+          },
+          "final_observed_breakeven": {
+            "diagnostics": "2016-02-05",
+            "main_summary": "2016-02-05",
+            "match": true
+          },
+          "total_trade_cost": {
+            "diagnostics": 62205.99839166271,
+            "main_summary": 62205.99839166271,
+            "abs_diff": 0.0
+          },
+          "terminal_exit_cost": {
+            "diagnostics": 4057.557430773042,
+            "main_summary": 4057.557430773042,
+            "abs_diff": 0.0
+          },
+          "max_account_residual": {
+            "diagnostics": 1.4237002687877975e-09,
+            "main_summary": 1.4237002687877975e-09,
+            "abs_diff": 0.0
+          }
+        },
+        "all_match": true
+      },
+      {
+        "strategy": "Two",
+        "fields": {
+          "start": {
+            "diagnostics": "2015-01-05",
+            "main_summary": "2015-01-05",
+            "match": true
+          },
+          "end": {
+            "diagnostics": "2026-09-30",
+            "main_summary": "2026-09-30",
+            "match": true
+          },
+          "contributions": {
+            "diagnostics": 141.0,
+            "main_summary": 141.0,
+            "abs_diff": 0.0
+          },
+          "principal": {
+            "diagnostics": 1410000.0,
+            "main_summary": 1410000.0,
+            "abs_diff": 0.0
+          },
+          "terminal_wealth": {
+            "diagnostics": 5267113.174241593,
+            "main_summary": 5267113.174241593,
+            "abs_diff": 0.0
+          },
+          "terminal_liquidation": {
+            "diagnostics": 5261846.061067351,
+            "main_summary": 5261846.061067351,
+            "abs_diff": 0.0
+          },
+          "profit": {
+            "diagnostics": 3851846.061067351,
+            "main_summary": 3851846.061067351,
+            "abs_diff": 0.0
+          },
+          "profit_on_principal": {
+            "diagnostics": 2.7318057170690437,
+            "main_summary": 2.7318057170690437,
+            "abs_diff": 0.0
+          },
+          "xirr": {
+            "diagnostics": 0.2083950731871441,
+            "main_summary": 0.2083950731871441,
+            "abs_diff": 0.0
+          },
+          "xirr_real_assumed_inflation2pct": {
+            "diagnostics": 0.1847010521442591,
+            "main_summary": 0.1847010521442591,
+            "abs_diff": 0.0
+          },
+          "twr_cagr": {
+            "diagnostics": 0.1816461331954308,
+            "main_summary": 0.1816461331954308,
+            "abs_diff": 0.0
+          },
+          "unit_max_drawdown": {
+            "diagnostics": -0.1641417979596217,
+            "main_summary": -0.1641417979596217,
+            "abs_diff": 0.0
+          },
+          "worst_loss_amount": {
+            "diagnostics": -3847.13727707477,
+            "main_summary": -3847.13727707477,
+            "abs_diff": 0.0
+          },
+          "worst_loss_amount_date": {
+            "diagnostics": "2015-07-08",
+            "main_summary": "2015-07-08",
+            "match": true
+          },
+          "principal_at_worst_amount": {
+            "diagnostics": 70000.0,
+            "main_summary": 70000.0,
+            "abs_diff": 0.0
+          },
+          "worst_loss_ratio": {
+            "diagnostics": -0.054959103958211,
+            "main_summary": -0.054959103958211,
+            "abs_diff": 0.0
+          },
+          "worst_loss_ratio_date": {
+            "diagnostics": "2015-07-08",
+            "main_summary": "2015-07-08",
+            "match": true
+          },
+          "principal_at_worst_ratio": {
+            "diagnostics": 70000.0,
+            "main_summary": 70000.0,
+            "abs_diff": 0.0
+          },
+          "negative_valuation_share": {
+            "diagnostics": 0.0440867739678096,
+            "main_summary": 0.0440867739678096,
+            "abs_diff": 0.0
+          },
+          "material_loss_gt1pct_share": {
+            "diagnostics": 0.0179612782831817,
+            "main_summary": 0.0179612782831817,
+            "abs_diff": 0.0
+          },
+          "material_loss_gt5pct_share": {
+            "diagnostics": 0.000233263354327,
+            "main_summary": 0.000233263354327,
+            "abs_diff": 0.0
+          },
+          "longest_completed_principal_loss_days": {
+            "diagnostics": 47.0,
+            "main_summary": 47.0,
+            "abs_diff": 0.0
+          },
+          "first_three_month_end_nonnegative": {
+            "diagnostics": "2016-04-30",
+            "main_summary": "2016-04-30",
+            "match": true
+          },
+          "final_observed_breakeven": {
+            "diagnostics": "2016-02-01",
+            "main_summary": "2016-02-01",
+            "match": true
+          },
+          "total_trade_cost": {
+            "diagnostics": 63797.33896213204,
+            "main_summary": 63797.33896213204,
+            "abs_diff": 0.0
+          },
+          "terminal_exit_cost": {
+            "diagnostics": 5267.113174241968,
+            "main_summary": 5267.113174241968,
+            "abs_diff": 0.0
+          },
+          "max_account_residual": {
+            "diagnostics": 1.4927081792848183e-09,
+            "main_summary": 1.4927081792848183e-09,
+            "abs_diff": 0.0
+          }
+        },
+        "all_match": true
+      }
+    ],
+    "both_match": true
+  }
+}

@@ -1,0 +1,1819 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">
+var _speedMark = new Date();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-status-bar-style" content="black">
+<link type="image/x-icon" href="/Public/static/etrade/1/dist/i/common/fav.png" rel="icon">
+<meta name="renderer" content="webkit">
+<title>基金详情</title>
+<meta name="keywords" content="基金,理财,基金理财,国泰基金,国泰,国泰基金官网,国泰基金官方网站,华夏,广发,南方,博时,嘉时,招商基金,兴全,天天基金,申坤,周伟峰,彭凌志,杨飞,程洲,阿尔法战队,0.1折起" />
+<meta name="description" content="国泰基金20年老品牌，值得信赖，利是宝购基,省钱省心，利是宝申购基金,享费率优惠，专业保障，安全理财：多重安全验证，资金同卡进出，基金交易，高效便捷：在线开户，随时随地进行认/申购、定投、转换、赎回等交易，盈亏明细随时查看，快速取现，实时到账：支持T+0快速取现，实时到账。" />
+<script src="/Public/static/etrade/1/common/js/jquery.min.2.x.js"></script>
+<!--[if lte IE 9]>
+<script src="/Public/static/etrade/1/common/js//jquery.min.1.11.3.js"></script>
+<script src="/Public/static/etrade/1/common/js/modernizr.js"></script>
+<script src="/Public/static/etrade/1/common/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="/Public/static/js/upload/gta-data-min-1.0.0.js"></script>
+<script type="text/javascript" src="/Public/static/etrade/1/dist/js/common.js?v=hy101"></script>
+<meta name="sogou_site_verification" content="ogIFwk4WcI" />
+    <link rel="stylesheet" href="/Public/static/etrade/1/dist/css/jijin_view.css?v=hy101" />
+<meta name="__hash__" content="f55d0e5ddca0f0a194878f1b04db4e83_c1ecfd316f822f8b2c7ceef7f8cc1449" /></head>
+<body class="">
+    <div class="gt-header">
+  <link rel="stylesheet" href="/Public/static/etrade/1/dist/css/topbar.css?v=hy101">
+    <!-- 移动端提示条 -->
+    <!-- <div id="mobile-tip-bar" class="mobile-tip-bar" style="display: none;">
+        <div class="mobile-tip-content">
+            <span class="mobile-tip-text">请前往 <a href="https://m.gtfund.com" target="_blank" rel="noopener">m.gtfund.com</a> 移动端获得更好体验</span>
+            <span class="mobile-tip-close" onclick="closeMobileTip()">×</span>
+        </div>
+    </div> -->
+    <div class="gt-wrapper">
+        <table>
+            <tr>
+                <td class="gt-text-left" style="width: 380px;">
+                    <div class="header-search">
+                        <form id="topFrm" action="/Etrade/Search/index" method="get" style="width: 400px;">
+                            <input type="search" name="word" id="search" autocomplete="off" style="width: 316px;" class="gt-text-middle J_topbar_search_input" placeholder="搜基金名称/代码/基金经理" etrade-domain="/Etrade/Search/topbarSearch">
+                            <div id="inputbtn" class="search-btn gt-text-middle J_topbar_search" >搜索</div>
+                        <input type="hidden" name="__hash__" value="f55d0e5ddca0f0a194878f1b04db4e83_c1ecfd316f822f8b2c7ceef7f8cc1449" /></form>
+                        <div id="recommend-funds" class="recommend-funds">
+                          <div class="hot_search" id="hot_search"></div>
+                          <textarea id="hot_search_text">
+
+                            <% if(data.fund&&data.fund.length>0) { %>
+                              <div class="title">
+                                <div>产品 <sub>共<%= data.fund.length %>条</sub></div>
+                                <% if(data.fund.length>5) { %>
+                                  <a class="more" href="/Etrade/Search/index?word=<%= data.input%>&type=fundList">查看更多</a>
+                                <% } %>
+                              </div>
+                              <% for (let i = 0; i < Math.min(data.fund.length, 5); i++) { %>
+                                <a href="/Etrade/Jijin/view/id/<%= data.fund[i][4]%>">
+                                  <div class="list hot_fund_id" data-code="<%= data.fund[i][0]%>" data-name="<%= data.fund[i][1] %>">
+                                    <div class="fundname searchStyle"></div>
+                                  </div>
+                                </a>
+                              <% } %>
+                            <% } %>
+
+                            <% if(data.article&&data.article.hits&&data.article.hits.length>0) { %>
+                              <div class="title">
+                                <div>泰·资讯 <sub>共<%= data.article.total %>条</sub></div>
+                                <% if(data.article.total>3) { %>
+                                  <a class="more" href="/Etrade/Search/index?word=<%= data.input%>&type=articleList">查看更多</a>
+                                <% } %>
+                              </div>
+                                <% for (let i = 0; i <  Math.min(data.article.hits.length, 3); i++) { %>
+                                  <a href="/Etrade/NewsResearch/brahmaview/id/<%= data.article.hits[i].id%>/routie/<%= data.article.hits[i].column%>" target="_blank">
+                                  <div class="list" style="flex-wrap: wrap;">
+                                    <div class="article">
+                                      <div class="fundname articleStyle"></div>
+                                      <span class="artTime"><%= data.article.hits[i].published_at %></span>
+                                    </div>
+                                    <div class="articleTextStyle"></div>
+                                  </div>
+                                  </a>
+                                <% } %>
+                            <% } %>
+
+                            <% if(data.report&&data.report.hits&&data.report.hits.length>0) { %>
+                              <div class="title">
+                                <div>公告 <sub>共<%= data.report.total %>条</sub></div>
+                                <% if(data.report.total>3) { %>
+                                  <a class="more" href="/Etrade/Search/index?word=<%= data.input%>&type=reportList">查看更多</a>
+                                <% } %>
+                              </div>
+                                <% for (let i = 0; i <  Math.min(data.report.hits.length, 3); i++) { %>
+                                  <a href="<%= data.report.hits[i].pdf %>" target="_blank">
+                                  <div class="list" style="flex-wrap: wrap;">
+                                    <div class="fundname reportStyle"></div>
+                                    <div class="subtext">
+                                      <span><%= data.report.hits[i].type %></span>
+                                      <span><%= data.report.hits[i].published_at %></span>
+                                    </div>
+                                  </div>
+                                  </a>
+                                <% } %>
+                            <% } %>
+
+                            <% if(data.historyText&&data.historyText.length>0) { %>
+                              <div class="title">
+                                <div>搜索历史</div>
+                                <span class="del" id="historytext">清除记录</span>
+                              </div>
+                              <% if(data.historyText.length>0) { %>
+                                <% for (let i = 0; i < Math.min(data.historyText.length, 5); i++) { %>
+                                    <div class="list historyInput" data-history="<%= data.historyText[i]%>">
+                                      <div class="fundname"><%= data.historyText[i] %></div>
+                                    </div>
+                                <% } %>
+                              <% } %>
+                            <% } %>
+
+                            <% if(data.historyFunds&&data.historyFunds.length>0) { %>
+                              <div class="title">
+                                <div>最近浏览</div>
+                                <span class="del" id="historyfund">清除记录</span>
+                              </div>
+                              <% if(data.historyFunds.length>0) { %>
+                                <% for (let i = 0; i < Math.min(data.historyFunds.length, 5); i++) { %>
+                                  <a href="/Etrade/Jijin/view/id/<%= data.historyFunds[i].code%>">
+                                    <div class="list hot_fund_id" data-code="<%= data.historyFunds[i].code%>" data-name="<%= data.historyFunds[i].name %>">
+                                      <div class="fundname"><%= data.historyFunds[i].name %></div>
+                                      <div class="fundname" style="color: #8b8e92;"><%= data.historyFunds[i].code %></div>
+                                    </div>
+                                  </a>
+                                <% } %>
+                              <% } %>
+                            <% } %>
+
+                            <% if(data.hot) { %>
+                              <div class="title">热搜基金</div>
+                              <% for (let i = 0; i < data.hot.length; i++) { %>
+                                <a href="/Etrade/Jijin/view/id/<%= data.hot[i].fund%>">
+                                  <div class="list hot_fund_id" data-code="<%= data.hot[i].fund%>" data-name="<%= data.hot[i].name %>">
+                                    <div class="name"><%= data.hot[i].name %></div>
+                                    <% if(data.hot[i].m6) { %>
+                                      <div class="shou">
+                                        <div class="time">近六月收益率</div>
+                                        <% if(data.hot[i].m6>=0) { %>
+                                          <div class="red">+<%= data.hot[i].m6 %>%</div>
+                                        <% } else { %>
+                                          <div class="red"><%= data.hot[i].m6 %>%</div>
+                                        <% } %>
+                                      </div>
+                                    <% } %>
+                                  </div>
+                                </a>
+                              <% } %>
+                            <% } %>
+
+                          </textarea>
+                        </div>
+                    </div>
+                </td>
+                <td class="gt-text-right">
+                    <span class="J_Login" style="display:none">
+                        <a href="/Etrade/User/index" class="header-login">你好，匿名用户</a> <a href="/Etrade/User/logout" class="header-logout">[退出]</a>
+                    </span>
+                    <span class="J_no_login" style="display:none">
+                        <a href="/Etrade/User/login" class="header-login">登录</a><span class="gt-split-v3">|</span><a href="/Etrade/User/mobileReg">注册</a>
+<!--                        <a href="/Etrade/User/login" class="header-login">登录</a><span class="gt-split-v3">|</span><a href="/Etrade/User/reg">注册</a>-->
+                    </span>
+                    <span class="gt-split-v3">|</span><a href="/Etrade/Public/goService">智能客服</a><span class="gt-split-v3">|</span><!--<span class="gt-split-v3">|</span><a href="/Etrade/english/mainpage" target="_blank">english</a>--><div class="gt-top-weixin"><div class="top-image-big" id="top-weixin-big"><img src="/Public/static/etrade/1/dist/i/etrade/weixin.png?v=hy101" alt="微信二维码"></div></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+$(function () {
+  function onError() {
+    $('.J_no_login').show();
+    $('.J_login').hide();
+
+    $('.login-content.mainpage .not-logged-in').show();
+  }
+
+  $.ajax({
+    type: "get",
+    url: '/Etrade/Index/check',
+    dataType: "jsonp",
+    jsonp: "callback",
+    success: function(res) {
+      if (res.data && res.data.isLogin) {
+        $('.J_no_login').hide();
+        $('.J_Login .header-login').text('你好，' + res.data.name)
+        $('.J_Login').show();
+
+        $('.login-content.mainpage .logged-in').show();
+      } else {
+        onError();
+      }
+    },
+    timeout: 3000,
+    error: onError
+  });
+});
+
+// 移动端检测和提示条功能
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+           window.innerWidth <= 768;
+}
+
+function showMobileTip() {
+    var mobileTipBar = document.getElementById('mobile-tip-bar');
+    if (mobileTipBar) {
+        mobileTipBar.style.display = 'block';
+        document.body.classList.add('has-mobile-tip');
+    }
+}
+
+function closeMobileTip() {
+    var mobileTipBar = document.getElementById('mobile-tip-bar');
+    if (mobileTipBar) {
+        mobileTipBar.style.display = 'none';
+        document.body.classList.remove('has-mobile-tip');
+        // 可选：将关闭状态保存到localStorage，避免重复显示
+        localStorage.setItem('mobileTipClosed', 'true');
+    }
+}
+
+// 页面加载时检测移动端
+$(document).ready(function() {
+    // 检查是否已经关闭过提示条
+    var tipClosed = localStorage.getItem('mobileTipClosed');
+
+    if (isMobileDevice() && !tipClosed) {
+        // 延迟显示，确保页面完全加载
+        setTimeout(function() {
+            showMobileTip();
+        }, 1000);
+    }
+});
+
+// 监听窗口大小变化
+$(window).resize(function() {
+    var tipClosed = localStorage.getItem('mobileTipClosed');
+    var mobileTipBar = document.getElementById('mobile-tip-bar');
+
+    if (isMobileDevice() && !tipClosed) {
+        if (mobileTipBar) {
+            mobileTipBar.style.display = 'block';
+        }
+    } else {
+        if (mobileTipBar) {
+            mobileTipBar.style.display = 'none';
+        }
+    }
+});
+</script>
+    <div class="gt-top ">
+    <div class="gt-wrapper">
+        <table>
+            <tr>
+                <td>
+                    <div class="logo">
+                        <a href="/Etrade/Index/mainpage.html"><img src="/Public/static/etrade/1/dist/i/logo.png" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="gt-menu gt-text-right gt-menu-mar">
+                        <ul>
+                            <li class="">
+                                <a href="/Etrade/Index/mainpage.html" class="noborder">首页</a>
+                            </li>
+<!--                            <li class="">-->
+<!--                                <a href="/Etrade/Qgj/index">利是宝</a>-->
+<!--                            </li>-->
+                            <li class="active">
+                                <a href="/Etrade/Jijin/index.html" class="border">基金超市</a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://qiye.gtfund.com" target="_blank">企业理财</a>
+                            </li> -->
+                            <li class="">
+                                <a href="/Etrade/sma/welcome" class="border">高端理财</a>
+                            </li>
+<!--                            <li class="">-->
+<!--                                <a href="/Etrade/geyang/welcome" class="border">养老专区</a>-->
+<!--                            </li>-->
+                            <!-- <li class="">
+                                <a href="/Etrade/Jike/mainpage">级客专区</a>
+                            </li> -->
+                            <li class="">
+                                <a href="/Etrade/User/index" class="border">我的账户</a>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<link rel="stylesheet" href="/Public/static/etrade/1/dist/css/tradejijin_v2.css?v=hy101">
+<div class="main gt-wrapper">
+    <div class="slider ">
+    <h2><span>全部基金</span></h2>
+    <ul>
+        <li class="active_cate J_cate  noborder " data-id="2"><a class="icon-slider-home cate-name" href="javascript:;">股票基金</a>
+                <div class="submenu">
+                    <a class="" href=/etrade/Jijin/view/id/001645>国泰大健康股票A</a><a class="" href=/etrade/Jijin/view/id/011321>国泰大健康股票C</a><a class="" href=/etrade/Jijin/view/id/001579>国泰大农业股票A</a><a class="" href=/etrade/Jijin/view/id/015588>国泰大农业股票C</a><a class="" href=/etrade/Jijin/view/id/011645>国泰核心价值两年持有期股票A</a><a class="" href=/etrade/Jijin/view/id/011646>国泰核心价值两年持有期股票C</a><a class="" href=/etrade/Jijin/view/id/001542>国泰互联网+股票</a><a class="" href=/etrade/Jijin/view/id/013004>国泰价值领航股票A</a><a class="" href=/etrade/Jijin/view/id/013005>国泰价值领航股票C</a><a class="" href=/etrade/Jijin/view/id/011042>国泰价值先锋股票A</a><a class="" href=/etrade/Jijin/view/id/011043>国泰价值先锋股票C</a><a class="" href=/etrade/Jijin/view/id/519606>国泰金鑫股票A</a><a class="" href=/etrade/Jijin/view/id/015593>国泰金鑫股票C</a><a class="" href=/etrade/Jijin/view/id/005970>国泰消费优选股票</a><a class="" href=/etrade/Jijin/view/id/001626>国泰央企改革股票A</a><a class="" href=/etrade/Jijin/view/id/019117>国泰央企改革股票C</a><a class="" href=/etrade/Jijin/view/id/009805>国泰医药健康股票A</a><a class="" href=/etrade/Jijin/view/id/011326>国泰医药健康股票C</a><a class="" href=/etrade/Jijin/view/id/001790>国泰智能汽车股票A</a><a class="" href=/etrade/Jijin/view/id/011323>国泰智能汽车股票C</a><a class="" href=/etrade/Jijin/view/id/001576>国泰智能装备股票A</a><a class="" href=/etrade/Jijin/view/id/011322>国泰智能装备股票C</a>                </div>
+            </li><li class="active_cate J_cate   " data-id="1"><a class="icon-slider-home cate-name" href="javascript:;">指数基金</a>
+                <div class="submenu">
+                    <a class="" href=/etrade/Jijin/view/id/159621>ESGETF国泰</a><a class="" href=/etrade/Jijin/view/id/159516>半导体设备ETF国泰</a><a class="" href=/etrade/Jijin/view/id/517110>创新药ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159375>创业板50ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159388>创业板人工智能ETF国泰</a><a class="" href=/etrade/Jijin/view/id/158011>创业板软件ETF国泰</a><a class="" href=/etrade/Jijin/view/id/158055>创业板算力ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159387>创业板新能源ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159377>创业板医药ETF国泰</a><a class="" href=/etrade/Jijin/view/id/561380>电网设备ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159519>港股国企ETF国泰</a><a class="" href=/etrade/Jijin/view/id/513720>港股互联网ETF国泰</a><a class="" href=/etrade/Jijin/view/id/520720>港股汽车ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159712>港股通50ETF国泰</a><a class="" href=/etrade/Jijin/view/id/515210>钢铁ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159667>工业母机ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159864>光伏ETF国泰</a><a class="" href=/etrade/Jijin/view/id/008281>国泰CES半导体芯片行业ETF联接A</a><a class="" href=/etrade/Jijin/view/id/008282>国泰CES半导体芯片行业ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022497>国泰CES半导体芯片行业ETF联接E</a><a class="" href=/etrade/Jijin/view/id/021101>国泰北证50成份指数发起A</a><a class="" href=/etrade/Jijin/view/id/021102>国泰北证50成份指数发起C</a><a class="" href=/etrade/Jijin/view/id/017028>国泰标普500ETF发起联接（QDII）A人民币</a><a class="" href=/etrade/Jijin/view/id/017030>国泰标普500ETF发起联接（QDII）C人民币</a><a class="" href=/etrade/Jijin/view/id/023371>国泰创业板50ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/023372>国泰创业板50ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/025492>国泰创业板人工智能ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/025493>国泰创业板人工智能ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/025362>国泰创业板新能源ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/025363>国泰创业板新能源ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/024982>国泰创业板医药卫生ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/024983>国泰创业板医药卫生ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/160223>国泰创业板指数(LOF)A</a><a class="" href=/etrade/Jijin/view/id/015600>国泰创业板指数(LOF)C</a><a class="" href=/etrade/Jijin/view/id/023919>国泰富时中国A股自由现金流聚焦ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/023920>国泰富时中国A股自由现金流聚焦ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/019259>国泰富时中国国企开放共赢ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/019269>国泰富时中国国企开放共赢ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/160218>国泰国证房地产行业指数A</a><a class="" href=/etrade/Jijin/view/id/015042>国泰国证房地产行业指数C</a><a class="" href=/etrade/Jijin/view/id/501019>国泰国证航天军工指数(LOF)A</a><a class="" href=/etrade/Jijin/view/id/015599>国泰国证航天军工指数(LOF)C</a><a class="" href=/etrade/Jijin/view/id/028824>国泰国证粮食产业ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/028825>国泰国证粮食产业ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/018034>国泰国证绿色电力ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/018035>国泰国证绿色电力ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/160222>国泰国证食品饮料行业指数A</a><a class="" href=/etrade/Jijin/view/id/015040>国泰国证食品饮料行业指数C</a><a class="" href=/etrade/Jijin/view/id/160225>国泰国证新能源汽车指数(LOF)A</a><a class="" href=/etrade/Jijin/view/id/014997>国泰国证新能源汽车指数(LOF) C</a><a class="" href=/etrade/Jijin/view/id/020278>国泰国证信息技术创新主题ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/020279>国泰国证信息技术创新主题ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/017185>国泰国证疫苗与生物科技ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/017186>国泰国证疫苗与生物科技ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/160219>国泰国证医药卫生行业指数A</a><a class="" href=/etrade/Jijin/view/id/010144>国泰国证医药卫生行业指数C</a><a class="" href=/etrade/Jijin/view/id/160221>国泰国证有色金属行业指数A</a><a class="" href=/etrade/Jijin/view/id/015596>国泰国证有色金属行业指数C</a><a class="" href=/etrade/Jijin/view/id/023638>国泰恒生A股电网设备ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/023639>国泰恒生A股电网设备ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/027410>国泰恒生生物科技ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/027411>国泰恒生生物科技ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/021847>国泰沪深300增强策略ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/021848>国泰沪深300增强策略ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/020011>国泰沪深300指数A</a><a class="" href=/etrade/Jijin/view/id/005867>国泰沪深300指数C</a><a class="" href=/etrade/Jijin/view/id/022936>国泰沪深300指数Y</a><a class="" href=/etrade/Jijin/view/id/000512>国泰沪深300指数增强A</a><a class="" href=/etrade/Jijin/view/id/002063>国泰沪深300指数增强C</a><a class="" href=/etrade/Jijin/view/id/518800>黄金ETF国泰</a><a class="" href=/etrade/Jijin/view/id/000218>国泰黄金ETF联接A</a><a class="" href=/etrade/Jijin/view/id/004253>国泰黄金ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022502>国泰黄金ETF联接E</a><a class="" href=/etrade/Jijin/view/id/020021>国泰上证180金融ETF联接A</a><a class="" href=/etrade/Jijin/view/id/014994>国泰上证180金融ETF联接C</a><a class="" href=/etrade/Jijin/view/id/021701>国泰上证国有企业红利ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/021702>国泰上证国有企业红利ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/019866>国泰上证科创板100ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/019867>国泰上证科创板100ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/026843>国泰上证科创板200ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/026844>国泰上证科创板200ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/027675>国泰上证科创板50成份ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/027676>国泰上证科创板50成份ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/026613>国泰上证科创板人工智能ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/026614>国泰上证科创板人工智能ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/024853>国泰上证科创板芯片ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/024854>国泰上证科创板芯片ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/028149>国泰上证科创板芯片设计主题ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/028150>国泰上证科创板芯片设计主题ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/023733>国泰上证科创板综合ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/023734>国泰上证科创板综合ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/011319>国泰上证综合ETF联接A</a><a class="" href=/etrade/Jijin/view/id/011320>国泰上证综合ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022494>国泰上证综合ETF联接E</a><a class="" href=/etrade/Jijin/view/id/003761>国泰中证500增强C</a><a class="" href=/etrade/Jijin/view/id/003760>国泰中证500增强A</a><a class="" href=/etrade/Jijin/view/id/561350>中证500ETF国泰</a><a class="" href=/etrade/Jijin/view/id/012973>国泰中证800汽车与零部件ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/012974>国泰中证800汽车与零部件ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/021689>国泰中证800汽车与零部件ETF发起联接E</a><a class="" href=/etrade/Jijin/view/id/028732>国泰中证A500增强策略ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/028733>国泰中证A500增强策略ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/022448>国泰中证A500ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/022449>国泰中证A500ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/022610>国泰中证A500ETF发起联接I</a><a class="" href=/etrade/Jijin/view/id/026615>国泰中证A500ETF发起联接Y</a><a class="" href=/etrade/Jijin/view/id/019632>国泰中证半导体材料设备主题ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/019633>国泰中证半导体材料设备主题ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/012728>国泰中证动漫游戏ETF联接A</a><a class="" href=/etrade/Jijin/view/id/012729>国泰中证动漫游戏ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022481>国泰中证动漫游戏ETF联接E</a><a class="" href=/etrade/Jijin/view/id/022274>国泰中证港股通高股息投资ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/022275>国泰中证港股通高股息投资ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/027127>国泰中证港股通互联网ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/027128>国泰中证港股通互联网ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/015739>国泰中证港股通科技ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/015740>国泰中证港股通科技ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/026091>国泰中证港股通汽车产业主题ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/026092>国泰中证港股通汽车产业主题ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/027470>国泰中证港股通综合指数增强A</a><a class="" href=/etrade/Jijin/view/id/027471>国泰中证港股通综合指数增强C</a><a class="" href=/etrade/Jijin/view/id/008189>国泰中证钢铁ETF联接A</a><a class="" href=/etrade/Jijin/view/id/008190>国泰中证钢铁ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022586>国泰中证钢铁ETF联接E</a><a class="" href=/etrade/Jijin/view/id/013601>国泰中证光伏产业ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/013602>国泰中证光伏产业ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/021698>国泰中证光伏产业ETF发起联接E</a><a class="" href=/etrade/Jijin/view/id/014117>国泰中证沪港深创新药产业ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/014118>国泰中证沪港深创新药产业ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/021673>国泰中证沪深港黄金产业股票ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/021674>国泰中证沪深港黄金产业股票ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/012503>国泰中证环保产业50ETF联接A</a><a class="" href=/etrade/Jijin/view/id/012504>国泰中证环保产业50ETF联接C</a><a class="" href=/etrade/Jijin/view/id/021610>国泰中证环保产业50ETF联接E</a><a class="" href=/etrade/Jijin/view/id/017471>国泰中证机床ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/017472>国泰中证机床ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/016836>国泰中证基建ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/016837>国泰中证基建ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/020289>国泰中证机器人ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/020290>国泰中证机器人ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/160224>国泰中证计算机主题ETF联接A</a><a class="" href=/etrade/Jijin/view/id/010210>国泰中证计算机主题ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022541>国泰中证计算机主题ETF联接E</a><a class="" href=/etrade/Jijin/view/id/008279>国泰中证煤炭ETF联接A</a><a class="" href=/etrade/Jijin/view/id/008280>国泰中证煤炭ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022501>国泰中证煤炭ETF联接E</a><a class="" href=/etrade/Jijin/view/id/018905>国泰中证内地运输主题ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/018906>国泰中证内地运输主题ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/020226>国泰中证全指集成电路ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/020227>国泰中证全指集成电路ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/008713>国泰中证全指家用电器ETF联接A</a><a class="" href=/etrade/Jijin/view/id/008714>国泰中证全指家用电器ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022483>国泰中证全指家用电器ETF联接E</a><a class="" href=/etrade/Jijin/view/id/012636>国泰中证全指软件ETF联接A</a><a class="" href=/etrade/Jijin/view/id/012637>国泰中证全指软件ETF联接C</a><a class="" href=/etrade/Jijin/view/id/021672>国泰中证全指软件ETF联接E</a><a class="" href=/etrade/Jijin/view/id/012362>国泰中证全指证券公司ETF联接A</a><a class="" href=/etrade/Jijin/view/id/012363>国泰中证全指证券公司ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022509>国泰中证全指证券公司ETF联接E</a><a class="" href=/etrade/Jijin/view/id/501016>国泰中证申万证券行业指数(LOF)A</a><a class="" href=/etrade/Jijin/view/id/015598>国泰中证申万证券行业指数(LOF)C</a><a class="" href=/etrade/Jijin/view/id/006756>国泰中证生物医药ETF联接A</a><a class="" href=/etrade/Jijin/view/id/006757>国泰中证生物医药ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022498>国泰中证生物医药ETF联接E</a><a class="" href=/etrade/Jijin/view/id/007817>国泰中证通信ETF联接A</a><a class="" href=/etrade/Jijin/view/id/007818>国泰中证通信ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022500>国泰中证通信ETF联接E</a><a class="" href=/etrade/Jijin/view/id/021044>国泰中证香港内地国有企业ETF发起联接（QDII）A</a><a class="" href=/etrade/Jijin/view/id/021045>国泰中证香港内地国有企业ETF发起联接（QDII）C</a><a class="" href=/etrade/Jijin/view/id/009067>国泰中证新能源汽车ETF联接A</a><a class="" href=/etrade/Jijin/view/id/009068>国泰中证新能源汽车ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022482>国泰中证新能源汽车ETF联接E</a><a class="" href=/etrade/Jijin/view/id/012724>国泰中证畜牧养殖ETF联接A</a><a class="" href=/etrade/Jijin/view/id/012725>国泰中证畜牧养殖ETF联接C</a><a class="" href=/etrade/Jijin/view/id/022475>国泰中证畜牧养殖ETF联接E</a><a class="" href=/etrade/Jijin/view/id/012634>国泰中证医疗ETF联接A</a><a class="" href=/etrade/Jijin/view/id/012635>国泰中证医疗ETF联接C</a><a class="" href=/etrade/Jijin/view/id/021681>国泰中证医疗ETF联接E</a><a class="" href=/etrade/Jijin/view/id/020405>国泰中证油气产业ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/020406>国泰中证油气产业ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/018167>国泰中证有色金属矿业主题ETF发起联接A</a><a class="" href=/etrade/Jijin/view/id/018168>国泰中证有色金属矿业主题ETF发起联接C</a><a class="" href=/etrade/Jijin/view/id/511010>国债ETF国泰</a><a class="" href=/etrade/Jijin/view/id/520930>恒生生物科技ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159331>红利港股ETF国泰</a><a class="" href=/etrade/Jijin/view/id/510720>红利国企ETF国泰</a><a class="" href=/etrade/Jijin/view/id/561300>沪深300增强ETF国泰</a><a class="" href=/etrade/Jijin/view/id/516220>化工ETF国泰</a><a class="" href=/etrade/Jijin/view/id/517400>黄金股ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159546>集成电路ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159619>基建ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159551>机器人ETF国泰</a><a class="" href=/etrade/Jijin/view/id/512720>计算机ETF国泰</a><a class="" href=/etrade/Jijin/view/id/516960>机械ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159996>家电ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159745>建材ETF国泰</a><a class="" href=/etrade/Jijin/view/id/561320>交运ETF国泰</a><a class="" href=/etrade/Jijin/view/id/510230>金融ETF国泰</a><a class="" href=/etrade/Jijin/view/id/512660>军工ETF国泰</a><a class="" href=/etrade/Jijin/view/id/589220>科创200ETF国泰</a><a class="" href=/etrade/Jijin/view/id/589360>科创50ETF国泰</a><a class="" href=/etrade/Jijin/view/id/588120>科创100ETF国泰</a><a class="" href=/etrade/Jijin/view/id/589720>科创创新药ETF国泰</a><a class="" href=/etrade/Jijin/view/id/588360>科创创业ETF国泰</a><a class="" href=/etrade/Jijin/view/id/589110>科创人工智能ETF国泰</a><a class="" href=/etrade/Jijin/view/id/589100>科创芯片ETF国泰</a><a class="" href=/etrade/Jijin/view/id/589260>科创芯片设计ETF国泰</a><a class="" href=/etrade/Jijin/view/id/551800>科创债ETF国泰</a><a class="" href=/etrade/Jijin/view/id/589630>科创综指ETF国泰</a><a class="" href=/etrade/Jijin/view/id/513020>港股科技ETF国泰</a><a class="" href=/etrade/Jijin/view/id/561330>矿业ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159033>粮食ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159669>绿色电力ETF国泰</a><a class="" href=/etrade/Jijin/view/id/515220>煤炭ETF国泰</a><a class="" href=/etrade/Jijin/view/id/516110>汽车ETF国泰</a><a class="" href=/etrade/Jijin/view/id/515230>软件ETF国泰</a><a class="" href=/etrade/Jijin/view/id/510760>上证指数ETF国泰</a><a class="" href=/etrade/Jijin/view/id/512290>生物医药ETF国泰</a><a class="" href=/etrade/Jijin/view/id/511260>十年国债ETF国泰</a><a class="" href=/etrade/Jijin/view/id/561360>石油ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159861>碳中和50ETF国泰</a><a class="" href=/etrade/Jijin/view/id/515880>通信ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159399>现金流ETF国泰</a><a class="" href=/etrade/Jijin/view/id/561310>消电ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159761>新材料ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159537>信创ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159806>新能源车ETF国泰</a><a class="" href=/etrade/Jijin/view/id/512760>芯片ETF国泰</a><a class="" href=/etrade/Jijin/view/id/517090>央企共赢ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159865>养殖ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159828>医疗ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159643>疫苗ETF国泰</a><a class="" href=/etrade/Jijin/view/id/516620>影视ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159881>有色金属ETF国泰</a><a class="" href=/etrade/Jijin/view/id/516010>游戏ETF国泰</a><a class="" href=/etrade/Jijin/view/id/512880>证券ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159889>智能汽车ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159679>中证1000增强ETF国泰</a><a class="" href=/etrade/Jijin/view/id/561370>中证2000ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159226>中证A500增强ETF国泰</a><a class="" href=/etrade/Jijin/view/id/159338>中证A500ETF国泰</a>                </div>
+            </li><li class="active_cate J_cate   " data-id="7"><a class="icon-slider-home cate-name" href="javascript:;">混合基金</a>
+                <div class="submenu">
+                    <a class="" href=/etrade/Jijin/view/id/000367>国泰安康定期支付混合A</a><a class="" href=/etrade/Jijin/view/id/002061>国泰安康定期支付混合C</a><a class="" href=/etrade/Jijin/view/id/001850>国泰安益混合A</a><a class="" href=/etrade/Jijin/view/id/004252>国泰安益混合C</a><a class="" href=/etrade/Jijin/view/id/022049>国泰安益混合E</a><a class="" href=/etrade/Jijin/view/id/025686>国泰半导体制造精选混合发起A</a><a class="" href=/etrade/Jijin/view/id/025687>国泰半导体制造精选混合发起C</a><a class="" href=/etrade/Jijin/view/id/020022>国泰策略价值灵活配置混合</a><a class="" href=/etrade/Jijin/view/id/026602>国泰产业机遇混合发起A</a><a class="" href=/etrade/Jijin/view/id/026603>国泰产业机遇混合发起C</a><a class="" href=/etrade/Jijin/view/id/018073>国泰产业精选混合A</a><a class="" href=/etrade/Jijin/view/id/014239>国泰产业精选混合C</a><a class="" href=/etrade/Jijin/view/id/026253>国泰产业升级混合发起A</a><a class="" href=/etrade/Jijin/view/id/026254>国泰产业升级混合发起C</a><a class="" href=/etrade/Jijin/view/id/026990>国泰产业智选混合发起A</a><a class="" href=/etrade/Jijin/view/id/026991>国泰产业智选混合发起C</a><a class="" href=/etrade/Jijin/view/id/010912>国泰成长价值混合A</a><a class="" href=/etrade/Jijin/view/id/010913>国泰成长价值混合C</a><a class="" href=/etrade/Jijin/view/id/027397>国泰成长启航混合A</a><a class="" href=/etrade/Jijin/view/id/027398>国泰成长启航混合C</a><a class="" href=/etrade/Jijin/view/id/020026>国泰成长优选混合</a><a class="" href=/etrade/Jijin/view/id/018159>国泰创新医疗混合发起A</a><a class="" href=/etrade/Jijin/view/id/018160>国泰创新医疗混合发起C</a><a class="" href=/etrade/Jijin/view/id/008415>国泰大制造两年持有期混合</a><a class="" href=/etrade/Jijin/view/id/023289>国泰多策略收益C</a><a class="" href=/etrade/Jijin/view/id/024233>国泰多策略收益E</a><a class="" href=/etrade/Jijin/view/id/001922>国泰多策略收益A</a><a class="" href=/etrade/Jijin/view/id/026570>国泰多资产增益先锋3个月持有混合发起（FOF）A</a><a class="" href=/etrade/Jijin/view/id/026571>国泰多资产增益先锋3个月持有混合发起（FOF）C</a><a class="" href=/etrade/Jijin/view/id/026167>国泰港股通精选混合发起A</a><a class="" href=/etrade/Jijin/view/id/026168>国泰港股通精选混合发起C</a><a class="" href=/etrade/Jijin/view/id/026752>国泰共赢未来混合发起A</a><a class="" href=/etrade/Jijin/view/id/026753>国泰共赢未来混合发起C</a><a class="" href=/etrade/Jijin/view/id/160212>国泰估值优势混合(LOF)A</a><a class="" href=/etrade/Jijin/view/id/016616>国泰估值优势混合(LOF)C</a><a class="" href=/etrade/Jijin/view/id/000511>国泰国策驱动混合A</a><a class="" href=/etrade/Jijin/view/id/002062>国泰国策驱动混合C</a><a class="" href=/etrade/Jijin/view/id/009691>国泰浩益混合A</a><a class="" href=/etrade/Jijin/view/id/009692>国泰浩益混合C</a><a class="" href=/etrade/Jijin/view/id/023232>国泰合利6个月持有混合A</a><a class="" href=/etrade/Jijin/view/id/023233>国泰合利6个月持有混合C</a><a class="" href=/etrade/Jijin/view/id/010832>国泰合益混合A</a><a class="" href=/etrade/Jijin/view/id/010833>国泰合益混合C</a><a class="" href=/etrade/Jijin/view/id/024354>国泰红利智选混合A</a><a class="" href=/etrade/Jijin/view/id/024355>国泰红利智选混合C</a><a class="" href=/etrade/Jijin/view/id/017454>国泰慧益一年持有混合A</a><a class="" href=/etrade/Jijin/view/id/017455>国泰慧益一年持有混合C</a><a class="" href=/etrade/Jijin/view/id/012277>国泰佳益混合A</a><a class="" href=/etrade/Jijin/view/id/012278>国泰佳益混合C</a><a class="" href=/etrade/Jijin/view/id/160215>国泰价值经典灵活配置混合(LOF)</a><a class="" href=/etrade/Jijin/view/id/005726>国泰价值精选灵活配置混合A</a><a class="" href=/etrade/Jijin/view/id/011324>国泰价值精选灵活配置混合C</a><a class="" href=/etrade/Jijin/view/id/501064>国泰价值优选灵活配置混合（LOF）A</a><a class="" href=/etrade/Jijin/view/id/016617>国泰价值优选灵活配置混合（LOF）C</a><a class="" href=/etrade/Jijin/view/id/012309>国泰价值远见混合C</a><a class="" href=/etrade/Jijin/view/id/012308>国泰价值远见混合A</a><a class="" href=/etrade/Jijin/view/id/005730>国泰江源优势精选灵活配置混合A</a><a class="" href=/etrade/Jijin/view/id/011325>国泰江源优势精选灵活配置混合C</a><a class="" href=/etrade/Jijin/view/id/519021>国泰金鼎价值混合</a><a class="" href=/etrade/Jijin/view/id/020003>国泰金龙行业混合</a><a class="" href=/etrade/Jijin/view/id/020018>国泰金鹿混合</a><a class="" href=/etrade/Jijin/view/id/020005>国泰金马稳健混合A</a><a class="" href=/etrade/Jijin/view/id/015589>国泰金马稳健混合C</a><a class="" href=/etrade/Jijin/view/id/020010>国泰金牛创新混合</a><a class="" href=/etrade/Jijin/view/id/020009>国泰金鹏蓝筹混合</a><a class="" href=/etrade/Jijin/view/id/019328>国泰金盛回报混合A</a><a class="" href=/etrade/Jijin/view/id/019329>国泰金盛回报混合C</a><a class="" href=/etrade/Jijin/view/id/519020>国泰金泰灵活配置A</a><a class="" href=/etrade/Jijin/view/id/519022>国泰金泰灵活配置C</a><a class="" href=/etrade/Jijin/view/id/020001>国泰金鹰增长灵活配置混合</a><a class="" href=/etrade/Jijin/view/id/003593>国泰景气行业混合</a><a class="" href=/etrade/Jijin/view/id/012880>国泰景气优选混合A</a><a class="" href=/etrade/Jijin/view/id/012881>国泰景气优选混合C</a><a class="" href=/etrade/Jijin/view/id/005746>国泰聚利价值定期开放灵活配置混合</a><a class="" href=/etrade/Jijin/view/id/000362>国泰聚信价值优势混合A</a><a class="" href=/etrade/Jijin/view/id/000363>国泰聚信价值优势混合C</a><a class="" href=/etrade/Jijin/view/id/023313>国泰聚鑫量化选股混合发起A</a><a class="" href=/etrade/Jijin/view/id/023314>国泰聚鑫量化选股混合发起C</a><a class="" href=/etrade/Jijin/view/id/005244>国泰聚优价值灵活配置混合A</a><a class="" href=/etrade/Jijin/view/id/005245>国泰聚优价值灵活配置混合C</a><a class="" href=/etrade/Jijin/view/id/023386>国泰聚智量化选股混合发起A</a><a class="" href=/etrade/Jijin/view/id/023387>国泰聚智量化选股混合发起C</a><a class="" href=/etrade/Jijin/view/id/506009>国泰科创板两年定开混合（LOF） </a><a class="" href=/etrade/Jijin/view/id/008174>国泰蓝筹精选混合A</a><a class="" href=/etrade/Jijin/view/id/008175>国泰蓝筹精选混合C</a><a class="" href=/etrade/Jijin/view/id/015582>国泰量化策略收益混合C</a><a class="" href=/etrade/Jijin/view/id/000199>国泰量化策略收益混合A</a><a class="" href=/etrade/Jijin/view/id/001789>国泰量化收益混合A</a><a class="" href=/etrade/Jijin/view/id/011907>国泰量化收益混合C</a><a class="" href=/etrade/Jijin/view/id/002489>国泰民福策略价值混合A</a><a class="" href=/etrade/Jijin/view/id/014998>国泰民福策略价值混合C</a><a class="" href=/etrade/Jijin/view/id/002458>国泰民利策略收益混合</a><a class="" href=/etrade/Jijin/view/id/160220>国泰民益混合A</a><a class="" href=/etrade/Jijin/view/id/160226>国泰民益混合C</a><a class="" href=/etrade/Jijin/view/id/000526>国泰浓益混合A</a><a class="" href=/etrade/Jijin/view/id/002059>国泰浓益混合C</a><a class="" href=/etrade/Jijin/view/id/024356>国泰启明回报混合</a><a class="" href=/etrade/Jijin/view/id/020015>国泰区位优势混合A</a><a class="" href=/etrade/Jijin/view/id/015594>国泰区位优势混合C</a><a class="" href=/etrade/Jijin/view/id/003516>国泰融安多策略灵活配置混合A</a><a class="" href=/etrade/Jijin/view/id/014960>国泰融安多策略灵活配置混合C</a><a class="" href=/etrade/Jijin/view/id/501017>国泰融丰外延增长（LOF）A</a><a class="" href=/etrade/Jijin/view/id/015017>国泰融丰外延增长（LOF）C</a><a class="" href=/etrade/Jijin/view/id/026624>国泰瑞乐6个月持有混合发起（FOF）A</a><a class="" href=/etrade/Jijin/view/id/026625>国泰瑞乐6个月持有混合发起（FOF）C</a><a class="" href=/etrade/Jijin/view/id/013890>国泰睿毅三年持有期混合A</a><a class="" href=/etrade/Jijin/view/id/013891>国泰睿毅三年持有期混合C</a><a class="" href=/etrade/Jijin/view/id/020023>国泰事件驱动混合A</a><a class="" href=/etrade/Jijin/view/id/015592>国泰事件驱动混合C</a><a class="" href=/etrade/Jijin/view/id/010830>国泰通利9个月持有期混合A</a><a class="" href=/etrade/Jijin/view/id/010831>国泰通利9个月持有期混合C</a><a class="" href=/etrade/Jijin/view/id/010834>国泰同益18个月持有期混合A</a><a class="" href=/etrade/Jijin/view/id/010835>国泰同益18个月持有期混合C</a><a class="" href=/etrade/Jijin/view/id/027267>国泰消费智选混合发起A</a><a class="" href=/etrade/Jijin/view/id/027268>国泰消费智选混合发起C</a><a class="" href=/etrade/Jijin/view/id/027916>国泰新材料甄选混合发起A</a><a class="" href=/etrade/Jijin/view/id/027917>国泰新材料甄选混合发起C</a><a class="" href=/etrade/Jijin/view/id/022784>国泰鑫策略价值混合C</a><a class="" href=/etrade/Jijin/view/id/022785>国泰鑫策略价值混合E</a><a class="" href=/etrade/Jijin/view/id/002197>国泰鑫策略价值混合A</a><a class="" href=/etrade/Jijin/view/id/027187>国泰鑫澄混合A</a><a class="" href=/etrade/Jijin/view/id/027188>国泰鑫澄混合C</a><a class="" href=/etrade/Jijin/view/id/000742>国泰新经济混合A</a><a class="" href=/etrade/Jijin/view/id/014989>国泰新经济混合C</a><a class="" href=/etrade/Jijin/view/id/008666>国泰鑫利一年持有期混合A</a><a class="" href=/etrade/Jijin/view/id/008667>国泰鑫利一年持有期混合C</a><a class="" href=/etrade/Jijin/view/id/007835>国泰鑫睿混合</a><a class="" href=/etrade/Jijin/view/id/001265>国泰兴益混合A</a><a class="" href=/etrade/Jijin/view/id/002055>国泰兴益混合C</a><a class="" href=/etrade/Jijin/view/id/012173>国泰兴泽优选一年持有期混合A</a><a class="" href=/etrade/Jijin/view/id/012174>国泰兴泽优选一年持有期混合C</a><a class="" href=/etrade/Jijin/view/id/008370>国泰研究精选两年混合</a><a class="" href=/etrade/Jijin/view/id/009804>国泰研究优势混合A</a><a class="" href=/etrade/Jijin/view/id/018638>国泰研究优势混合C</a><a class="" href=/etrade/Jijin/view/id/005819>国泰优势行业混合A</a><a class="" href=/etrade/Jijin/view/id/015585>国泰优势行业混合C</a><a class="" href=/etrade/Jijin/view/id/025060>国泰优质核心混合A</a><a class="" href=/etrade/Jijin/view/id/025061>国泰优质核心混合C</a><a class="" href=/etrade/Jijin/view/id/021427>国泰优质精选混合A</a><a class="" href=/etrade/Jijin/view/id/021428>国泰优质精选混合C</a><a class="" href=/etrade/Jijin/view/id/019999>国泰优质领航混合A</a><a class="" href=/etrade/Jijin/view/id/020000>国泰优质领航混合C</a><a class="" href=/etrade/Jijin/view/id/017224>国泰悦益六个月持有混合A</a><a class="" href=/etrade/Jijin/view/id/017225>国泰悦益六个月持有混合C</a><a class="" href=/etrade/Jijin/view/id/019727>国泰招享添利六个月持有混合发起A</a><a class="" href=/etrade/Jijin/view/id/019728>国泰招享添利六个月持有混合发起C</a><a class="" href=/etrade/Jijin/view/id/023924>国泰招享添利六个月持有混合发起E</a><a class="" href=/etrade/Jijin/view/id/012816>国泰致和混合A</a><a class="" href=/etrade/Jijin/view/id/012817>国泰致和混合C</a><a class="" href=/etrade/Jijin/view/id/009474>国泰致远优势混合</a><a class="" href=/etrade/Jijin/view/id/160211>国泰中小盘成长混合(LOF)</a><a class="" href=/etrade/Jijin/view/id/015825>国泰中证同业存单AAA指数7天持有期</a><a class="" href=/etrade/Jijin/view/id/027963>国泰资源甄选混合发起A</a><a class="" href=/etrade/Jijin/view/id/027964>国泰资源甄选混合发起C</a>                </div>
+            </li><li class="active_cate J_cate active  " data-id="6"><a class="icon-slider-home cate-name" href="javascript:;">海外基金</a>
+                <div class="submenu">
+                    <a class="" href=/etrade/Jijin/view/id/159612>标普500ETF国泰</a><a class="" href=/etrade/Jijin/view/id/160216>国泰大宗商品(QDII-LOF)A</a><a class="" href=/etrade/Jijin/view/id/025162>国泰大宗商品(QDII-LOF)D</a><a class="active" href=/etrade/Jijin/view/id/513100>纳指ETF国泰</a><a class="" href=/etrade/Jijin/view/id/160213>国泰纳斯达克100指数(QDII)</a><a class="" href=/etrade/Jijin/view/id/000103>国泰中国企业境外高收益债券(QDII)</a>                </div>
+            </li><li class="active_cate J_cate   " data-id="8"><a class="icon-slider-home cate-name" href="javascript:;">FOF基金</a>
+                <div class="submenu">
+                    <a class="" href=/etrade/Jijin/view/id/025798>国泰多资产稳健领航6个月持有混合（FOF）</a><a class="" href=/etrade/Jijin/view/id/025796>国泰多资产稳健甄选3个月持有混合（FOF）A</a><a class="" href=/etrade/Jijin/view/id/025797>国泰多资产稳健甄选3个月持有混合（FOF）C</a><a class="" href=/etrade/Jijin/view/id/025242>国泰丰华三个月持有期混合发起式（FOF）A</a><a class="" href=/etrade/Jijin/view/id/025243>国泰丰华三个月持有期混合发起式（FOF）C</a><a class="" href=/etrade/Jijin/view/id/014197>国泰行业轮动股票（FOF-LOF）C</a><a class="" href=/etrade/Jijin/view/id/501220>国泰行业轮动股票 （FOF-LOF）A</a><a class="" href=/etrade/Jijin/view/id/007231>国泰民安养老2040三年混合(FOF)A</a><a class="" href=/etrade/Jijin/view/id/017302>国泰民安养老2040三年混合(FOF) Y</a><a class="" href=/etrade/Jijin/view/id/027108>国泰民享稳健养老目标一年持有期混合发起式（FOF）Y</a><a class="" href=/etrade/Jijin/view/id/014898>国泰民享稳健养老目标一年持有期混合发起式（FOF）A</a><a class="" href=/etrade/Jijin/view/id/008631>国泰民泽平衡养老目标 三年持有期混合（FOF） A</a><a class="" href=/etrade/Jijin/view/id/018353>国泰民泽平衡养老目标三年持有期混合（FOF）Y</a><a class="" href=/etrade/Jijin/view/id/025244>国泰全景多资产配置3个月持有混合（FOF）A</a><a class="" href=/etrade/Jijin/view/id/025245>国泰全景多资产配置3个月持有混合（FOF）C</a><a class="" href=/etrade/Jijin/view/id/014067>国泰稳健收益一年持有混合（FOF）</a><a class="" href=/etrade/Jijin/view/id/026338>国泰盈享配置6个月持有混合发起（FOF）A</a><a class="" href=/etrade/Jijin/view/id/026339>国泰盈享配置6个月持有混合发起（FOF）C</a><a class="" href=/etrade/Jijin/view/id/013279>国泰优选领航一年持有期混合（FOF）</a>                </div>
+            </li><li class="active_cate J_cate   " data-id="4"><a class="icon-slider-home cate-name" href="javascript:;">债券基金</a>
+                <div class="submenu">
+                    <a class="" href=/etrade/Jijin/view/id/016419>国泰安璟债券A</a><a class="" href=/etrade/Jijin/view/id/016420>国泰安璟债券C</a><a class="" href=/etrade/Jijin/view/id/025966>国泰鼎利债券A</a><a class="" href=/etrade/Jijin/view/id/025967>国泰鼎利债券C</a><a class="" href=/etrade/Jijin/view/id/006116>国泰丰祺纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016932>国泰丰祺纯债债券C</a><a class="" href=/etrade/Jijin/view/id/007105>国泰丰鑫纯债债券A</a><a class="" href=/etrade/Jijin/view/id/022113>国泰丰鑫纯债债券C</a><a class="" href=/etrade/Jijin/view/id/006725>国泰丰盈纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016539>国泰丰盈纯债债券C</a><a class="" href=/etrade/Jijin/view/id/008207>国泰合融纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016575>国泰合融纯债债券C</a><a class="" href=/etrade/Jijin/view/id/007214>国泰惠丰纯债债券A</a><a class="" href=/etrade/Jijin/view/id/021249>国泰惠丰纯债债券C</a><a class="" href=/etrade/Jijin/view/id/006955>国泰惠富纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016931>国泰惠富纯债债券C</a><a class="" href=/etrade/Jijin/view/id/007331>国泰惠融纯债债券</a><a class="" href=/etrade/Jijin/view/id/008496>国泰惠瑞一年定期开放债券</a><a class="" href=/etrade/Jijin/view/id/008414>国泰惠泰一年定期开放债券</a><a class="" href=/etrade/Jijin/view/id/007871>国泰惠享三个月定期开放债券</a><a class="" href=/etrade/Jijin/view/id/008017>国泰惠信三年定期开放债券</a><a class="" href=/etrade/Jijin/view/id/008278>国泰惠鑫一年定期开放债券</a><a class="" href=/etrade/Jijin/view/id/006941>国泰惠盈纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016930>国泰惠盈纯债债券C</a><a class="" href=/etrade/Jijin/view/id/006475>国泰嘉睿纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016604>国泰嘉睿纯债债券C</a><a class="" href=/etrade/Jijin/view/id/022086>国泰嘉睿纯债债券E</a><a class="" href=/etrade/Jijin/view/id/020002>国泰金龙债券A</a><a class="" href=/etrade/Jijin/view/id/020012>国泰金龙债券C</a><a class="" href=/etrade/Jijin/view/id/023141>国泰金龙债券D</a><a class="" href=/etrade/Jijin/view/id/006596>国泰聚禾纯债A</a><a class="" href=/etrade/Jijin/view/id/028497>国泰聚禾纯债C</a><a class="" href=/etrade/Jijin/view/id/008206>国泰聚瑞纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016538>国泰聚瑞纯债债券C</a><a class="" href=/etrade/Jijin/view/id/021808>国泰聚享纯债债券C</a><a class="" href=/etrade/Jijin/view/id/006762>国泰聚享纯债债券A</a><a class="" href=/etrade/Jijin/view/id/008921>国泰聚鑫纯债债券</a><a class="" href=/etrade/Jijin/view/id/008217>国泰聚盈三年定期开放债券</a><a class="" href=/etrade/Jijin/view/id/005246>国泰可转债债券A</a><a class="" href=/etrade/Jijin/view/id/025464>国泰可转债债券D</a><a class="" href=/etrade/Jijin/view/id/022126>国泰利安中短债债券E</a><a class="" href=/etrade/Jijin/view/id/016947>国泰利安中短债债券A</a><a class="" href=/etrade/Jijin/view/id/016948>国泰利安中短债债券C</a><a class="" href=/etrade/Jijin/view/id/022201>国泰利安中短债债券F</a><a class="" href=/etrade/Jijin/view/id/020399>国泰利恒30天持有债券A</a><a class="" href=/etrade/Jijin/view/id/020400>国泰利恒30天持有债券C</a><a class="" href=/etrade/Jijin/view/id/024277>国泰利惠90天滚动持有债券A</a><a class="" href=/etrade/Jijin/view/id/024278>国泰利惠90天滚动持有债券C</a><a class="" href=/etrade/Jijin/view/id/022007>国泰利民安悦30天持有债券A</a><a class="" href=/etrade/Jijin/view/id/022008>国泰利民安悦30天持有债券C</a><a class="" href=/etrade/Jijin/view/id/022611>国泰利添120天滚动持有债券A</a><a class="" href=/etrade/Jijin/view/id/022612>国泰利添120天滚动持有债券C</a><a class="" href=/etrade/Jijin/view/id/017314>国泰利享安益短债债券A</a><a class="" href=/etrade/Jijin/view/id/017315>国泰利享安益短债债券C</a><a class="" href=/etrade/Jijin/view/id/022141>国泰利享安益短债债券F</a><a class="" href=/etrade/Jijin/view/id/025739>国泰利享鑫益90天持有债券A</a><a class="" href=/etrade/Jijin/view/id/025740>国泰利享鑫益90天持有债券C</a><a class="" href=/etrade/Jijin/view/id/006597>国泰利享中短债债券A</a><a class="" href=/etrade/Jijin/view/id/006598>国泰利享中短债债券C</a><a class="" href=/etrade/Jijin/view/id/014217>国泰利享中短债债券E</a><a class="" href=/etrade/Jijin/view/id/022176>国泰利享中短债债券F</a><a class="" href=/etrade/Jijin/view/id/016483>国泰利盈60天滚动持有中短债A</a><a class="" href=/etrade/Jijin/view/id/016484>国泰利盈60天滚动持有中短债C</a><a class="" href=/etrade/Jijin/view/id/012452>国泰利优30天滚动持有短债债券A</a><a class="" href=/etrade/Jijin/view/id/012453>国泰利优30天滚动持有短债债券C</a><a class="" href=/etrade/Jijin/view/id/013065>国泰利泽90天滚动持有中短债债券A</a><a class="" href=/etrade/Jijin/view/id/013066>国泰利泽90天滚动持有中短债债券C</a><a class="" href=/etrade/Jijin/view/id/020033>国泰民安增利债券A</a><a class="" href=/etrade/Jijin/view/id/020034>国泰民安增利债券C</a><a class="" href=/etrade/Jijin/view/id/025640>国泰民安增利债券D</a><a class="" href=/etrade/Jijin/view/id/026061>国泰民安增利债券F</a><a class="" href=/etrade/Jijin/view/id/004101>国泰民安增益纯债债券A</a><a class="" href=/etrade/Jijin/view/id/006340>国泰民安增益纯债债券C</a><a class="" href=/etrade/Jijin/view/id/022656>国泰民安增益纯债债券E</a><a class="" href=/etrade/Jijin/view/id/016603>国泰农惠定期开放债券C</a><a class="" href=/etrade/Jijin/view/id/005816>国泰农惠定期开放债券A</a><a class="" href=/etrade/Jijin/view/id/027886>国泰农盈债券A</a><a class="" href=/etrade/Jijin/view/id/027887>国泰农盈债券C</a><a class="" href=/etrade/Jijin/view/id/006994>国泰瑞安三个月定期开放债券</a><a class="" href=/etrade/Jijin/view/id/014230>国泰瑞丰纯债债券</a><a class="" href=/etrade/Jijin/view/id/006037>国泰瑞和纯债债券A</a><a class="" href=/etrade/Jijin/view/id/020784>国泰瑞和纯债债券C</a><a class="" href=/etrade/Jijin/view/id/014952>国泰睿鸿一年定期开放债券发起式</a><a class="" href=/etrade/Jijin/view/id/027344>国泰瑞锦债券发起A</a><a class="" href=/etrade/Jijin/view/id/027345>国泰瑞锦债券发起C</a><a class="" href=/etrade/Jijin/view/id/010836>国泰瑞泰纯债债券</a><a class="" href=/etrade/Jijin/view/id/013159>国泰瑞鑫一年定期开放债券发起式</a><a class="" href=/etrade/Jijin/view/id/013773>国泰睿元一年定期开放债券发起式</a><a class="" href=/etrade/Jijin/view/id/016644>国泰瑞悦3个月持有债券（FOF）</a><a class="" href=/etrade/Jijin/view/id/003517>国泰润利纯债债券A</a><a class="" href=/etrade/Jijin/view/id/021785>国泰润利纯债债券C</a><a class="" href=/etrade/Jijin/view/id/003457>国泰润泰纯债债券A</a><a class="" href=/etrade/Jijin/view/id/016615>国泰润泰纯债债券C</a><a class="" href=/etrade/Jijin/view/id/003696>国泰润鑫定开发起式债券</a><a class="" href=/etrade/Jijin/view/id/007532>国泰盛合三个月定期开放债券</a><a class="" href=/etrade/Jijin/view/id/020019>国泰双利债券A</a><a class="" href=/etrade/Jijin/view/id/020020>国泰双利债券C</a><a class="" href=/etrade/Jijin/view/id/020660>国泰泰合三个月定期开放债券</a><a class="" href=/etrade/Jijin/view/id/009444>国泰添福一年定期开放债券</a><a class="" href=/etrade/Jijin/view/id/008268>国泰添瑞一年定期开放债券</a><a class="" href=/etrade/Jijin/view/id/025266>国泰稳健添利债券A</a><a class="" href=/etrade/Jijin/view/id/025267>国泰稳健添利债券C</a><a class="" href=/etrade/Jijin/view/id/018255>国泰鑫鸿一年定期开放债券发起式</a><a class="" href=/etrade/Jijin/view/id/006782>国泰信利三个月定期开放债券</a><a class="" href=/etrade/Jijin/view/id/016426>国泰信瑞纯债债券A</a><a class="" href=/etrade/Jijin/view/id/029019>国泰信瑞纯债债券C</a><a class="" href=/etrade/Jijin/view/id/011653>国泰鑫享稳健6个月滚动持有债券A</a><a class="" href=/etrade/Jijin/view/id/011654>国泰鑫享稳健6个月滚动持有债券C</a><a class="" href=/etrade/Jijin/view/id/029387>国泰鑫享稳健6个月滚动持有债券Y</a><a class="" href=/etrade/Jijin/view/id/160217>国泰信用互利债券A</a><a class="" href=/etrade/Jijin/view/id/008504>国泰信用互利债券C</a><a class="" href=/etrade/Jijin/view/id/017428>国泰鑫裕纯债债券</a><a class="" href=/etrade/Jijin/view/id/007278>国泰兴富三个月定期开放债券</a><a class="" href=/etrade/Jijin/view/id/006795>国泰裕祥三个月定期开放债券</a><a class="" href=/etrade/Jijin/view/id/009593>国泰中债1-3年国开债A</a><a class="" href=/etrade/Jijin/view/id/009594>国泰中债1-3年国开债C</a><a class="" href=/etrade/Jijin/view/id/020643>国泰中债1-3年国开债E</a><a class="" href=/etrade/Jijin/view/id/011880>国泰中债1-5年政金债A</a><a class="" href=/etrade/Jijin/view/id/011881>国泰中债1-5年政金债C</a><a class="" href=/etrade/Jijin/view/id/020644>国泰中债1-5年政金债E</a><a class="" href=/etrade/Jijin/view/id/023634>国泰中债优选投资级信用债指数发起A</a><a class="" href=/etrade/Jijin/view/id/023635>国泰中债优选投资级信用债指数发起C</a>                </div>
+            </li><li class="active_cate J_cate   " data-id="5"><a class="icon-slider-home cate-name" href="javascript:;">货币基金</a>
+                <div class="submenu">
+                    <a class="" href=/etrade/Jijin/view/id/020007>国泰货币市场基金A</a><a class="" href=/etrade/Jijin/view/id/005253>国泰货币市场基金B</a><a class="" href=/etrade/Jijin/view/id/003515>国泰利是宝货币</a><a class="" href=/etrade/Jijin/view/id/015379>国泰瞬利货币D</a><a class="" href=/etrade/Jijin/view/id/015380>国泰瞬利货币E</a><a class="" href=/etrade/Jijin/view/id/020031>国泰现金管理货币市场基金A</a><a class="" href=/etrade/Jijin/view/id/020032>国泰现金管理货币市场基金B</a><a class="" href=/etrade/Jijin/view/id/511620>货币ETF国泰</a>                </div>
+            </li>    </ul>
+</div>
+
+            <div class="gt-content jijin-content">
+        <div class="jijin-content-info">
+            <div class="chart-tabs-content">
+                <div class="chart-tabs">
+                    <div class="header">
+                        <h3>纳指ETF国泰<span>(513100)</span>
+                                                    </h3>
+
+
+                    </div>
+                    <div class="tab-content tab-chart active J_chart_tab_jixiao_chart">
+                            <div class="chart-title">
+                                <div class="box">
+                                    <div class="part">
+                                                                                                                            <div class="refer"><span class="chart-title-color" style="background-color:#ffcb4f"></span><span class="J_indicetitle">业绩比较基准收益率</span>：<span class="J_chart_yeji1">--</span>
+                                            </div>
+                                                                                    <div class="refer">
+                                                    <span class="chart-title-color" style="background-color:#4ac3fc"></span>
+                                                    <span class="J_indicetitle_300" data-code="000300.SH">沪深300</span>
+                                                    ：
+                                                    <span class="J_chart_yeji3">--</span></div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="part part-2">
+                                                                                    <div>
+                                                <span class="chart-title-color" style="background-color:#338aff"></span>
+                                                <span class="J_fundname">纳指ETF国泰</span>：<span class="J_chart_yeji2">--</span>
+                                            </div>
+                                            <div class="J_chart_yejidate" >
+                                                2026/09/29                                            </div>                                    </div>
+                                </div>
+                            </div>
+                            <div id="chart_yeji" class="zican-chart J_chart_yeji" style="height:200px;width:450px"></div>
+                            <div class="date-range J_yeji_daterange">
+                                <span class="" data-time="-1">最近一月</span>
+                                <span class="" data-time="-3">最近一季度</span>
+                                <span class="" data-time="-6">最近半年</span>
+                                <span class="active" data-time="-12">最近一年</span>
+                            </div>
+                        </div>
+                                            <div class="jijin-info" fund-status="created">
+                        <table width="420px">
+                            <tr class="top-type">
+                                <td colspan="2"><span class="">海外型</span><span class="">中高风险</span><span class="">场内</span></td>
+                            </tr>
+                                                            <tr class="netvalue-new">
+                                                                            <td width="220px"><span>2.0379</span>
+                                            <span>单位净值 09-29</span>
+                                        </td>
+                                        <td width="200px"><span class="gt-font-red">0.22%</span>
+                                            <span>日增长率</span>
+                                        </td>                                </tr>                        </table>
+                        <table class="bijiao">
+                            <tr>
+                                <td colspan="2">
+                                                                    <div style="font-weight:bold;margin-bottom:6px">业绩比较基准: </div> <span class="refer J_refer">本基金的业绩比较基准为标的指数收益率（经汇率调整后的总收益指数收益率）。本基金的标的指数为纳斯达克100指数（Nasdaq-100 Index）。</span></td>
+                                                            </tr>
+                        </table>
+                        <div id="peibancont"></div>
+                        <textarea class="gt-hide" id="cont_xiang">
+                          <% if(data) { %>
+                          <span class="peibanCont" data-id="<%= data.id %>">
+                            <span class="cont title">
+                              【<%= data.type %>】<%= data.title %>
+                            </span>
+                            <span class="cont over"><%= data.abstract %></span>
+                          </span>
+                          <% } %>
+                        </textarea>
+                        <table width="420px">
+                            <tr>
+                                <td align=center class="opt-btn" width="33%">
+                                    <a href="/Etrade/TradeJijin/chongzhi/id/513100" class="J_btn_buy gt-btn gt-btn-primary gt-radius disable">申购</a>
+                                </td>
+
+                                <td align=center class="opt-btn " width="33%">
+                                    <a href="/Etrade/Dingtou/dingtou/id/513100" class="J_btn_buy gt-btn gt-btn-secondary gt-radius disable disable">定投</a>
+                                </td>
+
+                                <td align=center class="opt-btn ">
+                                    <a href="javascript:;"  data-fundcode="513100" data-pension="0" class="J_btn_zixuan"></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="gt-cf"></div>
+                                                            <h3>历史业绩</h3>
+                    <div class="jijin-history">
+                        <table class="baseinfo" width="420px">
+                            <tr>
+                                <td></td>
+                                <td class="gt-text-center">一周</td><td class="gt-text-center">一月</td><td class="gt-text-center">三月</td><td class="gt-text-center">最近一年</td><td class="gt-text-center">今年以来</td><td class="gt-text-center">成立以来</td>                            </tr>
+                            <tr>
+                                    <td style="font-weight: bold">纳指ETF国泰</td>
+                                    <td class="gt-text-center gt-font-gray"">-1.36%</td><td class="gt-text-center gt-font-red"">2.43%</td><td class="gt-text-center gt-font-red"">0.64%</td><td class="gt-text-center gt-font-red"">16.45%</td><td class="gt-text-center gt-font-red"">14.91%</td><td class="gt-text-center gt-font-red"">918.95%</td>                                </tr><tr>
+                                    <td style="font-weight: bold">业绩比较基准</td>
+                                    <td class="gt-text-center gt-font-"">- -</td><td class="gt-text-center gt-font-"">- -</td><td class="gt-text-center gt-font-"">- -</td><td class="gt-text-center gt-font-"">- -</td><td class="gt-text-center gt-font-"">- -</td><td class="gt-text-center gt-font-"">- -</td>                                </tr>                        </table>
+                        <div class="gt-fr" style="font-size: 12px; color:#8e8e8e">
+                            数据截止至：2026/09/29，数据仅供参考，请以账户确认数据为准。                        </div>
+                        <div class="gt-cf"></div>
+                    </div>                </div>
+            </div>
+            <div class="jijin-tabs">
+                <div class="jijin-tab J_tab ">
+                    <ul>
+                        <li data-tab="5" class="active">
+                            <div class="noborder">基金概况</div><span></span></li>
+                        <li data-tab="1">
+                                <div>基金信息</div><span></span>
+                            </li>                        <li data-tab="7">
+                            <div class="fengbu_tab">投资分布</div><span></span>
+                        </li>
+                        <li data-tab="3">
+                            <div class="tab_3_back">信息披露</a>
+                            </div><span></span></li>
+                        <!-- <li data-tab="4">
+                            <div>费率</div><span></span>
+                        </li> -->
+                       <li data-tab="2">
+                                <div class="stock_tab" id="etf-list">申购/赎回清单</div><span></span>
+                            </li>
+                            <li data-tab="8">
+                                <div id="jihe-etf-list">集合申购清单</div><span></span>
+                            </li>                                                <li data-tab="agency" id="J_tag_agency"><div>销售机构</div><span></span></li>
+                                                                    </ul>
+                </div>
+                <div class="J_jijin_tab_1 jijin-tab-content jijin-tab-1">
+                    <div class="manager">
+                        <h3>基金经理</h3>
+                        <table class="manager-content">
+                            <tr>
+                                    <th valign="top"><img src="https://st.gtfund.com/default/2025/03/%E8%89%BE%E5%B0%8F%E5%86%9B2.png"></th>
+                                    <td valign="top">艾小军，硕士。<br />
+2001年5月至2006年9月在华安基金管理有限公司任量化分析师。<br />
+2006年9月至2007年8月在汇丰晋信基金管理有限公司任应用分析师。<br />
+2007年9月至2007年10月在平安资产管理有限公司任量化分析师。<br />
+2007年10月加入国泰基金，历任金融工程分析师、高级产品经理和基金经理助理。<br />
+2014年1月起任国泰黄金交易型开放式证券投资基金、上证180金融交易型开放式指数证券投资基金、国泰上证180金融交易型开放式指数证券投资基金联接基金的基金经理。<br />
+2015年3月至2020年12月任国泰深证TMT50指数分级证券投资基金的基金经理。<br />
+2015年4月至2021年1月任国泰沪深300指数证券投资基金的基金经理。<br />
+2016年4月起兼任国泰黄金交易型开放式证券投资基金联接基金的基金经理。<br />
+2016年7月起兼任国泰中证军工交易型开放式指数证券投资基金和国泰中证全指证券公司交易型开放式指数证券投资基金的基金经理。<br />
+2017年3月至2017年5月任国泰保本混合型证券投资基金的基金经理。<br />
+2017年3月至2018年12月任国泰策略收益灵活配置混合型证券投资基金的基金经理。<br />
+2017年3月起兼任国泰国证航天军工指数证券投资基金（LOF）的基金经理。<br />
+2017年4月起兼任国泰中证申万证券行业指数证券投资基金（LOF）的基金经理。<br />
+2017年5月至2023年9月任国泰策略价值灵活配置混合型证券投资基金（由国泰保本混合型证券投资基金变更而来）的基金经理。<br />
+2017年5月至2018年7月任国泰量化收益灵活配置混合型证券投资基金的基金经理。<br />
+2017年8月起至2019年5月任国泰宁益定期开放灵活配置混合型证券投资基金的基金经理。<br />
+2018年5月至2022年3月任国泰量化成长优选混合型证券投资基金的基金经理。<br />
+2018年5月至2019年7月任国泰量化价值精选混合型证券投资基金的基金经理。<br />
+2018年8月至2019年4月任国泰结构转型灵活配置混合型证券投资基金的基金经理。<br />
+2018年12月至2019年3月任国泰量化策略收益混合型证券投资基金（由国泰策略收益灵活配置混合型证券投资基金变更而来）的基金经理。<br />
+2019年4月至2019年11月任国泰沪深300指数增强型证券投资基金（由国泰结构转型灵活配置混合型证券投资基金变更而来）的基金经理。<br />
+2019年5月至2019年11月任国泰中证500指数增强型证券投资基金（由国泰宁益定期开放灵活配置混合型证券投资基金变更注册而来）的基金经理。<br />
+2019年5月起兼任国泰CES半导体芯片行业交易型开放式指数证券投资基金（由国泰CES半导体行业交易型开放式指数证券投资基金更名而来）的基金经理。<br />
+2019年7月至2021年1月任上证5年期国债交易型开放式指数证券投资基金和上证10年期国债交易型开放式指数证券投资基金的基金经理。<br />
+2019年7月起兼任国泰中证计算机主题交易型开放式指数证券投资基金的基金经理。<br />
+2019年8月起兼任国泰中证全指通信设备交易型开放式指数证券投资基金的基金经理。<br />
+2019年9月起兼任国泰中证全指通信设备交易型开放式指数证券投资基金发起式联接基金的基金经理。<br />
+2020年12月起兼任国泰中证计算机主题交易型开放式指数证券投资基金联接基金（由国泰深证TMT50指数分级证券投资基金转型而来）的基金经理。<br />
+2021年5月起兼任国泰中证全指证券公司交易型开放式指数证券投资基金发起式联接基金的基金经理。<br />
+2023年5月起兼任纳斯达克100交易型开放式指数证券投资基金和国泰标普500交易型开放式指数证券投资基金（QDII）的基金经理。<br />
+2023年7月起兼任国泰中证半导体材料设备主题交易型开放式指数证券投资基金的基金经理。<br />
+2017年7月起任投资总监（量化）、金融工程总监。</td>
+                                </tr>
+                                <tr>
+                                    <td height="25px"> </td>
+                                </tr>                        </table>
+                    </div>
+                    <div class="desc">
+                        <h3 style="margin: 0;">投资目标</h3>
+                            <p>紧密跟踪标的指数，追求跟踪偏离度及跟踪误差的最小化。</p>                        <h3>投资策略</h3>
+                            <p>本基金主要采取完全复制策略，即按照标的指数的成份股构成及其权重构建基金股票投资组合，并根据标的指数成份股及其权重的变动进行相应调整。但因特殊情况（如成份股长期停牌、成份股发生变更、成份股权重由于自由流通量发生变化、成份股公司行为、市场流动性不足等）导致本基金管理人无法按照标的指数构成及权重进行同步调整时，基金管理人将对投资组合进行优化，尽量降低跟踪误差。<br />
+在正常市场情况下，本基金的风险控制目标是追求日均跟踪偏离度的绝对值不超过0.2%，年跟踪误差不超过2%。如因标的指数编制规则调整或其他因素导致跟踪偏离度和跟踪误差超过上述范围，基金管理人应采取合理措施避免跟踪偏离度、跟踪误差进一步扩大。<br />
+另外，本基金基于流动性管理的需要，将投资于与本基金有相近的投资目标、投资策略、且以本基金的标的指数为投资标的的指数型公募基金（包括ETF）。同时，为更好地实现本基金的投资目标，本基金还将在条件允许的情况下，开展证券借贷业务以及投资于股指期货等金融衍生品，以期降低跟踪误差水平。本基金投资于金融衍生品的目标是替代跟踪标的指数的成份股，使基金的投资组合更紧密地跟踪标的指数。不得应用于投机交易目的，或用作杠杆工具放大基金的投资。</p>                        <h3>投资范围</h3>
+                            <p>本基金投资于标的指数成份股、备选成份股、境外交易的跟踪同一标的指数的公募基金（包括ETF）、依法发行或上市的其他股票、固定收益类资产、银行存款、货币市场工具、股指期货等金融衍生品和法律法规或中国证监会允许基金投资的其他金融工具，但须符合中国证监会的相关规定。<br />
+如法律法规或监管机构以后允许基金投资其它品种，基金管理人在履行适当程序后，可以将其纳入投资范围。<br />
+在建仓完成后，本基金投资于标的指数成份股、备选成份股的资产比例不低于基金资产净值的90%。<br />
+本基金的标的指数为纳斯达克100指数（Nasdaq-100 Index）及其未来可能发生的变更。</p>                        <h3>风险揭示</h3>
+                            <p>本基金不提供任何保证。投资者可能损失投资本金。<br />
+投资有风险，投资者购买基金时应认真阅读本基金的招募说明书（更新）等销售文件。<br />
+本基金面临的主要风险有本基金特有的风险、投资风险、运作风险、不可抗力风险及法律文件风险收益特征表述与销售机构基金风险评级可能不一致的风险等。<br />
+本基金特有风险：<br />
+1、标的指数回报与股票市场平均回报偏离的风险<br />
+标的指数并不能完全代表整个股票市场。标的指数成份股的平均回报率与整个股票市场的平均回报率可能存在偏离。<br />
+2、标的指数波动的风险 <br />
+标的指数成份股的价格可能受到政治因素、经济因素、上市公司经营状况、投资人心理和交易制度等各种因素的影响而波动，导致指数波动，从而使基金收益水平发生变化，产生风险。<br />
+3、基金投资组合回报与标的指数回报偏离的风险及跟踪误差控制未达约定目标的风险 <br />
+以下因素可能使基金投资组合的收益率与标的指数的收益率发生偏离，也可能使基金的跟踪误差控制未达约定目标：<br />
+(1)由于标的指数调整成份股或变更编制方法，使ETF基金在相应的组合调整中产生跟踪偏离度与跟踪误差； <br />
+(2)由于标的指数成份股发生配股、增发等行为导致成份股在标的指数中的权重发生变化，使ETF基金在相应的组合调整中产生跟踪偏离度和跟踪误差； <br />
+(3)由于成份股停牌、摘牌或流动性差等原因使ETF基金无法及时调整投资组合或承担冲击成本而产生跟踪偏离度和跟踪误差；<br />
+(4)成份股派发现金红利、送配等所获收益可能导致基金收益率偏离标的指数收益率，从而产生跟踪偏离度；<br />
+(5)由于基金投资过程中的证券交易成本，以及基金管理费和托管费的存在，使基金投资组合与标的指数产生跟踪偏离度与跟踪误差；<br />
+(6)在ETF基金指数化投资过程中，基金管理人的管理能力，例如跟踪指数的水平、技术手段、买入卖出的时机选择等，都会对ETF基金的收益产生影响，从而影响ETF基金对标的指数的跟踪程度； <br />
+(7)如果指数编制机构发布的指数数据出现错误，基金投资组合的收益率与标的指数的收益率也可能发生偏离； <br />
+(8)其他因素产生的偏离。如因受到最低买入股数的限制，基金投资组合中个别股票的持有比例与标的指数中该股票的权重可能不完全相同；基金申购与赎回带来的现金变动等。<br />
+如因标的指数编制规则调整或其他因素导致本基金的跟踪误差控制未达约定目标，本基金净值表现与指数价格走势可能发生较大偏离。<br />
+4、标的指数变更的风险<br />
+尽管可能性很小，但根据基金合同规定，如出现变更标的指数的情形，本基金将变更标的指数。基于原标的指数的投资政策将会改变，投资组合将随之调整，基金的收益风险特征将与新的标的指数保持一致，投资人须承担此项调整带来的风险与成本。<br />
+5、指数编制机构停止服务的风险<br />
+本基金的标的指数由指数编制机构发布并管理和维护，未来指数编制机构可能由于各种原因停止对指数的管理和维护，本基金将根据基金合同的约定自该情形发生之日起十个工作日内向中国证监会报告并提出解决方案，如更换基金标的指数、转换运作方式，与其他基金合并、或者终止基金合同等，并在6个月内召集基金份额持有人大会进行表决。<br />
+自指数编制机构停止标的指数的编制及发布至解决方案确定期间，基金管理人应按照指数编制机构提供的最近一个交易日的指数信息遵循基金份额持有人利益优先原则维持基金投资运作。该期间由于标的指数不再更新等原因可能导致指数表现与相关市场表现存在差异，影响投资收益。<br />
+6、成份股停牌的风险<br />
+标的指数成份股可能因各种原因临时或长期停牌，发生成份股停牌时可能面临如下风险：<br />
+（1）基金可能因无法及时调整投资组合而导致跟踪偏离度和跟踪误差扩大。<br />
+（2）停牌成份股可能因其权重占比、市场复牌预期、现金替代标识等因素影响本基金二级市场价格的折溢价水平。<br />
+（3）若成份股停牌时间较长，在约定时间内仍未能及时买入或卖出的，则该部分款项将按照本招募说明书的约定方式进行结算，由此可能影响投资者的投资损益并使基金产生跟踪偏离度和跟踪误差。<br />
+（4）在极端情况下，标的指数成份股可能大面积停牌，基金可能无法及时卖出成份股以获取足额的符合要求的赎回对价，由此基金管理人可能在申购赎回清单中设置较低的赎回份额上限或者采取暂停赎回的措施，投资者将面临无法赎回全部或部分ETF份额的风险。<br />
+本基金运作过程中，当标的指数成份股发生明显负面事件面临退市，且指数编制机构暂未作出调整的，基金管理人应当按照持有人利益优先的原则，履行内部决策程序后及时对相关成份股进行调整，可能影响投资者的投资损益并使基金产生跟踪偏离度和跟踪误差。<br />
+7、基金管理人代理申赎投资人买券卖券的风险 <br />
+因涉及境外市场股票的买卖，在投资人申购、赎回本基金时，本基金组合证券中全部或部分证券需以一定数量的现金进行现金替代，并由基金管理人按照招募说明书的规定代理申赎投资人进行相关证券买卖，投资人需承受买入证券的结算成本和卖出证券的结算金额的不确定性（含汇率波动风险）。 <br />
+8、基金份额二级市场交易价格折溢价的风险 <br />
+尽管本基金的运作力求使基金份额二级市场交易价格的折溢价控制在一定范围内，但基金份额在证券交易所的交易价格受诸多因素影响，存在不同于基金份额净值的情形，即存在价格折溢价的风险。<br />
+9、退市风险 <br />
+因本基金不再符合证券交易所上市条件被终止上市，或被基金份额持有人大会决议提前终止上市，导致基金份额不能继续进行二级市场交易的风险。 <br />
+10、申购失败的风险 <br />
+如果投资人申购时未能提供符合要求的申购对价，或者基金管理人根据基金合同的规定拒绝投资人的申购申请，则投资人的申购申请失败。此外，如果基金可用的外汇额度不足，申购赎回代理券商应付资金不足或出现违约，投资人的申购申请也可能失败。 <br />
+11、赎回失败的风险 <br />
+如果投资人赎回时持有的符合要求的基金份额不足或未能根据要求准备足额的现金，或者投资人在登记结算机构办理基金份额交收时持有的符合要求的基金份额不足，或者基金管理人根据基金合同的规定拒绝投资人的赎回申请，则投资人的赎回申请失败。另外，基金管理人可能根据成份股市值规模变化等因素调整最小申购赎回单位，由此可能导致投资人按原最小申购赎回单位申购并持有的基金份额无法按照新的最小申购赎回单位全部赎回，而只能在二级市场卖出全部或部分基金份额。 <br />
+12、投资人参考IOPV做出投资决策的风险和IOPV计算错误的风险 <br />
+IOPV与实时的基金份额净值存在差异，IOPV计算可能出现错误，投资人若参考IOPV进行投资决策可能导致损失。<br />
+13、第三方机构服务的风险 <br />
+本基金的多项服务委托第三方机构办理,存在以下风险： <br />
+(1)受多种因素影响，申购赎回代理券商代理申购、赎回业务可能受到限制、暂停或终止，从而影响投资人申购、赎回。 <br />
+(2)登记结算机构可能调整结算制度，从而对投资人基金份额、资金等的结算方式发生变化，制度调整可能给投资人带来理解偏差的风险。同样的风险还可能来自于证券交易所及其他代理机构。 <br />
+(3)证券交易所、期货交易所、证券与期货登记结算机构、申购赎回代理券商、基金托管人及其他代理机构可能违约，导致基金或投资人利益受损的风险。 <br />
+14、管理风险 <br />
+基金管理人、基金托管人等相关当事人的业务发展状况、人员配备、管理水平与内部控制等对基金收益水平存在影响。因业务扩张过快、行业内过度竞争、对主要业务人员过度依赖等可能会产生影响投资人利益的风险。 <br />
+相关当事人在业务各环节操作过程中，可能因内部控制存在缺陷或者人为因素造成操作失误或违反操作规程等引致风险，例如，申购赎回清单编制错误、越权违规交易、欺诈行为及交易错误等风险。</p>                        <h3>重要提示</h3>
+                            <p>中国证监会对本基金募集的核准，并不表明其对本基金的价值和收益作出实质性判断或保证，也不表明投资于本基金没有风险。<br />
+基金管理人依照恪尽职守、诚实信用、谨慎勤勉的原则管理和运用基金财产，但不保证基金一定盈利，也不保证最低收益。<br />
+基金投资者自依基金合同取得基金份额，即成为基金份额持有人和基金合同的当事人。<br />
+因《基金合同》而产生的或与《基金合同》有关的一切争议，应经友好协商解决，如经友好协商未能解决的，则任何一方有权按《基金合同》的约定提交仲裁，仲裁机构见《基金合同》。<br />
+基金产品资料概要信息发生重大变更的，基金管理人将在三个工作日内更新，其他信息发生变更的，基金管理人每年更新一次。因此，本文件内容相比基金的实际情况可能存在一定的滞后，如需及时、准确获取基金的相关信息，敬请同时关注基金管理人发布的相关临时公告等。</p>                        <div class="gt-text-right tips">注：内容仅供参考，详情请阅相关招书及公告</div>
+                    </div>
+
+                </div>
+                <div class="J_jijin_tab_2 jijin-tab-content jijin-tab-2">
+                    <div class="etf-alert">
+    <a href="" target="_blank" class="etf-alert-title"></a>
+</div>
+<table width="100%">
+    <tr>
+            <td width="80">申赎清单：</td>
+            <td width="300" class=" gt-form">
+                <select class="J_etf_fundcode">
+                                    <option value="513101">纳指ETF申购赎回清单</option>
+
+                                    </select>
+            </td>
+            <td width="70"></td>
+
+        <td width="120">
+            您希望查看的日期：
+        </td>
+        <td width="120">
+            <input type="text" id="enddate" name="enddate" class="J_input_date J_input_date_end input-date gt-form-field" placeholder="" value="" />
+        </td>
+        <script>
+            $("#enddate").on("change", function() {
+                $(this).val($(this).attr("value"));
+            });
+        </script>
+        <td width="20">
+        </td>
+        <td width="50">
+            <button type="button" class="gt-btn gt-btn-primary J_etf_search">查询</button>
+        </td>
+        <td width="20">
+        </td>
+        <td width="80" class="J_etf_download_link">
+            <div style="background-color: #fff;margin: 0;cursor:pointer;color:#2c97e7" class="J_etf_download"><span>文件下载&nbsp;&nbsp;&nbsp;<img src="/Public/static/etrade/1/dist/i/icon-download.png"></span></div>
+        </td>
+    </tr>
+</table>
+<h3>基本信息</h3>
+<div id="etf-content" class="J_etf_base">
+    <div class="gt-text-center"><img src="/Public/static/etrade/1/dist/i/common/loading.gif" style="width:35px;" class="gt-padding"></div>
+</div>
+<textarea class="J_template" id="J_etf_tpl_new_default">
+    <table class="baseinfo">
+    {{#info}}
+        <tr>
+            {{#.}}
+            <th class="gt-text-left">{{0}}</th>
+            <td>{{#1}}{{1}}{{/1}}</td>
+            {{/.}}
+        </tr>
+    {{/info}}
+    </table>
+    <h3>{{t-1.date}}日信息内容</h3>
+    <table class="properties baseinfo">
+        {{#t-1.properties}}
+         <tr>
+            {{#.}}
+            <th>{{0}}</th>
+            <td>{{1}}</td>
+            {{/.}}
+
+        </tr>
+    {{/t-1.properties}}
+    </table>
+    <h3>{{t.date}}日信息内容</h3>
+    <table class="properties baseinfo">
+         {{#t.properties}}
+         <tr>
+            {{#.}}
+            <th>{{0}}</th>
+            <td>{{1}}</td>
+            {{/.}}
+
+        </tr>
+    {{/t.properties}}
+    </table>
+
+    {{#securities}}
+    {{#title}}
+    <h3>{{title}}信息内容</h3>
+    {{/title}}
+    <div class="J_page_stock gt-stock">
+    <div id="J_stock_more">
+             <table class="baseinfo stock-top">
+
+                <tr>
+                    {{#cols}}
+                    <td class="middle" width="80">{{.}}</td>
+                    {{/cols}}
+                </tr>
+
+            <tbody class="baseinfo stock-down">
+                {{#rows}}
+                <tr>
+                    {{#.}}
+                    <td class="middle" width="80">{{.}}</td>
+                    {{/.}}
+                </tr>
+                {{/rows}}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    {{/securities}}
+</textarea>
+
+                </div>
+                <div class="J_jijin_tab_3 jijin-tab-content jijin-tab-3">
+                    <div id="main_Report">
+                        <h3>产品资料概要<span class="J_searchReport"><a href="javascript:" data-type="kfs" class ="J_more kfs">更多 ></a></span></h3>
+                        <table class="baseinfo preview"></table>
+                        <div style="display: none" class="no-kfs">暂无产品资料概要</div>
+                        <table class="baseinfo preview-kfs"></table>
+                        <h3>发行运作<span class="J_searchReport"><span data-type="basic" class="J_search_report">搜索</span><a href="javascript:" data-type="basic" class ="J_more">更多 ></a></span></h3>
+                        <table class="baseinfo preview-basic"></table>
+                        <div class="gap">
+                            <h3>定期报告<span class="J_searchReport"><span data-type="periodical" class="J_search_report">搜索</span><a href="javascript:" data-type="periodical" class ="J_more">更多 ></a></span></h3>
+                        </div>
+                        <table class="baseinfo preview-periodical"></table>
+                        <div class="gap">
+                            <h3>临时报告<span class="J_searchReport"><span data-type="temporary" class="J_search_report">搜索</span><a href="javascript:" data-type="temporary" class ="J_more">更多 ></a></span></h3>
+                        </div>
+                        <table class="baseinfo preview-temporary"></table>
+                    </div>
+                    <div id="more_kfs" style="display:none;" class="J_page_report">
+                        <table class="J_page_title" width="930px">
+                            <tr>
+                                <td width="80px">
+                                    <div class="tab_3_back">信息披露</div>
+                                </td>
+                                <td width="160px">&nbsp;&nbsp;>&nbsp;&nbsp;产品资料概要</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div style="display: none" class="no-kfs">暂无产品资料概要</div>
+                        <div id="J_kfs_more"></div>
+                        <textarea class="J_template" id="J_tpl_kfs_more">
+                            <table class="baseinfo">
+                                {{#data}}
+                                <tr>
+                                    <td style="width:150px">{{date}}</td>
+                                    <td><a href="{{url}}" target="_blank">{{title}}</a></td>
+                                </tr>
+                                {{/data}}
+                            </table>
+                        </textarea>
+                        <div class="page_report J_page_num" align="right">
+                            <span></span>
+<!--                            <a href="">首页</a>-->
+<!--                            <a href="">-->
+<!--                                < </a>-->
+<!--                            <a href="">1</a>-->
+<!--                            <a href="">></a>-->
+<!--                            <a href="">末页</a>-->
+                        </div>
+                    </div>
+
+                    <div id="more_basic" style="display:none;" class="J_page_report">
+                        <table class="J_page_title" width="930px">
+                            <tr>
+                                <td width="80px">
+                                    <div class="tab_3_back">信息披露</div>
+                                </td>
+                                <td width="160px">&nbsp;&nbsp;>&nbsp;&nbsp;发行运作</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div id="J_basic_more"></div>
+                        <textarea class="J_template" id="J_tpl_basic_more">
+                            <table class="baseinfo">
+                                {{#data}}
+                                <tr>
+                                    <td style="width:150px">{{date}}</td>
+                                    <td><a href="{{pdf.url}}" target="_blank">{{title}}</a></td>
+                                </tr>
+                                {{/data}}
+                            </table>
+                        </textarea>
+                        <div class="page_report J_page_num" align="right">
+                            <span></span>
+                            <a href="">首页</a>
+                            <a href="">
+                                < </a>
+                                    <a href="">1</a>
+                                    <a href="">></a>
+                                    <a href="">末页</a>
+                        </div>
+                    </div>
+                    <div id="more_periodical" style="display:none;" class="J_page_periodical">
+                        <table class="J_page_title">
+                            <tr>
+                                <td>
+                                    <div class="tab_3_back">信息披露</div>
+                                </td>
+                                <td>&nbsp;&nbsp;>&nbsp;&nbsp;定期报告</td>
+                            </tr>
+                        </table>
+                        <div id="J_periodical_more"></div>
+                        <textarea class="J_template" id="J_tpl_periodical_more">
+                            <table class="baseinfo">
+                                {{#data}}
+                                <tr>
+                                    <td style="width:150px">{{date}}</td>
+                                    <td><a href="{{pdf.url}}" target="_blank">{{title}}</a></td>
+                                </tr>
+                                {{/data}}
+                            </table>
+                        </textarea>
+                        <div class="page_periodical J_page_num" align="right">
+                            <span></span>
+                            <a href="">首页</a>
+                            <a href="">
+                                < </a>
+                                    <a href="">1</a>
+                                    <a href="">></a>
+                                    <a href="">末页</a>
+                        </div>
+                    </div>
+                    <div id="more_temporary" style="display:none;" class="J_page_temporary">
+                        <table class="J_page_title">
+                            <tr>
+                                <td>
+                                    <div class="tab_3_back">信息披露</div>
+                                </td>
+                                <td>&nbsp;&nbsp;>&nbsp;&nbsp;临时报告</td>
+                            </tr>
+                        </table>
+                        <div id="J_temporary_more"></div>
+                        <textarea class="J_template" id="J_tpl_temporary_more">
+                            <table class="baseinfo">
+                                {{#data}}
+                                <tr>
+                                    <td style="width:150px">{{date}}</td>
+                                    <td><a href="{{#pdf}}{{ url }}{{/pdf}}{{^pdf}}/Etrade/Report/view/id/{{ id }}{{/pdf}}" target="_blank">{{title}}</a></td>
+                                </tr>
+                                {{/data}}
+                            </table>
+                        </textarea>
+                        <div class="page_report J_page_num" align="right">
+                            <span></span>
+                            <a href="">首页</a>
+                            <a href="">
+                                < </a>
+                                    <a href="">1</a>
+                                    <a href="">></a>
+                                    <a href="">末页</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="J_jijin_tab_5 jijin-tab-content jijin-tab-5 active">
+                    <div class="_space"></div>
+                    <table class="baseinfo">
+                        <tr>
+                            <th>基金全称</th>
+                            <td colspan="3">纳斯达克100交易型开放式指数证券投资基金</td>
+                                                        </tr>
+                        <tr>
+                            <th width="20%">基金代码</th>
+                            <td width="30%">513100</td>
+                            <th width="20%">托管人</th>
+                            <td width="30%">中国建设银行股份有限公司</td>
+                                                        </tr><tr>
+                            <th>基金经理</th>
+                            <td>
+                                艾小军&nbsp;                            </td>
+                            <th>基金合同生效日</th>
+                            <td>
+                                2013年04月25日                                                            </td>
+                        </tr>
+                        <tr>
+                            <th>运作方式</th>
+                            <td>交易型开放式</td>
+                                                            <th>基金类型</th>
+                            <td>海外</td>
+                        </tr>
+                        <tr>
+                            <th>风险等级</th>
+                            <td>中高（R4）</td>
+                                
+                            <th id="redeemTimeShow">总规模</th>
+                            <td id="fundMetrics">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="">
+                        <div class="fenfhong_choice J_fenfhong_choice">
+    <h3>历史净值<span class="J_jijin_fenhong">分红记录查询</span></h3>
+    <table>
+        <tr>
+            <td width="150">您希望查看的时间段：</td>
+            <td width="200">
+                <div class="date-range-select gt-form">
+                    <select class="J_date_jingzhi J_data_shouyi" data-date="2026-10-04">
+                        <option value="1" selected="selected" data-start="2026-09-04">最近一月</option>
+                        <option value="3" data-start="2026-07-04">最近一季度</option>
+                        <option value="6" data-start="2026-04-04">最近半年</option>
+                        <option value="12" data-start="2025-10-04">最近一年</option>
+                    </select>
+                </div>
+            </td>
+            <td width="180" style="text-align: right;">起止时间：</td>
+            <td width="130">
+                <input type="text" id="startdate_jingzhi" name="startdate_jingzhi" class="J_input_date input-date gt-form-field" placeholder="" value="2026-08-29" />
+            </td>
+            <td>&nbsp;&nbsp;-</td>
+            <td width="130">
+                <input type="text" id="enddate_jingzhi" name="enddate_jingzhi" class="J_input_date input-date gt-form-field" placeholder="" value="2026-09-29" />
+            </td>
+            <td style="text-align: right;padding-right: 0;" width=70px>
+                <button type="button" class="gt-btn gt-btn-primary J_jingzhi_search">查询</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="tab-content tab-chart J_chart_tab_market_chart" style="float:left">
+    <div id="chart_1" class="zican-chart J_chart" style="width:400px;height:248px"></div>
+</div>
+<div class="tab-content tab-chart J_chart_tab_marketlist" style="float:right">
+    <div class="chartlist-title" style="width:500px;height:222px">
+        <form class="gt-form">
+            <div class="date-range-input gt-fr">
+            </div>
+        <input type="hidden" name="__hash__" value="f55d0e5ddca0f0a194878f1b04db4e83_c1ecfd316f822f8b2c7ceef7f8cc1449" /></form>
+        <div class="gt-cf"></div>
+        <div class="nav-table J_jingzhilist J_shouyilist gt-padding-v"></div>
+    </div>
+    <textarea class="J_template table">
+        <table class="baseinfo">
+            <tbody>
+                <tr>
+                    <th>日期</th>
+                    {{#headers}}
+                    <th>{{.}}</th>
+                    {{/headers}}
+                </tr>
+                {{#list}}
+                <tr>
+                    <td>{{date}}</td>
+                    {{#values}}
+                    <td>{{.}}</td>
+                    {{/values}}
+                </tr>
+                {{/list}} {{^list}}
+                <tr>
+                    <td colspan="3">没有可用数据 </td>
+                </tr>
+                {{/list}}
+            </tbody>
+        </table>
+    </textarea>
+    <textarea class="J_template pagination">
+        <span class="gt-fl">共{{total}}条记录</span>
+        {{#show}}
+        <a href="javascript:;" data-page="1" class="home">首页</a>
+        <a href="javascript:;" class="prev">&lt;</a>
+        {{#pages}}
+            {{#page}}
+            <a href="javascript:;" data-page="{{.}}">{{.}}</a>
+            {{/page}}
+            {{#dot}}
+            <span>...</span>
+            {{/dot}}
+        {{/pages}}
+        <a href="javascript:;" class="next">&gt;</a>
+        <a href="javascript:;" data-page="{{last}}">末页</a>
+        {{/show}}
+    </textarea>
+    <div class="page_report J_fenhong_page_num" align="right"></div>
+</div>
+<!-- <div class="gt-cf"></div> -->
+
+
+
+
+                    </div>
+
+                    <div class="jijin-view-feilv">
+                            <h3 style="width: 100%;float: left;">费率</h3>
+
+                            <div class="table-sale-title">基金销售费用</div>
+                            <table class="baseinfo">
+                                <tr>
+                                    <th class="gt-nowrap" style="width: 130px;">类别</th>
+                                    <th class="gt-nowrap">金额/期限</th>
+                                    <th class="gt-nowrap">费率</th>
+                                    <th class="gt-nowrap">备注</th>
+                                </tr>
+                                                            </table>
+
+                            <p>注：场内交易费用以证券公司实际收取为准。</p>
+                            <div class="table-sale-title">基金运作费用</div>
+                            <table class="baseinfo">
+                                <tr>
+                                    <th class="gt-nowrap" style="width: 130px;">类别</th>
+                                    <th class="gt-nowrap">费率</th>
+                                    <th class="gt-nowrap">备注</th>
+                                </tr>
+                                <tr>
+                                                <td class="light gt-nowrap">管理费</td>
+                                                <td>0.60%</td>
+                                                                                                <td >--</td>                                                <!--                                        <td></td>-->
+                                            </tr><tr>
+                                                <td class="dark gt-nowrap">托管费</td>
+                                                <td>0.20%</td>
+                                                                                                <td >--</td>                                                <!--                                        <td></td>-->
+                                            </tr><tr>
+                                                <td class="light gt-nowrap">审计费用</td>
+                                                <td>78000.00</td>
+                                                                                                <td >--</td>                                                <!--                                        <td></td>-->
+                                            </tr><tr>
+                                                <td class="dark gt-nowrap">信息披露费</td>
+                                                <td>120000.00</td>
+                                                                                                <td >--</td>                                                <!--                                        <td></td>-->
+                                            </tr><tr>
+                                                <td class="light gt-nowrap">其他费用</td>
+                                                <td>其他按照国家有关规定和《基金合同》约定可以在基金财产中列支的费用</td>
+                                                <td>相关服务机构</td>                                                                                                <!--                                        <td></td>-->
+                                            </tr>                            </table>
+
+                            <p>注：1、本基金交易证券、基金等产生的费用和税负，按实际发生额从基金资产扣除。
+2、上表中年费用金额为基金整体承担费用，非单个份额类别费用，且年金额为预估值，最终实际金额以基金定期报告披露为准。</p>
+                            <div class="gt-text-right tips">注：具体相关费率以招募说明书为准
+                            <span class="free-fund" style="display: none">，本基金直销不收取买入费用</span></div>
+                        </div>
+                </div>             <div class="J_jijin_tab_6 jijin-tab-content jijin-tab-6">
+
+                </div>
+                <div class="J_jijin_tab_7 jijin-tab-content jijin-tab-7">
+                    <div class="J_touzifenbu">
+                        <table width="930px">
+    <tr>
+        <td width="50%" class="table-wrap table-top table-left">
+            <div class="title">&nbsp;<span class="circle"></span>&nbsp;&nbsp;资产分布</div>
+            <div id="chart_zichanfenbu" class="J_touzi_chart" style="height: 230px;margin-top: -18px"
+                style="display:none"></div>
+            <div id="J_tpl_wrapper_touzi_table" class="J_touzi_chart" style="display:none;"></div>
+            <textarea class="J_template J_tpl_touzi_table">
+                    <table class="baseinfo">
+                        <tr>
+                            <th class="bold" width="30%" height="30px">类别</th>
+                            <th class="bold" width="30%" height="30px">公允价值(元)</th>
+                            <th class="bold" width="30%" height="30px">总资产占比</th>
+                        </tr>
+                        {{#allocation}}
+                            <tr>
+                                <td>{{0}}</td>
+                                <td>{{1}}</td>
+                                <td>{{2}}</td>
+                            </tr>
+                            {{/allocation}}
+                    </table>
+            </textarea>
+            <div style="text-align:center; display: none;" class="J_touzi_chart_empty">
+                <img src="/Public/static/etrade/1/dist/i/empty-pc_05.png">
+                <div class="tips">暂无行业分布信息</div>
+            </div>
+        </td>
+        <td width="50%" class="table-wrap table-top">
+            <div class="title">&nbsp;<span class="circle"></span>&nbsp;&nbsp;行业分布</div>
+
+            <div id="chart_hangyefenbu" class="J_hangye_chart" style="height: 230px;margin-top: -18px"></div>
+            <div id="J_tpl_wrapper_hangye_table" class="J_hangye_chart"></div>
+            <textarea class="J_template J_tpl_hangye_table">
+                    <table class="baseinfo">
+                        <tr>
+                            <th class="bold" width="10%">代码</th>
+                            <th class="bold" width="30%" height="30px">类别</th>
+                            <th class="bold" width="30%" height="30px">公允价值(元)</th>
+                            <th class="bold" width="30%" height="30px">净资产占比</th>
+                        </tr>
+                        {{#allocation}}
+                        <tr>
+                            <td>{{0}}</td>
+                            <td>{{1}}</td>
+                            <td>{{2}}</td>
+                            <td>{{3}}</td>
+                        </tr>
+                        {{/allocation}}
+                    </table>
+            </textarea>
+            <div style="text-align:center;" class="J_hangye_chart_empty">
+                <img src="/Public/static/etrade/1/dist/i/empty-pc_05.png">
+                <div class="tips">暂无行业分布信息</div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td class="table-wrap table-left">
+            <div class="title">&nbsp;<span class="circle"></span>&nbsp;&nbsp;十大股票持仓</div>
+            <div id="J_tpl_wrapper_top10_stock" class="J_top10_stock"></div>
+            <textarea class="J_template J_tpl_top10_stock">
+                <table class="baseinfo" width="480px">
+                    <tr>
+                        <th class="bold" width="10%">代码</th>
+                        <th class="bold" width="25%">名称</th>
+                        <th class="bold" width="20%">数量(股)</th>
+                        <th class="bold" width="25%">公允价值(元)</th>
+                        <th class="bold" width="20%">占基金净资产的比例</th>
+                    </tr>
+                    {{#stock}}
+                        <tr>
+                            <td>{{0}}</td>
+                            <td>{{1}}</td>
+                            <td class="right">{{2}}</td>
+                            <td class="right">{{3}}</td>
+                            <td>{{4}}</td>
+                        </tr>
+                        {{/stock}}
+                </table>
+            </textarea>
+            <div style="text-align:center;" class="J_top10_stock_empty">
+                <img src="/Public/static/etrade/1/dist/i/empty-pc_05.png">
+                <div class="tips">暂无十大股票持仓信息</div>
+            </div>
+        </td>
+        <td class="table-wrap">
+            <div class="title">&nbsp;<span class="circle"></span>&nbsp;&nbsp;五大债券持仓</div>
+            <div id="J_tpl_wrapper_top10_bond" class="J_top10_bond"></div>
+            <textarea class="J_template J_tpl_top10_bond">
+                    <table class="baseinfo sorted_table">
+                        <tr>
+                            <th class="bold" width="15%">代码</th>
+                            <th class="bold" width="25%">名称</th>
+                            <th class="bold" width="20%">数量(张)</th>
+                            <th class="bold" width="25%">公允价值(元)</th>
+                            <th class="bold" width="40%">占基金净资产的比例</th>
+                        </tr>
+                        {{#bond}}
+                        <tr>
+                            <td>{{0}}</td>
+                            <td>{{1}}</td>
+                            <td class="right">{{2}}</td>
+                            <td class="right">{{3}}</td>
+                            <td>{{4}}</td>
+                        </tr>
+                        {{/bond}}
+                    </table>
+                </table>
+            </textarea>
+            <div style="text-align:center;" class="J_top10_bond_empty">
+                <img src="/Public/static/etrade/1/dist/i/empty-pc_05.png">
+                <div class="tips">暂无五大债券持仓信息</div>
+            </div>
+
+            </div>
+        </td>
+    </tr>
+</table>
+                    </div>
+                    <div class="gt-text-center J_touzifenbu_loading"><img src="/Public/static/etrade/1/dist/i/common/loading.gif" style="width:35px;" class="gt-padding"></div>
+                    <div class="data_sources">
+                        <div id="data_sources_content">
+                        </div>
+                        <textarea class="J_template" id="J_tpl_fenbu_time">
+                            {{#data}}
+                            <table class="title-table">
+                                <tr>
+                                    <td>数据来源：</td>
+                                    <td>{{year}}年第{{quarter}}季度报告</td>
+                                </tr>
+                            </table>
+                            {{/data}}
+                            <!-- <table class="title-table">
+                                <tr>
+                                    <td>数据来源:&nbsp;&nbsp;&nbsp;</td>
+                                    <td>
+                                        <div id="title" class="gt-form">
+                                            <select id="fenbu_search">
+                                                {{#data}}
+                                                <option value="{{index}}">{{fundname}}{{year}}年第{{season}}季度报告&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                                                {{/data}}
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table> -->
+                        </textarea>
+                    </div>
+                    <div style="clear:both"></div>
+
+                </div>
+                                <div class="J_jijin_tab_agency jijin-tab-content jijin-tab-angecy">
+                    <div id="angecy-table-wrap"></div>
+<script id="angecy-table-tpl" type="x-tmpl-mustache">
+{{#ds}}
+    <h3 style="margin: 0;">直销机构</h3>
+<table class="baseinfo" style="width:100%">
+    <tbody>
+        <tr>
+            <th width="200">名称</th>
+            <th>详细内容</th>
+        </tr>
+        {{#etrade}}
+        <tr>
+            <td class="gt-text-center">国泰基金管理有限公司<br />电子交易平台</td>
+            <td>
+                国泰基金官网<a href="http://www.gtfund.com">www.gtfund.com</a>及国泰基金APP、微信公众号“国泰基金” <br />
+                支持工商银行、农业银行、建设银行、中国银行、交通银行、招商银行、光大银行、浦发银行、华夏银行、民生银行、中信银行、广发银行、上海银行、兴业银行、邮储银行、平安银行借记卡进行网上支付和手机支付</td>
+        </tr>
+        {{/etrade}}
+    {{#counter}}
+        <tr>
+            <td class="gt-text-center">国泰基金管理有限公司<br />直销柜台</td>
+            <td>
+
+                地址：上海市虹口区公平路18号8号楼嘉昱大厦16层<br />
+电话：400-888-8688转2，021-31089000转2<br />
+传真：021-31081861<br />
+邮箱：zxgt@gtfund.com
+            </td>
+        </tr>
+        {{/counter}}
+    </tbody>
+</table>
+{{/ds}}
+    <h3>代销机构</h3>
+<table class="baseinfo" style="width:100%">
+    <tbody>
+    {{#list}}
+    {{#show}}
+    <tr>
+        <th colspan="3">{{value}}</th>
+    </tr>
+    
+    {{#items}}
+    <tr>
+        {{#item}}
+        <td style="width:33%">
+            {{name}}
+        </td>
+        {{/item}}
+    </tr>
+    {{/items}}
+    {{/show}}
+    {{/list}}
+</tbody>
+</table>
+<div style="padding:20px">* 具体业务开展情况以各销售机构为准。</div>
+</script>
+                </div>
+
+                <!--    集合申购清单            /-->
+                <div class="J_jijin_tab_8 jijin-tab-content jijin-tab-3">
+                    <div id="main_Report-8">
+                        <h3>集合申购清单</h3>
+                        <table class="baseinfo preview-jihe"></table>
+                    </div>
+                </div>
+                <!--    申购赎回限额    -->
+                <div class="J_jijin_tab_9 jijin-tab-content jijin-tab-9">
+                    <!-- 交易规则 -->
+<div class="gt-text-center J_renShen_loading"><img src="/Public/static/etrade/1/dist/i/common/loading.gif" style="width:35px;" class="gt-padding"></div>
+<script type="text/javascript" src="/Public/static/etrade/1/dist/js/trade_rules.js?v=hy101"></script>
+<div class="flex trade-rules" style="display: none;">
+
+    <div class="renshenBox">
+
+        <!-- 认购申购流程 -->
+        <div id="dealrule-comfirmdate">
+            <textarea class="gt-hide ren">
+                <div>
+                    <h3>认购流程</h3>
+                    <div class="table-wrapper">
+                        <table>
+                        <tr class="title">
+                            <th>认购</th>
+                            <th class="gt-text-center">交易确认</th>
+                            <th class="gt-text-right">查看收益</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                            <div class="graphic-img">
+                                <div class="circle"></div>
+                            </div>
+                            </td>
+                        </tr>
+
+                        <tr class="tDay">
+                            <td style="padding-left: 22px;">T日</td>
+                            <td class="gt-text-center">T+1</td>
+                            <td class="gt-text-right">基金成立后
+                            <br />下一工作日</td>
+                        </tr>
+                        </table>
+                    </div>
+                    <ul class="desc">
+                        <li>T日：股市收市时间15点前为T日，即交易日</li>
+                        <li>T+1日：股市收市时间15点后下一个交易日。（周末与节假日不属于交易日）</li>
+                        <li>基金成立后，可查询确认份额，下一工作日净值更新后可查询收益</li>
+                    </ul>
+                </div>
+            </textarea>
+            <textarea class="gt-hide shen">
+                <h3>申购流程</h3>
+                <div class="table-wrapper">
+                    <table>
+                    <tr class="title">
+                        <th>申购</th>
+                        <th class="gt-text-center">确认份额</th>
+                        <th class="gt-text-right">查看收益</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                        <div class="graphic-img">
+                            <div class="circle"></div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="tDay">
+                        <td style="padding-left: 22px;">T日</td>
+                        <td class="gt-text-center">T+<%= confirmT %></span></td>
+                        <td class="gt-text-right">T+<%= confirmT %></span>当日净值更新后</td>
+                    </tr>
+                    </table>
+                </div>
+                <ul class="desc">
+                    <li>T日：股市收市时间15点前为T日，即交易日</li>
+                    <li>T+<%= confirmT %></span>日：股市收市时间15点后下一个交易日。（周末与节假日不属于交易日）</li>
+                    <li>T日申请，将按T日基金净值确认份额。份额确认当日，基金净值更新后即可查看首笔盈亏。开放赎回的基金在申购确认后T+1日可赎回</li>
+                </ul>
+            </textarea>
+        </div>
+
+        <!-- 货币收益 -->
+        <div style="display: none;" class="huo-bi-shou-yi">
+            <h3>收益规则</h3>
+            <div class="tips">T日充值，T+1日开始计算收益，T+2日可以查看收益</div>
+            <table class="baseinfo">
+                <tr>
+                    <th class='gt-text-left'>存入时间</th>
+                    <th>首次收益时间</th>
+                    <th>收益显示时间</th>
+                </tr>
+                <tr>
+                    <td>上周五15:00～周一15:00</td>
+                    <td class='gt-text-center'>周二</td>
+                    <td class='gt-text-center'>周三</td>
+                </tr>
+                <tr>
+                    <td>周一15:00～周二15:00</td>
+                    <td class='gt-text-center'>周三</td>
+                    <td class='gt-text-center'>周四</td>
+                </tr>
+                <tr>
+                    <td>周二15:00～周三15:00</td>
+                    <td class='gt-text-center'>周四</td>
+                    <td class='gt-text-center'>周五</td>
+                </tr>
+                <tr class="rows">
+                    <td>周三15:00～周四15:00</td>
+                    <td class='gt-text-center'>周五</td>
+                    <td class='gt-text-center'>下周一</td>
+                </tr>
+                <tr >
+                    <td>周四15:00～周五15:00</td>
+                    <td class='gt-text-center'>下周一</td>
+                    <td class='gt-text-center'>下周二</td>
+                </tr>
+                <tr>
+                    <td>周五15:00～下周一15:00</td>
+                    <td class='gt-text-center'>下周二</td>
+                    <td class='gt-text-center'>下周三</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="purchase-fee">
+            <textarea class="ren-gou-fei"><h3>认购费</h3>
+                <% if (purchase_fee) { %>
+                    <table class="baseinfo">
+                        <tr>
+                            <th class="gt-text-left">金额</th>
+                            <th class="gt-text-right">费率</th>
+                            <th class="gt-text-right">备注</th>
+                        </tr>
+                        <% for (var i = 0; i < purchase_fee.length; ++i) { var fee = purchase_fee[i]; %>
+                            <tr>
+                                <td class="gt-text-left"><%= fee[0] %></td>
+                                <td class="gt-text-right"><%= fee[1] %></td>
+                                <td class="gt-text-right"><%= fee[2] ? fee[2] : '--' %></td>
+                            </tr>
+                        <% } %>
+                    </table>
+                <% } else { %>
+                    <div>本基金不收取认购费用</div>
+                <% } %>
+                <div style="display: none" class="shen-gou-tips tips"></div>
+                <div class="tips">
+                    认购计算：
+                    <br />净认购金额 = 认购金额 ÷ (1 + 认购费率)
+                    <br />认购费用 = 认购金额 - 净认购金额
+                    <br />认购份额 = (净认购金额 + 认购利息) ÷ 成立日基金份额净值
+                </div>
+            </textarea>
+
+            <textarea class="shen-gou-fei"><h3>申购费</h3>
+                <% if (purchase_fee) { %>
+                    <table class="baseinfo">
+                        <tr>
+                            <th class="gt-text-left">金额</th>
+                            <th class="gt-text-right">费率</th>
+                            <th class="gt-text-right">备注</th>
+                        </tr>
+                        <% for (var i = 0; i < purchase_fee.length; ++i) { var fee = purchase_fee[i]; %>
+                            <tr>
+                                <td class="gt-text-left"><%= fee[0] ? fee[0] : '--' %></td>
+                                <td class="gt-text-right"><%= fee[1] ? fee[1] : '--' %></td>
+                                <td class="gt-text-right"><%= fee[2] ? fee[2] : '--' %></td>
+                            </tr>
+                        <% } %>
+                    </table>
+                    <div style="display: none" class="shen-gou-tips tips"></div>
+                <% } else { %>
+                    <div>本基金不收取申购费用</div>
+                <% } %>
+                <div class="tips">
+                    申购计算：
+                    <br />净申购金额 = 申购金额 ÷ (1 + 申购费率)
+                    <br />申购费用 = 申购金额 - 净申购金额
+                    <br />申购份额 = 净申购金额 ÷ T日基金确认份额净值
+                </div>
+                <a class="lsbHerf" href="/index.php?s=/Etrade/qgj/intro"><div class="lsbIcon"></div>利是宝购基0.1折省钱攻略</a>
+            </textarea>
+        </div>
+
+        <div><h3>运作规则</h3>
+            <div class="operation-fee">
+                <textarea>
+                    <table class="baseinfo">
+                        <tr>
+                            <th class='gt-text-center gt-nowrap'>费用类别</th>
+                            <th class="gt-text-right gt-nowrap">费率</th>
+                            <th class="gt-text-right gt-nowrap">备注</th>
+                        </tr>
+
+                        <% for (var i = 0; i < operation_fee.length; ++i) { var fee = operation_fee[i]; %>
+                            <tr>
+                                <td class='gt-text-center gt-nowrap'><%= fee[0] %></td>
+                                <td class="gt-text-right"><%= fee[1] %></td>
+                                <td class="gt-text-right"><%= fee[2] ? fee[2] : '--' %></td>
+                            </tr>
+                        <% } %>
+                    </table>
+                </textarea>
+            </div>
+            <div style="display: none" class="yun-zuo-tips tips"></div>
+            <div class="tips">
+                基金管理费、托管费、销售服务费从基金资产中每日计提，每个工作日公告的基金净值已扣除相应费用，
+                <em>无需投资者在每次交易另行支付</em>。运作费用详细信息请参考基金招募说明书。
+            </div>
+            <div class="tips J_fudong-gonggao" style="display: none;">
+                该基金管理费<em>以浮动方式提取，详见公告。</em>
+            </div>
+        </div>
+
+        <div><h3>其他信息</h3>
+            <div class="buy-limits">
+                <textarea>
+                    <table class="baseinfo">
+                        <% for (var i = 0; i < buy_limits.length; ++i) { var r = buy_limits[i]; %>
+                            <tr>
+                                <td class="gt-text-left"><%= r[1] %></td>
+                                <td class="gt-text-right"><%= r[0] %></td>
+                            </tr>
+                        <% } %>
+                    </table>
+                </textarea>
+            </div>
+            <div class="tips">详细信息以基金产品资料及国泰基金发布的相关公告为准。</div>
+        </div>
+    </div>
+
+    <div class="fenge"></div>
+
+    <div class="renshenBox">
+        <!-- 赎回流程 -->
+        <div id="J_shuhui_flow">
+            <textarea class="gt-hide">
+                <h3>赎回流程</h3>
+                <table>
+                    <tr class="title">
+                        <th>赎回</th>
+                        <th class="gt-text-center">确认份额</th>
+                        <th class="gt-text-right">赎回到账</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <div class="graphic-img">
+                            <div class="circle"></div>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="tDay">
+                        <td style="padding-left: 22px;">T日</td>
+                        <td class="gt-text-center">T+<%= confirmT %></td>
+                        <td class="gt-text-right">
+                            <% if (quick_redemption) { %>
+                                <div>快速赎回立即到账</div>
+                                <div>普通赎回T+<%= bank.clearT %>日到账</div>
+                            <% } else { %>
+                                <% if (lsb.clearT) { %>
+                                    <div>T+<%= lsb.clearT %>日利是宝</div>
+                                <% } %>
+                                <div>T+<%= bank.clearT %>日银行卡</div>
+                            <% } %>
+                        </td>
+                    </tr>
+                </table>
+
+                <ul class="desc">
+                    <% if (lsb.clearT && !is_lsb) { %>
+                        <li>基金赎回至利是宝T+<%= lsb.clearT %>日24：00前可以在利是宝查询到到账资金，赎回至利是宝更快</li>
+                    <% } %>
+                    <% if(bank.clearT) { %>
+                        <li>基金赎回至银行卡T+<%= bank.clearT %>日24：00前可以在银行卡查询到到账资金。</li>
+                    <% } %>
+                </ul>
+            </textarea>
+        </div>
+
+        <div class="redemption-fee"><textarea><h3>赎回费</h3>
+            <% if (redemption_fee) { %>
+                <table class="baseinfo">
+                    <tr>
+                        <th class="gt-text-left">期限</th>
+                        <th class="gt-text-right">费率</th>
+                        <th class="gt-text-center">备注</th>
+                    </tr>
+                    <% for (var i = 0; i < redemption_fee.length; ++i) { var fee = redemption_fee[i]; %>
+                        <tr>
+                            <td class="gt-text-left"><%= fee[0] %></td>
+                            <td class="gt-text-right"><%= fee[1] %></td>
+                            <td class="gt-text-center"><%= fee[2] || '--' %></td>
+                        </tr>
+                    <% } %>
+                </table>
+            <% } else { %>
+                <div>本基金不收取赎回费用</div>
+            <% } %>
+            <div class="tips">
+                基金赎回时一般按照先进先出规则、部分基金赎回按照后进先出规则。基金赎回手续费与持有期相关，实际费用收取请以交易确认为准。
+                <br />赎回计算公式：
+                <br />赎回总额 = 赎回份额 × T日基金份额净值
+                <br />赎回费用 = 赎回总额 × 赎回费率
+                <br />赎回金额 = 赎回总额 - 赎回费用
+                <br />
+            </div>
+        </textarea></div>
+
+        <div><h3>其他信息</h3>
+            <div class="sell-limits">
+                <textarea>
+                    <table class="baseinfo">
+                        <% for (var i = 0; i < sell_limits.length; ++i) { var r = sell_limits[i]; %>
+                            <tr>
+                                <td class="gt-text-left"><%= r[1] %><% if (r[2]) { %><div class="col-tips"><%= r[2] %></div><% } %></td>
+                                <td class="gt-text-right"><%= r[0] %></td>
+                            </tr>
+                        <% } %>
+                    </table>
+                </textarea>
+            </div>
+            <div class="tips">详细信息以基金产品资料及国泰基金发布的相关公告为准。</div>
+        </div>
+    </div>
+</div>
+                </div>
+                <div class="J_jijin_tab_10 jijin-tab-content jijin-tab-10">
+                                    </div>
+
+                <div style="display: none;" class="J_jijin_fudong">
+                    <style type="text/css">
+.gt-fudong-tips{
+  min-width: 520px;
+  max-width: 700px;
+  .gt-fudong-tit{
+      font-size: 14px;
+      font-weight: normal;
+      text-align: center;
+      background-color: #2B9AFF;
+      color: #FFF;
+      line-height: 30px;
+      height: 30px;
+  }
+  .gt-fudong-cont{
+      padding: 20px 40px 5px;
+  }
+  .gt-fudong-guan{
+      padding: 0 40px 10px;
+  }
+  .baseinfo {
+      margin: 10px 0px;
+      width: 100%;
+      border: 1px solid #c8c8c8;
+      tr {
+          background: #f8f8f8;
+      }
+      tr:nth-child(odd) {
+          background: #fff;
+      }
+      td {
+          padding: 8px 15px;
+          text-align: left;
+      }
+      .wid40{
+          width: 40%;
+      }
+  }
+  .fu_ok{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    .J_look_fugong{
+        margin-right: 20px;
+    }
+  }
+}
+</style>
+<script>
+
+$(document).on('click',".J-fudong", function () {
+    $('.J_mark').show();
+    $('.J_jijin_fudong').show()
+})
+
+$(document).on('click', ".J_fuok_btn", function () {
+    $('.J_mark').hide();
+    $('.J_jijin_fudong').hide()
+})
+
+$(document).on('click',".J_look_fugong", function () {
+    $('.J_mark').hide();
+    $('.J_jijin_fudong').hide()
+    cochin("info.fund.special_reports", { fund: '513100' }, function(e, res) {
+        window.open(res.summary.pdf, '_blank');
+    })
+})
+
+</script>
+<div class="gt-fudong-tips">
+  <div class="gt-fudong-tit">提示</div>
+  <div class="gt-fudong-guan">0.60%</div>
+  <div class="fu_ok">
+    <button class="tips-btn gt-btn gt-btn-primary gt-radius J_look_fugong">查看详情</button>
+    <button class="tips-btn gt-btn gt-btn-primary gt-radius J_fuok_btn">我知道了</button>
+  </div>
+</div>
+
+
+
+                </div>
+            </div>
+
+            <div class="emergency-tips" style="color: #8e8e8e;display: none">
+                <hr/>
+                <table class="purchase-tips">
+                </table>
+            </div>
+            <div id="jijin_fenhong" style="display:none;" class="J_fenhongjilu">
+                <h3> 分红记录 <img class="close_fenhong" src="/Public/static/etrade/1/dist/i/active/huobi2/12_13.png"></h3>
+                <table class="baseinfo J_fenhong_result">
+                    <thead>
+                        <tr>
+                            <th>除息日</td>
+                            <th>权益登记日</th>
+                            <th>红利分配日</th>
+                            <th>每份分红(元)</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gt-cf" style="margin:10px;"></div>
+<script type="text/javascript">
+var gtOptions = {
+    fundcode: '513100',
+    fundname: "\u7eb3\u6307ETF\u56fd\u6cf0",
+    fundtype: 6,
+    hideBenchmark: null,
+    money: false,
+    moneyUnit: null,
+    navPrecision: 4,
+    navDate: "2026-09-28T16:00:00.000Z",
+    indexName: "\u6caa\u6df1300",
+    limits: null,
+    flags: {"subscribe_state":false,"declare_state":false,"valuagr_state":false,"redeem_state":false,"hopedeclare_state":false,"lsb_purchase":true,"lsb_sub_no_discount":false,"for_institution":false,"liquidated":false,"changnei":true,"zd":false,"closed":false,"money":false,"super_money":false,"pension":false,"quick_redemption":false,"qd":true,"floating_management_fee":false,"holding_period":false,"performance_fee":false},
+    issuing: false,
+    show_trade_rules: false,
+    fee: {"\u7ba1\u7406\u8d39":"0.60%","\u6258\u7ba1\u8d39":"0.20%"},
+    detail: {"code":"513100","name":"\u7eb3\u6307ETF\u56fd\u6cf0","pinyin":"guo tai na si da ke 100 QDII ETF","type":6,"typeName":"\u6d77\u5916","changnei":1,"riskLevel":"3","riskLevelName":"\u4e2d\u9ad8","fullName":"\u7eb3\u65af\u8fbe\u514b100\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1","custodianPart":"\u4e2d\u56fd\u5efa\u8bbe\u94f6\u884c\u80a1\u4efd\u6709\u9650\u516c\u53f8","inception":"2013-04-24T16:00:00.000Z","operationType":"\u4ea4\u6613\u578b\u5f00\u653e\u5f0f","displayCode":"513100","daily":{"date":"2026-09-28T16:00:00.000Z","nav":"2.0379","anav":"10.1895","perf":{"d1":"0.22","d7":"-1.36","m1":"2.43","m3":"0.64","m6":"27.52","y1":"16.45","y2":"44.23","y3":"90.81","y5":"108.33","ytd":"14.91","total":"918.95"},"af":5,"d1":null,"edate":"2026-09-29T16:00:00.000Z","prev":{"date":"2026-09-27T16:00:00.000Z","nav":"2.0335"}},"navPrecision":4,"subscriptionPeriod":["2013-04-15T01:00:00.000Z","2013-04-19T08:00:00.000Z"],"flags":{"subscribe_state":false,"declare_state":false,"valuagr_state":false,"redeem_state":false,"hopedeclare_state":false,"lsb_purchase":true,"lsb_sub_no_discount":false,"for_institution":false,"liquidated":false,"changnei":true,"zd":false,"closed":false,"money":false,"super_money":false,"pension":false,"quick_redemption":false,"qd":true,"floating_management_fee":false,"holding_period":false,"performance_fee":false},"risk":["3","\u4e2d\u9ad8","\u4e2d\u9ad8\u98ce\u9669\uff08R4\uff09"],"issuing":false,"displayInception":"2013-04-24T16:00:00.000Z","textBag":{"recommendDesc":"","tags":null,"investTarget":"\u7d27\u5bc6\u8ddf\u8e2a\u6807\u7684\u6307\u6570\uff0c\u8ffd\u6c42\u8ddf\u8e2a\u504f\u79bb\u5ea6\u53ca\u8ddf\u8e2a\u8bef\u5dee\u7684\u6700\u5c0f\u5316\u3002","investStrategy":"\u672c\u57fa\u91d1\u4e3b\u8981\u91c7\u53d6\u5b8c\u5168\u590d\u5236\u7b56\u7565\uff0c\u5373\u6309\u7167\u6807\u7684\u6307\u6570\u7684\u6210\u4efd\u80a1\u6784\u6210\u53ca\u5176\u6743\u91cd\u6784\u5efa\u57fa\u91d1\u80a1\u7968\u6295\u8d44\u7ec4\u5408\uff0c\u5e76\u6839\u636e\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u53ca\u5176\u6743\u91cd\u7684\u53d8\u52a8\u8fdb\u884c\u76f8\u5e94\u8c03\u6574\u3002\u4f46\u56e0\u7279\u6b8a\u60c5\u51b5\uff08\u5982\u6210\u4efd\u80a1\u957f\u671f\u505c\u724c\u3001\u6210\u4efd\u80a1\u53d1\u751f\u53d8\u66f4\u3001\u6210\u4efd\u80a1\u6743\u91cd\u7531\u4e8e\u81ea\u7531\u6d41\u901a\u91cf\u53d1\u751f\u53d8\u5316\u3001\u6210\u4efd\u80a1\u516c\u53f8\u884c\u4e3a\u3001\u5e02\u573a\u6d41\u52a8\u6027\u4e0d\u8db3\u7b49\uff09\u5bfc\u81f4\u672c\u57fa\u91d1\u7ba1\u7406\u4eba\u65e0\u6cd5\u6309\u7167\u6807\u7684\u6307\u6570\u6784\u6210\u53ca\u6743\u91cd\u8fdb\u884c\u540c\u6b65\u8c03\u6574\u65f6\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u5c06\u5bf9\u6295\u8d44\u7ec4\u5408\u8fdb\u884c\u4f18\u5316\uff0c\u5c3d\u91cf\u964d\u4f4e\u8ddf\u8e2a\u8bef\u5dee\u3002\n\u5728\u6b63\u5e38\u5e02\u573a\u60c5\u51b5\u4e0b\uff0c\u672c\u57fa\u91d1\u7684\u98ce\u9669\u63a7\u5236\u76ee\u6807\u662f\u8ffd\u6c42\u65e5\u5747\u8ddf\u8e2a\u504f\u79bb\u5ea6\u7684\u7edd\u5bf9\u503c\u4e0d\u8d85\u8fc70.2%\uff0c\u5e74\u8ddf\u8e2a\u8bef\u5dee\u4e0d\u8d85\u8fc72%\u3002\u5982\u56e0\u6807\u7684\u6307\u6570\u7f16\u5236\u89c4\u5219\u8c03\u6574\u6216\u5176\u4ed6\u56e0\u7d20\u5bfc\u81f4\u8ddf\u8e2a\u504f\u79bb\u5ea6\u548c\u8ddf\u8e2a\u8bef\u5dee\u8d85\u8fc7\u4e0a\u8ff0\u8303\u56f4\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u5e94\u91c7\u53d6\u5408\u7406\u63aa\u65bd\u907f\u514d\u8ddf\u8e2a\u504f\u79bb\u5ea6\u3001\u8ddf\u8e2a\u8bef\u5dee\u8fdb\u4e00\u6b65\u6269\u5927\u3002\n\u53e6\u5916\uff0c\u672c\u57fa\u91d1\u57fa\u4e8e\u6d41\u52a8\u6027\u7ba1\u7406\u7684\u9700\u8981\uff0c\u5c06\u6295\u8d44\u4e8e\u4e0e\u672c\u57fa\u91d1\u6709\u76f8\u8fd1\u7684\u6295\u8d44\u76ee\u6807\u3001\u6295\u8d44\u7b56\u7565\u3001\u4e14\u4ee5\u672c\u57fa\u91d1\u7684\u6807\u7684\u6307\u6570\u4e3a\u6295\u8d44\u6807\u7684\u7684\u6307\u6570\u578b\u516c\u52df\u57fa\u91d1\uff08\u5305\u62ecETF\uff09\u3002\u540c\u65f6\uff0c\u4e3a\u66f4\u597d\u5730\u5b9e\u73b0\u672c\u57fa\u91d1\u7684\u6295\u8d44\u76ee\u6807\uff0c\u672c\u57fa\u91d1\u8fd8\u5c06\u5728\u6761\u4ef6\u5141\u8bb8\u7684\u60c5\u51b5\u4e0b\uff0c\u5f00\u5c55\u8bc1\u5238\u501f\u8d37\u4e1a\u52a1\u4ee5\u53ca\u6295\u8d44\u4e8e\u80a1\u6307\u671f\u8d27\u7b49\u91d1\u878d\u884d\u751f\u54c1\uff0c\u4ee5\u671f\u964d\u4f4e\u8ddf\u8e2a\u8bef\u5dee\u6c34\u5e73\u3002\u672c\u57fa\u91d1\u6295\u8d44\u4e8e\u91d1\u878d\u884d\u751f\u54c1\u7684\u76ee\u6807\u662f\u66ff\u4ee3\u8ddf\u8e2a\u6807\u7684\u6307\u6570\u7684\u6210\u4efd\u80a1\uff0c\u4f7f\u57fa\u91d1\u7684\u6295\u8d44\u7ec4\u5408\u66f4\u7d27\u5bc6\u5730\u8ddf\u8e2a\u6807\u7684\u6307\u6570\u3002\u4e0d\u5f97\u5e94\u7528\u4e8e\u6295\u673a\u4ea4\u6613\u76ee\u7684\uff0c\u6216\u7528\u4f5c\u6760\u6746\u5de5\u5177\u653e\u5927\u57fa\u91d1\u7684\u6295\u8d44\u3002","investScope":"\u672c\u57fa\u91d1\u6295\u8d44\u4e8e\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u3001\u5907\u9009\u6210\u4efd\u80a1\u3001\u5883\u5916\u4ea4\u6613\u7684\u8ddf\u8e2a\u540c\u4e00\u6807\u7684\u6307\u6570\u7684\u516c\u52df\u57fa\u91d1\uff08\u5305\u62ecETF\uff09\u3001\u4f9d\u6cd5\u53d1\u884c\u6216\u4e0a\u5e02\u7684\u5176\u4ed6\u80a1\u7968\u3001\u56fa\u5b9a\u6536\u76ca\u7c7b\u8d44\u4ea7\u3001\u94f6\u884c\u5b58\u6b3e\u3001\u8d27\u5e01\u5e02\u573a\u5de5\u5177\u3001\u80a1\u6307\u671f\u8d27\u7b49\u91d1\u878d\u884d\u751f\u54c1\u548c\u6cd5\u5f8b\u6cd5\u89c4\u6216\u4e2d\u56fd\u8bc1\u76d1\u4f1a\u5141\u8bb8\u57fa\u91d1\u6295\u8d44\u7684\u5176\u4ed6\u91d1\u878d\u5de5\u5177\uff0c\u4f46\u987b\u7b26\u5408\u4e2d\u56fd\u8bc1\u76d1\u4f1a\u7684\u76f8\u5173\u89c4\u5b9a\u3002\n\u5982\u6cd5\u5f8b\u6cd5\u89c4\u6216\u76d1\u7ba1\u673a\u6784\u4ee5\u540e\u5141\u8bb8\u57fa\u91d1\u6295\u8d44\u5176\u5b83\u54c1\u79cd\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u5728\u5c65\u884c\u9002\u5f53\u7a0b\u5e8f\u540e\uff0c\u53ef\u4ee5\u5c06\u5176\u7eb3\u5165\u6295\u8d44\u8303\u56f4\u3002\n\u5728\u5efa\u4ed3\u5b8c\u6210\u540e\uff0c\u672c\u57fa\u91d1\u6295\u8d44\u4e8e\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u3001\u5907\u9009\u6210\u4efd\u80a1\u7684\u8d44\u4ea7\u6bd4\u4f8b\u4e0d\u4f4e\u4e8e\u57fa\u91d1\u8d44\u4ea7\u51c0\u503c\u768490%\u3002\n\u672c\u57fa\u91d1\u7684\u6807\u7684\u6307\u6570\u4e3a\u7eb3\u65af\u8fbe\u514b100\u6307\u6570\uff08Nasdaq-100 Index\uff09\u53ca\u5176\u672a\u6765\u53ef\u80fd\u53d1\u751f\u7684\u53d8\u66f4\u3002","riskReturnCharacteristic":"\u672c\u57fa\u91d1\u5c5e\u4e8e\u80a1\u7968\u578b\u57fa\u91d1\uff0c\u9884\u671f\u98ce\u9669\u4e0e\u6536\u76ca\u9ad8\u4e8e\u6df7\u5408\u578b\u57fa\u91d1\u3001\u503a\u5238\u578b\u57fa\u91d1\u4e0e\u8d27\u5e01\u5e02\u573a\u57fa\u91d1\u3002\u672c\u57fa\u91d1\u4e3a\u6307\u6570\u578b\u57fa\u91d1\uff0c\u4e3b\u8981\u91c7\u7528\u5b8c\u5168\u590d\u5236\u6cd5\u8ddf\u8e2a\u6807\u7684\u6307\u6570\u7684\u8868\u73b0\uff0c\u5177\u6709\u4e0e\u6807\u7684\u6307\u6570\u3001\u4ee5\u53ca\u6807\u7684\u6307\u6570\u6240\u4ee3\u8868\u7684\u80a1\u7968\u5e02\u573a\u76f8\u4f3c\u7684\u98ce\u9669\u6536\u76ca\u7279\u5f81\u3002","\u98ce\u9669\u63d0\u793a":"\u672c\u57fa\u91d1\u4e0d\u63d0\u4f9b\u4efb\u4f55\u4fdd\u8bc1\u3002\u6295\u8d44\u8005\u53ef\u80fd\u635f\u5931\u6295\u8d44\u672c\u91d1\u3002\n\u6295\u8d44\u6709\u98ce\u9669\uff0c\u6295\u8d44\u8005\u8d2d\u4e70\u57fa\u91d1\u65f6\u5e94\u8ba4\u771f\u9605\u8bfb\u672c\u57fa\u91d1\u7684\u62db\u52df\u8bf4\u660e\u4e66\uff08\u66f4\u65b0\uff09\u7b49\u9500\u552e\u6587\u4ef6\u3002\n\u672c\u57fa\u91d1\u9762\u4e34\u7684\u4e3b\u8981\u98ce\u9669\u6709\u672c\u57fa\u91d1\u7279\u6709\u7684\u98ce\u9669\u3001\u6295\u8d44\u98ce\u9669\u3001\u8fd0\u4f5c\u98ce\u9669\u3001\u4e0d\u53ef\u6297\u529b\u98ce\u9669\u53ca\u6cd5\u5f8b\u6587\u4ef6\u98ce\u9669\u6536\u76ca\u7279\u5f81\u8868\u8ff0\u4e0e\u9500\u552e\u673a\u6784\u57fa\u91d1\u98ce\u9669\u8bc4\u7ea7\u53ef\u80fd\u4e0d\u4e00\u81f4\u7684\u98ce\u9669\u7b49\u3002\n\u672c\u57fa\u91d1\u7279\u6709\u98ce\u9669\uff1a\n1\u3001\u6807\u7684\u6307\u6570\u56de\u62a5\u4e0e\u80a1\u7968\u5e02\u573a\u5e73\u5747\u56de\u62a5\u504f\u79bb\u7684\u98ce\u9669\n\u6807\u7684\u6307\u6570\u5e76\u4e0d\u80fd\u5b8c\u5168\u4ee3\u8868\u6574\u4e2a\u80a1\u7968\u5e02\u573a\u3002\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u7684\u5e73\u5747\u56de\u62a5\u7387\u4e0e\u6574\u4e2a\u80a1\u7968\u5e02\u573a\u7684\u5e73\u5747\u56de\u62a5\u7387\u53ef\u80fd\u5b58\u5728\u504f\u79bb\u3002\n2\u3001\u6807\u7684\u6307\u6570\u6ce2\u52a8\u7684\u98ce\u9669 \n\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u7684\u4ef7\u683c\u53ef\u80fd\u53d7\u5230\u653f\u6cbb\u56e0\u7d20\u3001\u7ecf\u6d4e\u56e0\u7d20\u3001\u4e0a\u5e02\u516c\u53f8\u7ecf\u8425\u72b6\u51b5\u3001\u6295\u8d44\u4eba\u5fc3\u7406\u548c\u4ea4\u6613\u5236\u5ea6\u7b49\u5404\u79cd\u56e0\u7d20\u7684\u5f71\u54cd\u800c\u6ce2\u52a8\uff0c\u5bfc\u81f4\u6307\u6570\u6ce2\u52a8\uff0c\u4ece\u800c\u4f7f\u57fa\u91d1\u6536\u76ca\u6c34\u5e73\u53d1\u751f\u53d8\u5316\uff0c\u4ea7\u751f\u98ce\u9669\u3002\n3\u3001\u57fa\u91d1\u6295\u8d44\u7ec4\u5408\u56de\u62a5\u4e0e\u6807\u7684\u6307\u6570\u56de\u62a5\u504f\u79bb\u7684\u98ce\u9669\u53ca\u8ddf\u8e2a\u8bef\u5dee\u63a7\u5236\u672a\u8fbe\u7ea6\u5b9a\u76ee\u6807\u7684\u98ce\u9669 \n\u4ee5\u4e0b\u56e0\u7d20\u53ef\u80fd\u4f7f\u57fa\u91d1\u6295\u8d44\u7ec4\u5408\u7684\u6536\u76ca\u7387\u4e0e\u6807\u7684\u6307\u6570\u7684\u6536\u76ca\u7387\u53d1\u751f\u504f\u79bb\uff0c\u4e5f\u53ef\u80fd\u4f7f\u57fa\u91d1\u7684\u8ddf\u8e2a\u8bef\u5dee\u63a7\u5236\u672a\u8fbe\u7ea6\u5b9a\u76ee\u6807\uff1a\n(1)\u7531\u4e8e\u6807\u7684\u6307\u6570\u8c03\u6574\u6210\u4efd\u80a1\u6216\u53d8\u66f4\u7f16\u5236\u65b9\u6cd5\uff0c\u4f7fETF\u57fa\u91d1\u5728\u76f8\u5e94\u7684\u7ec4\u5408\u8c03\u6574\u4e2d\u4ea7\u751f\u8ddf\u8e2a\u504f\u79bb\u5ea6\u4e0e\u8ddf\u8e2a\u8bef\u5dee\uff1b \n(2)\u7531\u4e8e\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u53d1\u751f\u914d\u80a1\u3001\u589e\u53d1\u7b49\u884c\u4e3a\u5bfc\u81f4\u6210\u4efd\u80a1\u5728\u6807\u7684\u6307\u6570\u4e2d\u7684\u6743\u91cd\u53d1\u751f\u53d8\u5316\uff0c\u4f7fETF\u57fa\u91d1\u5728\u76f8\u5e94\u7684\u7ec4\u5408\u8c03\u6574\u4e2d\u4ea7\u751f\u8ddf\u8e2a\u504f\u79bb\u5ea6\u548c\u8ddf\u8e2a\u8bef\u5dee\uff1b \n(3)\u7531\u4e8e\u6210\u4efd\u80a1\u505c\u724c\u3001\u6458\u724c\u6216\u6d41\u52a8\u6027\u5dee\u7b49\u539f\u56e0\u4f7fETF\u57fa\u91d1\u65e0\u6cd5\u53ca\u65f6\u8c03\u6574\u6295\u8d44\u7ec4\u5408\u6216\u627f\u62c5\u51b2\u51fb\u6210\u672c\u800c\u4ea7\u751f\u8ddf\u8e2a\u504f\u79bb\u5ea6\u548c\u8ddf\u8e2a\u8bef\u5dee\uff1b\n(4)\u6210\u4efd\u80a1\u6d3e\u53d1\u73b0\u91d1\u7ea2\u5229\u3001\u9001\u914d\u7b49\u6240\u83b7\u6536\u76ca\u53ef\u80fd\u5bfc\u81f4\u57fa\u91d1\u6536\u76ca\u7387\u504f\u79bb\u6807\u7684\u6307\u6570\u6536\u76ca\u7387\uff0c\u4ece\u800c\u4ea7\u751f\u8ddf\u8e2a\u504f\u79bb\u5ea6\uff1b\n(5)\u7531\u4e8e\u57fa\u91d1\u6295\u8d44\u8fc7\u7a0b\u4e2d\u7684\u8bc1\u5238\u4ea4\u6613\u6210\u672c\uff0c\u4ee5\u53ca\u57fa\u91d1\u7ba1\u7406\u8d39\u548c\u6258\u7ba1\u8d39\u7684\u5b58\u5728\uff0c\u4f7f\u57fa\u91d1\u6295\u8d44\u7ec4\u5408\u4e0e\u6807\u7684\u6307\u6570\u4ea7\u751f\u8ddf\u8e2a\u504f\u79bb\u5ea6\u4e0e\u8ddf\u8e2a\u8bef\u5dee\uff1b\n(6)\u5728ETF\u57fa\u91d1\u6307\u6570\u5316\u6295\u8d44\u8fc7\u7a0b\u4e2d\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u7684\u7ba1\u7406\u80fd\u529b\uff0c\u4f8b\u5982\u8ddf\u8e2a\u6307\u6570\u7684\u6c34\u5e73\u3001\u6280\u672f\u624b\u6bb5\u3001\u4e70\u5165\u5356\u51fa\u7684\u65f6\u673a\u9009\u62e9\u7b49\uff0c\u90fd\u4f1a\u5bf9ETF\u57fa\u91d1\u7684\u6536\u76ca\u4ea7\u751f\u5f71\u54cd\uff0c\u4ece\u800c\u5f71\u54cdETF\u57fa\u91d1\u5bf9\u6807\u7684\u6307\u6570\u7684\u8ddf\u8e2a\u7a0b\u5ea6\uff1b \n(7)\u5982\u679c\u6307\u6570\u7f16\u5236\u673a\u6784\u53d1\u5e03\u7684\u6307\u6570\u6570\u636e\u51fa\u73b0\u9519\u8bef\uff0c\u57fa\u91d1\u6295\u8d44\u7ec4\u5408\u7684\u6536\u76ca\u7387\u4e0e\u6807\u7684\u6307\u6570\u7684\u6536\u76ca\u7387\u4e5f\u53ef\u80fd\u53d1\u751f\u504f\u79bb\uff1b \n(8)\u5176\u4ed6\u56e0\u7d20\u4ea7\u751f\u7684\u504f\u79bb\u3002\u5982\u56e0\u53d7\u5230\u6700\u4f4e\u4e70\u5165\u80a1\u6570\u7684\u9650\u5236\uff0c\u57fa\u91d1\u6295\u8d44\u7ec4\u5408\u4e2d\u4e2a\u522b\u80a1\u7968\u7684\u6301\u6709\u6bd4\u4f8b\u4e0e\u6807\u7684\u6307\u6570\u4e2d\u8be5\u80a1\u7968\u7684\u6743\u91cd\u53ef\u80fd\u4e0d\u5b8c\u5168\u76f8\u540c\uff1b\u57fa\u91d1\u7533\u8d2d\u4e0e\u8d4e\u56de\u5e26\u6765\u7684\u73b0\u91d1\u53d8\u52a8\u7b49\u3002\n\u5982\u56e0\u6807\u7684\u6307\u6570\u7f16\u5236\u89c4\u5219\u8c03\u6574\u6216\u5176\u4ed6\u56e0\u7d20\u5bfc\u81f4\u672c\u57fa\u91d1\u7684\u8ddf\u8e2a\u8bef\u5dee\u63a7\u5236\u672a\u8fbe\u7ea6\u5b9a\u76ee\u6807\uff0c\u672c\u57fa\u91d1\u51c0\u503c\u8868\u73b0\u4e0e\u6307\u6570\u4ef7\u683c\u8d70\u52bf\u53ef\u80fd\u53d1\u751f\u8f83\u5927\u504f\u79bb\u3002\n4\u3001\u6807\u7684\u6307\u6570\u53d8\u66f4\u7684\u98ce\u9669\n\u5c3d\u7ba1\u53ef\u80fd\u6027\u5f88\u5c0f\uff0c\u4f46\u6839\u636e\u57fa\u91d1\u5408\u540c\u89c4\u5b9a\uff0c\u5982\u51fa\u73b0\u53d8\u66f4\u6807\u7684\u6307\u6570\u7684\u60c5\u5f62\uff0c\u672c\u57fa\u91d1\u5c06\u53d8\u66f4\u6807\u7684\u6307\u6570\u3002\u57fa\u4e8e\u539f\u6807\u7684\u6307\u6570\u7684\u6295\u8d44\u653f\u7b56\u5c06\u4f1a\u6539\u53d8\uff0c\u6295\u8d44\u7ec4\u5408\u5c06\u968f\u4e4b\u8c03\u6574\uff0c\u57fa\u91d1\u7684\u6536\u76ca\u98ce\u9669\u7279\u5f81\u5c06\u4e0e\u65b0\u7684\u6807\u7684\u6307\u6570\u4fdd\u6301\u4e00\u81f4\uff0c\u6295\u8d44\u4eba\u987b\u627f\u62c5\u6b64\u9879\u8c03\u6574\u5e26\u6765\u7684\u98ce\u9669\u4e0e\u6210\u672c\u3002\n5\u3001\u6307\u6570\u7f16\u5236\u673a\u6784\u505c\u6b62\u670d\u52a1\u7684\u98ce\u9669\n\u672c\u57fa\u91d1\u7684\u6807\u7684\u6307\u6570\u7531\u6307\u6570\u7f16\u5236\u673a\u6784\u53d1\u5e03\u5e76\u7ba1\u7406\u548c\u7ef4\u62a4\uff0c\u672a\u6765\u6307\u6570\u7f16\u5236\u673a\u6784\u53ef\u80fd\u7531\u4e8e\u5404\u79cd\u539f\u56e0\u505c\u6b62\u5bf9\u6307\u6570\u7684\u7ba1\u7406\u548c\u7ef4\u62a4\uff0c\u672c\u57fa\u91d1\u5c06\u6839\u636e\u57fa\u91d1\u5408\u540c\u7684\u7ea6\u5b9a\u81ea\u8be5\u60c5\u5f62\u53d1\u751f\u4e4b\u65e5\u8d77\u5341\u4e2a\u5de5\u4f5c\u65e5\u5185\u5411\u4e2d\u56fd\u8bc1\u76d1\u4f1a\u62a5\u544a\u5e76\u63d0\u51fa\u89e3\u51b3\u65b9\u6848\uff0c\u5982\u66f4\u6362\u57fa\u91d1\u6807\u7684\u6307\u6570\u3001\u8f6c\u6362\u8fd0\u4f5c\u65b9\u5f0f\uff0c\u4e0e\u5176\u4ed6\u57fa\u91d1\u5408\u5e76\u3001\u6216\u8005\u7ec8\u6b62\u57fa\u91d1\u5408\u540c\u7b49\uff0c\u5e76\u57286\u4e2a\u6708\u5185\u53ec\u96c6\u57fa\u91d1\u4efd\u989d\u6301\u6709\u4eba\u5927\u4f1a\u8fdb\u884c\u8868\u51b3\u3002\n\u81ea\u6307\u6570\u7f16\u5236\u673a\u6784\u505c\u6b62\u6807\u7684\u6307\u6570\u7684\u7f16\u5236\u53ca\u53d1\u5e03\u81f3\u89e3\u51b3\u65b9\u6848\u786e\u5b9a\u671f\u95f4\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u5e94\u6309\u7167\u6307\u6570\u7f16\u5236\u673a\u6784\u63d0\u4f9b\u7684\u6700\u8fd1\u4e00\u4e2a\u4ea4\u6613\u65e5\u7684\u6307\u6570\u4fe1\u606f\u9075\u5faa\u57fa\u91d1\u4efd\u989d\u6301\u6709\u4eba\u5229\u76ca\u4f18\u5148\u539f\u5219\u7ef4\u6301\u57fa\u91d1\u6295\u8d44\u8fd0\u4f5c\u3002\u8be5\u671f\u95f4\u7531\u4e8e\u6807\u7684\u6307\u6570\u4e0d\u518d\u66f4\u65b0\u7b49\u539f\u56e0\u53ef\u80fd\u5bfc\u81f4\u6307\u6570\u8868\u73b0\u4e0e\u76f8\u5173\u5e02\u573a\u8868\u73b0\u5b58\u5728\u5dee\u5f02\uff0c\u5f71\u54cd\u6295\u8d44\u6536\u76ca\u3002\n6\u3001\u6210\u4efd\u80a1\u505c\u724c\u7684\u98ce\u9669\n\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u53ef\u80fd\u56e0\u5404\u79cd\u539f\u56e0\u4e34\u65f6\u6216\u957f\u671f\u505c\u724c\uff0c\u53d1\u751f\u6210\u4efd\u80a1\u505c\u724c\u65f6\u53ef\u80fd\u9762\u4e34\u5982\u4e0b\u98ce\u9669\uff1a\n\uff081\uff09\u57fa\u91d1\u53ef\u80fd\u56e0\u65e0\u6cd5\u53ca\u65f6\u8c03\u6574\u6295\u8d44\u7ec4\u5408\u800c\u5bfc\u81f4\u8ddf\u8e2a\u504f\u79bb\u5ea6\u548c\u8ddf\u8e2a\u8bef\u5dee\u6269\u5927\u3002\n\uff082\uff09\u505c\u724c\u6210\u4efd\u80a1\u53ef\u80fd\u56e0\u5176\u6743\u91cd\u5360\u6bd4\u3001\u5e02\u573a\u590d\u724c\u9884\u671f\u3001\u73b0\u91d1\u66ff\u4ee3\u6807\u8bc6\u7b49\u56e0\u7d20\u5f71\u54cd\u672c\u57fa\u91d1\u4e8c\u7ea7\u5e02\u573a\u4ef7\u683c\u7684\u6298\u6ea2\u4ef7\u6c34\u5e73\u3002\n\uff083\uff09\u82e5\u6210\u4efd\u80a1\u505c\u724c\u65f6\u95f4\u8f83\u957f\uff0c\u5728\u7ea6\u5b9a\u65f6\u95f4\u5185\u4ecd\u672a\u80fd\u53ca\u65f6\u4e70\u5165\u6216\u5356\u51fa\u7684\uff0c\u5219\u8be5\u90e8\u5206\u6b3e\u9879\u5c06\u6309\u7167\u672c\u62db\u52df\u8bf4\u660e\u4e66\u7684\u7ea6\u5b9a\u65b9\u5f0f\u8fdb\u884c\u7ed3\u7b97\uff0c\u7531\u6b64\u53ef\u80fd\u5f71\u54cd\u6295\u8d44\u8005\u7684\u6295\u8d44\u635f\u76ca\u5e76\u4f7f\u57fa\u91d1\u4ea7\u751f\u8ddf\u8e2a\u504f\u79bb\u5ea6\u548c\u8ddf\u8e2a\u8bef\u5dee\u3002\n\uff084\uff09\u5728\u6781\u7aef\u60c5\u51b5\u4e0b\uff0c\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u53ef\u80fd\u5927\u9762\u79ef\u505c\u724c\uff0c\u57fa\u91d1\u53ef\u80fd\u65e0\u6cd5\u53ca\u65f6\u5356\u51fa\u6210\u4efd\u80a1\u4ee5\u83b7\u53d6\u8db3\u989d\u7684\u7b26\u5408\u8981\u6c42\u7684\u8d4e\u56de\u5bf9\u4ef7\uff0c\u7531\u6b64\u57fa\u91d1\u7ba1\u7406\u4eba\u53ef\u80fd\u5728\u7533\u8d2d\u8d4e\u56de\u6e05\u5355\u4e2d\u8bbe\u7f6e\u8f83\u4f4e\u7684\u8d4e\u56de\u4efd\u989d\u4e0a\u9650\u6216\u8005\u91c7\u53d6\u6682\u505c\u8d4e\u56de\u7684\u63aa\u65bd\uff0c\u6295\u8d44\u8005\u5c06\u9762\u4e34\u65e0\u6cd5\u8d4e\u56de\u5168\u90e8\u6216\u90e8\u5206ETF\u4efd\u989d\u7684\u98ce\u9669\u3002\n\u672c\u57fa\u91d1\u8fd0\u4f5c\u8fc7\u7a0b\u4e2d\uff0c\u5f53\u6807\u7684\u6307\u6570\u6210\u4efd\u80a1\u53d1\u751f\u660e\u663e\u8d1f\u9762\u4e8b\u4ef6\u9762\u4e34\u9000\u5e02\uff0c\u4e14\u6307\u6570\u7f16\u5236\u673a\u6784\u6682\u672a\u4f5c\u51fa\u8c03\u6574\u7684\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u5e94\u5f53\u6309\u7167\u6301\u6709\u4eba\u5229\u76ca\u4f18\u5148\u7684\u539f\u5219\uff0c\u5c65\u884c\u5185\u90e8\u51b3\u7b56\u7a0b\u5e8f\u540e\u53ca\u65f6\u5bf9\u76f8\u5173\u6210\u4efd\u80a1\u8fdb\u884c\u8c03\u6574\uff0c\u53ef\u80fd\u5f71\u54cd\u6295\u8d44\u8005\u7684\u6295\u8d44\u635f\u76ca\u5e76\u4f7f\u57fa\u91d1\u4ea7\u751f\u8ddf\u8e2a\u504f\u79bb\u5ea6\u548c\u8ddf\u8e2a\u8bef\u5dee\u3002\n7\u3001\u57fa\u91d1\u7ba1\u7406\u4eba\u4ee3\u7406\u7533\u8d4e\u6295\u8d44\u4eba\u4e70\u5238\u5356\u5238\u7684\u98ce\u9669 \n\u56e0\u6d89\u53ca\u5883\u5916\u5e02\u573a\u80a1\u7968\u7684\u4e70\u5356\uff0c\u5728\u6295\u8d44\u4eba\u7533\u8d2d\u3001\u8d4e\u56de\u672c\u57fa\u91d1\u65f6\uff0c\u672c\u57fa\u91d1\u7ec4\u5408\u8bc1\u5238\u4e2d\u5168\u90e8\u6216\u90e8\u5206\u8bc1\u5238\u9700\u4ee5\u4e00\u5b9a\u6570\u91cf\u7684\u73b0\u91d1\u8fdb\u884c\u73b0\u91d1\u66ff\u4ee3\uff0c\u5e76\u7531\u57fa\u91d1\u7ba1\u7406\u4eba\u6309\u7167\u62db\u52df\u8bf4\u660e\u4e66\u7684\u89c4\u5b9a\u4ee3\u7406\u7533\u8d4e\u6295\u8d44\u4eba\u8fdb\u884c\u76f8\u5173\u8bc1\u5238\u4e70\u5356\uff0c\u6295\u8d44\u4eba\u9700\u627f\u53d7\u4e70\u5165\u8bc1\u5238\u7684\u7ed3\u7b97\u6210\u672c\u548c\u5356\u51fa\u8bc1\u5238\u7684\u7ed3\u7b97\u91d1\u989d\u7684\u4e0d\u786e\u5b9a\u6027\uff08\u542b\u6c47\u7387\u6ce2\u52a8\u98ce\u9669\uff09\u3002 \n8\u3001\u57fa\u91d1\u4efd\u989d\u4e8c\u7ea7\u5e02\u573a\u4ea4\u6613\u4ef7\u683c\u6298\u6ea2\u4ef7\u7684\u98ce\u9669 \n\u5c3d\u7ba1\u672c\u57fa\u91d1\u7684\u8fd0\u4f5c\u529b\u6c42\u4f7f\u57fa\u91d1\u4efd\u989d\u4e8c\u7ea7\u5e02\u573a\u4ea4\u6613\u4ef7\u683c\u7684\u6298\u6ea2\u4ef7\u63a7\u5236\u5728\u4e00\u5b9a\u8303\u56f4\u5185\uff0c\u4f46\u57fa\u91d1\u4efd\u989d\u5728\u8bc1\u5238\u4ea4\u6613\u6240\u7684\u4ea4\u6613\u4ef7\u683c\u53d7\u8bf8\u591a\u56e0\u7d20\u5f71\u54cd\uff0c\u5b58\u5728\u4e0d\u540c\u4e8e\u57fa\u91d1\u4efd\u989d\u51c0\u503c\u7684\u60c5\u5f62\uff0c\u5373\u5b58\u5728\u4ef7\u683c\u6298\u6ea2\u4ef7\u7684\u98ce\u9669\u3002\n9\u3001\u9000\u5e02\u98ce\u9669 \n\u56e0\u672c\u57fa\u91d1\u4e0d\u518d\u7b26\u5408\u8bc1\u5238\u4ea4\u6613\u6240\u4e0a\u5e02\u6761\u4ef6\u88ab\u7ec8\u6b62\u4e0a\u5e02\uff0c\u6216\u88ab\u57fa\u91d1\u4efd\u989d\u6301\u6709\u4eba\u5927\u4f1a\u51b3\u8bae\u63d0\u524d\u7ec8\u6b62\u4e0a\u5e02\uff0c\u5bfc\u81f4\u57fa\u91d1\u4efd\u989d\u4e0d\u80fd\u7ee7\u7eed\u8fdb\u884c\u4e8c\u7ea7\u5e02\u573a\u4ea4\u6613\u7684\u98ce\u9669\u3002 \n10\u3001\u7533\u8d2d\u5931\u8d25\u7684\u98ce\u9669 \n\u5982\u679c\u6295\u8d44\u4eba\u7533\u8d2d\u65f6\u672a\u80fd\u63d0\u4f9b\u7b26\u5408\u8981\u6c42\u7684\u7533\u8d2d\u5bf9\u4ef7\uff0c\u6216\u8005\u57fa\u91d1\u7ba1\u7406\u4eba\u6839\u636e\u57fa\u91d1\u5408\u540c\u7684\u89c4\u5b9a\u62d2\u7edd\u6295\u8d44\u4eba\u7684\u7533\u8d2d\u7533\u8bf7\uff0c\u5219\u6295\u8d44\u4eba\u7684\u7533\u8d2d\u7533\u8bf7\u5931\u8d25\u3002\u6b64\u5916\uff0c\u5982\u679c\u57fa\u91d1\u53ef\u7528\u7684\u5916\u6c47\u989d\u5ea6\u4e0d\u8db3\uff0c\u7533\u8d2d\u8d4e\u56de\u4ee3\u7406\u5238\u5546\u5e94\u4ed8\u8d44\u91d1\u4e0d\u8db3\u6216\u51fa\u73b0\u8fdd\u7ea6\uff0c\u6295\u8d44\u4eba\u7684\u7533\u8d2d\u7533\u8bf7\u4e5f\u53ef\u80fd\u5931\u8d25\u3002 \n11\u3001\u8d4e\u56de\u5931\u8d25\u7684\u98ce\u9669 \n\u5982\u679c\u6295\u8d44\u4eba\u8d4e\u56de\u65f6\u6301\u6709\u7684\u7b26\u5408\u8981\u6c42\u7684\u57fa\u91d1\u4efd\u989d\u4e0d\u8db3\u6216\u672a\u80fd\u6839\u636e\u8981\u6c42\u51c6\u5907\u8db3\u989d\u7684\u73b0\u91d1\uff0c\u6216\u8005\u6295\u8d44\u4eba\u5728\u767b\u8bb0\u7ed3\u7b97\u673a\u6784\u529e\u7406\u57fa\u91d1\u4efd\u989d\u4ea4\u6536\u65f6\u6301\u6709\u7684\u7b26\u5408\u8981\u6c42\u7684\u57fa\u91d1\u4efd\u989d\u4e0d\u8db3\uff0c\u6216\u8005\u57fa\u91d1\u7ba1\u7406\u4eba\u6839\u636e\u57fa\u91d1\u5408\u540c\u7684\u89c4\u5b9a\u62d2\u7edd\u6295\u8d44\u4eba\u7684\u8d4e\u56de\u7533\u8bf7\uff0c\u5219\u6295\u8d44\u4eba\u7684\u8d4e\u56de\u7533\u8bf7\u5931\u8d25\u3002\u53e6\u5916\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u53ef\u80fd\u6839\u636e\u6210\u4efd\u80a1\u5e02\u503c\u89c4\u6a21\u53d8\u5316\u7b49\u56e0\u7d20\u8c03\u6574\u6700\u5c0f\u7533\u8d2d\u8d4e\u56de\u5355\u4f4d\uff0c\u7531\u6b64\u53ef\u80fd\u5bfc\u81f4\u6295\u8d44\u4eba\u6309\u539f\u6700\u5c0f\u7533\u8d2d\u8d4e\u56de\u5355\u4f4d\u7533\u8d2d\u5e76\u6301\u6709\u7684\u57fa\u91d1\u4efd\u989d\u65e0\u6cd5\u6309\u7167\u65b0\u7684\u6700\u5c0f\u7533\u8d2d\u8d4e\u56de\u5355\u4f4d\u5168\u90e8\u8d4e\u56de\uff0c\u800c\u53ea\u80fd\u5728\u4e8c\u7ea7\u5e02\u573a\u5356\u51fa\u5168\u90e8\u6216\u90e8\u5206\u57fa\u91d1\u4efd\u989d\u3002 \n12\u3001\u6295\u8d44\u4eba\u53c2\u8003IOPV\u505a\u51fa\u6295\u8d44\u51b3\u7b56\u7684\u98ce\u9669\u548cIOPV\u8ba1\u7b97\u9519\u8bef\u7684\u98ce\u9669 \nIOPV\u4e0e\u5b9e\u65f6\u7684\u57fa\u91d1\u4efd\u989d\u51c0\u503c\u5b58\u5728\u5dee\u5f02\uff0cIOPV\u8ba1\u7b97\u53ef\u80fd\u51fa\u73b0\u9519\u8bef\uff0c\u6295\u8d44\u4eba\u82e5\u53c2\u8003IOPV\u8fdb\u884c\u6295\u8d44\u51b3\u7b56\u53ef\u80fd\u5bfc\u81f4\u635f\u5931\u3002\n13\u3001\u7b2c\u4e09\u65b9\u673a\u6784\u670d\u52a1\u7684\u98ce\u9669 \n\u672c\u57fa\u91d1\u7684\u591a\u9879\u670d\u52a1\u59d4\u6258\u7b2c\u4e09\u65b9\u673a\u6784\u529e\u7406,\u5b58\u5728\u4ee5\u4e0b\u98ce\u9669\uff1a \n(1)\u53d7\u591a\u79cd\u56e0\u7d20\u5f71\u54cd\uff0c\u7533\u8d2d\u8d4e\u56de\u4ee3\u7406\u5238\u5546\u4ee3\u7406\u7533\u8d2d\u3001\u8d4e\u56de\u4e1a\u52a1\u53ef\u80fd\u53d7\u5230\u9650\u5236\u3001\u6682\u505c\u6216\u7ec8\u6b62\uff0c\u4ece\u800c\u5f71\u54cd\u6295\u8d44\u4eba\u7533\u8d2d\u3001\u8d4e\u56de\u3002 \n(2)\u767b\u8bb0\u7ed3\u7b97\u673a\u6784\u53ef\u80fd\u8c03\u6574\u7ed3\u7b97\u5236\u5ea6\uff0c\u4ece\u800c\u5bf9\u6295\u8d44\u4eba\u57fa\u91d1\u4efd\u989d\u3001\u8d44\u91d1\u7b49\u7684\u7ed3\u7b97\u65b9\u5f0f\u53d1\u751f\u53d8\u5316\uff0c\u5236\u5ea6\u8c03\u6574\u53ef\u80fd\u7ed9\u6295\u8d44\u4eba\u5e26\u6765\u7406\u89e3\u504f\u5dee\u7684\u98ce\u9669\u3002\u540c\u6837\u7684\u98ce\u9669\u8fd8\u53ef\u80fd\u6765\u81ea\u4e8e\u8bc1\u5238\u4ea4\u6613\u6240\u53ca\u5176\u4ed6\u4ee3\u7406\u673a\u6784\u3002 \n(3)\u8bc1\u5238\u4ea4\u6613\u6240\u3001\u671f\u8d27\u4ea4\u6613\u6240\u3001\u8bc1\u5238\u4e0e\u671f\u8d27\u767b\u8bb0\u7ed3\u7b97\u673a\u6784\u3001\u7533\u8d2d\u8d4e\u56de\u4ee3\u7406\u5238\u5546\u3001\u57fa\u91d1\u6258\u7ba1\u4eba\u53ca\u5176\u4ed6\u4ee3\u7406\u673a\u6784\u53ef\u80fd\u8fdd\u7ea6\uff0c\u5bfc\u81f4\u57fa\u91d1\u6216\u6295\u8d44\u4eba\u5229\u76ca\u53d7\u635f\u7684\u98ce\u9669\u3002 \n14\u3001\u7ba1\u7406\u98ce\u9669 \n\u57fa\u91d1\u7ba1\u7406\u4eba\u3001\u57fa\u91d1\u6258\u7ba1\u4eba\u7b49\u76f8\u5173\u5f53\u4e8b\u4eba\u7684\u4e1a\u52a1\u53d1\u5c55\u72b6\u51b5\u3001\u4eba\u5458\u914d\u5907\u3001\u7ba1\u7406\u6c34\u5e73\u4e0e\u5185\u90e8\u63a7\u5236\u7b49\u5bf9\u57fa\u91d1\u6536\u76ca\u6c34\u5e73\u5b58\u5728\u5f71\u54cd\u3002\u56e0\u4e1a\u52a1\u6269\u5f20\u8fc7\u5feb\u3001\u884c\u4e1a\u5185\u8fc7\u5ea6\u7ade\u4e89\u3001\u5bf9\u4e3b\u8981\u4e1a\u52a1\u4eba\u5458\u8fc7\u5ea6\u4f9d\u8d56\u7b49\u53ef\u80fd\u4f1a\u4ea7\u751f\u5f71\u54cd\u6295\u8d44\u4eba\u5229\u76ca\u7684\u98ce\u9669\u3002 \n\u76f8\u5173\u5f53\u4e8b\u4eba\u5728\u4e1a\u52a1\u5404\u73af\u8282\u64cd\u4f5c\u8fc7\u7a0b\u4e2d\uff0c\u53ef\u80fd\u56e0\u5185\u90e8\u63a7\u5236\u5b58\u5728\u7f3a\u9677\u6216\u8005\u4eba\u4e3a\u56e0\u7d20\u9020\u6210\u64cd\u4f5c\u5931\u8bef\u6216\u8fdd\u53cd\u64cd\u4f5c\u89c4\u7a0b\u7b49\u5f15\u81f4\u98ce\u9669\uff0c\u4f8b\u5982\uff0c\u7533\u8d2d\u8d4e\u56de\u6e05\u5355\u7f16\u5236\u9519\u8bef\u3001\u8d8a\u6743\u8fdd\u89c4\u4ea4\u6613\u3001\u6b3a\u8bc8\u884c\u4e3a\u53ca\u4ea4\u6613\u9519\u8bef\u7b49\u98ce\u9669\u3002","\u91cd\u8981\u63d0\u793a":"\u4e2d\u56fd\u8bc1\u76d1\u4f1a\u5bf9\u672c\u57fa\u91d1\u52df\u96c6\u7684\u6838\u51c6\uff0c\u5e76\u4e0d\u8868\u660e\u5176\u5bf9\u672c\u57fa\u91d1\u7684\u4ef7\u503c\u548c\u6536\u76ca\u4f5c\u51fa\u5b9e\u8d28\u6027\u5224\u65ad\u6216\u4fdd\u8bc1\uff0c\u4e5f\u4e0d\u8868\u660e\u6295\u8d44\u4e8e\u672c\u57fa\u91d1\u6ca1\u6709\u98ce\u9669\u3002\n\u57fa\u91d1\u7ba1\u7406\u4eba\u4f9d\u7167\u606a\u5c3d\u804c\u5b88\u3001\u8bda\u5b9e\u4fe1\u7528\u3001\u8c28\u614e\u52e4\u52c9\u7684\u539f\u5219\u7ba1\u7406\u548c\u8fd0\u7528\u57fa\u91d1\u8d22\u4ea7\uff0c\u4f46\u4e0d\u4fdd\u8bc1\u57fa\u91d1\u4e00\u5b9a\u76c8\u5229\uff0c\u4e5f\u4e0d\u4fdd\u8bc1\u6700\u4f4e\u6536\u76ca\u3002\n\u57fa\u91d1\u6295\u8d44\u8005\u81ea\u4f9d\u57fa\u91d1\u5408\u540c\u53d6\u5f97\u57fa\u91d1\u4efd\u989d\uff0c\u5373\u6210\u4e3a\u57fa\u91d1\u4efd\u989d\u6301\u6709\u4eba\u548c\u57fa\u91d1\u5408\u540c\u7684\u5f53\u4e8b\u4eba\u3002\n\u56e0\u300a\u57fa\u91d1\u5408\u540c\u300b\u800c\u4ea7\u751f\u7684\u6216\u4e0e\u300a\u57fa\u91d1\u5408\u540c\u300b\u6709\u5173\u7684\u4e00\u5207\u4e89\u8bae\uff0c\u5e94\u7ecf\u53cb\u597d\u534f\u5546\u89e3\u51b3\uff0c\u5982\u7ecf\u53cb\u597d\u534f\u5546\u672a\u80fd\u89e3\u51b3\u7684\uff0c\u5219\u4efb\u4f55\u4e00\u65b9\u6709\u6743\u6309\u300a\u57fa\u91d1\u5408\u540c\u300b\u7684\u7ea6\u5b9a\u63d0\u4ea4\u4ef2\u88c1\uff0c\u4ef2\u88c1\u673a\u6784\u89c1\u300a\u57fa\u91d1\u5408\u540c\u300b\u3002\n\u57fa\u91d1\u4ea7\u54c1\u8d44\u6599\u6982\u8981\u4fe1\u606f\u53d1\u751f\u91cd\u5927\u53d8\u66f4\u7684\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u5c06\u5728\u4e09\u4e2a\u5de5\u4f5c\u65e5\u5185\u66f4\u65b0\uff0c\u5176\u4ed6\u4fe1\u606f\u53d1\u751f\u53d8\u66f4\u7684\uff0c\u57fa\u91d1\u7ba1\u7406\u4eba\u6bcf\u5e74\u66f4\u65b0\u4e00\u6b21\u3002\u56e0\u6b64\uff0c\u672c\u6587\u4ef6\u5185\u5bb9\u76f8\u6bd4\u57fa\u91d1\u7684\u5b9e\u9645\u60c5\u51b5\u53ef\u80fd\u5b58\u5728\u4e00\u5b9a\u7684\u6ede\u540e\uff0c\u5982\u9700\u53ca\u65f6\u3001\u51c6\u786e\u83b7\u53d6\u57fa\u91d1\u7684\u76f8\u5173\u4fe1\u606f\uff0c\u656c\u8bf7\u540c\u65f6\u5173\u6ce8\u57fa\u91d1\u7ba1\u7406\u4eba\u53d1\u5e03\u7684\u76f8\u5173\u4e34\u65f6\u516c\u544a\u7b49\u3002","investRefer":"\u672c\u57fa\u91d1\u7684\u4e1a\u7ee9\u6bd4\u8f83\u57fa\u51c6\u4e3a\u6807\u7684\u6307\u6570\u6536\u76ca\u7387\uff08\u7ecf\u6c47\u7387\u8c03\u6574\u540e\u7684\u603b\u6536\u76ca\u6307\u6570\u6536\u76ca\u7387\uff09\u3002\u672c\u57fa\u91d1\u7684\u6807\u7684\u6307\u6570\u4e3a\u7eb3\u65af\u8fbe\u514b100\u6307\u6570\uff08Nasdaq-100 Index\uff09\u3002"},"fee":{"\u7ba1\u7406\u8d39":"0.60%","\u6258\u7ba1\u8d39":"0.20%"},"\u9500\u552e\u76f8\u5173\u8d39\u7528":{"list":[],"remarks":"\u573a\u5185\u4ea4\u6613\u8d39\u7528\u4ee5\u8bc1\u5238\u516c\u53f8\u5b9e\u9645\u6536\u53d6\u4e3a\u51c6\u3002"},"\u8fd0\u4f5c\u76f8\u5173\u8d39\u7528":{"list":[{"name":"\u7ba1\u7406\u8d39","value":["0.60%"]},{"name":"\u6258\u7ba1\u8d39","value":["0.20%"]},{"name":"\u5ba1\u8ba1\u8d39\u7528","value":["78000.00"]},{"name":"\u4fe1\u606f\u62ab\u9732\u8d39","value":["120000.00"]},{"name":"\u5176\u4ed6\u8d39\u7528","value":["\u5176\u4ed6\u6309\u7167\u56fd\u5bb6\u6709\u5173\u89c4\u5b9a\u548c\u300a\u57fa\u91d1\u5408\u540c\u300b\u7ea6\u5b9a\u53ef\u4ee5\u5728\u57fa\u91d1\u8d22\u4ea7\u4e2d\u5217\u652f\u7684\u8d39\u7528","\u76f8\u5173\u670d\u52a1\u673a\u6784"]}],"remarks":"1\u3001\u672c\u57fa\u91d1\u4ea4\u6613\u8bc1\u5238\u3001\u57fa\u91d1\u7b49\u4ea7\u751f\u7684\u8d39\u7528\u548c\u7a0e\u8d1f\uff0c\u6309\u5b9e\u9645\u53d1\u751f\u989d\u4ece\u57fa\u91d1\u8d44\u4ea7\u6263\u9664\u3002\n2\u3001\u4e0a\u8868\u4e2d\u5e74\u8d39\u7528\u91d1\u989d\u4e3a\u57fa\u91d1\u6574\u4f53\u627f\u62c5\u8d39\u7528\uff0c\u975e\u5355\u4e2a\u4efd\u989d\u7c7b\u522b\u8d39\u7528\uff0c\u4e14\u5e74\u91d1\u989d\u4e3a\u9884\u4f30\u503c\uff0c\u6700\u7ec8\u5b9e\u9645\u91d1\u989d\u4ee5\u57fa\u91d1\u5b9a\u671f\u62a5\u544a\u62ab\u9732\u4e3a\u51c6\u3002"},"\u89c4\u6a21":{"date":"2026-06-29T16:00:00.000Z","value":"19468268721.53"},"managerTerms":[{"start":"2023-05-09T16:00:00.000Z","manager":{"id":4,"name":"\u827e\u5c0f\u519b","gender":"male","academicDegree":"\u7855\u58eb\u7814\u7a76\u751f","biography":"\u827e\u5c0f\u519b\uff0c\u7855\u58eb\u3002\n2001\u5e745\u6708\u81f32006\u5e749\u6708\u5728\u534e\u5b89\u57fa\u91d1\u7ba1\u7406\u6709\u9650\u516c\u53f8\u4efb\u91cf\u5316\u5206\u6790\u5e08\u3002\n2006\u5e749\u6708\u81f32007\u5e748\u6708\u5728\u6c47\u4e30\u664b\u4fe1\u57fa\u91d1\u7ba1\u7406\u6709\u9650\u516c\u53f8\u4efb\u5e94\u7528\u5206\u6790\u5e08\u3002\n2007\u5e749\u6708\u81f32007\u5e7410\u6708\u5728\u5e73\u5b89\u8d44\u4ea7\u7ba1\u7406\u6709\u9650\u516c\u53f8\u4efb\u91cf\u5316\u5206\u6790\u5e08\u3002\n2007\u5e7410\u6708\u52a0\u5165\u56fd\u6cf0\u57fa\u91d1\uff0c\u5386\u4efb\u91d1\u878d\u5de5\u7a0b\u5206\u6790\u5e08\u3001\u9ad8\u7ea7\u4ea7\u54c1\u7ecf\u7406\u548c\u57fa\u91d1\u7ecf\u7406\u52a9\u7406\u3002\n2014\u5e741\u6708\u8d77\u4efb\u56fd\u6cf0\u9ec4\u91d1\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u3001\u4e0a\u8bc1180\u91d1\u878d\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u3001\u56fd\u6cf0\u4e0a\u8bc1180\u91d1\u878d\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u8054\u63a5\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2015\u5e743\u6708\u81f32020\u5e7412\u6708\u4efb\u56fd\u6cf0\u6df1\u8bc1TMT50\u6307\u6570\u5206\u7ea7\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2015\u5e744\u6708\u81f32021\u5e741\u6708\u4efb\u56fd\u6cf0\u6caa\u6df1300\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2016\u5e744\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u9ec4\u91d1\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u8054\u63a5\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2016\u5e747\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u519b\u5de5\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u548c\u56fd\u6cf0\u4e2d\u8bc1\u5168\u6307\u8bc1\u5238\u516c\u53f8\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e743\u6708\u81f32017\u5e745\u6708\u4efb\u56fd\u6cf0\u4fdd\u672c\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e743\u6708\u81f32018\u5e7412\u6708\u4efb\u56fd\u6cf0\u7b56\u7565\u6536\u76ca\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e743\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u56fd\u8bc1\u822a\u5929\u519b\u5de5\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08LOF\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e744\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u7533\u4e07\u8bc1\u5238\u884c\u4e1a\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08LOF\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e745\u6708\u81f32023\u5e749\u6708\u4efb\u56fd\u6cf0\u7b56\u7565\u4ef7\u503c\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08\u7531\u56fd\u6cf0\u4fdd\u672c\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u53d8\u66f4\u800c\u6765\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e745\u6708\u81f32018\u5e747\u6708\u4efb\u56fd\u6cf0\u91cf\u5316\u6536\u76ca\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e748\u6708\u8d77\u81f32019\u5e745\u6708\u4efb\u56fd\u6cf0\u5b81\u76ca\u5b9a\u671f\u5f00\u653e\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2018\u5e745\u6708\u81f32022\u5e743\u6708\u4efb\u56fd\u6cf0\u91cf\u5316\u6210\u957f\u4f18\u9009\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2018\u5e745\u6708\u81f32019\u5e747\u6708\u4efb\u56fd\u6cf0\u91cf\u5316\u4ef7\u503c\u7cbe\u9009\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2018\u5e748\u6708\u81f32019\u5e744\u6708\u4efb\u56fd\u6cf0\u7ed3\u6784\u8f6c\u578b\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2018\u5e7412\u6708\u81f32019\u5e743\u6708\u4efb\u56fd\u6cf0\u91cf\u5316\u7b56\u7565\u6536\u76ca\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08\u7531\u56fd\u6cf0\u7b56\u7565\u6536\u76ca\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u53d8\u66f4\u800c\u6765\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2019\u5e744\u6708\u81f32019\u5e7411\u6708\u4efb\u56fd\u6cf0\u6caa\u6df1300\u6307\u6570\u589e\u5f3a\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08\u7531\u56fd\u6cf0\u7ed3\u6784\u8f6c\u578b\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u53d8\u66f4\u800c\u6765\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2019\u5e745\u6708\u81f32019\u5e7411\u6708\u4efb\u56fd\u6cf0\u4e2d\u8bc1500\u6307\u6570\u589e\u5f3a\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08\u7531\u56fd\u6cf0\u5b81\u76ca\u5b9a\u671f\u5f00\u653e\u7075\u6d3b\u914d\u7f6e\u6df7\u5408\u578b\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u53d8\u66f4\u6ce8\u518c\u800c\u6765\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2019\u5e745\u6708\u8d77\u517c\u4efb\u56fd\u6cf0CES\u534a\u5bfc\u4f53\u82af\u7247\u884c\u4e1a\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08\u7531\u56fd\u6cf0CES\u534a\u5bfc\u4f53\u884c\u4e1a\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u66f4\u540d\u800c\u6765\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2019\u5e747\u6708\u81f32021\u5e741\u6708\u4efb\u4e0a\u8bc15\u5e74\u671f\u56fd\u503a\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u548c\u4e0a\u8bc110\u5e74\u671f\u56fd\u503a\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2019\u5e747\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u8ba1\u7b97\u673a\u4e3b\u9898\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2019\u5e748\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u5168\u6307\u901a\u4fe1\u8bbe\u5907\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2019\u5e749\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u5168\u6307\u901a\u4fe1\u8bbe\u5907\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u53d1\u8d77\u5f0f\u8054\u63a5\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2020\u5e7412\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u8ba1\u7b97\u673a\u4e3b\u9898\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u8054\u63a5\u57fa\u91d1\uff08\u7531\u56fd\u6cf0\u6df1\u8bc1TMT50\u6307\u6570\u5206\u7ea7\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u8f6c\u578b\u800c\u6765\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2021\u5e745\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u5168\u6307\u8bc1\u5238\u516c\u53f8\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u53d1\u8d77\u5f0f\u8054\u63a5\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2023\u5e745\u6708\u8d77\u517c\u4efb\u7eb3\u65af\u8fbe\u514b100\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u548c\u56fd\u6cf0\u6807\u666e500\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\uff08QDII\uff09\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2023\u5e747\u6708\u8d77\u517c\u4efb\u56fd\u6cf0\u4e2d\u8bc1\u534a\u5bfc\u4f53\u6750\u6599\u8bbe\u5907\u4e3b\u9898\u4ea4\u6613\u578b\u5f00\u653e\u5f0f\u6307\u6570\u8bc1\u5238\u6295\u8d44\u57fa\u91d1\u7684\u57fa\u91d1\u7ecf\u7406\u3002\n2017\u5e747\u6708\u8d77\u4efb\u6295\u8d44\u603b\u76d1\uff08\u91cf\u5316\uff09\u3001\u91d1\u878d\u5de5\u7a0b\u603b\u76d1\u3002","priority":9,"windId":"19B3C1","photo":"https:\/\/st.gtfund.com\/default\/2025\/03\/%E8%89%BE%E5%B0%8F%E5%86%9B2.png"},"days":1244,"growth":"119.36"}],"plotIndex":["000300.SH","\u6caa\u6df1300"],"etf":[{"code":"513101","fundCode":"513100","physical":0,"name":"\u7eb3\u6307ETF","targetIndexCode":null,"targetIndexName":null,"template":"nasdaq","pcfFormat":null}]},
+    fund_status: "created"};
+
+console.log('fee--', gtOptions.detail)
+
+$(function () {
+
+if (location.hash == '#etf-list') {
+    setTimeout(function () { $('#etf-list').click() }, 0);
+}
+
+});
+</script>
+<script src="/Public/static/js/jquery.highcharts/highcharts.js"></script>
+<script type="text/javascript" src="/Public/static/etrade/1/dist/js/jijin_view.js?v=hy101"></script>
+<div class="gt-footer">
+    <div class="links gt-wrapper">
+        <div class="link">
+            <h2 class="quanyi">&nbsp;投资者权益保障</h2>
+            <ul>
+                <!-- <li><a href="/Etrade/Article/index/routie/tishi" target="_blank">&nbsp;&nbsp;风险提示</a></li> -->
+                <li><a href="/Etrade/Agreement/view/id/PRIVACY_TERMS" target="_blank">&nbsp;&nbsp;隐私政策</a>
+                </li>
+                <!-- <li><a href="/Etrade/Article/index/routie/law" target="_blank">&nbsp;&nbsp;基金业常用法律法规</a></li> -->
+                <li><a href="/Etrade/Article/index/routie/fxq"
+                       target="_blank">&nbsp;&nbsp;反洗钱专栏</a></li>
+                <li><a href="/Etrade/Article/view/id/68c915d4bdd1d22bfbac666c" target="_blank">&nbsp;&nbsp;投资者权益须知</a>
+                <li><a href="/Etrade/Article/view/id/68c915d4bdd1d22bfbac6677" target="_blank">&nbsp;&nbsp;业务规则</a>
+
+                </li>
+                <li><a href="/Etrade/NewsResearch/brahmaview/id/68c919a0bdd1d22bfbad3f4e" target="_blank">&nbsp;&nbsp;基金产品风险等级划分规则说明</a>
+                </li>
+                <li><a href="/Etrade/Edu/index/routie/edu_tai_finance"
+                       target="_blank">&nbsp;&nbsp;投资者教育</a></li>
+                <li><a href="/Etrade/Report/companyreport" target="_blank">&nbsp;&nbsp;公司公告</a></li>
+            </ul>
+        </div>
+        <div class="link">
+            <h2 class="service">&nbsp;便捷服务 </h2>
+            <ul>
+                <li><a href="/Etrade/help/fuwujieshao" target="_blank">&nbsp;&nbsp;客服中心</a></li>
+                <li><a href="/Etrade/help/redianwenti" target="_blank">&nbsp;&nbsp;热点问题</a></li>
+                <li><a href="/Etrade/Jijin/etflist" target="_blank">&nbsp;&nbsp;ETF申赎清单</a></li>
+                <li><a href="/Etrade/help/xiazaizhongxin" target="_blank">&nbsp;&nbsp;下载中心</a></li>
+                <li><a href="/Etrade/help/fuwujieshao#tousu" target="_blank">&nbsp;&nbsp;投诉与建议</a>
+                <li><a href="/Public/static/etrade/upload/yingji.pdf" target="_blank">&nbsp;&nbsp;应急处理提示</a>
+                </li>
+            </ul>
+        </div>
+        <div class="link">
+            <h2 class="bars">&nbsp;公司业务</h2>
+            <ul>
+                <li><a href="/Etrade/Jijin/index.html" target="_blank">&nbsp;&nbsp;公募基金</a></li>
+                <li><a href="/Etrade/about/management" target="_blank">&nbsp;&nbsp;社保管理</a></li>
+                <li><a href="/Etrade/about/pension" target="_blank">&nbsp;&nbsp;企业年金</a></li>
+                <li><a href="/Etrade/about/special" target="_blank">&nbsp;&nbsp;专户理财</a></li>
+                <li><a href="/Etrade/geyang/welcome" target="_blank">&nbsp;&nbsp;养老专区</a></li>
+            </ul>
+        </div>
+        <div class="link">
+            <h2 class="about">&nbsp;关于国泰</h2>
+                <ul>
+                    <li><a href="/Etrade/about/intro" target="_blank">&nbsp;&nbsp;公司介绍</a></li>
+                <li><a href="https://gtfund.zhiye.com" target="_blank">&nbsp;&nbsp;人才招聘 <img src="/Public/static/etrade/1/dist/i/index/icon_index_hot_small.png" /></a></li>
+                <li><a href="/Etrade/help/lianxiwomen" target="_blank">&nbsp;&nbsp;联系我们</a></li>
+<!--                <li><a href="/Etrade/help/renyuanzizhi" target="_blank">&nbsp;&nbsp;人员资质</a></li>-->
+                <li><a href="/Etrade/help/m" target="_blank">&nbsp;&nbsp;董事、高管人员公示</a></li>
+                <li><a href="/Etrade/help/gongshi" target="_blank">&nbsp;&nbsp;债券投资交易人员公示</a></li>
+                <li><a href="/Etrade/help/gongshi_private" target="_blank">&nbsp;&nbsp;专户投资经理信息公示</a></li>
+                <li><a href="/Etrade/help/gongshi_sales" target="_blank">&nbsp;&nbsp;基金销售人员公示</a></li>
+                <!-- <li><a href="/Etrade/Hr/index" target="_blank">&nbsp;&nbsp;加入我们</a></li> -->
+                <li><a href="/Etrade/About/idea" target="_blank">&nbsp;&nbsp;红蜡烛公益</a></li>
+                <li><a href="/Etrade/Esg/index" target="_blank">&nbsp;&nbsp;ESG投资</a></li>
+                <li><a href="/Etrade/about/quanqiu" target="_blank">&nbsp;&nbsp;下属控股企业信息查询</a></li>
+
+            </ul>
+        </div>
+        <div class="link">
+            <div class="gt-text-top download">
+                <table>
+                    <tr>
+                        <td><a href="//m.gtfund.com/Go/Download/index" target="_blank"><img src="/Public/static/etrade/1/dist/i/common/download_footer1_1.png?v=hy101"></a></td>
+                        <td>
+                            <img src="/Public/static/etrade/1/dist/i/common/download_footer2.png?v=hy101">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="foot-zj-block"></div>
+        <textarea id="foot-zj" class="J_tempate gt-hide ">
+          {{#data}}
+            <div style="color: #494949; line-height: 26px;padding: 20px 0px 0;text-align: left; width: 1200px">
+<!--            <span style="text-align: left">{{& note}}</span>-->
+            {{& note}}
+            </div>
+          {{/data}}
+        </textarea>
+
+        <div style="line-height: 26px;padding: 10px 0">
+            本网站所有资讯与说明文字仅供参考，不构成公司任何保证性承诺，不存在明示或者暗示保本、无风险或者保收益等情形，请投资者全面、充分、准确理解本网站所载内容，避免因个人主观理解引起误解或歧义。<a
+                href="https://e.gtfund.com/etrade/Article/index/routie/free">免责声明</a>
+            <br/>欢迎通过中国投资者网（www.investor.org.cn）、互联网投教基地以及市场经营主体、自律组织等官方网站获取相关知识和服务。
+        </div>
+        © 2010-2026 版权所有 国泰基金管理有限公司<span class="gt-split-v2">|</span><a href="https://beian.miit.gov.cn"
+                                                                                   target="_blank"
+                                                                                   style="color:#999999">沪ICP备15002268号-1</a><span
+            class="gt-split-v2">|</span><a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010902002717" target="_blank"
+            style="color:#999999">沪公网安备 31010902002717号</a> | <span>本站已支持IPv6</span>
+    </div>
+    <div class="contactus">
+    <div class="gt-wrapper">
+        <a href="/Etrade/Public/goService" target="_blank"><div class="help-btn"></div></a>
+        <div class="tel-btn">400-888-8688</div>
+        <div class="go-top J_go_top"><a href="#" style="color:#313131">返回顶部</a></div>
+        <span class="gt-arrow-up arrow-up"></span>
+    </div>
+</div>
+
+</div>
+<!-- PHPStat Start -->
+<script type="text/javascript">
+    var _trackDataType = "web";
+    var _trackData = _trackData || [];
+    // (function() {
+    //     var phpstat_js = document.createElement('script'); phpstat_js.type = 'text/javascript';
+    //     phpstat_js.charset = 'utf-8'; phpstat_js.id = 'phpstat_js_id_10000019'; phpstat_js.async = true;
+    //     phpstat_js.src = 'https://st.gtfund.com/etrade/js/10000019.js';
+    //     var phpstat_cjs = document.getElementsByTagName('script')[0]; phpstat_cjs.parentNode.insertBefore(phpstat_js, phpstat_cjs);
+    //   })();
+
+</script>
+<!--<script type="text/javascript" src="../../../../../webroot/Public/static/etrade/1/app/js/cochin_async.js"></script>-->
+<script type="text/javascript" src="/Public/static/etrade/1/dist/js/foot.js?v=hy101"></script>
+<!--/PHPStat End -->
+<script>
+    // var _hmt = _hmt || [];
+    // (function () {
+    //     var hm = document.createElement("script");
+    //     hm.src = "https://hm.baidu.com/hm.js?c741085096d4baa2cc9aa13db2549f58";
+    //     var s = document.getElementsByTagName("script")[0];
+    //     s.parentNode.insertBefore(hm, s);
+    //
+    // })();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+{
+  "url": "https://hq.sinajs.cn/list=sh513100,sh513300,sh513500,sz159655,sz159612",
+  "request_started_at": "2026-10-04T14:57:45.460861+00:00",
+  "status": "ok",
+  "http_status": 200,
+  "sha256": "16f426025b98a330d7cd73fc15ee2470ee76efec1c6c502038ea309dcc39e12e",
+  "raw_path": "quotes.raw",
+  "first_seen_at": "2026-10-04T14:57:45.625751+00:00"
+}

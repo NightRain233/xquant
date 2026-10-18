@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-10-04",
+  "supplemental_evidence": [
+    {
+      "file": "evidence/510300_dividend_2015-01-14.pdf",
+      "source_url": "https://www.sse.com.cn/disclosure/fund/announcement/c/2015-01-13/510300_20150114_1.pdf",
+      "sha256": "1edb820f5efe41a0f28f7bd05dfdaf454e0dde97894a4101f6b9570c1b2bf3db",
+      "supports": "2015-01-14 announcement; 2015-01-19 record date; 2015-01-20 ex-date; 2015-01-23 cash payment date; 0.35 CNY per 10 units"
+    },
+    {
+      "file": "evidence/513100_split_result_2022-01-14.pdf",
+      "source_url": "https://static.cninfo.com.cn/finalpage/2022-01-14/1212179309.PDF",
+      "sha256": "ea9df70b8f216708994f07e141bc22c162e77ed693b2b4c7902a53e67d7ebaf2",
+      "supports": "Exact 1:5 split result for 513100 and 2022-01-14 resumption"
+    },
+    {
+      "file": "evidence/513100_product_history.html",
+      "source_url": "https://www.gtfund.com/product/productlist/haiwai/513100/index.html",
+      "sha256": "08c7ef98439068d9cab23f014d45136404ba9c00ca7a4a034693fc2cce495c6a",
+      "supports": "Current manager product page as checked; no distribution event rows rendered"
+    },
+    {
+      "file": "evidence/513100_etf_detail.html",
+      "source_url": "https://etradetest.gtfund.com/etrade/Jijin/view/id/513100",
+      "sha256": "25dbea9ee6dd3b187cfa81814d3d4a027fdd5274537a0633012b46928dfb8f27",
+      "supports": "Manager-hosted current detail page; distribution history table empty"
+    },
+    {
+      "file": "evidence/518880_product_history.html",
+      "source_url": "https://www.huaan.com.cn/funds/518880/index.shtml",
+      "sha256": "606acec6b67588a5f257923ec45dccf76535f056778a910729df676461df2014",
+      "supports": "Manager history lists 2013 split row and no cash-distribution rows"
+    },
+    {
+      "file": "evidence/518880_split_result.html",
+      "source_url": "https://wap.huaan.com.cn/news/2013-07-25/175115_1.shtml",
+      "sha256": "1f48a1b49b2a601fb6b01000177a60b2bd5e3d5005c2463226b9d583047d595d",
+      "supports": "Official manager split-result page"
+    },
+    {
+      "file": "evidence/513500_product_summary_2025.pdf",
+      "source_url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2025-03-22/513500_20250322_NOG1.pdf",
+      "sha256": "b9a6a058ba05cf76b60c1d26422ee451fc4f232f454df71cfba7a71c9b86f56b",
+      "supports": "Fund effective date and listing date; not a complete corporate-action history"
+    }
+  ],
+  "coverage_limit": "No official source establishing a complete lifetime absence of cash distributions/splits was found for all three comparison funds. Empty online history pages are reported as current-page findings, not proof that no action ever occurred."
+}

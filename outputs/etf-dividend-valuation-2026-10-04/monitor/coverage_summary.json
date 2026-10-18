@@ -1,0 +1,122 @@
+[
+  {
+    "symbol": "159612",
+    "all_real_collection_samples": 3,
+    "samples_with_nav": 2,
+    "nav_publication_timestamp_verified_samples": 0,
+    "samples_with_verified_current_interval": 0,
+    "valid_session_quote_samples": 0,
+    "optional_variants": [
+      {
+        "cap": 0.01,
+        "valid_quote_samples": 0,
+        "paused_samples": 0,
+        "pause_share": null,
+        "pause_reasons": {},
+        "warning": "intraday snapshots are correlated; not independent trading-day estimates"
+      }
+    ],
+    "all_sample_diagnostic_reasons": {
+      "market_closed": 3,
+      "stale_quote": 3,
+      "current_valuation_interval_unverified": 3,
+      "issuer_status_not_checked": 3
+    }
+  },
+  {
+    "symbol": "159655",
+    "all_real_collection_samples": 3,
+    "samples_with_nav": 2,
+    "nav_publication_timestamp_verified_samples": 0,
+    "samples_with_verified_current_interval": 0,
+    "valid_session_quote_samples": 0,
+    "optional_variants": [
+      {
+        "cap": 0.01,
+        "valid_quote_samples": 0,
+        "paused_samples": 0,
+        "pause_share": null,
+        "pause_reasons": {},
+        "warning": "intraday snapshots are correlated; not independent trading-day estimates"
+      }
+    ],
+    "all_sample_diagnostic_reasons": {
+      "market_closed": 3,
+      "stale_quote": 3,
+      "current_valuation_interval_unverified": 3,
+      "issuer_status_not_checked": 3
+    }
+  },
+  {
+    "symbol": "513100",
+    "all_real_collection_samples": 3,
+    "samples_with_nav": 2,
+    "nav_publication_timestamp_verified_samples": 0,
+    "samples_with_verified_current_interval": 0,
+    "valid_session_quote_samples": 0,
+    "optional_variants": [
+      {
+        "cap": 0.01,
+        "valid_quote_samples": 0,
+        "paused_samples": 0,
+        "pause_share": null,
+        "pause_reasons": {},
+        "warning": "intraday snapshots are correlated; not independent trading-day estimates"
+      }
+    ],
+    "all_sample_diagnostic_reasons": {
+      "market_closed": 3,
+      "stale_quote": 3,
+      "current_valuation_interval_unverified": 3,
+      "issuer_status_not_checked": 3
+    }
+  },
+  {
+    "symbol": "513300",
+    "all_real_collection_samples": 3,
+    "samples_with_nav": 2,
+    "nav_publication_timestamp_verified_samples": 0,
+    "samples_with_verified_current_interval": 0,
+    "valid_session_quote_samples": 0,
+    "optional_variants": [
+      {
+        "cap": 0.01,
+        "valid_quote_samples": 0,
+        "paused_samples": 0,
+        "pause_share": null,
+        "pause_reasons": {},
+        "warning": "intraday snapshots are correlated; not independent trading-day estimates"
+      }
+    ],
+    "all_sample_diagnostic_reasons": {
+      "market_closed": 3,
+      "stale_quote": 3,
+      "current_valuation_interval_unverified": 3,
+      "issuer_status_not_checked": 3
+    }
+  },
+  {
+    "symbol": "513500",
+    "all_real_collection_samples": 3,
+    "samples_with_nav": 2,
+    "nav_publication_timestamp_verified_samples": 0,
+    "samples_with_verified_current_interval": 0,
+    "valid_session_quote_samples": 0,
+    "optional_variants": [
+      {
+        "cap": 0.01,
+        "valid_quote_samples": 0,
+        "paused_samples": 0,
+        "pause_share": null,
+        "pause_reasons": {},
+        "warning": "intraday snapshots are correlated; not independent trading-day estimates"
+      }
+    ],
+    "all_sample_diagnostic_reasons": {
+      "market_closed": 3,
+      "stale_quote": 3,
+      "current_valuation_interval_unverified": 3,
+      "issuer_status_not_checked": 3
+    }
+  }
+]

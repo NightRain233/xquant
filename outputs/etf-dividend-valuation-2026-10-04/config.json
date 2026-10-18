@@ -1,0 +1,27 @@
+{
+  "assets": [
+    "510300",
+    "513100",
+    "518880"
+  ],
+  "signal": "causal raw ETF total returns, distributions on ex-date; official split ratios",
+  "volatility_sessions": 20,
+  "std_ddof": 1,
+  "signal_calendar": "frozen targets_IV20.signal_date",
+  "execution_calendar": "frozen targets_IV20.index; subsequent domestic open",
+  "cost_bps": 1,
+  "cost_mode": "each gross buy/sell notional",
+  "spread_bps_main": 0,
+  "leverage": false,
+  "trend_exit": false,
+  "premium_filter": false,
+  "fractional_shares": true,
+  "dividend_payment": "official investor pay-date AFTER close; no verified intraday broker posting time",
+  "reinvestment": "next fixed scheduled rebalance; monthly deposits alone spend only new money",
+  "start": "2015-01-05",
+  "end": "2026-09-30",
+  "lump_cny": 50000,
+  "dca_monthly_cny": 10000,
+  "fixed_calendar_unchanged": true,
+  "parameter_search": false
+}

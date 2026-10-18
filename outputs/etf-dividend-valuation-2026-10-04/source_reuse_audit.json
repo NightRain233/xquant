@@ -1,0 +1,36 @@
+{
+  "all_identical": true,
+  "inputs": [
+    {
+      "frozen_copy": "outputs/etf-dividend-valuation-2026-10-04/inputs/raw.json",
+      "original_source": "outputs/domestic-etf-small-account-2026-10-04/evidence/raw_510300.SH.json",
+      "sha256": "ace18b4e70d3029e959b7c72e77c6c6300a90ecd673fa1dcaf3c085c8d1ca8b6",
+      "identical": true
+    },
+    {
+      "frozen_copy": "outputs/etf-dividend-valuation-2026-10-04/inputs/targets_IV20.csv",
+      "original_source": "outputs/three-asset-core-2026-10-03/targets_IV20.csv",
+      "sha256": "643c3f889a57e68c4c4c8caf825548f37b4a4ca51cce933dfdb75fd3b00c849a",
+      "identical": true
+    },
+    {
+      "frozen_copy": "outputs/etf-dividend-valuation-2026-10-04/inputs/510300.parquet",
+      "original_source": "outputs/strategy-healthcheck-2026-10-02/market_data/510300.SS.parquet",
+      "sha256": "70fce639788adeacd615f930a9f1ff24c6915669aa2534fd019773e1f092fbbe",
+      "identical": true
+    },
+    {
+      "frozen_copy": "outputs/etf-dividend-valuation-2026-10-04/inputs/513100.parquet",
+      "original_source": "outputs/strategy-healthcheck-2026-10-02/market_data/513100.SS.parquet",
+      "sha256": "5d500fbac430265a6d49b75f9c355041330352341ddc327fa5f842ca69f77da4",
+      "identical": true
+    },
+    {
+      "frozen_copy": "outputs/etf-dividend-valuation-2026-10-04/inputs/518880.parquet",
+      "original_source": "outputs/strategy-healthcheck-2026-10-02/market_data/518880.SS.parquet",
+      "sha256": "9e4e1dd624e5e029bf221e625a4dc1f02b04766a17eaed0c896a003e46833c99",
+      "identical": true
+    }
+  ],
+  "no_BTC_or_multi_replay": true
+}

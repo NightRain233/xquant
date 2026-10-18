@@ -1,0 +1,6 @@
+{
+  "tests": 14,
+  "passed": 14,
+  "command": "PYTHONPATH=src uv run --no-project --with pandas==3.0.3 --with numpy==2.4.6 --with pytest==9.0.2 python -m pytest tests/test_etf_execution_research.py tests/test_cashflow_research.py -q",
+  "scope": "7 new execution tests plus 7 existing cashflow tests"
+}

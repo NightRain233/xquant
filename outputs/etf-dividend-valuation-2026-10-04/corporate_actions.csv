@@ -1,0 +1,17 @@
+symbol,action_type,announcement_date,record_date,corporate_action_date,effective_quote_date,pay_date,cash_per_share,split_ratio,source_url,source_file
+510300,cash_dividend,2012-12-12,2012-12-17,2012-12-18,2012-12-18,2012-12-24,0.033,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/2012-12-12/510300_20121212_1.pdf,evidence/sse_2012_announcement.pdf
+510300,cash_dividend,2014-01-15,2014-01-20,2014-01-21,2014-01-21,2014-01-27,0.048,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/2014-01-14/510300_20140115_1.pdf,evidence/sse_2014_announcement.pdf
+510300,cash_dividend,2015-01-14,2015-01-19,2015-01-20,2015-01-20,2015-01-23,0.035,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/2015-01-13/510300_20150114_1.pdf,evidence/510300_dividend_2015-01-14.pdf
+510300,cash_dividend,2016-01-14,2016-01-19,2016-01-20,2016-01-20,2016-01-25,0.051,1.0,https://static.cninfo.com.cn/finalpage/2016-01-14/1201911082.PDF,evidence/cninfo_2016_announcement.pdf
+510300,cash_dividend,2017-01-17,2017-01-20,2017-01-23,2017-01-23,2017-01-26,0.055,1.0,https://static.cninfo.com.cn/finalpage/2017-01-17/1203020541.PDF,evidence/cninfo_2017_announcement.pdf
+510300,cash_dividend,2018-01-17,2018-01-22,2018-01-23,2018-01-23,2018-01-26,0.046,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/2018-01-17/510300_20180117_1.pdf,evidence/sse_2018_announcement.pdf
+510300,cash_dividend,2019-01-10,2019-01-15,2019-01-16,2019-01-16,2019-01-21,0.059,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/2019-01-10/510300_20190110_1.pdf,evidence/sse_2019_jan_announcement.pdf
+510300,cash_dividend,2019-12-05,2019-12-10,2019-12-11,2019-12-11,2019-12-16,0.062,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/2019-12-05/510300_20191205_1.pdf,evidence/sse_2019_dec_announcement.pdf
+510300,cash_dividend,2021-01-11,2021-01-15,2021-01-18,2021-01-18,2021-01-21,0.072,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/2021-01-11/510300_20210111_1.pdf,evidence/sse_2021_announcement.pdf
+513100,split,2022-01-04,2022-01-12,2022-01-13,2022-01-14,,0.0,5.0,https://static.cninfo.com.cn/finalpage/2022-01-14/1212179309.PDF,evidence/513100_split_result_2022-01-14.pdf
+510300,cash_dividend,2022-01-12,2022-01-18,2022-01-19,2022-01-19,2022-01-24,0.075,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/new/2022-01-12/510300_20220112_1_pWPNE0aG.pdf,evidence/sse_2022_announcement.pdf
+513500,split,2022-03-18,2022-03-28,2022-03-29,2022-03-30,,0.0,2.0,https://www.sse.com.cn/disclosure/fund/announcement/c/new/2022-03-30/513500_20220330_2_VODYJTry.pdf,evidence/513500_split.pdf
+510300,cash_dividend,2023-01-09,2023-01-13,2023-01-16,2023-01-16,2023-01-19,0.064,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/new/2023-01-09/510300_20230109_0ED5.pdf,evidence/sse_2023_announcement.pdf
+510300,cash_dividend,2024-01-11,2024-01-17,2024-01-18,2024-01-18,2024-01-23,0.069,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/new/2024-01-11/510300_20240111_QQFV.pdf,evidence/sse_2024_announcement.pdf
+510300,cash_dividend,2025-06-11,2025-06-17,2025-06-18,2025-06-18,2025-06-27,0.088,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/new/2025-06-11/510300_20250611_ZAU4.pdf,evidence/sse_2025_announcement.pdf
+510300,cash_dividend,2026-01-12,2026-01-16,2026-01-19,2026-01-19,2026-01-27,0.123,1.0,https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-01-12/510300_20260112_VTCZ.pdf,evidence/sse_2026_announcement.pdf
