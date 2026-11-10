@@ -1,0 +1,2 @@
+rule,constant_cash_rate,actual_annualized,placebo_median_annualized,placebo_p95_annualized,share_placebo_ge_actual,actual_max_drawdown,placebo_median_max_drawdown,share_placebo_dd_ge_actual,n_shifts
+半仓持有+半仓趋势,0.019266708206403204,0.09772004530478506,0.07343531100730138,0.10256913795874978,0.07810847560054389,-0.5537898561160034,-0.7750193629404505,0.041547061489651003,6619

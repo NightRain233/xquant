@@ -1,0 +1,18 @@
+{
+  "asset": "QQQ auto-adjusted (dividends reinvested)",
+  "cash": "13-week T-bill yield (^IRX), previous close",
+  "execution": "weekly-close signal, trade at next close, 10bp per side",
+  "borrow_spread": 0.015,
+  "start_rule": "first trading day of the first month with a full 200-day mean",
+  "end": "2026-10-16",
+  "segments": [
+    "start~2012",
+    "2013~2026-10"
+  ],
+  "L": "weekly close above 200-day mean 1.5x (re-levered at month ends), else cash",
+  "H": "100% above a rising 30-week mean, 50% after a weekly close below it",
+  "scored_against": "both the more-return and the less-drawdown criteria of the S&P 500 test",
+  "same_window_comparison": "SPY over the QQQ window, same rules",
+  "after_bust_view": "2003-01-02 start, to remove the benefit of starting at the 2000 peak",
+  "start": "2000-01-01"
+}
