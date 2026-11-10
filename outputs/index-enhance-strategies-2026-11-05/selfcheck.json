@@ -1,0 +1,8 @@
+{
+  "dividend_hold_annualized": 0.11858921603405781,
+  "dividend_hold_in_prior_note": 0.118574302804969,
+  "spy_hold_same_window_as_prior": 0.0852515088609338,
+  "spy_hold_in_prior_note": 0.0850986156527482,
+  "all_execute_after_signal": true,
+  "max_ledger_residual": 2.220446049250313e-16
+}

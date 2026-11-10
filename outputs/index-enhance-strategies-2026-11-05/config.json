@@ -1,0 +1,57 @@
+{
+  "execution": "weekly-close signal, trade at next close, 10bp per side on traded amount",
+  "dividend_lowvol": {
+    "asset": "H20269 total return",
+    "window": [
+      "2014-08-01",
+      "2026-10-16"
+    ],
+    "cash_annual": 0.02,
+    "segments": {
+      "2014-08~2019": [
+        "2014-08-01",
+        "2019-12-31"
+      ],
+      "2020~2026-10": [
+        "2020-01-01",
+        "2026-10-16"
+      ]
+    }
+  },
+  "sp500": {
+    "asset": "SPY auto-adjusted (dividends reinvested)",
+    "window": [
+      "1999-10-01",
+      "2026-10-16"
+    ],
+    "cash": "13-week T-bill yield (^IRX), previous close",
+    "borrow_spread": 0.015,
+    "segments": {
+      "1999-10~2012": [
+        "1999-10-01",
+        "2012-12-31"
+      ],
+      "2013~2026-10": [
+        "2013-01-01",
+        "2026-10-16"
+      ]
+    },
+    "window_note": "start set by the 200-day warm-up on data from 1998-12"
+  },
+  "R1_more_return": "dividend low-vol: 85% base, 100% within 2% of the 20-week 2-sigma lower band, back to 85% at the middle band, no selling at the upper band",
+  "R2_less_drawdown": "dividend low-vol: weekly weight 12% / 20-day annualized vol, within 20%-100%, ignore changes under 10 points",
+  "S1_more_return": "S&P 500: weekly close above 200-day mean 1.5x (re-levered at month ends), else cash; research only",
+  "S2_less_drawdown": "S&P 500: 100% when above a rising 30-week mean, 50% after a weekly close below it",
+  "not_tested": "S&P 500 default of plain low-cost holding equals the holding benchmark; premium filter has no reliable data",
+  "pass_more_return": [
+    "annualized >= holding in the full window",
+    "annualized >= holding in both segments",
+    "max drawdown no more than 5 points deeper than holding"
+  ],
+  "pass_less_drawdown": [
+    "abs(max drawdown) <= 70% of holding's",
+    "annualized at most 2 points below holding",
+    "return/drawdown above a fixed position at the rule's average weight"
+  ],
+  "sensitivity_only_not_for_param_selection": true
+}
