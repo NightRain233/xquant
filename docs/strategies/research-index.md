@@ -2,6 +2,13 @@
 
 本页汇总各研究线的入口、当前证据边界和历史归档位置。它是导航页，不构成投资建议或实盘批准。近期核心实验从[研究 Notebook 索引](../../research/README.md#当前核心实验)进入。
 
+## 2026 年 11 月研究
+
+- [研究台账](../research-ledger.md)：每个研究的问题、结论、状态和证据边界，是这一页的完整版。
+- [标普 500 增强与定投对比（11-10）](../notes/sp500-enhance-vs-dca-2026-11-10-review.md)、[参数敏感性（11-10）](../notes/sp500-parameter-robustness-2026-11-10-review.md)、[持有体验（11-10）](../notes/sp500-holding-experience-2026-11-10-review.md)。
+- [境内 513500 / 513100 半仓趋势（11-10）](../notes/domestic-us-etf-trend-2026-11-10-review.md)、[溢价（11-10）](../notes/qdii-premium-2026-11-10-review.md)、[入场方式（11-10）](../notes/entry-methods-2026-11-10-review.md)、[TQQQ 牛熊切换（11-10）](../notes/tqqq-regime-switch-2026-11-10-review.md)。
+- [红利低波布林带（11-05）](../notes/dividend-lowvol-bollinger-2026-11-05-review.md)、[标普与红利低波增强（11-05）](../notes/index-enhance-strategies-2026-11-05-review.md)、[QQQ 趋势规则（11-05）](../notes/qqq-trend-strategies-2026-11-05-review.md)。
+
 ## 三资产核心与主题增强
 
 - [纯三资产核心复核（2026-10-03）](../notes/three-asset-core-2026-10-03-review.md)：510300、513100、518880 的20日逆波动基线及收益来源、回撤和不利情景。
