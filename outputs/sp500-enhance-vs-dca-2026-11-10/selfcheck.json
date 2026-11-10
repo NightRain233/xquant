@@ -1,0 +1,318 @@
+{
+  "data_window": {
+    "main_first_date": "1998-12-01",
+    "end": "2026-10-16"
+  },
+  "synthetic_bond_validation": {
+    "ief_first_date": "2002-07-30",
+    "overlap_days": 6093,
+    "overlap_daily_corr": 0.9601441355116113,
+    "overlap_cagr_synthetic": 0.02759507665453853,
+    "overlap_cagr_ief": 0.033870071483085074,
+    "annual_return_diff_mean_abs": 0.008455060513119474,
+    "annual_return_diff_max_abs": 0.04922580223534534,
+    "annual_return_diff_by_year": {
+      "2002": 0.004151,
+      "2003": -0.049226,
+      "2004": 0.002421,
+      "2005": 0.00427,
+      "2006": -0.002147,
+      "2007": -0.004734,
+      "2008": 0.000931,
+      "2009": -0.022531,
+      "2010": -0.020778,
+      "2011": -0.017117,
+      "2012": -0.011647,
+      "2013": -0.009174,
+      "2014": 0.003057,
+      "2015": -0.003165,
+      "2016": -0.006503,
+      "2017": 0.000889,
+      "2018": -0.003452,
+      "2019": 0.00065,
+      "2020": -0.015613,
+      "2021": 0.00266,
+      "2022": 0.010617,
+      "2023": -0.000403,
+      "2024": -0.006349,
+      "2025": -0.006859,
+      "2026": -0.002033
+    }
+  },
+  "long_sample_validation": {
+    "span": "2000-01-03..2024-06-28",
+    "daily_corr": 0.9872548615013246,
+    "daily_mean_abs_diff": 0.0010057211024154863,
+    "annual_diff_mean_abs": 0.0020292319471980538,
+    "annual_diff_max_abs": 0.015241315473528028,
+    "cagr_tr_constructed": 0.07498891873596225,
+    "cagr_spy_adjusted": 0.07468816471819051,
+    "span_years": 24.484599589322382
+  },
+  "shiller": {
+    "first_period": "1871-01",
+    "last_period": "2024-09",
+    "last_dividend_period": "2024-06",
+    "dividend_missing_1934_2024_06": false
+  },
+  "placebo_framework_vs_band_timing": {
+    "S2": {
+      "cagr_abs_diff": 4.440892098500626e-16,
+      "maxdd_abs_diff": 2.220446049250313e-16
+    },
+    "S1": {
+      "cagr_abs_diff": 6.661338147750939e-16,
+      "maxdd_abs_diff": 5.551115123125783e-16
+    },
+    "F10": {
+      "cagr_abs_diff": 0.0,
+      "maxdd_abs_diff": 0.0
+    },
+    "DM-cash": {
+      "cagr_abs_diff": 0.0,
+      "maxdd_abs_diff": 0.0
+    },
+    "GTT": {
+      "cagr_abs_diff": 0.0,
+      "maxdd_abs_diff": 0.0
+    },
+    "VT-1.0": {
+      "cagr_abs_diff": 2.220446049250313e-16,
+      "maxdd_abs_diff": 5.551115123125783e-16
+    },
+    "VT-1.5": {
+      "cagr_abs_diff": 2.220446049250313e-16,
+      "maxdd_abs_diff": 1.9984014443252818e-15
+    },
+    "F10xVT": {
+      "cagr_abs_diff": 2.220446049250313e-16,
+      "maxdd_abs_diff": 1.5543122344752192e-15
+    },
+    "TOM": {
+      "cagr_abs_diff": 0.0,
+      "maxdd_abs_diff": 0.0
+    },
+    "HAL": {
+      "cagr_abs_diff": 0.0,
+      "maxdd_abs_diff": 0.0
+    },
+    "RSI2": {
+      "cagr_abs_diff": 0.0,
+      "maxdd_abs_diff": 0.0
+    }
+  },
+  "dca_full_path": {
+    "B0": {
+      "xirr": 0.11568446181865172,
+      "max_float_loss": -0.3698416651873,
+      "terminal_per_contributed": 6.08073974620897
+    },
+    "S2": {
+      "xirr": 0.10556924078667039,
+      "max_float_loss": -0.2027078128287424,
+      "terminal_per_contributed": 5.1141424704907115
+    },
+    "S1": {
+      "xirr": 0.10887464396235443,
+      "max_float_loss": -0.12806586117653795,
+      "terminal_per_contributed": 5.410643417691975
+    },
+    "F10": {
+      "xirr": 0.08196078197382856,
+      "max_float_loss": -0.051330918433311945,
+      "terminal_per_contributed": 3.443156652693485
+    },
+    "DM-cash": {
+      "xirr": 0.0937494771020872,
+      "max_float_loss": -0.07809620863985622,
+      "terminal_per_contributed": 4.188445768997059
+    },
+    "DM-IEF": {
+      "xirr": 0.09241634596176311,
+      "max_float_loss": -0.07809620863985622,
+      "terminal_per_contributed": 4.095965206761835
+    },
+    "GTT": {
+      "xirr": 0.11191551386036609,
+      "max_float_loss": -0.1219401638933969,
+      "terminal_per_contributed": 5.6996265722153545
+    },
+    "VT-1.0": {
+      "xirr": 0.10235092970560751,
+      "max_float_loss": -0.28813252466244577,
+      "terminal_per_contributed": 4.842087579824674
+    },
+    "VT-1.5": {
+      "xirr": 0.10812155355376595,
+      "max_float_loss": -0.3005997217275682,
+      "terminal_per_contributed": 5.341512500588873
+    },
+    "F10xVT": {
+      "xirr": 0.07549926418681435,
+      "max_float_loss": -0.03957616863271618,
+      "terminal_per_contributed": 3.097250685700222
+    },
+    "TOM": {
+      "xirr": 0.019199510493510492,
+      "max_float_loss": -0.09344087982693505,
+      "terminal_per_contributed": 1.3046451539328026
+    },
+    "HAL": {
+      "xirr": 0.07262607138392296,
+      "max_float_loss": -0.18465613412412374,
+      "terminal_per_contributed": 2.955919222708814
+    },
+    "RSI2": {
+      "xirr": 0.03729577357242985,
+      "max_float_loss": -0.04857352221442435,
+      "terminal_per_contributed": 1.7007925497891925
+    },
+    "SD1": {
+      "xirr": 0.11508951176446432,
+      "max_float_loss": -0.3674376614018271,
+      "terminal_per_contributed": 6.018826107797356
+    }
+  },
+  "dca_windows": {
+    "count": 202,
+    "first": "2000-01-03",
+    "last": "2016-10-03",
+    "contributions_each": [
+      120
+    ]
+  },
+  "b0_cagr": {
+    "executed_span_abs_error": 0.0,
+    "raw_spy_cagr_window": 0.08268046026872478,
+    "b0_cagr_cost0_window": 0.08429982726392726,
+    "b0_cagr_net_10bp_window": 0.08425936572473436,
+    "note": "B0 holds cash on the window-start close and buys at the next close; the cost-free NAV ratio over the executed span equals SPY's raw ratio (abs error above)"
+  },
+  "old_window_reproduction_1999_10_01": {
+    "S2": {
+      "cagr_new": 0.08275681578670246,
+      "cagr_prior": 0.0827568157867024,
+      "maxdd_new": -0.315309857690505,
+      "maxdd_prior": -0.315309857690505,
+      "cagr_abs_diff": 6.938893903907228e-17,
+      "maxdd_abs_diff": 0.0
+    },
+    "S1": {
+      "cagr_new": 0.08234073053152269,
+      "cagr_prior": 0.0823407305315226,
+      "maxdd_new": -0.36081085488928977,
+      "maxdd_prior": -0.3608108548892897,
+      "cagr_abs_diff": 8.326672684688674e-17,
+      "maxdd_abs_diff": 5.551115123125783e-17
+    }
+  },
+  "engine_vs_style_combo_run_backtest_max_nav_diff": {
+    "S2": 0.0,
+    "S1": 1.7763568394002505e-15,
+    "B0": 0.0
+  },
+  "weights": {
+    "S2": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "S1": {
+      "cap": 1.5,
+      "min_target": 0.0,
+      "max_target_gross": 1.5,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.5957178380100818,
+      "end_of_day_min_weight": 0.0
+    },
+    "F10": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "DM-cash": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "DM-IEF": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "GTT": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "VT-1.0": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "VT-1.5": {
+      "cap": 1.5,
+      "min_target": 0.0,
+      "max_target_gross": 1.5,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.5317132965294682,
+      "end_of_day_min_weight": 0.0
+    },
+    "F10xVT": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "TOM": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "HAL": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    },
+    "RSI2": {
+      "cap": 1.0,
+      "min_target": 0.0,
+      "max_target_gross": 1.0,
+      "targets_within_cap": true,
+      "end_of_day_max_gross_drift": 1.0,
+      "end_of_day_min_weight": 0.0
+    }
+  },
+  "nav_finite_positive": true,
+  "max_cash_plus_holdings_residual": 4.440892098500626e-16,
+  "pytest_overlay_rules": {
+    "returncode": 0,
+    "summary": "31 passed in 2.10s"
+  }
+}

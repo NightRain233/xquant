@@ -1,0 +1,466 @@
+{
+  "slug": "sp500-enhance-vs-dca-2026-11-10",
+  "end_date": "2026-10-16",
+  "execution": "signal at the close of day t, order fills at the close of day t+1 (cost 10bp per side on traded notional); monthly rules decide at the last trading day's close and fill at the next close; TOM/HAL use trade closes fixed by the calendar",
+  "cost": {
+    "main_per_side": 0.001,
+    "stress_per_side": 0.003
+  },
+  "cash": "13-week T-bill (^IRX, previous close) accrued per 365 calendar days as in style_combo.run_backtest; long sample: TB3MS of the previous month / 252 per trading day",
+  "borrow_spread": 0.015,
+  "windows": {
+    "main": [
+      "2000-01-03",
+      "2026-10-16"
+    ],
+    "start_2003": "2003-01-02",
+    "segments": {
+      "2000-01-03~2012-12-31": [
+        "2000-01-03",
+        "2012-12-31"
+      ],
+      "2013-01-01~2026-10-16": [
+        "2013-01-01",
+        "2026-10-16"
+      ]
+    },
+    "long_sample": [
+      "1935-01-01",
+      "1999-12-31"
+    ],
+    "long_gtt": [
+      "1949-01-01",
+      "1999-12-31"
+    ],
+    "long_halves": {
+      "1935-1966": [
+        "1935-01-01",
+        "1966-12-31"
+      ],
+      "1967-1999": [
+        "1967-01-01",
+        "1999-12-31"
+      ]
+    },
+    "long_gtt_halves": {
+      "1949-1966": [
+        "1949-01-01",
+        "1966-12-31"
+      ],
+      "1967-1999": [
+        "1967-01-01",
+        "1999-12-31"
+      ]
+    },
+    "long_universe_warmup_start": "1934-01-02",
+    "rolling_starts": "first trading day of each January 2000..2023 to END",
+    "dca_windows": "120 monthly contributions from the first trading day of the month; terminal = last trading day of the 120th month; complete months only",
+    "key_periods": {
+      "2000-03-24~2002-10-09": [
+        "2000-03-24",
+        "2002-10-09"
+      ],
+      "2007-10-09~2009-03-09": [
+        "2007-10-09",
+        "2009-03-09"
+      ],
+      "2020-02-19~2020-03-23": [
+        "2020-02-19",
+        "2020-03-23"
+      ],
+      "2022 full year": [
+        "2022-01-01",
+        "2022-12-31"
+      ],
+      "2023-01-01~2026-10-16": [
+        "2023-01-01",
+        "2026-10-16"
+      ]
+    },
+    "post_publication": {
+      "F10": 2007,
+      "DM-cash": 2014,
+      "DM-IEF": 2014,
+      "GTT": 2016,
+      "VT-1.0": 2017,
+      "VT-1.5": 2017,
+      "F10xVT": 2017,
+      "TOM": 1988,
+      "HAL": 2002,
+      "RSI2": 2008
+    }
+  },
+  "rules": {
+    "B0": "SPY buy-and-hold (dividend-adjusted); fully invested from the fill after the window-start close",
+    "S2": "half-trend: 100% SPY while weekly close > rising 30-week mean, 50% after a weekly close below it (position_rules.rule_stage_blend)",
+    "S1": "trend leverage: 1.5x SPY while weekly close > 200-day mean, re-levered at month ends, else cash (position_rules.rule_trend_leverage)",
+    "F10": "Faber: month-end close > mean of the last 10 month-end closes -> 100% SPY, else cash; fill next close",
+    "DM-cash": "Antonacci absolute momentum: month-end SPY trailing 12-month total return > trailing 12-month compounded T-bill -> 100% SPY, else cash",
+    "DM-IEF": "as DM-cash, but the off state holds the bond (IEF from 2002-07-30; before that a synthetic bond from DGS10)",
+    "GTT": "growth-trend timing (monthly): out only if the month-end close < 10-month SMA AND the latest published UNRATE (month m-1 at month-end m) > its 12-month mean of available values; else 100% SPY",
+    "VT-1.0": "volatility target: weight = min(1.0, 0.15 / realized vol), realized vol = std of the last 21 daily log returns x sqrt(252); fill next close only if |target - actual weight| > 0.10",
+    "VT-1.5": "as VT-1.0 with cap 1.5 (borrowing at T-bill + 1.5%)",
+    "F10xVT": "VT-1.0 target when F10 is on, else 0; same 0.10 no-trade band",
+    "TOM": "turn of month: invested from the close of the 2nd-to-last trading day of a month to the close of the 3rd trading day of the next month (last day's and first 3 days' returns)",
+    "HAL": "Halloween: 100% SPY from the close of the last trading day of October to the close of the last trading day of April; else cash",
+    "RSI2": "Connors RSI(2): enter when close > 200-day SMA and Wilder RSI(2) < 10; exit when close > 5-day SMA; fill next close; cash otherwise",
+    "F_w": "fixed SPY weight equal to the strategy's average weight, rebalanced at month ends, rest in T-bills",
+    "SD1": "smart DCA (DCA lens only): contributions 1 unit each month; DD = SPY drawdown from running max at the previous close; DD > -10%: invest 0.8 and reserve 0.2; -20% < DD <= -10%: invest 1 + 50% of reserve; DD <= -20%: invest 1 + 100% of reserve; invested money in SPY, reserve in T-bills"
+  },
+  "strategies": [
+    {
+      "label": "S2",
+      "rule": "S2",
+      "params": {},
+      "cap": 1.0
+    },
+    {
+      "label": "S1",
+      "rule": "S1",
+      "params": {},
+      "cap": 1.5
+    },
+    {
+      "label": "F10",
+      "rule": "F10",
+      "params": {
+        "months": 10
+      },
+      "cap": 1.0
+    },
+    {
+      "label": "DM-cash",
+      "rule": "DM",
+      "params": {
+        "months": 12
+      },
+      "cap": 1.0
+    },
+    {
+      "label": "DM-IEF",
+      "rule": "DM_IEF",
+      "params": {
+        "months": 12
+      },
+      "cap": 1.0
+    },
+    {
+      "label": "GTT",
+      "rule": "GTT",
+      "params": {
+        "months": 10
+      },
+      "cap": 1.0
+    },
+    {
+      "label": "VT-1.0",
+      "rule": "VT",
+      "params": {
+        "target": 0.15,
+        "window": 21
+      },
+      "cap": 1.0
+    },
+    {
+      "label": "VT-1.5",
+      "rule": "VT15",
+      "params": {
+        "target": 0.15,
+        "window": 21
+      },
+      "cap": 1.5
+    },
+    {
+      "label": "F10xVT",
+      "rule": "F10xVT",
+      "params": {
+        "months": 10,
+        "target": 0.15,
+        "window": 21
+      },
+      "cap": 1.0
+    },
+    {
+      "label": "TOM",
+      "rule": "TOM",
+      "params": {
+        "last_n": 1,
+        "first_n": 3
+      },
+      "cap": 1.0
+    },
+    {
+      "label": "HAL",
+      "rule": "HAL",
+      "params": {},
+      "cap": 1.0
+    },
+    {
+      "label": "RSI2",
+      "rule": "RSI2",
+      "params": {
+        "entry_below": 10.0
+      },
+      "cap": 1.0
+    }
+  ],
+  "sensitivity": [
+    {
+      "variant": "F10 SMA 8 months",
+      "family": "F10",
+      "rule": "F10",
+      "params": {
+        "months": 8
+      }
+    },
+    {
+      "variant": "F10 SMA 12 months",
+      "family": "F10",
+      "rule": "F10",
+      "params": {
+        "months": 12
+      }
+    },
+    {
+      "variant": "DM-cash lookback 6 months",
+      "family": "DM-cash",
+      "rule": "DM",
+      "params": {
+        "months": 6
+      }
+    },
+    {
+      "variant": "DM-cash lookback 9 months",
+      "family": "DM-cash",
+      "rule": "DM",
+      "params": {
+        "months": 9
+      }
+    },
+    {
+      "variant": "DM-IEF lookback 6 months",
+      "family": "DM-IEF",
+      "rule": "DM_IEF",
+      "params": {
+        "months": 6
+      }
+    },
+    {
+      "variant": "DM-IEF lookback 9 months",
+      "family": "DM-IEF",
+      "rule": "DM_IEF",
+      "params": {
+        "months": 9
+      }
+    },
+    {
+      "variant": "VT-1.0 target 0.12",
+      "family": "VT-1.0",
+      "rule": "VT",
+      "params": {
+        "target": 0.12,
+        "window": 21
+      }
+    },
+    {
+      "variant": "VT-1.0 target 0.18",
+      "family": "VT-1.0",
+      "rule": "VT",
+      "params": {
+        "target": 0.18,
+        "window": 21
+      }
+    },
+    {
+      "variant": "VT-1.0 vol window 10 days",
+      "family": "VT-1.0",
+      "rule": "VT",
+      "params": {
+        "target": 0.15,
+        "window": 10
+      }
+    },
+    {
+      "variant": "VT-1.0 vol window 63 days",
+      "family": "VT-1.0",
+      "rule": "VT",
+      "params": {
+        "target": 0.15,
+        "window": 63
+      }
+    },
+    {
+      "variant": "VT-1.5 target 0.12",
+      "family": "VT-1.5",
+      "rule": "VT15",
+      "params": {
+        "target": 0.12,
+        "window": 21
+      }
+    },
+    {
+      "variant": "VT-1.5 target 0.18",
+      "family": "VT-1.5",
+      "rule": "VT15",
+      "params": {
+        "target": 0.18,
+        "window": 21
+      }
+    },
+    {
+      "variant": "VT-1.5 vol window 10 days",
+      "family": "VT-1.5",
+      "rule": "VT15",
+      "params": {
+        "target": 0.15,
+        "window": 10
+      }
+    },
+    {
+      "variant": "VT-1.5 vol window 63 days",
+      "family": "VT-1.5",
+      "rule": "VT15",
+      "params": {
+        "target": 0.15,
+        "window": 63
+      }
+    },
+    {
+      "variant": "TOM last 1 + first 2 days",
+      "family": "TOM",
+      "rule": "TOM",
+      "params": {
+        "last_n": 1,
+        "first_n": 2
+      }
+    },
+    {
+      "variant": "TOM last 2 + first 4 days",
+      "family": "TOM",
+      "rule": "TOM",
+      "params": {
+        "last_n": 2,
+        "first_n": 4
+      }
+    },
+    {
+      "variant": "RSI2 entry below 5",
+      "family": "RSI2",
+      "rule": "RSI2",
+      "params": {
+        "entry_below": 5.0
+      }
+    },
+    {
+      "variant": "RSI2 entry below 20",
+      "family": "RSI2",
+      "rule": "RSI2",
+      "params": {
+        "entry_below": 20.0
+      }
+    },
+    {
+      "variant": "GTT SMA 12 months",
+      "family": "GTT",
+      "rule": "GTT",
+      "params": {
+        "months": 12
+      }
+    }
+  ],
+  "sd1_variants": {
+    "SD1 base (-10% / -20%)": [
+      -0.1,
+      -0.2
+    ],
+    "SD1 thresholds (-5% / -15%)": [
+      -0.05,
+      -0.15
+    ],
+    "SD1 thresholds (-15% / -30%)": [
+      -0.15,
+      -0.3
+    ]
+  },
+  "dca_lens": {
+    "contribution": "1 unit on the first trading day of every month, 2000-01 to 2026-10",
+    "account": "V_t = sum(units bought up to t) x NAV_t; units bought = (1 - 10bp) / NAV at the contribution close",
+    "xirr": "cashflow_research.xirr",
+    "unit_drawdown": "TWR (NAV) drawdown inside the window",
+    "ratio": "XIRR / |unit MaxDD|",
+    "plain_dca": "B0 under this lens"
+  },
+  "metrics": {
+    "cagr": "style_combo.annualized (calendar years / 365.25)",
+    "vol": "std of daily returns x sqrt(252)",
+    "sharpe": "mean(daily return - daily T-bill) / std(daily return - daily T-bill) x sqrt(252)",
+    "max_dd": "min over time of NAV / running max - 1",
+    "calmar": "CAGR / |MaxDD|",
+    "avg_weight": "mean end-of-day SPY weight over the window",
+    "trades_per_year": "executions that change the position, excluding the first purchase",
+    "share_days_dd_below_20": "share of days with NAV drawdown < -20%",
+    "worst_year": "minimum calendar-year return"
+  },
+  "verdict": {
+    "sharpe_beats_hold": "Sharpe > B0 in the main window AND in both segments AND in the long sample (1935-1999; GTT 1949-1999)",
+    "calmar_beats_hold": "same four conditions using Calmar",
+    "cost_flag": "still true at 30bp per side in the main window (Sharpe and Calmar)",
+    "dca_flag": "share of 10-year DCA windows with ratio > plain DCA ratio >= 60%",
+    "dm_ief_long": "DM-IEF is not run on the long sample by spec; its long-sample condition is reported as n/a"
+  },
+  "interpretations": [
+    "TOM/HAL: holding periods are the calendar windows as stated (trade closes fixed by the calendar); the rule decides one close earlier so the engine's next-close fill lands on the stated close. The calendar is passed explicitly and known in advance.",
+    "GTT holds 100% SPY before its first month-end decision (out requires both conditions to be known).",
+    "Sharpe denominator is the std of daily excess returns; CAGR uses calendar years (style_combo convention).",
+    "DCA cost of 10bp is applied to the whole contribution (the strategy NAV already contains its internal cash).",
+    "SD1 running max starts at the SPY cache start (1998-12-01).",
+    "VT: the 10bp band uses the actual SPY weight; the F10xVT exit can leave a residual <= 0.10 exposure when the band blocks it (rule kept literal).",
+    "RSI(2) uses Wilder smoothing via ewm(alpha=1/2), seeded at the first daily change.",
+    "Long sample: Jan 1934 uses its own TB3MS value (first observation); the Shiller dividend ends 2024-06, so the validation window ends there.",
+    "Post-publication: F10xVT uses 2017 (the later of its two components); TOM 1988 uses the composite series (constructed total return to 1999-12-31, SPY afterwards).",
+    "Long sample: the Shiller monthly dividend yield is applied per trading day (spec); UNRATE is the revised FRED series (limitation).",
+    "Timing placebo: the actual Sharpe in placebo.csv is computed in the same constant-cash framework as the shifted paths; CAGR and MaxDD are checked against band_timing.timing_placebo."
+  ],
+  "data_files": {
+    "yf_IEF": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/yf_IEF/yf_IEF.csv",
+      "rows": 6094,
+      "sha256": "35200c8c3fbfa70d840ab6d314147fccc7b43fb0bab669b83257442847cf1562"
+    },
+    "yf_GSPC": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/yf_GSPC/yf_GSPC.csv",
+      "rows": 24816,
+      "sha256": "23f7eeba6eb79b9d1ef248f5e03b40cbf8d1178fbf4c3156456e48cd728a006a"
+    },
+    "fred_UNRATE": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/fred_UNRATE/fred_UNRATE.csv",
+      "rows": 946,
+      "sha256": "fb669461abc34e00324b940be6bad1c7f89117652f28587196a7b8bf4a9f56a1"
+    },
+    "fred_TB3MS": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/fred_TB3MS/fred_TB3MS.csv",
+      "rows": 1114,
+      "sha256": "33fae406051a658c316580f8e8b5e461157e6663bc03b35648cc7cd3e89ee26b"
+    },
+    "fred_DGS10": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/fred_DGS10/fred_DGS10.csv",
+      "rows": 16919,
+      "sha256": "a0a23fefb3d359e9c0f7bb29745243b284d47dc9915290a3ac6d9d474562da04"
+    },
+    "shiller_ie_data": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/shiller_ie_data/ie_data.xls",
+      "rows": 1846,
+      "sha256": "59532175bd1b95cee294de96fe05856cfb109663e235b5c2e5a496b258ba00c3"
+    },
+    "yf_SPY.csv": {
+      "path": "outputs/weinstein-us-sector-2026-10-18/cache/yf_SPY.csv",
+      "rows": 7012,
+      "sha256": "bf20c204b6a7459c25e053d226d64efaa8329ff80cc46cb92340e4feb7cfaae2"
+    },
+    "yf_IRX.csv": {
+      "path": "outputs/weinstein-us-sector-2026-10-18/cache/yf_IRX.csv",
+      "rows": 7004,
+      "sha256": "eb8f81e61f2ae005ac6f1a157c701650dca718b68c3634da4e17950212bc643e"
+    }
+  }
+}

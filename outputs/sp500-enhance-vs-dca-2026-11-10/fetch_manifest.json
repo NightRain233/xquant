@@ -1,0 +1,48 @@
+{
+  "fetched_at": "2026-11-10T15:37:32.754045+08:00",
+  "end_inclusive": "2026-10-16",
+  "sources": {
+    "yf_IEF": "yfinance Ticker.history(auto_adjust=True, actions=False)",
+    "yf_GSPC": "yfinance Ticker.history(auto_adjust=False, actions=False), price only",
+    "fred": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=<series>",
+    "shiller": "https://img1.wsimg.com/blobby/go/e5e77e0b-59d1-44d9-ab25-4763ac982e53/downloads/ie_data.xls"
+  },
+  "files": {
+    "yf_IEF": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/yf_IEF/yf_IEF.csv",
+      "rows": 6094,
+      "sha256": "35200c8c3fbfa70d840ab6d314147fccc7b43fb0bab669b83257442847cf1562",
+      "bytes": 643051
+    },
+    "yf_GSPC": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/yf_GSPC/yf_GSPC.csv",
+      "rows": 24816,
+      "sha256": "23f7eeba6eb79b9d1ef248f5e03b40cbf8d1178fbf4c3156456e48cd728a006a",
+      "bytes": 3032541
+    },
+    "fred_UNRATE": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/fred_UNRATE/fred_UNRATE.csv",
+      "rows": 946,
+      "sha256": "fb669461abc34e00324b940be6bad1c7f89117652f28587196a7b8bf4a9f56a1",
+      "bytes": 14226
+    },
+    "fred_TB3MS": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/fred_TB3MS/fred_TB3MS.csv",
+      "rows": 1114,
+      "sha256": "33fae406051a658c316580f8e8b5e461157e6663bc03b35648cc7cd3e89ee26b",
+      "bytes": 17881
+    },
+    "fred_DGS10": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/fred_DGS10/fred_DGS10.csv",
+      "rows": 16919,
+      "sha256": "a0a23fefb3d359e9c0f7bb29745243b284d47dc9915290a3ac6d9d474562da04",
+      "bytes": 269331
+    },
+    "shiller_ie_data": {
+      "path": "outputs/sp500-enhance-vs-dca-2026-11-10/cache/shiller_ie_data/ie_data.xls",
+      "rows": 1846,
+      "sha256": "59532175bd1b95cee294de96fe05856cfb109663e235b5c2e5a496b258ba00c3",
+      "bytes": 1623552
+    }
+  }
+}
