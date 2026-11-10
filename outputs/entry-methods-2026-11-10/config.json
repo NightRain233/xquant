@@ -1,0 +1,27 @@
+{
+  "markets": [
+    "SPY",
+    "QQQ"
+  ],
+  "rules": {
+    "hold": "buy and hold",
+    "half": "100% above a rising 30-week mean, 50% after a weekly close below it"
+  },
+  "methods": {
+    "lump": "all capital on the entry month's first trading day",
+    "staged12": "capital split into 12 equal monthly tranches; waiting money earns the T-bill rate",
+    "monthly": "one equal contribution on the first trading day of every month of the horizon"
+  },
+  "entries": "first trading day of every month from 2000-01",
+  "horizons_years": [
+    3,
+    5,
+    10
+  ],
+  "execution": "weekly-close signal, trade at next close, 10bp per side; cash earns 13-week T-bill (^IRX)",
+  "metrics": {
+    "lump/staged12": "annualized return on the full capital, max drawdown of account value, share losing money",
+    "monthly": "money-weighted annual return (XIRR), final value / contributions, worst floating loss vs money put in"
+  },
+  "note": "staged and monthly results are sums of per-tranche sub-accounts that each follow the rule"
+}
