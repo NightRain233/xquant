@@ -1,0 +1,26 @@
+{
+  "window": [
+    "2014-10-08",
+    "2026-09-30"
+  ],
+  "cost_one_way": 0.001,
+  "cash_annual": 0.02,
+  "rule": "100% above a rising 30-week mean, 50% after a weekly close below it",
+  "signal_main": "US ETF (SPY/QQQ) weekly close; traded at the close of the first mainland trading day after that US date",
+  "signal_alt": "the mainland ETF's own weekly close; traded at the next mainland close",
+  "prices": "unadjusted closes with official unit splits; forward-adjusted series only as a check",
+  "pass_less_drawdown": [
+    "abs(max drawdown) <= 70% of holding's",
+    "annualized at most 2 points below holding",
+    "return/drawdown above a fixed position at the rule's average weight"
+  ],
+  "also_reported": [
+    "US ETF in USD with the same rule over the same window",
+    "monthly entries held 3 and 5 years"
+  ],
+  "sensitivity_only": [
+    "cash 0%/3%",
+    "cost 30bp",
+    "signal lag one extra mainland day"
+  ]
+}
