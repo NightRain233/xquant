@@ -1,0 +1,62 @@
+{
+  "selfcheck": {
+    "S2": {
+      "main_sharpe": 0.532027872693142,
+      "expected_sharpe": 0.532,
+      "main_calmar": 0.2622733437134614,
+      "expected_calmar": 0.262,
+      "ok": true
+    },
+    "VT-1.0": {
+      "main_sharpe": 0.47796908948832617,
+      "expected_sharpe": 0.478,
+      "main_calmar": 0.17562630511206723,
+      "expected_calmar": 0.176,
+      "ok": true
+    },
+    "b0_main_sharpe": 0.41923411820845574
+  },
+  "b0": {
+    "main_cagr": 0.08425936572473436,
+    "main_sharpe": 0.41923411820845574,
+    "main_calmar": 0.15267297294916918,
+    "main_max_dd": -0.5518944453435619,
+    "2000-2012_cagr": 0.01981354764370269,
+    "2000-2012_sharpe": 0.10385376623678194,
+    "2000-2012_calmar": 0.03590097311337947,
+    "2000-2012_max_dd": -0.5518944453435619,
+    "2013-2026_cagr": 0.148703971768396,
+    "2013-2026_sharpe": 0.8091776600877214,
+    "2013-2026_calmar": 0.441031887154763,
+    "2013-2026_max_dd": -0.3371728351156934,
+    "trades_per_year": 0.0
+  },
+  "s2": {
+    "cells": 22,
+    "main_pass_share": 1.0,
+    "segment_pass_share": {
+      "main": 1.0,
+      "2000-2012": 0.8181818181818182,
+      "2013-2026": 0.8636363636363636
+    },
+    "neighborhood": {
+      "neighbors_checked": 4,
+      "neighbors_passing": 4,
+      "default_passes": true
+    }
+  },
+  "vt": {
+    "cells": 22,
+    "main_pass_share": 1.0,
+    "segment_pass_share": {
+      "main": 1.0,
+      "2000-2012": 0.7272727272727273,
+      "2013-2026": 0.5454545454545454
+    },
+    "neighborhood": {
+      "neighbors_checked": 4,
+      "neighbors_passing": 4,
+      "default_passes": true
+    }
+  }
+}
