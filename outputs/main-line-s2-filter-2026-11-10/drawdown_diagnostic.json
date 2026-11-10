@@ -1,0 +1,7 @@
+{
+  "base_max_drawdown": -0.13416812329593253,
+  "peak": "2020-02-13",
+  "trough": "2020-03-23",
+  "primary_first_cut_after_peak": "2020-03-16",
+  "primary_multiplier_at_trough": 0.5
+}

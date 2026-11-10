@@ -1,0 +1,178 @@
+{
+  "slug": "main-line-s2-filter-2026-11-10",
+  "question": "Does a 30-week trend filter (S2) on one sleeve of the main line improve the frozen main line?",
+  "pool": "510300 / 513100 / 518880 inverse-vol core (20d) + 7.5% BTC SuperTrend satellite, frozen",
+  "base_nav": "outputs/btc-satellite-corrected-prices-2026-10-18/nav_BTC_7.5.csv",
+  "base_sha256": "6274410436d208150d73e9cd96de84e39c00b1b803dacf942d57b40fdc09e9ba",
+  "window": [
+    "2016-06-07",
+    "2026-09-30"
+  ],
+  "halves": {
+    "2016-2021": [
+      "2016-06-07",
+      "2021-06-30"
+    ],
+    "2021-2026": [
+      "2021-07-01",
+      "2026-09-30"
+    ]
+  },
+  "timing": "S2: weekly close above a rising 30-week mean -> multiplier 1; weekly close below -> off weight; executed next close",
+  "signal_sources": {
+    "QQQ": "QQQ close (yfinance cache), US Nasdaq-100 index behind 513100",
+    "OWN": "the sleeve's own close (corrected forward prices in market_data)"
+  },
+  "cost_per_side": {
+    "main": 0.003,
+    "stress": 0.006
+  },
+  "cash_return": "0 (cash weight earns nothing in this overlay; the base NAV's own cash treatment is unchanged)",
+  "execution_note": "overlay adds returns from weight changes plus switching cost on the trade day; base costs unchanged",
+  "variants": [
+    {
+      "name": "V0_base",
+      "sleeve": null,
+      "signal": null,
+      "off": null,
+      "ma_weeks": null,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "frozen main line"
+    },
+    {
+      "name": "P_qqq_513100_off50",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.5,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "primary"
+    },
+    {
+      "name": "W_realloc_513100_off50",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.5,
+      "ma_weeks": 30,
+      "reallocate": true,
+      "cost": 0.003,
+      "role": "weighting sensitivity"
+    },
+    {
+      "name": "S_own_513100_off50",
+      "sleeve": "513100.SS",
+      "signal": "OWN",
+      "off": 0.5,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "signal sensitivity (513100 own price)"
+    },
+    {
+      "name": "G_qqq_513100_off00",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.0,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "grid: off 0%"
+    },
+    {
+      "name": "G_qqq_513100_off25",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.25,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "grid: off 25%"
+    },
+    {
+      "name": "G_qqq_513100_off75",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.75,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "grid: off 75%"
+    },
+    {
+      "name": "G_qqq_513100_ma20",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.5,
+      "ma_weeks": 20,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "grid: 20-week MA"
+    },
+    {
+      "name": "G_qqq_513100_ma40",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.5,
+      "ma_weeks": 40,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "grid: 40-week MA"
+    },
+    {
+      "name": "C_primary_cost60",
+      "sleeve": "513100.SS",
+      "signal": "QQQ",
+      "off": 0.5,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.006,
+      "role": "cost stress 60 bp"
+    },
+    {
+      "name": "NEG_own_510300_off50",
+      "sleeve": "510300.SS",
+      "signal": "OWN",
+      "off": 0.5,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "negative control: A-share sleeve (frozen: timing did not beat holding)"
+    },
+    {
+      "name": "EXP_own_518880_off50",
+      "sleeve": "518880.SS",
+      "signal": "OWN",
+      "off": 0.5,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "exploratory: gold sleeve (trend rules not yet tested)"
+    },
+    {
+      "name": "X_all_sleeves_off50",
+      "sleeve": "ALL",
+      "signal": "MIXED",
+      "off": 0.5,
+      "ma_weeks": 30,
+      "reallocate": false,
+      "cost": 0.003,
+      "role": "post-hoc extension: all three sleeves filtered (513100 by QQQ, others by own price); not in PASS"
+    }
+  ],
+  "criteria": {
+    "C1": "full-window Sharpe >= base",
+    "C2": "full-window Calmar >= base",
+    "C3": "full-window CAGR >= base - 1.0 percentage point",
+    "C4": "full-window max drawdown at least 2 points shallower than base",
+    "C5": "Sharpe >= base in both halves (2016-2021, 2021-2026)",
+    "PASS": "C1 and C2 and C3 and C4 and C5",
+    "STRESS": "C1 and C2 still hold at 60 bp (primary variant only)"
+  },
+  "post_hoc_variants": [
+    "X_all_sleeves_off50"
+  ],
+  "post_hoc_note": "X_all_sleeves_off50 was added after the primary result. It is a diagnostic of the drawdown source, not a new candidate.",
+  "selection": "none: the grid and the negative control are reported, the primary variant is fixed here"
+}

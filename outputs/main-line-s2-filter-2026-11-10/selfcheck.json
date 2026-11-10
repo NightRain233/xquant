@@ -1,0 +1,21 @@
+{
+  "base_replay_check": {
+    "mean_abs_daily_gap": 0.0015827452287898685,
+    "max_abs_daily_gap": 0.03368410179028561,
+    "cumulative_nav_ratio_file_over_replay_no_cost": 0.9286647583754547,
+    "note": "gap = file return minus replay with end-of-day weights; differences are mostly the base costs"
+  },
+  "base_window": [
+    "2016-06-07",
+    "2026-09-30"
+  ],
+  "base_metrics_from_file": {
+    "cagr": 0.17517930210995925,
+    "vol": 0.114044879790453,
+    "sharpe": 1.5261069945648806,
+    "max_dd": -0.13416812329593253,
+    "calmar": 1.305670063846455
+  },
+  "primary_stress_60bp_holds": false,
+  "primary_pass": false
+}
