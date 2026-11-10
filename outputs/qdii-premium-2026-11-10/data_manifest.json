@@ -1,0 +1,39 @@
+{
+  "fetched_at": "2026-11-10T15:18:20.159948+08:00",
+  "akshare_version": "1.18.64",
+  "source": "Eastmoney via akshare.fund_open_fund_info_em(indicator='单位净值走势')",
+  "files": {
+    "nav_513500.csv": {
+      "fund": "513500",
+      "rows": 3044,
+      "first": "2013-12-05",
+      "last": "2026-11-06",
+      "sha256": "80e48320023b202b5fadd680959ea2785e749296befbea23799add0c6bfff8bb"
+    },
+    "price_recent_513500.csv": {
+      "fund": "513500",
+      "rows": 66,
+      "first": "2026-08-03",
+      "last": "2026-11-10",
+      "adjust": "none",
+      "source": "akshare.fund_etf_hist_em",
+      "sha256": "f4ba1e09e1f2a4551764eb6df4fe8efb11330dc43d2cf064ba8e1ae214c0f70e"
+    },
+    "nav_513100.csv": {
+      "fund": "513100",
+      "rows": 3248,
+      "first": "2013-04-25",
+      "last": "2026-11-06",
+      "sha256": "02a33e97e0954c5d7257a9dd2aa20abbcbe58411f86ff03a0a7c0676b691aeb9"
+    },
+    "price_recent_513100.csv": {
+      "fund": "513100",
+      "rows": 66,
+      "first": "2026-08-03",
+      "last": "2026-11-10",
+      "adjust": "none",
+      "source": "akshare.fund_etf_hist_em",
+      "sha256": "85cc490bef8ff6dd865c5de219a688b32e9203928e965b3e04b54c500447c698"
+    }
+  }
+}

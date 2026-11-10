@@ -1,0 +1,40 @@
+{
+  "window": [
+    "2014-10-08",
+    "2026-09-30"
+  ],
+  "decision_premium": "close_T / estimated NAV_T - 1; estimated NAV_T = latest NAV dated at least two mainland trading days before T, moved by the US ETF (SPY/QQQ) from that NAV date to the last US close before date T; ignores RMB moves and fees",
+  "after_the_fact_premium": "close_T / NAV of the previous NAV date - 1 (description only)",
+  "forward_check": {
+    "buckets": [
+      -1.0,
+      0.0,
+      0.03,
+      0.06,
+      0.1,
+      1.0
+    ],
+    "horizons_days": [
+      20,
+      60,
+      120
+    ],
+    "measure": "ETF return minus NAV return over the horizon (the premium change paid back)"
+  },
+  "gate": {
+    "contribution": "1 unit on the first mainland trading day of each month",
+    "threshold": 0.03,
+    "waiting": "pending money earns 2% and is fully invested on the first day the decision premium <= threshold",
+    "cap_variant": "pending money is invested anyway after 60 trading days",
+    "cost_one_way": 0.001
+  },
+  "gate_sensitivity_only": [
+    0.02,
+    0.05,
+    0.08
+  ],
+  "horizons_years": [
+    3,
+    5
+  ]
+}
