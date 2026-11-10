@@ -1,0 +1,27 @@
+{
+  "data": "yfinance auto-adjusted closes (dividends reinvested); SPY signal also uses the adjusted close",
+  "tqqq": "real TQQQ from 2010-02-11; before that 3x QQQ daily minus 0.95% fee and 2x(T-bill+0.5%)",
+  "cash": "13-week T-bill (^IRX), previous close",
+  "execution": "signal at close, trade next close, 10bp per side",
+  "end": "2026-10-16",
+  "windows": {
+    "2003": "2003-01-02",
+    "2011": "2011-01-03",
+    "2000": "2000-01-03"
+  },
+  "forum": {
+    "bull": "SPY >= 200d mean +4% -> 100% TQQQ",
+    "bear": "SPY <= 200d mean -3% -> sell to cash",
+    "between": "keep the previous state",
+    "bear_dca": "cash into QQQ in 6 monthly tranches (21 trading days)",
+    "protection": "QQQ >= own 200d mean +30% -> 50% TQQQ / 50% QQQ; >= +40% -> cash (assumption: back to full TQQQ once below +30%)",
+    "start": "regime from history before the window"
+  },
+  "simple": "QQQ close above its 200d mean -> 100% TQQQ, else cash (checked daily)",
+  "assumptions_not_in_post": [
+    "what 'reduce leverage' means (50/50 TQQQ/QQQ)",
+    "6 monthly tranches",
+    "re-entry after the protection exit",
+    "adjusted vs. raw SPY for the signal"
+  ]
+}
