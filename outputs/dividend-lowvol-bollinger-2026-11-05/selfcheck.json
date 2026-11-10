@@ -1,0 +1,14 @@
+{
+  "buy_hold_annualized": 0.11857430280496906,
+  "buy_hold_annualized_in_2026_10_18_note": 0.118574302804969,
+  "all_execute_after_signal": true,
+  "max_ledger_residual": 0.0,
+  "min_cash": 0.0,
+  "zone_counts_weeks": {
+    "between": 402,
+    "upper": 176,
+    "lower": 48
+  },
+  "yield_rank_first_valid": "2017-02-28",
+  "still_held_since_V1a": null
+}

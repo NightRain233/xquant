@@ -1,0 +1,41 @@
+{
+  "start_after": "2014-08-01",
+  "end": "2026-10-16",
+  "cost_one_way": 0.001,
+  "cash_annual": 0.02,
+  "execution": "signal at close t, trade at close t+1, cost on traded amount, cash earns cash_annual",
+  "assets": {
+    "traded_and_signal": "H20269 total return",
+    "yield_only": "H30269 price"
+  },
+  "bands": {
+    "window_weeks": 20,
+    "k": 2.0,
+    "std": "population",
+    "check": "weekly close",
+    "near": 0.02,
+    "near_definition": "close <= lower*(1+near) or close >= upper*(1-near); both at once = no action"
+  },
+  "V1": "100% near lower, 0% near upper, otherwise keep; reported from both start states (flat, held)",
+  "V2": "70% base, 100% near lower, 50% near upper, back to 70% on crossing middle band",
+  "V3": {
+    "yield": "trailing 252-day TR growth / price growth - 1",
+    "percentile": "expanding, min 756 days",
+    "weights": "pct>=70: 100%, pct<=30: 50%, else or no history: 70%",
+    "check": "weekly close"
+  },
+  "comparators": [
+    "buy and hold",
+    "fixed exposure at each rule's average position, quarterly rebalance"
+  ],
+  "added_after_seeing_results": "timing placebo: every circular shift of each rule's position path, full window, 2014-08~2019 and 2020+",
+  "sensitivity_only_not_for_param_selection": [
+    "window 10/20/30 x k 1.5/2/2.5 x near 0/1/2/3%",
+    "signal on price index",
+    "daily monitoring",
+    "cash 0%/3%",
+    "cost 5bp/30bp",
+    "V2 80/100/60 and 50/100/25",
+    "V3 thresholds 20/80, rolling 5y percentile"
+  ]
+}

@@ -117,17 +117,27 @@ class BacktestResult:
     checks: dict = field(default_factory=dict)
 
 
-def run_backtest(prices: pd.DataFrame, signal: Signal, start_i: int, cost: float = 0.001) -> BacktestResult:
-    """Start in cash at close of ``start_i``; signals are computed at close and executed at the next close."""
+def run_backtest(prices: pd.DataFrame, signal: Signal, start_i: int, cost: float = 0.001,
+                 cash_annual: "float | pd.Series" = 0.0, borrow_spread: float = 0.0) -> BacktestResult:
+    """Start in cash at close of ``start_i``; signals are computed at close and executed at the next close.
+
+    Uninvested cash accrues ``cash_annual`` per 365 calendar days (a Series is read at the previous
+    close); negative cash from weights above 1 pays that rate plus ``borrow_spread``.
+    """
     cols = ["a", "b"]
     dates = prices.index
     px = prices[cols].to_numpy(float)
+    rates = (cash_annual.reindex(dates).ffill().to_numpy(float) if isinstance(cash_annual, pd.Series)
+             else np.full(len(dates), float(cash_annual)))
     shares = np.zeros(2)
     cash = 1.0
     pending, pending_i = None, None
     nav, wts, trades, orders = [], [], [], []
     max_resid = 0.0
     for i in range(start_i, len(dates)):
+        if i > start_i:
+            rate = rates[i - 1] + (borrow_spread if cash < 0 else 0.0)
+            cash *= (1.0 + rate) ** ((dates[i] - dates[i - 1]).days / 365.0)
         if pending is not None:
             assert pending_i < i, "execution must be after signal"
             hold = shares * px[i]
