@@ -95,7 +95,7 @@ def test_group_fees_cash_conserve_and_insufficient_buy_scales():
 
 
 def test_actual_multi_scheduler_does_not_use_later_open_for_earlier_order():
-    path=ROOT.parent/'trading/scripts/research_multi_asset_balanced_portfolio.py'
+    path=ROOT/'scripts/trading_research/research_multi_asset_balanced_portfolio.py'
     spec=importlib.util.spec_from_file_location('clock_multi_probe',path)
     module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
     days=pd.bdate_range('2026-07-30','2026-09-03')

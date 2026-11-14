@@ -80,3 +80,22 @@ Q12 的结论记录了当时阶段的候选，不应读作当前默认推荐。�
 当前 Core90 2.1.0 合同基准、三资产变种的统一账本比较，以及封存行情和审计产物。
 回测编排在本仓库，成交和 NAV 通过同级 `trading/backend/portfolio_strategies` 的执行内核完成；
 具体边界、运行命令和限制见该目录的 [包说明](trading-ledger-2026-09-05/README.md)。
+
+## 从 trading 迁入的历史研究脚本
+
+原 `trading/scripts/research_*.py`、SuperTrend 比较脚本及其单测已迁入
+[`scripts/trading_research/`](../scripts/trading_research/)。这些脚本只属于历史研究和复现，
+不会被 trading 运行时导入。它们默认读取同级 `trading/backend/data` 和策略内核；如仓库不在默认同级目录，
+可设置 `TRADING_ROOT`。输出统一写入 `outputs/trading-research/`。
+
+```sh
+TRADING_ROOT=../trading uv run pytest tests/trading_research -q
+TRADING_ROOT=../trading uv run python scripts/run_trading_research.py compare_supertrend_timeframes --symbols 510300.SS --json
+TRADING_ROOT=../trading uv run python scripts/run_trading_research.py compare_supertrend_contracts
+```
+
+也可以先查看可用的历史研究任务：
+
+```sh
+uv run python scripts/run_trading_research.py --list
+```
