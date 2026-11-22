@@ -17,6 +17,8 @@ GUARDED_DOCS = [
     REPO_ROOT / "docs" / "strategies" / "two-three-asset.md",
     REPO_ROOT / "docs" / "strategies" / "sp500-enhance.md",
     REPO_ROOT / "docs" / "strategies" / "holding-experience.md",
+    REPO_ROOT / "docs" / "strategies" / "holding-lump.md",
+    REPO_ROOT / "docs" / "strategies" / "holding-dca.md",
     REPO_ROOT / "docs" / "strategies" / "research-index.md",
     REPO_ROOT / "research" / "README.md",
 ]

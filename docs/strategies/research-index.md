@@ -1,17 +1,17 @@
 # 策略研究索引
 
-本页汇总各研究线的入口、当前证据边界和历史归档位置。它是导航页，不构成投资建议或实盘批准。普通读者优先看[两组合与三组合](two-three-asset.md)和[标普 500 增强实战指南](sp500-enhance.md)；完整清单见[研究台账](../research-ledger.md)。
+本页汇总各研究线的入口、当前证据边界和历史归档位置。它是面向研究者的导航页，不构成投资建议或实盘批准。普通读者请先从[首页总览](../../README.md)出发，直接看大白话专题：[逆波动三组合指南（方案 A）](two-three-asset.md)、[标普 500 增强指南（方案 B 与方案 C）](sp500-enhance.md)、[真实持有体验](holding-experience.md)与[大白话术语表](../glossary.md)；完整清单见[研究台账](../research-ledger.md)。
 
 ## 标普 500 量化增强与实盘摩擦（2026 年 11 月）
 
-- **通俗总指南**：[标普 500 增强实战指南](sp500-enhance.md)（按账户给结论，涵盖黄金熊市压力测试与币圈避坑）。
+- **通俗总指南**：[标普 500 增强指南（方案 B 与方案 C）](sp500-enhance.md)（按账户给结论，含最新信号快照、黄金熊市压力测试与币圈避坑）。
 - **四方向联合研究与统一收口（11-22）**：[四方向总复盘](../notes/sp500-four-directions-2026-11-22-review.md)（跨资产股金双核与美股单因子、S2 趋势换黄金/金债盾、VIX 恐慌结构与信用利差、国内 513500 黄金护盾与溢价停泊 + 币圈美股摩擦压测）。
 - **MTF-3 / TVT-50 与境内 513500/513100 复测（11-14 ~ 11-15）**：[新候选 MTF-3/TVT-50](../notes/sp500-new-enhance-2026-11-14-review.md)、[513500 外盘信号复测](../notes/sp500-513500-mtf-tvt-real-2026-11-14-review.md)、[513500 自身信号对照](../notes/sp500-513500-direct-signal-2026-11-15-review.md)、[统一体检](../notes/mtf-tvt-healthcheck-2026-11-15-review.md)、[与既有策略分层对比](../notes/mtf-tvt-existing-comparison-2026-11-15-review.md)、[QQQ 新规则](../notes/qqq-new-enhance-2026-11-14-review.md)、[SPY+QQQ 组合](../notes/spy-qqq-combo-2026-11-15-review.md)。
 - **首轮标普择时、溢价与入场方式（11-05 ~ 11-10）**：[标普增强与定投对比](../notes/sp500-enhance-vs-dca-2026-11-10-review.md)、[参数敏感性](../notes/sp500-parameter-robustness-2026-11-10-review.md)、[持有体验](../notes/sp500-holding-experience-2026-11-10-review.md)、[境内 513500/513100 半仓趋势](../notes/domestic-us-etf-trend-2026-11-10-review.md)、[境内 ETF 溢价](../notes/qdii-premium-2026-11-10-review.md)、[入场方式](../notes/entry-methods-2026-11-10-review.md)、[同区间策略对比](../notes/strategy-comparison-2026-11-10-review.md)、[标普与红利低波增强](../notes/index-enhance-strategies-2026-11-05-review.md)、[红利低波布林带](../notes/dividend-lowvol-bollinger-2026-11-05-review.md)、[QQQ 趋势规则](../notes/qqq-trend-strategies-2026-11-05-review.md)。
 
-## 三资产核心主线与主线过滤验证
+## 逆波动三组合主线与主线过滤验证
 
-- **通俗总指南**：[两组合与三组合](two-three-asset.md)、[一次投入与定投持有体验](holding-experience.md)。
+- **通俗总指南**：[逆波动三组合指南（方案 A）](two-three-asset.md)、[真实持有体验（一次投入与定投）](holding-experience.md)。
 - [纯三资产核心复核（2026-10-03）](../notes/three-asset-core-2026-10-03-review.md)：`510300`、`513100`、`518880` 的 20 日逆波动基线及收益来源、回撤和不利情景。
 - [分红会计修正与海外 ETF 估值监测（2026-10-04）](../notes/etf-dividend-valuation-2026-10-04-review.md)：`510300` 原始份额、除息应收和现金到账的修订口径；此报告已确认交付。
 - [主线里的 S2 过滤（2026-11-10）](../notes/main-line-s2-filter-2026-11-10-review.md)：验证给主线叠加 S2 周线趋势过滤未通过（无法缩短 2020 急跌回撤），主线维持简洁冻结态。
