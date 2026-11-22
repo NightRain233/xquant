@@ -154,3 +154,50 @@ def test_map_us_series_to_cn_strict_prevents_same_day_leakage():
     mapped, min_lag = lab.map_us_series_to_cn_strict(us_sig, cn_dates)
     assert min_lag == 1
     assert mapped.tolist() == [1.0, 0.5, 0.0, 1.0]
+
+
+def test_daily_buffered_st_ma_weight_tiers_and_no_lookahead():
+    idx = pd.date_range("2022-01-01", periods=320, freq="D")
+    px = np.concatenate([
+        np.full(100, 100.0),
+        np.linspace(100.0, 180.0, 120),
+        np.linspace(180.0, 145.0, 20),
+        np.linspace(145.0, 80.0, 80),
+    ])
+    close = pd.Series(px, index=idx)
+    high = close * 1.02
+    low = close * 0.98
+    w = lab.daily_buffered_st_ma_weight(high, low, close, atr_window=10, multiplier=3.0, ma_days=100, buffer=0.05)
+    assert set(w.unique()).issubset({0.0, 0.5, 1.0})
+    assert w.iloc[210] == 1.0
+    assert w.iloc[-1] == 0.0
+    # Strict anti-lookahead perturbation check
+    pert_c = close.copy()
+    pert_c.iloc[215:] *= 0.3
+    w_pert = lab.daily_buffered_st_ma_weight(
+        pert_c * 1.02, pert_c * 0.98, pert_c, atr_window=10, multiplier=3.0, ma_days=100, buffer=0.05
+    )
+    np.testing.assert_array_equal(w.iloc[:215].to_numpy(), w_pert.iloc[:215].to_numpy())
+
+
+def test_daily_buffered_vol_throttle_hysteresis_and_no_lookahead():
+    rng = np.random.default_rng(7)
+    idx = pd.bdate_range("2020-01-02", periods=220)
+    rets = np.concatenate([
+        rng.normal(0.0, 0.004, 80),   # ~6% ann vol -> calm (1.0)
+        rng.normal(0.0, 0.011, 60),   # ~17% ann vol -> mid (0.6)
+        rng.normal(0.0, 0.025, 80),   # ~40% ann vol -> panic (0.2)
+    ])
+    close = pd.Series(100.0 * np.cumprod(1.0 + rets), index=idx)
+    w = lab.daily_buffered_vol_throttle(
+        close, vol_window=21, low_vol=0.14, high_vol=0.22, hysteresis=0.02, mid_weight=0.6, high_weight=0.2
+    )
+    assert set(w.unique()).issubset({0.2, 0.6, 1.0})
+    assert w.iloc[70] == 1.0
+    assert w.iloc[-1] == 0.2
+    pert = close.copy()
+    pert.iloc[120:] *= 2.0
+    w_pert = lab.daily_buffered_vol_throttle(
+        pert, vol_window=21, low_vol=0.14, high_vol=0.22, hysteresis=0.02, mid_weight=0.6, high_weight=0.2
+    )
+    np.testing.assert_array_equal(w.iloc[:120].to_numpy(), w_pert.iloc[:120].to_numpy())

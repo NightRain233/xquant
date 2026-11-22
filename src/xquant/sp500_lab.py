@@ -15,6 +15,7 @@ import numpy as np
 import pandas as pd
 
 from xquant import cashflow_research as cf
+from xquant import indicators as ind
 from xquant import overlay_rules as ov
 from xquant import position_rules as pr
 from xquant import style_combo as sc
@@ -622,3 +623,62 @@ def map_us_series_to_cn_strict(us_series: pd.Series, cn_dates: pd.DatetimeIndex)
     if min_lag < 1:
         raise AssertionError(f"Cross-market lookahead detected: min_lag={min_lag}")
     return pd.Series(us_vals[pos], index=cn_dates, dtype=us_series.dtype), min_lag
+
+
+def daily_buffered_st_ma_weight(
+    high: pd.Series,
+    low: pd.Series,
+    close: pd.Series,
+    atr_window: int = 10,
+    multiplier: float = 3.0,
+    ma_days: int = 150,
+    buffer: float = 0.05,
+) -> pd.Series:
+    """Three-tier daily weight (1.0 / 0.5 / 0.0): Lamp 1 = SuperTrend, Lamp 2 = buffered long MA."""
+    st_on = ind.supertrend_direction(high, low, close, atr_window=atr_window, multiplier=multiplier)
+    ma_on = daily_buffered_ma_state(close, ma_days=ma_days, buffer=buffer)
+    score = st_on.astype(int) + ma_on.astype(int)
+    return pd.Series(
+        np.where(score == 2, 1.0, np.where(score == 1, 0.5, 0.0)),
+        index=close.index,
+        dtype=float,
+    )
+
+
+def daily_buffered_vol_throttle(
+    close: pd.Series,
+    vol_window: int = 21,
+    low_vol: float = 0.14,
+    high_vol: float = 0.22,
+    hysteresis: float = 0.02,
+    mid_weight: float = 0.60,
+    high_weight: float = 0.20,
+    ann_days: int = 252,
+) -> pd.Series:
+    """Three-tier volatility throttle with symmetric hysteresis deadband (1.0 / mid_weight / high_weight)."""
+    vol = np.log(close).diff().rolling(vol_window).std(ddof=1) * np.sqrt(float(ann_days))
+    v_arr = vol.to_numpy(dtype=float)
+    out = np.ones(len(close), dtype=float)
+    tier = 0
+    for i in range(len(close)):
+        v = v_arr[i]
+        if np.isnan(v):
+            out[i] = 1.0
+            continue
+        if tier == 0:
+            if v > high_vol + hysteresis:
+                tier = 2
+            elif v > low_vol + hysteresis:
+                tier = 1
+        elif tier == 1:
+            if v > high_vol + hysteresis:
+                tier = 2
+            elif v < low_vol - hysteresis:
+                tier = 0
+        else:
+            if v < low_vol - hysteresis:
+                tier = 0
+            elif v < high_vol - hysteresis:
+                tier = 1
+        out[i] = 1.0 if tier == 0 else (mid_weight if tier == 1 else high_weight)
+    return pd.Series(out, index=close.index, dtype=float)

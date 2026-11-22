@@ -1,0 +1,76 @@
+{
+  "slug": "btc-ashare-buffered-mtf3-2026-11-23",
+  "execution_clock": "Signal at close t using data <= t only; order fills at close t+1 with proportional one-way cost.",
+  "btc": {
+    "window": [
+      "2015-08-01",
+      "2026-10-01"
+    ],
+    "sub_early": [
+      "2015-08-01",
+      "2020-12-31"
+    ],
+    "sub_mature": [
+      "2021-01-01",
+      "2026-10-01"
+    ],
+    "primary_cost": 0.003,
+    "cost_stress": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "primary_cash": 0.0,
+    "ann_days": 365
+  },
+  "eth_oos_asset": {
+    "window": [
+      "2018-09-01",
+      "2026-10-01"
+    ],
+    "cost": 0.003,
+    "cash": 0.0,
+    "ann_days": 365
+  },
+  "ashare": {
+    "window": [
+      "2014-08-01",
+      "2026-10-15"
+    ],
+    "window_512890": [
+      "2020-01-02",
+      "2026-10-15"
+    ],
+    "window_structural": [
+      "2014-08-01",
+      "2026-09-30"
+    ],
+    "sub_pre_gold": [
+      "2014-08-01",
+      "2022-12-31"
+    ],
+    "sub_ex15": [
+      "2016-01-04",
+      "2026-10-15"
+    ],
+    "primary_cost": 0.001,
+    "stress_cost": 0.003,
+    "cash_annual": 0.02,
+    "ann_days": 252
+  },
+  "circular_shift_trials": 200,
+  "pre_registered_bars": {
+    "crypto_pass": [
+      "Beats Buy-and-Hold on Sharpe and Calmar at 30bp with 0% cash",
+      "Beats or matches binary Daily SuperTrend(10,3) in 2021-2026 mature era",
+      "Passes circular shift permutation test (p_sharpe <= 0.05 on BTC or ETH)",
+      "Generalizes zero-tuning to ETH-USD (beats ETH Buy-and-Hold on Sharpe & MaxDD)",
+      "Stable across parameter neighborhood (no isolated magic decimal)"
+    ],
+    "ashare_pass": [
+      "Beats Buy-and-Hold on Sharpe and cuts MaxDD >= 25% at 10bp",
+      "Passes circular shift permutation test (p_sharpe <= 0.05) in BOTH full 2014-2026 AND Ex-2015 2016-2026",
+      "Holds on real tradable ETFs (510880 and 512890), not index-only"
+    ]
+  }
+}

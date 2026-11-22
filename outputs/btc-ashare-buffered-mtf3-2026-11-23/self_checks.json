@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "max_cash_residual": 3.552713678800501e-15,
+  "anti_lookahead_perturbation_max_diff": 0.0,
+  "tickflow_vs_parquet_510300_max_ret_diff": 0.0,
+  "input_sha256": {
+    "BTC-USD.parquet": "a2a2dfb64bb1f8eb8404d7b1235b76800f6b684785cf03066ff576e6f4304087",
+    "ETH-USD.parquet": "54683cc16bed955c4a27509fa3f7da65e7ca236e0893345dba875e86950fe72c",
+    "csindex_H20269.csv": "0584efc073980f481fb733eb66705c22b2610a00c95447e92bd4048bfb4e6c22",
+    "csindex_H00300.csv": "76bb45d4f55a8ce2e4c3443e0e9e87c0d40a74d879beb17cb0805ee1465365d9",
+    "518880.SS.parquet": "1718a445fc8b9c836ba338f4c2a01dfae9ae6a518bace12384971002564a2eea",
+    "511010.SS.parquet": "bee4c187eda16145f27c288729aa2187ca8f35b435c6fe8557c5cb3c5f987747"
+  },
+  "total_strategy_rows": 168
+}

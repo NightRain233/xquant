@@ -43,7 +43,13 @@ def _last_flip(state: pd.Series) -> tuple[str, str]:
     return str(flips.index[-1].date()), "ON" if bool(flips.iloc[-1]) else "OFF"
 
 
-def inspect_ticker(label: str, ticker: str, auto_adjust: bool = True, show_mtf3: bool = False) -> dict | None:
+def inspect_ticker(
+    label: str,
+    ticker: str,
+    auto_adjust: bool = True,
+    show_mtf3: bool = False,
+    show_btc_3tier: bool = False,
+) -> dict | None:
     df = fetch_history(ticker, auto_adjust=auto_adjust)
     close = df["Close"].dropna()
     weekly = close.groupby(close.index.to_period("W-SUN")).last()
@@ -122,6 +128,39 @@ def inspect_ticker(label: str, ticker: str, auto_adjust: bool = True, show_mtf3:
                 f"210d({'ON' if on2 else 'OFF'} since {d2}, {t2})"
             )
 
+    if show_btc_3tier and len(close) >= 220:
+        high = df["High"].reindex(close.index).astype(float)
+        low = df["Low"].reindex(close.index).astype(float)
+        st_d = ind.supertrend_direction(high, low, close, atr_window=10, multiplier=3.0)
+        ma150_s = lab.daily_buffered_ma_state(close, ma_days=150, buffer=0.05)
+        ma150_v = float(close.rolling(150).mean().iloc[-1])
+        st_on, m150_on = bool(st_d.iloc[-1]), bool(ma150_s.iloc[-1])
+        hyb_pos = 100 if (st_on and m150_on) else (50 if (st_on or m150_on) else 0)
+        d_st, _ = _last_flip(st_d)
+        d_m150, _ = _last_flip(ma150_s)
+        t_m150 = f"exit<{ma150_v*0.95:.0f}" if m150_on else f"re-entry>{ma150_v*1.05:.0f}"
+        print(
+            f"BTC 3-Tier Hybrid   : Target={hyb_pos:3d}% | "
+            f"ST(10,3)({'ON' if st_on else 'OFF'} since {d_st}) | "
+            f"MA150±5%({'ON' if m150_on else 'OFF'} since {d_m150}, {t_m150})"
+        )
+
+        s100 = lab.daily_buffered_stage_state(close, ma_days=100, slope_days=15, buffer=0.05)
+        s200 = lab.daily_buffered_ma_state(close, ma_days=200, buffer=0.05)
+        ma100_v = float(close.rolling(100).mean().iloc[-1])
+        ma200_v = float(close.rolling(200).mean().iloc[-1])
+        on100, on200 = bool(s100.iloc[-1]), bool(s200.iloc[-1])
+        dual_pos = 100 if (on100 and on200) else (50 if (on100 or on200) else 0)
+        d100, _ = _last_flip(s100)
+        d200, _ = _last_flip(s200)
+        t100 = f"exit<{ma100_v*0.95:.0f}" if on100 else f"re-entry>{ma100_v*1.05:.0f}&rising"
+        t200 = f"exit<{ma200_v*0.95:.0f}" if on200 else f"re-entry>{ma200_v*1.05:.0f}"
+        print(
+            f"BTC 3-Tier 100/200±5: Target={dual_pos:3d}% | "
+            f"100d({'ON' if on100 else 'OFF'} since {d100}, {t100}) | "
+            f"200d({'ON' if on200 else 'OFF'} since {d200}, {t200})"
+        )
+
     print(recent.to_string())
     return {
         "ticker": ticker,
@@ -168,19 +207,19 @@ def main() -> None:
         print(f"Plan A error: {type(exc).__name__}: {exc}")
 
     print("\n================ PLAN B / PLAN C / MARKET SNAPSHOT ================")
-    for label, ticker, adj, show_mtf3 in [
-        ("S&P 500 Index", "^GSPC", False, True),
-        ("SPY ETF (Total Return)", "SPY", True, True),
-        ("Domestic S&P 500 ETF (513500)", "513500.SS", True, False),
-        ("Nasdaq-100 Index", "^NDX", False, True),
-        ("QQQ ETF (Total Return)", "QQQ", True, True),
-        ("Domestic Nasdaq-100 ETF (513100)", "513100.SS", True, False),
-        ("Gold ETF (USD)", "GLD", True, False),
-        ("Domestic Gold ETF (518880)", "518880.SS", True, False),
-        ("Bitcoin", "BTC-USD", False, False),
+    for label, ticker, adj, show_mtf3, show_btc in [
+        ("S&P 500 Index", "^GSPC", False, True, False),
+        ("SPY ETF (Total Return)", "SPY", True, True, False),
+        ("Domestic S&P 500 ETF (513500)", "513500.SS", True, False, False),
+        ("Nasdaq-100 Index", "^NDX", False, True, False),
+        ("QQQ ETF (Total Return)", "QQQ", True, True, False),
+        ("Domestic Nasdaq-100 ETF (513100)", "513100.SS", True, False, False),
+        ("Gold ETF (USD)", "GLD", True, False, False),
+        ("Domestic Gold ETF (518880)", "518880.SS", True, False, False),
+        ("Bitcoin", "BTC-USD", False, False, True),
     ]:
         try:
-            inspect_ticker(label, ticker, auto_adjust=adj, show_mtf3=show_mtf3)
+            inspect_ticker(label, ticker, auto_adjust=adj, show_mtf3=show_mtf3, show_btc_3tier=show_btc)
         except Exception as exc:
             print(f"{label} ({ticker}) error: {type(exc).__name__}: {exc}")
 
