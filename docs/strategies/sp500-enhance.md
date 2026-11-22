@@ -133,4 +133,4 @@
 
 - **下一篇推荐**：[真实持有体验：标普 500 26 年 vs 三组合 11 年](holding-experience.md)
 - **其他方案**：[逆波动三组合指南（方案 A）](two-three-asset.md) · [大白话术语表](../glossary.md)
-- **原始研究报告**：[MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](../notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](../notes/sp500-four-directions-2026-11-22-review.md) · [境内 ETF 高溢价避坑研究](../notes/qdii-premium-2026-11-10-review.md) · [标普 500 持有体验原始笔记](../notes/sp500-holding-experience-2026-11-10-review.md)
+- **原始研究报告**：[BTC 与 A 股日频防抖三档泛化研究（2026-11-23）](../notes/btc-ashare-buffered-mtf3-2026-11-23-review.md) · [MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](../notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](../notes/sp500-four-directions-2026-11-22-review.md) · [境内 ETF 高溢价避坑研究](../notes/qdii-premium-2026-11-10-review.md) · [标普 500 持有体验原始笔记](../notes/sp500-holding-experience-2026-11-10-review.md)
