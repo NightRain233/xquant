@@ -1,0 +1,12 @@
+{
+  "slug": "mtf-tvt-existing-comparison-2026-11-15",
+  "new_rules_source": "outputs/mtf-tvt-healthcheck-2026-11-15",
+  "existing_source": "outputs/strategy-comparison-2026-11-10",
+  "principle": "descriptive comparison; no parameter re-selection",
+  "groups": {
+    "single_asset_new_rules": "MTF-3/TVT-50 and buy-hold on SPY, QQQ, 513500, 513100",
+    "single_asset_existing": "older S2/VT and domestic half-trend diagnostics",
+    "multi_asset_existing": "repository three-asset/BTC/Bull Flip lines"
+  },
+  "caveat": "windows, currencies, costs and asset pools differ; do not form one overall ranking"
+}

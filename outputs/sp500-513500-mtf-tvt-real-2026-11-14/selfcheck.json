@@ -1,0 +1,7 @@
+{
+  "price_dates_unique": true,
+  "price_finite_positive": true,
+  "weights_in_range": true,
+  "premium_fx_overlap": true,
+  "fees_not_double_counted": true
+}

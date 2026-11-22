@@ -1,0 +1,7 @@
+{
+  "weights_in_range": true,
+  "nav_positive": true,
+  "domestic_signal_lookup": "latest_before(series, date) uses index < date; execution is next domestic close",
+  "parameters_locked_before_results": true,
+  "note": "USD studies are imported from their frozen dated runs; fresh 513100 replay uses the same direct-signal kernel as the dated 513500 study."
+}

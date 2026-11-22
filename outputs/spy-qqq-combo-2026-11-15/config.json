@@ -1,0 +1,22 @@
+{
+  "slug": "spy-qqq-combo-2026-11-15",
+  "window": [
+    "2000-01-03",
+    "2026-10-16"
+  ],
+  "costs": [
+    0.001,
+    0.003
+  ],
+  "execution": "close signal, next close fill",
+  "candidates": [
+    "SPY",
+    "QQQ",
+    "50_50",
+    "60Q_40S",
+    "INVVOL",
+    "REL-12",
+    "MTF-BLEND"
+  ],
+  "baseline": "SPY, QQQ, 50/50 monthly rebalance"
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "qqq-new-enhance-2026-11-14",
+  "window": [
+    "2000-01-03",
+    "2026-10-16"
+  ],
+  "cost_per_side": 0.001,
+  "baseline": "QQQ buy and hold; S2 and VT-1.0 are frozen transfer baselines",
+  "new_rules": {
+    "MTF-3": "QQQ 30-week rising trend + 10-month mean: 100/50/0%",
+    "REL-12": "monthly QQQ/SPY 12-month relative momentum plus absolute trend and cash filter",
+    "REL-Q": "same relative momentum filter, QQQ or cash only",
+    "TVT-50": "15% target volatility, 50% cap when weekly trend is off"
+  },
+  "execution": "close signal, next-close fill; 10bp and 30bp cost; ^IRX cash",
+  "dca": "one unit monthly, complete 10-year windows, XIRR and unit drawdown",
+  "verdict": "main risk metric, both segment risk metrics with CAGR guard, cost30, and DCA ratio share"
+}

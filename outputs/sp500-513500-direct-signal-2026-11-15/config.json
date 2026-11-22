@@ -1,0 +1,18 @@
+{
+  "slug": "sp500-513500-direct-signal-2026-11-15",
+  "window": [
+    "2014-10-08",
+    "2026-09-30"
+  ],
+  "trade_price": "real 513500 RMB close",
+  "signal_variants": {
+    "SPY": "SPY closes, next mainland close",
+    "SELF": "513500 close, next mainland close"
+  },
+  "costs": {
+    "10bp": 0.001,
+    "30bp": 0.003
+  },
+  "cash": "2% RMB proxy",
+  "note": "SELF is the production-like signal; SPY is retained only as transfer diagnostic"
+}

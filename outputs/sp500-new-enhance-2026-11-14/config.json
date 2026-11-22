@@ -1,0 +1,26 @@
+{
+  "slug": "sp500-new-enhance-2026-11-14",
+  "window": [
+    "2000-01-03",
+    "2026-10-16"
+  ],
+  "cost_per_side": 0.001,
+  "baselines": {
+    "B0": "buy and hold",
+    "S2": "frozen weekly half-trend",
+    "VT": "frozen 15%/21-day VT-1.0"
+  },
+  "new_rules": {
+    "MTF-3": "weekly 30-week rising state + monthly 10-month state: 100/50/0%",
+    "DD-RB": "running drawdown tiers >-10/-20/-30%: 100/75/50/25%",
+    "TVT-50": "15% volatility target when weekly trend on, cap 50% when off"
+  },
+  "execution": "close signal, next-close fill; SPY total return and ^IRX cash; 10bp and 30bp stress",
+  "dca": "1 unit monthly, complete 10-year windows, XIRR and unit drawdown",
+  "verdict_criteria": {
+    "main": "Sharpe or Calmar > B0",
+    "segments": "each segment has Sharpe or Calmar > B0 and CAGR no more than 3pp below B0",
+    "cost30": "Sharpe or Calmar > B0 at 30bp per side",
+    "dca": "ratio_gt_plain share >= 60%"
+  }
+}

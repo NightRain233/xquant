@@ -1,0 +1,10 @@
+{
+  "price_start": "2014-10-08",
+  "price_end": "2026-09-30",
+  "fx_start": 6.129000186920166,
+  "fx_end": 6.703000068664551,
+  "premium_median": 0.0029154759518978,
+  "premium_above_3pct_share": 0.20102915951972555,
+  "premium_above_10pct_share": 0.023327615780445968,
+  "fee_treatment": "513500 management/custody fees are embedded in the real traded price; no second deduction"
+}

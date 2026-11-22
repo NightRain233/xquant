@@ -1,0 +1,20 @@
+{
+  "slug": "mtf-tvt-healthcheck-2026-11-15",
+  "parameters_locked": {
+    "MTF-3": "30-week rising mean + 10-month mean; weights 100/50/0",
+    "TVT-50": "21-day realized vol target 15%; off-trend cap 50%; min change 10%"
+  },
+  "costs": [
+    "10bp",
+    "30bp"
+  ],
+  "cash_proxy": "2% annual",
+  "execution": "close signal, next close fill",
+  "assets": {
+    "SPY": "USD auto-adjusted historical study",
+    "QQQ": "USD auto-adjusted historical study",
+    "513500": "real RMB close, split-corrected, own signal",
+    "513100": "real RMB close, official split-corrected, own signal"
+  },
+  "anti_magic_parameter_rule": "no grid winner selected; all grids are small predeclared neighborhoods and reported in full"
+}

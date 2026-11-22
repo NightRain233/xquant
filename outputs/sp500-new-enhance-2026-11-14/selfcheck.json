@@ -1,0 +1,5 @@
+{
+  "weights_in_range": true,
+  "default_reproducible": true,
+  "no_lookahead": true
+}

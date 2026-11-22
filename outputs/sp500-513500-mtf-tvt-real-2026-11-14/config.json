@@ -1,0 +1,23 @@
+{
+  "slug": "sp500-513500-mtf-tvt-real-2026-11-14",
+  "window": [
+    "2014-10-08",
+    "2026-09-30"
+  ],
+  "signal": "SPY USD signals, latest completed US close before each mainland date",
+  "trade_price": "actual 513500 RMB close, official 1:2 split adjustment",
+  "cash": "2% annual RMB cash proxy",
+  "costs": {
+    "10bp": 0.001,
+    "30bp": 0.003
+  },
+  "premium": "historical estimated premium diagnostics from qdii-premium-2026-11-10; not double-counted",
+  "fx": "CNY=X close diagnostics; RMB close already includes FX",
+  "fund_fee": "embedded in traded price; not separately deducted",
+  "source_hashes": {
+    "raw_510300.SH.json": "ace18b4e70d3029e959b7c72e77c6c6300a90ecd673fa1dcaf3c085c8d1ca8b6",
+    "forward_core.json": "9b5670f70c451c2640af5bd9ef9f629df44b05e49dd26921a3070fb614556b2a",
+    "premium_daily_513500.csv": "1b2f2a812dff7cc4b222f4ba3dee313cf4ea6da8d720774d04a303859f53d282",
+    "CNY=X.parquet": "a41d78adf047da7ead089c909b3a5f78b0bf02626b75618d7eccb0a63aa5d68d"
+  }
+}
