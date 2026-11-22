@@ -1,0 +1,84 @@
+{
+  "slug": "mtf3-daily-buffer-2026-11-23",
+  "execution_clock": "Signal at close t using data <= t only; order fills at close t+1 with proportional one-way cost.",
+  "primary_candidates": {
+    "MTF3_BUF2": {
+      "ma_fast": 150,
+      "slope_days": 20,
+      "ma_slow": 210,
+      "buffer": 0.02
+    },
+    "MTF3_BUF3": {
+      "ma_fast": 150,
+      "slope_days": 20,
+      "ma_slow": 210,
+      "buffer": 0.03
+    }
+  },
+  "controls": {
+    "B0": "100% Buy & Hold",
+    "S2_CASH": "Weekly 30W rising SMA (100% / 50%)",
+    "MTF3_ORIG": "Weekly 30W rising SMA + Monthly 10M SMA (100% / 50% / 0%)",
+    "MTF3_D0": "Daily 150d rising SMA + 210d SMA, 0% buffer (whipsaw control)",
+    "GOLD_75_25_Q": "75% Equity + 25% Gold, quarterly rebalanced",
+    "S2_GOLD": "S2 with 50% defensive leg in Gold",
+    "S2_GOLD_TREND": "S2 with 50% defensive leg in Gold only when Gold 30W trend is ON",
+    "S2_BOND_GOLD": "S2 with 50% defensive leg split 25% Gold + 25% IEF"
+  },
+  "windows": {
+    "us_2000": [
+      "2000-01-03",
+      "2026-10-16"
+    ],
+    "us_2005_shields": [
+      "2005-01-03",
+      "2026-10-16"
+    ],
+    "gold_bear_stress": [
+      "2011-09-01",
+      "2022-12-31"
+    ],
+    "domestic_2014": [
+      "2014-10-08",
+      "2026-09-30"
+    ]
+  },
+  "costs": {
+    "10bp": 0.001,
+    "30bp": 0.003,
+    "50bp": 0.005
+  },
+  "sensitivity_grid": {
+    "buffers": [
+      0.0,
+      0.01,
+      0.015,
+      0.02,
+      0.025,
+      0.03,
+      0.04
+    ],
+    "ma_pairs": [
+      [
+        120,
+        180
+      ],
+      [
+        150,
+        210
+      ],
+      [
+        180,
+        240
+      ]
+    ]
+  },
+  "circular_shift_trials": 200,
+  "pre_registered_bars": {
+    "beats_orig_mtf3_sharpe_and_calmar_at_10bp_and_30bp": true,
+    "lower_turnover_than_orig_mtf3": true,
+    "max_dd_near_orig_mtf3_cap": -0.22,
+    "10y_dca_ratio_win_rate_ge_80pct": 0.8,
+    "robust_across_buffer_1p5_to_3p0_without_magic_spike": true
+  }
+}

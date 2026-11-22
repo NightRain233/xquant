@@ -1,0 +1,48 @@
+{
+  "runs": 208,
+  "max_cash_residual": 8.881784197001252e-16,
+  "min_nav": 0.22620958411331152,
+  "min_target_weight": 0.0,
+  "max_target_sum": 1.0,
+  "anti_lookahead_perturbation_max_diff": 0.0,
+  "cn_cross_market_min_lag_days": 1,
+  "circular_shift": {
+    "SPY_MTF3_BUF2": {
+      "true_sharpe": 0.6108686857091582,
+      "true_calmar": 0.4421311967596864,
+      "true_max_dd": -0.1915854821825187,
+      "p_sharpe": 0.03,
+      "p_calmar": 0.01,
+      "p_max_dd": 0.01,
+      "n_trials": 200
+    },
+    "SPY_MTF3_BUF3": {
+      "true_sharpe": 0.6472754694037411,
+      "true_calmar": 0.5300269840975766,
+      "true_max_dd": -0.16882973881298047,
+      "p_sharpe": 0.03,
+      "p_calmar": 0.01,
+      "p_max_dd": 0.01,
+      "n_trials": 200
+    },
+    "QQQ_MTF3_BUF2": {
+      "true_sharpe": 0.5246171561632205,
+      "true_calmar": 0.24328779429644065,
+      "true_max_dd": -0.39130970215896554,
+      "p_sharpe": 0.04,
+      "p_calmar": 0.035,
+      "p_max_dd": 0.03,
+      "n_trials": 200
+    },
+    "QQQ_MTF3_BUF3": {
+      "true_sharpe": 0.5730998095830124,
+      "true_calmar": 0.3014860957807857,
+      "true_max_dd": -0.34637551819230716,
+      "p_sharpe": 0.035,
+      "p_calmar": 0.025,
+      "p_max_dd": 0.02,
+      "n_trials": 200
+    }
+  },
+  "all_passed": true
+}

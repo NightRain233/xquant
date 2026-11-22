@@ -44,6 +44,7 @@ EXPECTED_NOTEBOOKS = {
     "spy-qqq-combo-2026-11-15-practice.ipynb",
     "q17-joinquant-core-rotation-practice.ipynb",
     "sp500-four-directions-2026-11-22-practice.ipynb",
+    "mtf3-daily-buffer-2026-11-23-practice.ipynb",
 }
 
 

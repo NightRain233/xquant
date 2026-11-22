@@ -1,9 +1,13 @@
-"""Read-only live signal check for Plan A (Three-Asset Core + BTC Satellite), Plan B (75/25), and Plan C (S2 & TVT-50).
+"""Read-only live signal check for Plan A (Three-Asset Core + BTC Satellite), Plan B (75/25),
+and Plan C (S2, TVT-50, Calendar MTF-3, and Daily Buffered MTF-3 ±2%/±3%).
 
 Uses the exact frozen repository formulas:
 * Three-asset core: 20-day inverse volatility on 510300.SS / 513100.SS / 518880.SS (``xquant.portfolio``).
 * BTC satellite: daily SuperTrend(10, 3) direction on BTC-USD (``xquant.indicators``).
-* S&P 500 / 513500 / Nasdaq-100 / Gold: 30-week rising SMA (``xquant.position_rules``) & 21-day realized vol TVT-50.
+* S&P 500 / 513500 / Nasdaq-100 / Gold:
+  - 30-week rising SMA (``xquant.position_rules``) & 21-day realized vol TVT-50.
+  - Calendar MTF-3 (30W rising + 10M completed month-end, with current month-end break-even preview).
+  - Daily Buffered MTF-3 (150d rising SMA + 210d SMA with ±2% and ±3% hysteresis bands via ``xquant.sp500_lab``).
 
 Never mutates any frozen research cache.
 """
@@ -21,6 +25,7 @@ sys.path[:0] = [str(ROOT / "src")]
 from xquant import indicators as ind  # noqa: E402
 from xquant import portfolio as pf  # noqa: E402
 from xquant import position_rules as pr  # noqa: E402
+from xquant import sp500_lab as lab  # noqa: E402
 
 
 def fetch_history(ticker: str, auto_adjust: bool = True, period: str = "2y") -> pd.DataFrame:
@@ -31,7 +36,14 @@ def fetch_history(ticker: str, auto_adjust: bool = True, period: str = "2y") -> 
     return df[~df.index.duplicated(keep="last")].sort_index()
 
 
-def inspect_ticker(label: str, ticker: str, auto_adjust: bool = True) -> dict | None:
+def _last_flip(state: pd.Series) -> tuple[str, str]:
+    flips = state[state != state.shift(1)]
+    if len(flips) == 0:
+        return str(state.index[0].date()), "ON" if bool(state.iloc[-1]) else "OFF"
+    return str(flips.index[-1].date()), "ON" if bool(flips.iloc[-1]) else "OFF"
+
+
+def inspect_ticker(label: str, ticker: str, auto_adjust: bool = True, show_mtf3: bool = False) -> dict | None:
     df = fetch_history(ticker, auto_adjust=auto_adjust)
     close = df["Close"].dropna()
     weekly = close.groupby(close.index.to_period("W-SUN")).last()
@@ -75,6 +87,41 @@ def inspect_ticker(label: str, ticker: str, auto_adjust: bool = True) -> dict | 
     print(f"30W-SMA 4w ago      : {w_ma30_prev4:.2f} | 4-week slope: {w_slope:+.2f} ({'RISING' if w_slope > 0 else 'FALLING'})")
     print(f"S2 Stage-2 Signal   : {'ON (100%)' if w_stage2 else 'OFF (50% defensive)'}")
     print(f"21d Annualized Vol  : {vol21:.1f}% | TVT-50 raw(15%/vol)={tvt_raw:.1f}%, cap={tvt_cap:.0f}% -> target={tvt_target_w:.1f}%")
+
+    if show_mtf3 and len(close) >= 220:
+        # Calendar MTF-3 (completed month-end vs live month preview)
+        m_grp = close.groupby(close.index.to_period("M"))
+        m_close = pd.Series(m_grp.last().to_numpy(), index=m_grp.tail(1).index, dtype=float)
+        m_sma10 = m_close.rolling(10).mean()
+        if len(m_close) >= 11:
+            prev_m_on = bool(m_close.iloc[-2] > m_sma10.iloc[-2])
+            cur_m_on = bool(m_close.iloc[-1] > m_sma10.iloc[-1])
+            mtf_off = 100 if (w_stage2 and prev_m_on) else (50 if (w_stage2 or prev_m_on) else 0)
+            mtf_prev = 100 if (w_stage2 and cur_m_on) else (50 if (w_stage2 or cur_m_on) else 0)
+            breakeven = float(m_close.iloc[-10:-1].mean())
+            print(
+                f"MTF-3 Calendar      : Official={mtf_off}% (10M locked {m_close.index[-2].date()}={'ON' if prev_m_on else 'OFF'}) "
+                f"| Month-end preview={mtf_prev}% (break-even={breakeven:.2f})"
+            )
+
+        # Daily Buffered MTF-3 (±2% and ±3%)
+        ma150 = float(close.rolling(150).mean().iloc[-1])
+        ma210 = float(close.rolling(210).mean().iloc[-1])
+        for buf in (0.02, 0.03):
+            s1 = lab.daily_buffered_stage_state(close, ma_days=150, slope_days=20, buffer=buf)
+            s2 = lab.daily_buffered_ma_state(close, ma_days=210, buffer=buf)
+            on1, on2 = bool(s1.iloc[-1]), bool(s2.iloc[-1])
+            pos = 100 if (on1 and on2) else (50 if (on1 or on2) else 0)
+            d1, _ = _last_flip(s1)
+            d2, _ = _last_flip(s2)
+            t1 = f"exit<{ma150*(1-buf):.2f}" if on1 else f"re-entry>{ma150*(1+buf):.2f}&rising"
+            t2 = f"exit<{ma210*(1-buf):.2f}" if on2 else f"re-entry>{ma210*(1+buf):.2f}"
+            print(
+                f"MTF-3 Daily ±{buf*100:.0f}%    : Target={pos:3d}% | "
+                f"150d({'ON' if on1 else 'OFF'} since {d1}, {t1}) | "
+                f"210d({'ON' if on2 else 'OFF'} since {d2}, {t2})"
+            )
+
     print(recent.to_string())
     return {
         "ticker": ticker,
@@ -103,7 +150,6 @@ def inspect_plan_a() -> None:
     btc = fetch_history("BTC-USD", auto_adjust=False, period="1y")
     st_dir = ind.supertrend_direction(btc["High"], btc["Low"], btc["Close"], atr_window=10, multiplier=3.0)
     btc_on = bool(st_dir.iloc[-1])
-    # Find last flip date
     flips = st_dir[st_dir != st_dir.shift(1)]
     last_flip = flips.index[-1].date() if len(flips) else btc.index[0].date()
 
@@ -122,19 +168,19 @@ def main() -> None:
         print(f"Plan A error: {type(exc).__name__}: {exc}")
 
     print("\n================ PLAN B / PLAN C / MARKET SNAPSHOT ================")
-    for label, ticker, adj in [
-        ("S&P 500 Index", "^GSPC", False),
-        ("SPY ETF (Total Return)", "SPY", True),
-        ("Domestic S&P 500 ETF (513500)", "513500.SS", True),
-        ("Nasdaq-100 Index", "^NDX", False),
-        ("QQQ ETF (Total Return)", "QQQ", True),
-        ("Domestic Nasdaq-100 ETF (513100)", "513100.SS", True),
-        ("Gold ETF (USD)", "GLD", True),
-        ("Domestic Gold ETF (518880)", "518880.SS", True),
-        ("Bitcoin", "BTC-USD", False),
+    for label, ticker, adj, show_mtf3 in [
+        ("S&P 500 Index", "^GSPC", False, True),
+        ("SPY ETF (Total Return)", "SPY", True, True),
+        ("Domestic S&P 500 ETF (513500)", "513500.SS", True, False),
+        ("Nasdaq-100 Index", "^NDX", False, True),
+        ("QQQ ETF (Total Return)", "QQQ", True, True),
+        ("Domestic Nasdaq-100 ETF (513100)", "513100.SS", True, False),
+        ("Gold ETF (USD)", "GLD", True, False),
+        ("Domestic Gold ETF (518880)", "518880.SS", True, False),
+        ("Bitcoin", "BTC-USD", False, False),
     ]:
         try:
-            inspect_ticker(label, ticker, auto_adjust=adj)
+            inspect_ticker(label, ticker, auto_adjust=adj, show_mtf3=show_mtf3)
         except Exception as exc:
             print(f"{label} ({ticker}) error: {type(exc).__name__}: {exc}")
 

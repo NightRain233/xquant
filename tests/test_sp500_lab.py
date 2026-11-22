@@ -120,3 +120,37 @@ def test_reconcile_fast_dca_matches_lab_dca_rolling_windows():
     assert list(fast["end"]) == list(slow["end"])
     np.testing.assert_allclose(fast["xirr"].to_numpy(), slow["xirr"].to_numpy(), rtol=0, atol=1e-6)
     np.testing.assert_allclose(fast["dca_ratio"].to_numpy(), slow["dca_ratio"].to_numpy(), rtol=0, atol=1e-6)
+
+
+def test_daily_buffered_mtf3_hysteresis_and_no_lookahead():
+    dates = pd.bdate_range("2020-01-02", periods=300)
+    # Build steady uptrend then gentle dip inside deadband (-1.5%) then sharp drop (-8%)
+    px = np.linspace(100.0, 150.0, 260).tolist() + [144.0] * 10 + [120.0] * 30
+    close = pd.Series(px, index=dates)
+
+    s_fast = lab.daily_buffered_stage_state(close, ma_days=50, slope_days=10, buffer=0.03)
+    s_slow = lab.daily_buffered_ma_state(close, ma_days=80, buffer=0.03)
+    w = lab.daily_buffered_mtf3_equity_weight(close, ma_fast=50, slope_days=10, ma_slow=80, buffer=0.03)
+
+    assert s_fast.dtype == np.dtype("bool")
+    assert s_slow.dtype == np.dtype("bool")
+    assert set(w.unique()).issubset({0.0, 0.5, 1.0})
+    # Uptrend should be ON (1.0), slight dip stays ON inside deadband, sharp drop turns OFF (0.0)
+    assert w.iloc[255] == 1.0
+    assert w.iloc[265] == 1.0
+    assert w.iloc[-1] == 0.0
+
+    # Strict anti-lookahead: mutating future prices after idx=200 must not change any state <= 200
+    perturbed = close.copy()
+    perturbed.iloc[201:] *= 0.25
+    w_pert = lab.daily_buffered_mtf3_equity_weight(perturbed, ma_fast=50, slope_days=10, ma_slow=80, buffer=0.03)
+    np.testing.assert_array_equal(w.iloc[:201].to_numpy(), w_pert.iloc[:201].to_numpy())
+
+
+def test_map_us_series_to_cn_strict_prevents_same_day_leakage():
+    us_dates = pd.DatetimeIndex(["2026-11-16", "2026-11-17", "2026-11-18", "2026-11-19"])
+    us_sig = pd.Series([1.0, 0.5, 0.0, 1.0], index=us_dates)
+    cn_dates = pd.DatetimeIndex(["2026-11-17", "2026-11-18", "2026-11-19", "2026-11-20"])
+    mapped, min_lag = lab.map_us_series_to_cn_strict(us_sig, cn_dates)
+    assert min_lag == 1
+    assert mapped.tolist() == [1.0, 0.5, 0.0, 1.0]

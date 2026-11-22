@@ -530,3 +530,95 @@ def weekly_stage2_state(close: pd.Series, ma_weeks: int = 30, slope_weeks: int =
     states = pr.stage_states(close, ma_weeks=ma_weeks, slope_weeks=slope_weeks)
     aligned = states.reindex(close.index, method="ffill")
     return aligned.where(aligned.notna(), False).astype(bool)
+
+
+def monthly_ma_state(close: pd.Series, ma_months: int = 10) -> pd.Series:
+    """Month-end close > ma_months SMA of month-end closes, forward-filled to daily index as strict bool."""
+    idx = np.flatnonzero(ov.month_end_mask(close.index))
+    vals = close.iloc[idx]
+    sma = vals.rolling(ma_months).mean()
+    dec = (vals > sma).astype(bool)
+    out = pd.Series(pd.NA, index=close.index, dtype="object")
+    out.iloc[idx] = dec.to_numpy()
+    out = out.ffill()
+    return out.where(out.notna(), False).astype(bool)
+
+
+def daily_buffered_stage_state(
+    close: pd.Series,
+    ma_days: int = 150,
+    slope_days: int = 20,
+    buffer: float = 0.03,
+) -> pd.Series:
+    """Daily rising-MA hysteresis state: OFF below MA*(1-buf), ON above MA*(1+buf) when MA is rising."""
+    ma = close.rolling(ma_days).mean()
+    rising = (ma > ma.shift(slope_days)).to_numpy(dtype=bool)
+    vals = close.to_numpy(dtype=float)
+    ma_v = ma.to_numpy(dtype=float)
+    out = np.zeros(len(close), dtype=bool)
+    on = False
+    for i in range(len(close)):
+        if np.isnan(ma_v[i]):
+            continue
+        if vals[i] < ma_v[i] * (1.0 - buffer):
+            on = False
+        elif vals[i] > ma_v[i] * (1.0 + buffer) and rising[i]:
+            on = True
+        out[i] = on
+    return pd.Series(out, index=close.index, dtype=bool)
+
+
+def daily_buffered_ma_state(
+    close: pd.Series,
+    ma_days: int = 210,
+    buffer: float = 0.03,
+) -> pd.Series:
+    """Daily MA hysteresis state: OFF below MA*(1-buf), ON above MA*(1+buf), hold inside deadband."""
+    ma = close.rolling(ma_days).mean().to_numpy(dtype=float)
+    vals = close.to_numpy(dtype=float)
+    out = np.zeros(len(close), dtype=bool)
+    on = False
+    for i in range(len(close)):
+        if np.isnan(ma[i]):
+            continue
+        if vals[i] < ma[i] * (1.0 - buffer):
+            on = False
+        elif vals[i] > ma[i] * (1.0 + buffer):
+            on = True
+        out[i] = on
+    return pd.Series(out, index=close.index, dtype=bool)
+
+
+def daily_buffered_mtf3_equity_weight(
+    close: pd.Series,
+    ma_fast: int = 150,
+    slope_days: int = 20,
+    ma_slow: int = 210,
+    buffer: float = 0.03,
+) -> pd.Series:
+    """Three-tier daily buffered MTF-3 target equity weight (1.0 / 0.5 / 0.0)."""
+    fast_on = daily_buffered_stage_state(close, ma_days=ma_fast, slope_days=slope_days, buffer=buffer)
+    slow_on = daily_buffered_ma_state(close, ma_days=ma_slow, buffer=buffer)
+    score = fast_on.astype(int) + slow_on.astype(int)
+    return pd.Series(
+        np.where(score == 2, 1.0, np.where(score == 1, 0.5, 0.0)),
+        index=close.index,
+        dtype=float,
+    )
+
+
+def map_us_series_to_cn_strict(us_series: pd.Series, cn_dates: pd.DatetimeIndex) -> tuple[pd.Series, int]:
+    """Map US close-dated series onto CN decision dates requiring strictly us_date < cn_date.
+
+    Returns (mapped_series, min_calendar_lag_days).
+    """
+    us_dates = pd.DatetimeIndex(us_series.index)
+    us_vals = us_series.to_numpy()
+    pos = np.searchsorted(us_dates.to_numpy(), cn_dates.to_numpy(), side="left") - 1
+    if (pos < 0).any():
+        raise ValueError("US series does not start strictly before all CN dates")
+    matched_dates = us_dates[pos]
+    min_lag = int((cn_dates - matched_dates).days.min())
+    if min_lag < 1:
+        raise AssertionError(f"Cross-market lookahead detected: min_lag={min_lag}")
+    return pd.Series(us_vals[pos], index=cn_dates, dtype=us_series.dtype), min_lag
