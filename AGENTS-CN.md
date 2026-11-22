@@ -1,21 +1,31 @@
 # 仓库协作指南
 
-## 当前研究立场（2026-10）
+## 当前研究立场（2026-11）
 
-- 主策略是三资产逆波动核心（510300 / 513100 / 518880）加 7.5% BTC 日线 SuperTrend(10, 3) 卫星，在同级 `trading` 仓库里纸面运行。Theme Alpha、Core90/Bull10、RS 轮动等降为归档对照。
-- 冻结结论：A 股择时规则都没有跑赢持有；简化版温斯坦只在美股指数上能降低回撤；BTC 适合日线 SuperTrend；黄金没有做过趋势规则测试。除非用户要求，不再主动提出新的 A 股择时研究。
-- 价格使用比例复权（总回报）口径。旧的加法前复权夸大了 510300 的历史收益，见 `docs/notes/btc-satellite-corrected-prices-2026-10-18-review.md`。
-- 结论用通俗中文写给非技术读者；带日期的报告保持原样，用补充说明代替改写。
+- **主线（冻结核心）**：三资产逆波动核心（`510300` / `513100` / `518880`）加 7.5% BTC 日线 SuperTrend(10, 3) 卫星，在同级 `trading` 仓库里纸面运行。将 S2 趋势过滤叠加到主线已验证未通过（见 `docs/notes/main-line-s2-filter-2026-11-10-review.md`）。
+- **独立标普 500 增强方案（2026-11 验证，独立于主线）**：
+  - 低换手跨资产双核（最适配高滑点币圈美股现货与国内极简 `513500+518880` 账户）：`75% 标普 + 25% 黄金` 季末再平衡（`GOLD_75_25_Q` / `CN_75_25_Q`）；注意黄金多年熊市（如 2011–2015）会阶段性拖累。
+  - 低费率美元趋势换盾（≤10bp）：`S2_GOLD`、`S2_BOND_GOLD`，或不怕黄金熊市的 `S2_GOLD_TREND` / `S2_CASH`。
+  - 国内 `513500` 低回撤控波动：自身信号 `TVT-50`（换现金或换 `518880` 黄金），配合决策时 QDII 溢价纪律（定投 >3% 放现金停泊；存量 >6% 减半仓只防溢价、不防熊市）。
+  - 详见 `docs/strategies/sp500-enhance.md` 与 `docs/notes/sp500-four-directions-2026-11-22-review.md`。
+- **归档对照（统一口径）**：Theme Alpha、`Core90 / Bull10`、RS 轮动、聚宽四 ETF 单标的动量轮动（参数敏感、回撤超 40%）、TQQQ 牛熊切换（仅作极小仓位参考）统一收口为归档对照，不作为当前推荐。
+- **已冻结负面结论（除非用户要求，不再重复提议）**：
+  - A 股择时规则（简化温斯坦 30 周线、红利低波布林带）均未跑赢持有；
+  - 标普 500 单因子替代（质量 `SPHQ` / 低波 `SPLV` / 等权 `RSP`）、VIX/VIX3M 恐慌倒挂刹车、企业债信用利差刹车（`BAA10Y` / `HYG÷IEF`）、跌深多投智能定投（`SD1`）、日历效应（`HAL`/`TOM`）、短线 RSI(2)、国内 `513500` 自身价格离散周/月趋势规则均未通过；
+  - 对逆波动组合加简单黄金均线过滤会破坏分散收益（见 `test_iv20_gold_defense.py`），而 `S2_GOLD_TREND` 仅作为趋势防守仓在黄金走熊时的防接飞刀保护；
+  - 币圈永续合约（资金费率磨损）与不派分红的现货美股代币对长线复利破坏极大。
+- 价格使用比例复权（总回报）口径。旧的加法前复权夸大了 `510300` 的历史收益，见 `docs/notes/btc-satellite-corrected-prices-2026-10-18-review.md`。
+- 结论用通俗中文写给非技术读者；带日期的历史报告保持原样，用补充笔记代替改写。
 
 ## 项目结构与模块组织
 
 本仓库由量化策略研究和 TypeScript 仪表盘两部分组成。
 
-- `research/notebooks/*-practice.ipynb` 是策略实验；新实验使用 `q13-<主题>-practice.ipynb` 这类命名。
-- `src/xquant/` 存放经过测试、可跨实验复用的组合、指标和绩效计算；`tests/` 存放对应测试。
-- `scripts/` 存放可重复运行的完整 Python 研究任务。
-- `outputs/<实验名>/` 存放生成的 CSV、图表和诊断结果。
-- `docs/notes/` 存放与实验对应的研究复盘。
+- `research/notebooks/*-practice.ipynb` 是策略实验；使用与输出和复盘一致的命名（如 `<主题>-YYYY-MM-DD-practice.ipynb` 或 `q17-<主题>-practice.ipynb`）。
+- `src/xquant/` 存放经过测试、可跨实验复用的组合、指标、叠加回测和绩效计算（含标普四方向共享引擎 `sp500_lab.py`）；`tests/` 存放对应测试。
+- `scripts/` 存放可重复运行的完整 Python 研究任务及只读实时信号自查脚本 `scripts/check_live_sp500_signals.py`。
+- `outputs/<实验名>/` 存放生成的 CSV、校验清单、图表和诊断结果。
+- `docs/notes/` 存放与实验对应的带日期研究复盘；`docs/strategies/` 存放面向非技术读者的常青指南（`two-three-asset.md`、`sp500-enhance.md`、`holding-experience.md`、`research-index.md`）；`docs/research-ledger.md` 是全仓研究总台账。
 - `dashboard/src/` 存放 React 页面、组件、数据适配、样式及相邻测试。
 - `dashboard/scripts/` 将研究输出转换为 `dashboard/public/data/` 下的静态数据。
 
@@ -25,6 +35,7 @@
 
 - `uv sync`：根据 `pyproject.toml` 和 `uv.lock` 创建或更新 `.venv`。
 - `uv run python check_env.py`：检查 Python、研究依赖、Jupyter 和数据接口。
+- `uv run python scripts/check_live_sp500_signals.py`：只读查看标普 500 / 纳指 100 / 黄金 / BTC 当前 30 周均线与波动状态。
 - `uv run jupyter lab`：打开本地研究 notebook。
 - `uv run pytest`：运行 Python 单元与脚本集成测试。
 - `make dashboard-install`：安装仪表盘依赖。

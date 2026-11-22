@@ -1,55 +1,44 @@
 # 策略研究索引
 
-本页汇总各研究线的入口、当前证据边界和历史归档位置。它是导航页，不构成投资建议或实盘批准。近期核心实验从[研究 Notebook 索引](../../research/README.md#当前核心实验)进入。
+本页汇总各研究线的入口、当前证据边界和历史归档位置。它是导航页，不构成投资建议或实盘批准。普通读者优先看[两组合与三组合](two-three-asset.md)和[标普 500 增强实战指南](sp500-enhance.md)；完整清单见[研究台账](../research-ledger.md)。
 
-## 2026 年 11 月研究
+## 标普 500 量化增强与实盘摩擦（2026 年 11 月）
 
-- [研究台账](../research-ledger.md)：每个研究的问题、结论、状态和证据边界，是这一页的完整版。
-- [标普 500 增强与定投对比（11-10）](../notes/sp500-enhance-vs-dca-2026-11-10-review.md)、[参数敏感性（11-10）](../notes/sp500-parameter-robustness-2026-11-10-review.md)、[持有体验（11-10）](../notes/sp500-holding-experience-2026-11-10-review.md)。
-- [境内 513500 / 513100 半仓趋势（11-10）](../notes/domestic-us-etf-trend-2026-11-10-review.md)、[溢价（11-10）](../notes/qdii-premium-2026-11-10-review.md)、[入场方式（11-10）](../notes/entry-methods-2026-11-10-review.md)、[TQQQ 牛熊切换（11-10）](../notes/tqqq-regime-switch-2026-11-10-review.md)。
-- [红利低波布林带（11-05）](../notes/dividend-lowvol-bollinger-2026-11-05-review.md)、[标普与红利低波增强（11-05）](../notes/index-enhance-strategies-2026-11-05-review.md)、[QQQ 趋势规则（11-05）](../notes/qqq-trend-strategies-2026-11-05-review.md)。
+- **通俗总指南**：[标普 500 增强实战指南](sp500-enhance.md)（按账户给结论，涵盖黄金熊市压力测试与币圈避坑）。
+- **四方向联合研究与统一收口（11-22）**：[四方向总复盘](../notes/sp500-four-directions-2026-11-22-review.md)（跨资产股金双核与美股单因子、S2 趋势换黄金/金债盾、VIX 恐慌结构与信用利差、国内 513500 黄金护盾与溢价停泊 + 币圈美股摩擦压测）。
+- **MTF-3 / TVT-50 与境内 513500/513100 复测（11-14 ~ 11-15）**：[新候选 MTF-3/TVT-50](../notes/sp500-new-enhance-2026-11-14-review.md)、[513500 外盘信号复测](../notes/sp500-513500-mtf-tvt-real-2026-11-14-review.md)、[513500 自身信号对照](../notes/sp500-513500-direct-signal-2026-11-15-review.md)、[统一体检](../notes/mtf-tvt-healthcheck-2026-11-15-review.md)、[与既有策略分层对比](../notes/mtf-tvt-existing-comparison-2026-11-15-review.md)、[QQQ 新规则](../notes/qqq-new-enhance-2026-11-14-review.md)、[SPY+QQQ 组合](../notes/spy-qqq-combo-2026-11-15-review.md)。
+- **首轮标普择时、溢价与入场方式（11-05 ~ 11-10）**：[标普增强与定投对比](../notes/sp500-enhance-vs-dca-2026-11-10-review.md)、[参数敏感性](../notes/sp500-parameter-robustness-2026-11-10-review.md)、[持有体验](../notes/sp500-holding-experience-2026-11-10-review.md)、[境内 513500/513100 半仓趋势](../notes/domestic-us-etf-trend-2026-11-10-review.md)、[境内 ETF 溢价](../notes/qdii-premium-2026-11-10-review.md)、[入场方式](../notes/entry-methods-2026-11-10-review.md)、[同区间策略对比](../notes/strategy-comparison-2026-11-10-review.md)、[标普与红利低波增强](../notes/index-enhance-strategies-2026-11-05-review.md)、[红利低波布林带](../notes/dividend-lowvol-bollinger-2026-11-05-review.md)、[QQQ 趋势规则](../notes/qqq-trend-strategies-2026-11-05-review.md)。
 
-## 三资产核心与主题增强
+## 三资产核心主线与主线过滤验证
 
-- [纯三资产核心复核（2026-10-03）](../notes/three-asset-core-2026-10-03-review.md)：510300、513100、518880 的20日逆波动基线及收益来源、回撤和不利情景。
-- [分红会计修正与海外ETF估值监测（2026-10-04）](../notes/etf-dividend-valuation-2026-10-04-review.md)：510300原始份额、除息应收和现金到账的修订口径；此报告已确认交付。
-- [主题 Alpha Q1–Q8 与 Q12](../../research/README.md#theme-alpha-研究线)：主题筛选、核心—卫星、压力和生产现实性等历史研究；[近期 LVT 三个月复核](../notes/theme-alpha-lvt-recent-3m-2026-09-06-review.md)记录其后续边界。
+- **通俗总指南**：[两组合与三组合](two-three-asset.md)、[一次投入与定投持有体验](holding-experience.md)。
+- [纯三资产核心复核（2026-10-03）](../notes/three-asset-core-2026-10-03-review.md)：`510300`、`513100`、`518880` 的 20 日逆波动基线及收益来源、回撤和不利情景。
+- [分红会计修正与海外 ETF 估值监测（2026-10-04）](../notes/etf-dividend-valuation-2026-10-04-review.md)：`510300` 原始份额、除息应收和现金到账的修订口径；此报告已确认交付。
+- [主线里的 S2 过滤（2026-11-10）](../notes/main-line-s2-filter-2026-11-10-review.md)：验证给主线叠加 S2 周线趋势过滤未通过（无法缩短 2020 急跌回撤），主线维持简洁冻结态。
 
-旧三资产和主题研究若使用510300，必须核对各自行情来源及实现字段。分红报告不会自动改写其他 Notebook、复权价格或既有收益；未经核对不能声称旧结果已经继承新会计口径。ETF估值过滤仍未验证：真实交易日观察为0/20，不能据此估计暂停频率或断言盘中公允价值区间可靠。
+旧三资产和主题研究若使用 `510300`，必须核对各自行情来源及实现字段；分红报告不会自动改写旧 Notebook 或旧 CSV。历史决策时溢价已在 11-10 与 11-22 笔记中用东方财富净值检验，但盘中实时 IOPV 估值区间观察仍为 0/20，需实盘前瞻核验。
+
+## BTC 趋势卫星（主线卫星部分）
+
+- [价格口径修正重跑（2026-10-18）](../notes/btc-satellite-corrected-prices-2026-10-18-review.md)：三组合核心改用比例复权后，7.5% BTC 日线 SuperTrend(10, 3) 相对不加 BTC 仍贡献约 +2.75 个百分点/年，最大回撤略降。
+- [时序修正研究说明（2026-10-03）](../notes/strategy-healthcheck-clock-correction-2026-10-03-review.md)及[独立复核](../notes/strategy-healthcheck-clock-correction-2026-10-03-independent-review.md)、[总体策略体检（2026-10-02）](../notes/strategy-healthcheck-2026-10-02-review.md)。
+- [Q3、Q6–Q10 旧研究序列](../../research/README.md#btc-supertrend-研究线)。
+
+旧 Q10 报告中的 BTC7.5 年化 19.49% 存在 next-close 时序缺陷，已废止；当前口径以 10-18 修正复核为准。
 
 ## 趋势跟踪（温斯坦）与 A 股风格
 
-- [温斯坦测试总结（2026-10-18）](../notes/weinstein-summary-2026-10-18.md)：汇总 A 股、美股和 BTC 上的趋势规则测试。简化版温斯坦在各市场都没有跑赢持有；它在美股指数上能明显降低回撤，在 A 股上收益和回撤都更差，在 BTC 上不如日线 SuperTrend。
+- [温斯坦测试总结（2026-10-18）](../notes/weinstein-summary-2026-10-18.md)：简化版 30 周线只在美股指数上能降低回撤；在 A 股收益和回撤都更差；在 BTC 上不如日线 SuperTrend。
 - [A 股 ETF 版](../notes/weinstein-etf-stage-2026-10-18-review.md)、[美股行业 ETF 版](../notes/weinstein-us-sector-2026-10-18-review.md)、[单个指数与 BTC 快速测试](../../outputs/weinstein-quick-checks-2026-10-18/README.md)。
-- [红利低波 + 中证2000（2026-10-18）](../notes/dividend-lowvol-csi2000-2026-10-18-review.md)：四种搭配规则都没有在回撤上胜过单独持有红利低波；中证2000 在 2023 年 8 月之前是倒推历史。
+- [红利低波 + 中证2000（2026-10-18）](../notes/dividend-lowvol-csi2000-2026-10-18-review.md)：四种搭配规则均未在回撤上胜过单独持有红利低波。
 
-## BTC 趋势卫星
+## 归档对照与历史研究线
 
-- [价格口径修正重跑（2026-10-18）](../notes/btc-satellite-corrected-prices-2026-10-18-review.md)：三组合核心 ETF 改用正确复权口径后，BTC 7.5% 相对不加 BTC 的增益仍约 2.75 个百分点每年，绝对年化小幅下调；附旧研究受加法复权影响的盘点。
-- [Q3、Q6–Q10 旧研究序列](../../research/README.md#btc-supertrend-研究线)：包括 BTC 风险平价、SuperTrend 稳健性和实盘化压力测试。
-- [时序修正研究说明（2026-10-03）](../notes/strategy-healthcheck-clock-correction-2026-10-03-review.md)及[独立复核](../notes/strategy-healthcheck-clock-correction-2026-10-03-independent-review.md)：修正模型通过列明的时钟反例和账本复核，但仍是异步研究模型。
-- [总体策略体检（2026-10-02）](../notes/strategy-healthcheck-2026-10-02-review.md)：包含旧Q10收益与时序问题的追溯。
+以下研究线经 2026-11-22 统一收口为**归档对照**，不再作为当前推荐或纸面并行方向，仅保留用于方法论复盘与历史对照：
 
-旧Q10报告中的 BTC7.5 年化19.49%采用有问题的 next-close 时序：新权重被用于实际成交前的收益。它不能作为当前收益，也不能因后续时钟修正而恢复为当前策略绩效。修正版仍受真实投资载体、美元与人民币兑换、异步调仓、即时结算模型和完整样本外证据缺失限制。
+- **聚宽四 ETF 核心资产轮动与黄金熊市测试（11-15）**：[复核报告](../notes/joinquant-core-rotation-2026-11-15-review.md)（修正未来函数后最大回撤 -42.5%、对 25 日窗口敏感；简单黄金均线过滤恶化逆波动组合）。
+- **TQQQ 牛熊切换（11-10）**：[复核报告](../notes/tqqq-regime-switch-2026-11-10-review.md)（收益主要来自三倍杠杆，回撤仍在 -57%～-61%）。
+- **Core90 / Bull10 与交易账本复现包**：[交易账本复现包说明](../../research/trading-ledger-2026-09-05/README.md)、[Core90 当前合同基准](../../research/trading-ledger-2026-09-05/core90_current_contract_2026_09_05/README.md)、[Q15](../../research/notebooks/q15-all-bull-flip-long-sample-practice.ipynb) / [Q16](../../research/notebooks/q16-all-bull-flip-defense-practice.ipynb)。
+- **Theme Alpha 与多资产旧实验**：[主题 Alpha Q1–Q8 与 Q12](../../research/README.md#theme-alpha-研究线)、[近期 LVT 三个月复核](../notes/theme-alpha-lvt-recent-3m-2026-09-06-review.md)。
 
-## 多资产跨市场研究
-
-- [时序修正说明](../notes/strategy-healthcheck-clock-correction-2026-10-03-review.md)与[独立复核](../notes/strategy-healthcheck-clock-correction-2026-10-03-independent-review.md)是多资产结果的主要入口。
-- [修正版输出说明](../../outputs/strategy-healthcheck-clock-correction-2026-10-03/README.md)和[研究 Notebook](../../research/notebooks/strategy-healthcheck-clock-correction-2026-10-03-practice.ipynb)提供产物与展示入口。
-
-多资产交付仍未关闭两项问题：详细 `multi_asset_full.md` 留有旧执行时钟及FX措辞；重跑依赖新 source bundle 之外的旧全量 gzip 文件，README没有把它列为必需输入。FX日线可用时间、即时结算、分数份额和统一现金池均属研究假设，FX供应商的bar截止时刻未独立核实。虽然有全样本门槛与滚动分析，仍无独立样本外证明；`no_target_default` 不是实盘资格结论。
-
-## Core90 / Bull10 与交易账本归档
-
-- [交易账本复现包说明](../../research/trading-ledger-2026-09-05/README.md)汇总旧 xquant 研究恢复、Core90 2.1.0 合同基准和三资产变种比较。
-- [Core90 当前合同基准](../../research/trading-ledger-2026-09-05/core90_current_contract_2026_09_05/README.md)及[验证账本](../../research/trading-ledger-2026-09-05/core90_current_contract_2026_09_05/validated_2_1/)。
-- [Core90 恢复包](../../research/trading-ledger-2026-09-05/core90_recovery_2026_09_05/README.md)保留旧 Bull Flip 与 Def200 相关 NAV、订单和复现材料；[三资产变种比较](../../research/trading-ledger-2026-09-05/three_asset_variant_comparison_2026_09_05/)包含修复账本。
-- [Q15 全牛市长样本](../../research/notebooks/q15-all-bull-flip-long-sample-practice.ipynb)和[Q16 全牛市防守](../../research/notebooks/q16-all-bull-flip-defense-practice.ipynb)是相邻的历史实验入口。
-
-Core90/Bull10 在此处作为历史增强观察线和账本归档，不取代当前核心实验索引中的纯三资产基线；历史表现不能自动转成当前推荐或实盘资格。
-
-## 早期 Notebook 与复现约定
-
-早期 Q3、Q6–Q16 和 Theme Alpha Notebook 保留在[`research/notebooks/`](../../research/notebooks/)，完整分组见[研究 README](../../research/README.md)。其中“当前默认候选”“优先纸面跟踪”等措辞是各报告撰写时的阶段性结论，应结合后续复核理解，不代表此刻建议。
-
-每个研究目录的 Notebook、输出和复核报告应配套阅读。输出可能依赖 Git 忽略的行情文件或相邻交易仓库；阅读数字时以对应报告写明的输入、执行模型与限制为准。
+每个研究目录的 Notebook、输出和复核报告应配套阅读；早期 Notebook 中的“当前默认候选”措辞仅代表撰写当时的阶段性结论。
