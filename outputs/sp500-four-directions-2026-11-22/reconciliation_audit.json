@@ -1,0 +1,52 @@
+{
+  "cross_agent_nav_reconciliation": {
+    "US_B0_SPY_dir1_vs_dir2": {
+      "n_days": 5482,
+      "max_abs_diff": 4.997402491824232e-11,
+      "passed": true
+    },
+    "US_B0_SPY_dir1_vs_dir4": {
+      "n_days": 5482,
+      "max_abs_diff": 4.997402491824232e-11,
+      "passed": true
+    },
+    "US_GOLD_75_25_Q_dir1_vs_dir4": {
+      "n_days": 5482,
+      "max_abs_diff": 4.9996229378734824e-11,
+      "passed": true
+    },
+    "US_S2_CASH_dir2_vs_dir4": {
+      "n_days": 5482,
+      "max_abs_diff": 0.0,
+      "passed": true
+    },
+    "US_S2_GOLD_dir2_vs_dir4": {
+      "n_days": 5482,
+      "max_abs_diff": 0.0,
+      "passed": true
+    },
+    "DOM_B0_513500_dir1_vs_dir2": {
+      "n_days": 2915,
+      "max_abs_diff": 4.999467506650035e-11,
+      "passed": true
+    },
+    "DOM_B0_513500_dir1_vs_dir3": {
+      "n_days": 2915,
+      "max_abs_diff": 4.999467506650035e-11,
+      "passed": true
+    },
+    "DOM_B0_513500_dir1_vs_dir4": {
+      "n_days": 2915,
+      "max_abs_diff": 4.999467506650035e-11,
+      "passed": true
+    }
+  },
+  "all_reconciliations_passed": true,
+  "subagent_self_checks_passed": {
+    "dir1": true,
+    "dir2": true,
+    "dir3": true,
+    "dir4": true
+  },
+  "all_subagents_passed": true
+}

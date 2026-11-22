@@ -1,0 +1,84 @@
+{
+  "n_backtest_runs_checked": 324,
+  "n_failed_runs": 0,
+  "failed_runs": [],
+  "max_cash_residual": 8.881784197001252e-16,
+  "max_cash_residual_ok": true,
+  "nav_min": 0.4810550024954538,
+  "nav_min_ok": true,
+  "target_weight_min": 0.0,
+  "target_sum_max": 1.0,
+  "max_actual_weight_sum_err": 0.0,
+  "weights_legal_ok": true,
+  "anti_lookahead": {
+    "week_end_only_audits": [
+      {
+        "series": "us_spy",
+        "n_changes": 89,
+        "non_week_end_changes": [],
+        "ok": true
+      },
+      {
+        "series": "us_gld_real",
+        "n_changes": 62,
+        "non_week_end_changes": [],
+        "ok": true
+      },
+      {
+        "series": "us_gold_spliced",
+        "n_changes": 94,
+        "non_week_end_changes": [],
+        "ok": true
+      },
+      {
+        "series": "us_ief",
+        "n_changes": 108,
+        "non_week_end_changes": [],
+        "ok": true
+      },
+      {
+        "series": "cn_513500_full",
+        "n_changes": 43,
+        "non_week_end_changes": [],
+        "ok": true
+      },
+      {
+        "series": "cn_518880_full",
+        "n_changes": 26,
+        "non_week_end_changes": [],
+        "ok": true
+      }
+    ],
+    "all_week_end_only_ok": true,
+    "us_future_perturbation_test_dates": [
+      "2005-04-19",
+      "2008-09-17",
+      "2008-10-31",
+      "2011-08-09",
+      "2015-08-25",
+      "2020-03-11",
+      "2022-06-30",
+      "2025-04-08"
+    ],
+    "us_future_perturbation_mismatches": 0,
+    "us_anti_lookahead_ok": true,
+    "cn_future_perturbation_test_dates": [
+      "2015-08-21",
+      "2018-10-12",
+      "2020-03-13",
+      "2022-04-29",
+      "2022-09-21",
+      "2025-04-03"
+    ],
+    "cn_self_perturbation_mismatches": 0,
+    "cn_us_sig_perturbation_mismatches_incl_same_day": 0,
+    "cn_anti_lookahead_ok": true,
+    "us_sig_min_calendar_gap_days": 1,
+    "us_sig_strict_before_cn_ok": true,
+    "legacy_overlay_rules_b0_max_abs_nav_diff": 0.0,
+    "legacy_overlay_rules_s2_max_abs_nav_diff": 0.0,
+    "legacy_consistency_ok": true
+  },
+  "missing_output_files": [],
+  "all_checks_passed": true
+}

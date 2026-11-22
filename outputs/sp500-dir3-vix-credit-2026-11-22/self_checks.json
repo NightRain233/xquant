@@ -1,0 +1,1177 @@
+{
+  "all_passed": true,
+  "all_active_strategies_traded": true,
+  "engine_accounting": {
+    "n_backtests_checked": 154,
+    "max_cash_residual": 4.440892098500626e-16,
+    "max_cash_residual_lt_1e10": true,
+    "nav_min": 0.4537410357853244,
+    "nav_min_gt_0": true,
+    "target_weight_min": 0.0,
+    "target_sum_max": 1.0000000000000002,
+    "all_nav_finite": true
+  },
+  "overlay_rules_parity": {
+    "S2_CASH_max_abs_nav_diff": 0.0,
+    "VT_15_max_abs_nav_diff": 0.0
+  },
+  "anti_lookahead": {
+    "truncation_test_dates": [
+      "2011-08-18",
+      "2020-03-11",
+      "2022-06-15"
+    ],
+    "vix_brake_truncation_invariant": true,
+    "vix_graded_truncation_invariant": true,
+    "hyg_ief_truncation_invariant": true,
+    "baa10y_truncation_invariant": true,
+    "fred_baa10y_obs_date_le_prev_trading_day": true,
+    "fred_baa10y_same_day_perturbation_invariant": true,
+    "domestic_us_date_strictly_lt_cn_date": true,
+    "domestic_min_calendar_day_gap": 1,
+    "domestic_median_calendar_day_gap": 1.0,
+    "domestic_same_day_us_perturbation_invariant": true
+  },
+  "brake_episode_stats": {
+    "3A_VIX_BRAKE_2006_2026": {
+      "n_triggers": 64,
+      "pct_days_brake_on": 0.2302851524090462
+    },
+    "3B_BAA10Y_2000_2026": {
+      "n_triggers": 45,
+      "pct_days_brake_on": 0.14826357969723955
+    },
+    "3B_HYG_IEF_2007_2026": {
+      "n_triggers": 33,
+      "pct_days_brake_on": 0.18030050083472454
+    },
+    "3C_CN_VIX_BRAKE_2014_2026": {
+      "n_triggers": 38,
+      "pct_days_brake_on": 0.16981132075471697
+    }
+  },
+  "turnover_audit_10bp": {
+    "3A_B0_SPY_10bp": {
+      "n_non_init_trades": 0,
+      "trades_per_year": 0.0,
+      "annual_turnover": 0.0,
+      "avg_primary_weight": 1.0
+    },
+    "3A_S2_CASH_10bp": {
+      "n_non_init_trades": 54,
+      "trades_per_year": 2.67,
+      "annual_turnover": 1.3325,
+      "avg_primary_weight": 0.8618
+    },
+    "3A_VT_15_10bp": {
+      "n_non_init_trades": 187,
+      "trades_per_year": 9.25,
+      "annual_turnover": 1.2706,
+      "avg_primary_weight": 0.8732
+    },
+    "3A_VIX_BRAKE_CASH_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 3.1564,
+      "avg_primary_weight": 0.883
+    },
+    "3A_VIX_BRAKE_GOLD_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 6.3277,
+      "avg_primary_weight": 0.8816
+    },
+    "3A_VIX_BRAKE_GOLD_TREND_10bp": {
+      "n_non_init_trades": 142,
+      "trades_per_year": 7.03,
+      "annual_turnover": 5.4388,
+      "avg_primary_weight": 0.8832
+    },
+    "3A_VIX_GRADED_CASH_10bp": {
+      "n_non_init_trades": 155,
+      "trades_per_year": 7.67,
+      "annual_turnover": 3.4889,
+      "avg_primary_weight": 0.8749
+    },
+    "3A_VIX_OR_S2_CASH_10bp": {
+      "n_non_init_trades": 120,
+      "trades_per_year": 5.94,
+      "annual_turnover": 2.9559,
+      "avg_primary_weight": 0.8168
+    },
+    "3A_VIX_OR_S2_GOLD_10bp": {
+      "n_non_init_trades": 120,
+      "trades_per_year": 5.94,
+      "annual_turnover": 5.9277,
+      "avg_primary_weight": 0.8137
+    },
+    "3A_VIX_OR_S2_GOLD_TREND_10bp": {
+      "n_non_init_trades": 145,
+      "trades_per_year": 7.18,
+      "annual_turnover": 5.386,
+      "avg_primary_weight": 0.8212
+    },
+    "3A_FIXED_CASH_MATCH_VIX_BRAKE_CASH_10bp": {
+      "n_non_init_trades": 242,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.0468,
+      "avg_primary_weight": 0.8833
+    },
+    "3A_FIXED_CASH_MATCH_VIX_GRADED_CASH_10bp": {
+      "n_non_init_trades": 242,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.0496,
+      "avg_primary_weight": 0.8752
+    },
+    "3A_FIXED_CASH_MATCH_VIX_OR_S2_CASH_10bp": {
+      "n_non_init_trades": 242,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.0678,
+      "avg_primary_weight": 0.8172
+    },
+    "3A_FIXED_CASH_MATCH_S2_CASH_10bp": {
+      "n_non_init_trades": 242,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.054,
+      "avg_primary_weight": 0.8621
+    },
+    "3A_FIXED_CASH_MATCH_VT_15_10bp": {
+      "n_non_init_trades": 242,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.0502,
+      "avg_primary_weight": 0.8735
+    },
+    "3A_FIXED_GOLD_MATCH_VIX_BRAKE_GOLD_10bp": {
+      "n_non_init_trades": 242,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.1323,
+      "avg_primary_weight": 0.8816
+    },
+    "3A_FIXED_GOLD_MATCH_VIX_OR_S2_GOLD_10bp": {
+      "n_non_init_trades": 242,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.1919,
+      "avg_primary_weight": 0.8137
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d1_w0.0_10bp": {
+      "n_non_init_trades": 244,
+      "trades_per_year": 12.07,
+      "annual_turnover": 12.0683,
+      "avg_primary_weight": 0.7966
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d1_w0.25_10bp": {
+      "n_non_init_trades": 244,
+      "trades_per_year": 12.07,
+      "annual_turnover": 9.0468,
+      "avg_primary_weight": 0.8462
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d1_w0.5_10bp": {
+      "n_non_init_trades": 244,
+      "trades_per_year": 12.07,
+      "annual_turnover": 6.0288,
+      "avg_primary_weight": 0.8965
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d3_w0.0_10bp": {
+      "n_non_init_trades": 172,
+      "trades_per_year": 8.51,
+      "annual_turnover": 8.5072,
+      "avg_primary_weight": 0.7335
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d3_w0.25_10bp": {
+      "n_non_init_trades": 172,
+      "trades_per_year": 8.51,
+      "annual_turnover": 6.3732,
+      "avg_primary_weight": 0.7984
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d3_w0.5_10bp": {
+      "n_non_init_trades": 172,
+      "trades_per_year": 8.51,
+      "annual_turnover": 4.2445,
+      "avg_primary_weight": 0.8644
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d5_w0.0_10bp": {
+      "n_non_init_trades": 158,
+      "trades_per_year": 7.82,
+      "annual_turnover": 7.8148,
+      "avg_primary_weight": 0.6884
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d5_w0.25_10bp": {
+      "n_non_init_trades": 158,
+      "trades_per_year": 7.82,
+      "annual_turnover": 5.853,
+      "avg_primary_weight": 0.7634
+    },
+    "SENS_VIX_BRAKE_CASH_t0.98_d5_w0.5_10bp": {
+      "n_non_init_trades": 158,
+      "trades_per_year": 7.82,
+      "annual_turnover": 3.8971,
+      "avg_primary_weight": 0.84
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d1_w0.0_10bp": {
+      "n_non_init_trades": 176,
+      "trades_per_year": 8.71,
+      "annual_turnover": 8.705,
+      "avg_primary_weight": 0.8285
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d1_w0.25_10bp": {
+      "n_non_init_trades": 176,
+      "trades_per_year": 8.71,
+      "annual_turnover": 6.5236,
+      "avg_primary_weight": 0.8702
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d1_w0.5_10bp": {
+      "n_non_init_trades": 176,
+      "trades_per_year": 8.71,
+      "annual_turnover": 4.3461,
+      "avg_primary_weight": 0.9125
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d3_w0.0_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 6.3309,
+      "avg_primary_weight": 0.7697
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d3_w0.25_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 4.741,
+      "avg_primary_weight": 0.826
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d3_w0.5_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 3.1564,
+      "avg_primary_weight": 0.883
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d5_w0.0_10bp": {
+      "n_non_init_trades": 116,
+      "trades_per_year": 5.74,
+      "annual_turnover": 5.7374,
+      "avg_primary_weight": 0.7325
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d5_w0.25_10bp": {
+      "n_non_init_trades": 116,
+      "trades_per_year": 5.74,
+      "annual_turnover": 4.2955,
+      "avg_primary_weight": 0.7966
+    },
+    "SENS_VIX_BRAKE_CASH_t1.0_d5_w0.5_10bp": {
+      "n_non_init_trades": 116,
+      "trades_per_year": 5.74,
+      "annual_turnover": 2.859,
+      "avg_primary_weight": 0.8622
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d1_w0.0_10bp": {
+      "n_non_init_trades": 90,
+      "trades_per_year": 4.45,
+      "annual_turnover": 4.4514,
+      "avg_primary_weight": 0.8777
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d1_w0.25_10bp": {
+      "n_non_init_trades": 90,
+      "trades_per_year": 4.45,
+      "annual_turnover": 3.3339,
+      "avg_primary_weight": 0.9073
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d1_w0.5_10bp": {
+      "n_non_init_trades": 90,
+      "trades_per_year": 4.45,
+      "annual_turnover": 2.22,
+      "avg_primary_weight": 0.9375
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d3_w0.0_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 3.76,
+      "annual_turnover": 3.759,
+      "avg_primary_weight": 0.8358
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d3_w0.25_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 3.76,
+      "annual_turnover": 2.8123,
+      "avg_primary_weight": 0.876
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d3_w0.5_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 3.76,
+      "annual_turnover": 1.8708,
+      "avg_primary_weight": 0.9167
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d5_w0.0_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.46,
+      "annual_turnover": 3.4622,
+      "avg_primary_weight": 0.8027
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d5_w0.25_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.46,
+      "annual_turnover": 2.591,
+      "avg_primary_weight": 0.8498
+    },
+    "SENS_VIX_BRAKE_CASH_t1.03_d5_w0.5_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.46,
+      "annual_turnover": 1.7239,
+      "avg_primary_weight": 0.8981
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d1_w0.0_10bp": {
+      "n_non_init_trades": 64,
+      "trades_per_year": 3.17,
+      "annual_turnover": 3.1655,
+      "avg_primary_weight": 0.8959
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d1_w0.25_10bp": {
+      "n_non_init_trades": 64,
+      "trades_per_year": 3.17,
+      "annual_turnover": 2.3683,
+      "avg_primary_weight": 0.9212
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d1_w0.5_10bp": {
+      "n_non_init_trades": 64,
+      "trades_per_year": 3.17,
+      "annual_turnover": 1.5755,
+      "avg_primary_weight": 0.9469
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d3_w0.0_10bp": {
+      "n_non_init_trades": 60,
+      "trades_per_year": 2.97,
+      "annual_turnover": 2.9676,
+      "avg_primary_weight": 0.8588
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d3_w0.25_10bp": {
+      "n_non_init_trades": 60,
+      "trades_per_year": 2.97,
+      "annual_turnover": 2.2175,
+      "avg_primary_weight": 0.8936
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d3_w0.5_10bp": {
+      "n_non_init_trades": 60,
+      "trades_per_year": 2.97,
+      "annual_turnover": 1.4735,
+      "avg_primary_weight": 0.9286
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d5_w0.0_10bp": {
+      "n_non_init_trades": 54,
+      "trades_per_year": 2.67,
+      "annual_turnover": 2.6709,
+      "avg_primary_weight": 0.8238
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d5_w0.25_10bp": {
+      "n_non_init_trades": 54,
+      "trades_per_year": 2.67,
+      "annual_turnover": 1.9973,
+      "avg_primary_weight": 0.8657
+    },
+    "SENS_VIX_BRAKE_CASH_t1.05_d5_w0.5_10bp": {
+      "n_non_init_trades": 54,
+      "trades_per_year": 2.67,
+      "annual_turnover": 1.3281,
+      "avg_primary_weight": 0.9088
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d1_w0.0_10bp": {
+      "n_non_init_trades": 244,
+      "trades_per_year": 12.07,
+      "annual_turnover": 24.1246,
+      "avg_primary_weight": 0.7966
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d1_w0.25_10bp": {
+      "n_non_init_trades": 244,
+      "trades_per_year": 12.07,
+      "annual_turnover": 18.1009,
+      "avg_primary_weight": 0.8459
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d1_w0.5_10bp": {
+      "n_non_init_trades": 244,
+      "trades_per_year": 12.07,
+      "annual_turnover": 12.0746,
+      "avg_primary_weight": 0.8961
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d3_w0.0_10bp": {
+      "n_non_init_trades": 172,
+      "trades_per_year": 8.51,
+      "annual_turnover": 17.0059,
+      "avg_primary_weight": 0.7335
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d3_w0.25_10bp": {
+      "n_non_init_trades": 172,
+      "trades_per_year": 8.51,
+      "annual_turnover": 12.7524,
+      "avg_primary_weight": 0.7976
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d3_w0.5_10bp": {
+      "n_non_init_trades": 172,
+      "trades_per_year": 8.51,
+      "annual_turnover": 8.5022,
+      "avg_primary_weight": 0.8632
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d5_w0.0_10bp": {
+      "n_non_init_trades": 158,
+      "trades_per_year": 7.82,
+      "annual_turnover": 15.6217,
+      "avg_primary_weight": 0.6884
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d5_w0.25_10bp": {
+      "n_non_init_trades": 158,
+      "trades_per_year": 7.82,
+      "annual_turnover": 11.7164,
+      "avg_primary_weight": 0.7624
+    },
+    "SENS_VIX_BRAKE_GOLD_t0.98_d5_w0.5_10bp": {
+      "n_non_init_trades": 158,
+      "trades_per_year": 7.82,
+      "annual_turnover": 7.8134,
+      "avg_primary_weight": 0.8385
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d1_w0.0_10bp": {
+      "n_non_init_trades": 176,
+      "trades_per_year": 8.71,
+      "annual_turnover": 17.4014,
+      "avg_primary_weight": 0.8285
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d1_w0.25_10bp": {
+      "n_non_init_trades": 176,
+      "trades_per_year": 8.71,
+      "annual_turnover": 13.0555,
+      "avg_primary_weight": 0.8698
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d1_w0.5_10bp": {
+      "n_non_init_trades": 176,
+      "trades_per_year": 8.71,
+      "annual_turnover": 8.7091,
+      "avg_primary_weight": 0.912
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d3_w0.0_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 12.6555,
+      "avg_primary_weight": 0.7697
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d3_w0.25_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 9.4901,
+      "avg_primary_weight": 0.825
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d3_w0.5_10bp": {
+      "n_non_init_trades": 128,
+      "trades_per_year": 6.33,
+      "annual_turnover": 6.3277,
+      "avg_primary_weight": 0.8816
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d5_w0.0_10bp": {
+      "n_non_init_trades": 116,
+      "trades_per_year": 5.74,
+      "annual_turnover": 11.4691,
+      "avg_primary_weight": 0.7325
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d5_w0.25_10bp": {
+      "n_non_init_trades": 116,
+      "trades_per_year": 5.74,
+      "annual_turnover": 8.6025,
+      "avg_primary_weight": 0.7953
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.0_d5_w0.5_10bp": {
+      "n_non_init_trades": 116,
+      "trades_per_year": 5.74,
+      "annual_turnover": 5.7377,
+      "avg_primary_weight": 0.8603
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d1_w0.0_10bp": {
+      "n_non_init_trades": 90,
+      "trades_per_year": 4.45,
+      "annual_turnover": 8.8984,
+      "avg_primary_weight": 0.8777
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d1_w0.25_10bp": {
+      "n_non_init_trades": 90,
+      "trades_per_year": 4.45,
+      "annual_turnover": 6.6728,
+      "avg_primary_weight": 0.907
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d1_w0.5_10bp": {
+      "n_non_init_trades": 90,
+      "trades_per_year": 4.45,
+      "annual_turnover": 4.4497,
+      "avg_primary_weight": 0.9371
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d3_w0.0_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 3.76,
+      "annual_turnover": 7.5142,
+      "avg_primary_weight": 0.8358
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d3_w0.25_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 3.76,
+      "annual_turnover": 5.6307,
+      "avg_primary_weight": 0.8753
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d3_w0.5_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 3.76,
+      "annual_turnover": 3.752,
+      "avg_primary_weight": 0.9157
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d5_w0.0_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.46,
+      "annual_turnover": 6.921,
+      "avg_primary_weight": 0.8027
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d5_w0.25_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.46,
+      "annual_turnover": 5.1898,
+      "avg_primary_weight": 0.8489
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.03_d5_w0.5_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.46,
+      "annual_turnover": 3.4609,
+      "avg_primary_weight": 0.8967
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d1_w0.0_10bp": {
+      "n_non_init_trades": 64,
+      "trades_per_year": 3.17,
+      "annual_turnover": 6.3278,
+      "avg_primary_weight": 0.8959
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d1_w0.25_10bp": {
+      "n_non_init_trades": 64,
+      "trades_per_year": 3.17,
+      "annual_turnover": 4.7403,
+      "avg_primary_weight": 0.9211
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d1_w0.5_10bp": {
+      "n_non_init_trades": 64,
+      "trades_per_year": 3.17,
+      "annual_turnover": 3.1587,
+      "avg_primary_weight": 0.9467
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d3_w0.0_10bp": {
+      "n_non_init_trades": 60,
+      "trades_per_year": 2.97,
+      "annual_turnover": 5.9323,
+      "avg_primary_weight": 0.8588
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d3_w0.25_10bp": {
+      "n_non_init_trades": 60,
+      "trades_per_year": 2.97,
+      "annual_turnover": 4.4384,
+      "avg_primary_weight": 0.8933
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d3_w0.5_10bp": {
+      "n_non_init_trades": 60,
+      "trades_per_year": 2.97,
+      "annual_turnover": 2.9536,
+      "avg_primary_weight": 0.9283
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d5_w0.0_10bp": {
+      "n_non_init_trades": 54,
+      "trades_per_year": 2.67,
+      "annual_turnover": 5.3391,
+      "avg_primary_weight": 0.8238
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d5_w0.25_10bp": {
+      "n_non_init_trades": 54,
+      "trades_per_year": 2.67,
+      "annual_turnover": 4.0024,
+      "avg_primary_weight": 0.8647
+    },
+    "SENS_VIX_BRAKE_GOLD_t1.05_d5_w0.5_10bp": {
+      "n_non_init_trades": 54,
+      "trades_per_year": 2.67,
+      "annual_turnover": 2.6688,
+      "avg_primary_weight": 0.9073
+    },
+    "3B2000_B0_SPY_10bp": {
+      "n_non_init_trades": 0,
+      "trades_per_year": 0.0,
+      "annual_turnover": 0.0,
+      "avg_primary_weight": 1.0
+    },
+    "3B2000_S2_CASH_10bp": {
+      "n_non_init_trades": 82,
+      "trades_per_year": 3.06,
+      "annual_turnover": 1.5296,
+      "avg_primary_weight": 0.8298
+    },
+    "3B2000_VT_15_10bp": {
+      "n_non_init_trades": 263,
+      "trades_per_year": 9.82,
+      "annual_turnover": 1.3394,
+      "avg_primary_weight": 0.8654
+    },
+    "3B2000_CREDIT_BAA_CASH_10bp": {
+      "n_non_init_trades": 90,
+      "trades_per_year": 3.36,
+      "annual_turnover": 1.6795,
+      "avg_primary_weight": 0.9244
+    },
+    "3B2000_FIXED_CASH_MATCH_CREDIT_BAA_10bp": {
+      "n_non_init_trades": 321,
+      "trades_per_year": 11.98,
+      "annual_turnover": 0.0302,
+      "avg_primary_weight": 0.9245
+    },
+    "3B2005_B0_SPY_10bp": {
+      "n_non_init_trades": 0,
+      "trades_per_year": 0.0,
+      "annual_turnover": 0.0,
+      "avg_primary_weight": 1.0
+    },
+    "3B2005_CREDIT_BAA_CASH_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.21,
+      "annual_turnover": 1.6032,
+      "avg_primary_weight": 0.9338
+    },
+    "3B2005_CREDIT_BAA_GOLD_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 3.21,
+      "annual_turnover": 3.211,
+      "avg_primary_weight": 0.9341
+    },
+    "3B2007_B0_SPY_10bp": {
+      "n_non_init_trades": 0,
+      "trades_per_year": 0.0,
+      "annual_turnover": 0.0,
+      "avg_primary_weight": 1.0
+    },
+    "3B2007_S2_CASH_10bp": {
+      "n_non_init_trades": 48,
+      "trades_per_year": 2.52,
+      "annual_turnover": 1.257,
+      "avg_primary_weight": 0.8565
+    },
+    "3B2007_HYG_IEF_CASH_10bp": {
+      "n_non_init_trades": 66,
+      "trades_per_year": 3.47,
+      "annual_turnover": 1.7277,
+      "avg_primary_weight": 0.9066
+    },
+    "3B2007_HYG_IEF_GOLD_10bp": {
+      "n_non_init_trades": 66,
+      "trades_per_year": 3.47,
+      "annual_turnover": 3.4672,
+      "avg_primary_weight": 0.9058
+    },
+    "3B2007_FIXED_CASH_MATCH_HYG_IEF_10bp": {
+      "n_non_init_trades": 228,
+      "trades_per_year": 11.97,
+      "annual_turnover": 0.0393,
+      "avg_primary_weight": 0.9068
+    },
+    "3C_B0_513500_10bp": {
+      "n_non_init_trades": 0,
+      "trades_per_year": 0.0,
+      "annual_turnover": 0.0,
+      "avg_primary_weight": 1.0
+    },
+    "3C_CN_S2_CASH_10bp": {
+      "n_non_init_trades": 42,
+      "trades_per_year": 3.51,
+      "annual_turnover": 1.7361,
+      "avg_primary_weight": 0.841
+    },
+    "3C_CN_VIX_BRAKE_CASH_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 6.34,
+      "annual_turnover": 3.1566,
+      "avg_primary_weight": 0.9145
+    },
+    "3C_CN_VIX_BRAKE_GOLD_10bp": {
+      "n_non_init_trades": 76,
+      "trades_per_year": 6.34,
+      "annual_turnover": 6.3179,
+      "avg_primary_weight": 0.9142
+    },
+    "3C_CN_VIX_OR_S2_CASH_10bp": {
+      "n_non_init_trades": 72,
+      "trades_per_year": 6.01,
+      "annual_turnover": 2.9812,
+      "avg_primary_weight": 0.807
+    },
+    "3C_CN_VIX_OR_S2_GOLD_10bp": {
+      "n_non_init_trades": 72,
+      "trades_per_year": 6.01,
+      "annual_turnover": 5.9714,
+      "avg_primary_weight": 0.8053
+    },
+    "3C_CN_VIX_OR_S2_US_GOLD_10bp": {
+      "n_non_init_trades": 70,
+      "trades_per_year": 5.84,
+      "annual_turnover": 5.8163,
+      "avg_primary_weight": 0.848
+    },
+    "3C_CN_FIXED_CASH_MATCH_CN_VIX_BRAKE_CASH_10bp": {
+      "n_non_init_trades": 143,
+      "trades_per_year": 11.94,
+      "annual_turnover": 0.0349,
+      "avg_primary_weight": 0.9148
+    },
+    "3C_CN_FIXED_CASH_MATCH_CN_VIX_OR_S2_CASH_10bp": {
+      "n_non_init_trades": 143,
+      "trades_per_year": 11.94,
+      "annual_turnover": 0.0696,
+      "avg_primary_weight": 0.8076
+    },
+    "3C_CN_FIXED_GOLD_MATCH_CN_VIX_BRAKE_GOLD_10bp": {
+      "n_non_init_trades": 143,
+      "trades_per_year": 11.94,
+      "annual_turnover": 0.0967,
+      "avg_primary_weight": 0.9141
+    },
+    "3C_CN_FIXED_GOLD_MATCH_CN_VIX_OR_S2_GOLD_10bp": {
+      "n_non_init_trades": 143,
+      "trades_per_year": 11.94,
+      "annual_turnover": 0.193,
+      "avg_primary_weight": 0.8051
+    }
+  },
+  "timeline_2020_us": {
+    "S2_CASH": [
+      {
+        "exec_date": "2020-03-02",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-06-08",
+        "traded_frac": 0.487,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ],
+    "VT_15": [
+      {
+        "exec_date": "2020-02-25",
+        "traded_frac": 0.1726,
+        "w_spy_after": 0.8275,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.1725
+      },
+      {
+        "exec_date": "2020-02-26",
+        "traded_frac": 0.1016,
+        "w_spy_after": 0.7255,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.2745
+      },
+      {
+        "exec_date": "2020-02-28",
+        "traded_frac": 0.1084,
+        "w_spy_after": 0.607,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.393
+      },
+      {
+        "exec_date": "2020-03-03",
+        "traded_frac": 0.1019,
+        "w_spy_after": 0.5084,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.4916
+      },
+      {
+        "exec_date": "2020-03-10",
+        "traded_frac": 0.1537,
+        "w_spy_after": 0.3447,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.6553
+      },
+      {
+        "exec_date": "2020-03-16",
+        "traded_frac": 0.0823,
+        "w_spy_after": 0.222,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.778
+      },
+      {
+        "exec_date": "2020-04-29",
+        "traded_frac": 0.1073,
+        "w_spy_after": 0.3671,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.6329
+      },
+      {
+        "exec_date": "2020-05-07",
+        "traded_frac": 0.1428,
+        "w_spy_after": 0.5056,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.4944
+      },
+      {
+        "exec_date": "2020-05-22",
+        "traded_frac": 0.1158,
+        "w_spy_after": 0.6282,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.3718
+      },
+      {
+        "exec_date": "2020-06-03",
+        "traded_frac": 0.1428,
+        "w_spy_after": 0.7838,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.2162
+      },
+      {
+        "exec_date": "2020-06-12",
+        "traded_frac": 0.266,
+        "w_spy_after": 0.5136,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.4864
+      }
+    ],
+    "VIX_BRAKE_CASH": [
+      {
+        "exec_date": "2020-02-10",
+        "traded_frac": 0.4938,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-25",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-04-30",
+        "traded_frac": 0.5165,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-12",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-06-17",
+        "traded_frac": 0.4935,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ],
+    "VIX_BRAKE_GOLD": [
+      {
+        "exec_date": "2020-02-10",
+        "traded_frac": 0.989,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-25",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-04-30",
+        "traded_frac": 1.0504,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-12",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-17",
+        "traded_frac": 0.9867,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ],
+    "VIX_GRADED_CASH": [
+      {
+        "exec_date": "2020-02-10",
+        "traded_frac": 0.4938,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-25",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-02-28",
+        "traded_frac": 0.2366,
+        "w_spy_after": 0.25,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.75
+      },
+      {
+        "exec_date": "2020-03-23",
+        "traded_frac": 0.2984,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-03-25",
+        "traded_frac": 0.2754,
+        "w_spy_after": 0.25,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.75
+      },
+      {
+        "exec_date": "2020-04-14",
+        "traded_frac": 0.2228,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-04-30",
+        "traded_frac": 0.4937,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-12",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-06-17",
+        "traded_frac": 0.4935,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ],
+    "VIX_OR_S2_CASH": [
+      {
+        "exec_date": "2020-02-10",
+        "traded_frac": 0.4938,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-25",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-06-08",
+        "traded_frac": 0.4899,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-12",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-06-17",
+        "traded_frac": 0.4935,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ],
+    "VIX_OR_S2_GOLD": [
+      {
+        "exec_date": "2020-02-10",
+        "traded_frac": 0.989,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-25",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-08",
+        "traded_frac": 1.0,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-12",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-17",
+        "traded_frac": 0.9867,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ]
+  },
+  "timeline_2020_cn": {
+    "CN_VIX_BRAKE_CASH": [
+      {
+        "exec_date": "2020-02-04",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-02-11",
+        "traded_frac": 0.4893,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-26",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-05-06",
+        "traded_frac": 0.5205,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-15",
+        "traded_frac": 0.5003,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.5
+      },
+      {
+        "exec_date": "2020-06-18",
+        "traded_frac": 0.4872,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ],
+    "CN_VIX_BRAKE_GOLD": [
+      {
+        "exec_date": "2020-02-04",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-11",
+        "traded_frac": 0.9755,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-26",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-05-06",
+        "traded_frac": 1.049,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-15",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-18",
+        "traded_frac": 0.9734,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ],
+    "CN_VIX_OR_S2_GOLD": [
+      {
+        "exec_date": "2020-02-04",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-11",
+        "traded_frac": 0.9755,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-02-26",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-08",
+        "traded_frac": 1.0128,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-15",
+        "traded_frac": 1.0,
+        "w_spy_after": 0.5,
+        "w_alt_after": 0.5,
+        "w_cash_after": 0.0
+      },
+      {
+        "exec_date": "2020-06-18",
+        "traded_frac": 0.9734,
+        "w_spy_after": 1.0,
+        "w_alt_after": 0.0,
+        "w_cash_after": 0.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "slug": "sp500-dir4-domestic-crypto-2026-11-22",
+  "execution_clock": "Signal at close t (using data <= close t only); order fills at close t+1 with proportional one-way cost.",
+  "anti_lookahead_premium": "ONLY premium_decision (T-2 NAV + overnight US ETF return) is used for signals; premium_after is strictly prohibited.",
+  "part_a_domestic_overlay": {
+    "window": [
+      "2014-10-08",
+      "2026-09-30"
+    ],
+    "segments": {
+      "FULL": [
+        "2014-10-08",
+        "2026-09-30"
+      ],
+      "2014-2020": [
+        "2014-10-08",
+        "2020-12-31"
+      ],
+      "2021-2026": [
+        "2021-01-01",
+        "2026-09-30"
+      ]
+    },
+    "costs": {
+      "10bp": 0.001,
+      "30bp": 0.003
+    },
+    "cash_annual_rmb": 0.02,
+    "tvt50_frozen": {
+      "vol_window": 21,
+      "target_vol": 0.15,
+      "on_cap": 1.0,
+      "off_cap": 0.5,
+      "rebalance_band": 0.1,
+      "weekly_stage_ma_weeks": 30,
+      "weekly_stage_slope_weeks": 4,
+      "gold_trend_ma_weeks": 30,
+      "gold_trend_slope_weeks": 4
+    },
+    "prem_trim_frozen": {
+      "trim_above": 0.06,
+      "restore_below": 0.02,
+      "trimmed_eq_weight": 0.5
+    },
+    "tvt50_prem_frozen": {
+      "prem_cap_above": 0.06,
+      "prem_cap_weight": 0.5
+    },
+    "strategies": [
+      "B0_513500",
+      "TVT50_CASH",
+      "TVT50_GOLD",
+      "TVT50_GOLD_TREND",
+      "TVT50_HALF_GOLD_CASH",
+      "PREM_TRIM_GOLD",
+      "PREM_TRIM_CASH",
+      "TVT50_PREM_GOLD",
+      "TVT50_PREM_GOLD_TREND"
+    ],
+    "key_periods": [
+      {
+        "label": "2016_prem_crash",
+        "start": "2016-12-21",
+        "end": "2017-01-24"
+      },
+      {
+        "label": "2018_q4_selloff",
+        "start": "2018-10-01",
+        "end": "2018-12-31"
+      },
+      {
+        "label": "2020_covid_crash",
+        "start": "2020-02-01",
+        "end": "2020-03-31"
+      },
+      {
+        "label": "2022_rate_bear",
+        "start": "2022-01-01",
+        "end": "2022-12-31"
+      },
+      {
+        "label": "2024_2025_prem_tariff",
+        "start": "2024-12-01",
+        "end": "2025-04-30"
+      },
+      {
+        "label": "2023_2026_bull_gold",
+        "start": "2023-01-01",
+        "end": "2026-09-30"
+      }
+    ],
+    "sensitivity_10bp": {
+      "tvt_target_vols": [
+        0.12,
+        0.15,
+        0.18
+      ],
+      "tvt_off_caps": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "prem_trim_thresholds": [
+        0.04,
+        0.06,
+        0.08,
+        0.1
+      ],
+      "prem_restore_threshold": 0.02
+    }
+  },
+  "part_b_domestic_dca_parking": {
+    "window": [
+      "2014-10-08",
+      "2026-09-30"
+    ],
+    "contribution": "1.0 unit cash injected on the first mainland trading day of every month",
+    "costs": {
+      "10bp": 0.001,
+      "30bp": 0.003
+    },
+    "rolling_windows_months": [
+      60,
+      120
+    ],
+    "strategies": [
+      "DCA_PLAIN",
+      "DCA_PREM3_CASH",
+      "DCA_PREM3_GOLD",
+      "DCA_PREM5_GOLD",
+      "DCA_TVT50_GOLD"
+    ],
+    "tvt_dca_prem_park_threshold": 0.05
+  },
+  "part_c_crypto_stress": {
+    "window": [
+      "2005-01-03",
+      "2026-10-16"
+    ],
+    "gold_series": "gld_real (pure GLD ETF, no pre-2004 splice)",
+    "strategies": [
+      "B0_SPY",
+      "GOLD_75_25_Q",
+      "S2_CASH",
+      "S2_GOLD",
+      "TVT50_CASH",
+      "TVT50_GOLD"
+    ],
+    "scenarios": [
+      {
+        "scenario": "US_ETF_10bp",
+        "cost": 0.001,
+        "spy_drag_mode": "zero",
+        "spy_drag_annual": 0.0
+      },
+      {
+        "scenario": "CRYPTO_SPOT_DIV_30bp",
+        "cost": 0.003,
+        "spy_drag_mode": "zero",
+        "spy_drag_annual": 0.0
+      },
+      {
+        "scenario": "CRYPTO_SPOT_DIV_50bp",
+        "cost": 0.005,
+        "spy_drag_mode": "zero",
+        "spy_drag_annual": 0.0
+      },
+      {
+        "scenario": "CRYPTO_SPOT_NODIV_30bp",
+        "cost": 0.003,
+        "spy_drag_mode": "measured_spy_dividend_yield",
+        "spy_drag_annual": 0.01801
+      },
+      {
+        "scenario": "CRYPTO_PERP_5PCT_20bp",
+        "cost": 0.002,
+        "spy_drag_mode": "fixed_funding",
+        "spy_drag_annual": 0.05
+      },
+      {
+        "scenario": "CRYPTO_PERP_8PCT_20bp",
+        "cost": 0.002,
+        "spy_drag_mode": "fixed_funding",
+        "spy_drag_annual": 0.08
+      }
+    ],
+    "dca_rolling_window_months": 120,
+    "measured_spy_dividend_stats": {
+      "window": [
+        "2005-01-03",
+        "2026-10-16"
+      ],
+      "years": 21.7823,
+      "n_dividend_events": 87,
+      "cagr_total_return": 0.10848543180493975,
+      "cagr_price_only_unadj": 0.08852208022630248,
+      "cagr_diff_tr_minus_price": 0.019963351578637267,
+      "implied_annual_div_drag": 0.018009575052448934,
+      "mean_annual_div_yield_2005_2025": 0.018435750079586748,
+      "median_annual_div_yield_2005_2025": 0.018771526800361277,
+      "min_annual_div_yield_2005_2025": 0.011657697167505436,
+      "max_annual_div_yield_2005_2025": 0.023710673734281863,
+      "total_div_yield_per_year": 0.018130328529161164,
+      "reconstructed_unadj_spot_checks": {
+        "2005-01-03": 120.2999,
+        "2015-01-02": 205.43,
+        "2020-01-02": 324.87,
+        "2026-10-16": 763.25
+      },
+      "in_expected_range_1p5_to_1p9pct": true
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "all_passed": true,
+  "max_cash_residual": 1.4210854715202004e-14,
+  "max_cash_residual_lt_1e_10": true,
+  "overlay_max_cash_residual": 4.440892098500626e-16,
+  "parking_max_cash_residual": 1.4210854715202004e-14,
+  "nav_min": 0.4365864957816743,
+  "nav_min_gt_0": true,
+  "target_weight_min": 0.0,
+  "target_sum_max": 1.0,
+  "anti_lookahead_premium": {
+    "only_premium_decision_used_for_signals": true,
+    "premium_after_used_for_signals": false,
+    "premium_decision_na_count": 0,
+    "min_nav_base_lag_trading_days": 2,
+    "decision_vs_after_median_abs_diff": 0.0009638013316634495,
+    "decision_vs_after_corr": 0.9954280131194758,
+    "dca_parking_order_lag_violations": 0
+  },
+  "truncated_history_no_lookahead": {
+    "all_cutoffs_matched": true,
+    "cutoffs": [
+      {
+        "cutoff": "2016-12-30",
+        "signal_exact_match": true
+      },
+      {
+        "cutoff": "2018-12-28",
+        "signal_exact_match": true
+      },
+      {
+        "cutoff": "2020-03-27",
+        "signal_exact_match": true
+      },
+      {
+        "cutoff": "2022-12-30",
+        "signal_exact_match": true
+      },
+      {
+        "cutoff": "2025-04-25",
+        "signal_exact_match": true
+      }
+    ]
+  },
+  "spy_measured_dividend_yield": {
+    "window": [
+      "2005-01-03",
+      "2026-10-16"
+    ],
+    "years": 21.7823,
+    "n_dividend_events": 87,
+    "cagr_total_return": 0.10848543180493975,
+    "cagr_price_only_unadj": 0.08852208022630248,
+    "cagr_diff_tr_minus_price": 0.019963351578637267,
+    "implied_annual_div_drag": 0.018009575052448934,
+    "mean_annual_div_yield_2005_2025": 0.018435750079586748,
+    "median_annual_div_yield_2005_2025": 0.018771526800361277,
+    "min_annual_div_yield_2005_2025": 0.011657697167505436,
+    "max_annual_div_yield_2005_2025": 0.023710673734281863,
+    "total_div_yield_per_year": 0.018130328529161164,
+    "reconstructed_unadj_spot_checks": {
+      "2005-01-03": 120.2999,
+      "2015-01-02": 205.43,
+      "2020-01-02": 324.87,
+      "2026-10-16": 763.25
+    },
+    "in_expected_range_1p5_to_1p9pct": true
+  },
+  "b0_513500_prior_benchmark_check": {
+    "our_cagr": 0.141891994816419,
+    "prior_cagr": 0.141891994816419,
+    "abs_cagr_diff": 0.0,
+    "our_max_dd": -0.2967220093656877,
+    "prior_max_dd": -0.2967220093656877,
+    "abs_mdd_diff": 0.0
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "experiment_slug": "sp500-dir1-structural-2026-11-22",
+  "direction": "dir1_structural_no_timing",
+  "execution_clock": "signal at close t using data <= t; fill at close t+1",
+  "costs": [
+    0.001,
+    0.003
+  ],
+  "primary_cost": 0.001,
+  "us_main_window": {
+    "name": "us_main_2005",
+    "start": "2005-01-03",
+    "end": "2026-10-16",
+    "gold_series": "gld_real",
+    "subperiods": [
+      {
+        "label": "full",
+        "start": "2005-01-03",
+        "end": "2026-10-16"
+      },
+      {
+        "label": "2005-2012",
+        "start": "2005-01-03",
+        "end": "2012-12-31"
+      },
+      {
+        "label": "2013-2026",
+        "start": "2013-01-01",
+        "end": "2026-10-16"
+      }
+    ]
+  },
+  "us_ext_window": {
+    "name": "us_ext_2001",
+    "start": "2001-01-02",
+    "end": "2026-10-16",
+    "gold_series": "gold_spliced",
+    "subperiods": [
+      {
+        "label": "full",
+        "start": "2001-01-02",
+        "end": "2026-10-16"
+      },
+      {
+        "label": "2001-2012",
+        "start": "2001-01-02",
+        "end": "2012-12-31"
+      },
+      {
+        "label": "2013-2026",
+        "start": "2013-01-01",
+        "end": "2026-10-16"
+      }
+    ]
+  },
+  "domestic_window": {
+    "name": "domestic_2014",
+    "start": "2014-10-08",
+    "end": "2026-09-30",
+    "subperiods": [
+      {
+        "label": "full",
+        "start": "2014-10-08",
+        "end": "2026-09-30"
+      },
+      {
+        "label": "2014-2020",
+        "start": "2014-10-08",
+        "end": "2020-12-31"
+      },
+      {
+        "label": "2021-2026",
+        "start": "2021-01-01",
+        "end": "2026-09-30"
+      }
+    ]
+  },
+  "us_factors_c1_window": {
+    "name": "us_factors_c1_2006",
+    "start": "2006-01-03",
+    "end": "2026-10-16",
+    "subperiods": [
+      {
+        "label": "full",
+        "start": "2006-01-03",
+        "end": "2026-10-16"
+      },
+      {
+        "label": "2006-2012",
+        "start": "2006-01-03",
+        "end": "2012-12-31"
+      },
+      {
+        "label": "2013-2026",
+        "start": "2013-01-01",
+        "end": "2026-10-16"
+      }
+    ]
+  },
+  "us_factors_c2_window": {
+    "name": "us_factors_c2_2011",
+    "start": "2011-06-01",
+    "end": "2026-10-16",
+    "subperiods": [
+      {
+        "label": "full",
+        "start": "2011-06-01",
+        "end": "2026-10-16"
+      },
+      {
+        "label": "2011-2018",
+        "start": "2011-06-01",
+        "end": "2018-12-31"
+      },
+      {
+        "label": "2019-2026",
+        "start": "2019-01-01",
+        "end": "2026-10-16"
+      }
+    ]
+  },
+  "invvol_params": {
+    "window": 21,
+    "min_periods": 21,
+    "rebalance_freq": "M",
+    "primary_weight_bounds": [
+      0.5,
+      0.85
+    ],
+    "return_type": "log_return"
+  },
+  "cash_match_rebalance_freq": "M",
+  "stage2_params": {
+    "ma_weeks": 30,
+    "slope_weeks": 4,
+    "on_weights_spy_splv": [
+      1.0,
+      0.0
+    ],
+    "off_weights_spy_splv": [
+      0.5,
+      0.5
+    ]
+  },
+  "key_periods_us_main": [
+    {
+      "period": "GFC_2007_2009",
+      "start": "2007-10-09",
+      "end": "2009-03-09"
+    },
+    {
+      "period": "COVID_2020",
+      "start": "2020-02-19",
+      "end": "2020-03-23"
+    },
+    {
+      "period": "BEAR_2022",
+      "start": "2022-01-01",
+      "end": "2022-12-31"
+    },
+    {
+      "period": "BULL_2023_2026",
+      "start": "2023-01-01",
+      "end": "2026-10-16"
+    }
+  ],
+  "key_periods_us_ext_extra": [
+    {
+      "period": "DOTCOM_2001_2002",
+      "start": "2001-01-02",
+      "end": "2002-10-09"
+    }
+  ],
+  "key_periods_domestic": [
+    {
+      "period": "COVID_2020",
+      "start": "2020-02-19",
+      "end": "2020-03-23"
+    },
+    {
+      "period": "BEAR_2022",
+      "start": "2022-01-01",
+      "end": "2022-12-31"
+    },
+    {
+      "period": "BULL_2023_2026",
+      "start": "2023-01-01",
+      "end": "2026-09-30"
+    }
+  ],
+  "sensitivity": {
+    "rebalance_freqs": [
+      "M",
+      "Q",
+      "Y",
+      "NONE"
+    ],
+    "gold_weights_q": [
+      0.15,
+      0.2,
+      0.25,
+      0.3
+    ],
+    "invvol_windows": [
+      21,
+      42,
+      63
+    ]
+  },
+  "dca_windows": {
+    "us_main": [
+      120
+    ],
+    "domestic": [
+      60,
+      120
+    ],
+    "us_factors_c1": [
+      120
+    ]
+  },
+  "self_check_thresholds": {
+    "max_cash_residual_lt": 1e-10,
+    "nav_min_gt": 0.0,
+    "weight_sum_max_le": 1.0001,
+    "weight_min_ge": -1e-12
+  },
+  "data_diagnostics": {
+    "us_dates": [
+      "1998-12-01",
+      "2026-10-16",
+      7012
+    ],
+    "gold_diag": {
+      "proxy": "yf_GCF",
+      "gld_start": "2004-11-18",
+      "spliced_first_valid": "2000-08-30",
+      "overlap_daily_corr": 0.8882253212619291,
+      "pre_gld_fee_assumption": 0.004
+    },
+    "domestic_dates": [
+      "2014-10-08",
+      "2026-09-30",
+      2915
+    ]
+  }
+}

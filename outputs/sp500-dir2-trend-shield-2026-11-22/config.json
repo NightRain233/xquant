@@ -1,0 +1,222 @@
+{
+  "slug": "sp500-dir2-trend-shield-2026-11-22",
+  "direction": "dir2_trend_shield",
+  "execution_clock": "Signal decided at close t using data <= t; order filled at close t+1.",
+  "us_track": {
+    "main_window": {
+      "name": "us_2005",
+      "start": "2005-01-03",
+      "end": "2026-10-16",
+      "gold_source": "gld_real",
+      "segments": {
+        "full": [
+          "2005-01-03",
+          "2026-10-16"
+        ],
+        "2005-2012": [
+          "2005-01-03",
+          "2012-12-31"
+        ],
+        "2013-2026": [
+          "2013-01-01",
+          "2026-10-16"
+        ]
+      },
+      "note": "Pure real GLD ETF (launched 2004-11-18). For trend-filtered gold rules, gld_real 30-week SMA warms up in 2005-06 (slope in 2005-07); prior to warmup, weekly_stage2_state conservatively defaults to False (cash)."
+    },
+    "extended_window": {
+      "name": "us_2001",
+      "start": "2001-01-02",
+      "end": "2026-10-16",
+      "gold_source": "gold_spliced",
+      "segments": {
+        "full": [
+          "2001-01-02",
+          "2026-10-16"
+        ],
+        "2001-2012": [
+          "2001-01-02",
+          "2012-12-31"
+        ],
+        "2013-2026": [
+          "2013-01-01",
+          "2026-10-16"
+        ]
+      },
+      "note": "Spliced gold uses real GLD from 2004-11-18 and backward-spliced gold proxy (deducting 0.40%/yr ETF fee) from 2000-08-30; gold 30w SMA warms up in 2001-03."
+    },
+    "costs_one_way": [
+      0.001,
+      0.003
+    ],
+    "weekly_signal": {
+      "ma_weeks": 30,
+      "slope_weeks": 4
+    },
+    "monthly_signal": {
+      "ma_months": 10
+    },
+    "s2_spy_weights": {
+      "on": 1.0,
+      "off": 0.5
+    },
+    "mtf3_spy_weights": {
+      "both_on": 1.0,
+      "one_on": 0.5,
+      "both_off": 0.0
+    },
+    "strategies": [
+      "B0_SPY",
+      "S2_CASH",
+      "S2_GOLD",
+      "S2_GOLD_TREND",
+      "S2_BOND_GOLD",
+      "S2_BOND_GOLD_TREND",
+      "MTF3_CASH",
+      "MTF3_GOLD",
+      "MTF3_GOLD_TREND"
+    ],
+    "rolling_start_years": [
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "key_periods": {
+      "GFC_2007_2009": [
+        "2007-10-09",
+        "2009-03-09"
+      ],
+      "COVID_2020": [
+        "2020-02-19",
+        "2020-03-23"
+      ],
+      "RATE_HIKE_2022": [
+        "2022-01-01",
+        "2022-12-31"
+      ],
+      "BULL_2023_2026": [
+        "2023-01-01",
+        "2026-10-16"
+      ]
+    },
+    "dca_rolling_months": [
+      120
+    ],
+    "sensitivity": {
+      "window": "us_2005",
+      "cost_one_way": 0.001,
+      "strategies": [
+        "S2_GOLD",
+        "S2_GOLD_TREND"
+      ],
+      "spy_ma_weeks_grid": [
+        20,
+        30,
+        40
+      ],
+      "spy_off_weight_grid": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "gold_ma_weeks_grid": [
+        20,
+        30,
+        40
+      ]
+    }
+  },
+  "domestic_track": {
+    "window": {
+      "start": "2014-10-08",
+      "end": "2026-09-30",
+      "segments": {
+        "full": [
+          "2014-10-08",
+          "2026-09-30"
+        ],
+        "2014-2020": [
+          "2014-10-08",
+          "2020-12-31"
+        ],
+        "2021-2026": [
+          "2021-01-01",
+          "2026-09-30"
+        ]
+      }
+    },
+    "costs_one_way": [
+      0.001,
+      0.003
+    ],
+    "cash_annual": 0.02,
+    "weekly_signal": {
+      "ma_weeks": 30,
+      "slope_weeks": 4
+    },
+    "cross_market_rule": "For US_SIG on China trading day d (close decision), read only the latest completed US SPY weekly stage2 state with week-end date strictly < d (zero cross-market lookahead). Domestic gold trend uses 518880_full weekly stage2 state as of China close d.",
+    "strategies": [
+      "B0_513500",
+      "CN_S2_CASH_SELF",
+      "CN_S2_GOLD_SELF",
+      "CN_S2_GOLD_TREND_SELF",
+      "CN_S2_CASH_US",
+      "CN_S2_GOLD_US",
+      "CN_S2_GOLD_TREND_US"
+    ],
+    "dca_rolling_months": [
+      60,
+      120
+    ],
+    "key_periods": {
+      "COVID_2020": [
+        "2020-02-19",
+        "2020-03-23"
+      ],
+      "RATE_HIKE_2022": [
+        "2022-01-01",
+        "2022-12-31"
+      ],
+      "BULL_2023_2026": [
+        "2023-01-01",
+        "2026-09-30"
+      ]
+    }
+  },
+  "data_diagnostics": {
+    "us_dates": [
+      "1998-12-01",
+      "2026-10-16",
+      7012
+    ],
+    "gold_diag": {
+      "proxy": "yf_GCF",
+      "gld_start": "2004-11-18",
+      "spliced_first_valid": "2000-08-30",
+      "overlap_daily_corr": 0.8882253212619291,
+      "pre_gld_fee_assumption": 0.004
+    },
+    "domestic_dates": [
+      "2014-10-08",
+      "2026-09-30",
+      2915
+    ],
+    "domestic_full_start": "2014-01-15"
+  }
+}

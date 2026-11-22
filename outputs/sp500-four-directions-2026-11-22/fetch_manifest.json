@@ -1,0 +1,179 @@
+{
+  "slug": "sp500-four-directions-2026-11-22",
+  "fetched_at": "2026-11-22T20:56:56.387372+08:00",
+  "end_inclusive": "2026-10-16",
+  "files": {
+    "yf_GLD": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_GLD.csv",
+      "rows": 5512,
+      "first_date": "2004-11-18 00:00:00-05:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 584756,
+      "sha256": "3ceee71e28818f9611619027978e73d73ba296137ddd48683fe6606b5cae87a1"
+    },
+    "yf_SPHQ": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_SPHQ.csv",
+      "rows": 5248,
+      "first_date": "2005-12-06 00:00:00-05:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 558243,
+      "sha256": "fabf5241031fb92a67d4f9b2b7b864571a6f0295237ca5b1ce181a1c8a388495"
+    },
+    "yf_SPLV": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_SPLV.csv",
+      "rows": 3886,
+      "first_date": "2011-05-05 00:00:00-04:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 415291,
+      "sha256": "c03ebb91afdf72a40ddc9a486cb224dec7fb2aceec384013d0f3567b0d5f86d5"
+    },
+    "yf_RSP": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_RSP.csv",
+      "rows": 5904,
+      "first_date": "2003-05-01 00:00:00-04:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 630279,
+      "sha256": "48694164f41f9b9815eeb96980b0fcdbe586a00aab7881a5d2a7bc6c415a1e05"
+    },
+    "yf_SHY": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_SHY.csv",
+      "rows": 6094,
+      "first_date": "2002-07-30 00:00:00-04:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 641179,
+      "sha256": "e465720a17165a111758bc28537863a4532d5b50aff77e4647a47e53ba176265"
+    },
+    "yf_HYG": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_HYG.csv",
+      "rows": 4912,
+      "first_date": "2007-04-11 00:00:00-04:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 525618,
+      "sha256": "ea96f25bd6e4217045f218c2ce9f1dc2ca55fbe48c97e857c0bbbc9fd8771a7f"
+    },
+    "yf_VIX": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_VIX.csv",
+      "rows": 7244,
+      "first_date": "1998-01-02 00:00:00-06:00",
+      "last_date": "2026-10-16 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 859084,
+      "sha256": "5d6d3ce4d4840167d4d52323edff6a8ad2051e4ba1e8aa895e7f5e3c9133f81e"
+    },
+    "yf_VIX3M": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_VIX3M.csv",
+      "rows": 5096,
+      "first_date": "2006-07-17 00:00:00-04:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 605571,
+      "sha256": "9f7651495e27c57d35f3489faf64915e2ac0653519bafbeeea7ced313a8934e5"
+    },
+    "yf_GCF": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/yf_GCF.csv",
+      "rows": 6558,
+      "first_date": "2000-08-30 00:00:00-04:00",
+      "last_date": "2026-10-16 00:00:00-04:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 699024,
+      "sha256": "8579b400908daaf62ac62a0e6b39fc403a97f2b0e03ea8cfe565d3a875c3e7e4"
+    },
+    "fred_BAA10Y": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/fred_BAA10Y.csv",
+      "rows": 10666,
+      "first_date": "1986-01-02",
+      "last_date": "2026-11-19",
+      "columns": [
+        "observation_date",
+        "BAA10Y"
+      ],
+      "bytes": 168900,
+      "sha256": "babe889a737d771051dec754a2abaea9710512d302f14d982e7e9d2b3da27535"
+    },
+    "fred_BAMLH0A0HYM2": {
+      "path": "outputs/sp500-four-directions-2026-11-22/cache/fred_BAMLH0A0HYM2.csv",
+      "rows": 794,
+      "first_date": "2023-11-21",
+      "last_date": "2026-11-19",
+      "columns": [
+        "observation_date",
+        "BAMLH0A0HYM2"
+      ],
+      "bytes": 12702,
+      "sha256": "bc168c032a4ee7fea9f80c6f834f505e79626c05aefe3b6d0101de7922019a5b"
+    }
+  },
+  "errors": {}
+}
