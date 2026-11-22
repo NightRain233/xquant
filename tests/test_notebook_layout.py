@@ -35,6 +35,15 @@ EXPECTED_NOTEBOOKS = {
     "three-asset-core-2026-10-03-practice.ipynb",
     "strategy-healthcheck-2026-10-02-practice.ipynb",
     "strategy-healthcheck-clock-correction-2026-10-03-practice.ipynb",
+    "sp500-new-enhance-2026-11-14-practice.ipynb",
+    "sp500-513500-mtf-tvt-real-2026-11-14-practice.ipynb",
+    "qqq-new-enhance-2026-11-14-practice.ipynb",
+    "sp500-513500-direct-signal-2026-11-15-practice.ipynb",
+    "mtf-tvt-healthcheck-2026-11-15-practice.ipynb",
+    "mtf-tvt-existing-comparison-2026-11-15-practice.ipynb",
+    "spy-qqq-combo-2026-11-15-practice.ipynb",
+    "q17-joinquant-core-rotation-practice.ipynb",
+    "sp500-four-directions-2026-11-22-practice.ipynb",
 }
 
 
