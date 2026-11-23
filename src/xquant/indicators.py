@@ -249,3 +249,103 @@ def bollinger_zscore(close: pd.Series, window: int = 20) -> pd.Series:
     ma = s.rolling(int(window), min_periods=int(window)).mean()
     sd = s.rolling(int(window), min_periods=int(window)).std(ddof=0)
     return (s - ma) / sd.replace(0.0, np.nan)
+
+
+def hysteresis_ma_state(
+    close: pd.Series,
+    ma: pd.Series,
+    *,
+    buffer: float = 0.03,
+    rising_lookback: int = 0,
+) -> pd.Series:
+    """Strictly causal hysteresis state around any moving average series.
+
+    Turns OFF when close < ma * (1 - buffer), turns ON when close > ma * (1 + buffer)
+    (and optionally ma > ma.shift(rising_lookback)), and holds prior state inside the band.
+    """
+    vals = close.astype(float).to_numpy()
+    ma_v = ma.reindex(close.index).astype(float).to_numpy()
+    if rising_lookback > 0:
+        rising = (ma.reindex(close.index) > ma.reindex(close.index).shift(int(rising_lookback))).to_numpy(dtype=bool)
+    else:
+        rising = np.ones(len(close), dtype=bool)
+    out = np.zeros(len(close), dtype=bool)
+    on = False
+    buf = float(buffer)
+    for i in range(len(close)):
+        if np.isnan(vals[i]) or np.isnan(ma_v[i]):
+            continue
+        if vals[i] < ma_v[i] * (1.0 - buf):
+            on = False
+        elif vals[i] > ma_v[i] * (1.0 + buf) and rising[i]:
+            on = True
+        out[i] = on
+    return pd.Series(out, index=close.index, dtype=bool)
+
+
+def donchian_breakout_state(
+    high: pd.Series,
+    low: pd.Series,
+    close: pd.Series,
+    entry_window: int = 55,
+    exit_window: int = 20,
+) -> pd.Series:
+    """Strictly causal Donchian channel trend state (long-only Turtle breakout).
+
+    Turns ON when close exceeds prior ``entry_window``-bar high (shifted by 1 to avoid same-bar leakage);
+    turns OFF when close falls below prior ``exit_window``-bar low (shifted by 1).
+    """
+    c = close.astype(float).to_numpy()
+    prior_hi = high.astype(float).rolling(int(entry_window), min_periods=int(entry_window)).max().shift(1).to_numpy()
+    prior_lo = low.astype(float).rolling(int(exit_window), min_periods=int(exit_window)).min().shift(1).to_numpy()
+    out = np.zeros(len(c), dtype=bool)
+    on = False
+    for i in range(len(c)):
+        if np.isnan(c[i]) or np.isnan(prior_hi[i]) or np.isnan(prior_lo[i]):
+            continue
+        if not on and c[i] > prior_hi[i]:
+            on = True
+        elif on and c[i] < prior_lo[i]:
+            on = False
+        out[i] = on
+    return pd.Series(out, index=close.index, dtype=bool)
+
+
+def tsmom_blend_weight(
+    close: pd.Series,
+    lookbacks: Sequence[int] = (21, 63, 126, 252),
+    *,
+    buffer: float = 0.0,
+) -> pd.Series:
+    """Multi-horizon long-only Time-Series Momentum (TSMOM) weight in [0, 1].
+
+    Each lookback L votes 1 if trailing return > +buffer, 0 if < -buffer (hysteresis if buffer > 0);
+    returns equal-weighted average across lookbacks once the longest lookback is warmed up.
+    """
+    s = close.astype(float)
+    lbs = [int(lb) for lb in lookbacks]
+    if not lbs:
+        raise ValueError("lookbacks must be non-empty")
+    votes = []
+    buf = float(buffer)
+    for lb in lbs:
+        ret = s / s.shift(lb) - 1.0
+        if buf <= 0.0:
+            v = (ret > 0.0).astype(float)
+        else:
+            arr = ret.to_numpy(dtype=float)
+            st = np.zeros(len(arr), dtype=float)
+            on = False
+            for i in range(len(arr)):
+                if np.isnan(arr[i]):
+                    continue
+                if arr[i] < -buf:
+                    on = False
+                elif arr[i] > buf:
+                    on = True
+                st[i] = 1.0 if on else 0.0
+            v = pd.Series(st, index=s.index, dtype=float)
+        votes.append(v)
+    weight = sum(votes) / float(len(votes))
+    warm = s.shift(max(lbs)).notna()
+    return weight.where(warm, 0.0).astype(float)

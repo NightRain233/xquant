@@ -1,0 +1,82 @@
+{
+  "slug": "gold-enhance-2026-11-23",
+  "execution_clock": "Signal at close t using data <= t only; order fills at close t+1 with proportional one-way cost.",
+  "windows": {
+    "long_55y_monthly": [
+      "1972-01-31",
+      "2026-10-31"
+    ],
+    "gcf_daily": [
+      "2001-09-04",
+      "2026-11-20"
+    ],
+    "gld_main": [
+      "2005-12-01",
+      "2026-11-20"
+    ],
+    "gld_bull_05_11": [
+      "2005-12-01",
+      "2011-09-06"
+    ],
+    "gld_bear_11_19": [
+      "2011-09-06",
+      "2019-05-31"
+    ],
+    "gld_new_19_26": [
+      "2019-06-03",
+      "2026-11-20"
+    ],
+    "gld_crash_2026": [
+      "2026-01-29",
+      "2026-11-20"
+    ],
+    "metals_etf": [
+      "2007-06-01",
+      "2026-11-20"
+    ],
+    "ugl_2x": [
+      "2009-12-01",
+      "2026-11-20"
+    ],
+    "btc_gold": [
+      "2015-08-01",
+      "2026-11-20"
+    ],
+    "domestic_518880": [
+      "2014-08-01",
+      "2026-11-20"
+    ],
+    "crypto_paxg": [
+      "2020-03-01",
+      "2026-11-20"
+    ]
+  },
+  "costs": {
+    "us_primary": 0.001,
+    "us_stress": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "cn_primary": 0.001,
+    "cn_stress": 0.003,
+    "cn_cash_annual": 0.02,
+    "us_margin_spread": 0.015,
+    "long_55y_etf_fee": 0.004
+  },
+  "circular_shift_trials": 200,
+  "pass_bar": {
+    "single_asset_defense": [
+      "Beats GLD BH on both Sharpe and Calmar at 10bp across 2005-12..2026-11",
+      "Cuts GLD MaxDD by >= 25% and materially cuts 2011-2019 underwater pain & 2026 crash loss",
+      "Holds on 55-year post-Bretton-Woods cycle (1972-2026 incl. 1980-2001 20Y bear) and 25Y GC=F",
+      "Circular-shift permutation p_sharpe <= 0.05 on GLD (or across both 55Y & GLD)",
+      "Broad parameter plateau and survives 30bp/50bp slippage"
+    ],
+    "cross_asset_enhancer": [
+      "Beats matched-exposure static allocation on Sharpe and Calmar",
+      "Works across multiple regimes (not a single bull-market fluke)",
+      "Low practical turnover compatible with retail ETF or crypto-gold accounts"
+    ]
+  }
+}

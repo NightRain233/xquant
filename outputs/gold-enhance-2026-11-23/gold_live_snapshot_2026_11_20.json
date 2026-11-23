@@ -1,0 +1,37 @@
+{
+  "as_of": "2026-11-20",
+  "GLD": {
+    "close": 322.87,
+    "peak_2026": 495.9,
+    "dd_from_2026_peak": -0.3489,
+    "ma150": 391.17,
+    "ma210": 408.46,
+    "vol21_ann": 0.3052,
+    "s2_30w_on": false,
+    "tvt50_target_w": 0.4915,
+    "mtf3_buf3_target_w": 0.0
+  },
+  "518880": {
+    "close": 7.28,
+    "peak_2026": 11.9,
+    "dd_from_2026_peak": -0.3883,
+    "ma150": 8.88,
+    "ma210": 9.31,
+    "vol21_ann": 0.2797,
+    "s2_30w_on": false,
+    "tvt50_target_w": 0.429,
+    "mtf3_buf3_target_w": 0.0
+  },
+  "PAXG": {
+    "close": 3530.84,
+    "peak_2026": 5536.53,
+    "dd_from_2026_peak": -0.3623,
+    "ma150": 4172.83,
+    "ma210": 4256.58,
+    "vol21_ann": 0.3226,
+    "s2_30w_on": false,
+    "tvt50_target_w": 0.4649,
+    "mtf3_buf3_target_w": 0.0
+  },
+  "gold_silver_ratio_2026_11_20": 85.67
+}

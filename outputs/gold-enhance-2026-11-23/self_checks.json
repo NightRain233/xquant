@@ -1,0 +1,10 @@
+{
+  "checked_signal_count": 41,
+  "anti_lookahead_max_diff": 0.0,
+  "anti_lookahead_passed": true,
+  "max_cash_residual": 8.881784197001252e-16,
+  "cash_conservation_passed": true,
+  "min_nav_observed": 0.5728699437126364,
+  "cross_market_min_lag_days": 1,
+  "cross_market_lag_passed": true
+}

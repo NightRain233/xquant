@@ -4,8 +4,10 @@ import pandas as pd
 from xquant.indicators import (
     bollinger_zscore,
     dema,
+    donchian_breakout_state,
     ema,
     hma,
+    hysteresis_ma_state,
     kama,
     kdj,
     rsi_wilder,
@@ -13,6 +15,7 @@ from xquant.indicators import (
     supertrend_direction,
     tema,
     true_range,
+    tsmom_blend_weight,
     wma,
     zlema,
 )
@@ -122,3 +125,41 @@ def test_rsi_kdj_and_bollinger_zscore_behave_correctly_and_causally():
     pert_c.iloc[51:] *= 0.5
     kdf_pert = kdj(pert_c * 1.01, pert_c * 0.99, pert_c, n=9, m1=3, m2=3)
     np.testing.assert_allclose(kdf.iloc[:51].to_numpy(), kdf_pert.iloc[:51].to_numpy(), rtol=0, atol=1e-12, equal_nan=True)
+
+
+def test_hysteresis_donchian_and_tsmom_are_causal_and_behave_expectedly():
+    idx = pd.date_range("2024-01-01", periods=100, freq="D")
+    vals = np.concatenate([np.full(30, 100.0), np.linspace(100.0, 150.0, 40), np.linspace(150.0, 90.0, 30)])
+    close = pd.Series(vals, index=idx)
+    high = close * 1.01
+    low = close * 0.99
+
+    ma = close.rolling(20).mean()
+    hyst = hysteresis_ma_state(close, ma, buffer=0.03)
+    assert bool(hyst.iloc[65]) is True
+    assert bool(hyst.iloc[-1]) is False
+
+    don = donchian_breakout_state(high, low, close, entry_window=20, exit_window=10)
+    assert bool(don.iloc[65]) is True
+    assert bool(don.iloc[-1]) is False
+
+    ts = tsmom_blend_weight(close, lookbacks=(5, 10, 20), buffer=0.01)
+    assert ts.iloc[65] == 1.0
+    assert ts.iloc[-1] == 0.0
+
+    # Strict anti-lookahead check after index 65
+    pert_c = close.copy()
+    pert_h = high.copy()
+    pert_l = low.copy()
+    pert_c.iloc[66:] = 10.0
+    pert_h.iloc[66:] = 11.0
+    pert_l.iloc[66:] = 9.0
+
+    assert hysteresis_ma_state(pert_c, pert_c.rolling(20).mean(), buffer=0.03).iloc[:66].equals(hyst.iloc[:66])
+    assert donchian_breakout_state(pert_h, pert_l, pert_c, entry_window=20, exit_window=10).iloc[:66].equals(don.iloc[:66])
+    np.testing.assert_allclose(
+        tsmom_blend_weight(pert_c, lookbacks=(5, 10, 20), buffer=0.01).iloc[:66].to_numpy(),
+        ts.iloc[:66].to_numpy(),
+        rtol=0,
+        atol=1e-12,
+    )

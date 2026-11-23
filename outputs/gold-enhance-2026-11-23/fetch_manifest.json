@@ -1,0 +1,421 @@
+{
+  "slug": "gold-enhance-2026-11-23",
+  "fetched_at": "2026-11-23T12:31:23.754294+08:00",
+  "end_inclusive": "2026-11-20",
+  "files": {
+    "yf_GLD": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_GLD.csv",
+      "rows": 5537,
+      "first_date": "2004-11-18 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 587415,
+      "sha256": "68ff2cbe076648b49dbd70bc4aa7a7dc21117dda50f60e042bb91dba36f7aa1b"
+    },
+    "yf_IAU": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_IAU.csv",
+      "rows": 5489,
+      "first_date": "2005-01-28 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 582268,
+      "sha256": "cc263e42950c066c04d4dd49632a40eac0b58141c69c547f042e0b5c52651377"
+    },
+    "yf_SLV": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_SLV.csv",
+      "rows": 5175,
+      "first_date": "2006-04-28 00:00:00-04:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 552922,
+      "sha256": "d3c1b9241287b64228ed79a1d7e0fa3449916631a0acc84a2880b0ca5d12d6f3"
+    },
+    "yf_GDX": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_GDX.csv",
+      "rows": 5159,
+      "first_date": "2006-05-22 00:00:00-04:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 558357,
+      "sha256": "5e2ca7679a1a8470acf80383bc12f33f23f1a188754c5e9f2f8ad4b803b740ca"
+    },
+    "yf_GDXJ": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_GDXJ.csv",
+      "rows": 4283,
+      "first_date": "2009-11-11 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 459327,
+      "sha256": "ed514b64de02844ad8103d3d7f2d7b283efa8bc7ec302e875b4df35d740ba9e4"
+    },
+    "yf_UGL": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_UGL.csv",
+      "rows": 4520,
+      "first_date": "2008-12-03 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 471443,
+      "sha256": "0c68e6ddc87f650cf2a5ea284df9d1b2f026806815f454548d131af70c615ddc"
+    },
+    "yf_GCF": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_GCF.csv",
+      "rows": 6583,
+      "first_date": "2000-08-30 00:00:00-04:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 701724,
+      "sha256": "7e4526e4267e7f120b7cf3b02d3a1ad641ec49a3531980e23de77b393ef9ef35"
+    },
+    "yf_SIF": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_SIF.csv",
+      "rows": 6584,
+      "first_date": "2000-08-30 00:00:00-04:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 788045,
+      "sha256": "72d5ba1b2c71867615dd5fa94f6e6fecdbfbc84afd8e2ca876c716703f1384fd"
+    },
+    "yf_XAU_IDX": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_XAU_IDX.csv",
+      "rows": 10816,
+      "first_date": "1983-12-19 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 1291104,
+      "sha256": "54fe1ca86f40538e33caf31c566447b9acd4660867d8a23289b0c72ba1ba3a5b"
+    },
+    "yf_SPY": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_SPY.csv",
+      "rows": 8512,
+      "first_date": "1993-01-29 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 916812,
+      "sha256": "4ed5e18edd1e0aa783144550c1c5b621a8976ed91d1af2e4476d82c918cacd46"
+    },
+    "yf_IEF": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_IEF.csv",
+      "rows": 6119,
+      "first_date": "2002-07-30 00:00:00-04:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 645307,
+      "sha256": "3bb0eb12db157aca2549ddefb5c6cac674cf935fceaa3cb1819b902e3af61a1d"
+    },
+    "yf_TLT": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_TLT.csv",
+      "rows": 6119,
+      "first_date": "2002-07-30 00:00:00-04:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 652128,
+      "sha256": "588f9c67df5f85b0486944bf125f3a16ced4adec8a596341b10ac494c5df2b94"
+    },
+    "yf_SHY": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_SHY.csv",
+      "rows": 6119,
+      "first_date": "2002-07-30 00:00:00-04:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 643851,
+      "sha256": "f3003613ecad83a360fa0931d9e35d3bb70111d2f13c9ff26720905fc35ea262"
+    },
+    "yf_TIP": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_TIP.csv",
+      "rows": 5777,
+      "first_date": "2003-12-05 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 610844,
+      "sha256": "0364f77a97219ffdcc0e5d1c9a41adcda465b9b4cee5fde24747c57879e87533"
+    },
+    "yf_DXY": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_DXY.csv",
+      "rows": 14191,
+      "first_date": "1971-01-04 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 1652234,
+      "sha256": "9149c40b4ea5ea3055afb7f1602286954e60eb90798ec1e3cfc24a5fbef4ebb8"
+    },
+    "yf_UUP": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_UUP.csv",
+      "rows": 4965,
+      "first_date": "2007-03-01 00:00:00-05:00",
+      "last_date": "2026-11-20 00:00:00-05:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 535582,
+      "sha256": "e54683df97483d49bbbd969da805439edca615aac1b9b44aebfb7cffafb68ada"
+    },
+    "yf_IRX": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_IRX.csv",
+      "rows": 14243,
+      "first_date": "1970-01-02 00:00:00-06:00",
+      "last_date": "2026-11-20 00:00:00-06:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 1685834,
+      "sha256": "d5e6be0c7d206960dcbc39611dd8f323852470e0825af9863af54384cb545cf7"
+    },
+    "yf_PAXG": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_PAXG.csv",
+      "rows": 2613,
+      "first_date": "2019-09-26 00:00:00+00:00",
+      "last_date": "2026-11-20 00:00:00+00:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 319508,
+      "sha256": "52fab86cf77115cd47c8a10df2627bf4a3257a264c5f8bc4679aa11f2c0980a9"
+    },
+    "yf_XAUT": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_XAUT.csv",
+      "rows": 2479,
+      "first_date": "2020-02-07 00:00:00+00:00",
+      "last_date": "2026-11-20 00:00:00+00:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 300868,
+      "sha256": "0bb160e155d02805ea0eeb0f480e8c03ee662b4057a244bf42ca72a3b9a07e12"
+    },
+    "yf_BTC": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_BTC.csv",
+      "rows": 4448,
+      "first_date": "2014-09-17 00:00:00+00:00",
+      "last_date": "2026-11-20 00:00:00+00:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 508164,
+      "sha256": "adc4bf41cb64d27710d4db4fc504e3d8dbc73cda91c190bdd7c903710fd10d13"
+    },
+    "yf_518880": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_518880.csv",
+      "rows": 3238,
+      "first_date": "2013-07-18 00:00:00+08:00",
+      "last_date": "2026-11-20 00:00:00+08:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 351845,
+      "sha256": "e9314487ddb18324e741c45fc7dfc00fd37d78bd0539464c7e0083cb0935590a"
+    },
+    "yf_511010": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_511010.csv",
+      "rows": 3320,
+      "first_date": "2013-03-05 00:00:00+08:00",
+      "last_date": "2026-11-20 00:00:00+08:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 359617,
+      "sha256": "14a25bc6c35a409d3d6aac8274a938df263382a0d2254e195110b2067b3bd477"
+    },
+    "yf_511260": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_511260.csv",
+      "rows": 2242,
+      "first_date": "2017-08-04 00:00:00+08:00",
+      "last_date": "2026-11-20 00:00:00+08:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Volume"
+      ],
+      "bytes": 242228,
+      "sha256": "718b2343d9179ed86c741f0f38366b3a304ff2ab3f8d2fc75f195b68c586431f"
+    },
+    "yf_CNY": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/yf_CNY.csv",
+      "rows": 6363,
+      "first_date": "2001-06-25 00:00:00+01:00",
+      "last_date": "2026-11-20 00:00:00+00:00",
+      "columns": [
+        "Date",
+        "Open",
+        "High",
+        "Low",
+        "Close",
+        "Adj Close",
+        "Volume"
+      ],
+      "bytes": 748905,
+      "sha256": "120701d46f2015b17dc1f9db114cce52591a68d43ba0267d5808289df82c85dd"
+    },
+    "datasets_gold_monthly": {
+      "path": "outputs/gold-enhance-2026-11-23/cache/datasets_gold_monthly.csv",
+      "rows": 2326,
+      "first_date": "1833-01",
+      "last_date": "2026-10",
+      "columns": [
+        "Date",
+        "Price"
+      ],
+      "bytes": 35747,
+      "sha256": "f20720f3413b3dd114cd116951516f0fab577ff8c91e102a3a92549582ea9608"
+    }
+  },
+  "errors": {
+    "fred_DFII10": "could not download valid data from https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFII10",
+    "fred_T10YIE": "could not download valid data from https://fred.stlouisfed.org/graph/fredgraph.csv?id=T10YIE",
+    "fred_DGS10": "could not download valid data from https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10",
+    "fred_TB3MS": "could not download valid data from https://fred.stlouisfed.org/graph/fredgraph.csv?id=TB3MS",
+    "fred_DTWEXBGS": "could not download valid data from https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS",
+    "fred_DTWEXM": "could not download valid data from https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXM",
+    "fred_CPIAUCSL": "could not download valid data from https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL"
+  }
+}

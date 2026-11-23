@@ -4,21 +4,22 @@
 
 ## 2026 年 11 月：标普 500 增强、国内实盘与轮动实验
 
-普通读者先读[标普 500 增强实战指南](../docs/strategies/sp500-enhance.md)与[研究台账](../docs/research-ledger.md)，再查阅对应 Notebook 与复核报告：
+普通读者先读[标普 500 增强实战指南](../docs/strategies/sp500-enhance.md)、[黄金量化增强指南](../docs/strategies/gold-enhance.md)与[研究台账](../docs/research-ledger.md)，再查阅对应 Notebook 与复核报告：
 
-1. [BTC 均线家族（SMA / EMA / Zero-Lag）与红利低波均值回归 / 反均线深度研究（2026-11-23）](notebooks/btc-ma-and-dlv-mean-reversion-2026-11-23-practice.ipynb) · [复核](../docs/notes/btc-ma-and-dlv-mean-reversion-2026-11-23-review.md)
-2. [做空策略实战挑战：美股、加密与 A 股全周期检验（2026-11-23）](notebooks/short-selling-challenge-2026-11-23-practice.ipynb) · [复核](../docs/notes/short-selling-challenge-2026-11-23-review.md)
-3. [BTC 与 A 股（红利低波及宽基）日频防抖三档泛化研究（2026-11-23）](notebooks/btc-ashare-buffered-mtf3-2026-11-23-practice.ipynb) · [复核](../docs/notes/btc-ashare-buffered-mtf3-2026-11-23-review.md)
-4. [MTF-3 日频防抖缓冲带（±2%～3%）全面验证（2026-11-23）](notebooks/mtf3-daily-buffer-2026-11-23-practice.ipynb) · [复核](../docs/notes/mtf3-daily-buffer-2026-11-23-review.md)
-5. [标普 500 四方向联合研究与统一收口（2026-11-22）](notebooks/sp500-four-directions-2026-11-22-practice.ipynb) · [总复盘](../docs/notes/sp500-four-directions-2026-11-22-review.md)
-6. [513500 自身信号与 SPY 信号对照（2026-11-15）](notebooks/sp500-513500-direct-signal-2026-11-15-practice.ipynb) · [复核](../docs/notes/sp500-513500-direct-signal-2026-11-15-review.md)
-7. [MTF-3 与 TVT-50 统一体检（2026-11-15）](notebooks/mtf-tvt-healthcheck-2026-11-15-practice.ipynb) · [复核](../docs/notes/mtf-tvt-healthcheck-2026-11-15-review.md)
-8. [MTF-3 / TVT-50 与既有策略比较（2026-11-15）](notebooks/mtf-tvt-existing-comparison-2026-11-15-practice.ipynb) · [复核](../docs/notes/mtf-tvt-existing-comparison-2026-11-15-review.md)
-9. [SPY + QQQ 组合策略（2026-11-15）](notebooks/spy-qqq-combo-2026-11-15-practice.ipynb) · [复核](../docs/notes/spy-qqq-combo-2026-11-15-review.md)
-10. [Q17：聚宽核心资产轮动与黄金熊市验证（2026-11-15，归档对照）](notebooks/q17-joinquant-core-rotation-practice.ipynb) · [复核](../docs/notes/joinquant-core-rotation-2026-11-15-review.md)
-11. [标普 500 新候选 MTF-3 / TVT-50（2026-11-14）](notebooks/sp500-new-enhance-2026-11-14-practice.ipynb) · [复核](../docs/notes/sp500-new-enhance-2026-11-14-review.md)
-12. [513500 真实口径复测（2026-11-14）](notebooks/sp500-513500-mtf-tvt-real-2026-11-14-practice.ipynb) · [复核](../docs/notes/sp500-513500-mtf-tvt-real-2026-11-14-review.md)
-13. [QQQ 新增强规则（2026-11-14）](notebooks/qqq-new-enhance-2026-11-14-practice.ipynb) · [复核](../docs/notes/qqq-new-enhance-2026-11-14-review.md)
+1. [黄金量化增强策略深度研究：跨 55 年牛熊、8 大流派与 2026 闪崩全实证（2026-11-23）](notebooks/gold-enhance-2026-11-23-practice.ipynb) · [复核](../docs/notes/gold-enhance-2026-11-23-review.md)
+2. [BTC 均线家族（SMA / EMA / Zero-Lag）与红利低波均值回归 / 反均线深度研究（2026-11-23）](notebooks/btc-ma-and-dlv-mean-reversion-2026-11-23-practice.ipynb) · [复核](../docs/notes/btc-ma-and-dlv-mean-reversion-2026-11-23-review.md)
+3. [做空策略实战挑战：美股、加密与 A 股全周期检验（2026-11-23）](notebooks/short-selling-challenge-2026-11-23-practice.ipynb) · [复核](../docs/notes/short-selling-challenge-2026-11-23-review.md)
+4. [BTC 与 A 股（红利低波及宽基）日频防抖三档泛化研究（2026-11-23）](notebooks/btc-ashare-buffered-mtf3-2026-11-23-practice.ipynb) · [复核](../docs/notes/btc-ashare-buffered-mtf3-2026-11-23-review.md)
+5. [MTF-3 日频防抖缓冲带（±2%～3%）全面验证（2026-11-23）](notebooks/mtf3-daily-buffer-2026-11-23-practice.ipynb) · [复核](../docs/notes/mtf3-daily-buffer-2026-11-23-review.md)
+6. [标普 500 四方向联合研究与统一收口（2026-11-22）](notebooks/sp500-four-directions-2026-11-22-practice.ipynb) · [总复盘](../docs/notes/sp500-four-directions-2026-11-22-review.md)
+7. [513500 自身信号与 SPY 信号对照（2026-11-15）](notebooks/sp500-513500-direct-signal-2026-11-15-practice.ipynb) · [复核](../docs/notes/sp500-513500-direct-signal-2026-11-15-review.md)
+8. [MTF-3 与 TVT-50 统一体检（2026-11-15）](notebooks/mtf-tvt-healthcheck-2026-11-15-practice.ipynb) · [复核](../docs/notes/mtf-tvt-healthcheck-2026-11-15-review.md)
+9. [MTF-3 / TVT-50 与既有策略比较（2026-11-15）](notebooks/mtf-tvt-existing-comparison-2026-11-15-practice.ipynb) · [复核](../docs/notes/mtf-tvt-existing-comparison-2026-11-15-review.md)
+10. [SPY + QQQ 组合策略（2026-11-15）](notebooks/spy-qqq-combo-2026-11-15-practice.ipynb) · [复核](../docs/notes/spy-qqq-combo-2026-11-15-review.md)
+11. [Q17：聚宽核心资产轮动与黄金熊市验证（2026-11-15，归档对照）](notebooks/q17-joinquant-core-rotation-practice.ipynb) · [复核](../docs/notes/joinquant-core-rotation-2026-11-15-review.md)
+12. [标普 500 新候选 MTF-3 / TVT-50（2026-11-14）](notebooks/sp500-new-enhance-2026-11-14-practice.ipynb) · [复核](../docs/notes/sp500-new-enhance-2026-11-14-review.md)
+13. [513500 真实口径复测（2026-11-14）](notebooks/sp500-513500-mtf-tvt-real-2026-11-14-practice.ipynb) · [复核](../docs/notes/sp500-513500-mtf-tvt-real-2026-11-14-review.md)
+14. [QQQ 新增强规则（2026-11-14）](notebooks/qqq-new-enhance-2026-11-14-practice.ipynb) · [复核](../docs/notes/qqq-new-enhance-2026-11-14-review.md)
 
 *(2026-11-05 与 2026-11-10 的首轮标普增强、参数敏感性、持有体验、境内溢价、主线 S2 过滤和 TQQQ 研究采用“脚本 + 输出 + 复核笔记”形式，无单独 Notebook，入口见[研究台账](../docs/research-ledger.md)。)*
 
