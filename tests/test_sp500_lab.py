@@ -201,3 +201,44 @@ def test_daily_buffered_vol_throttle_hysteresis_and_no_lookahead():
         pert, vol_window=21, low_vol=0.14, high_vol=0.22, hysteresis=0.02, mid_weight=0.6, high_weight=0.2
     )
     np.testing.assert_array_equal(w.iloc[:120].to_numpy(), w_pert.iloc[:120].to_numpy())
+
+
+def test_long_short_engine_matches_long_only_and_models_short_rebate_and_liquidation():
+    """Long-only matches run_multi_asset_overlay; retail short gets no double T-bill; >100% rally liquidates."""
+    rng = np.random.default_rng(123)
+    dates = pd.bdate_range("2020-01-02", periods=80)
+    px = pd.DataFrame({"spy": 100.0 * np.exp(np.cumsum(rng.normal(0.0002, 0.01, len(dates))))}, index=dates)
+    cash_pos, cash_neg = ov.calendar_cash_factors(dates, np.full(len(dates), 0.04), 0.015)
+
+    # 1. Long-only parity
+    sig_long = lambda i, _w: np.array([1.0]) if i == 0 else (np.array([0.0]) if i == 30 else None)
+    r_base = lab.run_multi_asset_overlay(px, sig_long, 0, 0.001, cash_pos, cash_neg)
+    r_ls = lab.run_long_short_overlay(px, sig_long, 0, 0.001, cash_pos, cash_neg)
+    np.testing.assert_allclose(r_ls.nav.to_numpy(), r_base.nav.to_numpy(), rtol=0, atol=1e-12)
+    assert r_ls.checks["short_days"] == 0
+    assert r_ls.checks["liquidated"] is False
+
+    # 2. Retail vs institutional short rebate on flat price over 1 year (~252 bdays)
+    dates_1y = pd.bdate_range("2021-01-04", periods=261)
+    flat = pd.DataFrame({"spy": np.full(len(dates_1y), 100.0)}, index=dates_1y)
+    cp_1y, cn_1y = ov.calendar_cash_factors(dates_1y, np.full(len(dates_1y), 0.05), 0.015)
+    sig_short = lambda i, _w: np.array([-1.0]) if i == 0 else None
+
+    r_retail = lab.run_long_short_overlay(
+        flat, sig_short, 0, 0.0, cp_1y, cn_1y, short_rebate_ratio=0.0, short_annual_cost=0.01
+    )
+    r_inst = lab.run_long_short_overlay(
+        flat, sig_short, 0, 0.0, cp_1y, cn_1y, short_rebate_ratio=1.0, short_annual_cost=0.01
+    )
+    # Retail earns ~5% (own cash) - 1% (borrow) = ~+4%; institutional earns ~10% - 1% = ~+9%
+    assert 1.035 < r_retail.nav.iloc[-1] < 1.045
+    assert 1.085 < r_inst.nav.iloc[-1] < 1.098
+
+    # 3. Liquidation guard when asset triples while 100% short
+    d_sq = pd.bdate_range("2022-01-03", periods=6)
+    squeeze = pd.DataFrame({"btc": [100.0, 100.0, 120.0, 260.0, 50.0, 50.0]}, index=d_sq)
+    cp_0 = np.ones(len(d_sq))
+    r_sq = lab.run_long_short_overlay(squeeze, sig_short, 0, 0.0, cp_0, short_annual_cost=0.0)
+    assert r_sq.checks["liquidated"] is True
+    assert r_sq.nav.iloc[-1] == 0.0  # stays bankrupt even if price later crashes back to 50!
+    assert r_sq.checks["worst_1d_squeeze"] < -1.0

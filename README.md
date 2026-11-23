@@ -76,6 +76,7 @@ XQuant 不预测明天涨跌，也不教暴富神技。我们用过去 10 到 26
 - **看华尔街恐慌指数、企业债风险指标来抄底逃顶**（平时假警报太多、折腾一堆手续费）；
 - **买美股“高质量 / 低波动 / 等权重”替代基金**（拉长 15～20 年都没跑赢普通标普 500）；
 - **给逆波动三组合主线硬加均线择时、或追高轮动单押一只最猛的 ETF**（前者没用，后者回撤超 40% 且极脆弱）；
+- **熊市空仓期反手做空 / 买反向 ETF（`SH`/`PSQ`）/ 强弱配对做空**（美股/加密/A 股四大流派全线实测失败：暴涨逼空几乎全躲在熊市里，叠加做空在 SPY 25 个起步年 `0/25`、BTC 10 个起步年 `0/10` 胜过纯现金防守，详见[做空策略实战挑战](docs/notes/short-selling-challenge-2026-11-23-review.md)）；
 - **五月卖出、月末效应、短线超跌抢反弹**等日历与短线小技巧。
 
 ---
@@ -91,7 +92,7 @@ XQuant 不预测明天涨跌，也不教暴富神技。我们用过去 10 到 26
 
 ### 给研究者与开发者的深度入口
 - **完整研究记录**：[全仓研究总台账](docs/research-ledger.md) · [策略研究索引](docs/strategies/research-index.md) · [Notebook 索引](research/README.md) · [仓库结构说明](docs/repository-structure.md) · [输出保留规则](outputs/README.md) · [协作规范](AGENTS-CN.md)
-- **最新深度复盘**：[BTC 与 A 股日频防抖三档泛化研究（2026-11-23）](docs/notes/btc-ashare-buffered-mtf3-2026-11-23-review.md) · [MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](docs/notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](docs/notes/sp500-four-directions-2026-11-22-review.md) · [BTC 卫星价格修正复核（2026-10-18）](docs/notes/btc-satellite-corrected-prices-2026-10-18-review.md)
+- **最新深度复盘**：[做空策略实战挑战（2026-11-23）](docs/notes/short-selling-challenge-2026-11-23-review.md) · [BTC 与 A 股日频防抖三档泛化研究（2026-11-23）](docs/notes/btc-ashare-buffered-mtf3-2026-11-23-review.md) · [MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](docs/notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](docs/notes/sp500-four-directions-2026-11-22-review.md) · [BTC 卫星价格修正复核（2026-10-18）](docs/notes/btc-satellite-corrected-prices-2026-10-18-review.md)
 
 <details>
 <summary>点击展开：本地复现、一键查实时趋势信号与仪表盘命令</summary>

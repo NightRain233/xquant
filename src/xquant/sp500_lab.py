@@ -165,6 +165,229 @@ def run_multi_asset_overlay(
     return MultiEngineResult(nav=nav, weights=weights, trades=trades, tbill_daily=rf, checks=checks)
 
 
+def run_long_short_overlay(
+    prices: pd.DataFrame,
+    signal: MultiSignal,
+    start_i: int,
+    cost: float,
+    cash_pos: np.ndarray,
+    cash_neg: Optional[np.ndarray] = None,
+    *,
+    short_rebate_ratio: float = 0.0,
+    short_annual_cost: float = 0.01,
+    daily_reset_short: bool = False,
+    liquidation_floor: float = 0.0,
+) -> MultiEngineResult:
+    """Strictly causal long/short N-asset backtest with realistic short-selling accounting.
+
+    Accounting rules:
+    * Signal decides at close ``i`` using only data <= ``i``; fills at close ``i + 1``.
+    * Cash is decomposed into ``short_proceeds = sum(max(-hold, 0))`` and
+      ``free_cash = cash - short_proceeds`` (own uninvested cash or margin loan).
+    * Own ``free_cash >= 0`` earns ``cash_pos[i] - 1``; ``free_cash < 0`` borrows at ``cash_neg[i] - 1``.
+    * ``short_proceeds`` earns ``short_rebate_ratio * (cash_pos[i] - 1)`` (0.0 for typical retail
+      margin accounts; 1.0 for institutional futures / 1x inverse ETF swap collateral).
+    * Borrow / funding / swap-expense fee ``short_annual_cost`` is charged smoothly per calendar
+      day on ``short_proceeds`` (negative value represents favorable funding received by shorts).
+    * If ``daily_reset_short`` is True, any active short leg is reset daily to its target weight
+      without extra rebalancing commission to model daily-resetting -1x inverse ETFs (SH / PSQ).
+    * If equity falls to ``<= liquidation_floor`` (default 0.0 = bankruptcy), the account is
+      liquidated immediately and stays flat at ``max(equity, 0.0)`` thereafter.
+    """
+    cols = list(prices.columns)
+    m = len(cols)
+    dates = pd.DatetimeIndex(prices.index)
+    px = prices[cols].to_numpy(float).copy()
+    n = len(dates)
+
+    if cash_neg is None:
+        cash_neg = cash_pos
+
+    day_diff = np.zeros(n, dtype=float)
+    day_diff[1:] = (dates[1:] - dates[:-1]).days.to_numpy(float)
+
+    shares = np.zeros(m, dtype=float)
+    cash = 1.0
+    pending: Optional[np.ndarray] = None
+    active_target = np.zeros(m, dtype=float)
+    liquidated = False
+    liquidation_date: Optional[str] = None
+
+    nav_list: list[float] = []
+    wts_list: list[np.ndarray] = []
+    trades_list: list[dict] = []
+    # Daily return decomposition (fraction of previous day's equity)
+    attr_rows: list[dict] = []
+    max_resid = 0.0
+    target_min = np.inf
+    target_max = -np.inf
+    total_borrow_paid = 0.0
+    total_rebate_earned = 0.0
+
+    for i in range(start_i, n):
+        long_pnl = 0.0
+        short_price_pnl = 0.0
+        own_interest = 0.0
+        rebate_interest = 0.0
+        borrow_fee = 0.0
+        trade_cost = 0.0
+        equity_prev = nav_list[-1] if nav_list else 1.0
+
+        if i > start_i and not liquidated:
+            hold_prev = shares * px[i - 1]
+            hold_mtm = shares * px[i]
+            d_hold = hold_mtm - hold_prev
+            long_pnl = float(d_hold[shares > 0.0].sum())
+            short_price_pnl = float(d_hold[shares < 0.0].sum())
+
+            short_proceeds = float(np.maximum(-hold_prev, 0.0).sum())
+            free_cash = cash - short_proceeds
+            if free_cash >= 0.0:
+                own_interest = free_cash * (cash_pos[i] - 1.0)
+            else:
+                own_interest = free_cash * (cash_neg[i] - 1.0)
+            rebate_interest = short_proceeds * short_rebate_ratio * (cash_pos[i] - 1.0)
+            borrow_fee = short_proceeds * (short_annual_cost * day_diff[i] / 365.25)
+
+            cash += own_interest + rebate_interest - borrow_fee
+            total_borrow_paid += borrow_fee
+            total_rebate_earned += rebate_interest
+
+            # Check bankruptcy / liquidation before executing new trades
+            equity_now = float(hold_mtm.sum() + cash)
+            if equity_now <= liquidation_floor:
+                liquidated = True
+                liquidation_date = str(dates[i].date())
+                shares = np.zeros(m, dtype=float)
+                cash = max(0.0, equity_now)
+                pending = None
+
+        if pending is not None and not liquidated:
+            hold = shares * px[i]
+            total = float(hold.sum() + cash)
+            if total <= liquidation_floor:
+                liquidated = True
+                liquidation_date = str(dates[i].date())
+                shares = np.zeros(m, dtype=float)
+                cash = max(0.0, total)
+                pending = None
+            else:
+                c_est = 0.0
+                for _ in range(8):
+                    tgt = pending * (total - c_est)
+                    c_est = float(cost * np.abs(tgt - hold).sum())
+                tgt = pending * (total - c_est)
+                traded = float(np.abs(tgt - hold).sum())
+                new_cash = float(total - c_est - tgt.sum())
+                max_resid = max(max_resid, abs((float(tgt.sum()) + new_cash + c_est) - total))
+                shares = tgt / px[i]
+                cash = new_cash
+                trade_cost = c_est
+                active_target = pending.copy()
+                trades_list.append(
+                    {
+                        "exec_date": dates[i],
+                        "traded_frac": traded / total if total > 0 else 0.0,
+                        "cost": c_est,
+                        "is_initial": len(trades_list) == 0,
+                    }
+                )
+                pending = None
+        elif daily_reset_short and not liquidated and np.any(shares < 0.0):
+            # Model daily-resetting -1x inverse ETF compounding inside the fund wrapper
+            hold = shares * px[i]
+            total = float(hold.sum() + cash)
+            if total > liquidation_floor:
+                tgt = hold.copy()
+                short_mask = active_target < 0.0
+                tgt[short_mask] = active_target[short_mask] * total
+                cash = float(total - tgt.sum())
+                shares = tgt / px[i]
+
+        hold = shares * px[i]
+        v = float(hold.sum() + cash) if not liquidated else float(cash)
+        w_now = hold / v if (v > 1e-12 and not liquidated) else np.zeros(m, dtype=float)
+        nav_list.append(v)
+        wts_list.append(w_now)
+
+        denom = equity_prev if equity_prev > 1e-12 else 1.0
+        attr_rows.append(
+            {
+                "long_ret": long_pnl / denom,
+                "short_ret": (short_price_pnl + rebate_interest - borrow_fee) / denom,
+                "cash_ret": own_interest / denom,
+                "cost_ret": -trade_cost / denom,
+                "net_ret": (v / equity_prev - 1.0) if (i > start_i and equity_prev > 1e-12) else 0.0,
+                "is_short": bool(np.any(w_now < -1e-6)),
+            }
+        )
+
+        if i < n - 1 and not liquidated:
+            dec = signal(i, w_now)
+            if dec is not None:
+                arr = np.asarray(dec, dtype=float)
+                if arr.shape != (m,):
+                    raise ValueError(f"signal returned shape {arr.shape}, expected ({m},)")
+                if not np.all(np.isfinite(arr)):
+                    raise ValueError(f"non-finite target weights at {dates[i]}: {arr}")
+                target_min = min(target_min, float(arr.min()))
+                target_max = max(target_max, float(arr.sum()))
+                pending = arr
+
+    idx = dates[start_i:]
+    nav = pd.Series(nav_list, index=idx, name="nav")
+    weights = pd.DataFrame(wts_list, index=idx, columns=cols)
+    weights["cash"] = 1.0 - weights[cols].sum(axis=1)
+    trades = (
+        pd.DataFrame(trades_list)
+        if trades_list
+        else pd.DataFrame(columns=["exec_date", "traded_frac", "cost", "is_initial"])
+    )
+    rf = pd.Series(cash_pos[start_i:] - 1.0, index=idx, name="tbill_daily")
+    rf.iloc[0] = 0.0
+    attr_df = pd.DataFrame(attr_rows, index=idx)
+
+    # Short-leg attribution & short-squeeze risk metrics
+    prev_short = attr_df["is_short"].shift(1, fill_value=False)
+    short_days = int(prev_short.sum())
+    short_day_rets = attr_df.loc[prev_short, "short_ret"]
+    short_net_rets = attr_df.loc[prev_short, "net_ret"]
+    short_cash_rets = rf.loc[prev_short]
+    short_cum_alpha = float((1.0 + short_day_rets).prod() - 1.0) if short_days > 0 else 0.0
+    short_vs_cash_mult = (
+        float((1.0 + short_net_rets).prod() / (1.0 + short_cash_rets).prod() - 1.0)
+        if short_days > 0
+        else 0.0
+    )
+    # Worst 1d / 5d / 20d squeeze loss while short (using short-day return series with 0 outside short days)
+    s_only = attr_df["short_ret"].where(prev_short, 0.0)
+    worst_1d_squeeze = float(s_only.min()) if short_days > 0 else 0.0
+    roll5 = (1.0 + s_only).rolling(5).apply(np.prod, raw=True) - 1.0
+    roll20 = (1.0 + s_only).rolling(20).apply(np.prod, raw=True) - 1.0
+    worst_5d_squeeze = float(roll5.min()) if short_days >= 5 else worst_1d_squeeze
+    worst_20d_squeeze = float(roll20.min()) if short_days >= 20 else worst_5d_squeeze
+
+    checks = {
+        "max_cash_residual": float(max_resid),
+        "nav_min": float(nav.min()),
+        "target_weight_min": float(target_min) if np.isfinite(target_min) else 0.0,
+        "target_sum_max": float(target_max) if np.isfinite(target_max) else 0.0,
+        "liquidated": bool(liquidated),
+        "liquidation_date": liquidation_date,
+        "short_days": short_days,
+        "short_time_share": float(short_days / max(len(idx) - 1, 1)),
+        "short_cum_alpha": short_cum_alpha,
+        "short_vs_cash_cum_diff": short_vs_cash_mult,
+        "short_win_day_rate": float((short_day_rets > 0.0).mean()) if short_days > 0 else np.nan,
+        "worst_1d_squeeze": worst_1d_squeeze,
+        "worst_5d_squeeze": worst_5d_squeeze,
+        "worst_20d_squeeze": worst_20d_squeeze,
+        "total_borrow_paid": float(total_borrow_paid),
+        "total_rebate_earned": float(total_rebate_earned),
+    }
+    return MultiEngineResult(nav=nav, weights=weights, trades=trades, tbill_daily=rf, checks=checks)
+
+
 def fixed_weight_signal(target_weights: Sequence[float], dates: pd.DatetimeIndex, start_i: int, freq: str = "M"):
     """Fixed weights rebalanced on each period end (M / Q / Y), or buy-and-hold if freq=='NONE'."""
     w = np.asarray(target_weights, dtype=float)

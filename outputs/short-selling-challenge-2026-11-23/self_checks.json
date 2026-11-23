@@ -1,0 +1,20 @@
+{
+  "us_no_lookahead_perturbation_passed": true,
+  "btc_no_lookahead_perturbation_passed": true,
+  "max_cash_residual": 5.684341886080802e-14,
+  "cash_conservation_passed": true,
+  "fast_xirr_max_diff": 6.661338147750939e-16,
+  "fast_xirr_parity_passed": true,
+  "short_hold_liquidated_spy": true,
+  "short_hold_liquidated_qqq": true,
+  "short_hold_liquidated_btc": true,
+  "short_hold_liquidated_eth": true,
+  "data_hashes": {
+    "yf_SPY.csv": "bf20c204b6a7459c25e053d226d64efaa8329ff80cc46cb92340e4feb7cfaae2",
+    "yf_QQQ.csv": "b7079d3b300029f6f5d8f4a1f6a147a98cd31159e24bfcd6d4e9fe15aad4632d",
+    "BTC-USD.parquet": "a2a2dfb64bb1f8eb8404d7b1235b76800f6b684785cf03066ff576e6f4304087",
+    "ETH-USD.parquet": "54683cc16bed955c4a27509fa3f7da65e7ca236e0893345dba875e86950fe72c",
+    "csindex_H00300.csv": "76bb45d4f55a8ce2e4c3443e0e9e87c0d40a74d879beb17cb0805ee1465365d9",
+    "tickflow_forward_512100_159552_159915.json": "3c11b5f1b862fc182a4471eba59daef2b9ff55ef6da6828239fe24445b03d21b"
+  }
+}

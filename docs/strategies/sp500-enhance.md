@@ -101,6 +101,7 @@
 - **美股单因子替代 ETF**（所谓高质量、低波动、等权重标普基金）：拉长 15～20 年在收益、稳健度、回撤上全没跑赢普通标普 500；
 - **华尔街恐慌指数刹车**：只在 2020 年闪电暴跌时亮眼，平时长牛假警报极多、一年折腾三到六遍，综合表现远输给方案 B 和方案 C；
 - **企业债信用利差刹车**：2000/2008 反应太慢，2022 股债双杀直接失灵；
+- **熊市空仓期反手做空 / 买 1 倍反向 ETF（`SH`/`PSQ`）/ 强弱配对做空**：美股史上 95%（近 14 年 100%）最猛单日暴涨落在 200 日线下方，叠加做空在 SPY 25 个起步年里 `0/25` 胜过纯现金，用 `SH` 反向 ETF 磨损更惨，收益和稳健度远不如防守期买现金、黄金或金债盾（BTC / ETH 与 A 股实测同样全面失败，详见[做空策略实战挑战复盘](../notes/short-selling-challenge-2026-11-23-review.md)）；
 - **跌深多投的“智能定投”、五月卖出/月末日历效应、短线超跌抢反弹、国内 `513500` 直接套简单均线**：全部未通过检验。
 
 ### 和方案 A（逆波动三组合）怎么分工？
@@ -133,4 +134,4 @@
 
 - **下一篇推荐**：[真实持有体验：标普 500 26 年 vs 三组合 11 年](holding-experience.md)
 - **其他方案**：[逆波动三组合指南（方案 A）](two-three-asset.md) · [大白话术语表](../glossary.md)
-- **原始研究报告**：[BTC 与 A 股日频防抖三档泛化研究（2026-11-23）](../notes/btc-ashare-buffered-mtf3-2026-11-23-review.md) · [MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](../notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](../notes/sp500-four-directions-2026-11-22-review.md) · [境内 ETF 高溢价避坑研究](../notes/qdii-premium-2026-11-10-review.md) · [标普 500 持有体验原始笔记](../notes/sp500-holding-experience-2026-11-10-review.md)
+- **原始研究报告**：[做空策略实战挑战（2026-11-23）](../notes/short-selling-challenge-2026-11-23-review.md) · [BTC 与 A 股日频防抖三档泛化研究（2026-11-23）](../notes/btc-ashare-buffered-mtf3-2026-11-23-review.md) · [MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](../notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](../notes/sp500-four-directions-2026-11-22-review.md) · [境内 ETF 高溢价避坑研究](../notes/qdii-premium-2026-11-10-review.md) · [标普 500 持有体验原始笔记](../notes/sp500-holding-experience-2026-11-10-review.md)

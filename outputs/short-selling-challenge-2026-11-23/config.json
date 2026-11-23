@@ -1,0 +1,91 @@
+{
+  "slug": "short-selling-challenge-2026-11-23",
+  "execution_clock": "Signal at close t using data <= t; fills at close t+1 with proportional one-way cost.",
+  "us": {
+    "window_main": [
+      "2000-01-03",
+      "2026-10-16"
+    ],
+    "window_early": [
+      "2000-01-03",
+      "2012-12-31"
+    ],
+    "window_modern": [
+      "2013-01-02",
+      "2026-10-16"
+    ],
+    "window_gld": [
+      "2005-01-03",
+      "2026-10-16"
+    ],
+    "cost": 0.001,
+    "wrappers": {
+      "retail_margin": {
+        "short_rebate_ratio": 0.0,
+        "short_annual_cost": 0.005,
+        "daily_reset_short": false
+      },
+      "inverse_etf": {
+        "short_rebate_ratio": 1.0,
+        "short_annual_cost": 0.01,
+        "daily_reset_short": true
+      },
+      "pro_futures": {
+        "short_rebate_ratio": 1.0,
+        "short_annual_cost": 0.005,
+        "daily_reset_short": false
+      }
+    },
+    "ann_days": 252
+  },
+  "crypto": {
+    "btc_window": [
+      "2015-08-01",
+      "2026-10-01"
+    ],
+    "btc_early": [
+      "2015-08-01",
+      "2020-12-31"
+    ],
+    "btc_mature": [
+      "2021-01-01",
+      "2026-10-01"
+    ],
+    "eth_window": [
+      "2018-09-01",
+      "2026-10-01"
+    ],
+    "primary_cost": 0.003,
+    "stress_costs": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "primary_borrow_annual": 0.03,
+    "funding_stress_annual": [
+      0.06,
+      0.03,
+      0.0,
+      -0.03
+    ],
+    "ann_days": 365
+  },
+  "ashare": {
+    "window": [
+      "2014-08-01",
+      "2026-10-15"
+    ],
+    "cost": 0.001,
+    "retail_margin_borrow": 0.085,
+    "cash_annual": 0.02,
+    "ann_days": 252
+  },
+  "circular_shift_trials": 200,
+  "pre_registered_pass_bar": [
+    "Incremental short leg MUST produce positive cumulative alpha over cash (short_vs_cash_cum_diff > 0)",
+    "Long/Short MUST improve Sharpe over the Cash baseline in BOTH early and modern sub-periods",
+    "Incremental short-leg circular shift p-value <= 0.05 (not random noise)",
+    "Worst 20-day short-squeeze loss must stay survivable (no liquidation, no catastrophic squeeze)",
+    "Must survive realistic retail friction (not dependent on zero-cost or institutional-only rebates)"
+  ]
+}
