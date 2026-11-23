@@ -47,6 +47,7 @@ EXPECTED_NOTEBOOKS = {
     "mtf3-daily-buffer-2026-11-23-practice.ipynb",
     "btc-ashare-buffered-mtf3-2026-11-23-practice.ipynb",
     "short-selling-challenge-2026-11-23-practice.ipynb",
+    "btc-ma-and-dlv-mean-reversion-2026-11-23-practice.ipynb",
 }
 
 

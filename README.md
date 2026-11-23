@@ -71,7 +71,7 @@ XQuant 不预测明天涨跌，也不教暴富神技。我们用过去 10 到 26
 
 ### 4. 这些听起来很聪明的招数，实测全都不靠谱（别交智商税）
 以下常见玩法我们都用 10～26 年历史数据严格测过，**全部未通过检验**，不用再花时间折腾：
-- **A 股择时**（按 30 周均线或布林带高抛低吸沪深 300、红利低波等，收益更低、回撤没少）；
+- **A 股择时**（按 30 周均线/布林带顺势择时，或用 `KDJ` / `RSI(2)` / 裸反均线高抛低吸红利低波与宽基均跨周期失败；慢速乖离底仓偏离仅在 2020 后震荡体制强效、2014–2019 跑输随机，且均值回归定投 12 年全部跑输无脑月定投，详见[BTC 均线家族与红利低波均值回归复盘](docs/notes/btc-ma-and-dlv-mean-reversion-2026-11-23-review.md)）；
 - **跌深多投的“智能定投”**（和普通傻瓜定投几乎没区别）；
 - **看华尔街恐慌指数、企业债风险指标来抄底逃顶**（平时假警报太多、折腾一堆手续费）；
 - **买美股“高质量 / 低波动 / 等权重”替代基金**（拉长 15～20 年都没跑赢普通标普 500）；
@@ -92,7 +92,7 @@ XQuant 不预测明天涨跌，也不教暴富神技。我们用过去 10 到 26
 
 ### 给研究者与开发者的深度入口
 - **完整研究记录**：[全仓研究总台账](docs/research-ledger.md) · [策略研究索引](docs/strategies/research-index.md) · [Notebook 索引](research/README.md) · [仓库结构说明](docs/repository-structure.md) · [输出保留规则](outputs/README.md) · [协作规范](AGENTS-CN.md)
-- **最新深度复盘**：[做空策略实战挑战（2026-11-23）](docs/notes/short-selling-challenge-2026-11-23-review.md) · [BTC 与 A 股日频防抖三档泛化研究（2026-11-23）](docs/notes/btc-ashare-buffered-mtf3-2026-11-23-review.md) · [MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](docs/notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](docs/notes/sp500-four-directions-2026-11-22-review.md) · [BTC 卫星价格修正复核（2026-10-18）](docs/notes/btc-satellite-corrected-prices-2026-10-18-review.md)
+- **最新深度复盘**：[BTC 均线家族与红利低波均值回归研究（2026-11-23）](docs/notes/btc-ma-and-dlv-mean-reversion-2026-11-23-review.md) · [做空策略实战挑战（2026-11-23）](docs/notes/short-selling-challenge-2026-11-23-review.md) · [BTC 与 A 股日频防抖三档泛化研究（2026-11-23）](docs/notes/btc-ashare-buffered-mtf3-2026-11-23-review.md) · [MTF-3 日频防抖缓冲带专题复盘（2026-11-23）](docs/notes/mtf3-daily-buffer-2026-11-23-review.md) · [标普 500 四方向联合研究总复盘（2026-11-22）](docs/notes/sp500-four-directions-2026-11-22-review.md) · [BTC 卫星价格修正复核（2026-10-18）](docs/notes/btc-satellite-corrected-prices-2026-10-18-review.md)
 
 <details>
 <summary>点击展开：本地复现、一键查实时趋势信号与仪表盘命令</summary>

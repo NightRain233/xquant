@@ -1,0 +1,70 @@
+{
+  "slug": "btc-ma-and-dlv-mean-reversion-2026-11-23",
+  "execution_clock": "Signal at close t using data <= t; fills at close t+1 with proportional one-way cost.",
+  "track1_btc": {
+    "btc_window": [
+      "2015-08-01",
+      "2026-10-01"
+    ],
+    "btc_early": [
+      "2015-08-01",
+      "2020-12-31"
+    ],
+    "btc_mature": [
+      "2021-01-01",
+      "2026-10-01"
+    ],
+    "eth_window": [
+      "2018-09-01",
+      "2026-10-01"
+    ],
+    "primary_cost": 0.003,
+    "stress_costs": [
+      0.001,
+      0.003,
+      0.005
+    ],
+    "cash_annual": 0.0,
+    "ann_days": 365,
+    "pass_bar": [
+      "Beats BTC BH on Sharpe and Calmar at 30bp with 0% USDT cash",
+      "Holds up in 2021-2026 mature institutional era (beats BH Sharpe)",
+      "Generalizes zero-tuning to ETH-USD (beats ETH BH Sharpe & MaxDD)",
+      "Circular-shift permutation p_sharpe <= 0.05 on BTC and ETH",
+      "Broad parameter plateau (not an isolated lucky pair)"
+    ]
+  },
+  "track2_dlv_mr": {
+    "h20269_window": [
+      "2014-08-01",
+      "2026-10-15"
+    ],
+    "early_window": [
+      "2014-08-01",
+      "2019-12-31"
+    ],
+    "ex15_window": [
+      "2016-01-04",
+      "2026-10-15"
+    ],
+    "modern_window": [
+      "2020-01-02",
+      "2026-10-15"
+    ],
+    "window_512890": [
+      "2020-01-02",
+      "2026-10-15"
+    ],
+    "primary_cost": 0.001,
+    "stress_cost": 0.003,
+    "cash_annual": 0.02,
+    "ann_days": 252,
+    "pass_bar": [
+      "Beats matched-exposure fixed quarterly portfolio on Sharpe AND CAGR across full window",
+      "Passes circular-shift permutation test (p_sharpe <= 0.05) on full 2014-2026 AND Ex-2015 / 512890",
+      "Does not blow up in 2015 crash / 2018 bear (falling-knife audit) and survives 30bp cost",
+      "Works consistently in BOTH 2014-2019 AND 2020-2026 (not a single-regime fluke)"
+    ]
+  },
+  "circular_shift_trials": 200
+}

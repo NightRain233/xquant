@@ -1,0 +1,14 @@
+{
+  "track1_all_42_strategies_no_lookahead_passed": true,
+  "track2_all_24_strategies_no_lookahead_passed": true,
+  "max_cash_residual": 2.842170943040401e-14,
+  "cash_conservation_passed": true,
+  "data_hashes": {
+    "BTC-USD.parquet": "a2a2dfb64bb1f8eb8404d7b1235b76800f6b684785cf03066ff576e6f4304087",
+    "ETH-USD.parquet": "54683cc16bed955c4a27509fa3f7da65e7ca236e0893345dba875e86950fe72c",
+    "csindex_H20269.csv": "0584efc073980f481fb733eb66705c22b2610a00c95447e92bd4048bfb4e6c22",
+    "tickflow_forward_588000_588080_510880.json": "dcb1c0216986a03d23feb8817fc3659693cbce97413bbd05c6f11d4b63196bbf",
+    "tickflow_forward_512890_512040_513010.json": "453ea6352ebf292a7b25618c3b6fbb08c7046bb3b320be3b289dfeb16d421bab",
+    "511010.SS.parquet": "bee4c187eda16145f27c288729aa2187ca8f35b435c6fe8557c5cb3c5f987747"
+  }
+}
